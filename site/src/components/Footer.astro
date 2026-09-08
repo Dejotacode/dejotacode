@@ -3,10 +3,20 @@ import Brand from './Brand.astro';
 ---
 <footer class="footer">
   <div class="container footer__grid">
-    <div><Brand /><p>Conhecimento prático para construir sua renda digital.</p></div>
+    <div><Brand /><p>Conhecimento prático para construir sua renda digital.</p><nav class="footer-social" aria-label="Redes sociais"><a href="https://github.com/Dejotacode" target="_blank" rel="noopener noreferrer" aria-label="DejotaCode no GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a><a href="https://www.linkedin.com/in/jdejotacode/" target="_blank" rel="noopener noreferrer" aria-label="DejotaCode no LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3.2V19h3.3zM4.85 3a1.93 1.93 0 1 0 0 3.86A1.93 1.93 0 0 0 4.85 3ZM20.8 13c0-3.17-1.7-4.65-3.96-4.65a3.42 3.42 0 0 0-3.1 1.7V8.5h-3.3V19h3.3v-5.2c0-1.37.26-2.7 1.96-2.7 1.67 0 1.7 1.57 1.7 2.8V19h3.3z"/></svg></a></nav></div>
     <div><h2>Navegação</h2><a href="/comece-aqui">Comece aqui</a><a href="/blog">Blog</a><a href="/portfolio">Projetos</a><a href="/sobre">Sobre</a><a href="/contato">Contato</a></div>
-    <div><h2>Categorias</h2><a href="/categoria/programacao">Programação</a><a href="/categoria/linux">Linux</a><a href="/categoria/renda-digital">Renda digital</a><a href="/termos">Termos de uso</a></div>
+    <div><h2>Categorias</h2><a href="/categoria/programacao">Programação</a><a href="/categoria/linux">Linux</a><a href="/categoria/cloudflare">Cloudflare</a><a href="/categoria/ia">Inteligência artificial</a><a href="/categoria/renda-digital">Renda digital</a></div>
+    <div><h2>Recursos</h2><a href="/comece-aqui">Comece aqui</a><a href="/blog">Tutoriais e guias</a><a href="/portfolio">Portfólio</a><a href="/privacidade">Privacidade</a><a href="/termos">Termos de uso</a></div>
     <div><h2>Receba novidades</h2><p>Um conteúdo prático por semana. Sem spam.</p><form class="footer-form" data-lead-form action={`${import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787'}/api/leads`} method="post"><label class="sr-only" for="footer-email">Seu melhor e-mail</label><input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Seu melhor e-mail" required /><input type="hidden" name="resource" value="newsletter" /><button type="submit">Inscrever-se</button><output aria-live="polite"></output></form><a href="/privacidade">Política de Privacidade</a></div>
   </div>
-  <div class="container footer__bottom">© 2026 DejotaCode. Conteúdo feito para quem está começando.</div>
+  <div class="container footer__bottom"><nav aria-label="Links legais"><a href="/termos">Termos de Uso</a><a href="/privacidade">Política de Privacidade</a></nav><p>© 2026 DejotaCode. Conteúdo feito para quem está começando.</p></div>
 </footer>
+
+<style>
+  .footer__grid{grid-template-columns:1.25fr repeat(3,1fr) 1.35fr;gap:36px}
+  .footer-social{display:flex;gap:10px;margin-top:18px}.footer-social a{width:36px;height:36px;display:grid;place-items:center;border:1px solid #344759;border-radius:8px;color:#dce6ef}.footer-social a:hover{border-color:#55dfe0;color:#55dfe0}.footer-social svg{width:18px;height:18px;fill:currentColor}
+  .footer__bottom{position:relative;display:grid;place-items:center;min-height:70px;text-align:center}.footer__bottom p{margin:0;color:#879aab}.footer__bottom nav{position:absolute;left:0;display:flex;gap:16px}.footer__bottom nav a{color:#aebdca}.footer__bottom nav a:hover{color:#55dfe0}
+  @media(max-width:1050px){.footer__grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:700px){.footer__grid{grid-template-columns:repeat(2,1fr)}.footer__bottom{gap:10px;padding-block:18px}.footer__bottom nav{position:static;order:2}.footer__bottom p{order:1}}
+  @media(max-width:480px){.footer__grid{grid-template-columns:1fr}}
+</style>
