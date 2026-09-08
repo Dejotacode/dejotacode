@@ -53,16 +53,17 @@
 .home-card-grid small{display:inline-flex;padding:2px 5px;border-radius:4px;background:#eaf2ff;color:var(--blue);font-size:.58rem;font-weight:800;text-transform:uppercase}
 .home-card-grid h3{margin:7px 0;font-size:.86rem;line-height:1.35}
 .home-card-grid p{display:flex;gap:12px;margin:0;color:#758292;font-size:.62rem}
-.home-journey{padding:44px 0;border-block:1px solid var(--line);background:#fff}
+.home-journey{padding:50px 0;border-block:1px solid var(--line);background:#fff}
 .home-journey__title{text-align:center}
 .home-journey__title h2{margin:0;font-size:1.2rem}
 .home-journey__title p{margin:3px 0 22px;color:var(--muted);font-size:.78rem}
-.home-journey ol{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:0;margin:0;list-style:none}
-.home-journey li{display:flex;align-items:flex-start;gap:11px;position:relative}
-.home-journey li:not(:last-child):after{content:'→';position:absolute;right:-14px;top:9px;color:#96a2ad}
-.home-journey b{flex:0 0 38px;height:38px;display:grid;place-items:center;border:1px solid #9bbdf1;border-radius:50%;color:var(--blue)}
-.home-journey h3{margin:0;font-size:.88rem}
-.home-journey li p{margin:3px 0;color:var(--muted);font-size:.7rem}
+.home-journey ol{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;padding:0;margin:0;list-style:none}
+.home-journey li{display:flex;align-items:center;gap:13px;position:relative;min-width:0}
+.home-journey li:not(:last-child):after{content:'→';position:absolute;right:-21px;top:17px;color:#7ea6df;font-size:1rem}
+.home-journey b{flex:0 0 48px;height:48px;display:grid;place-items:center;border:1px solid #9bbdf1;border-radius:50%;background:#f5f9ff;color:var(--blue)}
+.home-journey b svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.home-journey h3{margin:0;font-size:.9rem}
+.home-journey li p{margin:3px 0;color:var(--muted);font-size:.72rem;line-height:1.4}
 .home-feature-grid{display:grid;grid-template-columns:1fr 1.25fr 1fr}
 .home-feature-grid>article{min-height:260px;padding:22px;border:1px solid var(--line);background:#fff}
 .home-feature-grid>article:first-child{border-radius:8px 0 0 8px}
