@@ -5,7 +5,7 @@ const { post, index = 0 } = Astro.props;
 const href = post.type === 'tutorial' ? `/tutorial/${post.slug}` : `/blog/${post.slug}`;
 const date = new Intl.DateTimeFormat('pt-BR', { day:'2-digit', month:'short', year:'numeric', timeZone:'UTC' }).format(new Date(post.publishedAt));
 ---
-<article class="post-card" data-post data-title={post.title.toLowerCase()} data-category={post.categorySlug}>
+<article class="post-card" data-post data-search={`${post.title} ${post.excerpt} ${post.category}`.toLocaleLowerCase('pt-BR')} data-category={post.categorySlug}>
   <a class={`post-card__cover cover-${(index % 3) + 1}`} href={href} aria-label={`Abrir ${post.title}`}><span>{post.type === 'tutorial' ? 'PASSO A PASSO' : post.category}</span></a>
   <div class="post-card__body"><span class="tag">{post.category}</span><h2><a href={href}>{post.title}</a></h2><p>{post.excerpt}</p><div class="meta"><span>{post.author}</span><span>{post.readingTime} min</span><time datetime={post.publishedAt}>{date}</time></div></div>
 </article>
