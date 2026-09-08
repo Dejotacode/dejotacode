@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import '../styles/home.css';
+import '../styles/forms.css';
+import '../styles/pagination.css';
+import '../styles/accessibility.css';
+
+interface Props { title: string; description: string; noindex?: boolean; jsonLd?: Record<string, unknown>; }
+const { title, description, jsonLd, noindex = Astro.url.pathname.startsWith('/admin') } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const defaultJsonLd = Astro.url.pathname === '/' ? {'@context':'https://schema.org','@type':'WebSite',name:'DejotaCode',url:canonical.toString(),description} : undefined;
+const safeJsonLd = jsonLd || defaultJsonLd ? JSON.stringify(jsonLd ?? defaultJsonLd).replaceAll('<', '\\u003c') : undefined;
+---
+<!doctype html>
+<html lang="pt-BR" data-api={import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <meta name="theme-color" content="#075ee8" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="DejotaCode" href={new URL('/rss.xml', canonical)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="DejotaCode" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {safeJsonLd && <script is:inline type="application/ld+json" set:html={safeJsonLd} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+    <slot />
+    <script>
+      const main = document.querySelector('main');
+      if (main && !main.id) main.id = 'main-content';
+    </script>
+    <script>
+      document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const output = form.querySelector('output');
+          const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+          if (!output || !button) return;
+          button.disabled = true;
+          output.textContent = 'Enviando…';
+          const data = Object.fromEntries(new FormData(form));
+          try {
+            const response = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, consent: true }) });
+            if (!response.ok) throw new Error('request_failed');
+            form.reset();
+            output.textContent = 'Pronto! Confira seu e-mail.';
+            document.dispatchEvent(new CustomEvent('dejotacode:conversion', { detail: { type: 'lead_submit', campaign: data.resource ?? 'newsletter' } }));
+          } catch {
+            output.textContent = 'Não foi possível enviar. Tente novamente.';
+          } finally { button.disabled = false; }
+        });
+      });
+    </script>
+    <script>
+      const api = document.documentElement.dataset.api;
+      const sendMetric = (event: string, campaign = '') => {
+        if (!api || location.pathname.startsWith('/admin')) return;
+        fetch(`${api}/api/analytics`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event, path: location.pathname, campaign }), keepalive: true }).catch(() => {});
+      };
+      sendMetric('page_view');
+      document.addEventListener('click', (event) => { const link = (event.target as Element).closest<HTMLAnchorElement>('a.button'); if (link) sendMetric('cta_click', link.pathname); });
+      document.addEventListener('dejotacode:conversion', ((event: CustomEvent<{type:string;campaign:string}>) => sendMetric(event.detail.type, event.detail.campaign)) as EventListener);
+    </script>
+  </body>
+</html>

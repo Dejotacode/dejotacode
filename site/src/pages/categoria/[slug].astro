@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import Header from '../../components/Header.astro'; import Footer from '../../components/Footer.astro'; import PostCard from '../../components/PostCard.astro'; import { getCategories,getPosts } from '../../lib/content'; import '../../styles/editorial.css';
+export async function getStaticPaths(){const categories=await getCategories();return categories.map((category)=>({params:{slug:category.slug},props:{category}}));}
+const {category}=Astro.props; const posts=(await getPosts()).filter((post)=>post.categorySlug===category.slug);
+---
+<BaseLayout title={`${category.name} — DejotaCode`} description={`Tutoriais e artigos de ${category.name} para iniciantes.`}><Header/><main class="editorial-page"><section class="category-head"><div class="container"><div class="category-symbol">{category.name.slice(0,2).toUpperCase()}</div><div><p class="eyebrow">Categoria</p><h1>{category.name}</h1><p>{posts.length} conteúdos para avançar com prática e clareza.</p></div></div></section><section class="section container"><div class="category-list">{posts.map((post,index)=><PostCard post={post} index={index}/>)}</div></section></main><Footer/></BaseLayout>

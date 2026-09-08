@@ -1,0 +1,61 @@
+<a class="dc-brand" href="/" aria-label="DejotaCode — página inicial">
+  <img
+    class="dc-brand__icon"
+    src="/images/dejotacode-icon.png"
+    width="32"
+    height="36"
+    alt=""
+    aria-hidden="true"
+  />
+  <span class="dc-brand__name">
+    <span>Dejota</span><span class="dc-brand__accent">Code</span>
+  </span>
+</a>
+
+<style>
+  .dc-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    flex: 0 0 auto;
+    text-decoration: none;
+  }
+
+  .dc-brand__icon {
+    display: block;
+    width: 32px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .dc-brand__name {
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.08rem;
+    font-weight: 850;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .dc-brand__accent {
+    color: var(--blue);
+  }
+
+  .dc-brand:hover .dc-brand__accent {
+    color: var(--blue-dark);
+  }
+
+  :global(.footer) .dc-brand__name {
+    color: #fff;
+  }
+
+  :global(.footer) .dc-brand__accent {
+    color: #55dfe0;
+  }
+
+  @media (max-width: 380px) {
+    .dc-brand__name {
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,12 @@
+---
+import Brand from './Brand.astro';
+---
+<footer class="footer">
+  <div class="container footer__grid">
+    <div><Brand /><p>Conhecimento prático para construir sua renda digital.</p></div>
+    <div><h2>Navegação</h2><a href="/comece-aqui">Comece aqui</a><a href="/blog">Blog</a><a href="/portfolio">Projetos</a><a href="/sobre">Sobre</a><a href="/contato">Contato</a></div>
+    <div><h2>Categorias</h2><a href="/categoria/programacao">Programação</a><a href="/categoria/linux">Linux</a><a href="/categoria/renda-digital">Renda digital</a><a href="/termos">Termos de uso</a></div>
+    <div><h2>Receba novidades</h2><p>Um conteúdo prático por semana. Sem spam.</p><form class="footer-form" data-lead-form action={`${import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787'}/api/leads`} method="post"><label class="sr-only" for="footer-email">Seu melhor e-mail</label><input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Seu melhor e-mail" required /><input type="hidden" name="resource" value="newsletter" /><button type="submit">Inscrever-se</button><output aria-live="polite"></output></form><a href="/privacidade">Política de Privacidade</a></div>
+  </div>
+  <div class="container footer__bottom">© 2026 DejotaCode. Conteúdo feito para quem está começando.</div>
+</footer>

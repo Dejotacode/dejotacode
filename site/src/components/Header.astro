@@ -1,0 +1,25 @@
+---
+import Brand from './Brand.astro';
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => href === '/' ? path === '/' : path.startsWith(href);
+---
+<header class="header">
+  <div class="container header__inner">
+    <Brand />
+    <nav class="nav" aria-label="Navegação principal">
+      <a aria-current={isCurrent('/') ? 'page' : undefined} href="/">Início</a>
+      <a aria-current={isCurrent('/comece-aqui') ? 'page' : undefined} href="/comece-aqui">Comece aqui</a>
+      <a aria-current={isCurrent('/blog') || isCurrent('/tutorial') || isCurrent('/categoria') ? 'page' : undefined} href="/blog">Blog</a>
+      <a aria-current={isCurrent('/portfolio') ? 'page' : undefined} href="/portfolio">Projetos</a>
+      <a aria-current={isCurrent('/sobre') ? 'page' : undefined} href="/sobre">Sobre</a>
+    </nav>
+    <a class="button button--small" href="/newsletter">Assine a newsletter</a>
+    <details class="mobile-menu">
+      <summary aria-label="Menu de navegação"><span></span><span></span><span></span></summary>
+      <nav aria-label="Navegação móvel">
+        <a href="/">Início</a><a href="/comece-aqui">Comece aqui</a><a href="/blog">Blog</a>
+        <a href="/portfolio">Projetos</a><a href="/sobre">Sobre</a><a href="/contato">Contato</a>
+      </nav>
+    </details>
+  </div>
+</header>

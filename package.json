@@ -1,0 +1,21 @@
+{
+  "name": "dejotacode",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["site", "api"],
+  "scripts": {
+    "dev:site": "npm run dev -w @dejotacode/site",
+    "dev:api": "npm run dev -w @dejotacode/api",
+    "build": "npm run build -w @dejotacode/site && npm run check -w @dejotacode/api",
+    "typecheck": "npm run check -w @dejotacode/site && npm run check -w @dejotacode/api",
+    "test:quality": "npm run build -w @dejotacode/site && node scripts/quality-check.mjs",
+    "preflight:production": "node scripts/preflight-production.mjs",
+    "deploy:production": "npm run preflight:production && npm run deploy:api:production && npm run deploy:site:production",
+    "deploy:api:production": "wrangler d1 migrations apply DB --config api/wrangler.jsonc --env production --remote && wrangler deploy --config api/wrangler.jsonc --env production",
+    "deploy:site:production": "npm run build -w @dejotacode/site && wrangler deploy --config site/wrangler.jsonc",
+    "deploy:site": "npm run deploy -w @dejotacode/site",
+    "deploy:api": "npm run deploy -w @dejotacode/api"
+  },
+  "engines": { "node": ">=22.0.0" }
+}

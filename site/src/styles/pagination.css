@@ -1,0 +1,2 @@
+.pagination,.pagination span{display:flex;justify-content:center;gap:6px}.pagination{margin-top:32px}.pagination button{min-width:38px;height:38px;padding-inline:10px;border:1px solid var(--line);background:#fff;border-radius:7px}.pagination button[aria-current]{background:var(--blue);color:#fff;border-color:var(--blue)}.pagination button:disabled{opacity:.45}
+[hidden]{display:none!important}
