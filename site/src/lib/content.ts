@@ -49,6 +49,50 @@ export async function getPosts(): Promise<Post[]> {
 
 export async function getPost(slug: string) { return (await getPosts()).find((post) => post.slug === slug); }
 export async function getCategories() {
+  if (useApi) {
+    if (!apiUrl) {
+      throw new Error(
+        'CONTENT_API_URL é obrigatório quando CONTENT_SOURCE=api.',
+      );
+    }
+
+    const response = await fetch(`${apiUrl}/api/categories`);
+
+    if (!response.ok) {
+      throw new Error(`Falha ao carregar categorias: ${response.status}`);
+    }
+
+    const payload = await response.json() as {
+      data: {
+        items: Array<{
+          name: string;
+          slug: string;
+          postCount?: number;
+        }>;
+      };
+    };
+
+    return payload.data.items.map((category) => ({
+      name: category.name,
+      slug: category.slug,
+      count: category.postCount ?? 0,
+    }));
+  }
+
   const posts = await getPosts();
-  return [...new Map(posts.map((post) => [post.categorySlug, { name: post.category, slug: post.categorySlug, count: posts.filter((item) => item.categorySlug === post.categorySlug).length }])).values()];
+
+  return [
+    ...new Map(
+      posts.map((post) => [
+        post.categorySlug,
+        {
+          name: post.category,
+          slug: post.categorySlug,
+          count: posts.filter(
+            (item) => item.categorySlug === post.categorySlug,
+          ).length,
+        },
+      ]),
+    ).values(),
+  ];
 }
