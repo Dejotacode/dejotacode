@@ -17,7 +17,15 @@ const schema={'@context':'https://schema.org','@type':'Article',headline:post.ti
 <Header/><main class="article-page">
 <div class="container breadcrumbs"><a href="/">Início</a><span>›</span><a href="/blog">Blog</a><span>›</span><a href={`/categoria/${post.categorySlug}`}>{post.category}</a></div>
 <header class="article-head container"><span class="tag">Artigo</span><h1>{post.title}</h1><p>{post.excerpt}</p><div class="meta"><span>Por {post.author}</span><span>{post.readingTime} min de leitura</span><time datetime={post.publishedAt}>{published}</time></div></header>
-<div class:list={["article-cover", !post.coverUrl && "cover-1"]}>{post.coverUrl ? <img class="cover-image" src={post.coverUrl} alt={post.coverAlt ?? `Capa de ${post.title}`} width="1200" height="675" /> : <><img src="/images/dejotacode-icon.png" width="80" height="89" alt="" aria-hidden="true"/><span>DEJOTACODE / {post.category.toUpperCase()}</span></>}</div>
+<div class:list={["article-cover", !post.coverUrl && "cover-1"]}>
+  <img
+    class="cover-image"
+    src={post.coverUrl ?? '/images/editorial-cover-default.png'}
+    alt={post.coverAlt ?? `Capa de ${post.title}`}
+    width="1200"
+    height="675"
+  />
+</div>
 <div class="container share-row"><span>Compartilhe:</span><button type="button" data-share="native">Compartilhar</button><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonical.href)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><button type="button" data-share="copy">Copiar link</button><output data-share-status aria-live="polite"></output></div>
 <div class="container article-layout"><aside class="toc" aria-label="Índice do artigo"><strong>Neste artigo</strong>{post.sections.map((section)=><a href={`#${section.id}`}>{section.title}</a>)}</aside>
 <article class="prose">{post.sections.map((section)=><section id={section.id}><h2>{section.title}</h2>{section.paragraphs.map((paragraph)=><p>{paragraph}</p>)}{section.steps&&<ul>{section.steps.map((step)=><li>{step}</li>)}</ul>}{section.code&&<div class="code-block"><button type="button" data-copy-code>Copiar</button><pre><code>{section.code}</code></pre></div>}</section>)}<div class="author-box"><img src="/images/dejotacode-icon.png" width="46" height="51" alt="Símbolo DejotaCode"/><p><strong>Dejota</strong><br/>Criador do DejotaCode. Tecnologia explicada para quem está começando.</p></div></article>
@@ -31,5 +39,5 @@ document.querySelector('[data-share="copy"]')?.addEventListener('click',async()=
 document.querySelectorAll<HTMLButtonElement>('[data-copy-code]').forEach(button=>button.addEventListener('click',async()=>{const code=button.nextElementSibling?.textContent??'';await navigator.clipboard.writeText(code);button.textContent='Copiado';setTimeout(()=>button.textContent='Copiar',1800);}));
 </script></BaseLayout>
 <style>
-.article-cover{gap:18px;align-content:center}.article-cover img{position:relative;width:64px;height:auto;filter:brightness(0) invert(1);opacity:.9}.share-row{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:-38px;margin-bottom:38px;color:var(--muted);font-size:.82rem}.share-row button,.share-row a{padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:inherit;cursor:pointer}.share-row button:hover,.share-row a:hover{border-color:#9bbdf1;color:var(--blue)}.share-row output{min-width:70px;color:var(--blue)}.author-box img{width:46px;height:46px;object-fit:contain}.code-block pre{margin-bottom:0}@media(max-width:650px){.share-row{justify-content:flex-start;flex-wrap:wrap;margin-top:-32px}.article-cover img{width:50px}}
+.article-cover{gap:18px;align-content:center}.article-cover img.cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none;opacity:1}.share-row{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:-38px;margin-bottom:38px;color:var(--muted);font-size:.82rem}.share-row button,.share-row a{padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:inherit;cursor:pointer}.share-row button:hover,.share-row a:hover{border-color:#9bbdf1;color:var(--blue)}.share-row output{min-width:70px;color:var(--blue)}.author-box img{width:46px;height:46px;object-fit:contain}.code-block pre{margin-bottom:0}@media(max-width:650px){.share-row{justify-content:flex-start;flex-wrap:wrap;margin-top:-32px}.article-cover img.cover-image{width:100%}}
 </style>
