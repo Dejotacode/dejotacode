@@ -4,7 +4,7 @@ Plataforma educacional construída integralmente no ecossistema Cloudflare.
 
 ## Arquitetura
 
-- `site/`: Astro em modo estático (SSG), publicado por Cloudflare Workers Static Assets.
+- `site/`: Astro em modo estático (SSG), publicado pelo Cloudflare Pages.
 - `api/`: Hono em Cloudflare Workers, com D1 para dados e R2 para mídias.
 - `docs/`: instruções progressivas para desenvolvimento e produção.
 
