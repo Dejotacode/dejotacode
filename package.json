@@ -16,7 +16,7 @@
     "preflight:production": "node scripts/preflight-production.mjs",
     "deploy:production": "npm run preflight:production && npm run deploy:api:production && npm run deploy:site:production",
     "deploy:api:production": "wrangler d1 migrations apply DB --config api/wrangler.jsonc --env production --remote && wrangler deploy --config api/wrangler.jsonc --env production",
-    "deploy:site:production": "npm run build -w @dejotacode/site && wrangler deploy --config site/wrangler.jsonc",
+    "deploy:site:production": "npm run build -w @dejotacode/site && wrangler pages deploy site/dist --project-name dejota-code --branch main",
     "deploy:site": "npm run deploy -w @dejotacode/site",
     "deploy:api": "npm run deploy -w @dejotacode/api"
   },

@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name dejota-code --branch main"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
