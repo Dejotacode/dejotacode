@@ -1,17 +1,343 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import Brand from '../../components/Brand.astro'; import '../../styles/admin.css';
-const api=import.meta.env.PUBLIC_API_URL??'http://localhost:8787';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Brand from '../../components/Brand.astro';
+import '../../styles/admin.css';
+import '../../styles/admin-v2.css';
+
+const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
 ---
-<BaseLayout title="Painel editorial — DejotaCode" description="Área privada de gestão de conteúdo."><main class="admin-shell" data-api={api}><header><Brand/><span>CMS editorial</span></header><section class="login-panel" data-login><p class="eyebrow">Área privada</p><h1>Entrar no painel</h1><p>Use a conta criada pelo administrador ou por convite.</p><form><label>E-mail<input name="email" type="email" required autocomplete="username"/></label><label>Senha<input name="password" type="password" minlength="12" required autocomplete="current-password"/></label><button class="button" type="submit">Entrar</button><output aria-live="polite"></output></form></section><section class="dashboard" data-dashboard hidden><aside><Brand/><nav><button class="active" data-view="posts">Conteúdos</button><button data-view="editor">Novo conteúdo</button><button data-view="invite">Convidar editor</button></nav><button data-logout>Sair</button></aside><div class="workspace"><header><div><p class="eyebrow">Painel editorial</p><h1>Olá, <span data-user>editor</span></h1></div><button class="button" data-new>Novo conteúdo</button></header><section data-posts-view><h2>Conteúdos</h2><div class="cms-list" data-post-list><p>Carregando…</p></div></section><section data-editor-view hidden><h2>Novo conteúdo</h2><form class="editor-form" data-editor-form><div class="form-grid"><label>Título<input name="title" required minlength="5" maxlength="180"/></label><label>Slug<input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*"/></label><label>Tipo<select name="type"><option value="article">Artigo</option><option value="tutorial">Tutorial</option></select></label><label>Status<select name="status"><option value="draft">Rascunho</option><option value="review">Em revisão</option><option value="published">Publicado</option></select></label></div><label>Resumo<textarea name="excerpt" required minlength="10" maxlength="320" rows="3"></textarea></label><label>Conteúdo <small>Um parágrafo por linha; o primeiro título será “Conteúdo”.</small><textarea name="body" required rows="12"></textarea></label><button class="button" type="submit">Salvar conteúdo</button><output aria-live="polite"></output></form></section><section data-invite-view hidden><h2>Convidar editor</h2><form class="editor-form" data-invite-form><label>E-mail<input name="email" type="email" required/></label><label>Papel<select name="role"><option value="editor">Editor</option><option value="admin">Administrador</option></select></label><button class="button" type="submit">Gerar convite</button><output aria-live="polite"></output></form></section></div></section></main>
-<script>
-  const shell=document.querySelector<HTMLElement>('[data-api]')!;const api=shell.dataset.api;const login=document.querySelector<HTMLElement>('[data-login]')!;const dashboard=document.querySelector<HTMLElement>('[data-dashboard]')!;let csrf='';
-  const request=async(path:string,options:RequestInit={})=>{const response=await fetch(`${api}${path}`,{credentials:'include',...options,headers:{'Content-Type':'application/json','X-CSRF-Token':csrf,...options.headers}});const payload=await response.json();if(!response.ok)throw new Error(payload.error?.message??'Não foi possível concluir.');return payload.data;};
-  const show=(name:string)=>{document.querySelectorAll<HTMLElement>('[data-posts-view],[data-editor-view],[data-invite-view]').forEach(node=>node.hidden=true);document.querySelector<HTMLElement>(`[data-${name}-view]`)!.hidden=false;document.querySelectorAll('[data-view]').forEach(node=>node.classList.toggle('active',(node as HTMLElement).dataset.view===name));};
-  const loadPosts=async()=>{const list=document.querySelector<HTMLElement>('[data-post-list]')!;const data=await request('/api/cms/posts');list.replaceChildren();if(!data.items.length){list.innerHTML='<p>Nenhum conteúdo criado.</p>';return;}data.items.forEach((post:any)=>{const row=document.createElement('article');row.innerHTML=`<div><strong></strong><span></span></div><div><small></small><button>Arquivar</button></div>`;row.querySelector('strong')!.textContent=post.title;row.querySelector('span')!.textContent=post.slug;row.querySelector('small')!.textContent=`${post.type} · ${post.status}`;row.querySelector('button')!.addEventListener('click',async()=>{if(confirm('Arquivar este conteúdo?')){await request(`/api/cms/posts/${post.id}`,{method:'DELETE'});await loadPosts();}});list.append(row);});};
-  const enter=async()=>{const data=await request('/api/auth/session');csrf=data.csrf;document.querySelector<HTMLElement>('[data-user]')!.textContent=data.user.name;login.hidden=true;dashboard.hidden=false;await loadPosts();};enter().catch(()=>{});
-  login.querySelector('form')!.addEventListener('submit',async(event)=>{event.preventDefault();const form=event.currentTarget as HTMLFormElement;const output=form.querySelector('output')!;try{const data=await request('/api/auth/login',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(form)))});csrf=data.csrf;await enter();}catch(error){output.textContent=(error as Error).message;}});
-  document.querySelectorAll<HTMLButtonElement>('[data-view]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.view!)));document.querySelector('[data-new]')?.addEventListener('click',()=>show('editor'));
-  document.querySelector<HTMLFormElement>('[data-editor-form]')!.addEventListener('submit',async(event)=>{event.preventDefault();const form=event.currentTarget as HTMLFormElement;const values=Object.fromEntries(new FormData(form)) as Record<string,string>;const output=form.querySelector('output')!;try{await request('/api/cms/posts',{method:'POST',body:JSON.stringify({title:values.title,slug:values.slug,type:values.type,status:values.status,excerpt:values.excerpt,categoryId:null,content:[{id:'conteudo',title:'Conteúdo',paragraphs:(values.body??'').split('\n').filter(Boolean)}]})});form.reset();output.textContent='Conteúdo salvo.';await loadPosts();show('posts');}catch(error){output.textContent=(error as Error).message;}});
-  document.querySelector<HTMLFormElement>('[data-invite-form]')!.addEventListener('submit',async(event)=>{event.preventDefault();const form=event.currentTarget as HTMLFormElement;const output=form.querySelector('output')!;try{const data=await request('/api/auth/invite',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(form)))});const url=new URL('/admin/registro',location.origin);url.searchParams.set('token',data.inviteToken);output.textContent=`Convite: ${url.toString()}`;}catch(error){output.textContent=(error as Error).message;}});
-  document.querySelector('[data-logout]')?.addEventListener('click',async()=>{await request('/api/auth/logout',{method:'POST'});location.reload();});
-</script></BaseLayout>
+
+<BaseLayout title="Painel editorial — DejotaCode" description="Área privada de gestão de conteúdo.">
+  <main class="admin-shell" data-api={api}>
+    <header>
+      <Brand />
+      <span>CMS editorial</span>
+    </header>
+
+    <section class="login-panel" data-login>
+      <p class="eyebrow">Área privada</p>
+      <h1>Entrar no painel</h1>
+      <p>Use a conta criada pelo administrador ou por convite.</p>
+      <form>
+        <label>E-mail<input name="email" type="email" required autocomplete="username" /></label>
+        <label>Senha<input name="password" type="password" minlength="12" required autocomplete="current-password" /></label>
+        <button class="button" type="submit">Entrar</button>
+        <output aria-live="polite"></output>
+      </form>
+    </section>
+
+    <section class="dashboard" data-dashboard hidden>
+      <aside>
+        <Brand />
+        <nav>
+          <button class="active" data-view="posts">Conteúdos</button>
+          <button data-view="editor">Novo conteúdo</button>
+          <button data-view="invite">Convidar editor</button>
+        </nav>
+        <button data-logout>Sair</button>
+      </aside>
+
+      <div class="workspace">
+        <header>
+          <div>
+            <p class="eyebrow">Painel editorial</p>
+            <h1>Olá, <span data-user>editor</span></h1>
+          </div>
+          <button class="button" data-new>Novo conteúdo</button>
+        </header>
+
+        <section data-posts-view>
+          <h2>Conteúdos</h2>
+          <div class="cms-list" data-post-list><p>Carregando…</p></div>
+        </section>
+
+        <section data-editor-view hidden>
+          <h2 data-editor-title>Novo conteúdo</h2>
+          <form class="editor-form" data-editor-form>
+            <input name="postId" type="hidden" />
+            <div class="form-grid">
+              <label>Título<input name="title" required minlength="5" maxlength="180" /></label>
+              <label>Slug<input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
+              <label>
+                Categoria
+                <select name="categoryId" required>
+                  <option value="">Carregando categorias…</option>
+                </select>
+              </label>
+              <label>
+                Tipo
+                <select name="type">
+                  <option value="article">Artigo</option>
+                  <option value="tutorial">Tutorial</option>
+                </select>
+              </label>
+              <label>
+                Status
+                <select name="status">
+                  <option value="draft">Rascunho</option>
+                  <option value="review">Em revisão</option>
+                  <option value="published">Publicado</option>
+                </select>
+              </label>
+            </div>
+            <label>Resumo<textarea name="excerpt" required minlength="10" maxlength="320" rows="3"></textarea></label>
+            <label>
+              Conteúdo
+              <small>Escreva um parágrafo por bloco. Linhas vazias separam os parágrafos.</small>
+              <textarea name="body" required rows="12"></textarea>
+            </label>
+            <div class="editor-actions">
+              <button class="button" type="submit" data-save>Salvar conteúdo</button>
+              <button class="secondary-button" type="button" data-cancel-edit hidden>Cancelar edição</button>
+            </div>
+            <output aria-live="polite"></output>
+          </form>
+        </section>
+
+        <section data-invite-view hidden>
+          <h2>Convidar editor</h2>
+          <form class="editor-form" data-invite-form>
+            <label>E-mail<input name="email" type="email" required /></label>
+            <label>
+              Papel
+              <select name="role">
+                <option value="editor">Editor</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </label>
+            <button class="button" type="submit">Gerar convite</button>
+            <output aria-live="polite"></output>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    type CmsSection = { paragraphs?: string[] };
+    type CmsPost = {
+      id: number;
+      title: string;
+      slug: string;
+      type: 'article' | 'tutorial';
+      status: 'draft' | 'review' | 'published' | 'archived';
+      excerpt: string;
+      content: CmsSection[];
+      categoryId: number;
+    };
+
+    const shell = document.querySelector<HTMLElement>('[data-api]')!;
+    const api = shell.dataset.api;
+    const login = document.querySelector<HTMLElement>('[data-login]')!;
+    const dashboard = document.querySelector<HTMLElement>('[data-dashboard]')!;
+    const editorForm = document.querySelector<HTMLFormElement>('[data-editor-form]')!;
+    const categorySelect = editorForm.elements.namedItem('categoryId') as HTMLSelectElement;
+    const editorTitle = document.querySelector<HTMLElement>('[data-editor-title]')!;
+    const saveButton = document.querySelector<HTMLButtonElement>('[data-save]')!;
+    const cancelButton = document.querySelector<HTMLButtonElement>('[data-cancel-edit]')!;
+
+    let csrf = '';
+    let posts: CmsPost[] = [];
+
+    const request = async (path: string, options: RequestInit = {}) => {
+      const response = await fetch(`${api}${path}`, {
+        credentials: 'include',
+        ...options,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrf,
+          ...options.headers
+        }
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error?.message ?? 'Não foi possível concluir.');
+      return payload.data;
+    };
+
+    const show = (name: string) => {
+      document.querySelectorAll<HTMLElement>('[data-posts-view],[data-editor-view],[data-invite-view]')
+        .forEach((node) => node.hidden = true);
+      document.querySelector<HTMLElement>(`[data-${name}-view]`)!.hidden = false;
+      document.querySelectorAll<HTMLElement>('[data-view]')
+        .forEach((node) => node.classList.toggle('active', node.dataset.view === name));
+    };
+
+    const resetEditor = () => {
+      editorForm.reset();
+      (editorForm.elements.namedItem('postId') as HTMLInputElement).value = '';
+      editorTitle.textContent = 'Novo conteúdo';
+      saveButton.textContent = 'Salvar conteúdo';
+      cancelButton.hidden = true;
+      editorForm.querySelector('output')!.textContent = '';
+    };
+
+    const loadCategories = async () => {
+      const data = await request('/api/categories');
+      categorySelect.replaceChildren(new Option('Selecione uma categoria', ''));
+      data.items.forEach((category: { id?: number; name: string; slug: string }, index: number) => {
+        const id = category.id ?? index + 1;
+        categorySelect.add(new Option(category.name, String(id)));
+      });
+    };
+
+    const editPost = (post: CmsPost) => {
+      resetEditor();
+      (editorForm.elements.namedItem('postId') as HTMLInputElement).value = String(post.id);
+      (editorForm.elements.namedItem('title') as HTMLInputElement).value = post.title;
+      (editorForm.elements.namedItem('slug') as HTMLInputElement).value = post.slug;
+      (editorForm.elements.namedItem('categoryId') as HTMLSelectElement).value = String(post.categoryId);
+      (editorForm.elements.namedItem('type') as HTMLSelectElement).value = post.type;
+      (editorForm.elements.namedItem('status') as HTMLSelectElement).value = post.status;
+      (editorForm.elements.namedItem('excerpt') as HTMLTextAreaElement).value = post.excerpt;
+      (editorForm.elements.namedItem('body') as HTMLTextAreaElement).value = post.content
+        .flatMap((section) => section.paragraphs ?? [])
+        .join('\n\n');
+      editorTitle.textContent = 'Editar conteúdo';
+      saveButton.textContent = 'Atualizar conteúdo';
+      cancelButton.hidden = false;
+      show('editor');
+    };
+
+    const loadPosts = async () => {
+      const list = document.querySelector<HTMLElement>('[data-post-list]')!;
+      const data = await request('/api/cms/posts');
+      posts = data.items;
+      list.replaceChildren();
+
+      if (!posts.length) {
+        list.innerHTML = '<p>Nenhum conteúdo criado.</p>';
+        return;
+      }
+
+      posts.forEach((post) => {
+        const row = document.createElement('article');
+        const identity = document.createElement('div');
+        const title = document.createElement('strong');
+        const slug = document.createElement('span');
+        const actions = document.createElement('div');
+        const meta = document.createElement('small');
+        const edit = document.createElement('button');
+        const archive = document.createElement('button');
+
+        actions.className = 'cms-actions';
+        title.textContent = post.title;
+        slug.textContent = post.slug;
+        meta.textContent = `${post.type} · ${post.status}`;
+        edit.textContent = 'Editar';
+        edit.className = 'edit-button';
+        archive.textContent = post.status === 'archived' ? 'Arquivado' : 'Arquivar';
+        archive.disabled = post.status === 'archived';
+
+        edit.addEventListener('click', () => editPost(post));
+        archive.addEventListener('click', async () => {
+          if (!confirm('Arquivar este conteúdo?')) return;
+          await request(`/api/cms/posts/${post.id}`, { method: 'DELETE' });
+          await loadPosts();
+        });
+
+        identity.append(title, slug);
+        actions.append(meta, edit, archive);
+        row.append(identity, actions);
+        list.append(row);
+      });
+    };
+
+    const enter = async () => {
+      const data = await request('/api/auth/session');
+      csrf = data.csrf;
+      document.querySelector<HTMLElement>('[data-user]')!.textContent = data.user.name;
+      login.hidden = true;
+      dashboard.hidden = false;
+      await Promise.all([loadCategories(), loadPosts()]);
+    };
+
+    enter().catch(() => {});
+
+    login.querySelector('form')!.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget as HTMLFormElement;
+      const output = form.querySelector('output')!;
+      try {
+        const data = await request('/api/auth/login', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+        csrf = data.csrf;
+        await enter();
+      } catch (error) {
+        output.textContent = (error as Error).message;
+      }
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (button.dataset.view === 'editor') resetEditor();
+        show(button.dataset.view!);
+      });
+    });
+
+    document.querySelector('[data-new]')?.addEventListener('click', () => {
+      resetEditor();
+      show('editor');
+    });
+
+    cancelButton.addEventListener('click', () => {
+      resetEditor();
+      show('posts');
+    });
+
+    editorForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget as HTMLFormElement;
+      const values = Object.fromEntries(new FormData(form)) as Record<string, string>;
+      const output = form.querySelector('output')!;
+      const id = values.postId;
+      const paragraphs = (values.body ?? '')
+        .split(/\n\s*\n/)
+        .map((paragraph) => paragraph.trim())
+        .filter(Boolean);
+
+      try {
+        await request(id ? `/api/cms/posts/${id}` : '/api/cms/posts', {
+          method: id ? 'PUT' : 'POST',
+          body: JSON.stringify({
+            title: values.title,
+            slug: values.slug,
+            type: values.type,
+            status: values.status,
+            excerpt: values.excerpt,
+            categoryId: Number(values.categoryId),
+            content: [{ id: 'conteudo', title: 'Conteúdo', paragraphs }]
+          })
+        });
+        resetEditor();
+        await loadPosts();
+        show('posts');
+      } catch (error) {
+        output.textContent = (error as Error).message;
+      }
+    });
+
+    document.querySelector<HTMLFormElement>('[data-invite-form]')!.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const form = event.currentTarget as HTMLFormElement;
+      const output = form.querySelector('output')!;
+      try {
+        const data = await request('/api/auth/invite', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+        const url = new URL('/admin/registro', location.origin);
+        url.searchParams.set('token', data.inviteToken);
+        output.textContent = `Convite: ${url.toString()}`;
+      } catch (error) {
+        output.textContent = (error as Error).message;
+      }
+    });
+
+    document.querySelector('[data-logout]')?.addEventListener('click', async () => {
+      await request('/api/auth/logout', { method: 'POST' });
+      location.reload();
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,58 @@
+.cms-actions,
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.cms-actions small {
+  margin-right: 4px;
+}
+
+.cms-actions .edit-button,
+.secondary-button {
+  border-color: #a9c8f8;
+  color: var(--blue);
+}
+
+.cms-actions button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.secondary-button {
+  padding: 11px 16px;
+  border: 1px solid #a9c8f8;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+  font-weight: 700;
+}
+
+.form-grid {
+  grid-template-columns: 2fr 2fr 1.35fr 1fr 1fr;
+}
+
+@media (max-width: 1000px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .cms-list article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cms-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
