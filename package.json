@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "workspaces": ["site", "api"],
+  "workspaces": [
+    "site",
+    "api"
+  ],
   "scripts": {
     "dev:site": "npm run dev -w @dejotacode/site",
     "dev:api": "npm run dev -w @dejotacode/api",
@@ -17,5 +20,15 @@
     "deploy:site": "npm run deploy -w @dejotacode/site",
     "deploy:api": "npm run deploy -w @dejotacode/api"
   },
-  "engines": { "node": ">=22.0.0" }
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "overrides": {
+    "sharp": "0.35.4"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20260908.1": true
+  }
 }
