@@ -65,6 +65,13 @@ const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
                 </select>
               </label>
               <label>
+                Imagem de capa
+                <select name="coverKey">
+                  <option value="">Sem capa</option>
+                </select>
+                <small><a href="/admin/midias">Abrir biblioteca de mídias</a></small>
+              </label>
+              <label>
                 Tipo
                 <select name="type">
                   <option value="article">Artigo</option>
@@ -124,6 +131,7 @@ const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
       excerpt: string;
       content: CmsSection[];
       categoryId: number;
+      coverKey: string | null;
     };
 
     const shell = document.querySelector<HTMLElement>('[data-api]')!;
@@ -132,6 +140,7 @@ const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
     const dashboard = document.querySelector<HTMLElement>('[data-dashboard]')!;
     const editorForm = document.querySelector<HTMLFormElement>('[data-editor-form]')!;
     const categorySelect = editorForm.elements.namedItem('categoryId') as HTMLSelectElement;
+    const coverSelect = editorForm.elements.namedItem('coverKey') as HTMLSelectElement;
     const editorTitle = document.querySelector<HTMLElement>('[data-editor-title]')!;
     const saveButton = document.querySelector<HTMLButtonElement>('[data-save]')!;
     const cancelButton = document.querySelector<HTMLButtonElement>('[data-cancel-edit]')!;
@@ -180,12 +189,23 @@ const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
       });
     };
 
+    const loadMedia = async () => {
+      const data = await request('/api/media/cms');
+      coverSelect.replaceChildren(new Option('Sem capa', ''));
+      data.items
+        .filter((item: { contentType: string }) => item.contentType.startsWith('image/'))
+        .forEach((item: { objectKey: string; altText: string }) => {
+          coverSelect.add(new Option(item.altText || item.objectKey, item.objectKey));
+        });
+    };
+
     const editPost = (post: CmsPost) => {
       resetEditor();
       (editorForm.elements.namedItem('postId') as HTMLInputElement).value = String(post.id);
       (editorForm.elements.namedItem('title') as HTMLInputElement).value = post.title;
       (editorForm.elements.namedItem('slug') as HTMLInputElement).value = post.slug;
       (editorForm.elements.namedItem('categoryId') as HTMLSelectElement).value = String(post.categoryId);
+      coverSelect.value = post.coverKey ?? '';
       (editorForm.elements.namedItem('type') as HTMLSelectElement).value = post.type;
       (editorForm.elements.namedItem('status') as HTMLSelectElement).value = post.status;
       (editorForm.elements.namedItem('excerpt') as HTMLTextAreaElement).value = post.excerpt;
@@ -248,7 +268,7 @@ const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
       document.querySelector<HTMLElement>('[data-user]')!.textContent = data.user.name;
       login.hidden = true;
       dashboard.hidden = false;
-      await Promise.all([loadCategories(), loadPosts()]);
+      await Promise.all([loadCategories(), loadMedia(), loadPosts()]);
     };
 
     enter().catch(() => {});
@@ -307,6 +327,7 @@ const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
             status: values.status,
             excerpt: values.excerpt,
             categoryId: Number(values.categoryId),
+            coverKey: values.coverKey || null,
             content: [{ id: 'conteudo', title: 'Conteúdo', paragraphs }]
           })
         });

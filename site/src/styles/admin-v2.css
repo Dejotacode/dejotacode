@@ -6,6 +6,11 @@
   flex-wrap: wrap;
 }
 
+.editor-form select[name="coverKey"] + small a {
+  color: var(--blue);
+  font-weight: 700;
+}
+
 .cms-actions small {
   margin-right: 4px;
 }

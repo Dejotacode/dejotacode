@@ -20,7 +20,7 @@ for (const file of files) {
   requirePattern(/<link rel="canonical" href="https:\/\/dejotacode\.com\.br\//, 'URL canônica ausente');
   requirePattern(/<link rel="alternate" type="application\/rss\+xml"/, 'descoberta do RSS ausente');
   requirePattern(/<meta property="og:url" content="https:\/\/dejotacode\.com\.br\//, 'URL OpenGraph ausente');
-  requirePattern(/<meta name="twitter:card" content="summary"/, 'metadado para compartilhamento ausente');
+  requirePattern(/<meta name="twitter:card" content="summary(?:_large_image)?"/, 'metadado para compartilhamento ausente');
   requirePattern(/<title>[^<]+<\/title>/, 'título ausente');
   requirePattern(/<main(?:\s|>)/, 'região principal ausente');
   requirePattern(/class="skip-link"/, 'atalho para conteúdo ausente');

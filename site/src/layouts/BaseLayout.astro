@@ -5,8 +5,8 @@ import '../styles/forms.css';
 import '../styles/pagination.css';
 import '../styles/accessibility.css';
 
-interface Props { title: string; description: string; noindex?: boolean; jsonLd?: Record<string, unknown>; }
-const { title, description, jsonLd, noindex = Astro.url.pathname.startsWith('/admin') } = Astro.props;
+interface Props { title: string; description: string; noindex?: boolean; jsonLd?: Record<string, unknown>; image?: string; }
+const { title, description, jsonLd, image, noindex = Astro.url.pathname.startsWith('/admin') } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 const defaultJsonLd = Astro.url.pathname === '/' ? {'@context':'https://schema.org','@type':'WebSite',name:'DejotaCode',url:canonical.toString(),description} : undefined;
 const safeJsonLd = jsonLd || defaultJsonLd ? JSON.stringify(jsonLd ?? defaultJsonLd).replaceAll('<', '\\u003c') : undefined;
@@ -27,9 +27,12 @@ const safeJsonLd = jsonLd || defaultJsonLd ? JSON.stringify(jsonLd ?? defaultJso
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="DejotaCode" />
-    <meta name="twitter:card" content="summary" />
+    {image && <meta property="og:image" content={image} />}
+    {image && <meta property="og:image:alt" content={title} />}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
     {safeJsonLd && <script is:inline type="application/ld+json" set:html={safeJsonLd} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
