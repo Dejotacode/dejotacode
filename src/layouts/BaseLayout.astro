@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Tecnologia explicada de forma simples, prática e responsável.",
+  image = "/assets/brand/opengraph-dark.png",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const pageTitle = title === "DejotaCode" ? title : `${title} | DejotaCode`;
+---
+
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0d12" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site ?? Astro.url.origin)} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/dejotacode-app-icon.svg" />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem("dejotacode-theme");
+        const preferred = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.dataset.theme = saved === "light" || saved === "dark" ? saved : preferred;
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <slot />
+    <script>
+      requestAnimationFrame(() => document.documentElement.classList.add("theme-ready"));
+
+      const syncThemeControls = () => {
+        const isLight = document.documentElement.dataset.theme === "light";
+        document.querySelectorAll("[data-theme-toggle]").forEach((control) => {
+          control.setAttribute("aria-pressed", String(isLight));
+          control.setAttribute("aria-label", isLight ? "Ativar tema escuro" : "Ativar tema claro");
+        });
+      };
+
+      syncThemeControls();
+
+      document.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const toggle = target.closest("[data-theme-toggle]");
+        if (!toggle) return;
+
+        const root = document.documentElement;
+        const next = root.dataset.theme === "light" ? "dark" : "light";
+        root.dataset.theme = next;
+        localStorage.setItem("dejotacode-theme", next);
+        syncThemeControls();
+      });
+    </script>
+  </body>
+</html>

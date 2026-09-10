@@ -1,0 +1,58 @@
+:root {
+  color-scheme: dark;
+  --font-heading: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-code: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  --color-bg: #0a0d12;
+  --color-surface: #121721;
+  --color-surface-soft: #0e131b;
+  --color-footer: #080b10;
+  --color-border: #1e2633;
+  --color-border-strong: #405069;
+  --color-text: #f7f8fa;
+  --color-text-muted: #aab6ca;
+  --color-text-subtle: #8491a6;
+  --color-accent: #00e5ff;
+  --color-accent-hover: #3aecff;
+  --color-accent-strong: #28e9ff;
+  --color-accent-contrast: #031014;
+  --color-focus: #66efff;
+  --color-glow: rgb(0 229 255 / 10%);
+  --color-shadow: rgb(0 0 0 / 28%);
+
+  --brand-symbol: url("/assets/brand/dejotacode-symbol-dark.svg");
+  --grid-line: rgb(68 88 111 / 25%);
+  --grid-pattern: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+
+  --container: 73.75rem;
+  --space-page: clamp(1rem, 4vw, 2rem);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --shadow-card: 0 20px 60px var(--color-shadow);
+  --transition-fast: 180ms ease;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f1f5f9;
+  --color-footer: #eef3f8;
+  --color-border: #d7e0ea;
+  --color-border-strong: #8190a5;
+  --color-text: #111827;
+  --color-text-muted: #4a5870;
+  --color-text-subtle: #64748b;
+  --color-accent: #00cbe5;
+  --color-accent-hover: #00bad3;
+  --color-accent-strong: #00778a;
+  --color-accent-contrast: #031014;
+  --color-focus: #006f80;
+  --color-glow: rgb(0 172 195 / 10%);
+  --color-shadow: rgb(15 23 42 / 12%);
+  --brand-symbol: url("/assets/brand/dejotacode-symbol-light.svg");
+  --grid-line: rgb(65 83 105 / 13%);
+}

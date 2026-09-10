@@ -1,0 +1,36 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<a class:list={["brand", { "brand--compact": compact }]} href="/" aria-label="DejotaCode — página inicial">
+  <span class="brand__symbol" aria-hidden="true"></span>
+  {!compact && <span class="brand__name">DejotaCode</span>}
+</a>
+
+<style>
+  .brand {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--color-text);
+    font: 700 1.18rem/1 var(--font-heading);
+    text-decoration: none;
+  }
+
+  .brand__symbol {
+    width: 2.25rem;
+    height: 2.25rem;
+    flex: none;
+    background: center / contain no-repeat var(--brand-symbol);
+  }
+
+  .brand--compact .brand__symbol {
+    width: 2rem;
+    height: 2rem;
+  }
+</style>
