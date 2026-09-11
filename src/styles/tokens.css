@@ -18,6 +18,7 @@
   --color-accent-strong: #28e9ff;
   --color-accent-contrast: #031014;
   --color-focus: #66efff;
+  --color-error: #ef6b73;
   --color-glow: rgb(0 229 255 / 10%);
   --color-shadow: rgb(0 0 0 / 28%);
 
@@ -51,6 +52,7 @@
   --color-accent-strong: #00778a;
   --color-accent-contrast: #031014;
   --color-focus: #006f80;
+  --color-error: #b4232f;
   --color-glow: rgb(0 172 195 / 10%);
   --color-shadow: rgb(15 23 42 / 12%);
   --brand-symbol: url("/assets/brand/dejotacode-symbol-light.svg");
