@@ -7,16 +7,21 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  robots?: string;
 }
 
 const {
   title,
   description = "Tecnologia explicada de forma simples, prática e responsável.",
   image = "/assets/brand/opengraph-dark.png",
+  robots = "index, follow",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const pageTitle = title === "DejotaCode" ? title : `${title} | DejotaCode`;
+const pageTitle =
+  title === "DejotaCode" || title.endsWith("| DejotaCode")
+    ? title
+    : `${title} | DejotaCode`;
 const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
 ---
 
@@ -27,6 +32,7 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <meta name="theme-color" content="#0a0d12" />
     <meta name="application-name" content="DejotaCode" />
     <meta name="apple-mobile-web-app-title" content="DejotaCode" />
