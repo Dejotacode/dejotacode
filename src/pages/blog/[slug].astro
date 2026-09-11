@@ -67,7 +67,7 @@ const articleSchema = {
 <BaseLayout title={`${post.data.title} | DejotaCode`} description={post.data.description}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
-  <main id="conteudo" class="article-page">
+  <main id="conteudo" tabindex="-1" class="article-page">
     <article>
       <header class="article-hero container">
         <nav class="breadcrumbs" aria-label="Navegação estrutural">

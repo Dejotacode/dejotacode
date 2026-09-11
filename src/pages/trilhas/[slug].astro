@@ -19,7 +19,7 @@ const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.dur
 ---
 
 <BaseLayout title={`${trail.title} | DejotaCode`} description={trail.description}>
-  <main id="conteudo" class="trail-detail" data-trail={trail.slug}>
+  <main id="conteudo" tabindex="-1" class="trail-detail" data-trail={trail.slug}>
     <header class="trail-detail__hero container">
       <nav class="trail-breadcrumbs" aria-label="Navegação estrutural">
         <a href="/">Início</a><span aria-hidden="true">/</span>

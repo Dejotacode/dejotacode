@@ -5,7 +5,7 @@ import "../../styles/newsletter.css";
 const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
 ---
 <BaseLayout title="Newsletter | DejotaCode" description="Receba explicações simples, tutoriais práticos e recursos para começar em tecnologia.">
-  <main id="conteudo" class="institutional-page newsletter-page">
+  <main id="conteudo" tabindex="-1" class="institutional-page newsletter-page">
     <section class="newsletter-hero"><div class="container newsletter-hero__grid">
       <div class="newsletter-intro"><p class="eyebrow">NEWSLETTER DEJOTACODE</p><h1>Um próximo passo claro na sua caixa de entrada.</h1><p>Receba explicações simples, tutoriais práticos e recursos escolhidos para quem está começando em tecnologia.</p><ul><li>Conteúdo direto, sem jargões desnecessários</li><li>Guias para aprender e colocar em prática</li><li>Sem promessas fáceis e sem spam</li></ul></div>
       <section class="newsletter-signup" id="inscricao" aria-labelledby="signup-title"><p class="eyebrow">01 · INSCREVA-SE</p><h2 id="signup-title">Comece gratuitamente</h2><p>Informe seu nome e e-mail. Você poderá cancelar quando quiser.</p>
