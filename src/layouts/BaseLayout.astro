@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
@@ -58,7 +60,9 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <Header />
     <slot />
+    <Footer />
     <script>
       requestAnimationFrame(() => document.documentElement.classList.add("theme-ready"));
 

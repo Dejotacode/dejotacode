@@ -1,0 +1,138 @@
+---
+import Brand from "./Brand.astro";
+
+const pathname = Astro.url.pathname;
+const navigation = [
+  { href: "/", label: "Início" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/trilhas/", label: "Trilhas" },
+  { href: "/portfolio/", label: "Portfólio" },
+  { href: "/recursos/", label: "Recursos" },
+  { href: "/sobre/", label: "Sobre" },
+];
+
+const isCurrent = (href: string) =>
+  href === "/" ? pathname === href : pathname.startsWith(href);
+---
+
+<header class="site-header" data-site-header>
+  <div class="header-container">
+    <Brand />
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      {navigation.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header-actions">
+      <form class="search-form" action="/busca/" role="search">
+        <label class="sr-only" for="header-search">Buscar conteúdos</label>
+        <button class="search-submit" type="submit" aria-label="Abrir busca">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        </button>
+        <input id="header-search" name="q" type="search" placeholder="Buscar conteúdos..." autocomplete="off" />
+      </form>
+
+      <button class="icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Ativar tema claro">
+        <svg class="sun-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 14.4A8 8 0 0 1 9.6 3.5 8.5 8.5 0 1 0 20.5 14.4Z"></path></svg>
+      </button>
+
+      <button class="icon-button menu-button" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+        <span class="sr-only">Abrir menu</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-navigation" data-mobile-panel hidden>
+    <form class="mobile-search" action="/busca/" role="search">
+      <label for="mobile-search">Buscar conteúdos</label>
+      <div>
+        <input id="mobile-search" name="q" type="search" placeholder="O que você quer aprender?" />
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+    <nav aria-label="Navegação mobile">
+      {navigation.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <a class="mobile-cta" href="/newsletter/">Começar agora</a>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector("[data-site-header]");
+  const menuToggle = header?.querySelector("[data-menu-toggle]");
+  const mobilePanel = header?.querySelector("[data-mobile-panel]");
+
+  const closeMenu = () => {
+    if (!(menuToggle instanceof HTMLButtonElement) || !(mobilePanel instanceof HTMLElement)) return;
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.querySelector(".sr-only")?.replaceChildren("Abrir menu");
+    mobilePanel.hidden = true;
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    if (!(menuToggle instanceof HTMLButtonElement) || !(mobilePanel instanceof HTMLElement)) return;
+    const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+    menuToggle.setAttribute("aria-expanded", String(willOpen));
+    menuToggle.querySelector(".sr-only")?.replaceChildren(willOpen ? "Fechar menu" : "Abrir menu");
+    mobilePanel.hidden = !willOpen;
+  });
+  mobilePanel?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      if (menuToggle instanceof HTMLButtonElement) menuToggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 960) closeMenu();
+  });
+</script>
+
+<style>
+  .site-header { position: sticky; z-index: 100; top: 0; width: 100%; border-bottom: 1px solid var(--color-border); background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(18px); }
+  .header-container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; margin-inline: auto; }
+  .desktop-nav { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.65rem); }
+  .desktop-nav a { position: relative; color: var(--color-text-muted); font-size: .88rem; font-weight: 600; text-decoration: none; }
+  .desktop-nav a:hover, .desktop-nav a[aria-current="page"] { color: var(--color-text); }
+  .desktop-nav a[aria-current="page"]::after { content: ""; position: absolute; right: 0; bottom: -1.55rem; left: 0; height: 2px; background: var(--color-accent); }
+  .header-actions { display: flex; align-items: center; gap: .55rem; }
+  .search-form { min-width: 13rem; display: flex; align-items: center; gap: .5rem; padding: 0 .75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+  .search-form:focus-within { border-color: var(--color-focus); }
+  .search-form svg { width: 1rem; flex: none; fill: none; stroke: var(--color-text-subtle); stroke-width: 1.8; }
+  .search-submit { display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: var(--color-text-subtle); cursor: pointer; }
+  .search-form input { width: 100%; min-height: 2.6rem; border: 0; outline: 0; background: transparent; color: var(--color-text); font-size: .82rem; }
+  .search-form input::placeholder { color: var(--color-text-subtle); }
+  .icon-button { width: 2.75rem; height: 2.75rem; display: inline-grid; place-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; }
+  .icon-button:hover { border-color: var(--color-accent-strong); color: var(--color-accent-strong); }
+  .icon-button svg { width: 1.2rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.8; }
+  .moon-icon, .menu-button { display: none; }
+  :global([data-theme="light"]) .sun-icon { display: none; }
+  :global([data-theme="light"]) .moon-icon { display: block; }
+  .mobile-panel { border-top: 1px solid var(--color-border); padding: 1rem var(--space-page) 1.25rem; background: var(--color-bg); }
+  .mobile-panel[hidden] { display: none; }
+  .mobile-search label { color: var(--color-text-muted); font-size: .8rem; font-weight: 700; }
+  .mobile-search div { display: grid; grid-template-columns: 1fr auto; gap: .5rem; margin-top: .4rem; }
+  .mobile-search input, .mobile-search button { min-height: 2.75rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); }
+  .mobile-search input { min-width: 0; padding: 0 .85rem; background: var(--color-surface); color: var(--color-text); }
+  .mobile-search button { padding: 0 1rem; background: var(--color-accent); color: var(--color-accent-contrast); font-weight: 700; }
+  .mobile-panel nav { margin-top: 1rem; border-top: 1px solid var(--color-border); }
+  .mobile-panel nav a { display: block; padding: .8rem .25rem; border-bottom: 1px solid var(--color-border); color: var(--color-text-muted); text-decoration: none; }
+  .mobile-panel nav a[aria-current="page"] { color: var(--color-accent-strong); }
+  .mobile-cta { min-height: 2.75rem; display: grid; place-items: center; margin-top: 1rem; border-radius: var(--radius-md); background: var(--color-accent); color: var(--color-accent-contrast); font-weight: 700; text-decoration: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+  @media (max-width: 68rem) { .search-form { min-width: 0; width: 2.75rem; height: 2.75rem; padding: 0; justify-content: center; } .search-form input { position: absolute; width: 1px; height: 1px; opacity: 0; } .search-submit { width: 100%; height: 100%; } }
+  @media (max-width: 60rem) { .desktop-nav, .search-form { display: none; } .menu-button { display: inline-grid; } }
+  @media (max-width: 30rem) { .header-container :global(.brand__name) { display: none; } }
+</style>
