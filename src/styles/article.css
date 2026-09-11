@@ -25,7 +25,7 @@
 }
 
 .breadcrumbs a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .article-hero h1 {
@@ -48,7 +48,7 @@
   gap: 0.65rem;
   margin-top: 1.75rem;
   color: var(--color-text-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.78rem;
 }
 
@@ -69,14 +69,14 @@
     linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
   background-size: auto, 2rem 2rem, 2rem 2rem;
   color: var(--color-text-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .article-cover strong {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-size: clamp(3rem, 7vw, 6rem);
 }
 
@@ -121,7 +121,7 @@
 }
 
 .article-aside a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .article-content {
@@ -154,7 +154,7 @@
 }
 
 .article-content a {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .article-content code {
@@ -163,7 +163,7 @@
   border-radius: 0.3rem;
   background: var(--color-surface);
   color: var(--color-text);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.9em;
 }
 
@@ -244,7 +244,7 @@
 .copy-feedback {
   min-height: 1.5em;
   margin-bottom: 0;
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-size: 0.85rem;
 }
 

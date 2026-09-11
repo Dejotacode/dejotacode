@@ -47,8 +47,8 @@
 }
 
 .trail-benefits strong {
-  color: var(--color-accent);
-  font-family: var(--font-mono);
+  color: var(--color-accent-strong);
+  font-family: var(--font-code);
 }
 
 .trails-list,
@@ -102,7 +102,7 @@
   justify-content: space-between;
   gap: 1rem;
   color: var(--color-text-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -115,8 +115,8 @@
   place-items: center;
   margin-top: 2rem;
   border: 1px solid var(--color-border);
-  color: var(--color-accent);
-  font-family: var(--font-mono);
+  color: var(--color-accent-strong);
+  font-family: var(--font-code);
 }
 
 .trail-card h2 {
@@ -142,7 +142,7 @@
 
 .trail-card > a {
   margin-top: 1rem;
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-weight: 800;
 }
 
@@ -184,7 +184,7 @@
   gap: 0.65rem;
   margin-top: 1.5rem;
   color: var(--color-text-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.78rem;
 }
 
@@ -207,7 +207,7 @@
 }
 
 .trail-progress-card__top strong {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-size: 1.5rem;
 }
 
@@ -269,8 +269,8 @@
 }
 
 .lesson__number {
-  color: var(--color-accent);
-  font-family: var(--font-mono);
+  color: var(--color-accent-strong);
+  font-family: var(--font-code);
   font-size: 1.25rem;
 }
 
@@ -278,7 +278,7 @@
   display: flex;
   gap: 1rem;
   color: var(--color-text-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.72rem;
   text-transform: uppercase;
 }
@@ -294,7 +294,7 @@
 }
 
 .lesson h3 a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .lesson p {

@@ -94,8 +94,8 @@
     linear-gradient(var(--color-border) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
   background-size: 2rem 2rem;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
+  color: var(--color-accent-strong);
+  font-family: var(--font-code);
   font-size: 1.4rem;
 }
 
@@ -115,14 +115,14 @@
   flex-wrap: wrap;
   gap: 0.55rem;
   color: var(--color-text-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .post-card__eyebrow a {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   text-decoration: none;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .post-card h2 a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .post-card__body > p {

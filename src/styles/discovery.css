@@ -27,7 +27,7 @@
 }
 
 .discovery-page .breadcrumbs a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .discovery-page .breadcrumbs [aria-current="page"] {
@@ -48,13 +48,13 @@
 }
 
 .discovery-summary strong {
-  color: var(--color-accent);
-  font-family: var(--font-mono);
+  color: var(--color-accent-strong);
+  font-family: var(--font-code);
   font-size: 1.8rem;
 }
 
 .discovery-link {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-weight: 700;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .search-page__form:focus-within > div {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
 
