@@ -64,7 +64,11 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${post.data.title} | DejotaCode`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} | DejotaCode`}
+  description={post.data.description}
+  ogType="article"
+>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <main id="conteudo" tabindex="-1" class="article-page">
