@@ -1,0 +1,66 @@
+---
+import PostCard from "../../components/PostCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  categories,
+  categoryHref,
+  getPublishedPosts,
+} from "../../lib/content";
+import "../../styles/editorial.css";
+
+const posts = await getPublishedPosts();
+const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+---
+
+<BaseLayout
+  title="Blog | DejotaCode"
+  description="Tutoriais e artigos sobre Linux, programação, inteligência artificial e tecnologia prática, explicados sem complicação."
+>
+  <main id="conteudo" class="editorial-page">
+    <header class="editorial-hero container">
+      <p class="eyebrow">APRENDA NO SEU RITMO</p>
+      <h1>Conteúdo prático,<br />sem complicação.</h1>
+      <p class="editorial-hero__lead">
+        Tutoriais passo a passo, explicações simples e experiências reais para
+        você usar tecnologia com mais confiança.
+      </p>
+
+      <nav class="category-list" aria-label="Categorias do blog">
+        {
+          Object.entries(categories).map(([slug, label]) => (
+            <a href={categoryHref(slug as keyof typeof categories)}>{label}</a>
+          ))
+        }
+      </nav>
+    </header>
+
+    {
+      featuredPost && (
+        <section class="editorial-section container" aria-labelledby="destaque-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">COMECE POR AQUI</p>
+              <h2 id="destaque-title">Conteúdo em destaque</h2>
+            </div>
+          </div>
+          <PostCard post={featuredPost} featured />
+        </section>
+      )
+    }
+
+    <section class="editorial-section container" aria-labelledby="recentes-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PUBLICAÇÕES</p>
+          <h2 id="recentes-title">Conteúdos recentes</h2>
+        </div>
+        <p>{posts.length} conteúdos publicados</p>
+      </div>
+
+      <div class="post-grid">
+        {remainingPosts.map((post) => <PostCard post={post} />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

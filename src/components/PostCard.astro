@@ -1,0 +1,42 @@
+---
+import type { Post } from "../lib/content";
+import {
+  categories,
+  categoryHref,
+  formatPostDate,
+  postHref,
+} from "../lib/content";
+
+interface Props {
+  post: Post;
+  featured?: boolean;
+}
+
+const { post, featured = false } = Astro.props;
+const category = post.data.category;
+---
+
+<article class:list={["post-card", { "post-card--featured": featured }]}>
+  <div class="post-card__visual" aria-hidden="true">
+    <span>{post.data.type === "tutorial" ? "</>" : "01"}</span>
+  </div>
+
+  <div class="post-card__body">
+    <div class="post-card__eyebrow">
+      <a href={categoryHref(category)}>{categories[category]}</a>
+      <span aria-hidden="true">•</span>
+      <span>{post.data.type}</span>
+    </div>
+
+    <h2><a href={postHref(post)}>{post.data.title}</a></h2>
+    <p>{post.data.description}</p>
+
+    <div class="post-card__meta">
+      <time datetime={post.data.publishedAt.toISOString()}>
+        {formatPostDate(post.data.publishedAt)}
+      </time>
+      <span>{post.data.readingTime} min de leitura</span>
+      <span>{post.data.difficulty}</span>
+    </div>
+  </div>
+</article>
