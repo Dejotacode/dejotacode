@@ -1,0 +1,195 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+const encodedMessage = encodeURIComponent(`${title} ${url}`);
+
+const networks = [
+  {
+    name: "LinkedIn",
+    href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    icon: "linkedin",
+  },
+  {
+    name: "WhatsApp",
+    href: `https://wa.me/?text=${encodedMessage}`,
+    icon: "whatsapp",
+  },
+  {
+    name: "Facebook",
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    icon: "facebook",
+  },
+  {
+    name: "X",
+    href: `https://x.com/intent/post?text=${encodedTitle}&url=${encodedUrl}`,
+    icon: "x",
+  },
+  {
+    name: "Telegram",
+    href: `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`,
+    icon: "telegram",
+  },
+] as const;
+---
+
+<section class="social-share" aria-labelledby="share-title">
+  <div>
+    <p class="eyebrow">COMPARTILHE CONHECIMENTO</p>
+    <h2 id="share-title">Este conteúdo ajudou?</h2>
+    <p>Envie para alguém que também pode aproveitar este conteúdo.</p>
+  </div>
+
+  <div class="social-share__actions">
+    {
+      networks.map((network) => (
+        <a
+          class="social-share__button"
+          href={network.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Compartilhar no ${network.name} — abre em uma nova aba`}
+          title={`Compartilhar no ${network.name}`}
+        >
+          {network.icon === "linkedin" && (
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.2V18M6.5 5.4v.1M10.5 18v-5.4c0-2.9 4-3.1 4 0V18M10.5 9.8V18M3.5 3.5h17v17h-17z" /></svg>
+          )}
+          {network.icon === "whatsapp" && (
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 11.6Z" /><path d="M9 8.5c.3 2.4 2.1 4.2 4.5 4.8l1.1-1.1 2 .9-.3 1.8c-4.9 1-9-3.1-8.1-8l1.8-.3.9 2Z" /></svg>
+          )}
+          {network.icon === "facebook" && (
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h2.8l.4-3H14V8.1c0-.9.3-1.6 1.7-1.6h1.7V3.8c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H8v3h2.7v8" /></svg>
+          )}
+          {network.icon === "x" && (
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 4 14 16M19 4 5 20" /></svg>
+          )}
+          {network.icon === "telegram" && (
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 17-7-4 16-5.5-5-3.5 3v-4l9-7-11 6Z" /></svg>
+          )}
+          <span>{network.name}</span>
+        </a>
+      ))
+    }
+
+    <button
+      class="social-share__button social-share__button--copy"
+      type="button"
+      data-copy-url
+      aria-label="Copiar link do artigo"
+      title="Copiar link"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1.1l2-2A5 5 0 0 0 12 4l-1.2 1.2M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.2-1.2" /></svg>
+      <span>Copiar link</span>
+    </button>
+  </div>
+
+  <p class="social-share__feedback" data-copy-feedback aria-live="polite"></p>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".social-share").forEach((share) => {
+    const button = share.querySelector<HTMLButtonElement>("[data-copy-url]");
+    const feedback = share.querySelector<HTMLElement>("[data-copy-feedback]");
+
+    button?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        if (feedback) feedback.textContent = "Link copiado.";
+      } catch {
+        if (feedback) feedback.textContent = "Não foi possível copiar o link.";
+      }
+    });
+  });
+</script>
+
+<style>
+  .social-share {
+    margin-top: 3rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .social-share h2 {
+    margin: 0.4rem 0 0;
+    color: var(--color-text);
+  }
+
+  .social-share > div > p:last-child {
+    margin: 0.75rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .social-share__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-share__button {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.65rem;
+    background: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: 0.88rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .social-share__button:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .social-share__button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  .social-share__button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .social-share__feedback {
+    min-height: 1.5em;
+    margin: 0.7rem 0 0;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+  }
+
+  .social-share__button span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    border: 0;
+    white-space: nowrap;
+  }
+</style>

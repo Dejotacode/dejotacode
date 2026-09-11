@@ -1,0 +1,153 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import SocialShare from "../../components/SocialShare.astro";
+import {
+  categories,
+  categoryHref,
+  formatPostDate,
+  getPublishedPosts,
+  postHref,
+  postSlug,
+} from "../../lib/content";
+import "../../styles/article.css";
+import "../../styles/editorial.css";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: postSlug(post) },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const allPosts = await getPublishedPosts();
+const relatedPosts = allPosts
+  .filter(
+    (candidate) =>
+      candidate.id !== post.id && candidate.data.category === post.data.category,
+  )
+  .slice(0, 2);
+
+const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
+const categoryLabel = categories[post.data.category];
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.publishedAt.toISOString(),
+  ...(post.data.updatedAt
+    ? { dateModified: post.data.updatedAt.toISOString() }
+    : {}),
+  mainEntityOfPage: canonicalUrl.href,
+  author: {
+    "@type": "Person",
+    name: "Dejota",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "DejotaCode",
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/assets/brand/icon-512.png", canonicalUrl).href,
+    },
+  },
+};
+---
+
+<BaseLayout title={`${post.data.title} | DejotaCode`} description={post.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <main id="conteudo" class="article-page">
+    <article>
+      <header class="article-hero container">
+        <nav class="breadcrumbs" aria-label="Navegação estrutural">
+          <a href="/">Início</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <a href={categoryHref(post.data.category)}>{categoryLabel}</a>
+        </nav>
+
+        <div class="article-hero__content">
+          <p class="eyebrow">{categoryLabel} · {post.data.type}</p>
+          <h1>{post.data.title}</h1>
+          <p class="article-hero__description">{post.data.description}</p>
+
+          <div class="article-meta">
+            <span>Por Dejota</span>
+            <time datetime={post.data.publishedAt.toISOString()}>
+              {formatPostDate(post.data.publishedAt)}
+            </time>
+            <span>{post.data.readingTime} min de leitura</span>
+            <span>{post.data.difficulty}</span>
+          </div>
+        </div>
+
+        <div class="article-cover" aria-hidden="true">
+          <span class="article-cover__label">GUIA PRÁTICO</span>
+          <strong>{post.data.type === "tutorial" ? "</>" : "01"}</strong>
+          <span>{categoryLabel}</span>
+        </div>
+      </header>
+
+      <div class="article-layout container">
+        <aside class="article-aside" aria-label="Sumário do artigo">
+          <div class="article-aside__sticky">
+            <p class="article-aside__title">Neste conteúdo</p>
+            {
+              headings.length > 0 ? (
+                <ol>
+                  {headings
+                    .filter((heading) => heading.depth === 2)
+                    .map((heading) => (
+                      <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+                    ))}
+                </ol>
+              ) : (
+                <p>Leitura direta e prática.</p>
+              )
+            }
+          </div>
+        </aside>
+
+        <div class="article-content">
+          <Content />
+
+          <section class="article-tags" aria-label="Assuntos relacionados">
+            <strong>Assuntos:</strong>
+            {post.data.tags.map((tag) => <span>{tag}</span>)}
+          </section>
+
+          <SocialShare title={post.data.title} url={canonicalUrl.href} />
+        </div>
+      </div>
+    </article>
+
+    {
+      relatedPosts.length > 0 && (
+        <section class="related-section container" aria-labelledby="related-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CONTINUE APRENDENDO</p>
+              <h2 id="related-title">Conteúdos relacionados</h2>
+            </div>
+          </div>
+          <div class="post-grid">
+            {relatedPosts.map((relatedPost) => <PostCard post={relatedPost} />)}
+          </div>
+        </section>
+      )
+    }
+  </main>
+
+</BaseLayout>
