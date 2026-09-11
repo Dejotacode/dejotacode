@@ -1,0 +1,398 @@
+.trails-page,
+.trail-detail {
+  padding-bottom: clamp(5rem, 9vw, 9rem);
+}
+
+.trails-hero {
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+.trails-hero h1,
+.trail-detail__hero h1 {
+  max-width: 13ch;
+  margin: 0.8rem 0 1.2rem;
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.trails-hero > p:last-child,
+.trail-detail__hero > div > p {
+  max-width: 48rem;
+  color: var(--color-text-muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.trail-benefits {
+  border-block: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.trail-benefits .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.trail-benefits article {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 7rem;
+  padding: 1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.trail-benefits article:first-child {
+  border-left: 1px solid var(--color-border);
+}
+
+.trail-benefits strong {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.trails-list,
+.trail-lessons {
+  margin-top: clamp(4.5rem, 9vw, 8rem);
+}
+
+.trails-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.trails-heading h2,
+.trail-outcome h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.045em;
+}
+
+.trails-heading > p {
+  max-width: 28rem;
+  color: var(--color-text-muted);
+}
+
+.trails-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.trail-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 25rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.trail-card--available {
+  border-top: 3px solid var(--color-accent);
+}
+
+.trail-card__top,
+.trail-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.trail-card__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.trail-card h2 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  letter-spacing: -0.04em;
+}
+
+.trail-card > p {
+  color: var(--color-text-muted);
+}
+
+.trail-card__meta {
+  justify-content: flex-start;
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.trail-card__meta span + span::before {
+  content: "•";
+  margin-right: 1rem;
+}
+
+.trail-card > a {
+  margin-top: 1rem;
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+.trail-card__soon {
+  margin-top: auto;
+  color: var(--color-text-subtle);
+}
+
+.trail-detail__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.trail-breadcrumbs {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--color-text-subtle);
+  font-size: 0.9rem;
+}
+
+.trail-breadcrumbs a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.trail-breadcrumbs [aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.trail-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.trail-detail__meta span + span::before {
+  content: "•";
+  margin-right: 0.65rem;
+}
+
+.trail-progress-card {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.trail-progress-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trail-progress-card__top strong {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+.trail-progress {
+  height: 0.65rem;
+  margin: 1.25rem 0 0.8rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-border);
+}
+
+.trail-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 180ms ease;
+}
+
+.trail-progress-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.trail-outcome {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  border-block: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.trail-outcome p:last-child {
+  max-width: 50rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) 3rem;
+  gap: 1.25rem;
+  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.lesson.is-complete {
+  border-color: var(--color-accent);
+}
+
+.lesson__number {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+}
+
+.lesson__meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.lesson h3 {
+  margin: 0.5rem 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+}
+
+.lesson h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.lesson h3 a:hover {
+  color: var(--color-accent);
+}
+
+.lesson p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.lesson__check {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+}
+
+.lesson__check svg {
+  width: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.lesson__check[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.trail-privacy {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+}
+
+.trail-privacy p {
+  margin: 0.35rem 0 1rem;
+  color: var(--color-text-muted);
+}
+
+.trail-privacy button {
+  min-height: 44px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  .trail-benefits .container,
+  .trails-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trail-benefits article:nth-child(3) {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .trail-detail__hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .trails-hero,
+  .trail-detail__hero {
+    padding-block: 3rem;
+  }
+
+  .trail-benefits .container,
+  .trails-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trail-benefits article,
+  .trail-benefits article:first-child,
+  .trail-benefits article:nth-child(3) {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .trails-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .lesson {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+
+  .lesson__check {
+    grid-column: 2;
+  }
+}

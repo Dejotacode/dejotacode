@@ -1,0 +1,35 @@
+---
+import type { Trail } from "../data/trails";
+
+interface Props {
+  trail: Trail;
+}
+
+const { trail } = Astro.props;
+const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
+---
+
+<article class:list={["trail-card", { "trail-card--available": trail.available }]}>
+  <div class="trail-card__top">
+    <span>{trail.number}</span>
+    <span>{trail.available ? trail.level : "Em breve"}</span>
+  </div>
+
+  <span class="trail-card__icon" aria-hidden="true">{trail.icon}</span>
+  <h2>{trail.title}</h2>
+  <p>{trail.description}</p>
+
+  {
+    trail.available ? (
+      <>
+        <div class="trail-card__meta">
+          <span>{trail.lessons.length} etapas</span>
+          <span>{totalDuration} min</span>
+        </div>
+        <a href={`/trilhas/${trail.slug}/`}>Começar trilha <span aria-hidden="true">→</span></a>
+      </>
+    ) : (
+      <span class="trail-card__soon">Conteúdo em preparação</span>
+    )
+  }
+</article>

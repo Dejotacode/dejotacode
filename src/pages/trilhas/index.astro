@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TrailCard from "../../components/TrailCard.astro";
+import { trails } from "../../data/trails";
+import "../../styles/trails.css";
+---
+
+<BaseLayout
+  title="Trilhas de aprendizagem | DejotaCode"
+  description="Conteúdos organizados em sequência para aprender tecnologia desde o primeiro passo."
+>
+  <main id="conteudo" class="trails-page">
+    <header class="trails-hero container">
+      <p class="eyebrow">COMECE PELO CAMINHO CERTO</p>
+      <h1>Aprenda em sequência,<br />no seu ritmo.</h1>
+      <p>
+        Cada trilha transforma um assunto amplo em passos pequenos e ordenados.
+        Você sabe por onde começar e qual será o próximo conteúdo.
+      </p>
+    </header>
+
+    <section class="trail-benefits" aria-label="Como funcionam as trilhas">
+      <div class="container">
+        <article><strong>01</strong><span>Comece do básico</span></article>
+        <article><strong>02</strong><span>Pratique cada etapa</span></article>
+        <article><strong>03</strong><span>Acompanhe seu progresso</span></article>
+        <article><strong>04</strong><span>Avance com confiança</span></article>
+      </div>
+    </section>
+
+    <section class="trails-list container" aria-labelledby="trails-title">
+      <div class="trails-heading">
+        <div>
+          <p class="eyebrow">ESCOLHA UMA TRILHA</p>
+          <h2 id="trails-title">Rotas de aprendizagem</h2>
+        </div>
+        <p>Novas etapas serão publicadas gradualmente.</p>
+      </div>
+
+      <div class="trails-grid">
+        {trails.map((trail) => <TrailCard trail={trail} />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

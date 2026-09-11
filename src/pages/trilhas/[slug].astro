@@ -1,0 +1,176 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { availableTrails, type Trail } from "../../data/trails";
+import "../../styles/trails.css";
+
+export function getStaticPaths() {
+  return availableTrails.map((trail) => ({
+    params: { slug: trail.slug },
+    props: { trail },
+  }));
+}
+
+interface Props {
+  trail: Trail;
+}
+
+const { trail } = Astro.props;
+const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
+---
+
+<BaseLayout title={`${trail.title} | DejotaCode`} description={trail.description}>
+  <main id="conteudo" class="trail-detail" data-trail={trail.slug}>
+    <header class="trail-detail__hero container">
+      <nav class="trail-breadcrumbs" aria-label="Navegação estrutural">
+        <a href="/">Início</a><span aria-hidden="true">/</span>
+        <a href="/trilhas/">Trilhas</a><span aria-hidden="true">/</span>
+        <span aria-current="page">{trail.title}</span>
+      </nav>
+
+      <div>
+        <p class="eyebrow">TRILHA {trail.number} · {trail.level}</p>
+        <h1>{trail.title}</h1>
+        <p>{trail.description}</p>
+        <div class="trail-detail__meta">
+          <span>{trail.lessons.length} etapas</span>
+          <span>{totalDuration} min de leitura</span>
+          <span>Progresso local</span>
+        </div>
+      </div>
+
+      <div class="trail-progress-card">
+        <div class="trail-progress-card__top">
+          <span>Seu progresso</span>
+          <strong data-progress-percent>0%</strong>
+        </div>
+        <div
+          class="trail-progress"
+          role="progressbar"
+          aria-label="Progresso na trilha"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          data-progress-bar
+        ><span data-progress-fill></span></div>
+        <p data-progress-label>Comece pela primeira etapa.</p>
+      </div>
+    </header>
+
+    <section class="trail-outcome">
+      <div class="container">
+        <p class="eyebrow">OBJETIVO DA TRILHA</p>
+        <h2>O que você será capaz de fazer</h2>
+        <p>{trail.outcome}</p>
+      </div>
+    </section>
+
+    <section class="trail-lessons container" aria-labelledby="lessons-title">
+      <div class="trails-heading">
+        <div>
+          <p class="eyebrow">PASSO A PASSO</p>
+          <h2 id="lessons-title">Etapas da trilha</h2>
+        </div>
+        <p>Marque uma etapa depois de concluir a leitura.</p>
+      </div>
+
+      <ol class="lesson-list">
+        {
+          trail.lessons.map((lesson) => (
+            <li class="lesson" data-lesson={lesson.slug}>
+              <span class="lesson__number">{String(lesson.order).padStart(2, "0")}</span>
+              <div class="lesson__content">
+                <div class="lesson__meta">
+                  <span>{lesson.optional ? "Opcional" : "Essencial"}</span>
+                  <span>{lesson.duration} min</span>
+                </div>
+                <h3><a href={`/blog/${lesson.slug}/`}>{lesson.title}</a></h3>
+                <p>{lesson.description}</p>
+              </div>
+              <button
+                class="lesson__check"
+                type="button"
+                aria-pressed="false"
+                aria-label={`Marcar “${lesson.title}” como concluída`}
+                data-lesson-toggle
+              ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg></button>
+            </li>
+          ))
+        }
+      </ol>
+
+      <aside class="trail-privacy">
+        <strong>Seu progresso fica neste navegador.</strong>
+        <p>Não é necessário criar conta e nenhuma informação é enviada ao DejotaCode.</p>
+        <button type="button" data-progress-reset>Reiniciar progresso</button>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const root = document.querySelector<HTMLElement>("[data-trail]");
+
+    if (root) {
+      const storageKey = `dejotacode:trail:${root.dataset.trail}`;
+      const lessons = Array.from(root.querySelectorAll<HTMLElement>("[data-lesson]"));
+      const progressBar = root.querySelector<HTMLElement>("[data-progress-bar]");
+      const progressFill = root.querySelector<HTMLElement>("[data-progress-fill]");
+      const progressPercent = root.querySelector<HTMLElement>("[data-progress-percent]");
+      const progressLabel = root.querySelector<HTMLElement>("[data-progress-label]");
+      const resetButton = root.querySelector<HTMLButtonElement>("[data-progress-reset]");
+
+      const readProgress = (): string[] => {
+        try {
+          const saved = JSON.parse(localStorage.getItem(storageKey) ?? "[]");
+          return Array.isArray(saved) ? saved.filter((item) => typeof item === "string") : [];
+        } catch {
+          return [];
+        }
+      };
+
+      let completed = new Set(readProgress());
+
+      const renderProgress = () => {
+        lessons.forEach((lesson) => {
+          const slug = lesson.dataset.lesson ?? "";
+          const isCompleted = completed.has(slug);
+          const toggle = lesson.querySelector<HTMLButtonElement>("[data-lesson-toggle]");
+          lesson.classList.toggle("is-complete", isCompleted);
+          toggle?.setAttribute("aria-pressed", String(isCompleted));
+        });
+
+        const percentage = lessons.length
+          ? Math.round((completed.size / lessons.length) * 100)
+          : 0;
+
+        if (progressFill) progressFill.style.width = `${percentage}%`;
+        if (progressPercent) progressPercent.textContent = `${percentage}%`;
+        if (progressBar) progressBar.setAttribute("aria-valuenow", String(percentage));
+        if (progressLabel) {
+          progressLabel.textContent = percentage === 100
+            ? "Trilha concluída. Parabéns por chegar até aqui!"
+            : completed.size === 0
+              ? "Comece pela primeira etapa."
+              : `${completed.size} de ${lessons.length} etapas concluídas.`;
+        }
+      };
+
+      lessons.forEach((lesson) => {
+        const toggle = lesson.querySelector<HTMLButtonElement>("[data-lesson-toggle]");
+        toggle?.addEventListener("click", () => {
+          const slug = lesson.dataset.lesson ?? "";
+          completed.has(slug) ? completed.delete(slug) : completed.add(slug);
+          localStorage.setItem(storageKey, JSON.stringify([...completed]));
+          renderProgress();
+        });
+      });
+
+      resetButton?.addEventListener("click", () => {
+        completed = new Set();
+        localStorage.removeItem(storageKey);
+        renderProgress();
+      });
+
+      renderProgress();
+    }
+  </script>
+</BaseLayout>
