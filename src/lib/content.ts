@@ -11,6 +11,17 @@ export const categories = {
 
 export type CategorySlug = keyof typeof categories;
 
+export const categoryDescriptions: Record<CategorySlug, string> = {
+  programacao:
+    "Conceitos, ferramentas e projetos explicados passo a passo para quem está começando a programar.",
+  "linux-seguranca":
+    "Linux, privacidade e segurança digital com orientações práticas para usar a tecnologia com confiança.",
+  "inteligencia-artificial":
+    "Inteligência artificial aplicada aos estudos e ao trabalho de maneira útil, responsável e compreensível.",
+  "tecnologia-pratica":
+    "Soluções simples, escolhas de ferramentas e respostas para dúvidas comuns do dia a dia digital.",
+};
+
 export async function getPublishedPosts() {
   const posts = await getCollection("posts", ({ data }) => !data.draft);
 

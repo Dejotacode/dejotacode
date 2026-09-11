@@ -1,0 +1,134 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { categories, getPublishedPosts } from "../../lib/content";
+import "../../styles/editorial.css";
+import "../../styles/discovery.css";
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout
+  title="Buscar conteúdos | DejotaCode"
+  description="Encontre tutoriais e artigos publicados no DejotaCode."
+>
+  <main id="conteudo" class="editorial-page discovery-page search-page">
+    <header class="search-hero container">
+      <p class="eyebrow">ENCONTRE O PRÓXIMO PASSO</p>
+      <h1>O que você quer aprender?</h1>
+      <p>
+        Busque por um assunto, ferramenta ou dúvida. A pesquisa acontece somente
+        no seu navegador.
+      </p>
+
+      <form class="search-page__form" action="/busca/" role="search" data-search-form>
+        <label for="content-search">Buscar conteúdos</label>
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+          <input
+            id="content-search"
+            name="q"
+            type="search"
+            placeholder="Ex.: Linux, Git, segurança..."
+            autocomplete="off"
+            data-search-input
+          />
+          <button type="submit">Buscar</button>
+        </div>
+      </form>
+    </header>
+
+    <section class="search-results container" aria-labelledby="search-results-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RESULTADOS</p>
+          <h2 id="search-results-title">Conteúdos encontrados</h2>
+        </div>
+        <p data-search-count aria-live="polite">
+          {posts.length} conteúdos disponíveis
+        </p>
+      </div>
+
+      <div class="post-grid" data-search-results>
+        {
+          posts.map((post) => (
+            <div
+              class="search-result"
+              data-search-item
+              data-search-text={[
+                post.data.title,
+                post.data.description,
+                categories[post.data.category],
+                ...post.data.tags,
+              ].join(" ")}
+            >
+              <PostCard post={post} />
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="empty-state" data-search-empty hidden>
+        <p class="eyebrow">NENHUM RESULTADO</p>
+        <h2>Não encontramos esse assunto.</h2>
+        <p>Tente usar menos palavras ou procure por outro termo.</p>
+        <a class="button button-secondary" href="/blog/">Explorar todo o blog</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>("[data-search-form]");
+    const input = document.querySelector<HTMLInputElement>("[data-search-input]");
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-search-item]"),
+    );
+    const count = document.querySelector<HTMLElement>("[data-search-count]");
+    const empty = document.querySelector<HTMLElement>("[data-search-empty]");
+
+    const normalize = (value: string) =>
+      value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLocaleLowerCase("pt-BR")
+        .trim();
+
+    const updateResults = (rawQuery: string) => {
+      const query = normalize(rawQuery);
+      const terms = query.split(/\s+/).filter(Boolean);
+      let visible = 0;
+
+      items.forEach((item) => {
+        const searchableText = normalize(item.dataset.searchText ?? "");
+        const matches = terms.every((term) => searchableText.includes(term));
+        item.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      if (count) {
+        count.textContent = query
+          ? `${visible} ${visible === 1 ? "resultado" : "resultados"} para “${rawQuery.trim()}”`
+          : `${visible} conteúdos disponíveis`;
+      }
+
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    const initialQuery = new URLSearchParams(window.location.search).get("q") ?? "";
+    if (input) input.value = initialQuery;
+    updateResults(initialQuery);
+
+    input?.addEventListener("input", () => updateResults(input.value));
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const query = input?.value.trim() ?? "";
+      const nextUrl = query ? `/busca/?q=${encodeURIComponent(query)}` : "/busca/";
+      window.history.replaceState({}, "", nextUrl);
+      updateResults(query);
+    });
+  </script>
+</BaseLayout>

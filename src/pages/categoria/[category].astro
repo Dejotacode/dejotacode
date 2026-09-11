@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import {
+  categories,
+  categoryDescriptions,
+  getPublishedPosts,
+  type CategorySlug,
+} from "../../lib/content";
+import "../../styles/editorial.css";
+import "../../styles/discovery.css";
+
+export function getStaticPaths() {
+  return Object.entries(categories).map(([category, label]) => ({
+    params: { category },
+    props: { category: category as CategorySlug, label },
+  }));
+}
+
+interface Props {
+  category: CategorySlug;
+  label: string;
+}
+
+const { category, label } = Astro.props;
+const posts = (await getPublishedPosts()).filter(
+  (post) => post.data.category === category,
+);
+---
+
+<BaseLayout
+  title={`${label} | DejotaCode`}
+  description={categoryDescriptions[category]}
+>
+  <main id="conteudo" class="editorial-page discovery-page">
+    <header class="editorial-hero container">
+      <nav class="breadcrumbs" aria-label="Navegação estrutural">
+        <a href="/">Início</a>
+        <span aria-hidden="true">/</span>
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{label}</span>
+      </nav>
+
+      <p class="eyebrow">CATEGORIA</p>
+      <h1>{label}</h1>
+      <p class="editorial-hero__lead">{categoryDescriptions[category]}</p>
+
+      <div class="discovery-summary">
+        <strong>{posts.length}</strong>
+        <span>{posts.length === 1 ? "conteúdo publicado" : "conteúdos publicados"}</span>
+      </div>
+    </header>
+
+    <section class="editorial-section container" aria-labelledby="category-posts-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE O ASSUNTO</p>
+          <h2 id="category-posts-title">Publicações</h2>
+        </div>
+        <a class="discovery-link" href="/blog/">Ver todo o blog →</a>
+      </div>
+
+      {
+        posts.length > 0 ? (
+          <div class="post-grid">
+            {posts.map((post) => <PostCard post={post} />)}
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p class="eyebrow">EM PREPARAÇÃO</p>
+            <h2>Os primeiros conteúdos desta categoria estão a caminho.</h2>
+            <p>Enquanto isso, você pode explorar as outras publicações do DejotaCode.</p>
+            <a class="button button-primary" href="/blog/">Explorar o blog</a>
+          </div>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>
