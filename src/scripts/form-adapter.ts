@@ -70,7 +70,28 @@ export const preparePublicForm = (selector: string) => {
       if (!response.ok) throw new Error(responseError(response, payload));
       form.reset();
       setState(form, output, "success", payload.data?.message ?? form.dataset.success ?? "Enviado com sucesso.");
-      document.dispatchEvent(new CustomEvent("dejotacode:conversion", { detail: { type: form.dataset.conversion ?? "form_submit", campaign: String(body.resource ?? "") } }));
+
+      const conversion = form.dataset.conversion ?? "form_submit";
+      const campaign = String(body.resource ?? "");
+
+      if (conversion === "lead_submit") {
+        fetch(`${apiBase}/api/analytics`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event: conversion,
+            path: location.pathname,
+            campaign,
+          }),
+          keepalive: true,
+        }).catch(() => {});
+      }
+
+      document.dispatchEvent(
+        new CustomEvent("dejotacode:conversion", {
+          detail: { type: conversion, campaign },
+        }),
+      );
     } catch (error) {
       const message = error instanceof DOMException && error.name === "AbortError"
         ? "O envio demorou demais. Verifique sua conexão e tente novamente."
