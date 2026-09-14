@@ -7,6 +7,10 @@ const configs = {
     expectedApi:
       "https://dejotacode-api-preview.joceilton1989.workers.dev",
   },
+  production: {
+    expectedApi:
+      "https://api.dejotacode.com.br",
+  },
 };
 
 if (!mode || !configs[mode]) {
