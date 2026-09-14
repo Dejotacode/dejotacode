@@ -23,6 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Configuração local de desenvolvimento
-
+# Configurações locais por ambiente
 .env.local
+.env.*.local

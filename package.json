@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "build:preview": "npm run env:check:preview && astro build --mode preview",
+    "env:check:preview": "node scripts/validate-build-env.mjs preview"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
