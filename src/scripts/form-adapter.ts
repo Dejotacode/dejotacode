@@ -92,6 +92,20 @@ export const preparePublicForm = (selector: string) => {
           detail: { type: conversion, campaign },
         }),
       );
+
+      const successRedirect = form.dataset.successRedirect?.trim();
+      const safeRedirect =
+        successRedirect &&
+        successRedirect.startsWith("/") &&
+        !successRedirect.startsWith("//")
+          ? successRedirect
+          : null;
+
+      if (safeRedirect) {
+        window.setTimeout(() => {
+          window.location.assign(safeRedirect);
+        }, 700);
+      }
     } catch (error) {
       const message = error instanceof DOMException && error.name === "AbortError"
         ? "O envio demorou demais. Verifique sua conexão e tente novamente."

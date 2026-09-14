@@ -2,29 +2,276 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/institutional.css";
 import "../../styles/newsletter.css";
+
 const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
 ---
-<BaseLayout title="Newsletter | DejotaCode" description="Receba explicações simples, tutoriais práticos e recursos para começar em tecnologia.">
+
+<BaseLayout
+  title="Newsletter | DejotaCode"
+  description="Receba explicações simples, tutoriais práticos e recursos para começar em tecnologia."
+>
   <main id="conteudo" tabindex="-1" class="institutional-page newsletter-page">
-    <section class="newsletter-hero"><div class="container newsletter-hero__grid">
-      <div class="newsletter-intro"><p class="eyebrow">NEWSLETTER DEJOTACODE</p><h1>Um próximo passo claro na sua caixa de entrada.</h1><p>Receba explicações simples, tutoriais práticos e recursos escolhidos para quem está começando em tecnologia.</p><ul><li>Conteúdo direto, sem jargões desnecessários</li><li>Guias para aprender e colocar em prática</li><li>Sem promessas fáceis e sem spam</li></ul></div>
-      <section class="newsletter-signup" id="inscricao" aria-labelledby="signup-title"><p class="eyebrow">01 · INSCREVA-SE</p><h2 id="signup-title">Comece gratuitamente</h2><p>Informe seu nome e e-mail. Você poderá cancelar quando quiser.</p>
-        <form data-newsletter-form data-api-base={apiBase} data-endpoint="/api/leads" data-conversion="lead_submit" data-success="Inscrição realizada com sucesso.">
-          <div class="field"><label for="newsletter-name">Seu nome</label><input id="newsletter-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" /></div>
-          <div class="field"><label for="newsletter-email">Seu melhor e-mail</label><input id="newsletter-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="voce@exemplo.com" required /></div>
-          <input type="hidden" name="resource" value="newsletter-principal" />
-          <div class="form-trap" aria-hidden="true"><label for="newsletter-website">Não preencha este campo</label><input id="newsletter-website" name="website" tabindex="-1" autocomplete="off" /></div>
-          <label class="newsletter-consent"><input type="checkbox" name="consent" value="true" required /><span>Concordo em receber conteúdos e li a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</span></label>
-          <button class="button button-primary" type="submit">Quero receber a newsletter</button>
-          <output class="newsletter-status" aria-live="polite" aria-atomic="true"></output>
-        </form>
-      </section>
-    </div></section>
-    <section class="institutional-section newsletter-benefits-section container"><div class="institutional-heading"><div><p class="eyebrow">O QUE VOCÊ RECEBE</p><h2>Conteúdo para avançar sem se perder</h2></div><p>Cada edição terá um objetivo simples e um próximo passo possível.</p></div><div class="institutional-grid newsletter-benefits"><article class="institutional-card"><span>01</span><h3>Uma explicação</h3><p>Um conceito importante apresentado em linguagem acessível.</p></article><article class="institutional-card"><span>02</span><h3>Uma prática</h3><p>Uma pequena ação para transformar leitura em aprendizado.</p></article><article class="institutional-card"><span>03</span><h3>Um recurso</h3><p>Uma ferramenta, guia ou referência útil para continuar.</p></article></div></section>
-    <section class="statement"><div class="container newsletter-promise"><div><p class="eyebrow">NOSSO COMPROMISSO</p><h2>Respeito pelo seu tempo e pelos seus dados.</h2></div><div><p>As edições serão enviadas somente quando houver conteúdo relevante, no máximo uma vez por semana. Seu e-mail não será vendido e toda mensagem terá uma forma clara de cancelamento.</p><a class="text-link" href="/politica-de-privacidade/">Ler a Política de Privacidade <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="newsletter-hero">
+      <div class="container newsletter-hero__grid">
+        <div class="newsletter-intro">
+          <p class="eyebrow" data-newsletter-eyebrow>NEWSLETTER DEJOTACODE</p>
+
+          <h1 data-newsletter-title>
+            Um próximo passo claro na sua caixa de entrada.
+          </h1>
+
+          <p data-newsletter-description>
+            Receba explicações simples, tutoriais práticos e recursos escolhidos
+            para quem está começando em tecnologia.
+          </p>
+
+          <ul data-newsletter-benefits>
+            <li>Conteúdo direto, sem jargões desnecessários</li>
+            <li>Guias para aprender e colocar em prática</li>
+            <li>Sem promessas fáceis e sem spam</li>
+          </ul>
+        </div>
+
+        <section
+          class="newsletter-signup"
+          id="inscricao"
+          aria-labelledby="signup-title"
+        >
+          <p class="eyebrow" data-signup-eyebrow>01 · INSCREVA-SE</p>
+
+          <h2 id="signup-title" data-signup-title>
+            Comece gratuitamente
+          </h2>
+
+          <p data-signup-description>
+            Informe seu nome e e-mail. Você poderá cancelar quando quiser.
+          </p>
+
+          <form
+            data-newsletter-form
+            data-api-base={apiBase}
+            data-endpoint="/api/leads"
+            data-conversion="lead_submit"
+            data-success="Inscrição realizada com sucesso."
+          >
+            <div class="field">
+              <label for="newsletter-name">Seu nome</label>
+              <input
+                id="newsletter-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                minlength="2"
+                maxlength="100"
+              />
+            </div>
+
+            <div class="field">
+              <label for="newsletter-email">Seu melhor e-mail</label>
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                placeholder="voce@exemplo.com"
+                required
+              />
+            </div>
+
+            <input
+              type="hidden"
+              name="resource"
+              value="newsletter-principal"
+              data-newsletter-resource
+            />
+
+            <div class="form-trap" aria-hidden="true">
+              <label for="newsletter-website">
+                Não preencha este campo
+              </label>
+              <input
+                id="newsletter-website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <label class="newsletter-consent">
+              <input
+                type="checkbox"
+                name="consent"
+                value="true"
+                required
+              />
+
+              <span data-consent-copy>
+                Concordo em receber conteúdos e li a
+                <a href="/politica-de-privacidade/">
+                  Política de Privacidade
+                </a>.
+              </span>
+            </label>
+
+            <button
+              class="button button-primary"
+              type="submit"
+              data-submit-label
+            >
+              Quero receber a newsletter
+            </button>
+
+            <output
+              class="newsletter-status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></output>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section
+      class="institutional-section newsletter-benefits-section container"
+    >
+      <div class="institutional-heading">
+        <div>
+          <p class="eyebrow">O QUE VOCÊ RECEBE</p>
+          <h2>Conteúdo para avançar sem se perder</h2>
+        </div>
+
+        <p>
+          Cada edição terá um objetivo simples e um próximo passo possível.
+        </p>
+      </div>
+
+      <div class="institutional-grid newsletter-benefits">
+        <article class="institutional-card">
+          <span>01</span>
+          <h3>Uma explicação</h3>
+          <p>
+            Um conceito importante apresentado em linguagem acessível.
+          </p>
+        </article>
+
+        <article class="institutional-card">
+          <span>02</span>
+          <h3>Uma prática</h3>
+          <p>
+            Uma pequena ação para transformar leitura em aprendizado.
+          </p>
+        </article>
+
+        <article class="institutional-card">
+          <span>03</span>
+          <h3>Um recurso</h3>
+          <p>
+            Uma ferramenta, guia ou referência útil para continuar.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="container newsletter-promise">
+        <div>
+          <p class="eyebrow">NOSSO COMPROMISSO</p>
+          <h2>Respeito pelo seu tempo e pelos seus dados.</h2>
+        </div>
+
+        <div>
+          <p>
+            As edições serão enviadas somente quando houver conteúdo relevante,
+            no máximo uma vez por semana. Seu e-mail não será vendido e toda
+            mensagem terá uma forma clara de cancelamento.
+          </p>
+
+          <a
+            class="text-link"
+            href="/politica-de-privacidade/"
+          >
+            Ler a Política de Privacidade
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
   <script>
     import { preparePublicForm } from "../../scripts/form-adapter";
+
+    const GUIDE_RESOURCE = "guia-iniciante-tecnologia";
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedResource = params.get("resource");
+
+    if (requestedResource === GUIDE_RESOURCE) {
+      const eyebrow =
+        document.querySelector<HTMLElement>("[data-newsletter-eyebrow]");
+      const title =
+        document.querySelector<HTMLElement>("[data-newsletter-title]");
+      const description =
+        document.querySelector<HTMLElement>("[data-newsletter-description]");
+      const signupEyebrow =
+        document.querySelector<HTMLElement>("[data-signup-eyebrow]");
+      const signupTitle =
+        document.querySelector<HTMLElement>("[data-signup-title]");
+      const signupDescription =
+        document.querySelector<HTMLElement>("[data-signup-description]");
+      const resource =
+        document.querySelector<HTMLInputElement>("[data-newsletter-resource]");
+      const consent =
+        document.querySelector<HTMLElement>("[data-consent-copy]");
+      const submit =
+        document.querySelector<HTMLButtonElement>("[data-submit-label]");
+      const form =
+        document.querySelector<HTMLFormElement>("[data-newsletter-form]");
+
+      if (eyebrow) eyebrow.textContent = "GUIA GRATUITO";
+      if (title) {
+        title.textContent =
+          "Receba o Guia do Iniciante em Tecnologia.";
+      }
+
+      if (description) {
+        description.textContent =
+          "Um caminho simples para escolher o que aprender, organizar seus estudos e começar a construir algo de verdade sem se perder.";
+      }
+
+      if (signupEyebrow) {
+        signupEyebrow.textContent = "01 · RECEBA O GUIA";
+      }
+
+      if (signupTitle) {
+        signupTitle.textContent = "Envio gratuito";
+      }
+
+      if (signupDescription) {
+        signupDescription.textContent =
+          "Informe seu nome e e-mail para acessar o guia e continuar recebendo conteúdos do DejotaCode.";
+      }
+
+      if (resource) {
+        resource.value = GUIDE_RESOURCE;
+      }
+
+      if (form) {
+        form.dataset.successRedirect =
+          "/guia/iniciante-em-tecnologia/";
+      }
+
+      if (consent) {
+        consent.childNodes[0].textContent =
+          "Concordo em receber o guia e conteúdos do DejotaCode e li a ";
+      }
+
+      if (submit) {
+        submit.textContent = "Quero receber o guia";
+      }
+    }
+
     preparePublicForm("[data-newsletter-form]");
   </script>
 </BaseLayout>

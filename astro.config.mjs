@@ -8,7 +8,10 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        page !== "https://dejotacode.com.br/busca/",
+        ![
+          "https://dejotacode.com.br/busca/",
+          "https://dejotacode.com.br/guia/iniciante-em-tecnologia/",
+        ].includes(page),
     }),
   ],
 });
