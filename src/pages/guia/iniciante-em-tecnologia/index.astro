@@ -1,196 +1,167 @@
 ---
 import "../../../styles/institutional.css";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { guide } from "../../../data/guide";
 ---
 
 <BaseLayout
-  title="Guia do Iniciante em Tecnologia | DejotaCode"
-  description="Um caminho simples para sair do zero, organizar seus estudos e começar a construir projetos de verdade."
-  robots="noindex, follow"
+  title={guide.meta.title}
+  description={guide.meta.description}
+  robots={guide.meta.robots}
 >
-
   <main id="conteudo" tabindex="-1" class="institutional-page">
     <header class="institutional-hero container">
-      <p class="eyebrow">GUIA DO INICIANTE EM TECNOLOGIA</p>
+      <p class="eyebrow">{guide.hero.eyebrow}</p>
 
-      <h1>Um caminho simples para sair do zero sem se perder.</h1>
+      <h1>{guide.hero.title}</h1>
 
-      <p>
-        Este guia foi criado para quem está começando em tecnologia e precisa
-        de clareza para escolher o que aprender, organizar uma rotina possível
-        e colocar o conhecimento em prática.
-      </p>
+      <p>{guide.hero.description}</p>
     </header>
 
     <section class="institutional-section container">
       <div class="institutional-heading">
         <div>
-          <p class="eyebrow">ANTES DE COMEÇAR</p>
-          <h2>Você não precisa aprender tudo de uma vez.</h2>
+          <p class="eyebrow">{guide.beforeStart.eyebrow}</p>
+          <h2>{guide.beforeStart.title}</h2>
         </div>
 
-        <p>
-          O objetivo deste material é ajudar você a encontrar um próximo passo
-          claro, sem promessas fáceis e sem excesso de ferramentas.
-        </p>
+        <p>{guide.beforeStart.description}</p>
       </div>
 
       <div class="institutional-grid">
-        <article class="institutional-card">
-          <span>01</span>
-          <h3>Defina seu primeiro objetivo</h3>
-          <p>
-            Antes de escolher cursos ou tecnologias, decida o que você quer
-            conseguir fazer nos próximos meses.
-          </p>
-        </article>
-
-        <article class="institutional-card">
-          <span>02</span>
-          <h3>Escolha um caminho inicial</h3>
-          <p>
-            Programação, Linux, segurança, inteligência artificial ou uso
-            prático de tecnologia podem ser portas de entrada diferentes.
-          </p>
-        </article>
-
-        <article class="institutional-card">
-          <span>03</span>
-          <h3>Monte uma rotina possível</h3>
-          <p>
-            Consistência vale mais que intensidade. Uma rotina pequena que você
-            consegue manter é melhor que um plano impossível de seguir.
-          </p>
-        </article>
+        {
+          guide.beforeStart.cards.map((card) => (
+            <article class="institutional-card">
+              <span>{card.number}</span>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </article>
+          ))
+        }
       </div>
     </section>
 
     <section class="statement">
       <div class="container">
-        <p class="eyebrow">O QUE APRENDER PRIMEIRO</p>
+        <p class="eyebrow">{guide.fundamentals.eyebrow}</p>
 
-        <h2>Construa fundamentos antes de acumular ferramentas.</h2>
+        <h2>{guide.fundamentals.title}</h2>
 
-        <p>
-          Aprenda a pesquisar, entender lógica básica, usar o terminal,
-          organizar seus projetos com Git e GitHub e ler documentação.
-          Use inteligência artificial como apoio para estudar, revisar e
-          experimentar — não como substituto do seu aprendizado.
-        </p>
+        <p>{guide.fundamentals.description}</p>
       </div>
     </section>
 
     <section class="institutional-section container">
       <div class="institutional-heading">
         <div>
-          <p class="eyebrow">PRIMEIRO PROJETO</p>
-          <h2>Aprender fazendo muda tudo.</h2>
+          <p class="eyebrow">{guide.firstProject.eyebrow}</p>
+          <h2>{guide.firstProject.title}</h2>
         </div>
 
-        <p>
-          Escolha algo pequeno, termine, publique e documente o que aprendeu.
-          Seu primeiro projeto não precisa impressionar ninguém. Ele precisa
-          ensinar você a concluir.
-        </p>
+        <p>{guide.firstProject.description}</p>
       </div>
     </section>
 
     <section class="institutional-section container">
       <div class="institutional-heading">
         <div>
-          <p class="eyebrow">ERROS COMUNS</p>
-          <h2>Evite complicar o começo.</h2>
+          <p class="eyebrow">{guide.commonMistakes.eyebrow}</p>
+          <h2>{guide.commonMistakes.title}</h2>
         </div>
       </div>
 
       <div class="institutional-grid">
-        <article class="institutional-card">
-          <span>01</span>
-          <h3>Trocar de caminho toda semana</h3>
-          <p>
-            Dê tempo suficiente para um assunto fazer sentido antes de
-            abandonar e começar outro.
-          </p>
-        </article>
+        {
+          guide.commonMistakes.cards.map((card) => (
+            <article class="institutional-card">
+              <span>{card.number}</span>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-        <article class="institutional-card">
-          <span>02</span>
-          <h3>Copiar sem entender</h3>
-          <p>
-            Exemplos ajudam, mas tente explicar com suas próprias palavras o
-            que cada parte faz.
-          </p>
-        </article>
+    <section class="institutional-section container">
+      <div class="institutional-heading">
+        <div>
+          <p class="eyebrow">{guide.aiForLearning.eyebrow}</p>
+          <h2>{guide.aiForLearning.title}</h2>
+        </div>
 
-        <article class="institutional-card">
-          <span>03</span>
-          <h3>Esperar estar pronto</h3>
-          <p>
-            Você aprende muito mais quando começa a construir antes de se
-            sentir completamente preparado.
-          </p>
-        </article>
+        <p>{guide.aiForLearning.description}</p>
+      </div>
+
+      <div class="institutional-grid">
+        {
+          guide.aiForLearning.principles.map((principle) => (
+            <article class="institutional-card">
+              <span>{principle.number}</span>
+              <h3>{principle.title}</h3>
+              <p>{principle.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="institutional-section container">
+      <div class="institutional-heading">
+        <div>
+          <p class="eyebrow">{guide.checklist.eyebrow}</p>
+          <h2>{guide.checklist.title}</h2>
+        </div>
+
+        <p>{guide.checklist.description}</p>
+      </div>
+
+      <div class="institutional-card wide-card">
+        <ul>
+          {guide.checklist.items.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     </section>
 
     <section class="statement">
       <div class="container">
-        <p class="eyebrow">PLANO DE 30 DIAS</p>
+        <p class="eyebrow">{guide.plan.eyebrow}</p>
 
-        <h2>Um mês para sair do zero e criar movimento.</h2>
+        <h2>{guide.plan.title}</h2>
 
         <div class="institutional-grid">
-          <article class="institutional-card">
-            <span>SEMANA 1</span>
-            <h3>Fundamentos</h3>
-            <p>
-              Defina seu objetivo, escolha uma trilha e conheça as ferramentas
-              básicas.
-            </p>
-          </article>
-
-          <article class="institutional-card">
-            <span>SEMANA 2</span>
-            <h3>Prática</h3>
-            <p>
-              Faça exercícios pequenos e repita os conceitos até começar a
-              reconhecer padrões.
-            </p>
-          </article>
-
-          <article class="institutional-card">
-            <span>SEMANA 3</span>
-            <h3>Projeto</h3>
-            <p>
-              Escolha um projeto simples e transforme o aprendizado em algo
-              concreto.
-            </p>
-          </article>
-
-          <article class="institutional-card">
-            <span>SEMANA 4</span>
-            <h3>Publicar e revisar</h3>
-            <p>
-              Termine, documente, publique e anote o que deseja aprender em
-              seguida.
-            </p>
-          </article>
+          {
+            guide.plan.weeks.map((week) => (
+              <article class="institutional-card">
+                <span>{week.label}</span>
+                <h3>{week.title}</h3>
+                <p>{week.description}</p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <section class="institutional-section container">
       <div class="notice">
-        <strong>Seu próximo passo</strong>
+        <strong>{guide.nextStep.title}</strong>
+
+        <p>{guide.nextStep.description}</p>
 
         <p>
-          Você não precisa aprender tudo. Precisa apenas saber qual é o próximo
-          passo.
+          <a
+            class="button button-primary"
+            href="/downloads/guia-do-iniciante-em-tecnologia.pdf"
+            download
+          >
+            Baixar o guia em PDF
+          </a>
         </p>
 
         <p>
-          <a class="button button-primary" href="/trilhas/">
-            Começar minha primeira trilha
+          <a class="button" href={guide.nextStep.cta.href}>
+            {guide.nextStep.cta.label}
           </a>
         </p>
       </div>

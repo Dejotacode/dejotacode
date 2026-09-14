@@ -1,0 +1,166 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.95]{helvet}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\geometry{
+  a4paper,
+  top=2.2cm,
+  bottom=2.2cm,
+  left=2.15cm,
+  right=2.15cm
+}
+
+\definecolor{dejotacarbon}{HTML}{0A0D12}
+\definecolor{dejotagraphite}{HTML}{121721}
+\definecolor{dejotaslate}{HTML}{1E2633}
+\definecolor{dejotacyan}{HTML}{00B8CC}
+\definecolor{dejotatext}{HTML}{111827}
+\definecolor{dejotamuted}{HTML}{4A5870}
+\definecolor{dejotaborder}{HTML}{D7E0EA}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=dejotacyan,
+  urlcolor=dejotacyan,
+  pdftitle={$title$},
+  pdfauthor={$author$}
+}
+
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.72em}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{%
+  \small\color{dejotamuted}\textbf{DEJOTACODE}
+}
+\fancyhead[R]{%
+  \small\color{dejotamuted}GUIA DO INICIANTE
+}
+\fancyfoot[C]{%
+  \small\color{dejotamuted}\thepage
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{%
+  \hbox to\headwidth{%
+    \color{dejotaborder}\leaders\hrule height \headrulewidth\hfill
+  }
+}
+
+\makeatletter
+
+\renewcommand\section{%
+  \@startsection{section}{1}{0pt}%
+  {2.2ex plus .5ex minus .2ex}%
+  {0.8ex}%
+  {\normalfont\LARGE\bfseries\color{dejotatext}}%
+}
+
+\renewcommand\subsection{%
+  \@startsection{subsection}{2}{0pt}%
+  {1.9ex plus .4ex minus .2ex}%
+  {0.6ex}%
+  {\normalfont\Large\bfseries\color{dejotatext}}%
+}
+
+\renewcommand\subsubsection{%
+  \@startsection{subsubsection}{3}{0pt}%
+  {1.5ex plus .3ex minus .2ex}%
+  {0.4ex}%
+  {\normalfont\large\bfseries\color{dejotatext}}%
+}
+
+\makeatother
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0.25em}
+  \setlength{\parskip}{0pt}
+}
+
+\newcommand{\dejotadivider}{%
+  \vspace{0.5em}
+  {\color{dejotacyan}\rule{2.8cm}{2pt}}
+  \vspace{0.8em}
+}
+
+\begin{document}
+
+% =================================================
+% CAPA
+% =================================================
+
+\pagecolor{dejotacarbon}
+\color{white}
+\thispagestyle{empty}
+
+\vspace*{1.2cm}
+
+\begin{flushleft}
+
+\includegraphics[
+  width=2.1cm
+]{public/assets/brand/dejotacode-app-icon.png}
+
+\vspace{1.6cm}
+
+{\small\bfseries\color{dejotacyan}
+GUIA GRATUITO / DEJOTACODE
+}
+
+\vspace{0.7cm}
+
+{\Huge\bfseries
+$title$
+}
+
+\vspace{0.9cm}
+
+{\Large
+Um caminho simples para sair do zero sem se perder.
+}
+
+\vfill
+
+{\large
+Clareza para escolher o que aprender, organizar sua rotina
+e transformar estudo em prática.
+}
+
+\vspace{1.8cm}
+
+{\small\color{dejotacyan}
+FEITO PARA QUEM CONSTRÓI O FUTURO.
+}
+
+\vspace{0.3cm}
+
+{\small
+dejotacode.com.br
+}
+
+\end{flushleft}
+
+\clearpage
+\nopagecolor
+\color{dejotatext}
+
+% =================================================
+% CONTEÚDO
+% =================================================
+
+$body$
+
+\end{document}
