@@ -31,4 +31,4 @@ Crie uma pasta com `mkdir pratica-linux` e entre nela com `cd pratica-linux`. As
 
 ## Leia antes de confirmar
 
-Não execute comandos copiados da internet sem compreender o caminho e os arquivos que serão alcançados.
+Não execute comandos copiados da internet sem compreender o caminho e os arquivos que serão alcançados. Quando estiver confortável com a navegação, entenda também [como funcionam as permissões no Linux](/blog/permissoes-linux-para-iniciantes/).

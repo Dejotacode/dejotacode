@@ -27,4 +27,4 @@ Dar acesso total para todos pode resolver um erro momentaneamente, mas cria risc
 
 ## Use privilégios com cuidado
 
-Comandos administrativos podem alterar partes importantes do sistema. Leia a instrução completa e confirme o caminho antes de usar privilégios elevados.
+Comandos administrativos podem alterar partes importantes do sistema. Leia a instrução completa e confirme o caminho antes de usar privilégios elevados. Esse cuidado faz parte de uma rotina maior de [segurança digital para iniciantes](/blog/habitos-seguranca-digital-iniciantes/).

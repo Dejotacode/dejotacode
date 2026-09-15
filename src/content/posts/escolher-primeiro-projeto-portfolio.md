@@ -23,7 +23,7 @@ Escreva as três funções indispensáveis. Todo o restante pode ficar para uma 
 
 ## Registre as suas decisões
 
-No README, explique o problema, a solução escolhida, como executar o projeto e o que você aprendeu. Essa explicação mostra mais do que uma lista de tecnologias.
+No README, explique o problema, a solução escolhida, como executar o projeto e o que você aprendeu. Essa explicação mostra mais do que uma lista de tecnologias. Se você ainda está começando com versionamento, veja também a diferença entre [Git e GitHub](/blog/git-e-github-entenda-a-diferenca/).
 
 ## Publique e peça uma revisão
 

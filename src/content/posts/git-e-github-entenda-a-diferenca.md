@@ -29,4 +29,4 @@ GitHub hospeda repositórios Git na internet e acrescenta recursos para colabora
 4. Registre o ponto do histórico com `git commit`.
 5. Envie os commits ao repositório remoto com `git push`.
 
-Antes de executar um comando, entenda quais arquivos ele alcança. Esse cuidado torna o versionamento mais previsível.
+Antes de executar um comando, entenda quais arquivos ele alcança. Esse cuidado torna o versionamento mais previsível e ajuda quando você começa a organizar seu [primeiro projeto de portfólio](/blog/escolher-primeiro-projeto-portfolio/).

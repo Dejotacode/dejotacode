@@ -27,4 +27,4 @@ Muitas distribuições podem iniciar por um pendrive sem alterar o disco. Nesse 
 
 ## Faça backup
 
-Antes de modificar partições ou substituir um sistema, salve os arquivos importantes em outro local e confirme que consegue abri-los.
+Antes de modificar partições ou substituir um sistema, salve os arquivos importantes em outro local e confirme que consegue abri-los. Depois da instalação, avance para os [primeiros comandos Linux](/blog/comandos-linux-para-iniciantes/) com calma.

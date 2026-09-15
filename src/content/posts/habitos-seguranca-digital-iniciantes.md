@@ -35,4 +35,4 @@ Mantenha pelo menos uma cópia separada dos seus documentos e fotos. Teste de te
 
 ## Próximo passo
 
-Escolha apenas um hábito desta lista e aplique hoje. Quando ele fizer parte da rotina, avance para o próximo.
+Escolha apenas um hábito desta lista e aplique hoje. Quando ele fizer parte da rotina, avance para o próximo. Se você usa Linux, entender [permissões de arquivos e diretórios](/blog/permissoes-linux-para-iniciantes/) ajuda a reforçar essa base.

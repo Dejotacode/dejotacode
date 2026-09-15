@@ -27,4 +27,4 @@ O contato com Linux ajuda a compreender arquivos, permissões, programas e redes
 
 ## Próximo passo
 
-Antes de instalar, escolha uma distribuição adequada ao seu computador e à sua experiência.
+Antes de instalar, veja [como escolher uma distribuição Linux](/blog/como-escolher-distribuicao-linux/) adequada ao seu computador e à sua experiência.
