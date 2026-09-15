@@ -1,0 +1,62 @@
+name: Controlled release v1.3.0
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.head_ref == 'ops/release-v1.3.0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Validate tag and release state
+        run: |
+          set -e
+          EXPECTED_SHA="e7a7c74b6941d8dbfeb7fb358661c88a322b05b2"
+          TAG="v1.3.0"
+
+          git fetch --tags --force
+
+          TAG_COMMIT="$(git rev-list -n 1 "$TAG")"
+          echo "tag commit: $TAG_COMMIT"
+          echo "expected:   $EXPECTED_SHA"
+
+          if [ "$TAG_COMMIT" != "$EXPECTED_SHA" ]; then
+            echo "FALHA: tag não aponta para o SHA homologado."
+            exit 1
+          fi
+
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "FALHA: release $TAG já existe."
+            exit 1
+          fi
+
+          test -f RELEASE_NOTES_V1.3.0.md
+          echo "PASSOU: pré-condições da release válidas."
+
+      - name: Create GitHub Release
+        run: |
+          set -e
+          gh release create v1.3.0 \
+            --repo "$GITHUB_REPOSITORY" \
+            --verify-tag \
+            --title "DejotaCode v1.3.0" \
+            --notes-file RELEASE_NOTES_V1.3.0.md
+
+      - name: Verify GitHub Release
+        run: |
+          set -e
+          gh release view v1.3.0 \
+            --repo "$GITHUB_REPOSITORY" \
+            --json tagName,name,isDraft,isPrerelease,url,targetCommitish
