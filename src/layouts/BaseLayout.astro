@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
+const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
+
 interface Props {
   title: string;
   description?: string;
@@ -94,7 +96,20 @@ const socialImageAlt = imageAlt ?? pageTitle;
     <Header />
     <slot />
     <Footer />
+
+    <script is:inline define:vars={{ apiBase }}>
+      window.__DEJOTACODE_API_BASE__ = apiBase;
+    </script>
+
     <script>
+      import { prepareAnalytics } from "../scripts/analytics";
+
+      prepareAnalytics(
+        typeof window.__DEJOTACODE_API_BASE__ === "string"
+          ? window.__DEJOTACODE_API_BASE__
+          : "",
+      );
+
       requestAnimationFrame(() => document.documentElement.classList.add("theme-ready"));
 
       const syncThemeControls = () => {
