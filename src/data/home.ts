@@ -7,8 +7,8 @@ export const topics = [
 
 export const tracks = [
   { number: "01", level: "Iniciante", symbol: "$ _", title: "Linux do zero", description: "Conheça o sistema, instale com segurança e domine os primeiros comandos.", href: "/trilhas/linux-do-zero/", featured: true },
-  { number: "02", level: "Iniciante", symbol: "</>", title: "Primeiros passos na programação", description: "Entenda a lógica e construa seu primeiro projeto para a web.", href: "/trilhas/", featured: false },
-  { number: "03", level: "Prática", symbol: "IA", title: "IA no dia a dia", description: "Use inteligência artificial para estudar e trabalhar com responsabilidade.", href: "/trilhas/", featured: false },
+  { number: "02", level: "Iniciante", symbol: "</>", title: "Primeiros passos na programação", description: "Entenda a lógica e construa seu primeiro projeto para a web.", href: "/trilhas/primeiros-passos-programacao/", featured: false },
+  { number: "03", level: "Prática", symbol: "IA", title: "IA no dia a dia", description: "Use inteligência artificial para estudar e trabalhar com responsabilidade.", href: "/trilhas/ia-no-dia-a-dia/", featured: false },
 ] as const;
 
 export const featuredContents = [
@@ -17,7 +17,7 @@ export const featuredContents = [
 ] as const;
 
 export const recentTutorials = [
-  { number: "01", category: "Cloudflare", title: "Como publicar um projeto Astro no Cloudflare Pages", description: "Prepare o build e publique seu site estático passo a passo.", time: "10 min", href: "/blog/" },
-  { number: "02", category: "Banco de dados", title: "Como criar e migrar um banco Cloudflare D1", description: "Crie o banco, organize migrações e valide o ambiente.", time: "8 min", href: "/blog/" },
-  { number: "03", category: "Git & GitHub", title: "Git e GitHub: entenda a diferença", description: "Veja para que serve cada ferramenta antes do primeiro projeto.", time: "6 min", href: "/blog/git-e-github-entenda-a-diferenca/" },
+  { number: "01", category: "Programação", title: "Como criar seu primeiro site com HTML e CSS", description: "Monte uma página simples do zero, organize os arquivos e entenda o que cada parte faz.", time: "10 min", href: "/blog/primeiro-site-html-css/" },
+  { number: "02", category: "Programação", title: "JavaScript para iniciantes: variáveis, condições e funções", description: "Aprenda os blocos básicos de JavaScript com exemplos pequenos e transforme valores em comportamento.", time: "10 min", href: "/blog/javascript-variaveis-funcoes/" },
+  { number: "03", category: "Inteligência Artificial", title: "Como escrever prompts melhores para estudar e trabalhar", description: "Use contexto, objetivo, restrições e formato de saída para pedir respostas mais úteis.", time: "9 min", href: "/blog/prompts-melhores-estudar-trabalhar/" },
 ] as const;
