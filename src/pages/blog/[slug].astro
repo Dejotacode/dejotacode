@@ -43,6 +43,12 @@ const categoryUrl = new URL(
   categoryHref(post.data.category),
   Astro.site ?? Astro.url,
 );
+const siteUrl = new URL("/", canonicalUrl);
+const articleImageUrl = new URL(
+  "/assets/brand/opengraph-dark.png",
+  canonicalUrl,
+);
+const authorUrl = new URL("/sobre/", canonicalUrl);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -85,13 +91,23 @@ const articleSchema = {
     ? { dateModified: post.data.updatedAt.toISOString() }
     : {}),
   mainEntityOfPage: canonicalUrl.href,
+  image: articleImageUrl.href,
+  inLanguage: "pt-BR",
+  articleSection: categoryLabel,
+  keywords: post.data.tags.join(", "),
+  isPartOf: {
+    "@id": `${siteUrl.href}#website`,
+  },
   author: {
     "@type": "Person",
     name: "Dejota",
+    url: authorUrl.href,
   },
   publisher: {
     "@type": "Organization",
+    "@id": `${siteUrl.href}#organization`,
     name: "DejotaCode",
+    url: siteUrl.href,
     logo: {
       "@type": "ImageObject",
       url: new URL("/assets/brand/icon-512.png", canonicalUrl).href,
