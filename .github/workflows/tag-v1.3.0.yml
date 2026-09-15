@@ -1,0 +1,54 @@
+name: Controlled tag v1.3.0
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    if: github.head_ref == 'ops/tag-v1.3.0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Validate target and create annotated tag
+        run: |
+          set -e
+          EXPECTED_SHA="e7a7c74b6941d8dbfeb7fb358661c88a322b05b2"
+          TAG="v1.3.0"
+
+          REMOTE_MAIN="$(git ls-remote origin refs/heads/main | awk '{print $1}')"
+          echo "remote main: $REMOTE_MAIN"
+          echo "expected:    $EXPECTED_SHA"
+
+          if [ "$REMOTE_MAIN" != "$EXPECTED_SHA" ]; then
+            echo "FALHA: main remota mudou."
+            exit 1
+          fi
+
+          if git ls-remote --exit-code origin "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "FALHA: tag $TAG já existe."
+            exit 1
+          fi
+
+          git config user.name "DejotaCode Release"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" "$EXPECTED_SHA" -m "DejotaCode v1.3.0"
+          git push origin "refs/tags/$TAG"
+
+          TAG_COMMIT="$(git rev-list -n 1 "$TAG")"
+          echo "tag commit: $TAG_COMMIT"
+
+          if [ "$TAG_COMMIT" != "$EXPECTED_SHA" ]; then
+            echo "FALHA: tag não aponta para o SHA esperado."
+            exit 1
+          fi
+
+          echo "PASSOU: $TAG criada no SHA homologado."
