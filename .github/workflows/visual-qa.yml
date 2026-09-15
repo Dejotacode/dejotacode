@@ -1,0 +1,152 @@
+name: Visual QA
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  visual:
+    if: github.head_ref == 'qa/visual-review-p1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Build production
+        run: npm run build:production
+
+      - name: Start preview
+        run: |
+          nohup npx astro preview --host 127.0.0.1 --port 4321 > /tmp/dejotacode-preview.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4321/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/dejotacode-preview.log
+          exit 1
+
+      - name: Capture visual matrix
+        run: |
+          mkdir -p visual-qa
+          cat > /tmp/visual-qa.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs';
+
+          const baseURL = 'http://127.0.0.1:4321';
+          const routes = [
+            ['home', '/'],
+            ['blog', '/blog/'],
+            ['trilhas', '/trilhas/'],
+            ['artigo-programacao', '/blog/primeiro-site-html-css/'],
+            ['trilha-programacao', '/trilhas/primeiros-passos-programacao/'],
+            ['portfolio', '/portfolio/'],
+            ['newsletter', '/newsletter/'],
+          ];
+          const viewports = {
+            desktop: { width: 1440, height: 1100 },
+            mobile: { width: 390, height: 844 },
+          };
+          const themes = ['dark', 'light'];
+          const report = [];
+          const browser = await chromium.launch({ headless: true });
+
+          for (const [viewportName, viewport] of Object.entries(viewports)) {
+            for (const theme of themes) {
+              for (const [name, route] of routes) {
+                const context = await browser.newContext({ viewport });
+                await context.addInitScript((selectedTheme) => {
+                  localStorage.setItem('dejotacode-theme', selectedTheme);
+                }, theme);
+                const page = await context.newPage();
+                const consoleErrors = [];
+                const pageErrors = [];
+                page.on('console', (msg) => {
+                  if (msg.type() === 'error') consoleErrors.push(msg.text());
+                });
+                page.on('pageerror', (error) => pageErrors.push(error.message));
+
+                const response = await page.goto(`${baseURL}${route}`, {
+                  waitUntil: 'networkidle',
+                  timeout: 30000,
+                });
+                await page.waitForTimeout(250);
+
+                const metrics = await page.evaluate(() => ({
+                  theme: document.documentElement.dataset.theme,
+                  scrollWidth: document.documentElement.scrollWidth,
+                  clientWidth: document.documentElement.clientWidth,
+                  scrollHeight: document.documentElement.scrollHeight,
+                  clientHeight: document.documentElement.clientHeight,
+                  h1Count: document.querySelectorAll('h1').length,
+                  mainCount: document.querySelectorAll('main').length,
+                }));
+
+                const file = `visual-qa/${String(report.length + 1).padStart(2, '0')}-${name}-${viewportName}-${theme}.png`;
+                await page.screenshot({ path: file, fullPage: true });
+
+                report.push({
+                  name,
+                  route,
+                  viewport: viewportName,
+                  theme,
+                  status: response?.status() ?? null,
+                  ...metrics,
+                  horizontalOverflow: metrics.scrollWidth > metrics.clientWidth + 1,
+                  consoleErrors,
+                  pageErrors,
+                  screenshot: file,
+                });
+                await context.close();
+              }
+            }
+          }
+
+          await browser.close();
+          fs.writeFileSync('visual-qa/report.json', JSON.stringify(report, null, 2));
+
+          const failures = report.filter((item) =>
+            item.status !== 200 ||
+            item.theme !== item.theme ||
+            item.horizontalOverflow ||
+            item.h1Count !== 1 ||
+            item.mainCount !== 1 ||
+            item.consoleErrors.length ||
+            item.pageErrors.length
+          );
+
+          console.log(JSON.stringify(report, null, 2));
+          if (failures.length) {
+            console.error('Visual QA structural failures:', JSON.stringify(failures, null, 2));
+            process.exitCode = 1;
+          }
+          EOF
+          node /tmp/visual-qa.mjs
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-qa-p1
+          path: visual-qa/
+          if-no-files-found: error
+          retention-days: 7
