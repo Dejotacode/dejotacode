@@ -86,10 +86,10 @@ jobs:
                 page.on('pageerror', (error) => pageErrors.push(error.message));
 
                 const response = await page.goto(`${baseURL}${route}`, {
-                  waitUntil: 'networkidle',
-                  timeout: 30000,
+                  waitUntil: 'domcontentloaded',
+                  timeout: 10000,
                 });
-                await page.waitForTimeout(250);
+                await page.waitForTimeout(500);
 
                 const metrics = await page.evaluate(() => ({
                   actualTheme: document.documentElement.dataset.theme,
