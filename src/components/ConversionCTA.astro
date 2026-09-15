@@ -1,0 +1,54 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  href: string;
+  label: string;
+  campaign: string;
+}
+
+const {
+  eyebrow = "PRÓXIMO PASSO",
+  title,
+  description,
+  href,
+  label,
+  campaign,
+} = Astro.props;
+---
+
+<aside class="conversion-cta" aria-label="Próximo passo recomendado">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2>{title}</h2>
+  <p>{description}</p>
+  <a
+    class="button button-primary"
+    href={href}
+    data-analytics-cta={campaign}
+  >{label} <span aria-hidden="true">→</span></a>
+</aside>
+
+<style>
+  .conversion-cta {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .conversion-cta h2 {
+    max-width: 22ch;
+    margin: .45rem 0 .75rem;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.08;
+    letter-spacing: -.035em;
+  }
+
+  .conversion-cta > p:not(.eyebrow) {
+    max-width: 44rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-muted);
+  }
+</style>
