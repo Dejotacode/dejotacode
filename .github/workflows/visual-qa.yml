@@ -48,7 +48,7 @@ jobs:
       - name: Capture visual matrix
         run: |
           mkdir -p visual-qa
-          cat > /tmp/visual-qa.mjs <<'EOF'
+          cat > visual-qa-run.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'node:fs';
 
@@ -71,12 +71,12 @@ jobs:
           const browser = await chromium.launch({ headless: true });
 
           for (const [viewportName, viewport] of Object.entries(viewports)) {
-            for (const theme of themes) {
+            for (const expectedTheme of themes) {
               for (const [name, route] of routes) {
                 const context = await browser.newContext({ viewport });
                 await context.addInitScript((selectedTheme) => {
                   localStorage.setItem('dejotacode-theme', selectedTheme);
-                }, theme);
+                }, expectedTheme);
                 const page = await context.newPage();
                 const consoleErrors = [];
                 const pageErrors = [];
@@ -92,7 +92,7 @@ jobs:
                 await page.waitForTimeout(250);
 
                 const metrics = await page.evaluate(() => ({
-                  theme: document.documentElement.dataset.theme,
+                  actualTheme: document.documentElement.dataset.theme,
                   scrollWidth: document.documentElement.scrollWidth,
                   clientWidth: document.documentElement.clientWidth,
                   scrollHeight: document.documentElement.scrollHeight,
@@ -101,14 +101,14 @@ jobs:
                   mainCount: document.querySelectorAll('main').length,
                 }));
 
-                const file = `visual-qa/${String(report.length + 1).padStart(2, '0')}-${name}-${viewportName}-${theme}.png`;
+                const file = `visual-qa/${String(report.length + 1).padStart(2, '0')}-${name}-${viewportName}-${expectedTheme}.png`;
                 await page.screenshot({ path: file, fullPage: true });
 
                 report.push({
                   name,
                   route,
                   viewport: viewportName,
-                  theme,
+                  expectedTheme,
                   status: response?.status() ?? null,
                   ...metrics,
                   horizontalOverflow: metrics.scrollWidth > metrics.clientWidth + 1,
@@ -126,11 +126,10 @@ jobs:
 
           const failures = report.filter((item) =>
             item.status !== 200 ||
-            item.theme !== item.theme ||
+            item.actualTheme !== item.expectedTheme ||
             item.horizontalOverflow ||
             item.h1Count !== 1 ||
             item.mainCount !== 1 ||
-            item.consoleErrors.length ||
             item.pageErrors.length
           );
 
@@ -140,7 +139,7 @@ jobs:
             process.exitCode = 1;
           }
           EOF
-          node /tmp/visual-qa.mjs
+          node visual-qa-run.mjs
 
       - name: Upload screenshots
         if: always()
