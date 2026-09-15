@@ -16,9 +16,67 @@ interface Props {
 
 const { trail } = Astro.props;
 const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
+
+const canonicalUrl = new URL(
+  `/trilhas/${trail.slug}/`,
+  Astro.site ?? Astro.url.origin,
+);
+
+const trailListId = `${canonicalUrl.href}#etapas`;
+
+const trailBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Início",
+      item: new URL("/", canonicalUrl).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Trilhas",
+      item: new URL("/trilhas/", canonicalUrl).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: trail.title,
+      item: canonicalUrl.href,
+    },
+  ],
+};
+
+const trailListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": trailListId,
+  name: `Etapas da trilha ${trail.title}`,
+  numberOfItems: trail.lessons.length,
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  itemListElement: trail.lessons.map((lesson) => ({
+    "@type": "ListItem",
+    position: lesson.order,
+    name: lesson.title,
+    url: new URL(`/blog/${lesson.slug}/`, canonicalUrl).href,
+  })),
+};
 ---
 
 <BaseLayout title={`${trail.title} | DejotaCode`} description={trail.description}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(trailBreadcrumbSchema)}
+  />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(trailListSchema)}
+  />
+
   <main id="conteudo" tabindex="-1" class="trail-detail" data-trail={trail.slug}>
     <header class="trail-detail__hero container">
       <nav class="trail-breadcrumbs" aria-label="Navegação estrutural">

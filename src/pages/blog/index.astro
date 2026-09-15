@@ -5,18 +5,65 @@ import {
   categories,
   categoryHref,
   getPublishedPosts,
+  postHref,
 } from "../../lib/content";
 import "../../styles/editorial.css";
 
 const posts = await getPublishedPosts();
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+
+const canonicalUrl = new URL("/blog/", Astro.site ?? Astro.url.origin);
+const orderedPosts = featuredPost
+  ? [featuredPost, ...remainingPosts]
+  : remainingPosts;
+
+const blogListId = `${canonicalUrl.href}#itemlist`;
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": canonicalUrl.href,
+      url: canonicalUrl.href,
+      name: "Blog de tecnologia para iniciantes | DejotaCode",
+      description:
+        "Tutoriais e artigos sobre Linux, programação, inteligência artificial e tecnologia prática, explicados sem complicação.",
+      inLanguage: "pt-BR",
+      mainEntity: {
+        "@id": blogListId,
+      },
+      isPartOf: {
+        "@id": "https://dejotacode.com.br/#website",
+      },
+    },
+    {
+      "@type": "ItemList",
+      "@id": blogListId,
+      numberOfItems: orderedPosts.length,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      itemListElement: orderedPosts.map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: post.data.title,
+        url: new URL(postHref(post), canonicalUrl).href,
+      })),
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Blog de tecnologia para iniciantes | DejotaCode"
   description="Tutoriais e artigos sobre Linux, programação, inteligência artificial e tecnologia prática, explicados sem complicação."
 >
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(blogSchema)}
+  />
+
   <main id="conteudo" tabindex="-1" class="editorial-page">
     <header class="editorial-hero container">
       <p class="eyebrow">APRENDA NO SEU RITMO</p>

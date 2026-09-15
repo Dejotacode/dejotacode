@@ -5,6 +5,7 @@ import {
   categories,
   categoryDescriptions,
   getPublishedPosts,
+  postHref,
   type CategorySlug,
 } from "../../lib/content";
 import "../../styles/editorial.css";
@@ -26,6 +27,48 @@ const { category, label } = Astro.props;
 const posts = (await getPublishedPosts()).filter(
   (post) => post.data.category === category,
 );
+
+const canonicalUrl = new URL(
+  `/categoria/${category}/`,
+  Astro.site ?? Astro.url.origin,
+);
+
+const categoryListId = `${canonicalUrl.href}#itemlist`;
+
+const categorySchema =
+  posts.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": canonicalUrl.href,
+            url: canonicalUrl.href,
+            name: `${label} | DejotaCode`,
+            description: categoryDescriptions[category],
+            inLanguage: "pt-BR",
+            mainEntity: {
+              "@id": categoryListId,
+            },
+            isPartOf: {
+              "@id": "https://dejotacode.com.br/#website",
+            },
+          },
+          {
+            "@type": "ItemList",
+            "@id": categoryListId,
+            numberOfItems: posts.length,
+            itemListOrder: "https://schema.org/ItemListOrderDescending",
+            itemListElement: posts.map((post, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: post.data.title,
+              url: new URL(postHref(post), canonicalUrl).href,
+            })),
+          },
+        ],
+      }
+    : null;
 ---
 
 <BaseLayout
@@ -33,6 +76,16 @@ const posts = (await getPublishedPosts()).filter(
   description={categoryDescriptions[category]}
   robots={posts.length > 0 ? "index, follow" : "noindex, follow"}
 >
+  {
+    categorySchema && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(categorySchema)}
+      />
+    )
+  }
+
   <main id="conteudo" tabindex="-1" class="editorial-page discovery-page">
     <header class="editorial-hero container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
