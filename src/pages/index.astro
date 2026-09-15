@@ -29,6 +29,12 @@ const categorySymbols = {
   "tecnologia-pratica": "▥",
 } as const;
 
+const difficultyLabels = {
+  iniciante: "Iniciante",
+  intermediario: "Intermediário",
+  avancado: "Avançado",
+} as const;
+
 const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -113,7 +119,7 @@ const homeSchema = {
       <div class="container">
         <div class="section-bar"><div><p class="eyebrow">PASSO A PASSO</p><h2 id="recent-title">Tutoriais recentes</h2></div><a class="text-link" href="/blog/">Acessar o blog <span aria-hidden="true">→</span></a></div>
         <div class="recent-grid">
-          {recentTutorialPosts.map((post, index) => <a class="tutorial-card" href={postHref(post)}><span class="tutorial-icon">{String(index + 1).padStart(2, "0")}</span><div><span class="category">{categories[post.data.category]}</span><h3>{post.data.title}</h3><p>{post.data.description}</p><div class="meta"><span>{post.data.readingTime} min</span><span>Iniciante</span></div></div></a>)}
+          {recentTutorialPosts.map((post, index) => <a class="tutorial-card" href={postHref(post)}><span class="tutorial-icon">{String(index + 1).padStart(2, "0")}</span><div><span class="category">{categories[post.data.category]}</span><h3>{post.data.title}</h3><p>{post.data.description}</p><div class="meta"><span>{post.data.readingTime} min</span><span>{difficultyLabels[post.data.difficulty]}</span></div></div></a>)}
         </div>
       </div>
     </section>
