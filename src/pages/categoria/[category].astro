@@ -31,6 +31,7 @@ const posts = (await getPublishedPosts()).filter(
 <BaseLayout
   title={`${label} | DejotaCode`}
   description={categoryDescriptions[category]}
+  robots={posts.length > 0 ? "index, follow" : "noindex, follow"}
 >
   <main id="conteudo" tabindex="-1" class="editorial-page discovery-page">
     <header class="editorial-hero container">

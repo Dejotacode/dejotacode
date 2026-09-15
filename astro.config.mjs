@@ -11,6 +11,8 @@ export default defineConfig({
         ![
           "https://dejotacode.com.br/busca/",
           "https://dejotacode.com.br/guia/iniciante-em-tecnologia/",
+          "https://dejotacode.com.br/categoria/inteligencia-artificial/",
+          "https://dejotacode.com.br/categoria/tecnologia-pratica/",
         ].includes(page),
     }),
   ],
