@@ -44,8 +44,11 @@ const categoryUrl = new URL(
   Astro.site ?? Astro.url,
 );
 const siteUrl = new URL("/", canonicalUrl);
+const articleOgKey = canonicalUrl.pathname
+  .replace(/^\/+|\/+$/g, "")
+  .replaceAll("/", "--");
 const articleImageUrl = new URL(
-  "/assets/brand/opengraph-dark.png",
+  `/assets/og/${articleOgKey}.png`,
   canonicalUrl,
 );
 const authorUrl = new URL("/sobre/", canonicalUrl);
