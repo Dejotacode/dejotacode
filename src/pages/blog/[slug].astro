@@ -3,6 +3,8 @@ import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 import SocialShare from "../../components/SocialShare.astro";
+import ConversionCTA from "../../components/ConversionCTA.astro";
+import { availableTrails } from "../../data/trails";
 import {
   categories,
   categoryHref,
@@ -30,12 +32,33 @@ interface Props {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const allPosts = await getPublishedPosts();
+const currentSlug = postSlug(post);
 const relatedPosts = allPosts
   .filter(
     (candidate) =>
       candidate.id !== post.id && candidate.data.category === post.data.category,
   )
   .slice(0, 2);
+
+const currentTrail = availableTrails.find((trail) =>
+  trail.lessons.some((lesson) => lesson.slug === currentSlug),
+);
+
+const conversion = currentTrail
+  ? {
+      title: `Continue pela trilha ${currentTrail.title}`,
+      description: "Veja a sequência completa, marque seu progresso neste navegador e avance sem precisar adivinhar o próximo conteúdo.",
+      href: `/trilhas/${currentTrail.slug}/`,
+      label: "Ver trilha completa",
+      campaign: `article-trail-${currentTrail.slug}`,
+    }
+  : {
+      title: "Receba o próximo conteúdo por e-mail",
+      description: "A newsletter reúne novos tutoriais, guias e recursos do DejotaCode sem transformar sua caixa de entrada em um feed infinito.",
+      href: "/newsletter/?resource=artigo",
+      label: "Conhecer a newsletter",
+      campaign: "article-newsletter",
+    };
 
 const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
 const categoryLabel = categories[post.data.category];
@@ -189,6 +212,14 @@ const articleSchema = {
           </section>
 
           <SocialShare title={post.data.title} url={canonicalUrl.href} />
+
+          <ConversionCTA
+            title={conversion.title}
+            description={conversion.description}
+            href={conversion.href}
+            label={conversion.label}
+            campaign={conversion.campaign}
+          />
         </div>
       </div>
     </article>
@@ -209,5 +240,4 @@ const articleSchema = {
       )
     }
   </main>
-
 </BaseLayout>
