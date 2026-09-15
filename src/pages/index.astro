@@ -2,9 +2,46 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { featuredContents, recentTutorials, topics, tracks } from "../data/home";
 import "../styles/home.css";
+
+const siteUrl = new URL("/", Astro.site ?? Astro.url.origin);
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl.href}#organization`,
+      name: "DejotaCode",
+      url: siteUrl.href,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/assets/brand/icon-512.png", siteUrl).href,
+      },
+      sameAs: ["https://github.com/Dejotacode"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl.href}#website`,
+      url: siteUrl.href,
+      name: "DejotaCode",
+      description:
+        "Tutoriais passo a passo sobre Linux, programação e tecnologia prática para quem está começando.",
+      inLanguage: "pt-BR",
+      publisher: {
+        "@id": `${siteUrl.href}#organization`,
+      },
+    },
+  ],
+};
 ---
 
 <BaseLayout title="DejotaCode" description="Tutoriais passo a passo sobre Linux, programação e tecnologia prática para quem está começando.">
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(homeSchema)}
+  />
+
   <main id="conteudo" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
