@@ -70,6 +70,14 @@ import "../styles/home.css";
 <script>
   document.querySelector("[data-newsletter-preview]")?.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    const form = event.currentTarget;
+    if (!(form instanceof HTMLFormElement) || !form.reportValidity()) return;
+
+    const email = new FormData(form).get("email");
+    if (typeof email !== "string") return;
+
+    sessionStorage.setItem("dejotacode:newsletter-email", email.trim());
     window.location.assign("/newsletter/");
   });
 </script>

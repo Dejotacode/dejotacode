@@ -206,6 +206,15 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
 
     const params = new URLSearchParams(window.location.search);
     const requestedResource = params.get("resource");
+    const email =
+      document.querySelector<HTMLInputElement>("#newsletter-email");
+    const storedEmail =
+      sessionStorage.getItem("dejotacode:newsletter-email");
+
+    if (email && storedEmail) {
+      email.value = storedEmail;
+      sessionStorage.removeItem("dejotacode:newsletter-email");
+    }
 
     if (requestedResource === GUIDE_RESOURCE) {
       const eyebrow =
