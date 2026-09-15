@@ -12,8 +12,8 @@ export const tracks = [
 ] as const;
 
 export const featuredContents = [
-  { symbol: "$ _", category: "Linux & Segurança", title: "7 hábitos de segurança digital para iniciantes", description: "Ações simples para proteger suas contas, arquivos e dispositivos no dia a dia.", date: "9 set 2026", readingTime: "8 min de leitura", href: "/blog/habitos-seguranca-digital-iniciantes/" },
-  { symbol: "</>", category: "Programação", title: "Como escolher seu primeiro projeto de portfólio", description: "Um roteiro simples para transformar estudo em uma experiência prática.", date: "9 set 2026", readingTime: "7 min de leitura", href: "/blog/escolher-primeiro-projeto-portfolio/" },
+  { symbol: "$ _", category: "Linux & Segurança", title: "5 hábitos de segurança digital para começar hoje", description: "Ações simples para proteger suas contas e navegar com mais tranquilidade, sem precisar dominar termos técnicos.", date: "9 set 2026", readingTime: "7 min de leitura", href: "/blog/habitos-seguranca-digital-iniciantes/" },
+  { symbol: "</>", category: "Programação", title: "Como escolher seu primeiro projeto de portfólio", description: "Um método direto para transformar uma ideia pequena em um projeto concluído e fácil de apresentar.", date: "5 set 2026", readingTime: "6 min de leitura", href: "/blog/escolher-primeiro-projeto-portfolio/" },
 ] as const;
 
 export const recentTutorials = [
