@@ -125,8 +125,11 @@ const editablePosts = posts
             <button class="button button-primary" type="button" data-generate>Gerar Markdown</button>
             <button class="button" type="button" data-copy-markdown>Copiar Markdown</button>
             <button class="button" type="button" data-download>Baixar .md</button>
+            <button class="button" type="button" data-create-pr disabled>Criar Pull Request</button>
           </div>
           <output class="editor-status" data-status aria-live="polite"></output>
+          <p class="editor-github-state" data-github-state>GitHub: verificando integração…</p>
+          <a class="editor-pr-link" data-pr-link href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir Pull Request →</a>
         </form>
 
         <aside class="editor-preview" aria-label="Preview do conteúdo">
@@ -171,6 +174,9 @@ const editablePosts = posts
     const form = document.querySelector<HTMLFormElement>("[data-editor-form]");
     const select = document.querySelector<HTMLSelectElement>("[data-post-select]");
     const status = document.querySelector<HTMLOutputElement>("[data-status]");
+    const createPrButton = document.querySelector<HTMLButtonElement>("[data-create-pr]");
+    const githubState = document.querySelector<HTMLElement>("[data-github-state]");
+    const prLink = document.querySelector<HTMLAnchorElement>("[data-pr-link]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
@@ -405,6 +411,51 @@ const editablePosts = posts
       URL.revokeObjectURL(url);
       if (status) status.textContent = `${value("slug")}.md preparado para revisão local.`;
     };
+    const configureGithub = async () => {
+      if (!api || !createPrButton || !githubState) return;
+      try {
+        const response = await fetch(`${api}/api/editor/status`, { credentials: "include" });
+        if (!response.ok) {
+          createPrButton.disabled = true;
+          githubState.textContent = "GitHub: integração indisponível.";
+          return;
+        }
+        const payload = await response.json();
+        const configured = Boolean(payload.data?.configured);
+        createPrButton.disabled = !configured;
+        githubState.textContent = configured
+          ? `GitHub: conectado a ${payload.data?.repository ?? "Dejotacode/dejotacode"}.`
+          : "GitHub: integração segura ainda não configurada no Worker.";
+      } catch {
+        createPrButton.disabled = true;
+        githubState.textContent = "GitHub: não foi possível validar a integração agora.";
+      }
+    };
+
+    const createPullRequest = async () => {
+      if (!api || !createPrButton) return;
+      const markdown = generatedMarkdown || buildMarkdown();
+      if (!markdown) return;
+      createPrButton.disabled = true;
+      if (status) status.textContent = "Criando branch editorial e Pull Request…";
+      if (prLink) prLink.hidden = true;
+      try {
+        const response = await fetch(`${api}/api/editor/pull-request`, {
+          method: "POST", credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ slug: value("slug"), title: value("title"), markdown }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível criar o Pull Request.");
+        if (status) status.textContent = `Pull Request #${payload.data?.pullRequestNumber ?? ""} criado para revisão.`;
+        if (prLink && payload.data?.pullRequestUrl) { prLink.href = payload.data.pullRequestUrl; prLink.hidden = false; }
+      } catch (error) {
+        if (status) status.textContent = error instanceof Error ? error.message : "Não foi possível criar o Pull Request.";
+      } finally {
+        await configureGithub();
+      }
+    };
+
     const start = async () => {
       if (!api) return;
       const session = await fetch(`${api}/api/auth/session`, { credentials: "include" });
@@ -415,12 +466,14 @@ const editablePosts = posts
       const payload = await session.json();
       csrf = String(payload.data?.csrf ?? "");
       resetForm();
+      await configureGithub();
     };
 
     document.querySelector("[data-new-content]")?.addEventListener("click", resetForm);
     document.querySelector("[data-generate]")?.addEventListener("click", () => buildMarkdown());
     document.querySelector("[data-copy-markdown]")?.addEventListener("click", copyGenerated);
     document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
+    createPrButton?.addEventListener("click", createPullRequest);
 
     select?.addEventListener("change", () => {
       if (!select.value) {

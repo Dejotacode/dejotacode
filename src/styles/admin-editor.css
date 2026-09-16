@@ -210,3 +210,28 @@
     width: 100%;
   }
 }
+
+.editor-github-state {
+  margin: .2rem 0 0;
+  color: var(--color-text-subtle);
+  font-size: .85rem;
+  font-weight: 650;
+}
+
+.editor-pr-link {
+  width: fit-content;
+  color: var(--color-accent-strong);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.editor-pr-link:hover,
+.editor-pr-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+.editor-actions .button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
