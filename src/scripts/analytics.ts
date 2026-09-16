@@ -1,4 +1,13 @@
-type AnalyticsEvent = "page_view" | "cta_click";
+export type AnalyticsEvent =
+  | "page_view"
+  | "cta_click"
+  | "lead_submit"
+  | "contact_submit"
+  | "form_start"
+  | "guide_access"
+  | "trail_start"
+  | "trail_lesson_click"
+  | "trail_complete";
 
 type AnalyticsPayload = {
   event: AnalyticsEvent;
@@ -53,17 +62,28 @@ const sendAnalytics = (
   }).catch(() => {});
 };
 
-export const prepareAnalytics = (rawApiBase: string) => {
+export const sendAnalyticsEvent = (
+  rawApiBase: string,
+  event: AnalyticsEvent,
+  campaign?: string,
+) => {
   const apiBase = normalizeApiBase(rawApiBase);
 
   if (!apiBase) return;
 
-  const path = window.location.pathname;
+  const normalizedCampaign = cleanCampaign(campaign);
 
   sendAnalytics(apiBase, {
-    event: "page_view",
-    path,
+    event,
+    path: window.location.pathname,
+    ...(normalizedCampaign
+      ? { campaign: normalizedCampaign }
+      : {}),
   });
+};
+
+export const prepareAnalytics = (rawApiBase: string) => {
+  sendAnalyticsEvent(rawApiBase, "page_view");
 
   document.addEventListener("click", (event) => {
     const target = event.target;
@@ -80,10 +100,10 @@ export const prepareAnalytics = (rawApiBase: string) => {
 
     if (!campaign) return;
 
-    sendAnalytics(apiBase, {
-      event: "cta_click",
-      path,
+    sendAnalyticsEvent(
+      rawApiBase,
+      "cta_click",
       campaign,
-    });
+    );
   });
 };
