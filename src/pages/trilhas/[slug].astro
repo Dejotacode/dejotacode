@@ -188,9 +188,9 @@ const trailListSchema = {
           : "";
       const storageKey = `dejotacode:trail:${trailSlug}`;
       const analyticsStartKey =
-        `dejotacode:trail-analytics-start:${trailSlug}`;
+        `dejotacode:trail-session-start:${trailSlug}`;
       const analyticsCompleteKey =
-        `dejotacode:trail-analytics-complete:${trailSlug}`;
+        `dejotacode:trail-session-complete:${trailSlug}`;
       const lessons = Array.from(
         root.querySelectorAll<HTMLElement>("[data-lesson]"),
       );
@@ -220,7 +220,7 @@ const trailListSchema = {
 
       const hasAnalyticsMarker = (key: string) => {
         try {
-          return localStorage.getItem(key) === "1";
+          return sessionStorage.getItem(key) === "1";
         } catch {
           return false;
         }
@@ -228,15 +228,7 @@ const trailListSchema = {
 
       const setAnalyticsMarker = (key: string) => {
         try {
-          localStorage.setItem(key, "1");
-        } catch {
-          // Analytics must never block trail progress.
-        }
-      };
-
-      const removeAnalyticsMarker = (key: string) => {
-        try {
-          localStorage.removeItem(key);
+          sessionStorage.setItem(key, "1");
         } catch {
           // Analytics must never block trail progress.
         }
@@ -346,8 +338,6 @@ const trailListSchema = {
       resetButton?.addEventListener("click", () => {
         completed = new Set();
         localStorage.removeItem(storageKey);
-        removeAnalyticsMarker(analyticsStartKey);
-        removeAnalyticsMarker(analyticsCompleteKey);
         renderProgress();
       });
 
