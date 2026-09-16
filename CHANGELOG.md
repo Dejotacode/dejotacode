@@ -2,6 +2,37 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.4.0] - 2026-09-15
+
+### Adicionado
+
+- Validação automática de links internos após o build, cobrindo destinos gerados no `dist`.
+- Validação estrutural e de acessibilidade básica do HTML gerado, incluindo `main`, `h1`, IDs duplicados, texto alternativo de imagens e nomes acessíveis em controles de formulário.
+- Comando `npm run qa` para executar as verificações de links e qualidade estrutural localmente e no CI.
+- Busca integrada entre conteúdos editoriais e trilhas de aprendizagem.
+- Exposição da trilha Segurança Digital Essencial na homepage.
+
+### Alterado
+
+- Links das trilhas e assuntos da homepage passaram a apontar para rotas específicas em vez de destinos genéricos.
+- Cards de destaque e tutoriais recentes da homepage foram alinhados aos conteúdos realmente publicados.
+- Metadados editoriais da homepage passaram a ser derivados da content collection, reduzindo duplicação de título, descrição, categoria, data, tempo de leitura e dificuldade.
+- Dados das trilhas exibidas na homepage passaram a ser derivados de `src/data/trails.ts`, mantendo apenas a curadoria por slug.
+- Grade de trilhas da homepage ajustada para 4 colunas no desktop, 2 colunas no tablet e 1 coluna no mobile.
+- Busca passou a considerar título, descrição, objetivo e etapas das trilhas, separando resultados de conteúdos e trilhas.
+- CTA ao final dos artigos de trilhas agora conduz diretamente à próxima etapa quando disponível; na última lição, retorna para a visão geral/progresso da trilha.
+- Navegação responsiva recebeu ajustes de foco e comportamento de `Escape`.
+- Interface passou a respeitar `prefers-reduced-motion` para rolagem e transições globais de tema.
+
+### Qualidade
+
+- CI ampliado com `npm run qa` após o build de produção.
+- Build estático validado com 38 páginas.
+- Revisão visual automatizada temporária em 48 combinações: 8 páginas representativas × desktop/tablet/mobile × temas claro/escuro.
+- Todos os 48 cenários visuais passaram após a exclusão correta de honeypots deliberadamente ocultos da checagem geométrica.
+- QA visual verificou HTTP 200, `main`, `h1`, tema aplicado, overflow horizontal, navegação responsiva e erros de runtime/console.
+- Nenhuma mudança de backend, API, D1, R2, DNS ou Cloudflare incluída nesta versão.
+
 ## [1.3.0] - 2026-09-15
 
 ### Adicionado
