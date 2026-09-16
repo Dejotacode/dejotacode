@@ -9,6 +9,7 @@ export const homeTrailSlugs = [
   "linux-do-zero",
   "primeiros-passos-programacao",
   "ia-no-dia-a-dia",
+  "seguranca-digital-essencial",
 ] as const;
 
 export const featuredHomeTrailSlug = "linux-do-zero";
