@@ -154,6 +154,8 @@ import { guide } from "../../../data/guide";
             class="button button-primary"
             href="/downloads/guia-do-iniciante-em-tecnologia.pdf"
             download
+            data-guide-download
+            data-analytics-cta="guide-download-pdf"
           >
             Baixar o guia em PDF
           </a>
@@ -167,4 +169,24 @@ import { guide } from "../../../data/guide";
       </div>
     </section>
   </main>
+
+  <script>
+    import { sendAnalyticsEvent } from "../../../scripts/analytics";
+
+    const download =
+      document.querySelector<HTMLAnchorElement>("[data-guide-download]");
+
+    download?.addEventListener("click", () => {
+      const apiBase =
+        typeof window.__DEJOTACODE_API_BASE__ === "string"
+          ? window.__DEJOTACODE_API_BASE__
+          : "";
+
+      sendAnalyticsEvent(
+        apiBase,
+        "guide_access",
+        "guia-iniciante-tecnologia",
+      );
+    });
+  </script>
 </BaseLayout>

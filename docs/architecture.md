@@ -71,16 +71,32 @@ Isso reduz o risco de publicar um frontend apontando acidentalmente para a API e
 
 ## Analytics first-party
 
-O frontend usa `src/scripts/analytics.ts` para enviar métricas agregadas à API.
+O frontend usa `src/scripts/analytics.ts` como emissor central das métricas agregadas enviadas para a API.
 
 Eventos enviados pelo frontend:
 
-- `page_view` — uma medição de visualização de rota;
-- `cta_click` — clique em elementos instrumentados com `data-analytics-cta`.
+- `page_view` — visualização de uma rota pública;
+- `cta_click` — clique em elementos instrumentados com `data-analytics-cta`;
+- `form_start` — primeira interação relevante com um formulário de lead, limitada a uma ocorrência por carregamento da página;
+- `lead_submit` — inscrição de lead concluída com sucesso pela API;
+- `guide_access` — acesso ao download do Guia do Iniciante;
+- `trail_start` — primeiro engajamento com uma trilha durante a sessão atual;
+- `trail_lesson_click` — acesso a uma etapa a partir da página da trilha;
+- `trail_complete` — transição da trilha para 100% concluída durante a sessão atual.
 
-O payload inclui caminho da rota e, quando aplicável, identificador de campanha do CTA.
+A API também registra `contact_submit` diretamente no fluxo de contato, sem depender de um segundo evento emitido pelo frontend.
 
-O fluxo do frontend não usa cookies, fingerprinting ou parâmetros de query para identificar visitantes.
+O payload de analytics é mínimo e contém:
+
+- `event`;
+- `path`;
+- `campaign`, quando houver contexto de origem, recurso, CTA ou trilha.
+
+O fluxo de analytics não envia nome, e-mail, conteúdo de formulário, estado detalhado da trilha ou identificador de visitante.
+
+O progresso das trilhas continua armazenado apenas em `localStorage` no navegador. Marcadores usados exclusivamente para evitar duplicidade de `trail_start` e `trail_complete` usam `sessionStorage` e expiram com a sessão do navegador.
+
+O projeto não usa cookies de analytics, fingerprinting ou parâmetros de query para identificar visitantes.
 
 ## SEO
 

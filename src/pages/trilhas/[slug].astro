@@ -141,7 +141,14 @@ const trailListSchema = {
                   <span>{lesson.optional ? "Opcional" : "Essencial"}</span>
                   <span>{lesson.duration} min</span>
                 </div>
-                <h3><a href={`/blog/${lesson.slug}/`}>{lesson.title}</a></h3>
+                <h3>
+                  <a
+                    href={`/blog/${lesson.slug}/`}
+                    data-lesson-link={lesson.slug}
+                  >
+                    {lesson.title}
+                  </a>
+                </h3>
                 <p>{lesson.description}</p>
               </div>
               <button
@@ -158,32 +165,87 @@ const trailListSchema = {
 
       <aside class="trail-privacy">
         <strong>Seu progresso fica neste navegador.</strong>
-        <p>Não é necessário criar conta e nenhuma informação é enviada ao DejotaCode.</p>
+        <p>
+          Não é necessário criar conta. O progresso detalhado não é enviado ao
+          DejotaCode; apenas interações agregadas da trilha podem ser
+          contabilizadas, sem identificação pessoal.
+        </p>
         <button type="button" data-progress-reset>Reiniciar progresso</button>
       </aside>
     </section>
   </main>
 
   <script>
+    import { sendAnalyticsEvent } from "../../scripts/analytics";
+
     const root = document.querySelector<HTMLElement>("[data-trail]");
 
     if (root) {
-      const storageKey = `dejotacode:trail:${root.dataset.trail}`;
-      const lessons = Array.from(root.querySelectorAll<HTMLElement>("[data-lesson]"));
-      const progressBar = root.querySelector<HTMLElement>("[data-progress-bar]");
-      const progressFill = root.querySelector<HTMLElement>("[data-progress-fill]");
-      const progressPercent = root.querySelector<HTMLElement>("[data-progress-percent]");
-      const progressLabel = root.querySelector<HTMLElement>("[data-progress-label]");
-      const resetButton = root.querySelector<HTMLButtonElement>("[data-progress-reset]");
+      const trailSlug = root.dataset.trail ?? "";
+      const apiBase =
+        typeof window.__DEJOTACODE_API_BASE__ === "string"
+          ? window.__DEJOTACODE_API_BASE__
+          : "";
+      const storageKey = `dejotacode:trail:${trailSlug}`;
+      const analyticsStartKey =
+        `dejotacode:trail-session-start:${trailSlug}`;
+      const analyticsCompleteKey =
+        `dejotacode:trail-session-complete:${trailSlug}`;
+      const lessons = Array.from(
+        root.querySelectorAll<HTMLElement>("[data-lesson]"),
+      );
+      const progressBar =
+        root.querySelector<HTMLElement>("[data-progress-bar]");
+      const progressFill =
+        root.querySelector<HTMLElement>("[data-progress-fill]");
+      const progressPercent =
+        root.querySelector<HTMLElement>("[data-progress-percent]");
+      const progressLabel =
+        root.querySelector<HTMLElement>("[data-progress-label]");
+      const resetButton =
+        root.querySelector<HTMLButtonElement>("[data-progress-reset]");
 
       const readProgress = (): string[] => {
         try {
-          const saved = JSON.parse(localStorage.getItem(storageKey) ?? "[]");
-          return Array.isArray(saved) ? saved.filter((item) => typeof item === "string") : [];
+          const saved =
+            JSON.parse(localStorage.getItem(storageKey) ?? "[]");
+
+          return Array.isArray(saved)
+            ? saved.filter((item) => typeof item === "string")
+            : [];
         } catch {
           return [];
         }
       };
+
+      const hasAnalyticsMarker = (key: string) => {
+        try {
+          return sessionStorage.getItem(key) === "1";
+        } catch {
+          return false;
+        }
+      };
+
+      const setAnalyticsMarker = (key: string) => {
+        try {
+          sessionStorage.setItem(key, "1");
+        } catch {
+          // Analytics must never block trail progress.
+        }
+      };
+
+      const trackTrailStart = () => {
+        if (!trailSlug || hasAnalyticsMarker(analyticsStartKey)) return;
+
+        setAnalyticsMarker(analyticsStartKey);
+        sendAnalyticsEvent(apiBase, "trail_start", trailSlug);
+      };
+
+      const isTrailComplete = () =>
+        lessons.length > 0 &&
+        lessons.every((lesson) =>
+          completed.has(lesson.dataset.lesson ?? ""),
+        );
 
       let completed = new Set(readProgress());
 
@@ -191,33 +253,84 @@ const trailListSchema = {
         lessons.forEach((lesson) => {
           const slug = lesson.dataset.lesson ?? "";
           const isCompleted = completed.has(slug);
-          const toggle = lesson.querySelector<HTMLButtonElement>("[data-lesson-toggle]");
+          const toggle =
+            lesson.querySelector<HTMLButtonElement>("[data-lesson-toggle]");
+
           lesson.classList.toggle("is-complete", isCompleted);
           toggle?.setAttribute("aria-pressed", String(isCompleted));
         });
 
+        const completedCount = lessons.filter((lesson) =>
+          completed.has(lesson.dataset.lesson ?? ""),
+        ).length;
         const percentage = lessons.length
-          ? Math.round((completed.size / lessons.length) * 100)
+          ? Math.round((completedCount / lessons.length) * 100)
           : 0;
 
         if (progressFill) progressFill.style.width = `${percentage}%`;
         if (progressPercent) progressPercent.textContent = `${percentage}%`;
-        if (progressBar) progressBar.setAttribute("aria-valuenow", String(percentage));
+        if (progressBar) {
+          progressBar.setAttribute("aria-valuenow", String(percentage));
+        }
+
         if (progressLabel) {
           progressLabel.textContent = percentage === 100
             ? "Trilha concluída. Parabéns por chegar até aqui!"
-            : completed.size === 0
+            : completedCount === 0
               ? "Comece pela primeira etapa."
-              : `${completed.size} de ${lessons.length} etapas concluídas.`;
+              : `${completedCount} de ${lessons.length} etapas concluídas.`;
         }
       };
 
       lessons.forEach((lesson) => {
-        const toggle = lesson.querySelector<HTMLButtonElement>("[data-lesson-toggle]");
+        const lessonSlug = lesson.dataset.lesson ?? "";
+        const link =
+          lesson.querySelector<HTMLAnchorElement>("[data-lesson-link]");
+        const toggle =
+          lesson.querySelector<HTMLButtonElement>("[data-lesson-toggle]");
+
+        link?.addEventListener("click", () => {
+          trackTrailStart();
+
+          if (trailSlug && lessonSlug) {
+            sendAnalyticsEvent(
+              apiBase,
+              "trail_lesson_click",
+              `${trailSlug}:${lessonSlug}`,
+            );
+          }
+        });
+
         toggle?.addEventListener("click", () => {
-          const slug = lesson.dataset.lesson ?? "";
-          completed.has(slug) ? completed.delete(slug) : completed.add(slug);
-          localStorage.setItem(storageKey, JSON.stringify([...completed]));
+          trackTrailStart();
+
+          const wasComplete = isTrailComplete();
+
+          completed.has(lessonSlug)
+            ? completed.delete(lessonSlug)
+            : completed.add(lessonSlug);
+
+          localStorage.setItem(
+            storageKey,
+            JSON.stringify([...completed]),
+          );
+
+          const becameComplete =
+            !wasComplete && isTrailComplete();
+
+          if (
+            becameComplete &&
+            trailSlug &&
+            !hasAnalyticsMarker(analyticsCompleteKey)
+          ) {
+            setAnalyticsMarker(analyticsCompleteKey);
+            sendAnalyticsEvent(
+              apiBase,
+              "trail_complete",
+              trailSlug,
+            );
+          }
+
           renderProgress();
         });
       });
