@@ -183,6 +183,8 @@ Os procedimentos de produção ficam separados deste guia de desenvolvimento par
 - [`v1.9.0-readiness.md`](v1.9.0-readiness.md) — consolidação dos critérios de aceite e regra de fechamento;
 - [`remote-branch-audit-v1.9.0.md`](remote-branch-audit-v1.9.0.md) — reconciliação read-only das branches remotas históricas;
 - [`dependency-ci-supply-chain-audit-v1.9.0.md`](dependency-ci-supply-chain-audit-v1.9.0.md) — dependências, lockfiles, permissões de CI e supply chain.
+- [`v1.7.0-baseline-snapshot-template.md`](v1.7.0-baseline-snapshot-template.md) — formulário reproduzível para os checkpoints quantitativos D+7/D+14;
+- [`v1.8.0-analysis-plan.md`](v1.8.0-analysis-plan.md) — árvore de decisão para escolher a primeira hipótese da v1.8 com base nos dados.
 
 Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve continuar exigindo aprovação explícita.
 
