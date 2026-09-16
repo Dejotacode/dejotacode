@@ -4,7 +4,7 @@ Portal educacional em tecnologia com foco em conteúdo prático para iniciantes,
 
 ## Visão geral
 
-O DejotaCode é construído como site estático com Astro e integra-se a uma API separada para formulários e métricas agregadas. A base pública inclui blog, categorias, trilhas, recursos, portfólio, newsletter, páginas institucionais, RSS e sitemap.
+O DejotaCode é construído como site estático com Astro e integra-se a uma API separada para formulários, métricas agregadas e operações administrativas. A base pública inclui blog, categorias, trilhas, recursos, portfólio, newsletter, páginas institucionais, RSS e sitemap. O Admin Editorial mantém Git/Markdown como fonte canônica e usa a API para GitHub, CI e mídia R2.
 
 Site canônico: `https://dejotacode.com.br`
 
@@ -111,6 +111,10 @@ Eventos do frontend:
 
 A API também registra `contact_submit` diretamente no fluxo de contato. Não há envio de nome, e-mail, conteúdo de formulário, fingerprinting ou identificador persistente de visitante no payload de analytics.
 
+## Admin Editorial
+
+O Admin em `/admin/editor/` permite editar conteúdo, visualizar Markdown, enviar imagens ao R2 e abrir Pull Requests editoriais. A publicação continua passando por revisão humana, CI e merge protegido na `main`; D1 não é fonte do conteúdo público.
+
 ## SEO e distribuição
 
 O projeto gera site estático com URL canônica `https://dejotacode.com.br` e utiliza integração de sitemap. Também possui feed RSS em `/rss.xml`.
@@ -136,7 +140,9 @@ src/styles/          estilos e tokens visuais
 - [`docs/operations.md`](docs/operations.md) — ambientes, QA, CI e regras operacionais;
 - [`docs/runbook-deploy-rollback.md`](docs/runbook-deploy-rollback.md) — deploy, homologação e rollback;
 - [`docs/backup-recovery.md`](docs/backup-recovery.md) — backup, recuperação e próximos controles operacionais.
-- [`docs/admin-scope-v1.9.0.md`](docs/admin-scope-v1.9.0.md) — decisão de escopo do admin moderno e critérios para eventual CMS.
+- [`docs/admin-scope-v1.9.0.md`](docs/admin-scope-v1.9.0.md) — decisão histórica do Admin e atualização pós-v1.10.0.
+- [`docs/editorial-workflow.md`](docs/editorial-workflow.md) — fluxo atual Admin → GitHub → CI → Pages e mídia R2.
+- [`docs/v1.11.0-operational-reconciliation.md`](docs/v1.11.0-operational-reconciliation.md) — reconciliação operacional após v1.10.0.
 - [`docs/api-source-reconciliation-v1.9.0.md`](docs/api-source-reconciliation-v1.9.0.md) — reconciliação da fonte canônica da API e direção operacional.
 
 ## Segurança operacional

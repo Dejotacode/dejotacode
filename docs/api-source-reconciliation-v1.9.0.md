@@ -58,3 +58,9 @@ Durante a criação da fonte canônica:
 - os runbooks do frontend passaram a apontar para a nova origem.
 
 O deployment de produção observado continua sendo a versão Cloudflare `693c8628-c3de-4831-94df-54dc4064e080`. Como o metadata do Worker não armazena SHA Git, a relação com o commit histórico continua documentada como evidência temporal, sem afirmar prova criptográfica inexistente.
+
+## Atualização pós-v1.10.0 / API v1.6.0
+
+A reconciliação foi concluída: `Dejotacode/dejotacode-api` é o repositório canônico e possui versionamento independente. A API v1.6.0 foi publicada a partir do commit `596f94131b24d50b30786f310eac842cc5dc2d2d`, com Worker Version ID `7846621e-8aa8-426d-96c9-3872f2d652e9`.
+
+O endpoint `/api/health` foi validado em produção com HTTP 200 e não havia migrations D1 pendentes no rollout. A API atual sustenta autenticação Admin, analytics, mídia R2 e publicação editorial assistida via GitHub.

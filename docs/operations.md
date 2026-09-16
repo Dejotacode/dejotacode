@@ -88,35 +88,17 @@ O script usa somente requisições de leitura. Ele verifica rotas públicas crí
 
 `SITE_URL` e `API_URL` podem sobrescrever os endpoints padrão quando for necessário homologar outro ambiente.
 
-## CI no GitHub Actions
+## CI e deploy no GitHub Actions
 
-Arquivo:
+Arquivo: `.github/workflows/ci.yml`.
 
-```text
-.github/workflows/ci.yml
-```
+Disparos: `pull_request` e `push` para `main`.
 
-Disparos:
+O job `Check and build` executa `npm ci`, `npm run check`, `npm run build:production` e `npm run qa`. Em Pull Requests, não há deploy.
 
-- `pull_request`;
-- `push` para `main`.
+Em push para `main`, o job `Deploy Cloudflare Pages` roda somente depois do job de qualidade, reconstrói/valida o site, publica no projeto `dejota-code` e executa `npm run smoke:production`. `CLOUDFLARE_API_TOKEN` é secret do GitHub; não deve ser exibido ou movido para variável `PUBLIC_*`.
 
-Job de qualidade:
-
-1. checkout;
-2. setup do Node 24;
-3. `npm ci`;
-4. `npm run check`;
-5. `npm run build:production`.
-
-O workflow usa somente:
-
-```yaml
-permissions:
-  contents: read
-```
-
-Ele não contém etapa de deploy.
+O workflow mantém `permissions: contents: read`. O deploy do Pages não executa migrations D1 nem deploy da API.
 
 ## Fluxo recomendado de integração
 
@@ -145,7 +127,7 @@ Interrompa a integração se ocorrer qualquer um destes casos:
 
 ## Release e deploy
 
-Release e deploy são operações separadas do CI.
+Release continua separada do CI/deploy. O push na `main` dispara o deploy automatizado do frontend, enquanto tag e GitHub Release permanecem operações deliberadas.
 
 Antes de uma release, valide explicitamente:
 
@@ -161,8 +143,7 @@ Não deduza que um merge em `main` implica autorização para:
 
 - criar tag;
 - criar GitHub Release;
-- executar deploy;
-- alterar configuração Cloudflare;
+- alterar configuração Cloudflare fora do workflow aprovado;
 - alterar D1;
 - executar migrations.
 

@@ -17,18 +17,21 @@ Antes de qualquer deploy:
 
 ## Frontend — Cloudflare Pages
 
-Na raiz do frontend:
+O caminho normal de produção é o workflow `.github/workflows/ci.yml`: após merge/push na `main`, o job de qualidade precisa passar e então `Deploy Cloudflare Pages` publica `dist` e executa o smoke de produção.
+
+O deploy manual com Wrangler fica reservado para homologação controlada, incidente ou rollback. Nesses casos, valide primeiro o commit e o build e então use explicitamente o projeto/branch corretos:
 
 ```bash
 npm run build:production
+npm run qa
 npx wrangler pages deploy dist \
   --project-name dejota-code \
   --branch main \
   --commit-hash <SHA_EXATO> \
-  --commit-message "<mensagem da release>"
+  --commit-message "<mensagem operacional>"
 ```
 
-Registrar a URL `*.pages.dev` retornada pelo Wrangler.
+Registrar a URL `*.pages.dev` retornada pelo Wrangler e executar `npm run smoke:production`.
 
 ## Homologação do frontend
 
@@ -51,12 +54,13 @@ A API vive no repositório público dedicado `Dejotacode/dejotacode-api`. Manten
 Antes de deploy, executar pelo menos:
 
 ```bash
-npm run typecheck
+npm ci
+npm run check
 ```
 
-O script histórico `deploy:api:production` executa migrations remotas antes do Worker. Por segurança, não deve ser usado automaticamente sem revisão explícita das migrations pendentes.
+Antes de qualquer deploy da API, confirme migrations pendentes separadamente. Não acople migrations ao deploy do Worker sem revisão explícita.
 
-Quando não houver migration necessária, prefira revisar e executar o comando de deploy do Worker diretamente com o ambiente `production` correto.
+Quando não houver migration necessária, execute o deploy do Worker diretamente a partir do repositório `Dejotacode/dejotacode-api` com o ambiente `production` correto e registre a Version ID retornada.
 
 ## Rollback do frontend
 
