@@ -1,6 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { featuredPostSlugs, recentTutorialSlugs, topics, tracks } from "../data/home";
+import {
+  featuredHomeTrailSlug,
+  featuredPostSlugs,
+  homeTrailSlugs,
+  recentTutorialSlugs,
+  topics,
+} from "../data/home";
+import { availableTrails } from "../data/trails";
 import {
   categories,
   formatPostDate,
@@ -13,14 +20,25 @@ import "../styles/home.css";
 const siteUrl = new URL("/", Astro.site ?? Astro.url.origin);
 const posts = await getPublishedPosts();
 const postsBySlug = new Map(posts.map((post) => [postSlug(post), post]));
+const trailsBySlug = new Map(availableTrails.map((trail) => [trail.slug, trail]));
 
-const featuredPosts = featuredPostSlugs
-  .map((slug) => postsBySlug.get(slug))
-  .filter((post) => post !== undefined);
+function resolveCurated<T>(
+  slugs: readonly string[],
+  itemsBySlug: Map<string, T>,
+  itemLabel: string,
+): T[] {
+  return slugs.map((slug) => {
+    const item = itemsBySlug.get(slug);
+    if (!item) {
+      throw new Error(`Homepage: ${itemLabel} curado não encontrado: ${slug}`);
+    }
+    return item;
+  });
+}
 
-const recentTutorialPosts = recentTutorialSlugs
-  .map((slug) => postsBySlug.get(slug))
-  .filter((post) => post !== undefined);
+const homeTrails = resolveCurated(homeTrailSlugs, trailsBySlug, "trilha");
+const featuredPosts = resolveCurated(featuredPostSlugs, postsBySlug, "conteúdo em destaque");
+const recentTutorialPosts = resolveCurated(recentTutorialSlugs, postsBySlug, "tutorial recente");
 
 const categorySymbols = {
   programacao: "</>",
@@ -101,7 +119,7 @@ const homeSchema = {
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">COMECE PELO CAMINHO CERTO</p><h2 id="tracks-title">Escolha uma trilha</h2></div><p>Conteúdos organizados em sequência para você aprender com clareza e avançar no seu ritmo.</p></div>
         <div class="tracks-grid">
-          {tracks.map((track) => <article class:list={["track-card", { "track-featured": track.featured }]}><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div><div><span class="track-symbol">{track.symbol}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={track.href}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
+          {homeTrails.map((track) => <article class:list={["track-card", { "track-featured": track.slug === featuredHomeTrailSlug }]}><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div><div><span class="track-symbol">{track.icon}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={`/trilhas/${track.slug}/`}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
         </div>
       </div>
     </section>
