@@ -7,7 +7,7 @@
 }
 
 .admin-panel {
-  width: min(calc(100% - (2 * var(--space-page))), 68rem);
+  width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
   margin-inline: auto;
 }
 
