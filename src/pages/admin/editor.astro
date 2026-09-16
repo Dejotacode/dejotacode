@@ -157,6 +157,14 @@ const editablePosts = posts
                       <option value="general">Biblioteca geral</option>
                     </select>
                   </label>
+                  <label>
+                    Uso
+                    <select data-media-usage>
+                      <option value="all">Todas</option>
+                      <option value="used">Em uso</option>
+                      <option value="unused">Não referenciadas</option>
+                    </select>
+                  </label>
                   <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
                 </div>
                 <output data-media-library-status aria-live="polite">Carregando imagens…</output>
@@ -261,6 +269,7 @@ const editablePosts = posts
     const refreshMediaButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
     const mediaSearch = document.querySelector<HTMLInputElement>("[data-media-search]");
     const mediaContext = document.querySelector<HTMLSelectElement>("[data-media-context]");
+    const mediaUsage = document.querySelector<HTMLSelectElement>("[data-media-usage]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
@@ -569,9 +578,23 @@ const editablePosts = posts
       .toLowerCase()
       .trim();
 
+    const mediaKeysFromMarkdown = (markdown: string) => {
+      const keys = new Set<string>();
+      const pattern = /https:\/\/api\.dejotacode\.com\.br\/api\/media\/public\/([^\s)]+)/g;
+      for (const match of markdown.matchAll(pattern)) {
+        if (match[1]) keys.add(match[1]);
+      }
+      return keys;
+    };
+
+    const canonicalMediaKeys = new Set(posts.flatMap((post) => [...mediaKeysFromMarkdown(post.body)]));
+
+    const currentPostMediaKeys = () => mediaKeysFromMarkdown(value("body"));
+
     const filteredMediaItems = () => {
       const query = normalizedSearch(mediaSearch?.value ?? "");
       const context = mediaContext?.value ?? "all";
+      const usage = mediaUsage?.value ?? "all";
       const currentSlug = value("slug");
       return mediaItems.filter((item) => {
         if (!item.contentType.startsWith("image/")) return false;
@@ -579,6 +602,9 @@ const editablePosts = posts
         const isCurrentPost = Boolean(currentSlug) && item.objectKey.startsWith(`posts/${currentSlug}/`);
         if (context === "current" && !isCurrentPost) return false;
         if (context === "general" && isPostImage) return false;
+        const isUsed = canonicalMediaKeys.has(item.objectKey);
+        if (usage === "used" && !isUsed) return false;
+        if (usage === "unused" && isUsed) return false;
         if (!query) return true;
         return normalizedSearch(`${item.altText} ${item.objectKey}`).includes(query);
       });
@@ -606,7 +632,17 @@ const editablePosts = posts
         alt.textContent = item.altText || "Sem texto alternativo";
         const meta = document.createElement("span");
         meta.textContent = `${formatBytes(Number(item.sizeBytes))} · ${formatMediaDate(item.createdAt)}`;
-        info.append(alt, meta);
+        const usage = document.createElement("span");
+        usage.className = "editor-media-card__usage";
+        const usedCanonically = canonicalMediaKeys.has(item.objectKey);
+        const usedInCurrentPost = currentPostMediaKeys().has(item.objectKey);
+        usage.textContent = usedInCurrentPost
+          ? "Usada neste post"
+          : usedCanonically
+            ? "Em uso no conteúdo canônico"
+            : "Não referenciada no Markdown canônico";
+        usage.dataset.state = usedInCurrentPost ? "current" : usedCanonically ? "used" : "unused";
+        info.append(alt, meta, usage);
         const actions = document.createElement("div");
         actions.className = "editor-media-card__actions";
         const insertButton = document.createElement("button");
@@ -857,6 +893,7 @@ const editablePosts = posts
     refreshMediaButton?.addEventListener("click", loadMediaLibrary);
     mediaSearch?.addEventListener("input", renderMediaLibrary);
     mediaContext?.addEventListener("change", renderMediaLibrary);
+    mediaUsage?.addEventListener("change", renderMediaLibrary);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
       const prState = await refreshPullRequest();
@@ -884,7 +921,7 @@ const editablePosts = posts
       generatedMarkdown = "";
       updateCounters();
       updatePreview();
-      if (slugChanged) renderMediaLibrary();
+      if (slugChanged || (target instanceof HTMLTextAreaElement && target.name === "body")) renderMediaLibrary();
     });
     document.querySelector("[data-logout]")?.addEventListener("click", async () => {
       if (!api) return;
