@@ -224,6 +224,7 @@ const editablePosts = posts
     let csrf = "";
     let generatedMarkdown = "";
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
+    let currentPrHeadSha = "";
     const field = (name: string) => form?.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
     const checked = (name: string) => Boolean((form?.elements.namedItem(name) as HTMLInputElement | null)?.checked);
     const value = (name: string) => field(name)?.value.trim() ?? "";
@@ -555,12 +556,13 @@ const editablePosts = posts
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível consultar o Pull Request.");
         const data = payload.data ?? {};
+        currentPrHeadSha = String(data.headSha ?? "");
         const ciLabel = data.ci === "success" ? "CI aprovado" : data.ci === "failure" ? "CI com falha" : data.ci === "pending" ? "CI em andamento" : "CI indisponível";
         const stateLabel = data.merged ? "mesclado" : data.state === "open" ? "aberto" : "fechado";
         publishState.textContent = `Estado: ${stateLabel} · ${ciLabel}${data.mergeable === false ? " · conflito detectado" : ""}.`;
         if (workflowLink && data.workflowUrl) { workflowLink.href = data.workflowUrl; workflowLink.hidden = false; }
         if (prLink && data.url) { prLink.href = data.url; prLink.hidden = false; }
-        mergePrButton.disabled = !(data.state === "open" && !data.merged && data.ci === "success" && data.mergeable === true);
+        mergePrButton.disabled = !(data.state === "open" && !data.merged && data.ci === "success" && data.mergeable === true && currentPrHeadSha);
       } catch (error) {
         publishState.textContent = error instanceof Error ? error.message : "Não foi possível consultar o Pull Request.";
       }
@@ -568,6 +570,10 @@ const editablePosts = posts
 
     const mergePullRequest = async () => {
       if (!api || !currentPrNumber || !mergePrButton || !publishState) return;
+      if (!currentPrHeadSha) {
+        publishState.textContent = "Atualize o status do Pull Request antes de publicar.";
+        return;
+      }
       if (!confirm(`Mesclar o Pull Request #${currentPrNumber} na main e iniciar a publicação?`)) return;
       mergePrButton.disabled = true;
       publishState.textContent = "Validando CI e solicitando merge…";
@@ -575,7 +581,7 @@ const editablePosts = posts
         const response = await fetch(`${api}/api/editor/pull-request/${currentPrNumber}/merge`, {
           method: "POST", credentials: "include",
           headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
-          body: JSON.stringify({ confirmation: "PUBLICAR" }),
+          body: JSON.stringify({ confirmation: "PUBLICAR", expectedHeadSha: currentPrHeadSha }),
         });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível publicar o conteúdo.");
@@ -583,8 +589,9 @@ const editablePosts = posts
         if (status) status.textContent = `Pull Request #${currentPrNumber} mesclado com segurança.`;
         await refreshPullRequest();
       } catch (error) {
-        publishState.textContent = error instanceof Error ? error.message : "Não foi possível publicar o conteúdo.";
+        const message = error instanceof Error ? error.message : "Não foi possível publicar o conteúdo.";
         await refreshPullRequest();
+        publishState.textContent = `${message} Atualize o status antes de tentar novamente.`;
       }
     };
 
