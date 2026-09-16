@@ -1,0 +1,457 @@
+---
+import { getCollection } from "astro:content";
+import AdminLayout from "../../layouts/AdminLayout.astro";
+import "../../styles/admin-metrics.css";
+import "../../styles/admin-editor.css";
+import "../../styles/article.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+const posts = await getCollection("posts");
+const editablePosts = posts
+  .map((post) => ({
+    slug: post.id.replace(/\.md$/, ""),
+    title: post.data.title,
+    description: post.data.description,
+    publishedAt: post.data.publishedAt.toISOString().slice(0, 10),
+    category: post.data.category,
+    type: post.data.type,
+    readingTime: post.data.readingTime,
+    difficulty: post.data.difficulty,
+    featured: post.data.featured,
+    draft: post.data.draft,
+    tags: post.data.tags,
+    body: post.body ?? "",
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"));
+---
+<AdminLayout title="Editor de conteúdo" description="Editor assistido e preview de conteúdos do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel admin-editor-shell">
+      <div class="admin-editor-heading">
+        <div>
+          <p class="admin-kicker">Fluxo editorial Git/Markdown</p>
+          <h1>Editor de conteúdo</h1>
+          <p class="admin-intro">
+            Crie ou revise artigos com preview, validação de campos e geração de Markdown sem publicar direto em produção.
+          </p>
+        </div>
+        <div class="admin-actions">
+          <a class="button" href="/admin/">Painel</a>
+          <a class="button" href="/admin/metricas/">Métricas</a>
+          <button class="button" type="button" data-logout>Sair</button>
+        </div>
+      </div>
+
+      <section class="editor-toolbar" aria-label="Selecionar conteúdo">
+        <label for="post-select">Conteúdo existente</label>
+        <select id="post-select" data-post-select>
+          <option value="">Novo conteúdo</option>          {editablePosts.map((post) => <option value={post.slug}>{post.title}</option>)}
+        </select>
+        <button class="button" type="button" data-new-content>Novo</button>
+      </section>
+
+      <div class="editor-layout">
+        <form class="editor-form" data-editor-form novalidate>
+          <div class="editor-fields editor-fields--two">
+            <label>
+              Título
+              <input name="title" required maxlength="90" autocomplete="off" />
+              <small data-count="title">0/90</small>
+            </label>
+            <label>
+              Slug
+              <input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" autocomplete="off" />
+              <small>minúsculas, números e hífens</small>
+            </label>
+          </div>
+
+          <label>
+            Descrição
+            <textarea name="description" rows="3" required maxlength="180"></textarea>
+            <small data-count="description">0/180</small>
+          </label>
+          <div class="editor-fields editor-fields--three">
+            <label>
+              Categoria
+              <select name="category" required>
+                <option value="programacao">Programação</option>
+                <option value="linux-seguranca">Linux & Segurança</option>
+                <option value="inteligencia-artificial">Inteligência Artificial</option>
+                <option value="tecnologia-pratica">Tecnologia prática</option>
+              </select>
+            </label>
+            <label>
+              Tipo
+              <select name="type" required>
+                <option value="artigo">Artigo</option>
+                <option value="tutorial">Tutorial</option>
+              </select>
+            </label>
+            <label>
+              Dificuldade
+              <select name="difficulty" required>
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+              </select>
+            </label>
+          </div>
+          <div class="editor-fields editor-fields--three">
+            <label>
+              Data de publicação
+              <input name="publishedAt" type="date" required />
+            </label>
+            <label>
+              Tempo de leitura (min)
+              <input name="readingTime" type="number" min="1" max="120" value="5" required />
+            </label>
+            <label>
+              Tags
+              <input name="tags" placeholder="linux, terminal, iniciantes" autocomplete="off" />
+            </label>
+          </div>
+
+          <div class="editor-checks">
+            <label><input name="featured" type="checkbox" /> Destaque</label>
+            <label><input name="draft" type="checkbox" /> Rascunho</label>
+          </div>
+
+          <label>
+            Conteúdo Markdown
+            <textarea class="editor-markdown" name="body" rows="22" required spellcheck="true"></textarea>
+            <small>Use títulos ##, listas, links, blocos ```bash e demais Markdown editorial.</small>
+          </label>
+          <div class="editor-actions">
+            <button class="button button-primary" type="button" data-generate>Gerar Markdown</button>
+            <button class="button" type="button" data-copy-markdown>Copiar Markdown</button>
+            <button class="button" type="button" data-download>Baixar .md</button>
+          </div>
+          <output class="editor-status" data-status aria-live="polite"></output>
+        </form>
+
+        <aside class="editor-preview" aria-label="Preview do conteúdo">
+          <div class="editor-preview__bar">
+            <span>PREVIEW</span>
+            <span data-preview-state>Rascunho local</span>
+          </div>
+          <article>
+            <p class="eyebrow" data-preview-eyebrow>Tecnologia prática · artigo</p>
+            <h2 data-preview-title>Título do conteúdo</h2>
+            <p class="editor-preview__description" data-preview-description>
+              A descrição aparecerá aqui conforme você preencher o formulário.
+            </p>
+            <div class="editor-preview__body article-content" data-preview-body>
+              <p>Escreva no campo Markdown para visualizar a estrutura do artigo.</p>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <script is:inline id="editor-posts" type="application/json" set:html={JSON.stringify(editablePosts).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")} />
+
+  <script>
+    type EditablePost = {
+      slug: string;
+      title: string;
+      description: string;
+      publishedAt: string;
+      category: string;
+      type: string;
+      readingTime: number;
+      difficulty: string;
+      featured: boolean;
+      draft: boolean;
+      tags: string[];
+      body: string;
+    };
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const form = document.querySelector<HTMLFormElement>("[data-editor-form]");
+    const select = document.querySelector<HTMLSelectElement>("[data-post-select]");
+    const status = document.querySelector<HTMLOutputElement>("[data-status]");
+    const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
+    const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
+    let csrf = "";
+    let generatedMarkdown = "";
+    const field = (name: string) => form?.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
+    const checked = (name: string) => Boolean((form?.elements.namedItem(name) as HTMLInputElement | null)?.checked);
+    const value = (name: string) => field(name)?.value.trim() ?? "";
+
+    const escapeHtml = (input: string) => input
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    const inlineMarkdown = (input: string) => escapeHtml(input)
+      .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g, '<a href="$2">$1</a>');
+
+    const renderMarkdown = (source: string) => {
+      const lines = source.replace(/\r\n?/g, "\n").split("\n");
+      const output: string[] = [];
+      let inCode = false;
+      let language = "";
+      let code: string[] = [];
+      let list: "ul" | "ol" | "" = "";
+
+      const closeList = () => {
+        if (!list) return;
+        output.push(`</${list}>`);
+        list = "";
+      };
+      for (const line of lines) {
+        const fence = line.match(/^```([\w-]*)\s*$/);
+        if (fence) {
+          closeList();
+          if (!inCode) {
+            inCode = true;
+            language = fence[1] ?? "";
+            code = [];
+          } else {
+            output.push(`<pre data-language="${escapeHtml(language)}"><code>${escapeHtml(code.join("\n"))}</code></pre>`);
+            inCode = false;
+            language = "";
+            code = [];
+          }
+          continue;
+        }
+
+        if (inCode) {
+          code.push(line);
+          continue;
+        }
+
+        if (!line.trim()) {
+          closeList();
+          continue;
+        }
+
+        const heading = line.match(/^(#{2,4})\s+(.+)$/);
+        if (heading) {
+          closeList();
+          const level = heading[1].length;
+          output.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
+          continue;
+        }
+        const unordered = line.match(/^[-*]\s+(.+)$/);
+        if (unordered) {
+          if (list !== "ul") {
+            closeList();
+            list = "ul";
+            output.push("<ul>");
+          }
+          output.push(`<li>${inlineMarkdown(unordered[1])}</li>`);
+          continue;
+        }
+
+        const ordered = line.match(/^\d+\.\s+(.+)$/);
+        if (ordered) {
+          if (list !== "ol") {
+            closeList();
+            list = "ol";
+            output.push("<ol>");
+          }
+          output.push(`<li>${inlineMarkdown(ordered[1])}</li>`);
+          continue;
+        }
+
+        const quote = line.match(/^>\s?(.+)$/);
+        if (quote) {
+          closeList();
+          output.push(`<blockquote>${inlineMarkdown(quote[1])}</blockquote>`);
+          continue;
+        }
+
+        closeList();
+        output.push(`<p>${inlineMarkdown(line)}</p>`);
+      }
+
+      closeList();
+      if (inCode) output.push(`<pre><code>${escapeHtml(code.join("\n"))}</code></pre>`);
+      return output.join("");
+    };
+    const slugify = (input: string) => input
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
+    const categoryLabels: Record<string, string> = {
+      programacao: "Programação",
+      "linux-seguranca": "Linux & Segurança",
+      "inteligencia-artificial": "Inteligência Artificial",
+      "tecnologia-pratica": "Tecnologia prática",
+    };
+
+    const updatePreview = () => {
+      const title = value("title") || "Título do conteúdo";
+      const description = value("description") || "A descrição aparecerá aqui conforme você preencher o formulário.";
+      const category = categoryLabels[value("category")] ?? "Tecnologia prática";
+      const type = value("type") || "artigo";
+      const body = value("body");
+
+      document.querySelector<HTMLElement>("[data-preview-title]")!.textContent = title;
+      document.querySelector<HTMLElement>("[data-preview-description]")!.textContent = description;
+      document.querySelector<HTMLElement>("[data-preview-eyebrow]")!.textContent = `${category} · ${type}`;
+      const previewBody = document.querySelector<HTMLElement>("[data-preview-body]");
+      if (previewBody) previewBody.innerHTML = body ? renderMarkdown(body) : "<p>Escreva no campo Markdown para visualizar a estrutura do artigo.</p>";
+      const state = document.querySelector<HTMLElement>("[data-preview-state]");
+      if (state) state.textContent = checked("draft") ? "Rascunho" : "Pronto para revisão";
+    };
+    const yamlString = (input: string) => JSON.stringify(input);
+
+    const buildMarkdown = () => {
+      if (!form?.reportValidity()) {
+        if (status) status.textContent = "Revise os campos obrigatórios antes de gerar o arquivo.";
+        return "";
+      }
+
+      const tags = value("tags")
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+
+      const lines = [
+        "---",
+        `title: ${yamlString(value("title"))}`,
+        `description: ${yamlString(value("description"))}`,
+        `publishedAt: ${value("publishedAt")}`,
+        `category: ${value("category")}`,
+        `type: ${value("type")}`,
+        `readingTime: ${Number(value("readingTime")) || 1}`,
+        `difficulty: ${value("difficulty")}`,
+        `featured: ${checked("featured")}`,
+        `draft: ${checked("draft")}`,
+        `tags: [${tags.map((tag) => yamlString(tag)).join(", ")}]`,
+        "---",
+        "",
+        value("body"),
+        "",
+      ];
+
+      generatedMarkdown = lines.join("\n");
+      if (status) status.textContent = `Markdown válido preparado para src/content/posts/${value("slug")}.md`;
+      return generatedMarkdown;
+    };
+    const fillPost = (post: EditablePost) => {
+      if (!form) return;
+      field("title")!.value = post.title;
+      field("slug")!.value = post.slug;
+      field("description")!.value = post.description;
+      field("publishedAt")!.value = post.publishedAt;
+      field("category")!.value = post.category;
+      field("type")!.value = post.type;
+      field("readingTime")!.value = String(post.readingTime);
+      field("difficulty")!.value = post.difficulty;
+      field("tags")!.value = post.tags.join(", ");
+      field("body")!.value = post.body;
+      (field("featured") as HTMLInputElement).checked = post.featured;
+      (field("draft") as HTMLInputElement).checked = post.draft;
+      generatedMarkdown = "";
+      updateCounters();
+      updatePreview();
+      if (status) status.textContent = `Editando ${post.slug}.md localmente; nada foi publicado.`;
+    };
+
+    const resetForm = () => {
+      form?.reset();
+      if (field("publishedAt")) field("publishedAt")!.value = new Date().toISOString().slice(0, 10);
+      if (field("readingTime")) field("readingTime")!.value = "5";
+      if (field("category")) field("category")!.value = "tecnologia-pratica";
+      if (field("type")) field("type")!.value = "artigo";
+      if (field("difficulty")) field("difficulty")!.value = "iniciante";
+      generatedMarkdown = "";
+      if (select) select.value = "";
+      updateCounters();
+      updatePreview();
+      if (status) status.textContent = "Novo conteúdo iniciado. Nenhuma alteração foi publicada.";
+    };
+    const updateCounters = () => {
+      const title = value("title");
+      const description = value("description");
+      const titleCount = document.querySelector<HTMLElement>('[data-count="title"]');
+      const descriptionCount = document.querySelector<HTMLElement>('[data-count="description"]');
+      if (titleCount) titleCount.textContent = `${title.length}/90`;
+      if (descriptionCount) descriptionCount.textContent = `${description.length}/180`;
+    };
+
+    const copyGenerated = async () => {
+      const markdown = generatedMarkdown || buildMarkdown();
+      if (!markdown) return;
+      try {
+        await navigator.clipboard.writeText(markdown);
+        if (status) status.textContent = "Markdown copiado para a área de transferência.";
+      } catch {
+        if (status) status.textContent = "O navegador bloqueou a cópia automática. Use Baixar .md.";
+      }
+    };
+
+    const downloadGenerated = () => {
+      const markdown = generatedMarkdown || buildMarkdown();
+      if (!markdown) return;
+      const blob = new Blob([markdown], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${value("slug")}.md`;
+      link.click();
+      URL.revokeObjectURL(url);
+      if (status) status.textContent = `${value("slug")}.md preparado para revisão local.`;
+    };
+    const start = async () => {
+      if (!api) return;
+      const session = await fetch(`${api}/api/auth/session`, { credentials: "include" });
+      if (!session.ok) {
+        location.href = "/admin/";
+        return;
+      }
+      const payload = await session.json();
+      csrf = String(payload.data?.csrf ?? "");
+      resetForm();
+    };
+
+    document.querySelector("[data-new-content]")?.addEventListener("click", resetForm);
+    document.querySelector("[data-generate]")?.addEventListener("click", () => buildMarkdown());
+    document.querySelector("[data-copy-markdown]")?.addEventListener("click", copyGenerated);
+    document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
+
+    select?.addEventListener("change", () => {
+      if (!select.value) {
+        resetForm();
+        return;
+      }
+      const post = posts.find((item) => item.slug === select.value);
+      if (post) fillPost(post);
+    });
+
+    form?.addEventListener("input", (event) => {
+      const target = event.target;
+      if (target instanceof HTMLInputElement && target.name === "title" && !value("slug")) {
+        field("slug")!.value = slugify(target.value);
+      }
+      generatedMarkdown = "";
+      updateCounters();
+      updatePreview();
+    });
+    document.querySelector("[data-logout]")?.addEventListener("click", async () => {
+      if (!api) return;
+      await fetch(`${api}/api/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+        headers: csrf ? { "X-CSRF-Token": csrf } : {},
+      });
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      if (status) status.textContent = "Não foi possível validar a sessão administrativa.";
+    });
+  </script>
+</AdminLayout>
