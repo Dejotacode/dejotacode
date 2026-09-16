@@ -2,6 +2,29 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.14.0] - 2026-09-16
+
+### Adicionado
+
+- Detecção de imagens referenciadas no Markdown canônico carregado pelo Admin.
+- Filtro de uso na biblioteca: `Todas`, `Em uso` e `Não referenciadas`.
+- Selos por imagem: `Usada neste post`, `Em uso no conteúdo canônico` e `Não referenciada no Markdown canônico`.
+
+### Segurança e escopo
+
+- Nenhuma ação de exclusão foi adicionada.
+- O estado `Em uso` considera apenas referências presentes no Markdown canônico do Git.
+- O selo `Usada neste post` também acompanha a edição local atual, sem tratá-la como publicada.
+- Nenhuma migration, mudança de API, CTA, funil ou analytics.
+
+### Qualidade e produção
+
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build de produção: 46 páginas estáticas.
+- QA: 1.896 referências internas, 0 links quebrados e 0 páginas HTML com problemas.
+- Smoke de produção: 10/10 verificações aprovadas.
+- Teste manual confirmou 1 imagem canônica detectada entre 23 mídias da biblioteca.
+
 ## [1.13.0] - 2026-09-16
 
 ### Melhorias no Admin
