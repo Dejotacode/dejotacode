@@ -160,6 +160,7 @@ Os procedimentos de produção ficam separados deste guia de desenvolvimento par
 
 - [`runbook-deploy-rollback.md`](runbook-deploy-rollback.md) — deploy, homologação e rollback do frontend e da API;
 - [`backup-recovery.md`](backup-recovery.md) — inventário de dados, exportação segura do D1 e estratégia de recuperação.
+- [`admin-scope-v1.9.0.md`](admin-scope-v1.9.0.md) — decisão de produto sobre autenticação, métricas e eventual CMS.
 
 Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve continuar exigindo aprovação explícita.
 
