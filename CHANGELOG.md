@@ -2,6 +2,36 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.6.0] - 2026-09-16
+
+### Adicionado
+
+- Área administrativa dedicada no frontend atual, separada do layout público.
+- Tela de autenticação em `/admin/`.
+- Dashboard autenticado de métricas em `/admin/metricas/`.
+- Cards com totais agregados do funil de crescimento.
+- Indicadores derivados de conversão, páginas mais lidas e campanhas.
+- Suporte aos temas claro e escuro e layout responsivo.
+
+### Alterado
+
+- Painel administrativo passou a consumir a API existente sem reintroduzir a árvore legada `site/`.
+- Área administrativa usa `AdminLayout` próprio para não contaminar o `page_view` público.
+- Páginas administrativas configuradas com `noindex, nofollow`.
+- Versão do projeto atualizada para `1.6.0`.
+
+### Qualidade e segurança
+
+- PR #29 integrado à `main` no commit `4202408ff0c06a6e4e24649459db9b15c9d44419`.
+- CI do head final #60 e CI pós-merge #61 concluídos com sucesso.
+- Login, sessão, métricas, logout e bloqueio sem sessão homologados localmente.
+- CORS com credenciais e proteção CSRF validados no ambiente local.
+- Temas claro e escuro homologados.
+- Responsividade validada em mobile 375 px e tablet 768 px.
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build estático validado com 40 páginas.
+- Nenhuma migration, alteração de API, D1, DNS ou secrets de produção.
+
 ## [1.5.0] - 2026-09-15
 
 ### Adicionado
