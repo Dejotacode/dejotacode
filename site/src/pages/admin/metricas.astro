@@ -1,4 +1,211 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import Brand from '../../components/Brand.astro'; import '../../styles/admin.css'; import '../../styles/metrics.css'; const api=import.meta.env.PUBLIC_API_URL??'http://localhost:8787';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Brand from '../../components/Brand.astro';
+import '../../styles/admin.css';
+import '../../styles/metrics.css';
+
+const api = import.meta.env.PUBLIC_API_URL ?? 'http://localhost:8787';
 ---
-<BaseLayout title="Métricas — DejotaCode" description="Métricas agregadas do projeto." noindex><main class="admin-shell" data-api={api}><header><Brand/><a href="/admin">← Voltar ao painel</a></header><section class="metrics-workspace"><p class="eyebrow">Últimos 30 dias</p><h1>Métricas e conversão</h1><p>Somente totais agregados, sem identificação de visitantes.</p><div class="metric-cards" data-totals><p>Carregando…</p></div><section><h2>Páginas mais lidas</h2><div class="ranking" data-pages></div></section></section></main><script>const api=document.querySelector<HTMLElement>('[data-api]')!.dataset.api;const start=async()=>{const session=await fetch(`${api}/api/auth/session`,{credentials:'include'});if(!session.ok){location.href='/admin';return;}const response=await fetch(`${api}/api/analytics/summary`,{credentials:'include'});const data=(await response.json()).data;const totals=document.querySelector<HTMLElement>('[data-totals]')!;totals.replaceChildren();const labels:any={page_view:'Visualizações',cta_click:'Cliques em CTA',lead_submit:'Inscrições',contact_submit:'Contatos'};data.totals.forEach((item:any)=>{const card=document.createElement('article');card.innerHTML='<strong></strong><span></span>';card.querySelector('strong')!.textContent=new Intl.NumberFormat('pt-BR').format(item.total);card.querySelector('span')!.textContent=labels[item.event]??item.event;totals.append(card);});const pages=document.querySelector<HTMLElement>('[data-pages]')!;data.pages.forEach((item:any,index:number)=>{const row=document.createElement('div');row.innerHTML='<b></b><span></span><strong></strong>';row.querySelector('b')!.textContent=String(index+1);row.querySelector('span')!.textContent=item.path;row.querySelector('strong')!.textContent=String(item.total);pages.append(row);});};start();</script></BaseLayout>
+
+<BaseLayout title="Métricas — DejotaCode" description="Métricas agregadas do projeto." noindex>
+  <main class="admin-shell" data-api={api}>
+    <header>
+      <Brand />
+      <a href="/admin">← Voltar ao painel</a>
+    </header>
+
+    <section class="metrics-workspace">
+      <p class="eyebrow">Últimos 30 dias</p>
+      <h1>Métricas e conversão</h1>
+      <p>Somente totais agregados, sem identificação de visitantes.</p>
+
+      <div class="metric-cards" data-totals>
+        <p>Carregando…</p>
+      </div>
+
+      <div class="funnel-cards" data-funnel></div>
+
+      <section>
+        <h2>Páginas mais lidas</h2>
+        <div class="ranking" data-pages></div>
+      </section>
+
+      <section>
+        <h2>Campanhas e ações</h2>
+        <p class="section-note">Eventos agregados por campanha nos últimos 30 dias.</p>
+        <div class="ranking campaign-ranking" data-campaigns></div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    type MetricItem = {
+      event: string;
+      total: number;
+    };
+
+    type PageItem = {
+      path: string;
+      total: number;
+    };
+
+    type CampaignItem = {
+      campaign: string;
+      event: string;
+      total: number;
+    };
+
+    type SummaryData = {
+      periodDays: number;
+      totals: MetricItem[];
+      pages: PageItem[];
+      campaigns?: CampaignItem[];
+    };
+
+    const root = document.querySelector<HTMLElement>('[data-api]');
+    const api = root?.dataset.api;
+
+    const labels: Record<string, string> = {
+      page_view: 'Visualizações',
+      cta_click: 'Cliques em CTA',
+      lead_submit: 'Inscrições',
+      contact_submit: 'Contatos',
+      form_start: 'Formulários iniciados',
+      guide_access: 'Acessos ao guia',
+      trail_start: 'Trilhas iniciadas',
+      trail_lesson_click: 'Etapas acessadas',
+      trail_complete: 'Trilhas concluídas',
+    };
+
+    const number = new Intl.NumberFormat('pt-BR');
+    const percent = new Intl.NumberFormat('pt-BR', {
+      style: 'percent',
+      maximumFractionDigits: 1,
+    });
+
+    const totalFor = (data: SummaryData, event: string) =>
+      Number(data.totals.find((item) => item.event === event)?.total ?? 0);
+
+    const ratio = (value: number, base: number) =>
+      base > 0 ? value / base : 0;
+
+    const renderEmpty = (container: HTMLElement, message: string) => {
+      const empty = document.createElement('p');
+      empty.className = 'metrics-empty';
+      empty.textContent = message;
+      container.replaceChildren(empty);
+    };
+
+    const start = async () => {
+      if (!api) return;
+
+      const session = await fetch(`${api}/api/auth/session`, {
+        credentials: 'include',
+      });
+
+      if (!session.ok) {
+        location.href = '/admin';
+        return;
+      }
+
+      const response = await fetch(`${api}/api/analytics/summary`, {
+        credentials: 'include',
+      });
+
+      if (!response.ok) return;
+
+      const payload = await response.json();
+      const data = payload.data as SummaryData;
+
+      const totals = document.querySelector<HTMLElement>('[data-totals]');
+      const funnel = document.querySelector<HTMLElement>('[data-funnel]');
+      const pages = document.querySelector<HTMLElement>('[data-pages]');
+      const campaigns = document.querySelector<HTMLElement>('[data-campaigns]');
+
+      if (!totals || !funnel || !pages || !campaigns) return;
+
+      totals.replaceChildren();
+
+      data.totals.forEach((item) => {
+        const card = document.createElement('article');
+        const value = document.createElement('strong');
+        const label = document.createElement('span');
+
+        value.textContent = number.format(Number(item.total));
+        label.textContent = labels[item.event] ?? item.event;
+        card.append(value, label);
+        totals.append(card);
+      });
+
+      const pageViews = totalFor(data, 'page_view');
+      const ctaClicks = totalFor(data, 'cta_click');
+      const formStarts = totalFor(data, 'form_start');
+      const leads = totalFor(data, 'lead_submit');
+      const trailStarts = totalFor(data, 'trail_start');
+      const trailCompletions = totalFor(data, 'trail_complete');
+
+      const funnelItems = [
+        ['CTR de CTA', percent.format(ratio(ctaClicks, pageViews))],
+        ['Início de formulário', percent.format(ratio(formStarts, pageViews))],
+        ['Conversão em lead', percent.format(ratio(leads, pageViews))],
+        ['Lead após início', percent.format(ratio(leads, formStarts))],
+        ['Conclusão de trilha', percent.format(ratio(trailCompletions, trailStarts))],
+      ];
+
+      funnel.replaceChildren();
+
+      funnelItems.forEach(([label, value]) => {
+        const card = document.createElement('article');
+        const strong = document.createElement('strong');
+        const span = document.createElement('span');
+
+        strong.textContent = value;
+        span.textContent = label;
+        card.append(strong, span);
+        funnel.append(card);
+      });
+
+      pages.replaceChildren();
+
+      if (!data.pages.length) {
+        renderEmpty(pages, 'Ainda não há visualizações no período.');
+      } else {
+        data.pages.forEach((item, index) => {
+          const row = document.createElement('div');
+          const rank = document.createElement('b');
+          const path = document.createElement('span');
+          const total = document.createElement('strong');
+
+          rank.textContent = String(index + 1);
+          path.textContent = item.path;
+          total.textContent = number.format(Number(item.total));
+          row.append(rank, path, total);
+          pages.append(row);
+        });
+      }
+
+      campaigns.replaceChildren();
+
+      const campaignItems = data.campaigns ?? [];
+
+      if (!campaignItems.length) {
+        renderEmpty(campaigns, 'Ainda não há campanhas registradas no período.');
+      } else {
+        campaignItems.forEach((item, index) => {
+          const row = document.createElement('div');
+          const rank = document.createElement('b');
+          const context = document.createElement('span');
+          const total = document.createElement('strong');
+
+          rank.textContent = String(index + 1);
+          context.textContent = `${item.campaign} · ${labels[item.event] ?? item.event}`;
+          total.textContent = number.format(Number(item.total));
+          row.append(rank, context, total);
+          campaigns.append(row);
+        });
+      }
+    };
+
+    start().catch(() => {});
+  </script>
+</BaseLayout>
