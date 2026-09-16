@@ -2,6 +2,37 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.5.0] - 2026-09-15
+
+### Adicionado
+
+- Instrumentação first-party para `form_start`, `guide_access`, `trail_start`, `trail_lesson_click` e `trail_complete`.
+- Medição agregada do funil de crescimento, complementando `page_view`, `cta_click`, `lead_submit` e `contact_submit`.
+- Medição do acesso ao PDF do Guia do Iniciante.
+- Medição agregada de início, avanço e conclusão das trilhas.
+- Suporte da API aos nove eventos de analytics da taxonomia v1.5.0.
+- Agregação por campanha no resumo autenticado da API de métricas.
+
+### Alterado
+
+- Envio de analytics do frontend centralizado em `src/scripts/analytics.ts`.
+- `form_start` limitado aos formulários do funil de leads.
+- Deduplicação de eventos de trilha movida para `sessionStorage`, sem marcador persistente de analytics.
+- Progresso detalhado das trilhas mantido apenas no navegador.
+- Mensagem de privacidade das trilhas atualizada para refletir a coleta agregada.
+- Documentação de arquitetura atualizada com taxonomia de eventos e modelo de privacidade da v1.5.0.
+
+### Qualidade e produção
+
+- CI do frontend aprovado antes do merge e CI pós-merge #55 concluído com sucesso.
+- Build de produção validado com 38 páginas estáticas.
+- QA verificou 1583 referências internas, com 0 destinos quebrados.
+- QA estrutural validou 38 HTML e 88 controles de formulário, com 0 páginas com problemas.
+- API homologada em produção: healthcheck HTTP 200, cinco novos eventos HTTP 201 e evento inválido HTTP 400.
+- Persistência dos eventos confirmada no D1 production e registros sintéticos de QA removidos após o teste.
+- Frontend publicado no Cloudflare Pages e marcadores da v1.5.0 confirmados no domínio oficial.
+- Nenhuma migration, alteração de DNS ou alteração de secrets foi necessária para esta versão.
+
 ## [1.4.0] - 2026-09-15
 
 ### Adicionado
