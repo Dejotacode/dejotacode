@@ -8,7 +8,7 @@ readingTime: 8
 difficulty: iniciante
 featured: false
 draft: false
-tags: [git, github, versionamento]
+tags: ["git", "github", "versionamento"]
 ---
 
 Git e GitHub trabalham juntos, mas não são a mesma coisa.
