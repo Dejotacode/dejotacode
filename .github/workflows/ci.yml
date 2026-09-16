@@ -36,3 +36,51 @@ jobs:
 
       - name: Validate built HTML
         run: npm run qa
+
+  deploy-production:
+    name: Deploy Cloudflare Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: 0753bf4a771969cb4bd2c1b64fad5ee8
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Cloudflare credential
+        shell: bash
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN não está configurado no repositório."
+            exit 1
+          fi
+
+      - name: Production build
+        run: npm run build:production
+
+      - name: Validate built HTML
+        run: npm run qa
+
+      - name: Deploy to Cloudflare Pages
+        run: >-
+          npx wrangler pages deploy dist
+          --project-name=dejota-code
+          --branch=main
+          --commit-hash="$GITHUB_SHA"
+          --commit-message="${{ github.event.head_commit.message }}"
+
+      - name: Production smoke test
+        run: npm run smoke:production
