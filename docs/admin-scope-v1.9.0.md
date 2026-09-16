@@ -14,6 +14,7 @@ O frontend moderno expõe apenas duas rotas administrativas:
 O conteúdo público atual não é carregado da API. Os 17 conteúdos editoriais são versionados em `src/content/posts/*.md` e gerados pelo Astro no build estático.
 
 Isso torna o Git a fonte de verdade editorial da versão moderna.
+
 ## Capacidade legada existente
 
 O repositório legado/API já possui backend para:
@@ -27,6 +28,7 @@ O repositório legado/API já possui backend para:
 O frontend legado também possuía telas para conteúdo, editor, convites, registro e biblioteca de mídias.
 
 Essas capacidades não estão integradas ao fluxo editorial moderno.
+
 ## Risco de integrar o CMS agora
 
 Ativar o CMS legado no frontend moderno criaria duas fontes de verdade para conteúdo:
@@ -37,6 +39,7 @@ Ativar o CMS legado no frontend moderno criaria duas fontes de verdade para cont
 Sem uma migração arquitetural explícita, publicar pelo CMS não garante que o conteúdo apareça no site estático moderno. O inverso também é verdadeiro: editar Markdown não atualiza o D1.
 
 Isso aumenta risco operacional, duplicação editorial e inconsistência de SEO, URLs e releases.
+
 ## Decisão para a v1.9.0
 
 Manter o admin moderno focado em:
@@ -49,6 +52,7 @@ Manter o admin moderno focado em:
 O CMS completo e a biblioteca de mídia não entram automaticamente na v1.9.0.
 
 Antes de reativá-los, deve existir uma decisão separada sobre a fonte de verdade editorial: Git/Markdown ou D1/CMS.
+
 ## Critério para reconsiderar CMS
 
 Reavaliar CMS somente se houver necessidade operacional comprovada, como:
