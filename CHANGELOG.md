@@ -2,6 +2,39 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.10.0] - 2026-09-16
+
+### Adicionado
+
+- Admin Editorial com criação, edição, preview e exportação de Markdown.
+- Integração segura com GitHub para branch editorial, commit e Pull Request.
+- Publicação assistida com leitura de PR, conflito, CI e squash merge.
+- Upload de imagens editoriais no Cloudflare R2 com inserção automática no Markdown.
+- Deploy de produção do Cloudflare Pages automatizado a partir da `main`.
+
+### Segurança e operação
+
+- Merge restrito à base `main` e a branches `content/admin-*`.
+- `expectedHeadSha` obrigatório e validado antes do merge.
+- CI obrigatório antes da publicação.
+- Atualização automática do status do CI a cada 5 segundos por até 3 minutos.
+- Mensagens de erro de publicação preservadas para diagnóstico.
+- Botão de merge ocultado após o PR ser mesclado.
+
+### Conteúdo
+
+- Novos conteúdos sobre phishing, pipe/redirecionamento Linux, documentação do aprendizado, estudo com IA e DevTools.
+- Imagem editorial R2 publicada no conteúdo de comandos Linux.
+
+### Qualidade e produção
+
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build de produção: 46 páginas estáticas.
+- QA: 1.896 referências internas, 0 links quebrados e 0 páginas HTML com problemas.
+- Smoke de produção: 10/10 verificações aprovadas.
+- Fluxo real Admin → PR → CI → merge → Pages validado com o PR #80.
+- API compatível em produção no commit `9789fba`, com versionamento independente do frontend.
+
 ## [1.7.2] - 2026-09-16
 
 ### Corrigido
