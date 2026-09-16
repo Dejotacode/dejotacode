@@ -3,12 +3,55 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import TrailCard from "../../components/TrailCard.astro";
 import { trails } from "../../data/trails";
 import "../../styles/trails.css";
+
+const canonicalUrl = new URL("/trilhas/", Astro.site ?? Astro.url.origin);
+const availableTrails = trails.filter((trail) => trail.available);
+const trailsListId = `${canonicalUrl.href}#itemlist`;
+
+const trailsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": canonicalUrl.href,
+      url: canonicalUrl.href,
+      name: "Trilhas de aprendizagem | DejotaCode",
+      description:
+        "Conteúdos organizados em sequência para aprender tecnologia desde o primeiro passo.",
+      inLanguage: "pt-BR",
+      mainEntity: {
+        "@id": trailsListId,
+      },
+      isPartOf: {
+        "@id": "https://dejotacode.com.br/#website",
+      },
+    },
+    {
+      "@type": "ItemList",
+      "@id": trailsListId,
+      numberOfItems: availableTrails.length,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      itemListElement: availableTrails.map((trail, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: trail.title,
+        url: new URL(`/trilhas/${trail.slug}/`, canonicalUrl).href,
+      })),
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Trilhas de aprendizagem | DejotaCode"
   description="Conteúdos organizados em sequência para aprender tecnologia desde o primeiro passo."
 >
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(trailsSchema)}
+  />
+
   <main id="conteudo" tabindex="-1" class="trails-page">
     <header class="trails-hero container">
       <p class="eyebrow">COMECE PELO CAMINHO CERTO</p>
