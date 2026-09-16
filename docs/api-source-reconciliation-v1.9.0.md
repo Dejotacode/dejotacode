@@ -28,9 +28,15 @@ Esse deployment ocorreu poucos minutos depois dos commits `8887f67` e `6eb15b1`.
 
 Os bindings de produção observados incluem D1, R2, rate limiters, `ENVIRONMENT=production`, `SITE_ORIGIN=https://dejotacode.com.br` e o secret de bootstrap do CMS.
 
-## Direção recomendada
+## Fonte canônica criada
 
-Adotar um repositório dedicado para a API em vez de recolocar o backend dentro do frontend moderno.
+A API passou a ter repositório público dedicado em `https://github.com/Dejotacode/dejotacode-api`. O histórico da antiga árvore `api/` foi preservado por `git subtree split`, sem reintroduzir o monorepo legado na `main` moderna.
+
+O primeiro commit de consolidação no repositório canônico é `ae3011c3866ec857937792d82508e72a708339a5`, com versão de pacote `1.5.0`, lockfile próprio, README, `.gitignore` e CI de typecheck. O CI inicial passou com sucesso.
+
+## Decisão arquitetural
+
+Manter um repositório dedicado para a API em vez de recolocar o backend dentro do frontend moderno.
 
 Motivos:
 
@@ -40,15 +46,15 @@ Motivos:
 - CI, releases e rollback da API passam a ter rastreabilidade própria;
 - evita ressuscitar o monorepo legado apenas por conveniência histórica.
 
-## Guardrails da migração
+## Guardrails preservados
 
-Antes de criar ou mover a fonte canônica da API:
+Durante a criação da fonte canônica:
 
-- preservar a branch `fix/api-consent-v1.1.0` e seus commits;
-- não executar deploy, migration, DNS ou alteração de secret;
-- manter `wrangler.jsonc`, migrations e código do Worker juntos;
-- adicionar CI/typecheck no repositório destino;
-- registrar o primeiro commit/tag canônico da API;
-- atualizar os runbooks do frontend para apontar para a nova origem.
+- a branch histórica `fix/api-consent-v1.1.0` foi preservada;
+- nenhum deploy, migration, DNS ou secret foi alterado;
+- `wrangler.jsonc`, migrations e código do Worker permanecem juntos;
+- CI/typecheck foi criado e validado no repositório destino;
+- o primeiro commit canônico foi registrado;
+- os runbooks do frontend passaram a apontar para a nova origem.
 
-A criação do repositório e a migração da fonte devem ser uma operação explícita e auditável.
+O deployment de produção observado continua sendo a versão Cloudflare `693c8628-c3de-4831-94df-54dc4064e080`. Como o metadata do Worker não armazena SHA Git, a relação com o commit histórico continua documentada como evidência temporal, sem afirmar prova criptográfica inexistente.
