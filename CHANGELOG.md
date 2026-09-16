@@ -2,6 +2,23 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.11.0] - 2026-09-16
+
+### Operação e recuperação
+
+- Documentação e runbooks reconciliados com o Admin Editorial da v1.10.0 e API v1.6.0.
+- Backup D1 manual seguro documentado, com dry-run, SHA-256, manifesto local e retenção conservadora.
+- Inventário R2 read-only documentado com validação HTTP por `HEAD` e limitação sobre objetos órfãos explicitada.
+- Estratégia de proteção R2 definida antes de qualquer exclusão em massa.
+
+### Qualidade
+
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build de produção: 46 páginas estáticas.
+- QA: 1.896 referências internas, 0 links quebrados e 0 páginas HTML com problemas.
+- Smoke de produção: 10/10 verificações aprovadas.
+- Nenhuma alteração de CTA, funil, campanhas ou taxonomia de analytics.
+
 ## [1.10.0] - 2026-09-16
 
 ### Adicionado
