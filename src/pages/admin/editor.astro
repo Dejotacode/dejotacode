@@ -135,17 +135,34 @@ const editablePosts = posts
               <button class="button" type="button" data-upload-image>Enviar e inserir imagem</button>
               <output data-media-status aria-live="polite">JPG, PNG, WebP ou AVIF · até 10 MB.</output>
             </div>
-            <div class="editor-media-library">
-              <div class="editor-media-library__header">
-                <div>
+            <details class="editor-media-library" open>
+              <summary class="editor-media-library__summary">
+                <span>
                   <strong>Biblioteca de imagens</strong>
-                  <p>Reutilize imagens já enviadas ao R2 sem duplicar arquivos.</p>
+                  <small>Reutilize imagens já enviadas ao R2 sem duplicar arquivos.</small>
+                </span>
+                <span aria-hidden="true">Mostrar / ocultar</span>
+              </summary>
+              <div class="editor-media-library__content">
+                <div class="editor-media-library__toolbar">
+                  <label>
+                    Buscar
+                    <input data-media-search type="search" placeholder="Alt ou caminho da imagem" autocomplete="off" />
+                  </label>
+                  <label>
+                    Contexto
+                    <select data-media-context>
+                      <option value="all">Todas</option>
+                      <option value="current">Enviadas para este post</option>
+                      <option value="general">Biblioteca geral</option>
+                    </select>
+                  </label>
+                  <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
                 </div>
-                <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
+                <output data-media-library-status aria-live="polite">Carregando imagens…</output>
+                <div class="editor-media-grid" data-media-grid></div>
               </div>
-              <output data-media-library-status aria-live="polite">Carregando imagens…</output>
-              <div class="editor-media-grid" data-media-grid></div>
-            </div>
+            </details>
           </section>
 
           <label>
@@ -242,10 +259,13 @@ const editablePosts = posts
     const mediaGrid = document.querySelector<HTMLElement>("[data-media-grid]");
     const mediaLibraryStatus = document.querySelector<HTMLOutputElement>("[data-media-library-status]");
     const refreshMediaButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
+    const mediaSearch = document.querySelector<HTMLInputElement>("[data-media-search]");
+    const mediaContext = document.querySelector<HTMLSelectElement>("[data-media-context]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
     let generatedMarkdown = "";
+    let mediaItems: MediaItem[] = [];
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     let currentPrHeadSha = "";
     let ciPollTimer: number | undefined;
@@ -441,6 +461,7 @@ const editablePosts = posts
       generatedMarkdown = "";
       updateCounters();
       updatePreview();
+      renderMediaLibrary();
       if (status) status.textContent = `Editando ${post.slug}.md localmente; nada foi publicado.`;
     };
 
@@ -455,6 +476,7 @@ const editablePosts = posts
       if (select) select.value = "";
       updateCounters();
       updatePreview();
+      renderMediaLibrary();
       if (status) status.textContent = "Novo conteúdo iniciado. Nenhuma alteração foi publicada.";
     };
     const updateCounters = () => {
@@ -541,12 +563,33 @@ const editablePosts = posts
       if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Imagem existente inserida no Markdown.";
     };
 
-    const renderMediaLibrary = (items: MediaItem[]) => {
+    const normalizedSearch = (input: string) => input
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+    const filteredMediaItems = () => {
+      const query = normalizedSearch(mediaSearch?.value ?? "");
+      const context = mediaContext?.value ?? "all";
+      const currentSlug = value("slug");
+      return mediaItems.filter((item) => {
+        if (!item.contentType.startsWith("image/")) return false;
+        const isPostImage = item.objectKey.startsWith("posts/");
+        const isCurrentPost = Boolean(currentSlug) && item.objectKey.startsWith(`posts/${currentSlug}/`);
+        if (context === "current" && !isCurrentPost) return false;
+        if (context === "general" && isPostImage) return false;
+        if (!query) return true;
+        return normalizedSearch(`${item.altText} ${item.objectKey}`).includes(query);
+      });
+    };
+
+    const renderMediaLibrary = () => {
       if (!mediaGrid) return;
       mediaGrid.replaceChildren();
-      const images = items.filter((item) => item.contentType.startsWith("image/"));
+      const images = filteredMediaItems();
       if (!images.length) {
-        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Nenhuma imagem disponível na biblioteca.";
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Nenhuma imagem corresponde aos filtros atuais.";
         return;
       }
       for (const item of images) {
@@ -587,7 +630,10 @@ const editablePosts = posts
         card.append(image, info, actions);
         mediaGrid.append(card);
       }
-      if (mediaLibraryStatus) mediaLibraryStatus.textContent = `${images.length} imagem(ns) disponível(is), mais recentes primeiro.`;
+      if (mediaLibraryStatus) {
+        const totalImages = mediaItems.filter((item) => item.contentType.startsWith("image/")).length;
+        mediaLibraryStatus.textContent = `${images.length} de ${totalImages} imagem(ns) exibida(s), mais recentes primeiro.`;
+      }
     };
 
     const loadMediaLibrary = async () => {
@@ -598,7 +644,8 @@ const editablePosts = posts
         const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca de imagens.");
-        renderMediaLibrary(Array.isArray(payload.data?.items) ? payload.data.items : []);
+        mediaItems = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        renderMediaLibrary();
       } catch (error) {
         mediaGrid.replaceChildren();
         if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca de imagens.";
@@ -808,6 +855,8 @@ const editablePosts = posts
     document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
     uploadImageButton?.addEventListener("click", uploadAndInsertImage);
     refreshMediaButton?.addEventListener("click", loadMediaLibrary);
+    mediaSearch?.addEventListener("input", renderMediaLibrary);
+    mediaContext?.addEventListener("change", renderMediaLibrary);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
       const prState = await refreshPullRequest();
@@ -827,12 +876,15 @@ const editablePosts = posts
 
     form?.addEventListener("input", (event) => {
       const target = event.target;
+      let slugChanged = target instanceof HTMLInputElement && target.name === "slug";
       if (target instanceof HTMLInputElement && target.name === "title" && !value("slug")) {
         field("slug")!.value = slugify(target.value);
+        slugChanged = true;
       }
       generatedMarkdown = "";
       updateCounters();
       updatePreview();
+      if (slugChanged) renderMediaLibrary();
     });
     document.querySelector("[data-logout]")?.addEventListener("click", async () => {
       if (!api) return;
