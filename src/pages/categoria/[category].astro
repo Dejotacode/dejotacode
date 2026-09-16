@@ -66,6 +66,29 @@ const categorySchema =
               url: new URL(postHref(post), canonicalUrl).href,
             })),
           },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Início",
+                item: new URL("/", canonicalUrl).href,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: new URL("/blog/", canonicalUrl).href,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: label,
+                item: canonicalUrl.href,
+              },
+            ],
+          },
         ],
       }
     : null;
