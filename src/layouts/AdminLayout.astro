@@ -1,0 +1,123 @@
+---
+import "../styles/global.css";
+import Brand from "../components/Brand.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Área privada de administração do DejotaCode.",
+} = Astro.props;
+
+const pageTitle = `${title} | DejotaCode`;
+---
+
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0a0d12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/dejotacode-app-icon.svg" />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem("dejotacode-theme");
+        const preferred = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.dataset.theme = saved === "light" || saved === "dark" ? saved : preferred;
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="admin-topbar">
+      <Brand compact />
+      <div class="admin-topbar__actions">
+        <span class="admin-topbar__label">Área privada</span>
+        <button class="admin-theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          Alternar tema
+        </button>
+      </div>
+    </header>
+
+    <slot />
+
+    <script>
+      const syncThemeControl = () => {
+        const isLight = document.documentElement.dataset.theme === "light";
+        document.querySelectorAll<HTMLElement>("[data-theme-toggle]").forEach((control) => {
+          control.setAttribute("aria-pressed", String(isLight));
+          control.setAttribute("aria-label", isLight ? "Ativar tema escuro" : "Ativar tema claro");
+        });
+      };
+
+      syncThemeControl();
+
+      document.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const toggle = target.closest("[data-theme-toggle]");
+        if (!toggle) return;
+
+        const root = document.documentElement;
+        const next = root.dataset.theme === "light" ? "dark" : "light";
+        root.dataset.theme = next;
+        localStorage.setItem("dejotacode-theme", next);
+        syncThemeControl();
+      });
+
+      requestAnimationFrame(() => document.documentElement.classList.add("theme-ready"));
+    </script>
+
+    <style>
+      .admin-topbar {
+        min-height: 4.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-inline: var(--space-page);
+        border-bottom: 1px solid var(--color-border);
+        background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+      }
+
+      .admin-topbar__actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .admin-topbar__label {
+        color: var(--color-text-muted);
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      .admin-theme-toggle {
+        min-height: 2.5rem;
+        padding: 0.55rem 0.8rem;
+        border: 1px solid var(--color-border-strong);
+        border-radius: var(--radius-md);
+        background: var(--color-surface-soft);
+        color: var(--color-text);
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      @media (max-width: 34rem) {
+        .admin-topbar__label {
+          display: none;
+        }
+      }
+    </style>
+  </body>
+</html>
