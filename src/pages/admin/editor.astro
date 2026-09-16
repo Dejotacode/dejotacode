@@ -225,6 +225,10 @@ const editablePosts = posts
     let generatedMarkdown = "";
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     let currentPrHeadSha = "";
+    let ciPollTimer: number | undefined;
+    let ciPollStartedAt = 0;
+    const ciPollIntervalMs = 5_000;
+    const ciPollMaxDurationMs = 3 * 60_000;
     const field = (name: string) => form?.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
     const checked = (name: string) => Boolean((form?.elements.namedItem(name) as HTMLInputElement | null)?.checked);
     const value = (name: string) => field(name)?.value.trim() ?? "";
@@ -545,11 +549,17 @@ const editablePosts = posts
       }
     };
 
-    const refreshPullRequest = async () => {
-      if (!api || !currentPrNumber || !publishPanel || !publishState || !mergePrButton) return;
+    const stopCiPolling = () => {
+      if (ciPollTimer !== undefined) window.clearTimeout(ciPollTimer);
+      ciPollTimer = undefined;
+      ciPollStartedAt = 0;
+    };
+
+    const refreshPullRequest = async (showLoading = true) => {
+      if (!api || !currentPrNumber || !publishPanel || !publishState || !mergePrButton) return null;
       publishPanel.hidden = false;
       if (publishTitle) publishTitle.textContent = `Pull Request #${currentPrNumber}`;
-      publishState.textContent = "Consultando GitHub e CI…";
+      if (showLoading) publishState.textContent = "Consultando GitHub e CI…";
       mergePrButton.disabled = true;
       try {
         const response = await fetch(`${api}/api/editor/pull-request/${currentPrNumber}`, { credentials: "include" });
@@ -562,10 +572,33 @@ const editablePosts = posts
         publishState.textContent = `Estado: ${stateLabel} · ${ciLabel}${data.mergeable === false ? " · conflito detectado" : ""}.`;
         if (workflowLink && data.workflowUrl) { workflowLink.href = data.workflowUrl; workflowLink.hidden = false; }
         if (prLink && data.url) { prLink.href = data.url; prLink.hidden = false; }
-        mergePrButton.disabled = !(data.state === "open" && !data.merged && data.ci === "success" && data.mergeable === true && currentPrHeadSha);
+        const canMerge = data.state === "open" && !data.merged && data.ci === "success" && data.mergeable === true && currentPrHeadSha;
+        mergePrButton.hidden = Boolean(data.merged || data.state !== "open");
+        mergePrButton.disabled = !canMerge;
+        return data;
       } catch (error) {
         publishState.textContent = error instanceof Error ? error.message : "Não foi possível consultar o Pull Request.";
+        return null;
       }
+    };
+
+    const startCiPolling = () => {
+      stopCiPolling();
+      ciPollStartedAt = Date.now();
+      const poll = async () => {
+        const data = await refreshPullRequest(false);
+        if (!data || data.merged || data.state !== "open" || data.ci !== "pending") {
+          stopCiPolling();
+          return;
+        }
+        if (Date.now() - ciPollStartedAt >= ciPollMaxDurationMs) {
+          stopCiPolling();
+          if (publishState) publishState.textContent = "CI ainda em andamento. Atualização automática pausada; use Atualizar status para consultar novamente.";
+          return;
+        }
+        ciPollTimer = window.setTimeout(poll, ciPollIntervalMs);
+      };
+      ciPollTimer = window.setTimeout(poll, ciPollIntervalMs);
     };
 
     const mergePullRequest = async () => {
@@ -588,6 +621,7 @@ const editablePosts = posts
         publishState.textContent = "Merge concluído. O Cloudflare Pages iniciou o fluxo de publicação da main.";
         if (status) status.textContent = `Pull Request #${currentPrNumber} mesclado com segurança.`;
         await refreshPullRequest();
+        stopCiPolling();
       } catch (error) {
         const message = error instanceof Error ? error.message : "Não foi possível publicar o conteúdo.";
         await refreshPullRequest();
@@ -614,7 +648,8 @@ const editablePosts = posts
         if (currentPrNumber) sessionStorage.setItem("dejotacode-editor-pr", String(currentPrNumber));
         if (status) status.textContent = `Pull Request #${currentPrNumber || ""} criado para revisão.`;
         if (prLink && payload.data?.pullRequestUrl) { prLink.href = payload.data.pullRequestUrl; prLink.hidden = false; }
-        await refreshPullRequest();
+        const prState = await refreshPullRequest();
+        if (prState?.ci === "pending") startCiPolling();
       } catch (error) {
         if (status) status.textContent = error instanceof Error ? error.message : "Não foi possível criar o Pull Request.";
       } finally {
@@ -633,7 +668,10 @@ const editablePosts = posts
       csrf = String(payload.data?.csrf ?? "");
       resetForm();
       await configureGithub();
-      if (currentPrNumber) await refreshPullRequest();
+      if (currentPrNumber) {
+        const prState = await refreshPullRequest();
+        if (prState?.ci === "pending") startCiPolling();
+      }
     };
 
     document.querySelector("[data-new-content]")?.addEventListener("click", resetForm);
@@ -642,7 +680,11 @@ const editablePosts = posts
     document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
     uploadImageButton?.addEventListener("click", uploadAndInsertImage);
     createPrButton?.addEventListener("click", createPullRequest);
-    refreshPrButton?.addEventListener("click", refreshPullRequest);
+    refreshPrButton?.addEventListener("click", async () => {
+      const prState = await refreshPullRequest();
+      if (prState?.ci === "pending") startCiPolling();
+      else stopCiPolling();
+    });
     mergePrButton?.addEventListener("click", mergePullRequest);
 
     select?.addEventListener("change", () => {
