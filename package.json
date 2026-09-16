@@ -14,7 +14,10 @@
     "build:preview": "npm run env:check:preview && astro build --mode preview",
     "env:check:preview": "node scripts/validate-build-env.mjs preview",
     "env:check:production": "node scripts/validate-build-env.mjs production",
-    "build:production": "npm run env:check:production && astro build --mode production"
+    "build:production": "npm run env:check:production && astro build --mode production",
+    "qa:links": "node scripts/validate-internal-links.mjs",
+    "qa:html": "node scripts/validate-html-quality.mjs",
+    "qa": "npm run qa:links && npm run qa:html"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
