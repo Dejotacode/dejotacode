@@ -78,24 +78,34 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       const output = loginForm.querySelector<HTMLOutputElement>("output");
       const formData = new FormData(loginForm);
 
+      const submitButton = loginForm.querySelector<HTMLButtonElement>('button[type="submit"]');
       if (output) output.textContent = "Entrando…";
+      if (submitButton) submitButton.disabled = true;
 
-      const response = await fetch(`${api}/api/auth/login`, {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: String(formData.get("email") ?? ""),
-          password: String(formData.get("password") ?? ""),
-        }),
-      });
+      try {
+        const response = await fetch(`${api}/api/auth/login`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: String(formData.get("email") ?? ""),
+            password: String(formData.get("password") ?? ""),
+          }),
+        });
 
-      if (!response.ok) {
-        if (output) output.textContent = await parseError(response);
-        return;
+        if (!response.ok) {
+          if (output) output.textContent = await parseError(response);
+          return;
+        }
+
+        location.href = "/admin/metricas/";
+      } catch {
+        if (output) {
+          output.textContent = "Não foi possível conectar ao serviço de autenticação. Tente novamente.";
+        }
+      } finally {
+        if (submitButton) submitButton.disabled = false;
       }
-
-      location.href = "/admin/metricas/";
     });
 
     logoutButton?.addEventListener("click", async () => {
