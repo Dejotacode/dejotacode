@@ -130,6 +130,17 @@ const editablePosts = posts
           <output class="editor-status" data-status aria-live="polite"></output>
           <p class="editor-github-state" data-github-state>GitHub: verificando integração…</p>
           <a class="editor-pr-link" data-pr-link href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir Pull Request →</a>
+          <section class="editor-publish-panel" data-publish-panel hidden aria-live="polite">
+            <div>
+              <strong data-publish-title>Publicação assistida</strong>
+              <p data-publish-state>Aguardando Pull Request.</p>
+            </div>
+            <div class="editor-publish-actions">
+              <a class="button" data-workflow-link href="#" target="_blank" rel="noopener noreferrer" hidden>Ver CI</a>
+              <button class="button" type="button" data-refresh-pr>Atualizar status</button>
+              <button class="button button-primary" type="button" data-merge-pr disabled>Mesclar e publicar</button>
+            </div>
+          </section>
         </form>
 
         <aside class="editor-preview" aria-label="Preview do conteúdo">
@@ -177,10 +188,17 @@ const editablePosts = posts
     const createPrButton = document.querySelector<HTMLButtonElement>("[data-create-pr]");
     const githubState = document.querySelector<HTMLElement>("[data-github-state]");
     const prLink = document.querySelector<HTMLAnchorElement>("[data-pr-link]");
+    const publishPanel = document.querySelector<HTMLElement>("[data-publish-panel]");
+    const publishTitle = document.querySelector<HTMLElement>("[data-publish-title]");
+    const publishState = document.querySelector<HTMLElement>("[data-publish-state]");
+    const workflowLink = document.querySelector<HTMLAnchorElement>("[data-workflow-link]");
+    const refreshPrButton = document.querySelector<HTMLButtonElement>("[data-refresh-pr]");
+    const mergePrButton = document.querySelector<HTMLButtonElement>("[data-merge-pr]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
     let generatedMarkdown = "";
+    let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     const field = (name: string) => form?.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
     const checked = (name: string) => Boolean((form?.elements.namedItem(name) as HTMLInputElement | null)?.checked);
     const value = (name: string) => field(name)?.value.trim() ?? "";
@@ -432,6 +450,50 @@ const editablePosts = posts
       }
     };
 
+    const refreshPullRequest = async () => {
+      if (!api || !currentPrNumber || !publishPanel || !publishState || !mergePrButton) return;
+      publishPanel.hidden = false;
+      if (publishTitle) publishTitle.textContent = `Pull Request #${currentPrNumber}`;
+      publishState.textContent = "Consultando GitHub e CI…";
+      mergePrButton.disabled = true;
+      try {
+        const response = await fetch(`${api}/api/editor/pull-request/${currentPrNumber}`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível consultar o Pull Request.");
+        const data = payload.data ?? {};
+        const ciLabel = data.ci === "success" ? "CI aprovado" : data.ci === "failure" ? "CI com falha" : data.ci === "pending" ? "CI em andamento" : "CI indisponível";
+        const stateLabel = data.merged ? "mesclado" : data.state === "open" ? "aberto" : "fechado";
+        publishState.textContent = `Estado: ${stateLabel} · ${ciLabel}${data.mergeable === false ? " · conflito detectado" : ""}.`;
+        if (workflowLink && data.workflowUrl) { workflowLink.href = data.workflowUrl; workflowLink.hidden = false; }
+        if (prLink && data.url) { prLink.href = data.url; prLink.hidden = false; }
+        mergePrButton.disabled = !(data.state === "open" && !data.merged && data.ci === "success" && data.mergeable === true);
+      } catch (error) {
+        publishState.textContent = error instanceof Error ? error.message : "Não foi possível consultar o Pull Request.";
+      }
+    };
+
+    const mergePullRequest = async () => {
+      if (!api || !currentPrNumber || !mergePrButton || !publishState) return;
+      if (!confirm(`Mesclar o Pull Request #${currentPrNumber} na main e iniciar a publicação?`)) return;
+      mergePrButton.disabled = true;
+      publishState.textContent = "Validando CI e solicitando merge…";
+      try {
+        const response = await fetch(`${api}/api/editor/pull-request/${currentPrNumber}/merge`, {
+          method: "POST", credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ confirmation: "PUBLICAR" }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível publicar o conteúdo.");
+        publishState.textContent = "Merge concluído. O Cloudflare Pages iniciou o fluxo de publicação da main.";
+        if (status) status.textContent = `Pull Request #${currentPrNumber} mesclado com segurança.`;
+        await refreshPullRequest();
+      } catch (error) {
+        publishState.textContent = error instanceof Error ? error.message : "Não foi possível publicar o conteúdo.";
+        await refreshPullRequest();
+      }
+    };
+
     const createPullRequest = async () => {
       if (!api || !createPrButton) return;
       const markdown = generatedMarkdown || buildMarkdown();
@@ -447,8 +509,11 @@ const editablePosts = posts
         });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível criar o Pull Request.");
-        if (status) status.textContent = `Pull Request #${payload.data?.pullRequestNumber ?? ""} criado para revisão.`;
+        currentPrNumber = Number(payload.data?.pullRequestNumber ?? 0);
+        if (currentPrNumber) sessionStorage.setItem("dejotacode-editor-pr", String(currentPrNumber));
+        if (status) status.textContent = `Pull Request #${currentPrNumber || ""} criado para revisão.`;
         if (prLink && payload.data?.pullRequestUrl) { prLink.href = payload.data.pullRequestUrl; prLink.hidden = false; }
+        await refreshPullRequest();
       } catch (error) {
         if (status) status.textContent = error instanceof Error ? error.message : "Não foi possível criar o Pull Request.";
       } finally {
@@ -467,6 +532,7 @@ const editablePosts = posts
       csrf = String(payload.data?.csrf ?? "");
       resetForm();
       await configureGithub();
+      if (currentPrNumber) await refreshPullRequest();
     };
 
     document.querySelector("[data-new-content]")?.addEventListener("click", resetForm);
@@ -474,6 +540,8 @@ const editablePosts = posts
     document.querySelector("[data-copy-markdown]")?.addEventListener("click", copyGenerated);
     document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
     createPrButton?.addEventListener("click", createPullRequest);
+    refreshPrButton?.addEventListener("click", refreshPullRequest);
+    mergePrButton?.addEventListener("click", mergePullRequest);
 
     select?.addEventListener("change", () => {
       if (!select.value) {
