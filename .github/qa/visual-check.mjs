@@ -62,6 +62,7 @@ for (const viewport of viewports) {
         const body = document.body;
         const width = root.clientWidth;
         const overflowing = [...body.querySelectorAll("*")]
+          .filter((element) => !element.closest('[aria-hidden="true"], .form-trap'))
           .map((element) => {
             const rect = element.getBoundingClientRect();
             return {
