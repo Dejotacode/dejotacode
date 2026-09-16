@@ -11,6 +11,13 @@ import {
 import "../../styles/editorial.css";
 import "../../styles/discovery.css";
 
+const categorySeoTitles: Record<CategorySlug, string> = {
+  programacao: "Programação para iniciantes | DejotaCode",
+  "linux-seguranca": "Linux e segurança digital para iniciantes | DejotaCode",
+  "inteligencia-artificial": "Inteligência artificial para iniciantes | DejotaCode",
+  "tecnologia-pratica": "Tecnologia prática para iniciantes | DejotaCode",
+};
+
 export function getStaticPaths() {
   return Object.entries(categories).map(([category, label]) => ({
     params: { category },
@@ -27,6 +34,7 @@ const { category, label } = Astro.props;
 const posts = (await getPublishedPosts()).filter(
   (post) => post.data.category === category,
 );
+const seoTitle = categorySeoTitles[category];
 
 const canonicalUrl = new URL(
   `/categoria/${category}/`,
@@ -44,7 +52,7 @@ const categorySchema =
             "@type": "CollectionPage",
             "@id": canonicalUrl.href,
             url: canonicalUrl.href,
-            name: `${label} | DejotaCode`,
+            name: seoTitle,
             description: categoryDescriptions[category],
             inLanguage: "pt-BR",
             mainEntity: {
@@ -95,7 +103,7 @@ const categorySchema =
 ---
 
 <BaseLayout
-  title={`${label} | DejotaCode`}
+  title={seoTitle}
   description={categoryDescriptions[category]}
   robots={posts.length > 0 ? "index, follow" : "noindex, follow"}
 >
