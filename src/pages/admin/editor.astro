@@ -167,6 +167,15 @@ const editablePosts = posts
                   </label>
                   <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
                 </div>
+                <div class="editor-media-safety">
+                  <div>
+                    <strong>Relatório de segurança de mídia</strong>
+                    <p>Cruza Markdown canônico, capas do CMS, metadados D1 e disponibilidade pública no R2. Nenhuma exclusão é executada.</p>
+                  </div>
+                  <button class="button" type="button" data-media-safety-run>Gerar relatório</button>
+                  <output data-media-safety-status aria-live="polite">Relatório ainda não gerado.</output>
+                  <div class="editor-media-safety__summary" data-media-safety-summary hidden></div>
+                </div>
                 <output data-media-library-status aria-live="polite">Carregando imagens…</output>
                 <div class="editor-media-grid" data-media-grid></div>
               </div>
@@ -270,11 +279,15 @@ const editablePosts = posts
     const mediaSearch = document.querySelector<HTMLInputElement>("[data-media-search]");
     const mediaContext = document.querySelector<HTMLSelectElement>("[data-media-context]");
     const mediaUsage = document.querySelector<HTMLSelectElement>("[data-media-usage]");
+    const mediaSafetyButton = document.querySelector<HTMLButtonElement>("[data-media-safety-run]");
+    const mediaSafetyStatus = document.querySelector<HTMLOutputElement>("[data-media-safety-status]");
+    const mediaSafetySummary = document.querySelector<HTMLElement>("[data-media-safety-summary]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
     let generatedMarkdown = "";
     let mediaItems: MediaItem[] = [];
+    let mediaSafetyStates = new Map<string, "used" | "orphan" | "review">();
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     let currentPrHeadSha = "";
     let ciPollTimer: number | undefined;
@@ -591,6 +604,71 @@ const editablePosts = posts
 
     const currentPostMediaKeys = () => mediaKeysFromMarkdown(value("body"));
 
+    const renderMediaSafetySummary = (counts: { used: number; orphan: number; review: number; checked: number }) => {
+      if (!mediaSafetySummary) return;
+      mediaSafetySummary.replaceChildren();
+      const items = [
+        ["Em uso", counts.used],
+        ["Possivelmente órfãs", counts.orphan],
+        ["Requer revisão", counts.review],
+        ["R2 verificado", counts.checked],
+      ];
+      for (const [label, value] of items) {
+        const card = document.createElement("span");
+        const strong = document.createElement("strong");
+        const text = document.createElement("small");
+        strong.textContent = String(value);
+        text.textContent = String(label);
+        card.append(strong, text);
+        mediaSafetySummary.append(card);
+      }
+      mediaSafetySummary.hidden = false;
+    };
+
+    const runMediaSafetyReport = async () => {
+      if (!api || !mediaSafetyButton || !mediaSafetyStatus) return;
+      mediaSafetyButton.disabled = true;
+      mediaSafetyStatus.textContent = "Cruzando referências e verificando objetos no R2…";
+      try {
+        if (!mediaItems.length) await loadMediaLibrary();
+        const cmsResponse = await fetch(`${api}/api/cms/posts`, { credentials: "include" });
+        const cmsPayload = await cmsResponse.json();
+        if (!cmsResponse.ok) throw new Error(cmsPayload.error?.message ?? "Não foi possível consultar as capas do CMS.");
+        const cmsPosts = Array.isArray(cmsPayload.data?.items) ? cmsPayload.data.items : [];
+        const coverKeys = new Set(cmsPosts.map((post: { coverKey?: string | null }) => post.coverKey).filter(Boolean));
+        const states = new Map<string, "used" | "orphan" | "review">();
+        let checked = 0;
+        for (const item of mediaItems) {
+          if (!item.contentType.startsWith("image/")) continue;
+          const used = canonicalMediaKeys.has(item.objectKey) || coverKeys.has(item.objectKey);
+          let reachable = false;
+          try {
+            const response = await fetch(mediaPublicUrl(item.objectKey), { method: "HEAD", credentials: "omit" });
+            reachable = response.ok;
+            checked += 1;
+          } catch {
+            reachable = false;
+          }
+          const state = used
+            ? "used"
+            : reachable && item.objectKey.startsWith("posts/")
+              ? "orphan"
+              : "review";
+          states.set(item.objectKey, state);
+        }
+        mediaSafetyStates = states;
+        const counts = { used: 0, orphan: 0, review: 0, checked };
+        for (const state of states.values()) counts[state] += 1;
+        renderMediaSafetySummary(counts);
+        renderMediaLibrary();
+        mediaSafetyStatus.textContent = `Relatório concluído para ${states.size} imagem(ns). “Possivelmente órfã” exige revisão humana antes de qualquer ação.`;
+      } catch (error) {
+        mediaSafetyStatus.textContent = error instanceof Error ? error.message : "Não foi possível gerar o relatório de segurança.";
+      } finally {
+        mediaSafetyButton.disabled = false;
+      }
+    };
+
     const filteredMediaItems = () => {
       const query = normalizedSearch(mediaSearch?.value ?? "");
       const context = mediaContext?.value ?? "all";
@@ -643,6 +721,18 @@ const editablePosts = posts
             : "Não referenciada no Markdown canônico";
         usage.dataset.state = usedInCurrentPost ? "current" : usedCanonically ? "used" : "unused";
         info.append(alt, meta, usage);
+        const safetyState = mediaSafetyStates.get(item.objectKey);
+        if (safetyState) {
+          const safety = document.createElement("span");
+          safety.className = "editor-media-card__safety";
+          safety.dataset.state = safetyState;
+          safety.textContent = safetyState === "used"
+            ? "Segurança: em uso"
+            : safetyState === "orphan"
+              ? "Segurança: possivelmente órfã"
+              : "Segurança: requer revisão";
+          info.append(safety);
+        }
         const actions = document.createElement("div");
         actions.className = "editor-media-card__actions";
         const insertButton = document.createElement("button");
@@ -894,6 +984,7 @@ const editablePosts = posts
     mediaSearch?.addEventListener("input", renderMediaLibrary);
     mediaContext?.addEventListener("change", renderMediaLibrary);
     mediaUsage?.addEventListener("change", renderMediaLibrary);
+    mediaSafetyButton?.addEventListener("click", runMediaSafetyReport);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
       const prState = await refreshPullRequest();
