@@ -45,22 +45,36 @@ const relatedPosts = allPosts
 const currentTrail = availableTrails.find((trail) =>
   trail.lessons.some((lesson) => lesson.slug === currentSlug),
 );
+const currentTrailLessonIndex = currentTrail?.lessons.findIndex(
+  (lesson) => lesson.slug === currentSlug,
+) ?? -1;
+const nextTrailLesson = currentTrail && currentTrailLessonIndex >= 0
+  ? currentTrail.lessons[currentTrailLessonIndex + 1]
+  : undefined;
 
-const conversion = currentTrail
+const conversion = currentTrail && nextTrailLesson
   ? {
-      title: `Continue pela trilha ${currentTrail.title}`,
-      description: "Veja a sequência completa, marque seu progresso neste navegador e avance sem precisar adivinhar o próximo conteúdo.",
-      href: `/trilhas/${currentTrail.slug}/`,
-      label: "Ver trilha completa",
-      campaign: `article-trail-${currentTrail.slug}`,
+      title: `Próxima etapa: ${nextTrailLesson.title}`,
+      description: `Você está seguindo a trilha ${currentTrail.title}. Continue na sequência recomendada para avançar sem precisar escolher o próximo conteúdo sozinho.`,
+      href: `/blog/${nextTrailLesson.slug}/`,
+      label: "Continuar para a próxima etapa",
+      campaign: `article-next-${currentTrail.slug}`,
     }
-  : {
-      title: "Receba o próximo conteúdo por e-mail",
-      description: "A newsletter reúne novos tutoriais, guias e recursos do DejotaCode sem transformar sua caixa de entrada em um feed infinito.",
-      href: "/newsletter/?resource=artigo",
-      label: "Conhecer a newsletter",
-      campaign: "article-newsletter",
-    };
+  : currentTrail
+    ? {
+        title: `Continue pela trilha ${currentTrail.title}`,
+        description: "Veja a sequência completa, marque seu progresso neste navegador e revise as etapas quando precisar.",
+        href: `/trilhas/${currentTrail.slug}/`,
+        label: "Ver trilha completa",
+        campaign: `article-trail-${currentTrail.slug}`,
+      }
+    : {
+        title: "Receba o próximo conteúdo por e-mail",
+        description: "A newsletter reúne novos tutoriais, guias e recursos do DejotaCode sem transformar sua caixa de entrada em um feed infinito.",
+        href: "/newsletter/?resource=artigo",
+        label: "Conhecer a newsletter",
+        campaign: "article-newsletter",
+      };
 
 const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
 const categoryLabel = categories[post.data.category];
