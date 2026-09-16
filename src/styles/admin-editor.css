@@ -251,6 +251,7 @@
 .editor-publish-panel[hidden] { display: none; }
 .editor-publish-panel p { margin: .35rem 0 0; color: var(--color-text-muted); }
 .editor-publish-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.editor-publish-actions [hidden] { display: none; }
 
 @media (max-width: 42rem) {
   .editor-publish-panel { align-items: stretch; flex-direction: column; }
