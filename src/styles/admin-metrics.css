@@ -1,0 +1,194 @@
+.admin-page {
+  min-height: calc(100vh - 4.5rem);
+  padding-block: clamp(2rem, 5vw, 4.5rem);
+  background:
+    radial-gradient(circle at 80% 15%, var(--color-glow), transparent 30%),
+    var(--color-bg);
+}
+
+.admin-panel {
+  width: min(calc(100% - (2 * var(--space-page))), 68rem);
+  margin-inline: auto;
+}
+
+.admin-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--color-accent-strong);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-panel h1 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.35rem, 6vw, 4.4rem);
+}
+
+.admin-intro {
+  max-width: 44rem;
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+}
+
+.admin-login-card {
+  width: min(100%, 31rem);
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.admin-login-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-login-form label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.admin-login-form input {
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+}
+
+.admin-login-form output {
+  min-height: 1.5rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.admin-status {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+}
+
+.admin-status[hidden] {
+  display: none;
+}
+
+.metric-cards,
+.funnel-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.metric-card strong {
+  display: block;
+  color: var(--color-accent-strong);
+  font: 800 clamp(1.7rem, 4vw, 2.35rem)/1 var(--font-heading);
+}
+
+.metric-card span {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--color-text-muted);
+}
+
+.metrics-section {
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.metrics-section h2 {
+  margin-top: 0;
+}
+
+.metrics-section__note,
+.metrics-empty {
+  margin-top: -0.35rem;
+}
+
+.metrics-ranking {
+  display: grid;
+}
+
+.metrics-ranking__row {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.metrics-ranking__row:last-child {
+  border-bottom: 0;
+}
+
+.metrics-ranking__rank {
+  color: var(--color-accent-strong);
+}
+
+.metrics-ranking__context {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--color-text);
+}
+
+.metrics-ranking--campaigns .metrics-ranking__context {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+}
+
+.metrics-loading {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 58rem) {
+  .metric-cards,
+  .funnel-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 36rem) {
+  .metric-cards,
+  .funnel-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-ranking__row {
+    grid-template-columns: 1.8rem minmax(0, 1fr) auto;
+    gap: 0.5rem;
+  }
+}

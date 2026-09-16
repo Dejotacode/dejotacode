@@ -1,0 +1,127 @@
+---
+import AdminLayout from "../../layouts/AdminLayout.astro";
+import "../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+
+<AdminLayout title="Painel administrativo" description="Acesso privado às métricas agregadas do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Área privada</p>
+      <h1>Painel administrativo</h1>
+      <p class="admin-intro">
+        Acesse as métricas agregadas do DejotaCode. Esta área não identifica visitantes nem exibe dados pessoais de leads.
+      </p>
+
+      <section class="admin-login-card" data-login>
+        <form class="admin-login-form" data-login-form>
+          <label>
+            E-mail
+            <input name="email" type="email" required autocomplete="username" />
+          </label>
+          <label>
+            Senha
+            <input name="password" type="password" minlength="12" required autocomplete="current-password" />
+          </label>
+          <button class="button button-primary" type="submit">Entrar</button>
+          <output aria-live="polite"></output>
+        </form>
+      </section>
+
+      <section class="admin-status" data-session-status hidden>
+        <p>Você já está autenticado.</p>
+        <div class="admin-actions">
+          <a class="button button-primary" href="/admin/metricas/">Abrir métricas</a>
+          <button class="button" type="button" data-logout>Sair</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const login = document.querySelector<HTMLElement>("[data-login]");
+    const sessionStatus = document.querySelector<HTMLElement>("[data-session-status]");
+    const loginForm = document.querySelector<HTMLFormElement>("[data-login-form]");
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+
+    const parseError = async (response: Response) => {
+      try {
+        const payload = await response.json();
+        return payload.error?.message ?? "Não foi possível concluir.";
+      } catch {
+        return "Não foi possível concluir.";
+      }
+    };
+
+    const showAuthenticated = () => {
+      if (login) login.hidden = true;
+      if (sessionStatus) sessionStatus.hidden = false;
+    };
+
+    const checkSession = async () => {
+      if (!api) return;
+
+      const response = await fetch(`${api}/api/auth/session`, {
+        credentials: "include",
+      });
+
+      if (response.ok) showAuthenticated();
+    };
+
+    loginForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!api) return;
+
+      const output = loginForm.querySelector<HTMLOutputElement>("output");
+      const formData = new FormData(loginForm);
+
+      if (output) output.textContent = "Entrando…";
+
+      const response = await fetch(`${api}/api/auth/login`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: String(formData.get("email") ?? ""),
+          password: String(formData.get("password") ?? ""),
+        }),
+      });
+
+      if (!response.ok) {
+        if (output) output.textContent = await parseError(response);
+        return;
+      }
+
+      location.href = "/admin/metricas/";
+    });
+
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+
+      const sessionResponse = await fetch(`${api}/api/auth/session`, {
+        credentials: "include",
+      });
+
+      if (!sessionResponse.ok) {
+        location.reload();
+        return;
+      }
+
+      const payload = await sessionResponse.json();
+      const csrf = payload.data?.csrf;
+
+      await fetch(`${api}/api/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+        headers: csrf ? { "X-CSRF-Token": String(csrf) } : {},
+      });
+
+      location.reload();
+    });
+
+    checkSession().catch(() => {});
+  </script>
+</AdminLayout>
