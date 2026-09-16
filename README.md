@@ -137,6 +137,7 @@ src/styles/          estilos e tokens visuais
 - [`docs/runbook-deploy-rollback.md`](docs/runbook-deploy-rollback.md) — deploy, homologação e rollback;
 - [`docs/backup-recovery.md`](docs/backup-recovery.md) — backup, recuperação e próximos controles operacionais.
 - [`docs/admin-scope-v1.9.0.md`](docs/admin-scope-v1.9.0.md) — decisão de escopo do admin moderno e critérios para eventual CMS.
+- [`docs/api-source-reconciliation-v1.9.0.md`](docs/api-source-reconciliation-v1.9.0.md) — reconciliação da fonte canônica da API e direção operacional.
 
 ## Segurança operacional
 
