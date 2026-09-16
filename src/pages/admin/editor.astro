@@ -135,6 +135,17 @@ const editablePosts = posts
               <button class="button" type="button" data-upload-image>Enviar e inserir imagem</button>
               <output data-media-status aria-live="polite">JPG, PNG, WebP ou AVIF · até 10 MB.</output>
             </div>
+            <div class="editor-media-library">
+              <div class="editor-media-library__header">
+                <div>
+                  <strong>Biblioteca de imagens</strong>
+                  <p>Reutilize imagens já enviadas ao R2 sem duplicar arquivos.</p>
+                </div>
+                <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
+              </div>
+              <output data-media-library-status aria-live="polite">Carregando imagens…</output>
+              <div class="editor-media-grid" data-media-grid></div>
+            </div>
           </section>
 
           <label>
@@ -186,6 +197,15 @@ const editablePosts = posts
   <script is:inline id="editor-posts" type="application/json" set:html={JSON.stringify(editablePosts).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")} />
 
   <script>
+    type MediaItem = {
+      id: number;
+      objectKey: string;
+      contentType: string;
+      sizeBytes: number;
+      altText: string;
+      createdAt: string;
+    };
+
     type EditablePost = {
       slug: string;
       title: string;
@@ -219,6 +239,9 @@ const editablePosts = posts
     const mediaAlt = document.querySelector<HTMLInputElement>("[data-media-alt]");
     const uploadImageButton = document.querySelector<HTMLButtonElement>("[data-upload-image]");
     const mediaStatus = document.querySelector<HTMLOutputElement>("[data-media-status]");
+    const mediaGrid = document.querySelector<HTMLElement>("[data-media-grid]");
+    const mediaLibraryStatus = document.querySelector<HTMLOutputElement>("[data-media-library-status]");
+    const refreshMediaButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
@@ -480,6 +503,110 @@ const editablePosts = posts
       textarea.focus();
     };
 
+    const mediaPublicUrl = (objectKey: string) => api
+      ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
+      : "";
+
+    const sanitizeMarkdownAlt = (alt: string) => alt
+      .replace(/[\[\]]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    const formatBytes = (bytes: number) => {
+      if (!Number.isFinite(bytes) || bytes < 0) return "—";
+      if (bytes < 1024) return `${bytes} B`;
+      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    };
+
+    const formatMediaDate = (input: string) => {
+      const normalized = input.includes("T") ? input : `${input.replace(" ", "T")}Z`;
+      const date = new Date(normalized);
+      return Number.isNaN(date.getTime())
+        ? input
+        : new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(date);
+    };
+
+    const insertMediaItem = (item: MediaItem) => {
+      const body = field("body");
+      if (!(body instanceof HTMLTextAreaElement)) return;
+      const alt = sanitizeMarkdownAlt(item.altText || "Imagem editorial");
+      if (alt.length < 3) {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Esta imagem não possui texto alternativo válido para reutilização.";
+        return;
+      }
+      insertAtCursor(body, `![${alt}](${mediaPublicUrl(item.objectKey)})`);
+      generatedMarkdown = "";
+      updatePreview();
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Imagem existente inserida no Markdown.";
+    };
+
+    const renderMediaLibrary = (items: MediaItem[]) => {
+      if (!mediaGrid) return;
+      mediaGrid.replaceChildren();
+      const images = items.filter((item) => item.contentType.startsWith("image/"));
+      if (!images.length) {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Nenhuma imagem disponível na biblioteca.";
+        return;
+      }
+      for (const item of images) {
+        const card = document.createElement("article");
+        card.className = "editor-media-card";
+        const image = document.createElement("img");
+        image.src = mediaPublicUrl(item.objectKey);
+        image.alt = item.altText || "Imagem editorial sem texto alternativo";
+        image.loading = "lazy";
+        image.decoding = "async";
+        const info = document.createElement("div");
+        info.className = "editor-media-card__info";
+        const alt = document.createElement("strong");
+        alt.textContent = item.altText || "Sem texto alternativo";
+        const meta = document.createElement("span");
+        meta.textContent = `${formatBytes(Number(item.sizeBytes))} · ${formatMediaDate(item.createdAt)}`;
+        info.append(alt, meta);
+        const actions = document.createElement("div");
+        actions.className = "editor-media-card__actions";
+        const insertButton = document.createElement("button");
+        insertButton.className = "button button-primary";
+        insertButton.type = "button";
+        insertButton.textContent = "Inserir";
+        insertButton.addEventListener("click", () => insertMediaItem(item));
+        const copyButton = document.createElement("button");
+        copyButton.className = "button";
+        copyButton.type = "button";
+        copyButton.textContent = "Copiar URL";
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(mediaPublicUrl(item.objectKey));
+            if (mediaLibraryStatus) mediaLibraryStatus.textContent = "URL pública da imagem copiada.";
+          } catch {
+            if (mediaLibraryStatus) mediaLibraryStatus.textContent = "O navegador bloqueou a cópia automática da URL.";
+          }
+        });
+        actions.append(insertButton, copyButton);
+        card.append(image, info, actions);
+        mediaGrid.append(card);
+      }
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = `${images.length} imagem(ns) disponível(is), mais recentes primeiro.`;
+    };
+
+    const loadMediaLibrary = async () => {
+      if (!api || !mediaGrid) return;
+      if (refreshMediaButton) refreshMediaButton.disabled = true;
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Atualizando biblioteca…";
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca de imagens.");
+        renderMediaLibrary(Array.isArray(payload.data?.items) ? payload.data.items : []);
+      } catch (error) {
+        mediaGrid.replaceChildren();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca de imagens.";
+      } finally {
+        if (refreshMediaButton) refreshMediaButton.disabled = false;
+      }
+    };
+
     const uploadAndInsertImage = async () => {
       if (!api || !mediaFile || !mediaAlt || !uploadImageButton) return;
       const file = mediaFile.files?.[0];
@@ -513,13 +640,14 @@ const editablePosts = posts
         const publicPath = String(result.data?.publicPath ?? "");
         if (!publicPath) throw new Error("A API não retornou o caminho público da imagem.");
         const imageUrl = new URL(publicPath, `${api}/`).toString();
-        const markdownAlt = alt.replace(/[\[\]]/g, "").replace(/\s+/g, " ").trim();
+        const markdownAlt = sanitizeMarkdownAlt(alt);
         if (markdownAlt.length < 3) throw new Error("O texto alternativo precisa conter uma descrição válida.");
         insertAtCursor(body, `![${markdownAlt}](${imageUrl})`);
         mediaFile.value = "";
         mediaAlt.value = "";
         generatedMarkdown = "";
         updatePreview();
+        await loadMediaLibrary();
         if (mediaStatus) mediaStatus.textContent = "Imagem enviada e inserida no Markdown.";
       } catch (error) {
         if (mediaStatus) mediaStatus.textContent = error instanceof Error ? error.message : "Não foi possível enviar a imagem.";
@@ -667,7 +795,7 @@ const editablePosts = posts
       const payload = await session.json();
       csrf = String(payload.data?.csrf ?? "");
       resetForm();
-      await configureGithub();
+      await Promise.all([configureGithub(), loadMediaLibrary()]);
       if (currentPrNumber) {
         const prState = await refreshPullRequest();
         if (prState?.ci === "pending") startCiPolling();
@@ -679,6 +807,7 @@ const editablePosts = posts
     document.querySelector("[data-copy-markdown]")?.addEventListener("click", copyGenerated);
     document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
     uploadImageButton?.addEventListener("click", uploadAndInsertImage);
+    refreshMediaButton?.addEventListener("click", loadMediaLibrary);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
       const prState = await refreshPullRequest();
