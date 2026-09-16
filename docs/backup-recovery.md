@@ -10,16 +10,16 @@ Definir o que precisa ser preservado e como gerar evidência de backup antes de 
 
 O D1 de produção contém dados operacionais como leads, mensagens de contato, métricas agregadas e demais tabelas definidas pelas migrations da API.
 
-Antes de migrations relevantes ou mudanças destrutivas, gerar export SQL remoto a partir do repositório da API:
+Antes de migrations relevantes ou mudanças destrutivas, use o comando versionado no repositório `Dejotacode/dejotacode-api`:
 
 ```bash
-npx wrangler d1 export DB \
-  --env production \
-  --remote \
-  --output <arquivo-backup.sql>
+npm run backup:d1:production -- --dry-run
+npm run backup:d1:production
 ```
 
-Não use `--skip-confirmation` por padrão em operações manuais de produção.
+O `--dry-run` apenas mostra o destino/comando planejado. A execução real grava o SQL em `.backups/d1/`, calcula SHA-256 e cria um manifesto local com tamanho, hash e commit Git. O script não usa `--skip-confirmation` e não executa restore.
+
+Backups D1 podem conter dados pessoais e operacionais. `.backups/` é ignorado pelo Git e esses arquivos não devem ser anexados a issues públicas, commits ou canais não controlados.
 
 ### R2
 
@@ -30,6 +30,18 @@ Até essa automação existir, alterações em massa ou exclusões de objetos de
 ### Conteúdo editorial
 
 O conteúdo versionado em Git é recuperável pelo histórico do repositório. Releases e tags devem apontar para commits exatos para facilitar reconstrução.
+
+## Política inicial de retenção
+
+Enquanto não houver armazenamento de backup dedicado e criptografado, aplicar uma política conservadora e manual:
+
+- manter pelo menos os 3 exports D1 verificados mais recentes;
+- sempre gerar e preservar um export antes de migration destrutiva, mudança de schema de risco ou operação de recuperação;
+- não excluir automaticamente backups pelo script;
+- revisar retenção manualmente apenas depois de existir outro backup verificado;
+- se um backup sair da máquina controlada, usar armazenamento com acesso restrito e criptografia adequada.
+
+O manifesto SHA-256 serve para verificar integridade do arquivo antes de qualquer ensaio de restauração.
 
 ## Recuperação
 
@@ -57,8 +69,7 @@ O ensaio de restauração da v1.9.0 foi concluído com sucesso em D1 local isola
 
 ## Próximas melhorias
 
-- automatizar export periódico do D1 para armazenamento seguro;
-- definir política de retenção;
+- evoluir o export manual para agendamento apenas quando existir destino seguro e política de credenciais adequada;
 - definir estratégia de cópia/espelhamento do R2;
 - repetir periodicamente o teste de restauração em ambiente não produtivo;
 - registrar RTO/RPO quando o volume e a criticidade justificarem.
