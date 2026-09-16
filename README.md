@@ -96,14 +96,20 @@ O workflow não faz deploy e não utiliza credenciais da Cloudflare.
 
 ## Analytics
 
-O frontend possui analytics first-party agregado para eventos de navegação e CTA. O script envia apenas os campos necessários para `/api/analytics`, usando `window.location.pathname` e campanhas explícitas de CTA.
+O frontend possui analytics first-party agregado para navegação, conversão e progresso de trilhas. O script envia apenas os campos necessários para `/api/analytics`, usando `window.location.pathname` e campanhas explícitas quando existe contexto editorial ou de CTA.
 
 Eventos do frontend:
 
 - `page_view`
 - `cta_click`
+- `form_start`
+- `lead_submit`
+- `guide_access`
+- `trail_start`
+- `trail_lesson_click`
+- `trail_complete`
 
-Não há uso de cookies, fingerprinting ou query string nesse fluxo de medição do frontend.
+A API também registra `contact_submit` diretamente no fluxo de contato. Não há envio de nome, e-mail, conteúdo de formulário, fingerprinting ou identificador persistente de visitante no payload de analytics.
 
 ## SEO e distribuição
 
@@ -127,7 +133,9 @@ src/styles/          estilos e tokens visuais
 ## Documentação técnica
 
 - [`docs/architecture.md`](docs/architecture.md) — arquitetura e limites entre frontend e API;
-- [`docs/operations.md`](docs/operations.md) — ambientes, QA, CI e regras operacionais.
+- [`docs/operations.md`](docs/operations.md) — ambientes, QA, CI e regras operacionais;
+- [`docs/runbook-deploy-rollback.md`](docs/runbook-deploy-rollback.md) — deploy, homologação e rollback;
+- [`docs/backup-recovery.md`](docs/backup-recovery.md) — backup, recuperação e próximos controles operacionais.
 
 ## Segurança operacional
 

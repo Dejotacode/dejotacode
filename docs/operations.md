@@ -154,6 +154,15 @@ Não deduza que um merge em `main` implica autorização para:
 
 Essas ações devem ser deliberadas separadamente.
 
+## Runbooks operacionais
+
+Os procedimentos de produção ficam separados deste guia de desenvolvimento para reduzir risco de execução acidental.
+
+- [`runbook-deploy-rollback.md`](runbook-deploy-rollback.md) — deploy, homologação e rollback do frontend e da API;
+- [`backup-recovery.md`](backup-recovery.md) — inventário de dados, exportação segura do D1 e estratégia de recuperação.
+
+Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve continuar exigindo aprovação explícita.
+
 ## Variáveis públicas
 
 `PUBLIC_API_URL` é incorporável ao frontend. Nunca armazene tokens, senhas, chaves privadas ou outros segredos em variáveis `PUBLIC_*`.
