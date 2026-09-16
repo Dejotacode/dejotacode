@@ -49,6 +49,14 @@ const hasAssociatedLabel = (html, id) => {
   return pattern.test(html);
 };
 
+const hasWrappingLabel = (html, controlIndex) => {
+  const lastOpen = html.lastIndexOf("<label", controlIndex);
+  if (lastOpen === -1) return false;
+
+  const lastClose = html.lastIndexOf("</label>", controlIndex);
+  return lastOpen > lastClose;
+};
+
 const issues = [];
 let checkedControls = 0;
 let checkedImages = 0;
@@ -98,8 +106,9 @@ for (const filePath of htmlFiles.sort()) {
     const id = getAttribute(tag, "id");
     const ariaLabel = getAttribute(tag, "aria-label");
     const ariaLabelledby = getAttribute(tag, "aria-labelledby");
+    const wrappingLabel = hasWrappingLabel(html, match.index ?? 0);
 
-    if (!ariaLabel && !ariaLabelledby && !hasAssociatedLabel(html, id)) {
+    if (!ariaLabel && !ariaLabelledby && !hasAssociatedLabel(html, id) && !wrappingLabel) {
       pageIssues.push(`controle <${tagName}> sem nome acessível${id ? ` (id="${id}")` : ""}`);
     }
   }
