@@ -2,6 +2,25 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.7.1] - 2026-09-16
+
+### Adicionado
+
+- Tutorial "Como organizar seu ambiente de estudos em tecnologia", publicado na categoria Tecnologia prática.
+- Evidência consolidada de aceitação de produção e release notes da entrega pronta para revisão.
+
+### Qualidade e produção
+
+- Versão do projeto atualizada para `1.7.1`.
+- Build de produção validado com 41 páginas estáticas.
+- QA verificou 1.682 referências internas, com 0 destinos quebrados.
+- QA estrutural validou 41 HTML, com 0 páginas com problemas.
+- 40 rotas HTML homologadas no domínio oficial com HTTP 200, title e H1.
+- Novo conteúdo confirmado no sitemap e no RSS.
+- API health confirmada em produção com HTTP 200.
+- Deploy do conteúdo homologado no Cloudflare Pages.
+- Nenhuma migration D1, alteração de Worker, DNS, R2 ou secrets de produção.
+
 ## [1.7.0] - 2026-09-16
 
 ### Adicionado
