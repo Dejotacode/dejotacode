@@ -32,10 +32,18 @@ Responsabilidades principais da API:
 - recebimento de mensagens de contato;
 - persistência em D1;
 - métricas agregadas;
-- rate limiting e controles de segurança de borda;
-- integração com recursos de mídia quando necessário.
+- autenticação e sessão do Admin;
+- integração editorial com GitHub para branch, Pull Request, leitura de CI e merge protegido;
+- mídia editorial em R2, com metadados operacionais no D1;
+- rate limiting e controles de segurança de borda.
 
-O frontend conhece a API apenas pela variável pública `PUBLIC_API_URL`.
+O frontend conhece a API apenas pela variável pública `PUBLIC_API_URL`. Tokens e credenciais de GitHub/Cloudflare permanecem no backend ou no GitHub Actions e nunca são expostos ao frontend.
+
+## Fonte editorial e Admin
+
+O conteúdo público continua canônico em `src/content/posts/*.md`. O Admin Editorial não publica posts diretamente a partir do D1: ele prepara Markdown, cria uma branch `content/admin-*`, abre Pull Request e depende do CI antes do merge.
+
+Imagens editoriais enviadas pelo Admin ficam no R2 em caminhos organizados por post. O Markdown versionado referencia a URL pública da mídia; o D1 guarda metadados, não substitui o Git como fonte editorial.
 
 ## Ambientes
 
@@ -106,31 +114,18 @@ Rotas que não devem aparecer no sitemap podem ser filtradas explicitamente em `
 
 O feed RSS é exposto por `src/pages/rss.xml.js`.
 
-## CI
+## CI e deploy do frontend
 
-O workflow em `.github/workflows/ci.yml` valida mudanças antes da integração e depois de pushes em `main`.
+O workflow em `.github/workflows/ci.yml` roda em Pull Requests e pushes para `main`.
 
-Etapas:
+O job `Check and build` executa checkout, Node 24, `npm ci`, `npm run check`, `npm run build:production` e `npm run qa`.
 
-1. checkout;
-2. Node 24;
-3. `npm ci`;
-4. `npm run check`;
-5. `npm run build:production`.
+Em Pull Requests, o fluxo termina após a validação. Em push para `main`, um segundo job dependente do QA faz novo build/QA, publica `dist` no Cloudflare Pages e executa `npm run smoke:production`. O token Cloudflare usado nesse job é secret do GitHub e não é incorporado ao frontend.
 
-O workflow usa `permissions: contents: read` e não executa deploy.
+## Separação entre deploy e release
 
-## Separação entre CI e release
+O merge na `main` pode disparar deploy automático do frontend, mas não cria tag nem GitHub Release. Release continua sendo uma decisão separada e deliberada.
 
-CI e release são fluxos diferentes.
-
-O CI prova que o código instala, valida e gera o build de produção. Ele não:
-
-- publica no Cloudflare Pages;
-- cria tags;
-- cria releases;
-- altera D1;
-- executa migrations;
-- altera secrets.
+O workflow do frontend não altera D1, não executa migrations e não modifica secrets ou DNS. A API possui repositório e ciclo de release independentes.
 
 Essa separação mantém as validações automáticas com menor privilégio e reduz o impacto de uma falha no pipeline de qualidade.

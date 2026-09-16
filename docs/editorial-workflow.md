@@ -2,35 +2,43 @@
 
 ## Fonte de verdade
 
-O frontend moderno usa `src/content/posts/*.md` como fonte editorial. Publicação é feita pelo build estático do Astro e pelo deploy do frontend; o D1 não é fonte de conteúdo público nesta arquitetura.
+O conteúdo público continua canônico em `src/content/posts/*.md`. O Astro gera o site estático a partir desses arquivos. D1 não é fonte editorial pública.
 
-## Criar conteúdo
+## Admin Editorial
 
-1. partir de `main` limpa e atualizada;
-2. criar branch de escopo editorial;
-3. adicionar um arquivo Markdown em `src/content/posts/`;
-4. preencher todos os campos exigidos por `src/content.config.ts`;
-5. usar slug estável, título descritivo e descrição objetiva;
-6. definir categoria, tipo, dificuldade, tempo de leitura e tags coerentes;
-7. manter `draft: true` enquanto o conteúdo não estiver pronto para publicação.
+A rota `/admin/editor/` oferece criação/edição assistida, frontmatter estruturado, Markdown, preview, cópia/download `.md` e upload de imagens. A sessão Admin e CSRF são obrigatórios nas operações mutáveis da API.
 
-## Revisar
+## Criar ou atualizar conteúdo
 
-Antes de remover o estado de rascunho, revisar:
+1. selecionar um conteúdo existente ou iniciar um novo conteúdo;
+2. revisar título, slug, descrição, categoria, tipo, dificuldade, data, leitura, tags e estados;
+3. editar Markdown e revisar o preview;
+4. quando necessário, enviar JPG/PNG/WebP/AVIF ao R2 com `alt` útil;
+5. gerar o Markdown final;
+6. criar Pull Request pelo Admin.
 
-- clareza e precisão técnica;
-- coerência com a trilha e a categoria;
-- links internos e próximo passo do leitor;
-- título, descrição e intenção de busca;
-- imagens e assets, quando existirem;
-- ausência de segredos, dados pessoais ou material não autorizado.
+O Worker cria branch `content/admin-*`, grava `src/content/posts/<slug>.md`, cria commit e abre PR para `main`.
 
-## Publicar e atualizar
+## Mídia R2
 
-Para publicar, alterar apenas o necessário, executar `npm run check`, `npm run build:production` e `npm run qa`, abrir PR e integrar somente com CI verde. Deploy e release continuam operações separadas.
+Imagens editoriais são armazenadas no R2 em `posts/<slug>/YYYY/MM/<uuid>.<ext>`. O D1 guarda metadados operacionais. O Markdown contém a URL pública da imagem, preservando Git/Markdown como registro do conteúdo publicado.
 
-Atualizações preservam o slug sempre que possível. Quando o conteúdo mudar de forma material, preencher `updatedAt`. Mudanças de URL exigem avaliação explícita de redirecionamento e SEO.
+Tipos aceitos no Editor: JPG, PNG, WebP e AVIF; limite atual de 10 MB. Imagens exigem texto alternativo.
 
-## Assets e capas
+## Revisar e publicar
 
-Preferir arquivos otimizados, nomes previsíveis em kebab-case e texto alternativo útil. Não versionar assets temporários ou cópias redundantes. A biblioteca R2 legada não deve ser tratada como fonte editorial do frontend moderno sem uma futura migração arquitetural explícita.
+Antes do merge, revisar diff, conteúdo, mídia e CI. O Admin consulta estado do PR e CI automaticamente; `Mesclar e publicar` só é liberado para PR aberto, mergeável e com CI aprovado.
+
+A API restringe a publicação a base `main`, branch `content/admin-*` e `expectedHeadSha` igual ao HEAD revisado. O SHA também é enviado ao merge do GitHub.
+
+Após o merge, o push na `main` dispara o workflow de produção do frontend, que executa qualidade, deploy no Cloudflare Pages e smoke test. Tag e GitHub Release continuam separadas desse fluxo.
+
+## Guardrails
+
+- não publicar diretamente no D1;
+- não expor token GitHub, Cloudflare ou secrets no frontend;
+- não mesclar PR com CI pendente/falho ou HEAD diferente do revisado;
+- preservar slug quando possível;
+- usar `updatedAt` para mudanças materiais quando aplicável;
+- mudanças de URL exigem avaliação explícita de redirecionamento e SEO;
+- exclusões em massa no R2 continuam operação de alto risco.

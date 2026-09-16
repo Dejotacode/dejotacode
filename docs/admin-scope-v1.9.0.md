@@ -67,3 +67,9 @@ Se isso ocorrer, a implementação deve começar por uma migração de arquitetu
 ## Pendência relacionada
 
 O repositório da API ainda carrega versionamento e estrutura histórica anteriores ao frontend moderno. Essa reconciliação deve ser tratada na v1.9.0 antes da definição de estabilidade da v2.0.0.
+
+## Atualização pós-v1.10.0
+
+A decisão da v1.9.0 foi preservada no ponto essencial: Git/Markdown continua sendo a fonte canônica. A v1.10.0 adicionou um Admin Editorial sem ativar D1 como segunda fonte de posts.
+
+O Admin moderno agora inclui `/admin/editor/`, integração GitHub por PR/CI/merge protegido e upload de mídia no R2. O D1 permanece limitado a metadados/estado operacional. Portanto, a necessidade que motivava reconsiderar um CMS foi atendida por uma camada editorial sobre Git, sem migração para conteúdo público em D1.
