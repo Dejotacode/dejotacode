@@ -2,6 +2,28 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.7.2] - 2026-09-16
+
+### Corrigido
+
+- Contraste do CTA de próximo passo nos artigos em temas claro e escuro.
+- Legibilidade dos blocos de código no tema claro.
+- Validade HTML da homepage e CSS do layout administrativo.
+
+### Adicionado
+
+- Botões `Copiar código` e `Copiar comando` nos blocos fenced dos artigos.
+- Comandos Linux apresentados em blocos `bash` copiáveis.
+- Atualização dinâmica de `theme-color` conforme o tema ativo.
+
+### Qualidade
+
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build: 41 páginas estáticas.
+- QA: 1.682 referências internas, 0 links quebrados e 0 páginas HTML com problemas.
+- Validator.nu: 41/41 páginas, 0 erros HTML.
+- Responsividade verificada em 1440, 768 e 390 px sem overflow horizontal nos artigos e Admin.
+
 ## [1.7.1] - 2026-09-16
 
 ### Adicionado
