@@ -92,6 +92,7 @@ export const preparePublicForm = (selector: string) => {
     return;
   }
 
+  const conversion = form.dataset.conversion ?? "form_submit";
   let formStartTracked = false;
 
   const getCampaign = () => {
@@ -102,7 +103,7 @@ export const preparePublicForm = (selector: string) => {
   };
 
   const trackFormStart = () => {
-    if (formStartTracked) return;
+    if (conversion !== "lead_submit" || formStartTracked) return;
 
     formStartTracked = true;
 
@@ -179,8 +180,6 @@ export const preparePublicForm = (selector: string) => {
           "Enviado com sucesso.",
       );
 
-      const conversion =
-        form.dataset.conversion ?? "form_submit";
       const campaign = String(body.resource ?? "");
 
       if (conversion === "lead_submit") {
