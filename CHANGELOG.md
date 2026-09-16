@@ -2,6 +2,35 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.7.0] - 2026-09-16
+
+### Adicionado
+
+- Baseline técnico de crescimento para orientar decisões da v1.7.0.
+- Inventário de indexação e arquitetura editorial das páginas públicas.
+- Mapa editorial das quatro trilhas e dos 17 conteúdos publicados.
+- `CollectionPage` e `ItemList` em JSON-LD na página de trilhas.
+- `BreadcrumbList` em JSON-LD nas páginas de categoria.
+
+### Alterado
+
+- Title e description de `/trilhas/` refinados para Linux, programação, inteligência artificial e segurança digital.
+- Titles das categorias refinados para intenção de aprendizado de iniciantes.
+- Sitemap ajustado para excluir `/busca/`, o Guia do Iniciante pós-conversão e toda a árvore `/admin/`.
+- Linking editorial do artigo sobre primeiro projeto de portfólio reforçado para a trilha de programação e o case DejotaCode.
+- Versão do projeto atualizada para `1.7.0`.
+
+### Qualidade e produção
+
+- PR #32 integrado à `main` no commit `8fe8ebea5b8f2f2ff55565029842aa62256b80a4`.
+- CI pós-merge #83 concluído com sucesso.
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build de produção validado com 40 páginas estáticas.
+- QA verificou 1.631 referências internas, com 0 destinos quebrados.
+- QA estrutural validou 40 HTML, com 0 páginas com problemas.
+- Deploy homologado no Cloudflare Pages e no domínio oficial `dejotacode.com.br`.
+- Nenhuma migration D1, alteração de Worker, DNS ou secrets de produção.
+
 ## [1.6.0] - 2026-09-16
 
 ### Adicionado
