@@ -8,7 +8,7 @@ readingTime: 8
 difficulty: iniciante
 featured: false
 draft: false
-tags: [seguranca, phishing, golpes, contas]
+tags: ["seguranca", "phishing", "golpes", "contas"]
 ---
 
 Phishing é uma tentativa de enganar você para que entregue informações, abra um arquivo perigoso ou acesse uma página falsa. O ataque costuma explorar pressa, medo ou curiosidade.
@@ -46,3 +46,5 @@ Clicar não significa automaticamente que houve comprometimento. Mas, se você d
 5. acompanhe atividades recentes da conta.
 
 A defesa melhora quando vira hábito. Combine este guia com [autenticação em dois fatores](/blog/autenticacao-dois-fatores/) e com os [hábitos de segurança digital](/blog/habitos-seguranca-digital-iniciantes/).
+
+Antes de agir diante de uma mensagem suspeita, pare por alguns segundos e confirme a solicitação diretamente no serviço oficial. Essa pequena pausa evita muitos golpes baseados em urgência.
