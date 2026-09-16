@@ -258,5 +258,51 @@ const articleSchema = {
         </section>
       )
     }
+  <script>
+    const copyText = async (text: string) => {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API indisponível");
+      }
+
+      await navigator.clipboard.writeText(text);
+    };
+
+    document.querySelectorAll<HTMLElement>(".article-content pre").forEach((block) => {
+      if (block.querySelector("[data-code-copy]")) return;
+
+      const code = block.querySelector("code");
+      if (!code) return;
+
+      const language = block.dataset.language?.toLowerCase() ?? "";
+      const isCommand = ["bash", "sh", "shell", "zsh", "console", "terminal"].includes(language);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "code-copy-button";
+      button.dataset.codeCopy = "";
+      button.textContent = isCommand ? "Copiar comando" : "Copiar código";
+      button.setAttribute("aria-label", isCommand ? "Copiar comando para a área de transferência" : "Copiar código para a área de transferência");
+
+      button.addEventListener("click", async () => {
+        const original = button.textContent ?? "Copiar";
+        try {
+          await copyText(code.textContent ?? "");
+          button.dataset.state = "copied";
+          button.textContent = "Copiado ✓";
+          window.setTimeout(() => {
+            button.dataset.state = "";
+            button.textContent = original;
+          }, 1800);
+        } catch {
+          button.textContent = "Não foi possível copiar";
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 2200);
+        }
+      });
+
+      block.prepend(button);
+    });
+  </script>
+
   </main>
 </BaseLayout>

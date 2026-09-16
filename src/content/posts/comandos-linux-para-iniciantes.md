@@ -15,19 +15,50 @@ O terminal fica mais simples quando você pratica poucos comandos e observa o re
 
 ## Descubra onde você está
 
-O comando `pwd` mostra o caminho do diretório atual.
+O comando abaixo mostra o caminho do diretório atual:
+
+```bash
+pwd
+```
 
 ## Liste os arquivos
 
-Use `ls` para visualizar o conteúdo do diretório. A opção `ls -la` também mostra itens ocultos e mais detalhes.
+Use `ls` para visualizar o conteúdo do diretório:
+
+```bash
+ls
+```
+
+Para incluir itens ocultos e mais detalhes:
+
+```bash
+ls -la
+```
 
 ## Entre em um diretório
 
-O comando `cd Documentos` entra na pasta chamada Documentos. Para voltar um nível, use `cd ..`.
+Para entrar na pasta chamada Documentos:
+
+```bash
+cd Documentos
+```
+
+Para voltar um nível:
+
+```bash
+cd ..
+```
 
 ## Crie um espaço de teste
 
-Crie uma pasta com `mkdir pratica-linux` e entre nela com `cd pratica-linux`. Assim você pratica sem alterar arquivos importantes.
+Crie uma pasta de prática e entre nela:
+
+```bash
+mkdir pratica-linux
+cd pratica-linux
+```
+
+Assim você pratica sem alterar arquivos importantes.
 
 ## Leia antes de confirmar
 

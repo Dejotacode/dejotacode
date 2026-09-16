@@ -19,7 +19,13 @@ As permissões definem quem pode ler, modificar ou executar cada arquivo. Elas a
 
 ## Observe as permissões
 
-Execute `ls -l` dentro de uma pasta de teste. A sequência apresentada no início de cada linha resume as permissões existentes.
+Dentro de uma pasta de teste, execute:
+
+```bash
+ls -l
+```
+
+A sequência apresentada no início de cada linha resume as permissões existentes.
 
 ## Evite permissões excessivas
 

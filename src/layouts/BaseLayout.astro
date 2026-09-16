@@ -52,8 +52,7 @@ const socialImageAlt = imageAlt ?? pageTitle;
     <meta name="color-scheme" content="dark light" />
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
-    <meta name="theme-color" content="#0a0d12" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0d12" />
     <meta name="application-name" content="DejotaCode" />
     <meta name="apple-mobile-web-app-title" content="DejotaCode" />
     <meta property="og:type" content={ogType} />
@@ -87,7 +86,10 @@ const socialImageAlt = imageAlt ?? pageTitle;
       (() => {
         const saved = localStorage.getItem("dejotacode-theme");
         const preferred = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-        document.documentElement.dataset.theme = saved === "light" || saved === "dark" ? saved : preferred;
+        const theme = saved === "light" || saved === "dark" ? saved : preferred;
+        document.documentElement.dataset.theme = theme;
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        themeColor?.setAttribute("content", theme === "light" ? "#f7f9fc" : "#0a0d12");
       })();
     </script>
   </head>
@@ -114,6 +116,7 @@ const socialImageAlt = imageAlt ?? pageTitle;
 
       const syncThemeControls = () => {
         const isLight = document.documentElement.dataset.theme === "light";
+        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isLight ? "#f7f9fc" : "#0a0d12");
         document.querySelectorAll("[data-theme-toggle]").forEach((control) => {
           control.setAttribute("aria-pressed", String(isLight));
           control.setAttribute("aria-label", isLight ? "Ativar tema escuro" : "Ativar tema claro");
