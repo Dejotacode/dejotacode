@@ -180,6 +180,9 @@ Os procedimentos de produção ficam separados deste guia de desenvolvimento par
 - [`repository-hygiene-v1.9.0.md`](repository-hygiene-v1.9.0.md) — inventário de branches/stashes e política de limpeza;
 - [`admin-scope-v1.9.0.md`](admin-scope-v1.9.0.md) — decisão de produto sobre autenticação, métricas e eventual CMS;
 - [`api-source-reconciliation-v1.9.0.md`](api-source-reconciliation-v1.9.0.md) — estado da fonte da API e direção de reconciliação.
+- [`v1.9.0-readiness.md`](v1.9.0-readiness.md) — consolidação dos critérios de aceite e regra de fechamento;
+- [`remote-branch-audit-v1.9.0.md`](remote-branch-audit-v1.9.0.md) — reconciliação read-only das branches remotas históricas;
+- [`dependency-ci-supply-chain-audit-v1.9.0.md`](dependency-ci-supply-chain-audit-v1.9.0.md) — dependências, lockfiles, permissões de CI e supply chain.
 
 Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve continuar exigindo aprovação explícita.
 
