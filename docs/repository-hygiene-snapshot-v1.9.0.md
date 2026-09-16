@@ -77,3 +77,34 @@ Antes de remover branch ou stash:
 5. só então excluir de forma deliberada.
 
 Este snapshot é operacional e não altera runtime, conteúdo público, infraestrutura ou baseline de métricas.
+
+## Verificação das branches com commits não equivalentes por patch
+
+Uma segunda revisão foi executada sobre as quatro branches locais que ainda apareciam com `+` em `git cherry`.
+
+O objetivo foi distinguir trabalho realmente único de diferenças artificiais causadas por squash/rebase durante a integração.
+
+Resultado:
+
+- `chore/release-v1.5.0` — conteúdo idêntico ao commit integrado `635b0f9` nos arquivos de release;
+- `docs/admin-scope-v1.9.0` — conteúdo idêntico ao commit integrado `043fb72` no escopo revisado;
+- `docs/api-reconciliation-v1.9.0` — conteúdo idêntico ao commit integrado `4042d6a` no escopo revisado;
+- `feat/metrics-dashboard-v1.6.0` — conteúdo idêntico ao commit integrado `4202408` nos arquivos do Admin/Métricas.
+
+Em todos os quatro casos, `git diff` contra o commit histórico correspondente na `main` retornou vazio no conjunto de arquivos relevante.
+
+Conclusão: nenhuma dessas quatro branches contém alteração única necessária à árvore atual; a divergência observada em `git cherry` decorre da forma como os commits foram integrados, não de funcionalidade perdida.
+
+### Política de limpeza após esta verificação
+
+Essas branches passam a ser candidatas técnicas à remoção futura, mas continuam preservadas por enquanto.
+
+Antes de qualquer exclusão, a operação deve:
+
+1. confirmar que a branch não recebeu commits novos após este snapshot;
+2. confirmar o PR/commit de integração correspondente;
+3. revisar branches remotas relacionadas;
+4. manter os stashes fora da limpeza automática;
+5. executar `git fetch --prune` apenas depois de uma decisão explícita sobre as refs remotas.
+
+Nenhuma branch ou stash foi removido nesta revisão.
