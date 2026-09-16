@@ -34,5 +34,5 @@ jobs:
       - name: Production build
         run: npm run build:production
 
-      - name: Validate internal links
-        run: node scripts/validate-internal-links.mjs
+      - name: Validate built HTML
+        run: npm run qa
