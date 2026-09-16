@@ -2,6 +2,29 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.12.0] - 2026-09-16
+
+### Adicionado
+
+- Biblioteca editorial de imagens no Admin Editor, reutilizando mídias já existentes no Cloudflare R2.
+- Miniaturas com texto alternativo, tamanho e data de envio.
+- Ações `Inserir` e `Copiar URL` para imagens existentes.
+- Atualização manual da biblioteca e recarregamento automático após novos uploads.
+
+### Segurança e escopo
+
+- Biblioteca somente leitura; nenhuma exclusão de mídia foi adicionada.
+- Reutilização de imagem não cria cópia adicional no R2.
+- Nenhuma migration, mudança de API, CTA, funil ou taxonomia de analytics.
+
+### Qualidade e produção
+
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build de produção: 46 páginas estáticas.
+- QA: 1.896 referências internas, 0 links quebrados e 0 páginas HTML com problemas.
+- Smoke de produção: 10/10 verificações aprovadas.
+- Teste manual em produção confirmou 23 imagens carregadas e inserção de mídia existente no Markdown/preview.
+
 ## [1.11.0] - 2026-09-16
 
 ### Operação e recuperação
