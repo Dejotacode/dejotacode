@@ -174,6 +174,7 @@ Os procedimentos de produção ficam separados deste guia de desenvolvimento par
 
 - [`runbook-deploy-rollback.md`](runbook-deploy-rollback.md) — deploy, homologação e rollback do frontend e da API;
 - [`backup-recovery.md`](backup-recovery.md) — inventário de dados, exportação segura do D1 e estratégia de recuperação;
+- [`d1-restore-rehearsal-v1.9.0.md`](d1-restore-rehearsal-v1.9.0.md) — evidência do ensaio de restauração isolada do D1;
 - [`runbook-d1-readonly.md`](runbook-d1-readonly.md) — consultas D1 de diagnóstico sem mutação;
 - [`editorial-workflow.md`](editorial-workflow.md) — criação, revisão, publicação e atualização de conteúdo;
 - [`repository-hygiene-v1.9.0.md`](repository-hygiene-v1.9.0.md) — inventário de branches/stashes e política de limpeza;

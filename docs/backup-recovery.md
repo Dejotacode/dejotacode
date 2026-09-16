@@ -52,10 +52,14 @@ Restauração é uma operação de produção potencialmente destrutiva. Não de
 
 Recuperação depende da existência de cópia dos objetos fora do bucket afetado. Enquanto não houver espelhamento automatizado, o principal controle é evitar exclusões em massa e manter os assets fonte versionados ou arquivados quando possível.
 
+## Ensaio validado
+
+O ensaio de restauração da v1.9.0 foi concluído com sucesso em D1 local isolado. Evidências e limites estão em [`d1-restore-rehearsal-v1.9.0.md`](d1-restore-rehearsal-v1.9.0.md).
+
 ## Próximas melhorias
 
 - automatizar export periódico do D1 para armazenamento seguro;
 - definir política de retenção;
 - definir estratégia de cópia/espelhamento do R2;
-- executar teste de restauração em ambiente não produtivo;
+- repetir periodicamente o teste de restauração em ambiente não produtivo;
 - registrar RTO/RPO quando o volume e a criticidade justificarem.
