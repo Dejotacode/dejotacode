@@ -23,9 +23,11 @@ Backups D1 podem conter dados pessoais e operacionais. `.backups/` é ignorado p
 
 ### R2
 
-O bucket de produção armazena mídia e recursos. O projeto ainda não possui rotina automatizada de espelhamento do R2 documentada neste repositório.
+O bucket de produção armazena mídia e recursos. O inventário read-only da v1.11.0 é reproduzível pela API com `npm run inventory:r2:production` e está documentado em [`r2-inventory-v1.11.0.md`](r2-inventory-v1.11.0.md).
 
-Até essa automação existir, alterações em massa ou exclusões de objetos devem ser tratadas como operações de alto risco e exigir inventário prévio dos objetos afetados.
+O inventário parte dos metadados D1 e valida URLs públicas com `HEAD`; ele não detecta objetos órfãos sem registro em `media`.
+
+O projeto ainda não possui espelhamento externo automatizado do R2. Até existir destino seguro, alterações em massa ou exclusões de objetos devem ser tratadas como operações de alto risco e exigir inventário prévio e cópia dos objetos afetados fora do bucket.
 
 ### Conteúdo editorial
 
@@ -70,6 +72,6 @@ O ensaio de restauração da v1.9.0 foi concluído com sucesso em D1 local isola
 ## Próximas melhorias
 
 - evoluir o export manual para agendamento apenas quando existir destino seguro e política de credenciais adequada;
-- definir estratégia de cópia/espelhamento do R2;
+- definir destino seguro e implementar cópia/espelhamento do R2;
 - repetir periodicamente o teste de restauração em ambiente não produtivo;
 - registrar RTO/RPO quando o volume e a criticidade justificarem.

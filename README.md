@@ -143,6 +143,7 @@ src/styles/          estilos e tokens visuais
 - [`docs/admin-scope-v1.9.0.md`](docs/admin-scope-v1.9.0.md) — decisão histórica do Admin e atualização pós-v1.10.0.
 - [`docs/editorial-workflow.md`](docs/editorial-workflow.md) — fluxo atual Admin → GitHub → CI → Pages e mídia R2.
 - [`docs/v1.11.0-operational-reconciliation.md`](docs/v1.11.0-operational-reconciliation.md) — reconciliação operacional após v1.10.0.
+- [`docs/r2-inventory-v1.11.0.md`](docs/r2-inventory-v1.11.0.md) — inventário read-only e estratégia de proteção da mídia R2.
 - [`docs/api-source-reconciliation-v1.9.0.md`](docs/api-source-reconciliation-v1.9.0.md) — reconciliação da fonte canônica da API e direção operacional.
 
 ## Segurança operacional
