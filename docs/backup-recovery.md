@@ -14,7 +14,6 @@ Antes de migrations relevantes ou mudanças destrutivas, gerar export SQL remoto
 
 ```bash
 npx wrangler d1 export DB \
-  --config api/wrangler.jsonc \
   --env production \
   --remote \
   --output <arquivo-backup.sql>
