@@ -163,7 +163,7 @@
 }
 
 .metrics-ranking--campaigns .metrics-ranking__context {
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.9rem;
 }
 
