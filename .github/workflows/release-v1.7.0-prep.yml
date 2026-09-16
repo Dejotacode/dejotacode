@@ -1,0 +1,55 @@
+name: Prepare v1.7.0 release
+
+on:
+  push:
+    branches:
+      - chore/release-v1.7.0
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.20.0'
+
+      - name: Update version and changelog
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm version 1.7.0 --no-git-tag-version
+          node <<'NODE'
+          const fs = require('fs');
+          const file = 'CHANGELOG.md';
+          const content = fs.readFileSync(file, 'utf8');
+          const marker = '## [1.6.0] - 2026-09-16';
+          const heading = '## [1.7.0] - 2026-09-16';
+          if (!content.includes(heading)) {
+            if (!content.includes(marker)) throw new Error('Marcador v1.6.0 não encontrado');
+            const section = `## [1.7.0] - 2026-09-16\n\n### Adicionado\n\n- Baseline técnico de crescimento para orientar decisões da v1.7.0.\n- Inventário de indexação e arquitetura editorial das páginas públicas.\n- Mapa editorial das quatro trilhas e dos 17 conteúdos publicados.\n- \`CollectionPage\` e \`ItemList\` em JSON-LD na página de trilhas.\n- \`BreadcrumbList\` em JSON-LD nas páginas de categoria.\n\n### Alterado\n\n- Title e description de \`/trilhas/\` refinados para Linux, programação, inteligência artificial e segurança digital.\n- Titles das categorias refinados para intenção de aprendizado de iniciantes.\n- Sitemap ajustado para excluir \`/busca/\`, o Guia do Iniciante pós-conversão e toda a árvore \`/admin/\`.\n- Linking editorial do artigo sobre primeiro projeto de portfólio reforçado para a trilha de programação e o case DejotaCode.\n- Versão do projeto atualizada para \`1.7.0\`.\n\n### Qualidade e produção\n\n- PR #32 integrado à \`main\` no commit \`8fe8ebea5b8f2f2ff55565029842aa62256b80a4\`.\n- CI pós-merge #83 concluído com sucesso.\n- \`astro check\`: 0 erros, 0 warnings e 0 hints.\n- Build de produção validado com 40 páginas estáticas.\n- QA verificou 1.631 referências internas, com 0 destinos quebrados.\n- QA estrutural validou 40 HTML, com 0 páginas com problemas.\n- Deploy homologado no Cloudflare Pages e no domínio oficial \`dejotacode.com.br\`.\n- Nenhuma migration D1, alteração de Worker, DNS ou secrets de produção.\n\n`;
+            fs.writeFileSync(file, content.replace(marker, section + marker));
+          }
+          NODE
+
+      - name: Commit release metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo 'Nada para commitar.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add CHANGELOG.md package.json package-lock.json
+          git commit -m 'chore(release): prepara v1.7.0'
+          git push
