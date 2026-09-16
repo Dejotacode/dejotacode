@@ -28,3 +28,5 @@ No README, explique o problema, a solução escolhida, como executar o projeto e
 ## Publique e peça uma revisão
 
 Uma versão pequena no ar é mais útil do que uma ideia grande inacabada. Compartilhe com alguém e transforme o retorno recebido em uma melhoria concreta.
+
+Se ainda estiver montando sua base, siga a trilha [Primeiros passos na programação](/trilhas/primeiros-passos-programacao/) antes de ampliar o projeto. Para ver um exemplo de projeto apresentado com problema, decisões, arquitetura e aprendizados, consulte também o [case DejotaCode no portfólio](/portfolio/).
