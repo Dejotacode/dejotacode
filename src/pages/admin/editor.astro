@@ -116,10 +116,31 @@ const editablePosts = posts
             <label><input name="draft" type="checkbox" /> Rascunho</label>
           </div>
 
+          <section class="editor-media-panel" aria-labelledby="editor-media-title">
+            <div>
+              <strong id="editor-media-title">Imagem no conteúdo</strong>
+              <p>Envie uma imagem ao R2 e insira o Markdown na posição atual do cursor.</p>
+            </div>
+            <div class="editor-media-fields">
+              <label>
+                Arquivo
+                <input data-media-file type="file" accept="image/jpeg,image/png,image/webp,image/avif" />
+              </label>
+              <label>
+                Texto alternativo
+                <input data-media-alt type="text" maxlength="220" placeholder="Descreva o que a imagem mostra" />
+              </label>
+            </div>
+            <div class="editor-media-actions">
+              <button class="button" type="button" data-upload-image>Enviar e inserir imagem</button>
+              <output data-media-status aria-live="polite">JPG, PNG, WebP ou AVIF · até 10 MB.</output>
+            </div>
+          </section>
+
           <label>
             Conteúdo Markdown
             <textarea class="editor-markdown" name="body" rows="22" required spellcheck="true"></textarea>
-            <small>Use títulos ##, listas, links, blocos ```bash e demais Markdown editorial.</small>
+            <small>Use títulos ##, listas, links, imagens, blocos ```bash e demais Markdown editorial.</small>
           </label>
           <div class="editor-actions">
             <button class="button button-primary" type="button" data-generate>Gerar Markdown</button>
@@ -194,6 +215,10 @@ const editablePosts = posts
     const workflowLink = document.querySelector<HTMLAnchorElement>("[data-workflow-link]");
     const refreshPrButton = document.querySelector<HTMLButtonElement>("[data-refresh-pr]");
     const mergePrButton = document.querySelector<HTMLButtonElement>("[data-merge-pr]");
+    const mediaFile = document.querySelector<HTMLInputElement>("[data-media-file]");
+    const mediaAlt = document.querySelector<HTMLInputElement>("[data-media-alt]");
+    const uploadImageButton = document.querySelector<HTMLButtonElement>("[data-upload-image]");
+    const mediaStatus = document.querySelector<HTMLOutputElement>("[data-media-status]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
@@ -253,6 +278,13 @@ const editablePosts = posts
 
         if (!line.trim()) {
           closeList();
+          continue;
+        }
+
+        const image = line.match(/^!\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)$/);
+        if (image) {
+          closeList();
+          output.push(`<figure class="editor-preview-image"><img src="${escapeHtml(image[2])}" alt="${escapeHtml(image[1])}" loading="lazy" decoding="async"></figure>`);
           continue;
         }
 
@@ -429,6 +461,68 @@ const editablePosts = posts
       URL.revokeObjectURL(url);
       if (status) status.textContent = `${value("slug")}.md preparado para revisão local.`;
     };
+    const insertAtCursor = (textarea: HTMLTextAreaElement, text: string) => {
+      const start = textarea.selectionStart ?? textarea.value.length;
+      const end = textarea.selectionEnd ?? start;
+      const before = textarea.value.slice(0, start);
+      const after = textarea.value.slice(end);
+      const prefix = before && !before.endsWith("\n") ? "\n\n" : "";
+      const suffix = after && !after.startsWith("\n") ? "\n\n" : "";
+      const insertion = `${prefix}${text}${suffix}`;
+      textarea.value = `${before}${insertion}${after}`;
+      const cursor = before.length + insertion.length;
+      textarea.setSelectionRange(cursor, cursor);
+      textarea.focus();
+    };
+
+    const uploadAndInsertImage = async () => {
+      if (!api || !mediaFile || !mediaAlt || !uploadImageButton) return;
+      const file = mediaFile.files?.[0];
+      const alt = mediaAlt.value.trim();
+      const slug = value("slug");
+      const allowedImageTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
+      const maxImageSize = 10 * 1024 * 1024;
+      if (!slug) { if (mediaStatus) mediaStatus.textContent = "Defina o slug do conteúdo antes de enviar a imagem."; return; }
+      if (!file) { if (mediaStatus) mediaStatus.textContent = "Selecione uma imagem para enviar."; return; }
+      if (!allowedImageTypes.has(file.type)) { if (mediaStatus) mediaStatus.textContent = "Use JPG, PNG, WebP ou AVIF."; return; }
+      if (file.size > maxImageSize) { if (mediaStatus) mediaStatus.textContent = "A imagem deve ter no máximo 10 MB."; return; }
+      if (alt.length < 3) { if (mediaStatus) mediaStatus.textContent = "Escreva um texto alternativo descritivo."; return; }
+      const body = field("body");
+      if (!(body instanceof HTMLTextAreaElement)) return;
+
+      uploadImageButton.disabled = true;
+      if (mediaStatus) mediaStatus.textContent = "Enviando imagem ao R2…";
+      try {
+        const payload = new FormData();
+        payload.append("file", file);
+        payload.append("alt", alt);
+        payload.append("postSlug", slug);
+        const response = await fetch(`${api}/api/media/cms`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "X-CSRF-Token": csrf },
+          body: payload,
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error?.message ?? "Não foi possível enviar a imagem.");
+        const publicPath = String(result.data?.publicPath ?? "");
+        if (!publicPath) throw new Error("A API não retornou o caminho público da imagem.");
+        const imageUrl = new URL(publicPath, `${api}/`).toString();
+        const markdownAlt = alt.replace(/[\[\]]/g, "").replace(/\s+/g, " ").trim();
+        if (markdownAlt.length < 3) throw new Error("O texto alternativo precisa conter uma descrição válida.");
+        insertAtCursor(body, `![${markdownAlt}](${imageUrl})`);
+        mediaFile.value = "";
+        mediaAlt.value = "";
+        generatedMarkdown = "";
+        updatePreview();
+        if (mediaStatus) mediaStatus.textContent = "Imagem enviada e inserida no Markdown.";
+      } catch (error) {
+        if (mediaStatus) mediaStatus.textContent = error instanceof Error ? error.message : "Não foi possível enviar a imagem.";
+      } finally {
+        uploadImageButton.disabled = false;
+      }
+    };
+
     const configureGithub = async () => {
       if (!api || !createPrButton || !githubState) return;
       try {
@@ -539,6 +633,7 @@ const editablePosts = posts
     document.querySelector("[data-generate]")?.addEventListener("click", () => buildMarkdown());
     document.querySelector("[data-copy-markdown]")?.addEventListener("click", copyGenerated);
     document.querySelector("[data-download]")?.addEventListener("click", downloadGenerated);
+    uploadImageButton?.addEventListener("click", uploadAndInsertImage);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", refreshPullRequest);
     mergePrButton?.addEventListener("click", mergePullRequest);
