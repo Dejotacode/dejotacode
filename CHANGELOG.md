@@ -2,6 +2,30 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.13.0] - 2026-09-16
+
+### Melhorias no Admin
+
+- Biblioteca de imagens agora pode ser recolhida/expandida no Editor.
+- Busca textual por alt e caminho do objeto no R2, com normalização de acentos.
+- Filtro por contexto: todas as imagens, imagens enviadas para o post atual e biblioteca geral.
+- Contador mostra quantas imagens estão visíveis em relação ao total disponível.
+- Filtro do post atual reage à troca/edição do slug sem nova consulta à API.
+
+### Segurança e escopo
+
+- A biblioteca continua somente leitura; nenhuma exclusão ou mutation adicional foi adicionada.
+- Nenhuma alteração de API, migration, CTA, funil ou taxonomia de analytics.
+- Git/Markdown permanece como fonte canônica do conteúdo público.
+
+### Qualidade e produção
+
+- `astro check`: 0 erros, 0 warnings e 0 hints.
+- Build de produção: 46 páginas estáticas.
+- QA: 1.896 referências internas, 0 links quebrados e 0 páginas HTML com problemas.
+- Smoke de produção: 10/10 verificações aprovadas.
+- Teste manual em produção confirmou recolhimento/expansão, busca por `git` e filtro `Biblioteca geral`.
+
 ## [1.12.0] - 2026-09-16
 
 ### Adicionado
