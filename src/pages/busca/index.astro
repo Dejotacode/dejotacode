@@ -1,16 +1,20 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
+import TrailCard from "../../components/TrailCard.astro";
+import { availableTrails } from "../../data/trails";
 import { categories, getPublishedPosts } from "../../lib/content";
 import "../../styles/editorial.css";
+import "../../styles/trails.css";
 import "../../styles/discovery.css";
 
 const posts = await getPublishedPosts();
+const totalSearchableItems = posts.length + availableTrails.length;
 ---
 
 <BaseLayout
   title="Buscar conteúdos | DejotaCode"
-  description="Encontre tutoriais e artigos publicados no DejotaCode."
+  description="Encontre trilhas, tutoriais e artigos publicados no DejotaCode."
   robots="noindex, follow"
 >
   <main id="conteudo" tabindex="-1" class="editorial-page discovery-page search-page">
@@ -18,12 +22,12 @@ const posts = await getPublishedPosts();
       <p class="eyebrow">ENCONTRE O PRÓXIMO PASSO</p>
       <h1>O que você quer aprender?</h1>
       <p>
-        Busque por um assunto, ferramenta ou dúvida. A pesquisa acontece somente
-        no seu navegador.
+        Busque por uma trilha, assunto, ferramenta ou dúvida. A pesquisa acontece
+        somente no seu navegador.
       </p>
 
       <form class="search-page__form" action="/busca/" role="search" data-search-form>
-        <label for="content-search">Buscar conteúdos</label>
+        <label for="content-search">Buscar no DejotaCode</label>
         <div>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="6.5"></circle>
@@ -46,37 +50,72 @@ const posts = await getPublishedPosts();
       <div class="section-heading">
         <div>
           <p class="eyebrow">RESULTADOS</p>
-          <h2 id="search-results-title">Conteúdos encontrados</h2>
+          <h2 id="search-results-title">Encontre seu próximo passo</h2>
         </div>
         <p data-search-count aria-live="polite">
-          {posts.length} conteúdos disponíveis
+          {totalSearchableItems} resultados disponíveis
         </p>
       </div>
 
-      <div class="post-grid" data-search-results>
-        {
-          posts.map((post) => (
-            <div
-              class="search-result"
-              data-search-item
-              data-search-text={[
-                post.data.title,
-                post.data.description,
-                categories[post.data.category],
-                ...post.data.tags,
-              ].join(" ")}
-            >
-              <PostCard post={post} />
-            </div>
-          ))
-        }
-      </div>
+      <section class="search-group" data-search-group aria-labelledby="search-trails-title">
+        <div class="search-group__heading">
+          <h3 id="search-trails-title">Trilhas de aprendizagem</h3>
+          <a href="/trilhas/">Ver todas as trilhas</a>
+        </div>
+        <div class="trails-grid search-trails-grid">
+          {
+            availableTrails.map((trail) => (
+              <div
+                class="search-result"
+                data-search-item
+                data-search-text={[
+                  trail.title,
+                  trail.description,
+                  trail.outcome,
+                  trail.level,
+                  ...trail.lessons.flatMap((lesson) => [lesson.title, lesson.description]),
+                ].join(" ")}
+              >
+                <TrailCard trail={trail} />
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="search-group" data-search-group aria-labelledby="search-posts-title">
+        <div class="search-group__heading">
+          <h3 id="search-posts-title">Tutoriais e artigos</h3>
+          <a href="/blog/">Explorar todo o blog</a>
+        </div>
+        <div class="post-grid" data-search-results>
+          {
+            posts.map((post) => (
+              <div
+                class="search-result"
+                data-search-item
+                data-search-text={[
+                  post.data.title,
+                  post.data.description,
+                  categories[post.data.category],
+                  ...post.data.tags,
+                ].join(" ")}
+              >
+                <PostCard post={post} />
+              </div>
+            ))
+          }
+        </div>
+      </section>
 
       <div class="empty-state" data-search-empty hidden>
         <p class="eyebrow">NENHUM RESULTADO</p>
         <h2>Não encontramos esse assunto.</h2>
         <p>Tente usar menos palavras ou procure por outro termo.</p>
-        <a class="button button-secondary" href="/blog/">Explorar todo o blog</a>
+        <div class="empty-state__actions">
+          <a class="button button-secondary" href="/trilhas/">Explorar trilhas</a>
+          <a class="button button-secondary" href="/blog/">Explorar o blog</a>
+        </div>
       </div>
     </section>
   </main>
@@ -86,6 +125,9 @@ const posts = await getPublishedPosts();
     const input = document.querySelector<HTMLInputElement>("[data-search-input]");
     const items = Array.from(
       document.querySelectorAll<HTMLElement>("[data-search-item]"),
+    );
+    const groups = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-search-group]"),
     );
     const count = document.querySelector<HTMLElement>("[data-search-count]");
     const empty = document.querySelector<HTMLElement>("[data-search-empty]");
@@ -109,10 +151,14 @@ const posts = await getPublishedPosts();
         if (matches) visible += 1;
       });
 
+      groups.forEach((group) => {
+        group.hidden = !group.querySelector("[data-search-item]:not([hidden])");
+      });
+
       if (count) {
         count.textContent = query
           ? `${visible} ${visible === 1 ? "resultado" : "resultados"} para “${rawQuery.trim()}”`
-          : `${visible} conteúdos disponíveis`;
+          : `${visible} resultados disponíveis`;
       }
 
       if (empty) empty.hidden = visible !== 0;
