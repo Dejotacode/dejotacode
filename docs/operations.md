@@ -44,6 +44,7 @@ Antes de propor integração, execute:
 npm ci
 npm run check
 npm run build:production
+npm run qa
 ```
 
 Critérios mínimos para aprovação:
@@ -51,6 +52,7 @@ Critérios mínimos para aprovação:
 - instalação concluída sem erro;
 - `astro check` sem erros;
 - build de produção concluído;
+- QA estrutural aprovado;
 - working tree sem alterações inesperadas;
 - diff limitado ao escopo planejado.
 
@@ -73,6 +75,18 @@ npm run build:production
 Esse comando primeiro executa `env:check:production`.
 
 As validações rejeitam endpoint ausente, URL inválida, HTTP inseguro, localhost e endpoint diferente do esperado para o ambiente.
+
+## Smoke test de produção
+
+Após um deploy, execute:
+
+```bash
+npm run smoke:production
+```
+
+O script usa somente requisições de leitura. Ele verifica rotas públicas críticas, sitemap, RSS, saúde da API e confirma que uma sessão administrativa anônima continua protegida. Não envia formulário, não cria lead e não altera D1.
+
+`SITE_URL` e `API_URL` podem sobrescrever os endpoints padrão quando for necessário homologar outro ambiente.
 
 ## CI no GitHub Actions
 
@@ -159,8 +173,11 @@ Essas ações devem ser deliberadas separadamente.
 Os procedimentos de produção ficam separados deste guia de desenvolvimento para reduzir risco de execução acidental.
 
 - [`runbook-deploy-rollback.md`](runbook-deploy-rollback.md) — deploy, homologação e rollback do frontend e da API;
-- [`backup-recovery.md`](backup-recovery.md) — inventário de dados, exportação segura do D1 e estratégia de recuperação.
-- [`admin-scope-v1.9.0.md`](admin-scope-v1.9.0.md) — decisão de produto sobre autenticação, métricas e eventual CMS.
+- [`backup-recovery.md`](backup-recovery.md) — inventário de dados, exportação segura do D1 e estratégia de recuperação;
+- [`runbook-d1-readonly.md`](runbook-d1-readonly.md) — consultas D1 de diagnóstico sem mutação;
+- [`editorial-workflow.md`](editorial-workflow.md) — criação, revisão, publicação e atualização de conteúdo;
+- [`repository-hygiene-v1.9.0.md`](repository-hygiene-v1.9.0.md) — inventário de branches/stashes e política de limpeza;
+- [`admin-scope-v1.9.0.md`](admin-scope-v1.9.0.md) — decisão de produto sobre autenticação, métricas e eventual CMS;
 - [`api-source-reconciliation-v1.9.0.md`](api-source-reconciliation-v1.9.0.md) — estado da fonte da API e direção de reconciliação.
 
 Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve continuar exigindo aprovação explícita.
@@ -178,6 +195,7 @@ Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve c
 - `npm ci` aprovado;
 - `npm run check` aprovado;
 - `npm run build:production` aprovado;
+- `npm run qa` aprovado;
 - PR apontando para `main`;
 - CI do PR verde.
 
@@ -186,4 +204,5 @@ Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve c
 - `main` local/remota alinhadas;
 - commit integrado corresponde ao aprovado;
 - CI de `push` em `main` verde;
+- `npm run smoke:production` aprovado quando houver deploy;
 - nenhum deploy, tag ou release executado acidentalmente.
