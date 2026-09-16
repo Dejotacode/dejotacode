@@ -30,7 +30,7 @@ const isCurrent = (href: string) =>
     <div class="header-actions">
       <form class="search-form" action="/busca/" role="search">
         <label class="sr-only" for="header-search">Buscar conteúdos</label>
-        <button class="search-submit" type="submit" aria-label="Abrir busca">
+        <button class="search-submit" type="submit" aria-label="Buscar conteúdos">
           <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
         </button>
         <input id="header-search" name="q" type="search" placeholder="Buscar conteúdos..." autocomplete="off" />
@@ -73,10 +73,12 @@ const isCurrent = (href: string) =>
   const mobilePanel = header?.querySelector("[data-mobile-panel]");
 
   const closeMenu = () => {
-    if (!(menuToggle instanceof HTMLButtonElement) || !(mobilePanel instanceof HTMLElement)) return;
+    if (!(menuToggle instanceof HTMLButtonElement) || !(mobilePanel instanceof HTMLElement)) return false;
+    const wasOpen = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.querySelector(".sr-only")?.replaceChildren("Abrir menu");
     mobilePanel.hidden = true;
+    return wasOpen;
   };
 
   menuToggle?.addEventListener("click", () => {
@@ -89,9 +91,8 @@ const isCurrent = (href: string) =>
   mobilePanel?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-      if (menuToggle instanceof HTMLButtonElement) menuToggle.focus();
+    if (event.key === "Escape" && closeMenu() && menuToggle instanceof HTMLButtonElement) {
+      menuToggle.focus();
     }
   });
 
@@ -132,7 +133,7 @@ const isCurrent = (href: string) =>
   .mobile-panel nav a[aria-current="page"] { color: var(--color-accent-strong); }
   .mobile-cta { min-height: 2.75rem; display: grid; place-items: center; margin-top: 1rem; border-radius: var(--radius-md); background: var(--color-accent); color: var(--color-accent-contrast); font-weight: 700; text-decoration: none; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
-  @media (max-width: 68rem) { .search-form { min-width: 0; width: 2.75rem; height: 2.75rem; padding: 0; justify-content: center; } .search-form input { position: absolute; width: 1px; height: 1px; opacity: 0; } .search-submit { width: 100%; height: 100%; } }
+  @media (max-width: 68rem) { .search-form { min-width: 0; width: 2.75rem; height: 2.75rem; padding: 0; justify-content: center; } .search-form input, .search-form label { display: none; } .search-submit { width: 100%; height: 100%; } }
   @media (max-width: 60rem) { .desktop-nav, .search-form { display: none; } .menu-button { display: inline-grid; } }
   @media (max-width: 30rem) { .header-container :global(.brand__name) { display: none; } }
 </style>
