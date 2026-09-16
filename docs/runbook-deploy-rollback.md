@@ -46,7 +46,7 @@ Conferir HTTP 200, title/canonical quando aplicável e ausência de regressão f
 
 ## API — Cloudflare Workers
 
-A API vive no repositório separado `dejotacode-api-consent-v1.1.0`.
+A API vive no repositório público dedicado `Dejotacode/dejotacode-api`. Mantenha o clone da API em workspace separado do frontend para reduzir risco operacional.
 
 Antes de deploy, executar pelo menos:
 
