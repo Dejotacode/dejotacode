@@ -274,6 +274,18 @@
 .editor-media-fields label { display: grid; gap: .4rem; color: var(--color-text); font-weight: 700; }
 .editor-media-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
 .editor-media-actions output { color: var(--color-text-subtle); font-size: .82rem; }
+.editor-media-library { display: grid; gap: .75rem; padding-top: .9rem; border-top: 1px solid var(--color-border); }
+.editor-media-library__header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.editor-media-library__header p { margin-top: .25rem; }
+.editor-media-library > output { color: var(--color-text-subtle); font-size: .82rem; }
+.editor-media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .75rem; }
+.editor-media-card { display: grid; grid-template-rows: 9rem auto auto; gap: .65rem; min-width: 0; padding: .65rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.editor-media-card img { width: 100%; height: 9rem; object-fit: cover; border-radius: calc(var(--radius-md) - .2rem); background: var(--color-surface-soft); }
+.editor-media-card__info { display: grid; gap: .25rem; min-width: 0; }
+.editor-media-card__info strong { overflow-wrap: anywhere; }
+.editor-media-card__info span { color: var(--color-text-subtle); font-size: .78rem; }
+.editor-media-card__actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.editor-media-card__actions .button { min-height: 2.35rem; padding-inline: .75rem; font-size: .82rem; }
 .editor-preview-image { margin: 1.5rem 0; }
 .editor-preview-image img { display: block; width: 100%; height: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
 
@@ -281,4 +293,8 @@
   .editor-media-fields { grid-template-columns: 1fr; }
   .editor-media-actions { align-items: stretch; flex-direction: column; }
   .editor-media-actions .button { width: 100%; }
+  .editor-media-library__header { align-items: stretch; flex-direction: column; }
+  .editor-media-library__header .button { width: 100%; }
+  .editor-media-card__actions { flex-direction: column; }
+  .editor-media-card__actions .button { width: 100%; }
 }
