@@ -8,7 +8,7 @@ readingTime: 9
 difficulty: iniciante
 featured: false
 draft: false
-tags: [linux, terminal, comandos]
+tags: ["linux", "terminal", "comandos"]
 ---
 
 O terminal fica mais simples quando você pratica poucos comandos e observa o resultado de cada um.
@@ -63,3 +63,5 @@ Assim você pratica sem alterar arquivos importantes.
 ## Leia antes de confirmar
 
 Não execute comandos copiados da internet sem compreender o caminho e os arquivos que serão alcançados. Quando estiver confortável com a navegação, entenda também [como funcionam as permissões no Linux](/blog/permissoes-linux-para-iniciantes/).
+
+![Terminal Linux com comandos básicos para iniciantes](https://api.dejotacode.com.br/api/media/public/posts/comandos-linux-para-iniciantes/2026/09/d68be448-0cb3-4e50-ae3d-6ef0658c1f0f.png)
