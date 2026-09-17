@@ -264,6 +264,8 @@ const editablePosts = posts
       cleanupNote?: string | null;
       cleanupApprovedAt?: string | null;
       cleanupApprovedBy?: number | null;
+      deleteCheckExpiresAt?: string | null;
+      deleteCheckedAt?: string | null;
     };
 
     type EditablePost = {
@@ -318,6 +320,7 @@ const editablePosts = posts
     let generatedMarkdown = "";
     let mediaItems: MediaItem[] = [];
     let mediaSafetyStates = new Map<string, "used" | "orphan" | "review">();
+    let mediaDeleteChecks = new Map<number, { token: string; expiresAt: string }>();
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     let currentPrHeadSha = "";
     let ciPollTimer: number | undefined;
@@ -824,6 +827,78 @@ const editablePosts = posts
         : "Nenhuma candidata possui segunda aprovação. Plano vazio; nenhuma exclusão foi executada.";
     };
 
+    const runMediaDeleteDryRun = async (item: MediaItem) => {
+      if (!api || item.reviewStatus !== "candidate" || item.cleanupStatus !== "approved") return;
+      if (!window.confirm("Executar dry-run de exclusão? O servidor revalidará GitHub, D1 e R2. Nenhum arquivo será removido.")) return;
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Executando dry-run seguro…";
+      mediaDeleteChecks.delete(item.id);
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/delete-dry-run`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ objectKey: item.objectKey }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível executar o dry-run.");
+        const data = payload.data ?? {};
+        if (!data.eligible) {
+          renderMediaLibrary();
+          if (mediaLibraryStatus) mediaLibraryStatus.textContent = `Dry-run bloqueado: ${(data.blockers ?? []).join(", ") || "verificação inconclusiva"}. Nenhuma exclusão foi executada.`;
+          return;
+        }
+        const token = String(data.dryRunToken ?? "");
+        const expiresAt = String(data.expiresAt ?? "");
+        if (!token || !expiresAt) throw new Error("A API não retornou um token de dry-run válido.");
+        mediaDeleteChecks.set(item.id, { token, expiresAt });
+        renderMediaLibrary();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Dry-run aprovado. O token vale por até 10 minutos e nenhuma exclusão foi executada.";
+      } catch (error) {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível executar o dry-run.";
+      }
+    };
+
+    const deleteMediaItem = async (item: MediaItem) => {
+      if (!api) return;
+      const check = mediaDeleteChecks.get(item.id);
+      if (!check || new Date(check.expiresAt).getTime() <= Date.now()) {
+        mediaDeleteChecks.delete(item.id);
+        renderMediaLibrary();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "O dry-run expirou. Execute uma nova verificação antes de excluir.";
+        return;
+      }
+      const objectKey = window.prompt("Confirmação 1/2: digite exatamente o objectKey da mídia que será removida.", "");
+      if (objectKey === null) return;
+      if (objectKey.trim() !== item.objectKey) {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "objectKey incorreto. Exclusão cancelada.";
+        return;
+      }
+      const confirmation = window.prompt('Confirmação 2/2: digite EXCLUIR em letras maiúsculas.', "");
+      if (confirmation !== "EXCLUIR") {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Confirmação final inválida. Exclusão cancelada.";
+        return;
+      }
+      if (!window.confirm("Última confirmação: remover definitivamente esta mídia do R2 e seus metadados do D1?")) return;
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Revalidando referências antes da exclusão…";
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}`, {
+          method: "DELETE",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ confirmation: "EXCLUIR", objectKey: item.objectKey, dryRunToken: check.token }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "A exclusão foi bloqueada pelo servidor.");
+        mediaDeleteChecks.delete(item.id);
+        await loadMediaLibrary();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Mídia removida após dry-run e revalidação final.";
+      } catch (error) {
+        mediaDeleteChecks.delete(item.id);
+        renderMediaLibrary();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "A exclusão foi bloqueada.";
+      }
+    };
+
     const renderMediaLibrary = () => {
       if (!mediaGrid) return;
       mediaGrid.replaceChildren();
@@ -899,6 +974,13 @@ const editablePosts = posts
               cleanupNote.textContent = `Segunda revisão: ${item.cleanupNote}`;
               info.append(cleanupNote);
             }
+            const deleteCheck = mediaDeleteChecks.get(item.id);
+            if (deleteCheck && new Date(deleteCheck.expiresAt).getTime() > Date.now()) {
+              const dryRun = document.createElement("span");
+              dryRun.className = "editor-media-card__delete-check";
+              dryRun.textContent = `Dry-run aprovado até ${formatMediaDate(deleteCheck.expiresAt)}`;
+              info.append(dryRun);
+            }
           }
         }
         const actions = document.createElement("div");
@@ -953,6 +1035,23 @@ const editablePosts = posts
             cleanupButton.textContent = cleanupStatus === "approved" ? "Reabrir gate" : "Aprovar para plano";
             cleanupButton.addEventListener("click", () => updateMediaCleanupGate(item, cleanupStatus === "approved" ? "pending" : "approved"));
             actions.append(cleanupButton);
+            if (cleanupStatus === "approved") {
+              const dryRunButton = document.createElement("button");
+              dryRunButton.className = "button";
+              dryRunButton.type = "button";
+              dryRunButton.textContent = "Executar dry-run";
+              dryRunButton.addEventListener("click", () => runMediaDeleteDryRun(item));
+              actions.append(dryRunButton);
+              const deleteCheck = mediaDeleteChecks.get(item.id);
+              if (deleteCheck && new Date(deleteCheck.expiresAt).getTime() > Date.now()) {
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "button editor-media-card__delete-button";
+                deleteButton.type = "button";
+                deleteButton.textContent = "Excluir definitivamente";
+                deleteButton.addEventListener("click", () => deleteMediaItem(item));
+                actions.append(deleteButton);
+              }
+            }
           }
         }
         card.append(image, info, actions);
