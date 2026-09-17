@@ -298,6 +298,20 @@
 .editor-media-cleanup > output { color: var(--color-text-subtle); font-size: .82rem; }
 .editor-media-cleanup > pre { max-height: 18rem; overflow: auto; margin: 0; padding: .7rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-text); white-space: pre-wrap; overflow-wrap: anywhere; }
 .editor-media-cleanup > pre[hidden] { display: none; }
+.editor-media-risk { grid-column: 1 / -1; display: grid; gap: .75rem; padding: .85rem; border: 1px solid color-mix(in srgb, var(--color-warning, #d9a441) 55%, var(--color-border)); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-warning, #d9a441) 5%, var(--color-surface)); }
+.editor-media-risk[hidden] { display: none; }
+.editor-media-risk__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.editor-media-risk__header p { margin: .2rem 0 0; }
+.editor-media-risk__header > span { flex: 0 0 auto; padding: .2rem .45rem; border: 1px solid color-mix(in srgb, var(--color-warning, #d9a441) 55%, var(--color-border)); border-radius: 999px; color: var(--color-warning, #d9a441); font-size: .75rem; }
+.editor-media-risk label { display: grid; gap: .4rem; color: var(--color-text); font-weight: 700; }
+.editor-media-risk__checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+.editor-media-risk__checks span { display: grid; gap: .12rem; padding: .55rem .65rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); }
+.editor-media-risk__checks strong { color: var(--color-text); font-size: .78rem; }
+.editor-media-risk__checks small { color: var(--color-text-subtle); font-size: .75rem; overflow-wrap: anywhere; }
+.editor-media-risk__actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.editor-media-risk__delete { border-color: var(--color-warning, #d9a441); color: var(--color-warning, #d9a441); }
+.editor-media-risk__delete[hidden] { display: none; }
+.editor-media-risk > output { color: var(--color-text-subtle); font-size: .82rem; }
 .editor-media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .75rem; }
 .editor-media-card { display: grid; grid-template-rows: 9rem auto auto; gap: .65rem; min-width: 0; padding: .65rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
 .editor-media-card img { width: 100%; height: 9rem; object-fit: cover; border-radius: calc(var(--radius-md) - .2rem); background: var(--color-surface-soft); }
@@ -316,8 +330,6 @@
 .editor-media-card__review-note { overflow-wrap: anywhere; color: var(--color-text-muted); }
 .editor-media-card__cleanup { width: fit-content; padding: .22rem .45rem; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-surface-soft); color: var(--color-text-subtle); }
 .editor-media-card__cleanup[data-state="approved"] { color: var(--color-warning, #d9a441); border-color: color-mix(in srgb, var(--color-warning, #d9a441) 45%, var(--color-border)); }
-.editor-media-card__delete-check { width: fit-content; padding: .22rem .45rem; border: 1px solid color-mix(in srgb, var(--color-accent) 45%, var(--color-border)); border-radius: 999px; color: var(--color-accent); background: var(--color-surface-soft); }
-.editor-media-card__delete-button { border-color: var(--color-warning, #d9a441); color: var(--color-warning, #d9a441); }
 .editor-media-card__actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 .editor-media-card__actions .button { min-height: 2.35rem; padding-inline: .75rem; font-size: .82rem; }
 .editor-preview-image { margin: 1.5rem 0; }
@@ -335,6 +347,10 @@
   .editor-media-safety .button { width: 100%; }
   .editor-media-cleanup { grid-template-columns: 1fr; }
   .editor-media-cleanup .button { width: 100%; }
+  .editor-media-risk__header { flex-direction: column; }
+  .editor-media-risk__checks { grid-template-columns: 1fr; }
+  .editor-media-risk__actions { flex-direction: column; }
+  .editor-media-risk__actions .button { width: 100%; }
   .editor-media-safety__summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .editor-media-card__actions { flex-direction: column; }
   .editor-media-card__actions .button { width: 100%; }

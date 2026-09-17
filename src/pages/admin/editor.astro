@@ -193,6 +193,25 @@ const editablePosts = posts
                   <button class="button" type="button" data-media-cleanup-plan>Gerar plano de remoção</button>
                   <output data-media-cleanup-status aria-live="polite">Nenhum plano gerado.</output>
                   <pre data-media-cleanup-plan-output hidden></pre>
+                  <section class="editor-media-risk" data-media-risk hidden aria-live="polite">
+                    <div class="editor-media-risk__header">
+                      <div>
+                        <strong>Zona de risco</strong>
+                        <p>Exclusão individual somente após duas revisões, dry-run válido e nova revalidação no servidor.</p>
+                      </div>
+                      <span>Admin · ação irreversível</span>
+                    </div>
+                    <label>
+                      Mídia aprovada
+                      <select data-media-risk-select></select>
+                    </label>
+                    <div class="editor-media-risk__checks" data-media-risk-checks></div>
+                    <div class="editor-media-risk__actions">
+                      <button class="button" type="button" data-media-risk-dry-run>Executar dry-run</button>
+                      <button class="button editor-media-risk__delete" type="button" data-media-risk-delete hidden>Excluir definitivamente</button>
+                    </div>
+                    <output data-media-risk-status>Execute o dry-run para liberar a confirmação final.</output>
+                  </section>
                 </div>
                 <output data-media-library-status aria-live="polite">Carregando imagens…</output>
                 <div class="editor-media-grid" data-media-grid></div>
@@ -314,13 +333,19 @@ const editablePosts = posts
     const mediaCleanupPlanButton = document.querySelector<HTMLButtonElement>("[data-media-cleanup-plan]");
     const mediaCleanupStatus = document.querySelector<HTMLOutputElement>("[data-media-cleanup-status]");
     const mediaCleanupPlanOutput = document.querySelector<HTMLElement>("[data-media-cleanup-plan-output]");
+    const mediaRisk = document.querySelector<HTMLElement>("[data-media-risk]");
+    const mediaRiskSelect = document.querySelector<HTMLSelectElement>("[data-media-risk-select]");
+    const mediaRiskChecks = document.querySelector<HTMLElement>("[data-media-risk-checks]");
+    const mediaRiskDryRunButton = document.querySelector<HTMLButtonElement>("[data-media-risk-dry-run]");
+    const mediaRiskDeleteButton = document.querySelector<HTMLButtonElement>("[data-media-risk-delete]");
+    const mediaRiskStatus = document.querySelector<HTMLOutputElement>("[data-media-risk-status]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
     let generatedMarkdown = "";
     let mediaItems: MediaItem[] = [];
     let mediaSafetyStates = new Map<string, "used" | "orphan" | "review">();
-    let mediaDeleteChecks = new Map<number, { token: string; expiresAt: string }>();
+    let mediaDeleteChecks = new Map<number, { token: string; expiresAt: string; coverUsage: number; markdownReferences: string[]; r2Exists: boolean }>();
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     let currentPrHeadSha = "";
     let ciPollTimer: number | undefined;
@@ -827,6 +852,63 @@ const editablePosts = posts
         : "Nenhuma candidata possui segunda aprovação. Plano vazio; nenhuma exclusão foi executada.";
     };
 
+    const approvedCleanupItems = () => mediaItems.filter((item) => item.reviewStatus === "candidate" && item.cleanupStatus === "approved");
+
+    const selectedRiskMedia = () => {
+      const approved = approvedCleanupItems();
+      if (!approved.length) return null;
+      const selectedId = Number(mediaRiskSelect?.value || 0);
+      return approved.find((item) => item.id === selectedId) ?? approved[0];
+    };
+
+    const renderMediaRiskZone = () => {
+      if (!mediaRisk || !mediaRiskSelect || !mediaRiskChecks || !mediaRiskDeleteButton || !mediaRiskStatus) return;
+      const approved = approvedCleanupItems();
+      if (!approved.length) {
+        mediaRisk.hidden = true;
+        mediaRiskSelect.replaceChildren();
+        mediaRiskChecks.replaceChildren();
+        mediaRiskDeleteButton.hidden = true;
+        return;
+      }
+      mediaRisk.hidden = false;
+      const previous = Number(mediaRiskSelect.value || 0);
+      mediaRiskSelect.replaceChildren();
+      for (const item of approved) {
+        const option = document.createElement("option");
+        option.value = String(item.id);
+        option.textContent = `#${item.id} — ${item.altText || item.objectKey}`;
+        mediaRiskSelect.append(option);
+      }
+      const selected = approved.find((item) => item.id === previous) ?? approved[0];
+      mediaRiskSelect.value = String(selected.id);
+      const check = mediaDeleteChecks.get(selected.id);
+      const validCheck = check && new Date(check.expiresAt).getTime() > Date.now() ? check : null;
+      if (check && !validCheck) mediaDeleteChecks.delete(selected.id);
+      mediaRiskChecks.replaceChildren();
+      const rows = [
+        ["Revisão humana", "Candidata"],
+        ["Gate final", "Aprovado"],
+        ["R2", validCheck ? (validCheck.r2Exists ? "Disponível" : "Não encontrado") : "Aguardando dry-run"],
+        ["Capas D1", validCheck ? String(validCheck.coverUsage) : "—"],
+        ["Referências Markdown", validCheck ? String(validCheck.markdownReferences.length) : "—"],
+        ["Validade", validCheck ? formatMediaDate(validCheck.expiresAt) : "Dry-run necessário"],
+      ];
+      for (const [label, value] of rows) {
+        const row = document.createElement("span");
+        const strong = document.createElement("strong");
+        const small = document.createElement("small");
+        strong.textContent = label;
+        small.textContent = value;
+        row.append(strong, small);
+        mediaRiskChecks.append(row);
+      }
+      mediaRiskDeleteButton.hidden = !validCheck;
+      mediaRiskStatus.textContent = validCheck
+        ? "Dry-run aprovado e temporário. A exclusão continua exigindo duas confirmações textuais e nova revalidação no servidor."
+        : "Execute o dry-run para revalidar GitHub, D1 e R2. Nenhuma exclusão ocorre nesta etapa.";
+    };
+
     const runMediaDeleteDryRun = async (item: MediaItem) => {
       if (!api || item.reviewStatus !== "candidate" || item.cleanupStatus !== "approved") return;
       if (!window.confirm("Executar dry-run de exclusão? O servidor revalidará GitHub, D1 e R2. Nenhum arquivo será removido.")) return;
@@ -850,9 +932,15 @@ const editablePosts = posts
         const token = String(data.dryRunToken ?? "");
         const expiresAt = String(data.expiresAt ?? "");
         if (!token || !expiresAt) throw new Error("A API não retornou um token de dry-run válido.");
-        mediaDeleteChecks.set(item.id, { token, expiresAt });
-        renderMediaLibrary();
-        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Dry-run aprovado. O token vale por até 10 minutos e nenhuma exclusão foi executada.";
+        mediaDeleteChecks.set(item.id, {
+          token,
+          expiresAt,
+          coverUsage: Number(data.coverUsage ?? 0),
+          markdownReferences: Array.isArray(data.markdownReferences) ? data.markdownReferences.map(String) : [],
+          r2Exists: Boolean(data.r2Exists),
+        });
+        renderMediaRiskZone();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Dry-run aprovado. Consulte a Zona de risco; nenhuma exclusão foi executada.";
       } catch (error) {
         if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível executar o dry-run.";
       }
@@ -863,8 +951,8 @@ const editablePosts = posts
       const check = mediaDeleteChecks.get(item.id);
       if (!check || new Date(check.expiresAt).getTime() <= Date.now()) {
         mediaDeleteChecks.delete(item.id);
-        renderMediaLibrary();
-        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "O dry-run expirou. Execute uma nova verificação antes de excluir.";
+        renderMediaRiskZone();
+        if (mediaRiskStatus) mediaRiskStatus.textContent = "O dry-run expirou. Execute uma nova verificação antes de excluir.";
         return;
       }
       const objectKey = window.prompt("Confirmação 1/2: digite exatamente o objectKey da mídia que será removida.", "");
@@ -892,10 +980,11 @@ const editablePosts = posts
         mediaDeleteChecks.delete(item.id);
         await loadMediaLibrary();
         if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Mídia removida após dry-run e revalidação final.";
+        renderMediaRiskZone();
       } catch (error) {
         mediaDeleteChecks.delete(item.id);
-        renderMediaLibrary();
-        if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "A exclusão foi bloqueada.";
+        renderMediaRiskZone();
+        if (mediaRiskStatus) mediaRiskStatus.textContent = error instanceof Error ? error.message : "A exclusão foi bloqueada.";
       }
     };
 
@@ -974,13 +1063,6 @@ const editablePosts = posts
               cleanupNote.textContent = `Segunda revisão: ${item.cleanupNote}`;
               info.append(cleanupNote);
             }
-            const deleteCheck = mediaDeleteChecks.get(item.id);
-            if (deleteCheck && new Date(deleteCheck.expiresAt).getTime() > Date.now()) {
-              const dryRun = document.createElement("span");
-              dryRun.className = "editor-media-card__delete-check";
-              dryRun.textContent = `Dry-run aprovado até ${formatMediaDate(deleteCheck.expiresAt)}`;
-              info.append(dryRun);
-            }
           }
         }
         const actions = document.createElement("div");
@@ -1035,23 +1117,6 @@ const editablePosts = posts
             cleanupButton.textContent = cleanupStatus === "approved" ? "Reabrir gate" : "Aprovar para plano";
             cleanupButton.addEventListener("click", () => updateMediaCleanupGate(item, cleanupStatus === "approved" ? "pending" : "approved"));
             actions.append(cleanupButton);
-            if (cleanupStatus === "approved") {
-              const dryRunButton = document.createElement("button");
-              dryRunButton.className = "button";
-              dryRunButton.type = "button";
-              dryRunButton.textContent = "Executar dry-run";
-              dryRunButton.addEventListener("click", () => runMediaDeleteDryRun(item));
-              actions.append(dryRunButton);
-              const deleteCheck = mediaDeleteChecks.get(item.id);
-              if (deleteCheck && new Date(deleteCheck.expiresAt).getTime() > Date.now()) {
-                const deleteButton = document.createElement("button");
-                deleteButton.className = "button editor-media-card__delete-button";
-                deleteButton.type = "button";
-                deleteButton.textContent = "Excluir definitivamente";
-                deleteButton.addEventListener("click", () => deleteMediaItem(item));
-                actions.append(deleteButton);
-              }
-            }
           }
         }
         card.append(image, info, actions);
@@ -1073,6 +1138,7 @@ const editablePosts = posts
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca de imagens.");
         mediaItems = Array.isArray(payload.data?.items) ? payload.data.items : [];
         renderMediaLibrary();
+        renderMediaRiskZone();
       } catch (error) {
         mediaGrid.replaceChildren();
         if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca de imagens.";
@@ -1288,6 +1354,15 @@ const editablePosts = posts
     mediaSafetyFilter?.addEventListener("change", renderMediaLibrary);
     mediaSafetyButton?.addEventListener("click", runMediaSafetyReport);
     mediaCleanupPlanButton?.addEventListener("click", generateCleanupPlan);
+    mediaRiskSelect?.addEventListener("change", renderMediaRiskZone);
+    mediaRiskDryRunButton?.addEventListener("click", () => {
+      const item = selectedRiskMedia();
+      if (item) runMediaDeleteDryRun(item);
+    });
+    mediaRiskDeleteButton?.addEventListener("click", () => {
+      const item = selectedRiskMedia();
+      if (item) deleteMediaItem(item);
+    });
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
       const prState = await refreshPullRequest();
