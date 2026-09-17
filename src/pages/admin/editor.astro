@@ -185,6 +185,15 @@ const editablePosts = posts
                   <output data-media-safety-status aria-live="polite">Relatório ainda não gerado.</output>
                   <div class="editor-media-safety__summary" data-media-safety-summary hidden></div>
                 </div>
+                <div class="editor-media-cleanup">
+                  <div>
+                    <strong>Gate de limpeza</strong>
+                    <p>Segunda revisão para mídias já marcadas como candidatas. Gera plano; não executa exclusão.</p>
+                  </div>
+                  <button class="button" type="button" data-media-cleanup-plan>Gerar plano de remoção</button>
+                  <output data-media-cleanup-status aria-live="polite">Nenhum plano gerado.</output>
+                  <pre data-media-cleanup-plan-output hidden></pre>
+                </div>
                 <output data-media-library-status aria-live="polite">Carregando imagens…</output>
                 <div class="editor-media-grid" data-media-grid></div>
               </div>
@@ -251,6 +260,10 @@ const editablePosts = posts
       reviewNote?: string | null;
       reviewedAt?: string | null;
       reviewedBy?: number | null;
+      cleanupStatus?: "pending" | "approved";
+      cleanupNote?: string | null;
+      cleanupApprovedAt?: string | null;
+      cleanupApprovedBy?: number | null;
     };
 
     type EditablePost = {
@@ -296,6 +309,9 @@ const editablePosts = posts
     const mediaSafetyButton = document.querySelector<HTMLButtonElement>("[data-media-safety-run]");
     const mediaSafetyStatus = document.querySelector<HTMLOutputElement>("[data-media-safety-status]");
     const mediaSafetySummary = document.querySelector<HTMLElement>("[data-media-safety-summary]");
+    const mediaCleanupPlanButton = document.querySelector<HTMLButtonElement>("[data-media-cleanup-plan]");
+    const mediaCleanupStatus = document.querySelector<HTMLOutputElement>("[data-media-cleanup-status]");
+    const mediaCleanupPlanOutput = document.querySelector<HTMLElement>("[data-media-cleanup-plan-output]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
@@ -742,6 +758,72 @@ const editablePosts = posts
       }
     };
 
+    const updateMediaCleanupGate = async (item: MediaItem, cleanupStatus: "pending" | "approved") => {
+      if (!api) return;
+      if (cleanupStatus === "approved" && item.reviewStatus !== "candidate") {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Somente mídias marcadas como candidatas podem avançar no gate.";
+        return;
+      }
+      let note = item.cleanupNote ?? "";
+      if (cleanupStatus === "approved") {
+        const entered = window.prompt("Nota da segunda revisão (obrigatória): confirme por que esta mídia pode entrar no plano de remoção.", note);
+        if (entered === null) return;
+        note = entered.trim();
+        if (note.length < 10) {
+          if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Informe uma nota de pelo menos 10 caracteres para a segunda aprovação.";
+          return;
+        }
+        if (!window.confirm("Aprovar esta candidata para o plano de remoção? Isso NÃO exclui o arquivo.")) return;
+      } else {
+        note = "";
+      }
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Registrando gate de limpeza…";
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/cleanup`, {
+          method: "PATCH",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ status: cleanupStatus, note }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível atualizar o gate de limpeza.");
+        await loadMediaLibrary();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = cleanupStatus === "approved"
+          ? "Segunda aprovação registrada. Nenhum arquivo foi removido."
+          : "Gate reaberto. Nenhum arquivo foi removido.";
+      } catch (error) {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível atualizar o gate de limpeza.";
+      }
+    };
+
+    const generateCleanupPlan = () => {
+      if (!mediaCleanupPlanOutput || !mediaCleanupStatus) return;
+      const approved = mediaItems.filter((item) => item.reviewStatus === "candidate" && item.cleanupStatus === "approved");
+      const generatedAt = new Date().toISOString();
+      const lines = [
+        "# DejotaCode — Plano de remoção de mídia (somente leitura)",
+        "",
+        `Gerado em: ${generatedAt}`,
+        `Itens aprovados: ${approved.length}`,
+        "",
+        "Este plano NÃO executa DELETE e não autoriza remoção automática.",
+        "",
+      ];
+      for (const item of approved) {
+        lines.push(`- ID ${item.id}: ${item.objectKey}`);
+        lines.push(`  Alt: ${item.altText || "—"}`);
+        lines.push(`  Revisão: ${item.reviewNote || "—"}`);
+        lines.push(`  Segunda aprovação: ${item.cleanupNote || "—"}`);
+        lines.push(`  URL: ${mediaPublicUrl(item.objectKey)}`);
+      }
+      const plan = lines.join("\n");
+      mediaCleanupPlanOutput.textContent = plan;
+      mediaCleanupPlanOutput.hidden = false;
+      mediaCleanupStatus.textContent = approved.length
+        ? `Plano gerado com ${approved.length} item(ns) aprovado(s). Nenhuma exclusão foi executada.`
+        : "Nenhuma candidata possui segunda aprovação. Plano vazio; nenhuma exclusão foi executada.";
+    };
+
     const renderMediaLibrary = () => {
       if (!mediaGrid) return;
       mediaGrid.replaceChildren();
@@ -788,6 +870,7 @@ const editablePosts = posts
           info.append(safety);
         }
         const reviewStatus = item.reviewStatus ?? "pending";
+        const cleanupStatus = item.cleanupStatus ?? "pending";
         if (safetyState && safetyState !== "used") {
           const review = document.createElement("span");
           review.className = "editor-media-card__review";
@@ -803,6 +886,19 @@ const editablePosts = posts
             note.className = "editor-media-card__review-note";
             note.textContent = `Nota: ${item.reviewNote}`;
             info.append(note);
+          }
+          if (reviewStatus === "candidate") {
+            const cleanup = document.createElement("span");
+            cleanup.className = "editor-media-card__cleanup";
+            cleanup.dataset.state = cleanupStatus;
+            cleanup.textContent = cleanupStatus === "approved" ? "Gate final: aprovado para plano" : "Gate final: aguardando segunda revisão";
+            info.append(cleanup);
+            if (item.cleanupNote) {
+              const cleanupNote = document.createElement("small");
+              cleanupNote.className = "editor-media-card__review-note";
+              cleanupNote.textContent = `Segunda revisão: ${item.cleanupNote}`;
+              info.append(cleanupNote);
+            }
           }
         }
         const actions = document.createElement("div");
@@ -849,6 +945,14 @@ const editablePosts = posts
             reopenButton.textContent = "Reabrir revisão";
             reopenButton.addEventListener("click", () => updateMediaReview(item, "pending"));
             actions.append(reopenButton);
+          }
+          if (reviewStatus === "candidate") {
+            const cleanupButton = document.createElement("button");
+            cleanupButton.className = "button";
+            cleanupButton.type = "button";
+            cleanupButton.textContent = cleanupStatus === "approved" ? "Reabrir gate" : "Aprovar para plano";
+            cleanupButton.addEventListener("click", () => updateMediaCleanupGate(item, cleanupStatus === "approved" ? "pending" : "approved"));
+            actions.append(cleanupButton);
           }
         }
         card.append(image, info, actions);
@@ -1084,6 +1188,7 @@ const editablePosts = posts
     mediaUsage?.addEventListener("change", renderMediaLibrary);
     mediaSafetyFilter?.addEventListener("change", renderMediaLibrary);
     mediaSafetyButton?.addEventListener("click", runMediaSafetyReport);
+    mediaCleanupPlanButton?.addEventListener("click", generateCleanupPlan);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
       const prState = await refreshPullRequest();
