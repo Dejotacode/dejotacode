@@ -9,7 +9,7 @@ import time
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
-HTML = ROOT / "docs/prototypes/linux-do-zero-full-v0.5/index.html"
+HTML = ROOT / "docs/prototypes/linux-do-zero-full-v0.6/index.html"
 
 
 def request_json(base, path, data=None, method="POST"):
