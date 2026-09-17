@@ -89,3 +89,37 @@
 @media (max-width: 56.25rem) { .hero { min-height: auto; } .hero-grid { grid-template-columns: 1fr; padding-block: 4rem; } .hero-visual { min-height: 18.75rem; } .section-heading { grid-template-columns: 1fr; gap: 1rem; } .topic-grid { grid-template-columns: repeat(2, 1fr); } .tracks-grid, .recent-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tutorial-card:last-child { grid-column: 1 / -1; } .featured-grid { grid-template-columns: 1fr; } .guide-card, .about-grid, .newsletter-card { grid-template-columns: 1fr; } .guide-visual { min-height: 18.75rem; border-right: 0; border-bottom: 1px solid var(--color-border); } }
 @media (max-width: 37.5rem) { .hero-grid { gap: 2.5rem; padding-block: 3.25rem; } .hero h1 { font-size: clamp(2.35rem, 12vw, 3.4rem); } .hero-actions { flex-direction: column; } .hero-actions .button { width: 100%; } .hero-visual { min-height: 16.25rem; } .section { padding-block: 3.5rem; } .section-bar { align-items: flex-start; flex-direction: column; gap: 1rem; } .topic-grid, .tracks-grid, .featured-grid, .recent-grid, .split-showcase { grid-template-columns: 1fr; } .topic-grid > a, .topic-grid > a:first-child { border-left: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); } .tutorial-card:last-child { grid-column: auto; } .content-card { grid-template-columns: 1fr; } .editorial-art { min-height: 13.75rem; border-right: 0; border-bottom: 1px solid var(--color-border); } .tutorial-card { padding-inline: 0; } .guide-visual { min-height: 15rem; } .guide-copy { padding: 1.5rem; } .showcase-block { padding-inline: 1rem; } .newsletter-form > div { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .track-card { transition: none; } }
+
+.services-intro {
+  border-block: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+}
+
+.services-intro__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.services-intro h2 {
+  max-width: 18ch;
+  margin: 0 0 0.8rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.services-intro p:last-child {
+  max-width: 46rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 43.75rem) {
+  .services-intro__layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .services-intro .button {
+    width: 100%;
+  }
+}

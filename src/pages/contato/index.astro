@@ -13,7 +13,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
         <form class="contact-form" data-contact-form data-api-base={apiBase} data-endpoint="/api/contact" data-conversion="contact_submit" data-success="Mensagem recebida com sucesso.">
           <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="100" required /></div>
           <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
-          <div class="field"><label for="subject">Assunto</label><select id="subject" name="subject" required><option value="">Selecione</option><option>Dúvida</option><option>Sugestão de conteúdo</option><option>Correção</option><option>Parceria</option><option>Outro assunto</option></select></div>
+          <div class="field"><label for="subject">Assunto</label><select id="subject" name="subject" required><option value="">Selecione</option><option>Dúvida</option><option>Sugestão de conteúdo</option><option>Correção</option><option value="orcamento-servicos">Orçamento de serviços</option><option>Parceria</option><option>Outro assunto</option></select></div>
           <div class="field"><label for="message">Mensagem</label><textarea id="message" name="message" minlength="20" maxlength="3000" rows="8" required aria-describedby="message-help"></textarea><small id="message-help">Entre 20 e 3.000 caracteres.</small></div>
           <div class="form-trap" aria-hidden="true"><label for="contact-website">Não preencha este campo</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off" /></div>
           <label class="form-consent"><input name="consent" type="checkbox" value="true" required /><span>Concordo com o uso dos dados para responder esta mensagem e li a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</span></label>
@@ -26,5 +26,11 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
   <script>
     import { preparePublicForm } from "../../scripts/form-adapter";
     preparePublicForm("[data-contact-form]");
+
+    const requestedSubject = new URLSearchParams(window.location.search).get("assunto");
+    const subject = document.querySelector<HTMLSelectElement>("#subject");
+    if (requestedSubject === "orcamento-servicos" && subject) {
+      subject.value = requestedSubject;
+    }
   </script>
 </BaseLayout>
