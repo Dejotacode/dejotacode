@@ -8,7 +8,32 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
   <main id="conteudo" tabindex="-1" class="institutional-page">
     <header class="institutional-hero container"><p class="eyebrow">CONTATO</p><h1>Vamos conversar.</h1><p>Envie uma dúvida, sugestão de conteúdo, correção ou proposta de parceria.</p></header>
     <section class="institutional-section container contact-layout">
-      <aside class="institutional-card"><span>ANTES DE ENVIAR</span><h2>Como podemos ajudar?</h2><p>Descreva o assunto com contexto e não envie senhas, documentos ou outras informações sensíveis.</p><p><strong>Tempo de resposta:</strong><br />Será informado quando o canal definitivo estiver ativo.</p></aside>
+      <aside class="institutional-card contact-aside">
+        <span>ATENDIMENTO</span>
+        <h2>Como podemos ajudar?</h2>
+        <p>Descreva o assunto com contexto e não envie senhas, documentos ou outras informações sensíveis.</p>
+        <div class="contact-details">
+          <address>
+            <strong>Serra — Espírito Santo</strong>
+            <span>Atendimento online para todo o Brasil</span>
+          </address>
+          <div>
+            <strong>WhatsApp</strong>
+            <a class="contact-phone" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" data-analytics-cta="contact-whatsapp">(27) 99971-7193</a>
+          </div>
+          <a class="button button-primary contact-whatsapp" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" data-analytics-cta="contact-whatsapp-button">Conversar pelo WhatsApp <span aria-hidden="true">→</span></a>
+          <p><strong>Horário de atendimento</strong><span>Segunda a sexta, das 9h às 18h</span></p>
+        </div>
+        <div class="contact-map">
+          <iframe
+            title="Localização aproximada do DejotaCode em Serra, Espírito Santo"
+            src="https://www.google.com/maps?q=Serra%2C%20Esp%C3%ADrito%20Santo%2C%20Brasil&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <a href="https://www.google.com/maps/search/?api=1&query=Serra%2C%20Esp%C3%ADrito%20Santo%2C%20Brasil" target="_blank" rel="noopener noreferrer">Abrir no Google Maps <span aria-hidden="true">↗</span></a>
+        </div>
+      </aside>
       <div class="institutional-card">
         <form class="contact-form" data-contact-form data-api-base={apiBase} data-endpoint="/api/contact" data-conversion="contact_submit" data-success="Mensagem recebida com sucesso.">
           <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="100" required /></div>
