@@ -9,6 +9,7 @@ const groups = [
   { id: "infraestrutura", label: "Infraestrutura", description: "Serviços usados para publicar e manter projetos web." },
   { id: "aprendizado", label: "Aprendizado", description: "Referências para continuar estudando com fontes confiáveis." },
 ] as const;
+const hasAffiliateLinks = recommendedResources.some((resource) => resource.relationship === "affiliate");
 ---
 
 <BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Recursos avaliados com critérios claros, limitações e identificação transparente de qualquer relação comercial.">
@@ -22,7 +23,7 @@ const groups = [
     <section class="institutional-section container resource-intro" aria-labelledby="transparencia-title">
       <div class="notice">
         <strong id="transparencia-title">Transparência comercial</strong>
-        <p>Atualmente, os recursos desta página usam links oficiais e não geram comissão. Se um link de afiliado for ativado, ele será identificado no próprio card antes do clique.</p>
+        <p>{hasAffiliateLinks ? "Esta página contém links de afiliados identificados no próprio card. Se você comprar por meio deles, o DejotaCode poderá receber uma comissão, sem custo adicional para você. Essa relação não garante avaliação positiva." : "Atualmente, os recursos desta página usam links oficiais e não geram comissão. Se um link de afiliado for ativado, ele será identificado no próprio card antes do clique."}</p>
       </div>
       <ol class="resource-principles" aria-label="Critérios de recomendação">
         <li>Relação direta com os conteúdos do site.</li>
