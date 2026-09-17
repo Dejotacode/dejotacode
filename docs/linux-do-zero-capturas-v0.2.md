@@ -62,3 +62,8 @@ Não foram fabricadas telas de dual boot ou particionamento manual. Esses cenár
 Nenhuma tela inexistente foi recriada como se fosse screenshot real. Quando o ambiente de laboratório não reproduziu um cenário, a ausência foi registrada em vez de forçar uma imagem enganosa.
 
 Antes da diagramação final, cada screenshot selecionado receberá legenda, texto alternativo e, quando necessário, anotação visual em arquivo derivado separado. Os PNGs desta pasta permanecem como fontes sem anotação.
+## Revisão técnica e acessibilidade
+
+Em 17/09/2026, as 24 capturas selecionadas foram auditadas: todas permanecem em 1280×800, sem EXIF e sem metadados textuais de criação/modificação após a limpeza editorial. Os arquivos brutos continuam preservados fora do repositório.
+
+Legendas, textos alternativos e prioridade de anotações estão definidos em `docs/linux-do-zero-legendas-acessibilidade-v0.2.md`.
