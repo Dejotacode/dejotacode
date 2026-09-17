@@ -78,6 +78,13 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.post-card:has(a:hover),
+.post-card:focus-within {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-soft);
 }
 
 .post-card--featured {
