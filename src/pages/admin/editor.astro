@@ -165,6 +165,15 @@ const editablePosts = posts
                       <option value="unused">Não referenciadas</option>
                     </select>
                   </label>
+                  <label>
+                    Segurança
+                    <select data-media-safety-filter>
+                      <option value="all">Todas</option>
+                      <option value="used">Em uso</option>
+                      <option value="orphan">Possivelmente órfã</option>
+                      <option value="review">Requer revisão</option>
+                    </select>
+                  </label>
                   <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
                 </div>
                 <div class="editor-media-safety">
@@ -238,6 +247,10 @@ const editablePosts = posts
       sizeBytes: number;
       altText: string;
       createdAt: string;
+      reviewStatus?: "pending" | "keep" | "candidate";
+      reviewNote?: string | null;
+      reviewedAt?: string | null;
+      reviewedBy?: number | null;
     };
 
     type EditablePost = {
@@ -279,6 +292,7 @@ const editablePosts = posts
     const mediaSearch = document.querySelector<HTMLInputElement>("[data-media-search]");
     const mediaContext = document.querySelector<HTMLSelectElement>("[data-media-context]");
     const mediaUsage = document.querySelector<HTMLSelectElement>("[data-media-usage]");
+    const mediaSafetyFilter = document.querySelector<HTMLSelectElement>("[data-media-safety-filter]");
     const mediaSafetyButton = document.querySelector<HTMLButtonElement>("[data-media-safety-run]");
     const mediaSafetyStatus = document.querySelector<HTMLOutputElement>("[data-media-safety-status]");
     const mediaSafetySummary = document.querySelector<HTMLElement>("[data-media-safety-summary]");
@@ -673,6 +687,7 @@ const editablePosts = posts
       const query = normalizedSearch(mediaSearch?.value ?? "");
       const context = mediaContext?.value ?? "all";
       const usage = mediaUsage?.value ?? "all";
+      const safetyFilter = mediaSafetyFilter?.value ?? "all";
       const currentSlug = value("slug");
       return mediaItems.filter((item) => {
         if (!item.contentType.startsWith("image/")) return false;
@@ -683,9 +698,48 @@ const editablePosts = posts
         const isUsed = canonicalMediaKeys.has(item.objectKey);
         if (usage === "used" && !isUsed) return false;
         if (usage === "unused" && isUsed) return false;
+        const safetyState = mediaSafetyStates.get(item.objectKey);
+        if (safetyFilter !== "all" && safetyState !== safetyFilter) return false;
         if (!query) return true;
         return normalizedSearch(`${item.altText} ${item.objectKey}`).includes(query);
       });
+    };
+
+    const updateMediaReview = async (item: MediaItem, reviewStatus: "pending" | "keep" | "candidate") => {
+      if (!api) return;
+      let note = item.reviewNote ?? "";
+      if (reviewStatus !== "pending") {
+        const entered = window.prompt(
+          reviewStatus === "keep"
+            ? "Nota da revisão (opcional): por que esta mídia deve ser mantida?"
+            : "Nota da revisão (opcional): por que esta mídia é candidata à limpeza?",
+          note
+        );
+        if (entered === null) return;
+        note = entered.trim();
+      } else {
+        note = "";
+      }
+      if (reviewStatus === "candidate" && !window.confirm("Marcar esta mídia como candidata à limpeza? Isso NÃO exclui o arquivo.")) return;
+      if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Registrando revisão humana…";
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/review`, {
+          method: "PATCH",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ status: reviewStatus, note }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível registrar a revisão.");
+        await loadMediaLibrary();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = reviewStatus === "pending"
+          ? "Revisão reaberta. Nenhum arquivo foi alterado no R2."
+          : reviewStatus === "keep"
+            ? "Decisão registrada: manter. Nenhum arquivo foi alterado no R2."
+            : "Decisão registrada: candidata à limpeza. Nenhum arquivo foi alterado no R2.";
+      } catch (error) {
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível registrar a revisão.";
+      }
     };
 
     const renderMediaLibrary = () => {
@@ -733,6 +787,24 @@ const editablePosts = posts
               : "Segurança: requer revisão";
           info.append(safety);
         }
+        const reviewStatus = item.reviewStatus ?? "pending";
+        if (safetyState && safetyState !== "used") {
+          const review = document.createElement("span");
+          review.className = "editor-media-card__review";
+          review.dataset.state = reviewStatus;
+          review.textContent = reviewStatus === "keep"
+            ? "Revisão humana: manter"
+            : reviewStatus === "candidate"
+              ? "Revisão humana: candidata"
+              : "Revisão humana: pendente";
+          info.append(review);
+          if (item.reviewNote) {
+            const note = document.createElement("small");
+            note.className = "editor-media-card__review-note";
+            note.textContent = `Nota: ${item.reviewNote}`;
+            info.append(note);
+          }
+        }
         const actions = document.createElement("div");
         actions.className = "editor-media-card__actions";
         const insertButton = document.createElement("button");
@@ -753,6 +825,32 @@ const editablePosts = posts
           }
         });
         actions.append(insertButton, copyButton);
+        if (safetyState && safetyState !== "used") {
+          if (reviewStatus !== "keep") {
+            const keepButton = document.createElement("button");
+            keepButton.className = "button";
+            keepButton.type = "button";
+            keepButton.textContent = "Manter";
+            keepButton.addEventListener("click", () => updateMediaReview(item, "keep"));
+            actions.append(keepButton);
+          }
+          if (reviewStatus !== "candidate") {
+            const candidateButton = document.createElement("button");
+            candidateButton.className = "button";
+            candidateButton.type = "button";
+            candidateButton.textContent = "Marcar candidata";
+            candidateButton.addEventListener("click", () => updateMediaReview(item, "candidate"));
+            actions.append(candidateButton);
+          }
+          if (reviewStatus !== "pending") {
+            const reopenButton = document.createElement("button");
+            reopenButton.className = "button";
+            reopenButton.type = "button";
+            reopenButton.textContent = "Reabrir revisão";
+            reopenButton.addEventListener("click", () => updateMediaReview(item, "pending"));
+            actions.append(reopenButton);
+          }
+        }
         card.append(image, info, actions);
         mediaGrid.append(card);
       }
@@ -984,6 +1082,7 @@ const editablePosts = posts
     mediaSearch?.addEventListener("input", renderMediaLibrary);
     mediaContext?.addEventListener("change", renderMediaLibrary);
     mediaUsage?.addEventListener("change", renderMediaLibrary);
+    mediaSafetyFilter?.addEventListener("change", renderMediaLibrary);
     mediaSafetyButton?.addEventListener("click", runMediaSafetyReport);
     createPrButton?.addEventListener("click", createPullRequest);
     refreshPrButton?.addEventListener("click", async () => {
