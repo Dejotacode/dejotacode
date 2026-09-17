@@ -2,6 +2,31 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.15.0] - 2026-09-16
+
+### Adicionado
+
+- Relatório read-only de segurança de mídia no Admin Editor.
+- Cruzamento de referências no Markdown canônico, capas `coverKey` do CMS/D1, metadados de mídia e disponibilidade pública no R2.
+- Classificação conservadora em `Em uso`, `Possivelmente órfã` e `Requer revisão`.
+- Resumo visual com totais e verificação de disponibilidade no R2.
+
+### Segurança e escopo
+
+- Nenhuma ação de exclusão foi adicionada.
+- `Possivelmente órfã` exige revisão humana antes de qualquer ação futura.
+- Falhas ou inconsistências de verificação caem em `Requer revisão`, nunca em órfã automática.
+- Nenhuma migration, mudança de API, CTA, funil ou taxonomia de analytics.
+
+### Validação em produção
+
+- 23 imagens analisadas.
+- 22 classificadas como em uso.
+- 0 classificadas como possivelmente órfãs.
+- 1 classificada como requer revisão.
+- 23 de 23 objetos confirmados como acessíveis no R2.
+- Smoke de produção: 10/10 verificações aprovadas.
+
 ## [1.14.0] - 2026-09-16
 
 ### Adicionado
