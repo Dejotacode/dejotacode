@@ -316,6 +316,8 @@
 .editor-media-card__review-note { overflow-wrap: anywhere; color: var(--color-text-muted); }
 .editor-media-card__cleanup { width: fit-content; padding: .22rem .45rem; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-surface-soft); color: var(--color-text-subtle); }
 .editor-media-card__cleanup[data-state="approved"] { color: var(--color-warning, #d9a441); border-color: color-mix(in srgb, var(--color-warning, #d9a441) 45%, var(--color-border)); }
+.editor-media-card__delete-check { width: fit-content; padding: .22rem .45rem; border: 1px solid color-mix(in srgb, var(--color-accent) 45%, var(--color-border)); border-radius: 999px; color: var(--color-accent); background: var(--color-surface-soft); }
+.editor-media-card__delete-button { border-color: var(--color-warning, #d9a441); color: var(--color-warning, #d9a441); }
 .editor-media-card__actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 .editor-media-card__actions .button { min-height: 2.35rem; padding-inline: .75rem; font-size: .82rem; }
 .editor-preview-image { margin: 1.5rem 0; }
