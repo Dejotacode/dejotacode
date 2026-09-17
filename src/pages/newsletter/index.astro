@@ -203,6 +203,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
     import { preparePublicForm } from "../../scripts/form-adapter";
 
     const GUIDE_RESOURCE = "guia-iniciante-tecnologia";
+    const LINUX_EBOOK_RESOURCE = "linux-do-zero-ebook-interesse";
 
     const params = new URLSearchParams(window.location.search);
     const requestedResource = params.get("resource");
@@ -214,6 +215,28 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
     if (email && storedEmail) {
       email.value = storedEmail;
       sessionStorage.removeItem("dejotacode:newsletter-email");
+    }
+
+    if (requestedResource === LINUX_EBOOK_RESOURCE) {
+      const eyebrow = document.querySelector<HTMLElement>("[data-newsletter-eyebrow]");
+      const title = document.querySelector<HTMLElement>("[data-newsletter-title]");
+      const description = document.querySelector<HTMLElement>("[data-newsletter-description]");
+      const signupEyebrow = document.querySelector<HTMLElement>("[data-signup-eyebrow]");
+      const signupTitle = document.querySelector<HTMLElement>("[data-signup-title]");
+      const signupDescription = document.querySelector<HTMLElement>("[data-signup-description]");
+      const resource = document.querySelector<HTMLInputElement>("[data-newsletter-resource]");
+      const consent = document.querySelector<HTMLElement>("[data-consent-copy]");
+      const submit = document.querySelector<HTMLButtonElement>("[data-submit-label]");
+
+      if (eyebrow) eyebrow.textContent = "EM DESENVOLVIMENTO";
+      if (title) title.textContent = "Quero acompanhar o Linux do Zero.";
+      if (description) description.textContent = "Entre na lista de interesse do futuro e-book Linux do Zero e receba novidades quando houver algo concreto para compartilhar.";
+      if (signupEyebrow) signupEyebrow.textContent = "01 · LISTA DE INTERESSE";
+      if (signupTitle) signupTitle.textContent = "Avise-me quando avançar";
+      if (signupDescription) signupDescription.textContent = "Sem compra agora. Seu cadastro serve para medir o interesse e avisar sobre o desenvolvimento do material.";
+      if (resource) resource.value = LINUX_EBOOK_RESOURCE;
+      if (consent) consent.childNodes[0].textContent = "Concordo em receber novidades sobre o Linux do Zero e conteúdos do DejotaCode e li a ";
+      if (submit) submit.textContent = "Quero acompanhar o projeto";
     }
 
     if (requestedResource === GUIDE_RESOURCE) {
