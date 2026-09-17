@@ -25,3 +25,7 @@ pnpm-debug.log*
 # Configurações locais por ambiente
 .env.local
 .env.*.local
+
+# Python cache (ebook tooling)
+__pycache__/
+*.pyc
