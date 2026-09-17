@@ -365,6 +365,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .trail-progress span {
+    transition: none;
+  }
+}
+
 @media (max-width: 560px) {
   .trails-hero,
   .trail-detail__hero {
