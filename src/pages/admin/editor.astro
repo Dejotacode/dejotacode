@@ -211,6 +211,17 @@ const editablePosts = posts
                       <button class="button editor-media-risk__delete" type="button" data-media-risk-delete hidden>Excluir definitivamente</button>
                     </div>
                     <output data-media-risk-status>Execute o dry-run para liberar a confirmação final.</output>
+                    <section class="editor-media-history" data-media-history>
+                      <div class="editor-media-history__header">
+                        <div>
+                          <strong>Histórico de auditoria</strong>
+                          <p>Marcos editoriais e trilha técnica da mídia selecionada.</p>
+                        </div>
+                        <button class="button" type="button" data-media-history-load>Carregar histórico</button>
+                      </div>
+                      <output data-media-history-status aria-live="polite">Histórico ainda não carregado.</output>
+                      <div class="editor-media-history__timeline" data-media-history-timeline hidden></div>
+                    </section>
                   </section>
                 </div>
                 <output data-media-library-status aria-live="polite">Carregando imagens…</output>
@@ -287,6 +298,11 @@ const editablePosts = posts
       deleteCheckedAt?: string | null;
     };
 
+    type MediaHistoryPayload = {
+      media?: Record<string, unknown>;
+      audit?: Array<Record<string, unknown>>;
+    };
+
     type EditablePost = {
       slug: string;
       title: string;
@@ -339,6 +355,9 @@ const editablePosts = posts
     const mediaRiskDryRunButton = document.querySelector<HTMLButtonElement>("[data-media-risk-dry-run]");
     const mediaRiskDeleteButton = document.querySelector<HTMLButtonElement>("[data-media-risk-delete]");
     const mediaRiskStatus = document.querySelector<HTMLOutputElement>("[data-media-risk-status]");
+    const mediaHistoryButton = document.querySelector<HTMLButtonElement>("[data-media-history-load]");
+    const mediaHistoryStatus = document.querySelector<HTMLOutputElement>("[data-media-history-status]");
+    const mediaHistoryTimeline = document.querySelector<HTMLElement>("[data-media-history-timeline]");
     const postsNode = document.querySelector<HTMLScriptElement>("#editor-posts");
     const posts: EditablePost[] = postsNode?.textContent ? JSON.parse(postsNode.textContent) : [];
     let csrf = "";
@@ -882,6 +901,8 @@ const editablePosts = posts
       }
       const selected = approved.find((item) => item.id === previous) ?? approved[0];
       mediaRiskSelect.value = String(selected.id);
+      if (mediaHistoryTimeline) { mediaHistoryTimeline.replaceChildren(); mediaHistoryTimeline.hidden = true; }
+      if (mediaHistoryStatus) mediaHistoryStatus.textContent = "Histórico ainda não carregado.";
       const check = mediaDeleteChecks.get(selected.id);
       const validCheck = check && new Date(check.expiresAt).getTime() > Date.now() ? check : null;
       if (check && !validCheck) mediaDeleteChecks.delete(selected.id);
@@ -907,6 +928,74 @@ const editablePosts = posts
       mediaRiskStatus.textContent = validCheck
         ? "Dry-run aprovado e temporário. A exclusão continua exigindo duas confirmações textuais e nova revalidação no servidor."
         : "Execute o dry-run para revalidar GitHub, D1 e R2. Nenhuma exclusão ocorre nesta etapa.";
+    };
+
+    const renderMediaHistory = (payload: MediaHistoryPayload) => {
+      if (!mediaHistoryTimeline || !mediaHistoryStatus) return;
+      mediaHistoryTimeline.replaceChildren();
+      const media = payload.media ?? {};
+      const audit = Array.isArray(payload.audit) ? payload.audit : [];
+      const milestones: Array<{ title: string; detail: string; at: string }> = [];
+      const actor = (name: unknown) => typeof name === "string" && name.trim() ? name : "Usuário não identificado";
+      const when = (value: unknown) => typeof value === "string" && value ? formatMediaDate(value) : "—";
+      if (media.createdAt) milestones.push({ title: "Upload", detail: `Enviado por ${actor(media.uploadedByName)}`, at: when(media.createdAt) });
+      if (media.reviewedAt) milestones.push({ title: "Revisão humana", detail: `${String(media.reviewStatus ?? "—")} · ${actor(media.reviewedByName)}`, at: when(media.reviewedAt) });
+      if (media.cleanupApprovedAt) milestones.push({ title: "Gate final", detail: `${String(media.cleanupStatus ?? "—")} · ${actor(media.cleanupApprovedByName)}`, at: when(media.cleanupApprovedAt) });
+      if (media.deleteCheckedAt) {
+        const dryRunLabel = String(media.dryRunStatus ?? "—");
+        milestones.push({ title: "Último dry-run", detail: `${dryRunLabel} · ${actor(media.deleteCheckedByName)}`, at: when(media.deleteCheckedAt) });
+      }
+      for (const item of milestones) {
+        const row = document.createElement("article");
+        row.className = "editor-media-history__event";
+        const title = document.createElement("strong");
+        title.textContent = item.title;
+        const detail = document.createElement("span");
+        detail.textContent = item.detail;
+        const date = document.createElement("time");
+        date.textContent = item.at;
+        row.append(title, detail, date);
+        mediaHistoryTimeline.append(row);
+      }
+      if (audit.length) {
+        const heading = document.createElement("strong");
+        heading.className = "editor-media-history__audit-title";
+        heading.textContent = "Trilha técnica";
+        mediaHistoryTimeline.append(heading);
+        for (const entry of audit) {
+          const row = document.createElement("article");
+          row.className = "editor-media-history__audit";
+          const action = document.createElement("strong");
+          action.textContent = `${String(entry.action ?? "—")} ${String(entry.path ?? "")}`;
+          const meta = document.createElement("span");
+          meta.textContent = `${actor(entry.userName)} · ${when(entry.createdAt)}`;
+          const request = document.createElement("code");
+          request.textContent = `request ${String(entry.requestId ?? "—")}`;
+          row.append(action, meta, request);
+          mediaHistoryTimeline.append(row);
+        }
+      }
+      mediaHistoryTimeline.hidden = false;
+      mediaHistoryStatus.textContent = `${milestones.length} marco(s) e ${audit.length} evento(s) técnico(s) carregado(s).`;
+    };
+
+    const loadMediaHistory = async () => {
+      const item = selectedRiskMedia();
+      if (!api || !item || !mediaHistoryButton || !mediaHistoryStatus) return;
+      mediaHistoryButton.disabled = true;
+      mediaHistoryStatus.textContent = "Carregando histórico…";
+      if (mediaHistoryTimeline) mediaHistoryTimeline.hidden = true;
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/history`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar o histórico.");
+        renderMediaHistory(payload.data ?? {});
+      } catch (error) {
+        if (mediaHistoryTimeline) mediaHistoryTimeline.replaceChildren();
+        mediaHistoryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar o histórico.";
+      } finally {
+        mediaHistoryButton.disabled = false;
+      }
     };
 
     const runMediaDeleteDryRun = async (item: MediaItem) => {
@@ -1355,6 +1444,7 @@ const editablePosts = posts
     mediaSafetyButton?.addEventListener("click", runMediaSafetyReport);
     mediaCleanupPlanButton?.addEventListener("click", generateCleanupPlan);
     mediaRiskSelect?.addEventListener("change", renderMediaRiskZone);
+    mediaHistoryButton?.addEventListener("click", loadMediaHistory);
     mediaRiskDryRunButton?.addEventListener("click", () => {
       const item = selectedRiskMedia();
       if (item) runMediaDeleteDryRun(item);
