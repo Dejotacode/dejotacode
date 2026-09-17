@@ -6,11 +6,11 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
-OUT = DOCS / "prototypes" / "linux-do-zero-full-v0.5"
+OUT = DOCS / "prototypes" / "linux-do-zero-full-v0.6"
 OUT.mkdir(parents=True, exist_ok=True)
 
 SCREEN = "../../assets/linux-do-zero/screenshots"
-AUTHOR_ASSET = "../../assets/linux-do-zero/author"
+AUTHOR_ASSET = "../../assets/linux-do-zero/author-v06"
 
 AUTHOR_ENTRY = ("author", "Sobre o autor", "Dejota e o propósito do DejotaCode")
 
@@ -216,31 +216,56 @@ def build_author_page():
             continue
         lines.append(line)
     fragment = markdown_to_html("\n".join(lines).strip())
-    return f"""<section class=\"author-page\" id=\"author\">
-  <div class=\"author-topline\"><span>Linux do Zero</span><span>DejotaCode</span></div>
-  <div class=\"author-grid\">
-    <div class=\"author-left\">
-      <img class=\"author-photo\" src=\"{AUTHOR_ASSET}/dejota-author.jpg\" alt=\"Retrato de Dejota, criador do DejotaCode.\">
-      <div class=\"author-values\">
-        <div class=\"author-value\"><strong>Aprender de verdade</strong><span>Conteúdo prático e direto.</span></div>
-        <div class=\"author-value\"><strong>Colocar em prática</strong><span>Exemplos do mundo real.</span></div>
-        <div class=\"author-value\"><strong>Construir autonomia</strong><span>Você no controle da sua evolução.</span></div>
-        <div class=\"author-value\"><strong>Evoluir sempre</strong><span>Tecnologia como oportunidade.</span></div>
-      </div>
+
+    icons = {
+        "learn": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 9c7-2 13 0 19 4v27c-6-4-12-6-19-4V9Zm38 0c-7-2-13 0-19 4v27c6-4 12-6 19-4V9Z"/><path d="M24 13v27"/></svg>',
+        "practice": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v6m0 26v6M5 24h6m26 0h6M11 11l4 4m18 18 4 4m0-26-4 4M15 33l-4 4"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3"/></svg>',
+        "autonomy": '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14" r="6"/><circle cx="11" cy="19" r="5"/><circle cx="37" cy="19" r="5"/><path d="M14 39v-7c0-7 4-11 10-11s10 4 10 11v7H14Zm-12 0v-5c0-6 3-9 9-9h3m32 14v-5c0-6-3-9-9-9h-3"/></svg>',
+        "grow": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 40h34M10 34l9-10 7 6 12-16"/><path d="M31 14h7v7"/><path d="M12 40v-7m9 7V28m9 12V23m9 17V14"/></svg>',
+    }
+
+    return f"""<section class=\"author-page author-page-v06\" id=\"author\">
+  <header class=\"author-header\">
+    <div class=\"author-book\"><strong>LINUX DO ZERO</strong><span>Seu primeiro passo no mundo Linux</span></div>
+    <div class=\"author-header-line\"></div>
+    <div class=\"author-brand-top\"><img src=\"{AUTHOR_ASSET}/dejotacode-symbol-dark.svg\" alt=\"\"><span>DEJOTACODE</span></div>
+  </header>
+
+  <div class=\"author-layout\">
+    <div class=\"author-copy-column\">
+      <h1>Sobre<br><span>o autor</span></h1>
+      <div class=\"author-title-rule\"></div>
+      <p class=\"author-tagline-v06\">TECNOLOGIA EXPLICADA<br>DE FORMA SIMPLES E REAL</p>
+      <div class=\"author-copy author-copy-v06\">{fragment}</div>
     </div>
-    <div class=\"author-right\">
-      <div class=\"eyebrow\">Sobre o autor</div>
-      <h1>Dejota</h1>
-      <p class=\"author-tagline\">Tecnologia explicada de forma simples e real.</p>
-      <div class=\"author-copy\">{fragment}</div>
-      <div class=\"author-signature\">
-        <img src=\"{AUTHOR_ASSET}/djc-classic.png\" alt=\"Monograma DJC usado como assinatura de Dejota.\">
-        <div><strong>Dejota</strong><span>Criador do DejotaCode</span></div>
+
+    <div class=\"author-visual-column\">
+      <div class=\"author-photo-stage\">
+        <div class=\"stage-geo stage-geo-a\"></div><div class=\"stage-geo stage-geo-b\"></div>
+        <div class=\"stage-dots\"></div>
+        <div class=\"stage-kicker\">CONHECIMENTO<br>ABRE<br>CAMINHOS<div></div></div>
+        <img class=\"author-photo-cutout\" src=\"{AUTHOR_ASSET}/dejota-author-cutout.png\" alt=\"Retrato de Dejota, criador do DejotaCode.\">
       </div>
+
+      <div class=\"author-quote-v06\"><strong>“</strong><span>Tecnologia não precisa<br>ser complicada.<br>Ela precisa fazer sentido<br>na sua vida.</span><small>DEJOTA</small></div>
+
+      <div class=\"author-values-v06\">
+        <div>{icons['learn']}<span>Aprender<br>de verdade</span></div>
+        <div>{icons['practice']}<span>Colocar<br>em prática</span></div>
+        <div>{icons['autonomy']}<span>Construir<br>autonomia</span></div>
+        <div>{icons['grow']}<span>Evoluir<br>sempre</span></div>
+      </div>
+      <img class=\"author-signature-v06\" src=\"{AUTHOR_ASSET}/dejota-signature-model.png\" alt=\"Assinatura de Dejota.\">
     </div>
   </div>
-  <div class=\"author-quote\"><strong>“</strong><span>Tecnologia não precisa ser complicada.<br>Ela precisa fazer sentido na sua vida.</span><small>DEJOTA</small></div>
-  <div class=\"author-cta\"><span>Continue aprendendo em</span><strong>dejotacode.com.br</strong><b>DejotaCode</b></div>
+
+  <div class=\"author-cta-v06\">
+    <div class=\"author-cta-left\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"24\" r=\"18\"/><path d=\"M6 24h36M24 6c6 6 9 12 9 18s-3 12-9 18c-6-6-9-12-9-18s3-12 9-18Z\"/></svg><div><span>Continue aprendendo em</span><strong>dejotacode.com.br</strong></div></div>
+    <div class=\"author-cta-divider\"></div>
+    <div class=\"author-cta-brand\"><img src=\"{AUTHOR_ASSET}/dejotacode-symbol-light.svg\" alt=\"Símbolo DejotaCode\"><div><strong>DejotaCode</strong><span>CONHECIMENTO ABRE CAMINHOS</span></div></div>
+  </div>
+
+  <footer class=\"author-page-footer\"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i><b>85</b></footer>
 </section>"""
 
 
