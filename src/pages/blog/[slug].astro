@@ -6,7 +6,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 import SocialShare from "../../components/SocialShare.astro";
 import ConversionCTA from "../../components/ConversionCTA.astro";
+import ResourceRecommendations from "../../components/ResourceRecommendations.astro";
 import { availableTrails } from "../../data/trails";
+import { getArticleResources } from "../../data/recommendedResources";
 import {
   categories,
   categoryHref,
@@ -17,6 +19,7 @@ import {
 } from "../../lib/content";
 import "../../styles/article.css";
 import "../../styles/editorial.css";
+import "../../styles/resources.css";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts", ({ data }) => !data.draft);
@@ -35,6 +38,7 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const allPosts = await getPublishedPosts();
 const currentSlug = postSlug(post);
+const articleResources = getArticleResources(currentSlug);
 const relatedPosts = allPosts
   .filter(
     (candidate) =>
@@ -224,6 +228,10 @@ const articleSchema = {
 
         <div class="article-content">
           <Content />
+
+          {articleResources.length > 0 && (
+            <ResourceRecommendations resources={articleResources} />
+          )}
 
           <section class="article-tags" aria-label="Assuntos relacionados">
             <strong>Assuntos:</strong>
