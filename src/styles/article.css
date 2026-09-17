@@ -33,7 +33,7 @@
   margin: 0.8rem 0 1.25rem;
   font-size: clamp(2.8rem, 6vw, 5.75rem);
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.055em;
 }
 
 .article-hero__description {
