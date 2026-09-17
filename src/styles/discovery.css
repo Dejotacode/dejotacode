@@ -101,7 +101,7 @@
   margin: 0;
   font-size: clamp(3rem, 7vw, 6rem);
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.055em;
 }
 
 .search-hero > p:not(.eyebrow) {
