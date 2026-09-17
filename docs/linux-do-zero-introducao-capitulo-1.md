@@ -1,6 +1,6 @@
 # Linux do Zero — Introdução + Capítulo 1
 
-Status: primeira versão editorial
+Status: revisão editorial v0.2
 Edição: 2026
 
 # Bem-vindo ao mundo do Linux — sem medo
@@ -21,6 +21,7 @@ Você não precisa memorizar centenas de comandos. Também não precisa trocar d
 Ao longo dos próximos capítulos, você vai aprender a escolher uma distribuição, preparar o computador, instalar Linux com cuidado, conhecer o sistema, usar o terminal, trabalhar com arquivos e permissões e resolver problemas comuns sem sair copiando qualquer solução da internet.
 
 A ideia é simples: primeiro entender, depois executar.
+
 ## Três medos comuns — e por que eles não precisam mandar em você
 
 ### “Linux é só para programadores”
@@ -46,6 +47,7 @@ O terminal será apresentado como uma ferramenta, não como um ritual de inicia�
 
 > **VOCÊ NÃO PRECISA DECORAR**
 > Saber consultar ajuda faz parte de saber usar Linux. Profissionais experientes também pesquisam opções, leem documentação e conferem comandos antes de executar.
+
 ## Como usar este livro
 
 Leia no seu ritmo. Quando encontrar uma prática, faça junto se tiver um ambiente seguro para testar. Se não tiver, leia primeiro e volte quando estiver preparado.
@@ -56,6 +58,7 @@ Sempre que surgir uma palavra nova, tente relacioná-la com algo que você já c
 
 > **DICA DO DEJOTA**
 > Se alguma parte parecer confusa, não avance por obrigação. Releia o exemplo, teste com calma e só depois continue. Tecnologia fica muito mais simples quando você para de tentar aprender tudo ao mesmo tempo.
+
 ## Antes de começar
 
 Você não precisa instalar nada agora.
@@ -71,6 +74,7 @@ O primeiro passo é entender o terreno. No próximo capítulo, vamos descobrir o
 Antes de escolher uma distribuição ou abrir um terminal, precisamos responder uma pergunta básica: afinal, o que é Linux?
 
 Essa pergunta parece simples, mas ela costuma receber respostas cheias de termos técnicos. Vamos fazer diferente.
+
 ## O que você vai conseguir fazer
 
 Ao terminar este capítulo, você será capaz de explicar, em palavras simples, o que é Linux, reconhecer onde ele aparece e entender a diferença entre Linux e uma distribuição.
@@ -87,7 +91,7 @@ Linux funciona de maneira parecida.
 
 Quando falamos de Linux com mais precisão, estamos falando do núcleo do sistema, chamado **kernel**. Ele faz a ponte entre o hardware do computador e os programas que você usa.
 
-O kernel conversa com processador, memória, discos, teclado, rede e outros dispositivos. Os aplicativos, por sua vez, dependem dessa base para funcionar.
+O kernel conversa com processador, memória, discos, teclado, rede e outros dispositivos. Os programas dependem direta ou indiretamente dessa base para acessar recursos do computador.
 > **ENTENDA**
 > Pense no kernel como o responsável por organizar a conversa entre o que é físico e o que é software. Você normalmente não fala com ele diretamente, mas quase tudo passa por ele.
 
@@ -105,9 +109,10 @@ O terminal continua importante porque oferece uma forma direta e poderosa de con
 
 Linux está em muitos lugares que você talvez use todos os dias sem perceber.
 
-Ele é muito comum em servidores que entregam páginas e serviços na internet, equipamentos de rede, dispositivos embarcados, laboratórios, supercomputadores, sistemas de desenvolvimento e infraestrutura de nuvem.
+Ele é muito comum em servidores, equipamentos de rede e infraestrutura de nuvem. Também está presente em muitos dispositivos do dia a dia.
 
 O próprio Android usa o kernel Linux como parte da sua base. Isso não significa que Android seja igual a uma distribuição Linux de desktop, mas mostra como esse núcleo pode servir a ambientes bem diferentes.
+
 ## Então o que é uma distribuição?
 
 Se o kernel é o motor, uma distribuição é o carro montado para um determinado tipo de uso.
@@ -123,18 +128,16 @@ Você não precisa estudar todos eles.
 No próximo capítulo, vamos escolher uma primeira distribuição usando critérios simples: facilidade, estabilidade, compatibilidade com seu equipamento e quantidade de ajuda disponível.
 
 > **VOCÊ NÃO PRECISA DECORAR**
-> Kernel, distribuição e ambiente gráfico são conceitos diferentes. Por enquanto, basta guardar a ideia: Linux é a base; uma distribuição organiza essa base para entregar um sistema utilizável.
+> Kernel, distribuição e ambiente gráfico são conceitos diferentes. Por enquanto, basta guardar a ideia: O kernel Linux é a base; uma distribuição reúne essa base com as ferramentas necessárias para entregar um sistema utilizável.
 
 ## Por que aprender Linux?
 
 Talvez você esteja pensando: se meu computador atual já funciona, por que aprender outro sistema?
 
 A resposta não precisa ser “porque Linux é melhor”. Sistemas diferentes resolvem necessidades diferentes.
-Aprender Linux pode fazer sentido porque ele ajuda você a entender melhor como um computador funciona, aparece com frequência em desenvolvimento e infraestrutura, oferece bastante liberdade de configuração e pode continuar útil em máquinas que já não recebem tão bem sistemas mais pesados.
+Aprender Linux pode fazer sentido porque ele ajuda você a entender melhor como um computador funciona, aparece com frequência em desenvolvimento e infraestrutura e oferece bastante liberdade de uso e configuração.
 
-Também existe um ganho menos óbvio: autonomia.
-
-Quando você começa a entender arquivos, usuários, permissões, processos e terminal, deixa de enxergar o computador como uma caixa misteriosa. Você passa a reconhecer causas, testar hipóteses e procurar soluções com mais critério.
+Há também um ganho importante: autonomia. Quando você começa a entender arquivos, usuários, permissões e terminal, deixa de enxergar o computador como uma caixa misteriosa e passa a investigar problemas com mais critério.
 
 Isso vale mesmo se, no futuro, você continuar usando Windows, macOS ou mais de um sistema.
 
@@ -152,6 +155,7 @@ Você não precisa defender uma distribuição como time de futebol.
 E definitivamente não precisa saber tudo antes de começar.
 
 O objetivo deste livro é dar uma base suficiente para você experimentar com consciência e decidir depois o lugar que Linux terá na sua rotina.
+
 ## Erros comuns de entendimento
 
 ### Achar que toda distribuição é completamente diferente
@@ -169,6 +173,9 @@ Linux oferece bons mecanismos de segurança, mas nenhum sistema fica seguro sozi
 > **ATENÇÃO**
 > Segurança não é uma propriedade mágica do sistema operacional. Ela depende também de configuração, atualização e comportamento.
 
+> **DICA DO DEJOTA**
+> Se até aqui você consegue explicar para outra pessoa a diferença entre o kernel Linux e uma distribuição, já aprendeu o principal deste capítulo.
+
 ## Teste você mesmo — sem instalar nada
 
 Reserve cinco minutos e responda, com suas próprias palavras:
@@ -179,6 +186,7 @@ Reserve cinco minutos e responda, com suas próprias palavras:
 4. Qual é o principal motivo pelo qual você quer aprender Linux?
 
 Não procure uma resposta “perfeita”. Se consegue explicar os conceitos sem repetir frases decoradas, o capítulo cumpriu seu papel.
+
 ## Checklist do capítulo
 
 Antes de continuar, confirme se você consegue dizer “sim” para estas frases:

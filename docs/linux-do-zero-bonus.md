@@ -4,7 +4,7 @@
 
 Use esta lista nas primeiras horas com o sistema.
 
-- [ ] Reiniciei sem o pendrive conectado.
+- [ ] Reiniciei sem o pendrive conectado e confirmei que o sistema inicia pelo disco esperado.
 - [ ] Entrei normalmente com meu usuário.
 - [ ] Confirmei data, hora e fuso horário.
 - [ ] Atualizei o sistema.
@@ -16,6 +16,7 @@ Use esta lista nas primeiras horas com o sistema.
 - [ ] Testei suspensão e retorno.
 - [ ] Confirmei resolução e monitor externo, se houver.
 - [ ] Localizei configurações, arquivos, loja de aplicativos e terminal.
+- [ ] Sei onde verificar atualizações e drivers adicionais, quando existirem.
 - [ ] Instalei apenas os aplicativos realmente necessários.
 - [ ] Confirmei onde meus documentos importantes estão sendo salvos.
 - [ ] Guardei chaves de recuperação fora do computador, se houver criptografia.
@@ -38,37 +39,39 @@ Segurança para iniciante não começa com ferramentas sofisticadas. Começa com
 - [ ] Testei se consigo acessar esse backup.
 - [ ] Ativei autenticação em dois fatores nas contas que suportam.
 - [ ] Evito reutilizar a mesma senha em serviços diferentes.
+- [ ] Uso um gerenciador de senhas confiável quando preciso manter senhas únicas.
 - [ ] Bloqueio a sessão quando me afasto do computador.
 - [ ] Não guardo chaves de recuperação apenas no dispositivo protegido por elas.
 - [ ] Leio permissões antes de instalar extensões e aplicativos desconhecidos.
+- [ ] Reviso logs e capturas antes de compartilhá-los para não expor dados pessoais, chaves ou tokens.
 
 > **ATENÇÃO**
 > Linux não torna uma pessoa automaticamente imune a golpes, phishing, senhas fracas ou arquivos maliciosos. O sistema ajuda, mas comportamento continua importando.
 
 ## Bônus 3 — Folha rápida dos 20 comandos
 
-| Comando | Para que serve |
-|---|---|
-| `pwd` | mostrar a pasta atual |
-| `ls` | listar arquivos e pastas |
-| `cd` | mudar de pasta |
-| `mkdir` | criar pasta |
-| `touch` | criar arquivo vazio |
-| `cp` | copiar |
-| `mv` | mover ou renomear |
-| `cat` | mostrar conteúdo curto |
-| `less` | ler conteúdo maior |
-| `head` | mostrar o início |
-| `tail` | mostrar o final |
-| `grep` | procurar texto |
-| `find` | localizar arquivos |
-| `df` | consultar espaço dos sistemas de arquivos |
-| `du` | consultar espaço ocupado |
-| `free` | consultar memória |
-| `uname` | informações do sistema/kernel |
-| `whoami` | mostrar usuário atual |
-| `man` | abrir o manual |
-| `history` | mostrar histórico de comandos |
+| Comando | Para que serve | Exemplo seguro |
+|---|---|---|
+| `pwd` | mostrar a pasta atual | `pwd` |
+| `ls` | listar arquivos e pastas | `ls -la` |
+| `cd` | mudar de pasta | `cd ~/linux-do-zero-lab` |
+| `mkdir` | criar pasta | `mkdir projetos` |
+| `touch` | criar arquivo vazio | `touch notas.txt` |
+| `cp` | copiar | `cp notas.txt copia.txt` |
+| `mv` | mover ou renomear | `mv copia.txt arquivo.txt` |
+| `cat` | mostrar conteúdo curto | `cat notas.txt` |
+| `less` | ler conteúdo maior | `less /etc/os-release` |
+| `head` | mostrar o início | `head /etc/os-release` |
+| `tail` | mostrar o final | `tail /etc/os-release` |
+| `grep` | procurar texto | `grep NAME /etc/os-release` |
+| `find` | localizar arquivos | `find ~/linux-do-zero-lab -name "*.txt"` |
+| `df` | consultar espaço dos sistemas de arquivos | `df -h` |
+| `du` | consultar espaço ocupado | `du -sh ~/linux-do-zero-lab` |
+| `free` | consultar memória | `free -h` |
+| `uname` | consultar a versão do kernel | `uname -r` |
+| `whoami` | mostrar usuário atual | `whoami` |
+| `man` | abrir o manual | `man ls` |
+| `history` | mostrar histórico de comandos | `history` |
 
 ## Bônus 4 — Plano de prática de 30 dias
 
@@ -96,7 +99,7 @@ A proposta não é estudar horas por dia. Use sessões de 15–30 minutos e pule
 
 ### Semana 3 — Sistema e permissões
 
-- Dia 15: `free`, `uname`, `whoami` e `id`.
+- Dia 15: `free`, `uname -r`, `whoami` e `id`.
 - Dia 16: leia `ls -l` em arquivos próprios.
 - Dia 17: pratique `chmod u+x` e `chmod u-x` no laboratório.
 - Dia 18: abra três páginas de manual com `man`.
@@ -121,7 +124,7 @@ A proposta não é estudar horas por dia. Use sessões de 15–30 minutos e pule
 
 ## Bônus 5 — Recursos confiáveis para continuar
 
-Comece sempre pelos canais do projeto que você está usando. Para Linux em geral, estas categorias são boas referências:
+Comece sempre pelos canais do projeto que você está usando. Como esta edição usa Ubuntu LTS como referência visual, a documentação e as notas de versão do Ubuntu serão um ponto de partida frequente. Para Linux em geral, estas categorias são boas referências:
 
 - documentação oficial da sua distribuição;
 - páginas de suporte e notas de versão da distribuição;

@@ -31,16 +31,36 @@ Tudo deste capítulo será praticado dentro dessa pasta sempre que possível.
 > **ATENÇÃO**
 > Confira o resultado de `pwd` antes de executar comandos que movem, sobrescrevem ou removem arquivos.
 
+## Como ler um comando
+
+Em muitos casos, você pode pensar na estrutura assim:
+
+```text
+comando [opções] [alvo]
+```
+
+Por exemplo:
+
+```bash
+ls -l projetos
+```
+
+Aqui, `ls` é o comando, `-l` é uma opção e `projetos` é o alvo. Você não precisa decorar essa fórmula; a ideia é perceber que um comando tem partes com funções diferentes.
+
 ## Os 20 comandos
+
+### Navegação
 
 ### 1. `pwd` — onde estou?
 Mostra o caminho da pasta atual.
 
 ### 2. `ls` — o que existe aqui?
-Lista arquivos e pastas. Use `ls -la` para ver itens ocultos e mais detalhes.
+Lista arquivos e pastas. Comece com `ls`. Depois experimente `ls -l` para mais detalhes e `ls -a` para incluir itens ocultos. As opções podem ser combinadas: `ls -la`.
 
 ### 3. `cd` — mudar de pasta
 `cd pasta` entra em uma pasta; `cd ..` sobe um nível; `cd ~` volta para sua pasta pessoal.
+
+### Criação e arquivos
 
 ### 4. `mkdir` — criar pasta
 ```bash
@@ -62,10 +82,13 @@ cp notas.txt copia-notas.txt
 mv copia-notas.txt arquivo-renomeado.txt
 ```
 
+### Leitura e pesquisa
+
 ### 8. `cat` — mostrar conteúdo curto
 ```bash
 cat notas.txt
 ```
+Use `cat` para conteúdo curto. Para textos maiores, prefira `less`.
 
 ### 9. `less` — ler conteúdo maior
 ```bash
@@ -93,6 +116,8 @@ grep NAME /etc/os-release
 find ~/linux-do-zero-lab -name "*.txt"
 ```
 
+### Informações do sistema
+
 ### 14. `df` — espaço dos sistemas de arquivos
 ```bash
 df -h
@@ -111,13 +136,16 @@ free -h
 
 ### 17. `uname` — informações do sistema
 ```bash
-uname -a
+uname -r
 ```
+A opção `-r` mostra a versão do kernel. `uname -a` exibe mais informações quando você precisar de um diagnóstico mais completo.
 
 ### 18. `whoami` — qual usuário está ativo?
 ```bash
 whoami
 ```
+
+### Ajuda e histórico
 
 ### 19. `man` — manual do comando
 ```bash
@@ -129,6 +157,7 @@ Use as setas para navegar e `q` para sair.
 ```bash
 history
 ```
+Dependendo do shell e da configuração, comandos digitados podem ficar registrados. Evite colocar senhas, tokens ou outros segredos diretamente na linha de comando.
 
 ## E o `rm`?
 
@@ -144,7 +173,10 @@ Confirme que ele existe com `ls`. Só então remova:
 
 ```bash
 rm apagar-depois.txt
+ls
 ```
+
+O segundo `ls` confirma que o arquivo saiu da pasta. A ideia é praticar a sequência **criar → conferir → remover → conferir**.
 
 > **ATENÇÃO**
 > Não copie exemplos com `rm -r`, curingas como `*` ou `sudo rm` sem entender exatamente o caminho atingido. No terminal, a lixeira nem sempre participa da história.

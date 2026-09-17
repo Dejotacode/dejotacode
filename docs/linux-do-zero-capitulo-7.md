@@ -47,6 +47,16 @@ Você verá uma linha parecida com:
 -rw-r--r-- 1 usuario usuario 0 ... permissoes.txt
 ```
 
+Leia o início assim:
+
+```text
+- rw- r-- r--
+  │   │   │
+  │   │   └─ demais usuários
+  │   └───── grupo
+  └───────── dono
+```
+
 O primeiro caractere indica o tipo do item. Depois vêm três blocos:
 
 - permissões do dono;
@@ -59,22 +69,25 @@ As letras principais são:
 - `w` — escrita;
 - `x` — execução.
 
+Neste primeiro exercício estamos olhando principalmente **arquivos**. Em diretórios, essas permissões têm efeitos próprios; vamos deixar esse aprofundamento para depois para não misturar conceitos.
+
 > **VOCÊ NÃO PRECISA DECORAR**
 > Leia da esquerda para a direita. Primeiro identifique o dono, depois o grupo, depois os demais. Com prática, a linha deixa de parecer um código secreto.
 
 ## Passo 3 — Altere uma permissão simples
 
-Vamos tornar um arquivo executável apenas como exercício:
+Vamos tornar um arquivo executável apenas como exercício. Use o editor de texto do sistema para criar, dentro de `~/linux-do-zero-lab`, um arquivo chamado `ola.sh` com estas duas linhas:
 
-```bash
-printf '#!/bin/sh\necho "Olá, Linux"\n' > ola.sh
-chmod u+x ola.sh
-ls -l ola.sh
+```sh
+#!/bin/sh
+echo "Olá, Linux"
 ```
 
-Agora execute:
+Depois, no terminal:
 
 ```bash
+chmod u+x ola.sh
+ls -l ola.sh
 ./ola.sh
 ```
 
@@ -85,14 +98,14 @@ Agora execute:
 
 ## Passo 4 — Entenda `sudo`
 
-`sudo` permite executar uma ação com privilégios administrativos quando sua conta está autorizada.
+`sudo` permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada.
 
-Ele não é um prefixo mágico para fazer comandos “funcionarem”.
+Ele não é um prefixo mágico para fazer comandos “funcionarem”. A senha confirma sua identidade; **ela não valida o comando nem garante que ele seja seguro**.
 
 > **ATENÇÃO**
 > Se um comando falhou e você não entendeu o motivo, não coloque `sudo` automaticamente na frente. Primeiro descubra o que ele tenta modificar.
 
-O sistema pede senha porque está elevando o nível de confiança daquela ação. Use essa pausa a seu favor: releia o comando antes de confirmar.
+Use a pausa da autenticação a seu favor: releia o comando antes de confirmar. Nem todo comando com `sudo` é perigoso, e nem todo comando sem `sudo` é inofensivo. O que importa é entender o que ele faz e onde atua.
 
 ## Passo 5 — Evite permissões amplas demais
 
@@ -112,7 +125,7 @@ Permissão negada pode ter causas diferentes. Elevar privilégios sem entender s
 Arquivos de texto, imagens e documentos não precisam de permissão de execução apenas porque “talvez ajude”.
 
 ### Alterar dono de arquivos do sistema por tentativa
-Mudar propriedade pode quebrar expectativas de serviços e pacotes. Pratique apenas no laboratório.
+Mudar propriedade pode quebrar expectativas de serviços e pacotes. Você também pode encontrar o comando `chown`, usado para alterar propriedade de arquivos. Reconheça o nome, mas não o use em arquivos do sistema por tentativa. Pratique mudanças apenas no laboratório.
 
 ## Teste você mesmo
 

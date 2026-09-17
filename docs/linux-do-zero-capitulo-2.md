@@ -21,6 +21,7 @@ Ao terminar este capítulo, você será capaz de:
 - eliminar opções que complicariam sua primeira experiência;
 - identificar quando uma versão estável faz mais sentido do que uma versão de teste;
 - escolher uma distribuição para experimentar sem transformar a decisão numa aposta definitiva.
+
 ## Não escolha pela aparência da captura de tela
 
 É comum conhecer uma distribuição por um vídeo bonito ou por uma captura de tela cheia de efeitos. Isso pode despertar curiosidade, mas não é um bom critério de escolha.
@@ -46,6 +47,7 @@ Não precisa virar especialista em hardware. O objetivo é apenas evitar instala
 
 > **DICA DO DEJOTA**
 > Se o computador já roda um sistema moderno de forma confortável, ele provavelmente consegue experimentar várias distribuições atuais. Em máquinas mais antigas, vale priorizar ambientes gráficos mais leves e verificar os requisitos oficiais antes do download.
+
 ## Critério 2 — Prefira uma versão estável
 
 Para aprender, previsibilidade costuma valer mais do que novidade.
@@ -61,9 +63,8 @@ Isso reduz a chance de encontrar um erro que você ainda não sabe diferenciar d
 > **ATENÇÃO**
 > “Mais novo” não significa automaticamente “melhor para começar”. Uma versão beta pode ter recursos interessantes e ainda assim exigir paciência para lidar com falhas temporárias.
 
-Em setembro de 2026, por exemplo, o Fedora Workstation 44 é a versão estável disponível, enquanto o Fedora 45 aparece como beta. O Debian 13 é a linha estável atual. O Ubuntu 26.04.1 é uma edição LTS, sigla para suporte de longo prazo. O Linux Mint mantém versões LTS suportadas por vários anos.
+As versões mudam com o tempo. Por isso, antes de baixar, consulte sempre a página oficial da distribuição e procure a edição estável e suportada. Quando esta edição do livro precisar citar uma versão específica, ela aparecerá como referência da edição — não como regra permanente.
 
-Esses números vão mudar com o tempo. O critério, porém, continua o mesmo: procure a edição estável e suportada.
 ## Critério 3 — Documentação e comunidade importam
 
 Quando surgir uma dúvida, você vai procurar respostas. Nesse momento, uma distribuição com documentação clara e muita gente usando ajuda bastante.
@@ -94,37 +95,41 @@ Você provavelmente encontrará estes nomes durante sua pesquisa:
 
 ### Linux Mint
 
-Costuma agradar quem vem do Windows por oferecer uma interface familiar, ferramentas gráficas simples e uma experiência focada em desktop. As versões atuais da linha 22 recebem suporte de longo prazo.
+O Linux Mint usa por padrão uma interface de desktop tradicional, com menu, painel e uma organização que pode parecer familiar para quem vem do Windows. O projeto também oferece ferramentas gráficas voltadas ao uso diário em desktop.
+
 ### Ubuntu
 
 É uma das distribuições mais conhecidas no desktop e possui grande quantidade de documentação, tutoriais e suporte comunitário. As edições LTS são pensadas para quem prefere ciclos mais longos de suporte.
 
 ### Fedora Workstation
 
-Traz tecnologias recentes com uma experiência de desktop moderna e organizada. Pode ser uma boa escolha para quem quer aprender usando um sistema bastante atual, desde que escolha a versão estável, não a beta.
+Traz tecnologias recentes com uma experiência de desktop moderna e organizada. Pode interessar a quem quer aprender usando um sistema com novidades frequentes e documentação ativa.
 
 ### Debian
 
-É conhecido pela estabilidade e por servir de base para diversas outras distribuições. Pode ser excelente para aprender, mas algumas decisões de configuração podem exigir um pouco mais de atenção do iniciante.
+É conhecido por priorizar estabilidade e serve de base para várias outras distribuições. É uma opção sólida, embora algumas etapas de configuração e escolha de software possam exigir mais contexto de quem está começando.
 
 Nenhuma dessas descrições significa “melhor” ou “pior”. Elas mostram perfis diferentes.
+
+| Se sua prioridade é... | Vale conhecer primeiro |
+|---|---|
+| seguir as telas e práticas deste livro | Ubuntu LTS |
+| uma interface de desktop mais tradicional | Linux Mint |
+| tecnologias recentes em uma versão estável | Fedora Workstation |
+| uma base conhecida por estabilidade | Debian |
+
+> **ENTENDA**
+> Esta tabela não é um ranking. É apenas um mapa para reduzir sua pesquisa.
 
 > **DICA DO DEJOTA**
 > Se você está completamente perdido, reduza a decisão para duas perguntas: “Meu computador roda esta distribuição com conforto?” e “Consigo encontrar documentação clara quando tiver uma dúvida?”. Isso já elimina muita confusão.
 
 ## E qual eu usaria para acompanhar este livro?
 
-Para manter os exemplos consistentes, o livro usará uma distribuição principal nas capturas de tela e práticas. Isso não significa que o conteúdo só funcione nela.
+Para manter exemplos, capturas de tela e práticas consistentes, esta edição usará **Ubuntu LTS** como distribuição de referência. Isso não significa que Ubuntu seja “a melhor distribuição” nem que o conteúdo só funcione nela.
 
-A escolha editorial deve priorizar:
+A escolha é editorial: buscamos uma versão estável e suportada, instalação amigável, boa experiência em desktop e documentação abundante. Quando houver diferença relevante para outras distribuições, ela será indicada.
 
-- versão estável e suportada;
-- instalação amigável;
-- boa experiência em desktop;
-- documentação abundante;
-- compatibilidade razoável com hardware comum.
-
-Quando houver diferença relevante entre distribuições, ela será indicada. Quando não houver, não vamos complicar o texto apenas para listar variações.
 ## Faça comigo — reduza suas opções
 
 Pegue papel, bloco de notas ou um arquivo de texto e responda:
@@ -137,7 +142,7 @@ Pegue papel, bloco de notas ou um arquivo de texto e responda:
 
 Agora escolha no máximo **duas distribuições** para testar.
 
-Não escolha cinco. A ideia não é montar um campeonato; é reduzir a indecisão.
+Não escolha cinco. A ideia não é montar um campeonato; é reduzir a indecisão. Depois do teste em modo live, escolha **uma** delas para acompanhar os próximos capítulos e ganhar consistência durante o aprendizado.
 
 ## Teste antes de instalar
 
@@ -161,6 +166,7 @@ Você aprende menus diferentes, mas não aprofunda os fundamentos. Escolha uma, 
 ### Escolher uma versão beta sem perceber
 
 Leia a página oficial de download. Procure termos como stable, LTS ou versão recomendada e trate beta/testing como ambientes de teste.
+
 ### Ignorar o backup porque “é só um teste”
 
 Testar pelo modo live é uma ótima forma de reduzir risco, mas qualquer etapa que envolva instalação posterior merece backup. Confiança não substitui cópia dos seus arquivos importantes.
