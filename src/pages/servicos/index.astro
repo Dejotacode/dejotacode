@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/services.css";
+---
+
+<BaseLayout
+  title="Criação de landing pages e sites | DejotaCode"
+  description="Landing pages simples, rápidas e responsivas para autônomos e pequenos negócios gerarem contatos pelo WhatsApp."
+>
+  <main id="conteudo" tabindex="-1" class="services-page">
+    <header class="services-hero">
+      <div class="container services-hero__grid">
+        <div class="services-hero__copy">
+          <p class="eyebrow">SERVIÇOS DEJOTACODE</p>
+          <h1>Sua presença digital, simples e pronta para trabalhar.</h1>
+          <p>Landing pages objetivas para apresentar seu negócio e transformar visitantes em conversas pelo WhatsApp.</p>
+          <div class="services-actions">
+            <a class="button button-primary" href="/contato/?assunto=orcamento-servicos" data-analytics-cta="services-hero-budget">Solicitar orçamento <span aria-hidden="true">→</span></a>
+            <a class="button" href="/portfolio/" data-analytics-cta="services-hero-portfolio">Ver portfólio</a>
+          </div>
+        </div>
+        <aside class="services-offer" aria-label="Oferta de lançamento">
+          <span>OFERTA DE LANÇAMENTO</span>
+          <strong>R$ 790</strong>
+          <p>Landing Page Essencial</p>
+          <ul>
+            <li>Entrega em até 7 dias úteis</li>
+            <li>Layout responsivo</li>
+            <li>SEO básico e contato por WhatsApp</li>
+            <li>Uma rodada de ajustes</li>
+          </ul>
+          <small>Três vagas iniciais. Domínio, hospedagem e serviços de terceiros são contratados separadamente quando necessários.</small>
+        </aside>
+      </div>
+    </header>
+
+    <section class="services-section container" aria-labelledby="offers-title">
+      <div class="services-heading">
+        <div><p class="eyebrow">ESCOLHA O PRIMEIRO PASSO</p><h2 id="offers-title">Serviços com escopo claro</h2></div>
+        <p>Comece por um diagnóstico ou vá direto para uma página completa.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <span>01 / ENTRADA</span>
+          <div><h3>Diagnóstico Express</h3><p>Análise da página principal, experiência mobile, clareza da oferta e chamadas para ação.</p></div>
+          <div><strong>R$ 149</strong><small>Relatório objetivo e conversa de até 30 minutos.</small></div>
+        </article>
+        <article class="service-card service-card--featured">
+          <span>02 / PRINCIPAL</span>
+          <div><h3>Landing Page Essencial</h3><p>Uma página profissional para apresentar seu negócio e facilitar contatos pelo celular.</p></div>
+          <div><strong>R$ 790</strong><small>50% para iniciar e 50% na entrega.</small></div>
+        </article>
+        <article class="service-card">
+          <span>03 / RECORRENTE</span>
+          <div><h3>Cuidado contínuo</h3><p>Pequenas atualizações de conteúdo, acompanhamento e manutenção preventiva.</p></div>
+          <div><strong>R$ 149/mês</strong><small>Disponível após a entrega do projeto.</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="services-process" aria-labelledby="process-title">
+      <div class="container">
+        <p class="eyebrow">COMO FUNCIONA</p>
+        <h2 id="process-title">Do briefing à publicação</h2>
+        <ol>
+          <li><span>01</span><strong>Conversa inicial</strong><p>Entendemos objetivo, público e prioridade.</p></li>
+          <li><span>02</span><strong>Proposta clara</strong><p>Você recebe escopo, prazo e condições.</p></li>
+          <li><span>03</span><strong>Construção</strong><p>A página é desenvolvida e revisada.</p></li>
+          <li><span>04</span><strong>Publicação</strong><p>O projeto é entregue com orientação final.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="services-section container" aria-labelledby="scope-title">
+      <div class="services-heading">
+        <div><p class="eyebrow">SEM SURPRESAS</p><h2 id="scope-title">O que está incluído</h2></div>
+        <p>O escopo inicial foi desenhado para manter prazo, qualidade e preço previsíveis.</p>
+      </div>
+      <div class="scope-grid">
+        <div><h3>Incluído</h3><ul><li>Página única personalizada</li><li>Versão mobile</li><li>Seções essenciais do negócio</li><li>Botão ou formulário para WhatsApp</li><li>SEO e métricas básicas</li><li>Uma rodada de ajustes</li></ul></div>
+        <div><h3>Contratado à parte</h3><ul><li>Domínio e hospedagem</li><li>Loja virtual ou painel administrativo</li><li>Identidade visual completa</li><li>Produção extensa de textos</li><li>Integrações e automações avançadas</li><li>Alterações fora do escopo aprovado</li></ul></div>
+      </div>
+    </section>
+
+    <section class="services-cta">
+      <div class="container">
+        <div><p class="eyebrow">PRÓXIMO PASSO</p><h2>Conte um pouco sobre o seu negócio.</h2><p>Você receberá uma resposta com as próximas perguntas, sem compromisso de contratação.</p></div>
+        <a class="button button-primary" href="/contato/?assunto=orcamento-servicos" data-analytics-cta="services-final-budget">Solicitar orçamento <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
