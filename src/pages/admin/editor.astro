@@ -197,7 +197,7 @@ const editablePosts = posts
                     <div class="editor-media-risk__header">
                       <div>
                         <strong>Zona de risco</strong>
-                        <p>Exclusão individual somente após duas revisões, dry-run válido e nova revalidação no servidor.</p>
+                        <p>Exclusão individual somente após duas revisões, dry-run válido, snapshot final append-only e nova revalidação no servidor.</p>
                       </div>
                       <span>Admin · ação irreversível</span>
                     </div>
@@ -208,9 +208,10 @@ const editablePosts = posts
                     <div class="editor-media-risk__checks" data-media-risk-checks></div>
                     <div class="editor-media-risk__actions">
                       <button class="button" type="button" data-media-risk-dry-run>Executar dry-run</button>
+                      <button class="button" type="button" data-media-risk-snapshot hidden>Gerar snapshot final</button>
                       <button class="button editor-media-risk__delete" type="button" data-media-risk-delete hidden>Excluir definitivamente</button>
                     </div>
-                    <output data-media-risk-status>Execute o dry-run para liberar a confirmação final.</output>
+                    <output data-media-risk-status>Execute o dry-run e gere o snapshot final antes de qualquer confirmação de exclusão.</output>
                     <section class="editor-media-history" data-media-history>
                       <div class="editor-media-history__header">
                         <div>
@@ -353,6 +354,7 @@ const editablePosts = posts
     const mediaRiskSelect = document.querySelector<HTMLSelectElement>("[data-media-risk-select]");
     const mediaRiskChecks = document.querySelector<HTMLElement>("[data-media-risk-checks]");
     const mediaRiskDryRunButton = document.querySelector<HTMLButtonElement>("[data-media-risk-dry-run]");
+    const mediaRiskSnapshotButton = document.querySelector<HTMLButtonElement>("[data-media-risk-snapshot]");
     const mediaRiskDeleteButton = document.querySelector<HTMLButtonElement>("[data-media-risk-delete]");
     const mediaRiskStatus = document.querySelector<HTMLOutputElement>("[data-media-risk-status]");
     const mediaHistoryButton = document.querySelector<HTMLButtonElement>("[data-media-history-load]");
@@ -365,6 +367,7 @@ const editablePosts = posts
     let mediaItems: MediaItem[] = [];
     let mediaSafetyStates = new Map<string, "used" | "orphan" | "review">();
     let mediaDeleteChecks = new Map<number, { token: string; expiresAt: string; coverUsage: number; markdownReferences: string[]; r2Exists: boolean }>();
+    let mediaDeleteSnapshots = new Map<number, { snapshotId: number; snapshotHash: string; capturedAt: string; expiresAt: string }>();
     let currentPrNumber = Number(sessionStorage.getItem("dejotacode-editor-pr") || 0) || 0;
     let currentPrHeadSha = "";
     let ciPollTimer: number | undefined;
@@ -881,12 +884,13 @@ const editablePosts = posts
     };
 
     const renderMediaRiskZone = () => {
-      if (!mediaRisk || !mediaRiskSelect || !mediaRiskChecks || !mediaRiskDeleteButton || !mediaRiskStatus) return;
+      if (!mediaRisk || !mediaRiskSelect || !mediaRiskChecks || !mediaRiskSnapshotButton || !mediaRiskDeleteButton || !mediaRiskStatus) return;
       const approved = approvedCleanupItems();
       if (!approved.length) {
         mediaRisk.hidden = true;
         mediaRiskSelect.replaceChildren();
         mediaRiskChecks.replaceChildren();
+        mediaRiskSnapshotButton.hidden = true;
         mediaRiskDeleteButton.hidden = true;
         return;
       }
@@ -905,7 +909,13 @@ const editablePosts = posts
       if (mediaHistoryStatus) mediaHistoryStatus.textContent = "Histórico ainda não carregado.";
       const check = mediaDeleteChecks.get(selected.id);
       const validCheck = check && new Date(check.expiresAt).getTime() > Date.now() ? check : null;
-      if (check && !validCheck) mediaDeleteChecks.delete(selected.id);
+      if (check && !validCheck) {
+        mediaDeleteChecks.delete(selected.id);
+        mediaDeleteSnapshots.delete(selected.id);
+      }
+      const snapshot = mediaDeleteSnapshots.get(selected.id);
+      const validSnapshot = validCheck && snapshot && snapshot.expiresAt === validCheck.expiresAt ? snapshot : null;
+      if (snapshot && !validSnapshot) mediaDeleteSnapshots.delete(selected.id);
       mediaRiskChecks.replaceChildren();
       const rows = [
         ["Revisão humana", "Candidata"],
@@ -914,6 +924,7 @@ const editablePosts = posts
         ["Capas D1", validCheck ? String(validCheck.coverUsage) : "—"],
         ["Referências Markdown", validCheck ? String(validCheck.markdownReferences.length) : "—"],
         ["Validade", validCheck ? formatMediaDate(validCheck.expiresAt) : "Dry-run necessário"],
+        ["Snapshot final", validSnapshot ? `#${validSnapshot.snapshotId} · ${formatMediaDate(validSnapshot.capturedAt)}` : (validCheck ? "Pendente" : "Aguardando dry-run")],
       ];
       for (const [label, value] of rows) {
         const row = document.createElement("span");
@@ -924,10 +935,13 @@ const editablePosts = posts
         row.append(strong, small);
         mediaRiskChecks.append(row);
       }
-      mediaRiskDeleteButton.hidden = !validCheck;
-      mediaRiskStatus.textContent = validCheck
-        ? "Dry-run aprovado e temporário. A exclusão continua exigindo duas confirmações textuais e nova revalidação no servidor."
-        : "Execute o dry-run para revalidar GitHub, D1 e R2. Nenhuma exclusão ocorre nesta etapa.";
+      mediaRiskSnapshotButton.hidden = !validCheck || Boolean(validSnapshot);
+      mediaRiskDeleteButton.hidden = !validSnapshot;
+      mediaRiskStatus.textContent = validSnapshot
+        ? `Snapshot final #${validSnapshot.snapshotId} registrado. A exclusão continua exigindo confirmações explícitas e nova revalidação no servidor.`
+        : validCheck
+          ? "Dry-run aprovado. Gere o snapshot final append-only antes de qualquer confirmação de exclusão."
+          : "Execute o dry-run para revalidar GitHub, D1 e R2. Nenhuma exclusão ocorre nesta etapa.";
     };
 
     const renderMediaHistory = (payload: MediaHistoryPayload) => {
@@ -1003,6 +1017,7 @@ const editablePosts = posts
       if (!window.confirm("Executar dry-run de exclusão? O servidor revalidará GitHub, D1 e R2. Nenhum arquivo será removido.")) return;
       if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Executando dry-run seguro…";
       mediaDeleteChecks.delete(item.id);
+      mediaDeleteSnapshots.delete(item.id);
       try {
         const response = await fetch(`${api}/api/media/cms/${item.id}/delete-dry-run`, {
           method: "POST",
@@ -1035,13 +1050,55 @@ const editablePosts = posts
       }
     };
 
-    const deleteMediaItem = async (item: MediaItem) => {
+
+    const createMediaDeleteSnapshot = async (item: MediaItem) => {
       if (!api) return;
       const check = mediaDeleteChecks.get(item.id);
       if (!check || new Date(check.expiresAt).getTime() <= Date.now()) {
         mediaDeleteChecks.delete(item.id);
+        mediaDeleteSnapshots.delete(item.id);
         renderMediaRiskZone();
-        if (mediaRiskStatus) mediaRiskStatus.textContent = "O dry-run expirou. Execute uma nova verificação antes de excluir.";
+        if (mediaRiskStatus) mediaRiskStatus.textContent = "O dry-run expirou. Execute uma nova verificação antes de gerar o snapshot.";
+        return;
+      }
+      if (!window.confirm("Gerar snapshot final de pré-exclusão? O servidor registrará uma evidência append-only. Nenhum arquivo será removido.")) return;
+      if (mediaRiskStatus) mediaRiskStatus.textContent = "Gerando snapshot final e revalidando GitHub, D1 e R2…";
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/delete-snapshot`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ objectKey: item.objectKey, dryRunToken: check.token }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível gerar o snapshot final.");
+        const data = payload.data ?? {};
+        const snapshotId = Number(data.snapshotId ?? 0);
+        const snapshotHash = String(data.snapshotHash ?? "");
+        const capturedAt = String(data.capturedAt ?? "");
+        const expiresAt = String(data.expiresAt ?? check.expiresAt);
+        if (!Number.isInteger(snapshotId) || snapshotId < 1 || !snapshotHash || !capturedAt) {
+          throw new Error("A API não retornou um snapshot final válido.");
+        }
+        mediaDeleteSnapshots.set(item.id, { snapshotId, snapshotHash, capturedAt, expiresAt });
+        renderMediaRiskZone();
+        if (mediaLibraryStatus) mediaLibraryStatus.textContent = `Snapshot final #${snapshotId} registrado. Nenhuma exclusão foi executada.`;
+      } catch (error) {
+        mediaDeleteSnapshots.delete(item.id);
+        renderMediaRiskZone();
+        if (mediaRiskStatus) mediaRiskStatus.textContent = error instanceof Error ? error.message : "Não foi possível gerar o snapshot final.";
+      }
+    };
+
+    const deleteMediaItem = async (item: MediaItem) => {
+      if (!api) return;
+      const check = mediaDeleteChecks.get(item.id);
+      const snapshot = mediaDeleteSnapshots.get(item.id);
+      if (!check || !snapshot || snapshot.expiresAt !== check.expiresAt || new Date(check.expiresAt).getTime() <= Date.now()) {
+        mediaDeleteChecks.delete(item.id);
+        mediaDeleteSnapshots.delete(item.id);
+        renderMediaRiskZone();
+        if (mediaRiskStatus) mediaRiskStatus.textContent = "Dry-run ou snapshot final inválido. Gere uma nova cadeia de verificação antes de excluir.";
         return;
       }
       const objectKey = window.prompt("Confirmação 1/2: digite exatamente o objectKey da mídia que será removida.", "");
@@ -1062,16 +1119,18 @@ const editablePosts = posts
           method: "DELETE",
           credentials: "include",
           headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
-          body: JSON.stringify({ confirmation: "EXCLUIR", objectKey: item.objectKey, dryRunToken: check.token }),
+          body: JSON.stringify({ confirmation: "EXCLUIR", objectKey: item.objectKey, dryRunToken: check.token, snapshotId: snapshot.snapshotId }),
         });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "A exclusão foi bloqueada pelo servidor.");
         mediaDeleteChecks.delete(item.id);
+        mediaDeleteSnapshots.delete(item.id);
         await loadMediaLibrary();
         if (mediaLibraryStatus) mediaLibraryStatus.textContent = "Mídia removida após dry-run e revalidação final.";
         renderMediaRiskZone();
       } catch (error) {
         mediaDeleteChecks.delete(item.id);
+        mediaDeleteSnapshots.delete(item.id);
         renderMediaRiskZone();
         if (mediaRiskStatus) mediaRiskStatus.textContent = error instanceof Error ? error.message : "A exclusão foi bloqueada.";
       }
@@ -1448,6 +1507,10 @@ const editablePosts = posts
     mediaRiskDryRunButton?.addEventListener("click", () => {
       const item = selectedRiskMedia();
       if (item) runMediaDeleteDryRun(item);
+    });
+    mediaRiskSnapshotButton?.addEventListener("click", () => {
+      const item = selectedRiskMedia();
+      if (item) createMediaDeleteSnapshot(item);
     });
     mediaRiskDeleteButton?.addEventListener("click", () => {
       const item = selectedRiskMedia();
