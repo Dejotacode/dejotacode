@@ -40,21 +40,38 @@ Meu foco atual é construir experiências simples para iniciantes sem abrir mão
 
 ## Projeto em destaque
 
-O **DejotaCode** é uma plataforma educacional em tecnologia com blog, trilhas de aprendizagem, recursos, portfólio, newsletter e uma operação editorial própria. O frontend é estático com Astro e a API roda na edge da Cloudflare com Hono, Workers, D1 e R2.
+O **DejotaCode** é uma plataforma educacional em tecnologia para iniciantes. O projeto combina conteúdo, produto e engenharia: blog, trilhas de aprendizagem, portfólio, newsletter, Admin Editorial, mídia em R2, analytics first-party e um fluxo de publicação baseado em GitHub e CI/CD.
 
-**Produção:** https://dejotacode.com.br
+| Produto | Link | Stack principal |
+| --- | --- | --- |
+| Frontend DejotaCode | [dejotacode.com.br](https://dejotacode.com.br) | Astro · TypeScript · Cloudflare Pages |
+| DejotaCode API | [api.dejotacode.com.br](https://api.dejotacode.com.br) | Hono · Workers · D1 · R2 |
 
-**API:** https://api.dejotacode.com.br
+As versões atuais são exibidas pelos badges no topo e registradas em [Releases](https://github.com/Dejotacode/dejotacode/releases) e [API Releases](https://github.com/Dejotacode/dejotacode-api/releases).
 
-**Release atual do frontend:** `v1.21.0`
+## Arquitetura em uma visão
 
-**Release atual da API:** `v1.11.0`
+```text
+Visitante → Astro / Cloudflare Pages
+                 ↓
+             DejotaCode API
+          Hono / Workers
+           ↙          ↘
+         D1            R2
 
-## Visão geral
+Admin Editorial → GitHub → Pull Request → CI → Cloudflare Pages
+```
 
-O DejotaCode é construído como site estático com Astro e integra-se a uma API separada para formulários, métricas agregadas e operações administrativas. A base pública inclui blog, categorias, trilhas, recursos, portfólio, newsletter, páginas institucionais, RSS e sitemap. O Admin Editorial mantém Git/Markdown como fonte canônica e usa a API para GitHub, CI e mídia R2.
+O conteúdo público permanece em Git/Markdown como fonte canônica. A API concentra formulários, métricas agregadas, autenticação administrativa e operações editoriais.
 
-Site canônico: `https://dejotacode.com.br`
+## Evidências do projeto
+
+- frontend e API separados em repositórios públicos;
+- CI executa typecheck, build e QA antes de cada deploy;
+- deploy de produção do frontend ocorre somente após o job de qualidade da `main`;
+- releases e tags registram marcos homologados;
+- documentação cobre arquitetura, operação, backup, rollback e fluxo editorial;
+- operações críticas de mídia usam revisão humana, dry-run, snapshot append-only e revalidação no servidor.
 
 ## Stack
 

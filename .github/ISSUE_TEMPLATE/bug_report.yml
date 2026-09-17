@@ -1,0 +1,19 @@
+name: Bug report
+description: Relate um problema reproduzível no DejotaCode
+body:
+  - type: textarea
+    attributes:
+      label: Problema
+      description: O que aconteceu e qual comportamento era esperado?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Como reproduzir
+      description: Informe rota, dispositivo/navegador e passos mínimos.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Evidências
+      description: Logs ou screenshots sem dados sensíveis.

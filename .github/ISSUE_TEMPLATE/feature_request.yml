@@ -1,0 +1,19 @@
+name: Feature request
+description: Sugira uma melhoria para produto, conteúdo ou operação
+body:
+  - type: textarea
+    attributes:
+      label: Problema ou oportunidade
+      description: Que necessidade esta proposta resolve?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposta
+      description: Descreva a solução e o benefício esperado para o usuário.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Impacto
+      description: Há impacto visual, técnico, editorial ou operacional?
