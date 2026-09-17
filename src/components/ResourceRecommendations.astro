@@ -1,0 +1,37 @@
+---
+import type { RecommendedResource } from "../data/recommendedResources";
+
+interface Props {
+  resources: RecommendedResource[];
+  title?: string;
+}
+
+const { resources, title = "Recursos relacionados a este tutorial" } = Astro.props;
+const hasAffiliateLink = resources.some((resource) => resource.relationship === "affiliate");
+---
+
+<aside class="resource-recommendations" aria-labelledby="resource-recommendations-title">
+  <p class="eyebrow">RECOMENDAÇÕES TRANSPARENTES</p>
+  <h2 id="resource-recommendations-title">{title}</h2>
+  <p class="resource-disclosure">
+    {hasAffiliateLink
+      ? "Este bloco contém links de afiliados. O DejotaCode poderá receber uma comissão, sem custo adicional para você."
+      : "Recomendações editoriais com links oficiais. Nenhum dos links deste bloco gera comissão para o DejotaCode."}
+  </p>
+  <div class="resource-recommendations__grid">
+    {resources.map((resource) => (
+      <article class="resource-recommendation">
+        <div class="resource-recommendation__meta">
+          <span>{resource.priceLabel}</span>
+          <span>{resource.relationship === "affiliate" ? "Link de afiliado" : "Sem comissão"}</span>
+        </div>
+        <h3>{resource.name}</h3>
+        <p>{resource.description}</p>
+        <p><strong>Indicado para:</strong> {resource.bestFor}</p>
+        <p><strong>Limitação:</strong> {resource.limitation}</p>
+        <a class="button button-secondary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} <span aria-hidden="true">↗</span></a>
+      </article>
+    ))}
+  </div>
+  <p class="resource-review-date">Informações revisadas em {resources[0]?.lastReviewed}.</p>
+</aside>
