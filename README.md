@@ -15,11 +15,21 @@
 </p>
 
 <p align="center">
-  <img alt="Astro" src="https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=white">
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
-  <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-F38020?logo=cloudflare&logoColor=white">
-  <img alt="Hono" src="https://img.shields.io/badge/Hono-E36002?logo=hono&logoColor=white">
-  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white">
+  <a href="https://github.com/Dejotacode/dejotacode/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Dejotacode/dejotacode/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Dejotacode/dejotacode/releases"><img alt="Frontend release" src="https://img.shields.io/github/v/release/Dejotacode/dejotacode?style=flat-square&label=frontend&color=0A0D12&labelColor=0A0D12"></a>
+  <a href="https://github.com/Dejotacode/dejotacode-api/releases"><img alt="API release" src="https://img.shields.io/github/v/release/Dejotacode/dejotacode-api?style=flat-square&label=api&color=0A0D12&labelColor=0A0D12"></a>
+</p>
+
+<p align="center">
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-0A0D12?style=flat-square&logo=astro&logoColor=00E5FF">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-0A0D12?style=flat-square&logo=typescript&logoColor=00E5FF">
+  <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-0A0D12?style=flat-square&logo=cloudflare&logoColor=00E5FF">
+  <img alt="Hono" src="https://img.shields.io/badge/Hono-0A0D12?style=flat-square&logo=hono&logoColor=00E5FF">
+  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-0A0D12?style=flat-square&logo=githubactions&logoColor=00E5FF">
+</p>
+
+<p align="center">
+  <img src="public/assets/brand/opengraph-dark.png" alt="DejotaCode — tecnologia prática para quem está começando" width="900" />
 </p>
 
 ## Sobre mim
