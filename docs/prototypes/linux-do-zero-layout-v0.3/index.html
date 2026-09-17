@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Linux do Zero — Protótipo visual v0.3</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<section class="sheet cover">
+  <div class="cyan-line"></div>
+  <img class="brand-symbol" src="../../../public/assets/brand/dejotacode-symbol-dark.svg" alt="">
+  <div class="cover-content">
+    <div class="eyebrow">DejotaCode · Edição 2026</div>
+    <h1>Linux<br>do Zero</h1>
+    <p class="subtitle">Guia prático para começar com segurança, entender o sistema e ganhar autonomia.</p>
+  </div>
+  <div class="cover-meta"><span>Tecnologia explicada de forma simples, prática e responsável.</span><span>DejotaCode</span></div>
+</section>
+
+<section class="sheet page chapter-open">
+  <div class="chapter-number">03</div>
+  <div class="chapter-copy">
+    <div class="eyebrow">Capítulo 3</div>
+    <div class="rule"></div>
+    <h1>Prepare antes de instalar</h1>
+    <p class="lead">Backup, imagem oficial, verificação e modo live: a instalação segura começa antes do botão “Instalar”.</p>
+    <div class="promise"><p><strong>Ao terminar este capítulo,</strong> você terá um ambiente preparado para testar o Ubuntu sem alterar o sistema atual.</p></div>
+  </div>
+  <div class="footer"><span>Linux do Zero</span><span>03</span></div>
+</section>
+
+<section class="sheet page">
+  <div class="eyebrow">Entenda antes de executar</div>
+  <h2>A instalação começa pelo backup</h2>
+  <p>Se existe uma etapa que merece ser tratada como obrigatória, é esta. Antes de alterar partições, trocar de sistema ou testar uma configuração importante, confirme que seus arquivos essenciais estão em outro lugar e que essa cópia realmente abre.</p>
+  <p>Sincronização e backup não são a mesma coisa. Um serviço de nuvem pode sincronizar uma exclusão; uma cópia independente existe justamente para permitir recuperação.</p>
+  <div class="box">
+    <div class="box-title"><span class="icon">i</span>Entenda</div>
+    <p>Backup não é um ritual técnico. É a diferença entre “posso testar com calma” e “qualquer erro virou emergência”.</p>
+  </div>
+  <h3>Faça comigo</h3>
+  <div class="steps">
+    <div class="step"><span class="step-num">1</span><div><strong>Separe o que é insubstituível.</strong><br><span class="small">Documentos, fotos, projetos, chaves e arquivos de trabalho.</span></div></div>
+    <div class="step"><span class="step-num">2</span><div><strong>Copie para outro local.</strong><br><span class="small">Outro disco, dispositivo externo ou serviço confiável.</span></div></div>
+    <div class="step"><span class="step-num">3</span><div><strong>Abra alguns arquivos da cópia.</strong><br><span class="small">Não confie apenas na barra de progresso.</span></div></div>
+  </div>
+  <div class="box tip">
+    <div class="box-title"><span class="icon">D</span>Dica do Dejota</div>
+    <p>Se estiver em notebook, conecte o carregador e reserve um período em que você não precise desligar o computador às pressas.</p>
+  </div>
+  <div class="footer"><span>Capítulo 3 · Preparação</span><span>04</span></div>
+</section>
+
+<section class="sheet page">
+  <div class="eyebrow">Ponto de risco</div>
+  <h2>Leia antes de apagar o disco</h2>
+  <div class="box warning">
+    <div class="box-title"><span class="icon">!</span>Pare aqui se...</div>
+    <p>Você não sabe qual disco contém seus arquivos atuais, ainda não confirmou o backup ou não entende se a opção selecionada apagará o sistema existente.</p>
+  </div>
+  <div class="screenshot"><img src="../../assets/linux-do-zero/screenshots/c04-08-apagar-disco.png" alt="Tela do instalador Ubuntu com a opção Apagar o disco e instalar o Ubuntu e aviso de que os dados serão apagados."></div>
+  <p class="caption"><strong>Figura 4.8.</strong> A opção de apagar o disco deve ser tratada como uma decisão de alto impacto, não como um botão de continuidade.</p>
+  <p>O instalador não sabe quais arquivos têm valor emocional ou profissional para você. Antes de avançar, confira o destino do disco e releia o resumo da instalação.</p>
+  <div class="footer"><span>Capítulo 4 · Instalação</span><span>07</span></div>
+</section>
+
+<section class="sheet page">
+  <div class="eyebrow">Terminal sem medo</div>
+  <h2>Leia a estrutura, não decore a frase</h2>
+  <p class="lead">Um comando deixa de parecer “mágico” quando você consegue identificar ação, opção e alvo.</p>
+  <div class="code"><span class="prompt">$</span> ls -l projetos<br><br><span style="color:#aab6ca">comando&nbsp;&nbsp; opção&nbsp;&nbsp; alvo</span></div>
+  <div class="box">
+    <div class="box-title"><span class="icon">i</span>Você não precisa decorar</div>
+    <p>Profissionais consultam documentação, histórico e ajuda. O objetivo é reconhecer padrões e saber onde confirmar.</p>
+  </div>
+  <h3>Sequência segura para praticar</h3>
+  <div class="code"><span class="prompt">$</span> touch apagar-depois.txt<br><span class="prompt">$</span> ls<br><span class="prompt">$</span> rm apagar-depois.txt<br><span class="prompt">$</span> ls</div>
+  <p class="small">No livro, comandos destrutivos nunca aparecem como exemplo casual. O laboratório fica limitado a arquivos descartáveis criados pelo próprio leitor.</p>
+  <div class="footer"><span>Capítulo 6 · Terminal</span><span>12</span></div>
+</section>
+
+<section class="sheet page">
+  <div class="eyebrow">Bônus · Consulta rápida</div>
+  <h2>Checklist pós-instalação</h2>
+  <p class="lead">Uma página simples para conferir o sistema sem transformar o primeiro dia em uma maratona de ajustes.</p>
+  <div class="checklist">
+    <div class="check">O sistema inicia normalmente pelo disco instalado.</div>
+    <div class="check">Data, hora e fuso horário estão corretos.</div>
+    <div class="check">Rede cabeada ou Wi-Fi funciona.</div>
+    <div class="check">Áudio de saída e entrada foi testado.</div>
+    <div class="check">Teclado e caracteres especiais respondem como esperado.</div>
+    <div class="check">Atualizações disponíveis foram revisadas.</div>
+    <div class="check">Drivers adicionais foram verificados quando o hardware exige.</div>
+    <div class="check">Aplicativos vieram de fontes confiáveis.</div>
+    <div class="check">Backup continua acessível depois da instalação.</div>
+    <div class="check">Você sabe onde encontrar Configurações, Arquivos e App Center.</div>
+  </div>
+  <div class="rule" style="margin-top:12mm"></div>
+  <p class="small">Feito para quem constrói o futuro. · DejotaCode</p>
+  <div class="footer"><span>Bônus 1 · Checklist</span><span>B1</span></div>
+</section>
+</body>
+</html>
