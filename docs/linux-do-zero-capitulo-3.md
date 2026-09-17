@@ -22,6 +22,11 @@ Ao final deste capítulo, você será capaz de:
 - criar um pendrive inicializável com segurança;
 - iniciar uma sessão live;
 - testar o Linux sem instalar nada no disco.
+
+## Antes de começar — tenha energia e tempo
+
+Se estiver em notebook, conecte o carregador. Reserve um período em que você não precise desligar o computador às pressas ou interromper uma gravação de mídia no meio. Preparação também significa não fazer uma mudança importante correndo.
+
 ## Passo 1 — Faça backup antes de qualquer mudança
 
 Backup é uma cópia de segurança dos seus arquivos importantes.
@@ -35,6 +40,9 @@ Copie pelo menos os arquivos que você não aceitaria perder para outro disposit
 
 Não basta arrastar uma pasta e presumir que terminou. Verificar a cópia faz parte do backup.
 
+> **ATENÇÃO**
+> Sincronização não é necessariamente a mesma coisa que backup. Se uma exclusão ou alteração for sincronizada para todos os dispositivos, você pode perder a cópia junto com o original. Para arquivos importantes, mantenha pelo menos uma cópia independente.
+
 ### O que vale revisar
 - Documentos e trabalhos pessoais.
 - Fotos e vídeos.
@@ -45,6 +53,7 @@ Não basta arrastar uma pasta e presumir que terminou. Verificar a cópia faz pa
 
 > **DICA DO DEJOTA**
 > Se você não sabe onde seus arquivos importantes estão, não tenha pressa para instalar. Primeiro organize o que precisa ser preservado.
+
 ## Passo 2 — Baixe a ISO somente do projeto oficial
 
 A instalação normalmente começa com um arquivo de imagem chamado **ISO**. Ele contém o sistema e pode ser gravado em um pendrive para iniciar o computador.
@@ -64,11 +73,12 @@ Dispositivos ARM, alguns notebooks específicos e placas como Raspberry Pi podem
 
 > **VOCÊ NÃO PRECISA DECORAR**
 > Se você usa um PC convencional recente com Windows em processador Intel ou AMD, a imagem de 64 bits para PC costuma ser a opção esperada. Quando houver dúvida, consulte a página oficial de requisitos da distribuição antes de baixar.
+
 ## Passo 3 — Verifique a integridade do arquivo
 
 Depois do download, a distribuição costuma publicar um valor de verificação, normalmente SHA256 ou SHA512.
 
-Esse valor funciona como uma impressão digital matemática do arquivo. Se o arquivo mudar — por corrupção no download ou adulteração — o resultado calculado deixa de coincidir com o valor oficial.
+Esse valor funciona como uma impressão digital matemática do arquivo. Se o arquivo mudar — por corrupção no download ou outra alteração — o resultado calculado deixa de coincidir com o valor publicado.
 
 > **ENTENDA**
 > Imagine duas malas fechadas. Por fora elas parecem iguais. O checksum funciona como uma conferência do conteúdo sem precisar abrir e comparar item por item.
@@ -84,12 +94,13 @@ O terminal exibirá uma sequência longa de letras e números. Compare exatament
 Se o valor não coincidir, não continue. Apague o arquivo e faça o download novamente a partir da fonte oficial.
 
 > **ATENÇÃO**
-> Um checksum igual confirma a integridade em relação ao valor publicado. Projetos como Debian e Linux Mint também oferecem assinaturas criptográficas dos arquivos de checksum para verificar a autenticidade da origem. Nesta edição, vamos manter a prática inicial simples e segura; a verificação de assinatura pode ser aprofundada depois.
+> Um checksum correspondente confirma que o arquivo baixado é igual ao arquivo representado pelo valor publicado. Para confirmar também a autenticidade desse valor, alguns projetos fornecem assinaturas criptográficas. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.
+
 ## Passo 4 — Crie o pendrive inicializável
 
 Para iniciar o computador pela ISO, você precisa **gravar** a imagem no pendrive usando uma ferramenta apropriada. Copiar o arquivo `.iso` para o pendrive como se fosse uma foto não produz a mesma coisa.
 
-Ferramentas comuns incluem balenaEtcher, Rufus, Disks e Startup Disk Creator. Use a ferramenta indicada pela documentação da distribuição e pelo sistema que você já utiliza.
+Use uma ferramenta indicada pela documentação da distribuição e pelo sistema que você já utiliza. Nesta edição, as capturas principais usarão **Rufus no Windows** e a ferramenta **Discos no Ubuntu** quando precisarmos mostrar a criação da mídia. Outras ferramentas continuam válidas quando forem recomendadas oficialmente.
 
 > **ATENÇÃO**
 > Criar o pendrive inicializável apaga os dados do dispositivo USB selecionado. Confirme duas vezes se escolheu o pendrive correto antes de iniciar.
@@ -105,6 +116,7 @@ Uma sequência segura é:
 
 > **DICA DO DEJOTA**
 > Se o computador mostrar mais de um dispositivo removível, compare nome e capacidade antes de confirmar. Não confie apenas na posição em que o item aparece na lista.
+
 ## Passo 5 — Inicie pelo pendrive e use o modo live
 
 Com o pendrive pronto, reinicie o computador e abra o menu de inicialização. A tecla varia conforme o fabricante; F12, Esc, F9 e F2 são exemplos comuns.
@@ -112,6 +124,9 @@ Com o pendrive pronto, reinicie o computador e abra o menu de inicialização. A
 Escolha o dispositivo USB e procure uma opção parecida com **Try**, **Testar** ou **Experimentar sem instalar**.
 
 No modo live, o sistema roda a partir do pendrive. Isso permite conhecer a interface e testar boa parte do hardware sem instalar Linux no disco interno.
+
+> **ATENÇÃO**
+> Em uma sessão live comum, arquivos e alterações feitos durante o teste normalmente não permanecem depois do reinício. Não salve ali a única cópia de nada importante.
 
 > **ENTENDA**
 > O modo live é como visitar uma casa antes de assinar o contrato. Você consegue circular, testar portas e perceber problemas importantes antes de se comprometer.
@@ -122,13 +137,16 @@ No modo live, o sistema roda a partir do pendrive. Isso permite conhecer a inter
 - Som e microfone.
 - Brilho da tela.
 - Webcam, se for importante para você.
+- Bluetooth, se fizer parte do seu uso diário.
+- Monitor externo, se você depende dele.
 - Suspensão e retomada, quando possível.
 - Resolução e comportamento da tela.
 
-A sessão live pode ser mais lenta do que uma instalação real porque o sistema está sendo executado a partir do USB. Algumas funções também podem se comportar de forma diferente.
+A sessão live pode ser mais lenta do que uma instalação real porque o sistema está sendo executado a partir do USB. Algumas funções também podem se comportar de forma diferente. Um recurso que falha no modo live não significa necessariamente que nunca funcionará depois da instalação, mas é um sinal para investigar **antes** de apagar ou alterar o sistema atual.
 
 > **SE DER ERRADO**
 > Se o computador não iniciar pelo USB, não conclua imediatamente que "Linux não funciona". Primeiro confira se o pendrive foi criado corretamente, tente outra porta USB e consulte a documentação do fabricante sobre o menu de boot e UEFI.
+
 ## Teste você mesmo
 
 Antes de instalar, faça este exercício de 10–15 minutos:

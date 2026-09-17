@@ -8,7 +8,9 @@ Você já fez backup, baixou a ISO de uma fonte oficial, verificou o arquivo, cr
 
 Agora chegamos à etapa em que mudanças permanentes podem acontecer no disco.
 
-A instalação não precisa ser assustadora, mas exige atenção. O objetivo deste capítulo não é ensinar todas as combinações possíveis de dual boot, RAID, múltiplos discos ou particionamento avançado. A ideia é mostrar um caminho seguro para a primeira instalação.
+A instalação não precisa ser assustadora, mas exige atenção. As telas desta edição usam **Ubuntu LTS** como referência visual; nomes e posições dos botões podem mudar entre versões, mas as decisões principais continuam as mesmas.
+
+O objetivo deste capítulo não é ensinar todas as combinações possíveis de dual boot, RAID, múltiplos discos ou particionamento avançado. A ideia é mostrar um caminho seguro para a primeira instalação.
 
 > **ATENÇÃO**
 > Se você ainda não confirmou o backup ou não sabe qual disco pode ser alterado, não avance. Feche o instalador e volte ao capítulo anterior.
@@ -18,6 +20,7 @@ A instalação não precisa ser assustadora, mas exige atenção. O objetivo des
 Ao final deste capítulo, você deverá saber reconhecer as principais telas do instalador, entender as decisões que realmente importam e concluir uma instalação simples sem clicar no automático às cegas.
 
 Você também vai saber identificar situações em que o melhor movimento é parar e pesquisar antes de continuar.
+
 ## Passo 1 — Confirme idioma, teclado e conexão
 
 Comece pelas opções mais simples: idioma, layout do teclado e rede.
@@ -31,6 +34,9 @@ A conexão com a internet pode ajudar o instalador a baixar atualizações e com
 > **DICA DO DEJOTA**
 > Se Wi-Fi, teclado ou vídeo já deram sinais estranhos no modo live, resolva antes da instalação. O instalador não é uma varinha mágica que conserta incompatibilidade sozinho.
 
+> **PARE AQUI SE...**
+> você não sabe qual disco contém seus arquivos atuais, não confirmou o backup ou não entende se a opção escolhida apagará o sistema existente. Feche o instalador e esclareça isso antes de continuar.
+
 ## Passo 2 — Entenda a escolha mais importante: o disco
 
 Em algum momento, o instalador perguntará onde o Linux será instalado.
@@ -41,6 +47,7 @@ Você pode encontrar opções como apagar um disco inteiro, instalar ao lado de 
 
 > **ENTENDA**
 > O instalador não sabe quais arquivos têm valor emocional ou profissional para você. Ele sabe apenas quais discos e partições existem. A responsabilidade de reconhecer o destino correto continua sendo sua.
+
 ### Cenário A — Usar o disco inteiro para Linux
 
 Esse é o cenário mais simples tecnicamente. O disco escolhido será preparado para receber o Linux e o conteúdo anterior poderá ser apagado.
@@ -62,15 +69,16 @@ Isso é conhecido como **dual boot**: dois sistemas instalados no mesmo computad
 
 Para um iniciante, dual boot adiciona variáveis: espaço em disco, bootloader, criptografia existente, BitLocker, partições de recuperação e atualizações de firmware.
 
-Se o seu objetivo principal é aprender Linux, uma máquina dedicada, um segundo disco ou uma máquina virtual pode ser mais simples do que começar pelo cenário mais complexo.
+Se o seu objetivo principal é aprender Linux, uma máquina dedicada, um segundo disco ou uma máquina virtual pode ser mais simples do que começar pelo cenário mais complexo. **Dual boot não será o fluxo principal desta primeira edição.** Se você precisa manter outro sistema no mesmo disco, consulte também a documentação específica da distribuição e do sistema já instalado.
 
 > **VOCÊ NÃO PRECISA DECORAR**
 > EFI, partição de recuperação e bootloader vão aparecer ao longo da jornada. Neste momento, você só precisa reconhecer que mexer em um disco com outro sistema exige atenção extra.
+
 ### Cenário C — Particionamento manual
 
 O particionamento manual dá mais controle, mas também exige mais conhecimento.
 
-Ele pode ser útil quando você já sabe exatamente o que quer fazer com `/`, `/home`, swap, EFI e outros volumes. Para a primeira instalação, não existe prêmio por escolher a opção mais difícil.
+Ele pode ser útil quando você já sabe exatamente como quer organizar partições de sistema, dados, swap e inicialização. Para a primeira instalação, não existe prêmio por escolher a opção mais difícil.
 
 > **DICA DO DEJOTA**
 > Se você chegou ao particionamento manual sem saber explicar o papel de cada partição que pretende criar, volte. Controle sem entendimento é só risco com aparência de experiência.
@@ -79,14 +87,13 @@ Ele pode ser útil quando você já sabe exatamente o que quer fazer com `/`, `/
 
 Algumas distribuições oferecem criptografia do disco durante a instalação.
 
-Criptografia protege os dados armazenados caso o computador ou o disco seja roubado. Dependendo da distribuição e do hardware, ela pode usar uma senha, uma frase secreta, TPM ou outra combinação.
+Criptografia protege os dados armazenados caso o computador ou o disco seja roubado. Dependendo da distribuição e do hardware, ela pode usar uma senha, uma frase secreta, TPM ou outros mecanismos.
 
-A criptografia melhora a proteção, mas cria uma responsabilidade nova: guardar senhas e chaves de recuperação com cuidado.
-
-No Ubuntu 26.04, por exemplo, existe suporte a criptografia completa baseada em TPM em hardware compatível. A própria documentação alerta que mudanças de firmware, configurações de boot ou TPM podem exigir uma chave de recuperação.
+A criptografia melhora a proteção, mas cria uma responsabilidade nova: guardar senhas e chaves de recuperação com cuidado. O ponto principal é entender como recuperar o acesso **antes** de depender dessa proteção.
 
 > **ATENÇÃO**
 > Nunca deixe a única cópia da chave de recuperação dentro do mesmo computador criptografado. Se o sistema pedir essa chave e ela estiver inacessível no próprio disco, você criou um cofre com a chave trancada dentro.
+
 ## Passo 4 — Crie seu usuário com calma
 
 O instalador normalmente pedirá um nome, nome do computador, usuário e senha.
@@ -95,7 +102,7 @@ A senha da sua conta não deve ser tratada como senha descartável. Em muitas ta
 
 Evite senhas curtas, previsíveis ou reutilizadas de outros serviços.
 
-Se o instalador oferecer login automático, pense no contexto. Em um computador doméstico fixo pode parecer conveniente; em um notebook, exigir senha no login normalmente protege melhor seus dados.
+Se o instalador oferecer login automático, pense no contexto. Em notebook ou computador compartilhado, exigir senha no login é a escolha mais segura. Login automático só deve ser ativado quando você entende a conveniência e o risco envolvidos.
 
 > **ENTENDA**
 > Sua senha de usuário e uma eventual senha de criptografia podem ser coisas diferentes. Uma libera sua sessão; a outra pode proteger o disco antes mesmo de o sistema iniciar.
@@ -116,6 +123,7 @@ Confira pelo menos:
 - criptografia, se escolhida.
 
 Se algo não fizer sentido, volte. Nenhum instalador sério exige que você continue só porque chegou até ali.
+
 ## Passo 6 — Deixe o instalador trabalhar
 
 Depois da confirmação final, o instalador começa a copiar arquivos e configurar o sistema.
@@ -139,7 +147,7 @@ Ao entrar no sistema instalado pela primeira vez, confirme três coisas antes de
 
 Se você ativou criptografia, confirme também que entende como desbloquear o sistema e onde está guardada a chave de recuperação, quando houver.
 
-Não comece instalando vinte aplicativos imediatamente. Primeiro confirme que a base está saudável.
+Não comece instalando vinte aplicativos imediatamente. Primeiro confirme que a base está saudável. A atualização será o primeiro passo do próximo capítulo.
 
 ## Erros comuns nesta etapa
 
@@ -158,6 +166,7 @@ A proteção só é útil se você souber recuperar o acesso de forma legítima.
 ### Fazer particionamento manual para “aprender mais rápido”
 
 A primeira instalação não precisa virar laboratório de armazenamento. Aprender uma coisa por vez é progresso, não limitação.
+
 ## Teste você mesmo
 
 Antes de considerar o capítulo concluído, responda sem abrir o livro:

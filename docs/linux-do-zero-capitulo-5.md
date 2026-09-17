@@ -31,7 +31,7 @@ A forma exata muda entre distribuições. Em muitas delas existe uma ferramenta 
 > **ENTENDA**
 > Atualizar não significa trocar de distribuição. Na maioria das vezes, significa receber correções de segurança, melhorias e versões compatíveis dos componentes já instalados.
 
-Se a distribuição oferecer uma ferramenta gráfica de atualização, comece por ela. Leia o que será instalado e deixe o processo terminar antes de desligar a máquina.
+Se a distribuição oferecer uma ferramenta gráfica de atualização, comece por ela. Leia o que será instalado e deixe o processo terminar antes de desligar a máquina. Depois de uma atualização grande, reinicie quando o sistema solicitar ou quando houver uma razão clara para isso.
 
 > **ATENÇÃO**
 > Não interrompa uma atualização importante no meio. Se o sistema estiver trabalhando com pacotes essenciais, desligar à força pode deixar a instalação inconsistente.
@@ -55,7 +55,7 @@ Abra cada um com calma. O objetivo não é decorar posições, mas descobrir ond
 
 ## Passo 3 — Instale programas por fontes confiáveis
 
-Prefira primeiro os repositórios da própria distribuição e a loja oficial disponível no sistema. Eles reduzem o risco de baixar um instalador errado ou incompatível.
+Comece pela loja de aplicativos e pelos repositórios habilitados pela distribuição. Quando precisar baixar algo diretamente da internet, prefira o site oficial do projeto. Essa ordem reduz o risco de instalar um arquivo errado, incompatível ou adulterado.
 
 Algumas distribuições também oferecem formatos como Flatpak ou Snap. Eles podem ser úteis, mas você não precisa dominar essas diferenças agora.
 
@@ -82,7 +82,7 @@ Confirme novamente:
 - impressora, se for necessária;
 - suspensão e retorno do computador.
 
-Se tudo funcionou no modo live e deixou de funcionar após a instalação, registre o sintoma antes de sair alterando configurações.
+Se tudo funcionou no modo live e deixou de funcionar após a instalação, registre o sintoma antes de sair alterando configurações. Se o Ubuntu oferecer uma ferramenta de **drivers adicionais** para o hardware detectado, consulte esse caminho antes de procurar scripts ou comandos aleatórios na internet.
 
 > **SE DER ERRADO**
 > Anote o que não funcionou, quando começou e o que você tentou. Um bom diagnóstico começa com uma descrição clara, não com dez mudanças feitas ao mesmo tempo.
@@ -91,7 +91,7 @@ Se tudo funcionou no modo live e deixou de funcionar após a instalação, regis
 
 Trocar papel de parede, tema ou posição do painel é inofensivo na maioria dos casos. Alterar componentes essenciais do ambiente ou instalar extensões desconhecidas já aumenta a complexidade.
 
-Faça uma mudança, observe o resultado e siga adiante só quando souber desfazer.
+Faça uma mudança, observe o resultado e siga adiante só quando souber desfazer. Antes de uma alteração visual maior, uma captura de tela do estado atual pode servir como referência para voltar atrás.
 
 ## Teste você mesmo
 

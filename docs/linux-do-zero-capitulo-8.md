@@ -36,18 +36,29 @@ Antes de pesquisar, responda:
 
 Uma descrição como “o Wi-Fi cai depois de voltar da suspensão” é muito mais útil que “Linux está com problema na internet”.
 
+### Ficha rápida de diagnóstico
+
+Antes de pedir ajuda, tente registrar:
+
+- distribuição e versão;
+- versão do kernel;
+- modelo do computador ou hardware relevante;
+- o que você estava tentando fazer;
+- mensagem exata exibida;
+- o que mudou recentemente.
+
 ## Passo 2 — Colete informações sem alterar nada
 
 Alguns comandos de consulta ajudam a entender o ambiente:
 
 ```bash
-uname -a
+uname -r
 cat /etc/os-release
 free -h
 df -h
 ```
 
-Eles mostram versão do kernel, distribuição, memória e espaço em disco sem modificar o sistema.
+Eles mostram versão do kernel, distribuição, memória e espaço em disco sem modificar o sistema. Essa diferença é importante: alguns comandos **consultam** o estado; outros **alteram** arquivos ou configurações. Antes de executar algo encontrado online, pergunte: “isso só observa ou modifica alguma coisa?”.
 
 > **DICA DO DEJOTA**
 > Antes de mexer, registre o estado atual. Uma captura de tela ou um arquivo de texto com a mensagem original pode economizar muito tempo depois.
@@ -66,6 +77,21 @@ Prefira nesta ordem:
 
 > **ATENÇÃO**
 > Data importa. Uma solução correta para uma versão antiga pode ser inadequada hoje. Compare a versão do seu sistema com a do tutorial.
+
+### Sinais de uma solução suspeita
+
+Desconfie quando a instrução:
+
+- manda desativar uma proteção sem explicar o motivo;
+- coloca `sudo` em tudo;
+- pede para apagar arquivos do sistema por tentativa;
+- baixa e executa um script desconhecido diretamente;
+- não informa para quais versões funciona;
+- não explica o que será alterado nem como desfazer;
+- promete “corrigir qualquer Linux” com um único comando.
+
+> **ATENÇÃO**
+> Antes de publicar logs, capturas de tela ou saída do terminal, confira se não há nome de usuário, caminhos pessoais, e-mail, chaves, tokens ou outros dados sensíveis.
 
 ## Passo 4 — Leia o comando antes de copiar
 
@@ -87,7 +113,11 @@ Se você não consegue responder, ainda não está pronto para executar.
 
 Se você aplicar cinco soluções seguidas e o problema desaparecer, não saberá qual delas resolveu. Pior: pode ter criado outro problema escondido.
 
-Anote cada tentativa e o resultado.
+Anote cada tentativa e o resultado. Um registro simples já ajuda:
+
+| Tentativa | O que mudei | Resultado | Desfiz? |
+|---|---|---|---|
+| 1 |  |  |  |
 
 ## Passo 6 — Saiba quando parar
 
@@ -96,6 +126,7 @@ Pare antes de continuar se a solução pedir:
 - apagar partições;
 - alterar bootloader sem backup;
 - desativar proteções que você não entende;
+- desativar criptografia ou mecanismos de boot sem entender o efeito;
 - trocar permissões de grandes partes do sistema;
 - executar script desconhecido como administrador;
 - remover muitos pacotes essenciais.
