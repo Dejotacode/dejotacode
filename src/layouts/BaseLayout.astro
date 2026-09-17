@@ -1,4 +1,6 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -37,10 +39,14 @@ const ogRouteKey =
         .replace(/^\/+|\/+$/g, "")
         .replaceAll("/", "--");
 
-const socialImage = new URL(
-  image ?? `/assets/og/${ogRouteKey}.png`,
-  Astro.site ?? Astro.url.origin,
-);
+const routeSocialImagePath = `/assets/og/${ogRouteKey}.png`;
+const routeSocialImageFile = join(process.cwd(), "public", routeSocialImagePath);
+const socialImagePath =
+  image ??
+  (existsSync(routeSocialImageFile)
+    ? routeSocialImagePath
+    : "/assets/brand/opengraph-dark.png");
+const socialImage = new URL(socialImagePath, Astro.site ?? Astro.url.origin);
 const socialImageAlt = imageAlt ?? pageTitle;
 ---
 
