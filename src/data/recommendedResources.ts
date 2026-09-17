@@ -21,13 +21,14 @@ export const recommendedResources: RecommendedResource[] = [
   { id: "github", name: "GitHub", category: "infraestrutura", description: "Serviço usado para hospedar repositórios e colaborar em projetos.", bestFor: "Portfólio técnico, colaboração e automação de qualidade.", limitation: "Recursos avançados e privados podem depender do plano escolhido.", href: "https://docs.github.com/", cta: "Abrir documentação oficial", priceLabel: "Plano gratuito disponível", relationship: "none", lastReviewed: "17/09/2026" },
   { id: "cloudflare", name: "Cloudflare", category: "infraestrutura", description: "Plataforma de infraestrutura usada para publicação e serviços de borda.", bestFor: "Projetos web que precisam começar pequenos e crescer com controle.", limitation: "Os limites e produtos exigem leitura cuidadosa antes de publicar.", href: "https://developers.cloudflare.com/", cta: "Abrir documentação oficial", priceLabel: "Plano gratuito disponível", relationship: "none", lastReviewed: "17/09/2026" },
   { id: "linux", name: "Linux Foundation", category: "aprendizado", description: "Referência para conhecer o ecossistema Linux e continuar os estudos.", bestFor: "Iniciantes que desejam entender Linux além de comandos isolados.", limitation: "Parte do conteúdo e de alguns cursos está disponível apenas em inglês.", href: "https://www.linuxfoundation.org/", cta: "Abrir site oficial", priceLabel: "Conteúdo gratuito e opções pagas", relationship: "none", lastReviewed: "17/09/2026" },
+  { id: "ebook-programacao-hotmart", name: "Programação do Iniciante ao Avançado", category: "aprendizado", description: "E-book de terceiro sobre lógica, desenvolvimento web, backend, sistemas e carreira em tecnologia.", bestFor: "Iniciantes que procuram uma visão ampla de diferentes áreas da programação.", limitation: "O DejotaCode não adquiriu nem avaliou o conteúdo completo; a página da Hotmart exibe apenas uma avaliação pública.", href: "https://go.hotmart.com/L107650536L", cta: "Ver detalhes na Hotmart", priceLabel: "E-book pago · preço sujeito a alteração", relationship: "affiliate", lastReviewed: "17/09/2026" },
 ];
 
 const resourcesById = new Map(recommendedResources.map((resource) => [resource.id, resource]));
 
 export const articleResourceIds: Record<string, string[]> = {
-  "primeiro-site-html-css": ["vscode", "github"],
-  "devtools-navegador-iniciantes": ["vscode", "astro"],
+  "primeiro-site-html-css": ["vscode", "ebook-programacao-hotmart"],
+  "devtools-navegador-iniciantes": ["astro", "ebook-programacao-hotmart"],
   "comandos-linux-para-iniciantes": ["linux", "git"],
 };
 
