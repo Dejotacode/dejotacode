@@ -2,6 +2,29 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## [1.16.0] - 2026-09-16
+
+### Adicionado
+
+- Fluxo de revisão manual persistente para mídias que exigem decisão humana.
+- Filtro `Segurança` na biblioteca para isolar `Em uso`, `Possivelmente órfã` e `Requer revisão`.
+- Estados humanos `pendente`, `manter` e `candidata`, com nota opcional.
+- Ações `Manter`, `Marcar candidata` e `Reabrir revisão` sem alterar os bytes do R2.
+
+### Segurança e escopo
+
+- Nenhuma exclusão automática ou manual de mídia foi adicionada ao Admin.
+- A decisão humana é armazenada como metadado operacional no D1 e é reversível.
+- Git/Markdown continua sendo a fonte canônica do conteúdo público.
+- Nenhuma alteração em CTA, funil, campanhas ou taxonomia de analytics.
+
+### Validação em produção
+
+- Única mídia em revisão identificada como `Capa temporária do artigo Primeiros passos no DejotaCode`.
+- Revisão persistida como `candidate` com nota explicativa.
+- 22 mídias permaneceram com revisão `pending`; nenhum objeto foi removido do R2.
+- Smoke de produção: 10/10 verificações aprovadas.
+
 ## [1.15.0] - 2026-09-16
 
 ### Adicionado
