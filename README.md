@@ -1,6 +1,44 @@
-# DejotaCode
+<p align="center">
+  <img src="public/assets/brand/dejotacode-app-icon.svg" width="72" alt="Símbolo DejotaCode" />
+</p>
 
-Portal educacional em tecnologia com foco em conteúdo prático para iniciantes, trilhas de aprendizagem, recursos, portfólio e geração de leads.
+<h1 align="center">Joceilton F. Santos · DejotaCode</h1>
+
+<p align="center">
+  Desenvolvedor e criador do <strong>DejotaCode</strong> — tecnologia prática para quem está começando.
+</p>
+
+<p align="center">
+  <a href="https://dejotacode.com.br">Site</a> ·
+  <a href="https://dejotacode.com.br/portfolio/">Portfólio</a> ·
+  <a href="https://github.com/Dejotacode/dejotacode-api">API</a>
+</p>
+
+<p align="center">
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=white">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
+  <img alt="Cloudflare" src="https://img.shields.io/badge/Cloudflare-F38020?logo=cloudflare&logoColor=white">
+  <img alt="Hono" src="https://img.shields.io/badge/Hono-E36002?logo=hono&logoColor=white">
+  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white">
+</p>
+
+## Sobre mim
+
+Sou o criador do **DejotaCode**, projeto que uso como laboratório real para desenvolvimento web, arquitetura edge, UX/UI, SEO, automação, segurança operacional e produto digital.
+
+Meu foco atual é construir experiências simples para iniciantes sem abrir mão de engenharia verificável: mudanças isoladas em branches, Pull Requests, CI, releases versionadas, documentação operacional e validações explícitas antes de ações críticas.
+
+## Projeto em destaque
+
+O **DejotaCode** é uma plataforma educacional em tecnologia com blog, trilhas de aprendizagem, recursos, portfólio, newsletter e uma operação editorial própria. O frontend é estático com Astro e a API roda na edge da Cloudflare com Hono, Workers, D1 e R2.
+
+**Produção:** https://dejotacode.com.br
+
+**API:** https://api.dejotacode.com.br
+
+**Release atual do frontend:** `v1.21.0`
+
+**Release atual da API:** `v1.11.0`
 
 ## Visão geral
 
@@ -84,15 +122,9 @@ O workflow `.github/workflows/ci.yml` roda em:
 - todo `pull_request`;
 - todo `push` para `main`.
 
-O job usa permissões somente de leitura e executa:
+O job de qualidade usa permissões somente de leitura e executa instalação reproduzível, Astro check, build de produção e QA do HTML gerado.
 
-```bash
-npm ci
-npm run check
-npm run build:production
-```
-
-O workflow não faz deploy e não utiliza credenciais da Cloudflare.
+Em Pull Requests, o fluxo termina após a validação. Em `push` para `main`, um segundo job depende do sucesso do quality gate, gera novamente o build de produção, faz deploy no **Cloudflare Pages** e executa o smoke test de produção. A credencial da Cloudflare é fornecida somente ao job de deploy por GitHub Secret.
 
 ## Analytics
 
@@ -145,6 +177,7 @@ src/styles/          estilos e tokens visuais
 - [`docs/v1.11.0-operational-reconciliation.md`](docs/v1.11.0-operational-reconciliation.md) — reconciliação operacional após v1.10.0.
 - [`docs/r2-inventory-v1.11.0.md`](docs/r2-inventory-v1.11.0.md) — inventário read-only e estratégia de proteção da mídia R2.
 - [`docs/api-source-reconciliation-v1.9.0.md`](docs/api-source-reconciliation-v1.9.0.md) — reconciliação da fonte canônica da API e direção operacional.
+- [`docs/PAUSE-POINT-V1.21.0.md`](docs/PAUSE-POINT-V1.21.0.md) — ponto seguro de retomada após v1.21.0 / API v1.11.0.
 
 ## Segurança operacional
 
