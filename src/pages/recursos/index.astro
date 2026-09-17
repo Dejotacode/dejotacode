@@ -1,5 +1,64 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";import "../../styles/institutional.css";
-const resources=[{n:"01",name:"Astro",text:"Framework usado para construir páginas rápidas e orientadas a conteúdo.",url:"https://docs.astro.build/"},{n:"02",name:"Visual Studio Code",text:"Editor usado para escrever, organizar e revisar os arquivos do projeto.",url:"https://code.visualstudio.com/docs"},{n:"03",name:"Git",text:"Ferramenta que registra a evolução do código e permite retornar a pontos seguros.",url:"https://git-scm.com/doc"},{n:"04",name:"GitHub",text:"Serviço usado para hospedar repositórios e colaborar em projetos.",url:"https://docs.github.com/"},{n:"05",name:"Cloudflare",text:"Plataforma de infraestrutura usada no projeto para publicação e serviços de borda.",url:"https://developers.cloudflare.com/"},{n:"06",name:"Linux",text:"Sistema usado no ambiente de desenvolvimento e tema central das primeiras trilhas.",url:"https://www.linuxfoundation.org/"}];
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { recommendedResources } from "../../data/recommendedResources";
+import "../../styles/institutional.css";
+import "../../styles/resources.css";
+
+const groups = [
+  { id: "desenvolvimento", label: "Desenvolvimento", description: "Ferramentas para escrever, testar e versionar projetos." },
+  { id: "infraestrutura", label: "Infraestrutura", description: "Serviços usados para publicar e manter projetos web." },
+  { id: "aprendizado", label: "Aprendizado", description: "Referências para continuar estudando com fontes confiáveis." },
+] as const;
 ---
-<BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Explore ferramentas, documentações e referências utilizadas na construção do DejotaCode e recomendadas para aprender e trabalhar com tecnologia."><main id="conteudo" tabindex="-1" class="institutional-page"><header class="institutional-hero container"><p class="eyebrow">FERRAMENTAS E REFERÊNCIAS</p><h1>Recursos que usamos de verdade.</h1><p>Uma seleção transparente de ferramentas presentes no trabalho e nos conteúdos do DejotaCode.</p></header><section class="institutional-section container"><div class="institutional-grid">{resources.map(r=><article class="institutional-card"><span>{r.n}</span><h2>{r.name}</h2><p>{r.text}</p><a class="resource-link" href={r.url} target="_blank" rel="noopener noreferrer">Documentação oficial ↗</a></article>)}</div></section><section class="institutional-section container"><div class="notice"><strong>Transparência comercial</strong><p>Quando um recurso possuir link de afiliado ou patrocínio, essa relação será identificada claramente junto ao link.</p></div></section></main></BaseLayout>
+
+<BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Recursos avaliados com critérios claros, limitações e identificação transparente de qualquer relação comercial.">
+  <main id="conteudo" tabindex="-1" class="institutional-page">
+    <header class="institutional-hero container">
+      <p class="eyebrow">FERRAMENTAS E REFERÊNCIAS</p>
+      <h1>Recursos com contexto, não apenas links.</h1>
+      <p>Cada indicação informa para quem serve, suas limitações e se existe alguma relação comercial.</p>
+    </header>
+
+    <section class="institutional-section container resource-intro" aria-labelledby="transparencia-title">
+      <div class="notice">
+        <strong id="transparencia-title">Transparência comercial</strong>
+        <p>Atualmente, os recursos desta página usam links oficiais e não geram comissão. Se um link de afiliado for ativado, ele será identificado no próprio card antes do clique.</p>
+      </div>
+      <ol class="resource-principles" aria-label="Critérios de recomendação">
+        <li>Relação direta com os conteúdos do site.</li>
+        <li>Benefícios e limitações apresentados juntos.</li>
+        <li>Revisão periódica de links e informações.</li>
+      </ol>
+    </section>
+
+    <section class="institutional-section container resource-groups" aria-label="Recursos recomendados">
+      {groups.map((group) => (
+        <section aria-labelledby={`group-${group.id}`}>
+          <header class="resource-group__heading">
+            <div>
+              <p class="eyebrow">SELEÇÃO EDITORIAL</p>
+              <h2 id={`group-${group.id}`}>{group.label}</h2>
+            </div>
+            <p>{group.description}</p>
+          </header>
+          <div class="institutional-grid">
+            {recommendedResources.filter((resource) => resource.category === group.id).map((resource) => (
+              <article class="institutional-card resource-card">
+                <div class="resource-card__meta">
+                  <span>{resource.priceLabel}</span>
+                  <span>{resource.relationship === "affiliate" ? "Link de afiliado" : "Sem comissão"}</span>
+                </div>
+                <h3>{resource.name}</h3>
+                <p>{resource.description}</p>
+                <p><strong>Indicado para:</strong> {resource.bestFor}</p>
+                <p><strong>Limitação:</strong> {resource.limitation}</p>
+                <a class="resource-link" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} ↗</a>
+                <p class="resource-review-date">Revisado em {resource.lastReviewed}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </section>
+  </main>
+</BaseLayout>
