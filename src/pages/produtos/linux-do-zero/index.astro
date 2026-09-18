@@ -25,6 +25,14 @@ const bookSchema = {
   numberOfPages: 88,
   url: canonicalUrl.href,
   description: "E-book prático de Linux para iniciantes, com instalação segura, primeiros passos, terminal, permissões e solução de problemas.",
+  offers: {
+    "@type": "Offer",
+    price: "19.90",
+    priceCurrency: "BRL",
+    availability: "https://schema.org/InStock",
+    url: "https://pay.kiwify.com.br/hT8bZNY",
+    seller: { "@type": "Organization", name: "DejotaCode" },
+  },
 };
 ---
 
@@ -33,7 +41,7 @@ const bookSchema = {
   description="Aprenda Linux desde o primeiro passo com um e-book de 88 páginas, exemplos práticos, imagens reais e explicações pensadas para iniciantes."
   image="/assets/products/linux-do-zero/cover.png"
   imageAlt="Capa do e-book Linux do Zero, do DejotaCode"
-  robots="noindex, follow"
+  robots="index, follow"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(bookSchema)} />
 
@@ -47,7 +55,7 @@ const bookSchema = {
             <span aria-current="page">Linux do Zero</span>
           </nav>
 
-          <p class="eyebrow">E-BOOK DEJOTACODE · PRÉ-LANÇAMENTO</p>
+          <p class="eyebrow">E-BOOK DEJOTACODE · DISPONÍVEL AGORA</p>
           <h1>Linux do Zero, sem pular os passos que fazem diferença.</h1>
           <p class="product-lead">
             Um guia de 88 páginas para quem quer entender Linux, testar com segurança,
@@ -62,12 +70,20 @@ const bookSchema = {
             <span>Português</span>
           </div>
 
+          <div class="product-price" aria-label="Preço do e-book">
+            <span>Preço de lançamento</span>
+            <strong>R$ 19,90</strong>
+            <small>Pagamento processado pela Kiwify. Acesso liberado após a aprovação da compra.</small>
+          </div>
+
           <div class="product-actions">
             <a
               class="button button-primary"
-              href="/newsletter/?resource=linux-do-zero-ebook-interesse"
-              data-analytics-cta="product-linux-ebook-interest"
-            >Quero ser avisado no lançamento <span aria-hidden="true">→</span></a>
+              href="https://pay.kiwify.com.br/hT8bZNY"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-cta="product-linux-buy-kiwify-hero"
+            >Comprar Linux do Zero <span aria-hidden="true">↗</span></a>
             <a
               class="button button-secondary"
               href="/trilhas/linux-do-zero/"
@@ -76,8 +92,7 @@ const bookSchema = {
           </div>
 
           <p class="product-status">
-            O e-book está concluído. Preço, checkout e entrega comercial ainda estão sendo
-            preparados; por isso esta página permanece em pré-lançamento.
+            Compra segura pelo checkout da Kiwify. Você tem 7 dias após a compra para solicitar reembolso.
           </p>
         </div>
 
@@ -204,12 +219,12 @@ const bookSchema = {
 
     <section class="product-section container" aria-labelledby="faq-title">
       <div class="product-section__heading">
-        <div><p class="eyebrow">DÚVIDAS COMUNS</p><h2 id="faq-title">Antes do lançamento</h2></div>
+        <div><p class="eyebrow">DÚVIDAS COMUNS</p><h2 id="faq-title">Antes de comprar</h2></div>
       </div>
       <div class="product-faq">
         <details open>
-          <summary>O e-book já está pronto?</summary>
-          <p>Sim. A edição v0.7 está concluída em PDF, com 88 páginas. O que ainda está sendo preparado é a parte comercial: preço, checkout e entrega.</p>
+          <summary>Como recebo o e-book?</summary>
+          <p>Após a aprovação do pagamento, a Kiwify envia as instruções de acesso ao produto digital. O Linux do Zero é entregue pela área de membros da plataforma.</p>
         </details>
         <details>
           <summary>Preciso saber Linux antes?</summary>
@@ -220,8 +235,12 @@ const bookSchema = {
           <p>Sim. A trilha Linux do Zero e os artigos do DejotaCode continuam disponíveis gratuitamente.</p>
         </details>
         <details>
-          <summary>Qual será o preço?</summary>
-          <p>O preço ainda não foi definido. Ele será informado nesta página antes da abertura do checkout.</p>
+          <summary>Qual é o preço?</summary>
+          <p>O preço de lançamento do Linux do Zero é R$ 19,90, em pagamento único.</p>
+        </details>
+        <details>
+          <summary>Posso pedir reembolso?</summary>
+          <p>Sim. Compras feitas pela Kiwify têm prazo de 7 dias após a compra para solicitação de reembolso.</p>
         </details>
       </div>
     </section>
@@ -230,10 +249,10 @@ const bookSchema = {
       <div class="container">
         <div>
           <p class="eyebrow">PRÓXIMO PASSO</p>
-          <h2>Quer saber quando o Linux do Zero estiver disponível?</h2>
-          <p>Entre na lista de interesse. Sem compromisso de compra.</p>
+          <h2>Pronto para começar no Linux com uma base mais segura?</h2>
+          <p>Leve o e-book Linux do Zero por R$ 19,90 e avance no seu ritmo.</p>
         </div>
-        <a class="button button-primary" href="/newsletter/?resource=linux-do-zero-ebook-interesse" data-analytics-cta="product-linux-ebook-interest-final">Quero ser avisado <span aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-final">Comprar por R$ 19,90 <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
