@@ -15,7 +15,7 @@ except ImportError as exc:
         "python3 -m pip install -r requirements-linux-ebook.txt"
     ) from exc
 
-EXPECTED_PAGES = 85
+EXPECTED_PAGES = 88
 CHAPTERS = [
     (5, 7, "Bem-vindo ao mundo do Linux - sem medo"),
     (9, 13, "Linux sem medo: o que é e onde ele aparece"),
@@ -48,22 +48,38 @@ def chapter_title(page_number):
 def make_overlay(width, height, title, page_number):
     packet = io.BytesIO()
     pdf = canvas.Canvas(packet, pagesize=(width, height))
-    pdf.setFillColor(HexColor("#eef4fb"))
-    pdf.rect(0, height - 34, width, 34, stroke=0, fill=1)
-    pdf.setFillColor(HexColor("#075ee8"))
-    pdf.rect(0, height - 34, width, 1.3, stroke=0, fill=1)
-    pdf.setFillColor(HexColor("#203a63"))
-    pdf.setFont("NotoSans-Bold", 6.8)
-    pdf.drawString(20, height - 21, f"LINUX DO ZERO  |  {title}".upper())
 
-    pdf.setFillColor(HexColor("#071a35"))
-    pdf.rect(0, 0, width, 37, stroke=0, fill=1)
-    pdf.setFillColor(HexColor("#19adff"))
-    pdf.rect(0, 37, width, 1.3, stroke=0, fill=1)
-    pdf.setFillColor(HexColor("#e8f3ff"))
+    left = 20 * 72 / 25.4
+    right = width - (17 * 72 / 25.4)
+    line_color = HexColor("#aebdce")
+    text_color = HexColor("#334a66")
+    accent = HexColor("#00a9c2")
+
+    # Cabeçalho vazado: alinhado ao mesmo grid do conteúdo.
+    header_y = height - 28
+    pdf.setStrokeColor(line_color)
+    pdf.setLineWidth(0.45)
+    pdf.line(left, header_y - 8, right, header_y - 8)
+    pdf.setFillColor(text_color)
+    pdf.setFont("NotoSans-Bold", 6.7)
+    pdf.drawString(left, header_y, "LINUX DO ZERO")
     pdf.setFont("NotoSans", 6.6)
-    footer = f"DejotaCode - dejotacode.com.br  |  {page_number}"
-    pdf.drawString(20, 15, footer)
+    pdf.drawRightString(right, header_y, title.upper())
+
+    # Rodapé vazado: marca à esquerda e fólio à direita.
+    footer_y = 17
+    pdf.setStrokeColor(line_color)
+    pdf.setLineWidth(0.45)
+    pdf.line(left, footer_y + 12, right, footer_y + 12)
+    pdf.setStrokeColor(accent)
+    pdf.setLineWidth(1.15)
+    pdf.line(left, footer_y + 12, left + 16, footer_y + 12)
+    pdf.setFillColor(text_color)
+    pdf.setFont("NotoSans", 6.5)
+    pdf.drawString(left, footer_y, "DejotaCode · dejotacode.com.br")
+    pdf.setFont("NotoSans-Bold", 6.7)
+    pdf.drawRightString(right, footer_y, str(page_number))
+
     pdf.save()
     packet.seek(0)
     return PdfReader(packet).pages[0]

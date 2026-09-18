@@ -94,7 +94,7 @@ O terminal exibirá uma sequência longa de letras e números. Compare exatament
 Se o valor não coincidir, não continue. Apague o arquivo e faça o download novamente a partir da fonte oficial.
 
 > **ATENÇÃO**
-> Um checksum correspondente confirma que o arquivo baixado é igual ao arquivo representado pelo valor publicado. Para confirmar também a autenticidade desse valor, alguns projetos fornecem assinaturas criptográficas. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.
+> Um checksum correspondente confirma que o arquivo baixado corresponde ao valor publicado. Para verificar também a origem e a autenticidade desse valor, alguns projetos fornecem uma assinatura criptográfica do arquivo de checksums ou da própria imagem. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.
 
 ## Passo 4 — Crie o pendrive inicializável
 

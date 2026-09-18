@@ -17,6 +17,7 @@
     <div class="eyebrow">DejotaCode · Edição 2026</div>
     <h1>Linux<br>do Zero</h1>
     <p>Guia prático para começar com segurança, entender o sistema e ganhar autonomia.</p>
+    <div class="cover-author">Por Dejota</div>
   </div>
   <div class="cover-footer"><span>Tecnologia explicada de forma simples, prática e responsável.</span><span>DejotaCode</span></div>
 </section>
@@ -40,6 +41,8 @@
 <li><a href="#c07"><span>Capítulo 7</span><strong>Arquivos, usuários e permissões sem mistério</strong></a></li>
 <li><a href="#c08"><span>Capítulo 8</span><strong>Problemas comuns e como procurar solução com segurança</strong></a></li>
 <li><a href="#bonus"><span>Bônus</span><strong>Materiais de consulta e prática</strong></a></li>
+<li><a href="#references"><span>Referências</span><strong>Fontes oficiais e recursos para continuar</strong></a></li>
+<li><a href="#thanks"><span>Agradecimento</span><strong>Obrigado por chegar até aqui</strong></a></li>
 <li><a href="#author"><span>Sobre o autor</span><strong>Dejota e o propósito do DejotaCode</strong></a></li></ol>
 </section>
 <section class="chapter-opener" id="intro">
@@ -247,25 +250,25 @@
 <p>Nenhuma dessas descrições significa “melhor” ou “pior”. Elas mostram perfis diferentes.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Se sua prioridade é…</th>
 <th>Vale conhecer primeiro</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>seguir as telas e práticas deste livro</td>
 <td>Ubuntu LTS</td>
 </tr>
-<tr class="even">
+<tr>
 <td>uma interface de desktop mais tradicional</td>
 <td>Linux Mint</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>tecnologias recentes em uma versão estável</td>
 <td>Fedora Workstation</td>
 </tr>
-<tr class="even">
+<tr>
 <td>uma base conhecida por estabilidade</td>
 <td>Debian</td>
 </tr>
@@ -389,7 +392,7 @@
 <div class="sourceCode" id="c03-cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c03-cb1-1"><a href="#c03-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sha256sum</span> nome-do-arquivo.iso</span></code></pre></div>
 <p>O terminal exibirá uma sequência longa de letras e números. Compare exatamente com o valor publicado pelo projeto oficial.</p>
 <p>Se o valor não coincidir, não continue. Apague o arquivo e faça o download novamente a partir da fonte oficial.</p>
-<blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Um checksum correspondente confirma que o arquivo baixado é igual ao arquivo representado pelo valor publicado. Para confirmar também a autenticidade desse valor, alguns projetos fornecem assinaturas criptográficas. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.</p>
+<blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Um checksum correspondente confirma que o arquivo baixado corresponde ao valor publicado. Para verificar também a origem e a autenticidade desse valor, alguns projetos fornecem uma assinatura criptográfica do arquivo de checksums ou da própria imagem. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.</p>
 </blockquote>
 <h2 id="c03-passo-4-crie-o-pendrive-inicializável">Passo 4 — Crie o pendrive inicializável</h2>
 <p>Para iniciar o computador pela ISO, você precisa <strong>gravar</strong> a imagem no pendrive usando uma ferramenta apropriada. Copiar o arquivo <code>.iso</code> para o pendrive como se fosse uma foto não produz a mesma coisa.</p>
@@ -1007,13 +1010,13 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Usar a forma simbólica, como <code>u+x</code>, ajuda o iniciante a enxergar a intenção. Números como <code>755</code> existem e são comuns, mas não precisam ser seu primeiro idioma de permissões.</p>
 </blockquote>
 <h2 id="c07-passo-4-entenda-sudo">Passo 4 — Entenda <code>sudo</code></h2>
-<p><code>sudo</code> permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada.</p>
-<p>Ele não é um prefixo mágico para fazer comandos “funcionarem”. A senha confirma sua identidade; <strong>ela não valida o comando nem garante que ele seja seguro</strong>.</p>
+<p><code>sudo</code> permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada. Quando o sistema solicitar autenticação, normalmente você confirma sua identidade segundo a política configurada; isso não confirma que o comando seja seguro.</p>
+<p>Ele não é um prefixo mágico para fazer comandos “funcionarem”. A autenticação funciona como uma barreira de autorização; <strong>ela não revisa o comando nem garante que ele seja seguro</strong>.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Se um comando falhou e você não entendeu o motivo, não coloque <code>sudo</code> automaticamente na frente. Primeiro descubra o que ele tenta modificar.</p>
 </blockquote>
 <p>Use a pausa da autenticação a seu favor: releia o comando antes de confirmar. Nem todo comando com <code>sudo</code> é perigoso, e nem todo comando sem <code>sudo</code> é inofensivo. O que importa é entender o que ele faz e onde atua.</p>
 <h2 id="c07-passo-5-evite-permissões-amplas-demais">Passo 5 — Evite permissões amplas demais</h2>
-<p>Você pode encontrar na internet soluções do tipo “use <code>chmod 777</code>”. Isso dá leitura, escrita e execução para todos os grupos de permissão naquele item.</p>
+<p>Você pode encontrar na internet soluções do tipo “use <code>chmod 777</code>”. Isso dá leitura, escrita e execução ao dono, ao grupo e aos demais usuários naquele item.</p>
 <div class="keep-together"><p>Às vezes há cenários técnicos específicos, mas para resolver um erro comum de iniciante quase sempre é um sinal para investigar melhor.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> A melhor permissão é a menor que permite a tarefa legítima acontecer. Mais acesso não significa mais correto.</p>
 </blockquote></div>
@@ -1146,7 +1149,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <p>Anote cada tentativa e o resultado. Um registro simples já ajuda:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Tentativa</th>
 <th>O que mudei</th>
 <th>Resultado</th>
@@ -1154,7 +1157,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td></td>
 <td></td>
@@ -1270,109 +1273,109 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Comando</th>
 <th>Para que serve</th>
 <th>Exemplo seguro</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>pwd</code></td>
 <td>mostrar a pasta atual</td>
 <td><code>pwd</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>ls</code></td>
 <td>listar arquivos e pastas</td>
 <td><code>ls -la</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>cd</code></td>
 <td>mudar de pasta</td>
 <td><code>cd ~/linux-do-zero-lab</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>mkdir</code></td>
 <td>criar pasta</td>
 <td><code>mkdir projetos</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>touch</code></td>
 <td>criar arquivo vazio</td>
 <td><code>touch notas.txt</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>cp</code></td>
 <td>copiar</td>
 <td><code>cp notas.txt copia.txt</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>mv</code></td>
 <td>mover ou renomear</td>
 <td><code>mv copia.txt arquivo.txt</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>cat</code></td>
 <td>mostrar conteúdo curto</td>
 <td><code>cat notas.txt</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>less</code></td>
 <td>ler conteúdo maior</td>
 <td><code>less /etc/os-release</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>head</code></td>
 <td>mostrar o início</td>
 <td><code>head /etc/os-release</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>tail</code></td>
 <td>mostrar o final</td>
 <td><code>tail /etc/os-release</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>grep</code></td>
 <td>procurar texto</td>
 <td><code>grep NAME /etc/os-release</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>find</code></td>
 <td>localizar arquivos</td>
 <td><code>find ~/linux-do-zero-lab -name "*.txt"</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>df</code></td>
 <td>consultar espaço dos sistemas de arquivos</td>
 <td><code>df -h</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>du</code></td>
 <td>consultar espaço ocupado</td>
 <td><code>du -sh ~/linux-do-zero-lab</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>free</code></td>
 <td>consultar memória</td>
 <td><code>free -h</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>uname</code></td>
 <td>consultar a versão do kernel</td>
 <td><code>uname -r</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>whoami</code></td>
 <td>mostrar usuário atual</td>
 <td><code>whoami</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>man</code></td>
 <td>abrir o manual</td>
 <td><code>man ls</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>history</code></td>
 <td>mostrar histórico de comandos</td>
 <td><code>history</code></td>
@@ -1451,6 +1454,58 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <h2 id="bonus-fechamento-dos-bônus">Fechamento dos bônus</h2>
 <p>Use esses materiais como ferramentas de apoio, não como tarefas obrigatórias. O objetivo do livro é fazer você depender menos de listas prontas e mais da sua capacidade de entender, consultar e decidir com segurança.</p>
 </main>
+<section class="special-page" id="references">
+  <div class="special-page-inner">
+    <div class="eyebrow">Referências</div>
+    <div class="rule"></div>
+    <h1>Referências e recursos oficiais</h1>
+    <p class="special-kicker">Fontes confiáveis para verificar, aprofundar e continuar aprendendo.</p>
+    <div class="content special-content"><p>Este livro foi pensado para iniciantes, mas informação técnica muda com o tempo. Quando uma tela, versão ou procedimento estiver diferente, comece pela documentação oficial do projeto que você está usando.</p>
+<h2 id="references-fontes-principais">Fontes principais</h2>
+<ul>
+<li><p><strong>Ubuntu Desktop Documentation</strong> — instalação, configuração inicial, atualizações e uso do Ubuntu.<br />
+<a href="https://documentation.ubuntu.com/desktop/" class="uri">https://documentation.ubuntu.com/desktop/</a></p></li>
+<li><p><strong>Ubuntu — Install Ubuntu Desktop</strong> — referência oficial do processo de instalação.<br />
+<a href="https://ubuntu.com/tutorials/install-ubuntu-desktop" class="uri">https://ubuntu.com/tutorials/install-ubuntu-desktop</a></p></li>
+<li><p><strong>The Linux Kernel Documentation</strong> — documentação oficial do kernel Linux.<br />
+<a href="https://docs.kernel.org/" class="uri">https://docs.kernel.org/</a></p></li>
+<li><p><strong>GNU Coreutils</strong> — referência dos utilitários fundamentais de arquivos, texto e sistema usados no terminal.<br />
+<a href="https://www.gnu.org/software/coreutils/manual/" class="uri">https://www.gnu.org/software/coreutils/manual/</a></p></li>
+<li><p><strong>Debian Documentation</strong> — guias, referência, instalação e notas de versão do Debian.<br />
+<a href="https://www.debian.org/doc/" class="uri">https://www.debian.org/doc/</a></p></li>
+<li><p><strong>Linux Mint Documentation</strong> — guia de instalação, guia do usuário e solução de problemas.<br />
+<a href="https://linuxmint.com/documentation.php" class="uri">https://linuxmint.com/documentation.php</a></p></li>
+</ul>
+<h2 id="references-para-continuar-estudando">Para continuar estudando</h2>
+<ul>
+<li><p><strong>ArchWiki</strong> — referência técnica ampla e muito útil, inclusive para quem usa outras distribuições. Alguns procedimentos são específicos do Arch Linux; compare sempre com a documentação da sua distribuição.<br />
+<a href="https://wiki.archlinux.org/" class="uri">https://wiki.archlinux.org/</a></p></li>
+<li><p><strong>Manual local do sistema</strong> — no terminal, use <code>man comando</code> para consultar a documentação instalada da ferramenta.</p></li>
+</ul>
+<blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Não tente memorizar toda a documentação. Aprender a localizar a fonte certa, verificar a versão e entender o que será alterado é uma habilidade mais valiosa.</p>
+</blockquote>
+<p><strong>Consulta editorial das fontes:</strong> setembro de 2026.</p>
+</div>
+  </div>
+</section>
+<section class="special-page" id="thanks">
+  <div class="special-page-inner">
+    <div class="eyebrow">Agradecimento</div>
+    <div class="rule"></div>
+    <h1>Obrigado por chegar até aqui</h1>
+    <p class="special-kicker">O fim deste livro é só o começo da sua prática.</p>
+    <div class="content special-content"><p>Se você começou este livro com curiosidade, insegurança ou até um pouco de medo de “quebrar alguma coisa”, espero que agora o Linux pareça menos distante.</p>
+<p>Você não precisa decorar todos os comandos, conhecer todas as distribuições ou resolver qualquer problema sozinho. O objetivo sempre foi outro: <strong>entender o que está fazendo, praticar com segurança e ganhar autonomia aos poucos.</strong></p>
+<p>Cada instalação concluída, cada comando compreendido e cada problema investigado com calma faz parte desse processo.</p>
+<p>Continue experimentando. Continue perguntando. E, quando algo não fizer sentido, volte ao básico: leia a mensagem, procure uma fonte confiável e faça uma mudança de cada vez.</p>
+<p>Obrigado por confiar no <strong>Linux do Zero</strong> e no <strong>DejotaCode</strong> para acompanhar esse começo.</p>
+<blockquote class="callout note"><p><strong>Tecnologia não precisa ser complicada. Ela precisa fazer sentido na sua vida.</strong></p>
+</blockquote>
+<p><strong>— Dejota</strong></p>
+<p><strong>DejotaCode · Feito para quem constrói o futuro.</strong></p>
+</div>
+  </div>
+</section>
 <section class="author-page author-page-v06" id="author">
   <header class="author-header">
     <div class="author-book"><strong>LINUX DO ZERO</strong><span>Seu primeiro passo no mundo Linux</span></div>
@@ -1477,7 +1532,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
         <div class="stage-geo stage-geo-a"></div><div class="stage-geo stage-geo-b"></div>
         <div class="stage-dots"></div>
         <div class="stage-kicker">CONHECIMENTO<br>ABRE<br>CAMINHOS<div></div></div>
-        <img class="author-photo-cutout" src="../../assets/linux-do-zero/author-v06/dejota-author-cutout.png" alt="Retrato de Dejota, criador do DejotaCode.">
+        <img class="author-photo-approved" src="../../assets/linux-do-zero/author-v06/dejota-author-approved.jpg" alt="Retrato de Dejota, criador do DejotaCode.">
       </div>
 
       <div class="author-quote-v06"><strong>“</strong><span>Tecnologia não precisa<br>ser complicada.<br>Ela precisa fazer sentido<br>na sua vida.</span><small>DEJOTA</small></div>
@@ -1499,6 +1554,17 @@ Som: valide saída, volume e entrada no seu próprio hardware.
   </div>
 
   <footer class="author-page-footer"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i></footer>
+</section>
+<section class="back-cover">
+  <div class="back-grid"></div>
+  <div class="back-accent"></div>
+  <div class="back-copy">
+    <div class="eyebrow">DejotaCode · Linux do Zero</div>
+    <h1>Seu primeiro passo<br>não precisa ser<br>complicado.</h1>
+    <p>Um guia para começar no Linux com segurança, entender o que está fazendo e construir autonomia sem depender de receitas prontas.</p>
+    <ul><li>Entenda antes de executar.</li><li>Pratique com exemplos seguros.</li><li>Aprenda onde procurar quando algo mudar.</li></ul>
+  </div>
+  <div class="back-footer"><strong>DejotaCode</strong><span>dejotacode.com.br · Feito para quem constrói o futuro.</span></div>
 </section>
 </body>
 </html>

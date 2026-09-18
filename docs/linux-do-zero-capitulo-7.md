@@ -98,9 +98,9 @@ ls -l ola.sh
 
 ## Passo 4 — Entenda `sudo`
 
-`sudo` permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada.
+`sudo` permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada. Quando o sistema solicitar autenticação, normalmente você confirma sua identidade segundo a política configurada; isso não confirma que o comando seja seguro.
 
-Ele não é um prefixo mágico para fazer comandos “funcionarem”. A senha confirma sua identidade; **ela não valida o comando nem garante que ele seja seguro**.
+Ele não é um prefixo mágico para fazer comandos “funcionarem”. A autenticação funciona como uma barreira de autorização; **ela não revisa o comando nem garante que ele seja seguro**.
 
 > **ATENÇÃO**
 > Se um comando falhou e você não entendeu o motivo, não coloque `sudo` automaticamente na frente. Primeiro descubra o que ele tenta modificar.
@@ -109,7 +109,7 @@ Use a pausa da autenticação a seu favor: releia o comando antes de confirmar. 
 
 ## Passo 5 — Evite permissões amplas demais
 
-Você pode encontrar na internet soluções do tipo “use `chmod 777`”. Isso dá leitura, escrita e execução para todos os grupos de permissão naquele item.
+Você pode encontrar na internet soluções do tipo “use `chmod 777`”. Isso dá leitura, escrita e execução ao dono, ao grupo e aos demais usuários naquele item.
 
 Às vezes há cenários técnicos específicos, mas para resolver um erro comum de iniciante quase sempre é um sinal para investigar melhor.
 
