@@ -138,9 +138,12 @@ def inject_figures(key, markdown):
     return "\n".join(out)
 
 
-def markdown_to_html(markdown):
+def markdown_to_html(markdown, id_prefix=""):
+    command = ["pandoc", "--from=markdown+raw_html", "--to=html5", "--wrap=none"]
+    if id_prefix:
+        command.append(f"--id-prefix={id_prefix}-")
     proc = subprocess.run(
-        ["pandoc", "--from=markdown+raw_html", "--to=html5", "--wrap=none"],
+        command,
         input=markdown,
         text=True,
         capture_output=True,
@@ -215,7 +218,7 @@ def build_author_page():
         if line.startswith("Continue aprendendo em"):
             continue
         lines.append(line)
-    fragment = markdown_to_html("\n".join(lines).strip())
+    fragment = markdown_to_html("\n".join(lines).strip(), "author")
 
     icons = {
         "learn": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 9c7-2 13 0 19 4v27c-6-4-12-6-19-4V9Zm38 0c-7-2-13 0-19 4v27c6-4 12-6 19-4V9Z"/><path d="M24 13v27"/></svg>',
@@ -265,7 +268,7 @@ def build_author_page():
     <div class=\"author-cta-brand\"><img src=\"{AUTHOR_ASSET}/dejotacode-symbol-light.svg\" alt=\"Símbolo DejotaCode\"><div><strong>DejotaCode</strong><span>CONHECIMENTO ABRE CAMINHOS</span></div></div>
   </div>
 
-  <footer class=\"author-page-footer\"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i><b>85</b></footer>
+  <footer class=\"author-page-footer\"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i></footer>
 </section>"""
 
 
@@ -274,7 +277,7 @@ def build_html():
     sections = []
     for key, label, title in CHAPTERS:
         markdown = inject_figures(key, sources[key])
-        fragment = style_callouts(markdown_to_html(markdown))
+        fragment = style_callouts(markdown_to_html(markdown, key))
         sections.append(chapter_opener(key, label, title))
         sections.append(f'<main class="chapter-body content">{fragment}</main>')
 
