@@ -9,11 +9,10 @@ A v0.7 acrescenta navegação editorial discreta às páginas internas sem alter
 
 O sistema inclui:
 
-- `LINUX DO ZERO` no cabeçalho esquerdo;
-- título do capítulo corrente no cabeçalho direito;
-- `DEJOTACODE - dejotacode.com.br` no rodapé esquerdo;
-- número físico da página calculado automaticamente no rodapé direito;
-- linhas finas em azul e cinza alinhadas à identidade DejotaCode;
+- `LINUX DO ZERO` e o título do capítulo corrente em uma faixa contínua no cabeçalho;
+- `DEJOTACODE`, domínio e número físico calculado automaticamente em uma faixa contínua no rodapé;
+- faixa clara azulada no cabeçalho, com linha de destaque em azul DejotaCode;
+- faixa navy no rodapé, com linha e numeração em azul claro;
 - supressão do cabeçalho e do rodapé na capa, páginas iniciais, sumário, aberturas de capítulo e página Sobre o autor;
 - remoção do número `85` que estava fixo na página Sobre o autor.
 
