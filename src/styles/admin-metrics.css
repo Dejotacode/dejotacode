@@ -96,6 +96,10 @@
   margin-top: 2rem;
 }
 
+.funnel-cards--embedded {
+  margin-top: 1.25rem;
+}
+
 .metric-card {
   min-width: 0;
   padding: 1.25rem;
