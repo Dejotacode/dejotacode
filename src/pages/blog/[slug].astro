@@ -247,6 +247,17 @@ const articleSchema = {
             label={conversion.label}
             campaign={conversion.campaign}
           />
+
+          {currentTrail?.slug === "linux-do-zero" && (
+            <ConversionCTA
+              eyebrow="APROFUNDE O APRENDIZADO"
+              title="Quer continuar com o Linux do Zero em um material completo?"
+              description="O e-book Linux do Zero reúne 88 páginas para iniciantes, com instalação segura, terminal, permissões e solução de problemas. Preço de lançamento: R$ 19,90."
+              href="/produtos/linux-do-zero/"
+              label="Conhecer o e-book"
+              campaign="article-linux-ebook-product"
+            />
+          )}
         </div>
       </div>
     </article>
