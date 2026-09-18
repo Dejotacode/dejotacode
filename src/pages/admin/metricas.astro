@@ -30,6 +30,12 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         <div class="funnel-cards" data-funnel></div>
       </section>
 
+      <section class="metrics-section" aria-labelledby="linux-do-zero-funnel-title">
+        <h2 id="linux-do-zero-funnel-title">Linux do Zero</h2>
+        <p class="metrics-section__note">Funil agregado dos últimos 30 dias. Os valores representam eventos e cliques, não visitantes únicos.</p>
+        <div class="funnel-cards funnel-cards--embedded" data-linux-do-zero-funnel></div>
+      </section>
+
       <section class="metrics-section">
         <h2>Páginas mais lidas</h2>
         <p class="metrics-section__note">Ranking por visualizações agregadas no período.</p>
@@ -61,11 +67,21 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       total: number;
     };
 
+    type ProductFunnel = {
+      productPageViews: number;
+      articleToProductClicks: number;
+      trailToProductClicks: number;
+      productToCheckoutClicks: number;
+    };
+
     type SummaryData = {
       periodDays: number;
       totals: MetricItem[];
       pages: PageItem[];
       campaigns?: CampaignItem[];
+      productFunnel?: {
+        linuxDoZero?: ProductFunnel;
+      };
     };
 
     const root = document.querySelector<HTMLElement>("[data-api]");
@@ -120,10 +136,11 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     const renderSummary = (data: SummaryData) => {
       const totals = document.querySelector<HTMLElement>("[data-totals]");
       const funnel = document.querySelector<HTMLElement>("[data-funnel]");
+      const linuxDoZeroFunnel = document.querySelector<HTMLElement>("[data-linux-do-zero-funnel]");
       const pages = document.querySelector<HTMLElement>("[data-pages]");
       const campaigns = document.querySelector<HTMLElement>("[data-campaigns]");
 
-      if (!totals || !funnel || !pages || !campaigns) return;
+      if (!totals || !funnel || !linuxDoZeroFunnel || !pages || !campaigns) return;
 
       totals.replaceChildren();
       data.totals.forEach((item) => {
@@ -147,6 +164,19 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
       funnel.replaceChildren();
       funnelItems.forEach(([label, value]) => funnel.append(createMetricCard(label, value)));
+
+      const productFunnel = data.productFunnel?.linuxDoZero;
+      const linuxDoZeroItems: Array<[string, number]> = [
+        ["Visualizações da página", Number(productFunnel?.productPageViews ?? 0)],
+        ["Artigos → produto", Number(productFunnel?.articleToProductClicks ?? 0)],
+        ["Trilha → produto", Number(productFunnel?.trailToProductClicks ?? 0)],
+        ["Produto → checkout", Number(productFunnel?.productToCheckoutClicks ?? 0)],
+      ];
+
+      linuxDoZeroFunnel.replaceChildren();
+      linuxDoZeroItems.forEach(([label, value]) => {
+        linuxDoZeroFunnel.append(createMetricCard(label, numberFormat.format(value)));
+      });
 
       pages.replaceChildren();
       if (!data.pages.length) {
