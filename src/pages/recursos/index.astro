@@ -32,6 +32,30 @@ const hasAffiliateLinks = recommendedResources.some((resource) => resource.relat
       </ol>
     </section>
 
+    <section class="institutional-section container" aria-labelledby="materials-title">
+      <header class="resource-group__heading">
+        <div>
+          <p class="eyebrow">MATERIAIS DO DEJOTACODE</p>
+          <h2 id="materials-title">Criados aqui para aprofundar o aprendizado</h2>
+        </div>
+        <p>Produtos próprios aparecem separados das recomendações de terceiros para deixar clara a autoria e a relação comercial.</p>
+      </header>
+
+      <article class="institutional-card dejotacode-material-card">
+        <img src="/assets/products/linux-do-zero/cover.png" alt="Capa real do e-book Linux do Zero" loading="lazy" />
+        <div>
+          <div class="resource-card__meta">
+            <span>Produto próprio</span>
+            <span>Pré-lançamento</span>
+          </div>
+          <h3>Linux do Zero</h3>
+          <p>E-book de 88 páginas para iniciantes, com instalação segura, primeiros passos, terminal, permissões e solução de problemas.</p>
+          <p><strong>Indicado para:</strong> quem quer começar no Linux sem depender de conhecimento técnico prévio.</p>
+          <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="resource-linux-ebook-own">Conhecer o e-book</a>
+        </div>
+      </article>
+    </section>
+
     <section class="institutional-section container resource-groups" aria-label="Recursos recomendados">
       {groups.map((group) => (
         <section aria-labelledby={`group-${group.id}`}>

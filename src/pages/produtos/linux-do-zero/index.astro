@@ -1,0 +1,240 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/product.css";
+
+const chapters = [
+  ["01", "Linux sem medo", "Entenda o que é Linux e onde ele aparece no dia a dia."],
+  ["02", "Escolhendo sua primeira distribuição", "Critérios simples para escolher sem transformar a decisão em um labirinto."],
+  ["03", "Preparação antes da instalação", "Backup, pendrive, modo live e cuidados antes de mexer no disco."],
+  ["04", "Instalação passo a passo", "Do idioma ao primeiro boot, com alertas nos pontos que exigem mais atenção."],
+  ["05", "Primeiros passos depois da instalação", "Atualizações, aplicativos, interface, som, Bluetooth e rotina inicial."],
+  ["06", "Terminal sem medo", "20 comandos essenciais explicados para quem está começando."],
+  ["07", "Arquivos, usuários e permissões", "Permissões sem mistério e sem atalhos perigosos."],
+  ["08", "Problemas comuns", "Como investigar erros, pesquisar soluções e pedir ajuda com segurança."],
+];
+
+const canonicalUrl = new URL("/produtos/linux-do-zero/", Astro.site ?? Astro.url.origin);
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "Linux do Zero",
+  author: { "@type": "Person", name: "Dejota" },
+  publisher: { "@type": "Organization", name: "DejotaCode" },
+  inLanguage: "pt-BR",
+  bookFormat: "https://schema.org/EBook",
+  numberOfPages: 88,
+  url: canonicalUrl.href,
+  description: "E-book prático de Linux para iniciantes, com instalação segura, primeiros passos, terminal, permissões e solução de problemas.",
+};
+---
+
+<BaseLayout
+  title="Linux do Zero — e-book para iniciantes | DejotaCode"
+  description="Aprenda Linux desde o primeiro passo com um e-book de 88 páginas, exemplos práticos, imagens reais e explicações pensadas para iniciantes."
+  image="/assets/products/linux-do-zero/cover.png"
+  imageAlt="Capa do e-book Linux do Zero, do DejotaCode"
+  robots="noindex, follow"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(bookSchema)} />
+
+  <main id="conteudo" tabindex="-1" class="product-page">
+    <header class="product-hero">
+      <div class="container product-hero__grid">
+        <div class="product-hero__copy">
+          <nav class="product-breadcrumbs" aria-label="Navegação estrutural">
+            <a href="/">Início</a><span aria-hidden="true">/</span>
+            <span>Produtos</span><span aria-hidden="true">/</span>
+            <span aria-current="page">Linux do Zero</span>
+          </nav>
+
+          <p class="eyebrow">E-BOOK DEJOTACODE · PRÉ-LANÇAMENTO</p>
+          <h1>Linux do Zero, sem pular os passos que fazem diferença.</h1>
+          <p class="product-lead">
+            Um guia de 88 páginas para quem quer entender Linux, testar com segurança,
+            instalar, usar o terminal e resolver os primeiros problemas sem depender de
+            explicações cheias de jargões.
+          </p>
+
+          <div class="product-meta" aria-label="Informações do e-book">
+            <span>88 páginas</span>
+            <span>PDF · A4</span>
+            <span>Nível iniciante</span>
+            <span>Português</span>
+          </div>
+
+          <div class="product-actions">
+            <a
+              class="button button-primary"
+              href="/newsletter/?resource=linux-do-zero-ebook-interesse"
+              data-analytics-cta="product-linux-ebook-interest"
+            >Quero ser avisado no lançamento <span aria-hidden="true">→</span></a>
+            <a
+              class="button button-secondary"
+              href="/trilhas/linux-do-zero/"
+              data-analytics-cta="product-linux-trail"
+            >Começar pela trilha gratuita</a>
+          </div>
+
+          <p class="product-status">
+            O e-book está concluído. Preço, checkout e entrega comercial ainda estão sendo
+            preparados; por isso esta página permanece em pré-lançamento.
+          </p>
+        </div>
+
+        <figure class="product-cover">
+          <img
+            src="/assets/products/linux-do-zero/cover.png"
+            alt="Capa real do e-book Linux do Zero"
+            width="1158"
+            height="1637"
+          />
+          <figcaption>Imagem real da edição final v0.7.</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <section class="product-section container" aria-labelledby="for-title">
+      <div class="product-section__heading">
+        <div>
+          <p class="eyebrow">PARA QUEM ESTÁ COMEÇANDO</p>
+          <h2 id="for-title">Feito para tirar o Linux do campo da curiosidade.</h2>
+        </div>
+        <p>Você não precisa saber programar nem decorar comandos antes de começar.</p>
+      </div>
+
+      <div class="product-audience-grid">
+        <article>
+          <span>01</span>
+          <h3>É seu primeiro contato com Linux</h3>
+          <p>O material começa pelos conceitos básicos e explica o motivo de cada etapa.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Você tem medo de instalar errado</h3>
+          <p>Backup, modo live e decisões de instalação aparecem antes das mudanças no disco.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>O terminal parece complicado</h3>
+          <p>Os comandos entram aos poucos, sempre acompanhados de contexto e exemplos.</p>
+        </article>
+      </div>
+
+      <aside class="product-not-for">
+        <strong>Este material não foi pensado como referência avançada.</strong>
+        <p>Se você já administra servidores Linux, domina shell e permissões, provavelmente encontrará mais valor em materiais especializados.</p>
+      </aside>
+    </section>
+
+    <section class="product-preview" aria-labelledby="preview-title">
+      <div class="container">
+        <div class="product-section__heading">
+          <div>
+            <p class="eyebrow">POR DENTRO DO MATERIAL</p>
+            <h2 id="preview-title">Páginas reais, não uma promessa abstrata.</h2>
+          </div>
+          <p>As imagens abaixo foram renderizadas diretamente do PDF final de 88 páginas.</p>
+        </div>
+        <div class="product-preview__grid">
+          <figure><img src="/assets/products/linux-do-zero/preview-01.png" alt="Página interna real do e-book Linux do Zero" loading="lazy" /><figcaption>Conteúdo didático e passo a passo.</figcaption></figure>
+          <figure><img src="/assets/products/linux-do-zero/preview-02.png" alt="Página de abertura real de um capítulo do e-book Linux do Zero" loading="lazy" /><figcaption>Aberturas e hierarquia editorial próprias.</figcaption></figure>
+          <figure><img src="/assets/products/linux-do-zero/preview-author.png" alt="Página Sobre o autor do e-book Linux do Zero" loading="lazy" /><figcaption>Autoria e propósito apresentados com transparência.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section container" aria-labelledby="contents-title">
+      <div class="product-section__heading">
+        <div>
+          <p class="eyebrow">O QUE VOCÊ VAI ENCONTRAR</p>
+          <h2 id="contents-title">Do primeiro contato ao uso com mais confiança.</h2>
+        </div>
+        <p>O conteúdo segue uma sequência para evitar que você precise adivinhar qual deveria ser o próximo passo.</p>
+      </div>
+
+      <ol class="product-chapters">
+        {chapters.map(([number, title, description]) => (
+          <li>
+            <span>{number}</span>
+            <div><h3>{title}</h3><p>{description}</p></div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="product-learning">
+      <div class="container product-learning__grid">
+        <div>
+          <p class="eyebrow">CONTEÚDO GRATUITO + MATERIAL COMPLETO</p>
+          <h2>Você pode começar antes de comprar qualquer coisa.</h2>
+          <p>
+            A trilha Linux do Zero continua gratuita no DejotaCode. Ela serve como primeiro
+            contato e também ajuda você a decidir se a forma de ensinar combina com seu jeito
+            de aprender.
+          </p>
+          <a class="text-link" href="/trilhas/linux-do-zero/" data-analytics-cta="product-linux-trail-middle">Explorar a trilha gratuita <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="product-learning__steps" aria-label="Jornada de aprendizado">
+          <span>Artigos</span><i aria-hidden="true">→</i>
+          <span>Trilha Linux do Zero</span><i aria-hidden="true">→</i>
+          <strong>E-book Linux do Zero</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section container" aria-labelledby="author-title">
+      <div class="product-author">
+        <div class="product-author__copy">
+          <p class="eyebrow">QUEM ESCREVEU</p>
+          <h2 id="author-title">Dejota</h2>
+          <p>
+            O Linux do Zero nasceu da mesma proposta do DejotaCode: explicar tecnologia de
+            forma simples, prática e responsável, respeitando quem ainda está construindo a
+            base.
+          </p>
+          <a class="text-link" href="/sobre/">Conhecer a história do DejotaCode <span aria-hidden="true">→</span></a>
+        </div>
+        <img
+          src="/assets/products/linux-do-zero/preview-author.png"
+          alt="Página Sobre o autor do e-book Linux do Zero"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <section class="product-section container" aria-labelledby="faq-title">
+      <div class="product-section__heading">
+        <div><p class="eyebrow">DÚVIDAS COMUNS</p><h2 id="faq-title">Antes do lançamento</h2></div>
+      </div>
+      <div class="product-faq">
+        <details open>
+          <summary>O e-book já está pronto?</summary>
+          <p>Sim. A edição v0.7 está concluída em PDF, com 88 páginas. O que ainda está sendo preparado é a parte comercial: preço, checkout e entrega.</p>
+        </details>
+        <details>
+          <summary>Preciso saber Linux antes?</summary>
+          <p>Não. O material foi escrito para iniciantes e começa explicando os conceitos essenciais antes da prática.</p>
+        </details>
+        <details>
+          <summary>Posso estudar gratuitamente primeiro?</summary>
+          <p>Sim. A trilha Linux do Zero e os artigos do DejotaCode continuam disponíveis gratuitamente.</p>
+        </details>
+        <details>
+          <summary>Qual será o preço?</summary>
+          <p>O preço ainda não foi definido. Ele será informado nesta página antes da abertura do checkout.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="product-final-cta">
+      <div class="container">
+        <div>
+          <p class="eyebrow">PRÓXIMO PASSO</p>
+          <h2>Quer saber quando o Linux do Zero estiver disponível?</h2>
+          <p>Entre na lista de interesse. Sem compromisso de compra.</p>
+        </div>
+        <a class="button button-primary" href="/newsletter/?resource=linux-do-zero-ebook-interesse" data-analytics-cta="product-linux-ebook-interest-final">Quero ser avisado <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
