@@ -12,6 +12,10 @@ OUT.mkdir(parents=True, exist_ok=True)
 SCREEN = "../../assets/linux-do-zero/screenshots"
 AUTHOR_ASSET = "../../assets/linux-do-zero/author-v06"
 
+SPECIAL_ENTRIES = [
+    ("references", "Referências", "Fontes oficiais e recursos para continuar"),
+    ("thanks", "Agradecimento", "Obrigado por chegar até aqui"),
+]
 AUTHOR_ENTRY = ("author", "Sobre o autor", "Dejota e o propósito do DejotaCode")
 
 CHAPTERS = [
@@ -138,9 +142,12 @@ def inject_figures(key, markdown):
     return "\n".join(out)
 
 
-def markdown_to_html(markdown):
+def markdown_to_html(markdown, id_prefix=""):
+    command = ["pandoc", "--from=markdown+raw_html", "--to=html5", "--wrap=none"]
+    if id_prefix:
+        command.append(f"--id-prefix={id_prefix}-")
     proc = subprocess.run(
-        ["pandoc", "--from=markdown+raw_html", "--to=html5", "--wrap=none"],
+        command,
         input=markdown,
         text=True,
         capture_output=True,
@@ -196,12 +203,41 @@ def chapter_opener(key, label, title):
 
 def build_toc():
     items = []
-    for key, label, title in CHAPTERS + [AUTHOR_ENTRY]:
+    for key, label, title in CHAPTERS + SPECIAL_ENTRIES + [AUTHOR_ENTRY]:
         items.append(
             f'<li><a href="#{key}"><span>{html.escape(label)}</span>'
             f'<strong>{html.escape(title)}</strong></a></li>'
         )
     return "\n".join(items)
+
+
+def build_special_page(key, label, title, source_name, kicker):
+    raw = strip_meta(read_source(source_name))
+    raw = re.sub(r"^# [^\n]+\n+", "", raw, count=1)
+    fragment = style_callouts(markdown_to_html(raw.strip(), key))
+    return f"""<section class="special-page" id="{key}">
+  <div class="special-page-inner">
+    <div class="eyebrow">{html.escape(label)}</div>
+    <div class="rule"></div>
+    <h1>{html.escape(title)}</h1>
+    <p class="special-kicker">{html.escape(kicker)}</p>
+    <div class="content special-content">{fragment}</div>
+  </div>
+</section>"""
+
+
+def build_back_cover():
+    return """<section class="back-cover">
+  <div class="back-grid"></div>
+  <div class="back-accent"></div>
+  <div class="back-copy">
+    <div class="eyebrow">DejotaCode · Linux do Zero</div>
+    <h1>Seu primeiro passo<br>não precisa ser<br>complicado.</h1>
+    <p>Um guia para começar no Linux com segurança, entender o que está fazendo e construir autonomia sem depender de receitas prontas.</p>
+    <ul><li>Entenda antes de executar.</li><li>Pratique com exemplos seguros.</li><li>Aprenda onde procurar quando algo mudar.</li></ul>
+  </div>
+  <div class="back-footer"><strong>DejotaCode</strong><span>dejotacode.com.br · Feito para quem constrói o futuro.</span></div>
+</section>"""
 
 
 def build_author_page():
@@ -215,7 +251,7 @@ def build_author_page():
         if line.startswith("Continue aprendendo em"):
             continue
         lines.append(line)
-    fragment = markdown_to_html("\n".join(lines).strip())
+    fragment = markdown_to_html("\n".join(lines).strip(), "author")
 
     icons = {
         "learn": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 9c7-2 13 0 19 4v27c-6-4-12-6-19-4V9Zm38 0c-7-2-13 0-19 4v27c6-4 12-6 19-4V9Z"/><path d="M24 13v27"/></svg>',
@@ -244,7 +280,7 @@ def build_author_page():
         <div class=\"stage-geo stage-geo-a\"></div><div class=\"stage-geo stage-geo-b\"></div>
         <div class=\"stage-dots\"></div>
         <div class=\"stage-kicker\">CONHECIMENTO<br>ABRE<br>CAMINHOS<div></div></div>
-        <img class=\"author-photo-cutout\" src=\"{AUTHOR_ASSET}/dejota-author-cutout.png\" alt=\"Retrato de Dejota, criador do DejotaCode.\">
+        <img class=\"author-photo-approved\" src=\"{AUTHOR_ASSET}/dejota-author-approved.jpg\" alt=\"Retrato de Dejota, criador do DejotaCode.\">
       </div>
 
       <div class=\"author-quote-v06\"><strong>“</strong><span>Tecnologia não precisa<br>ser complicada.<br>Ela precisa fazer sentido<br>na sua vida.</span><small>DEJOTA</small></div>
@@ -265,7 +301,7 @@ def build_author_page():
     <div class=\"author-cta-brand\"><img src=\"{AUTHOR_ASSET}/dejotacode-symbol-light.svg\" alt=\"Símbolo DejotaCode\"><div><strong>DejotaCode</strong><span>CONHECIMENTO ABRE CAMINHOS</span></div></div>
   </div>
 
-  <footer class=\"author-page-footer\"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i><b>85</b></footer>
+  <footer class=\"author-page-footer\"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i></footer>
 </section>"""
 
 
@@ -274,11 +310,26 @@ def build_html():
     sections = []
     for key, label, title in CHAPTERS:
         markdown = inject_figures(key, sources[key])
-        fragment = style_callouts(markdown_to_html(markdown))
+        fragment = style_callouts(markdown_to_html(markdown, key))
         sections.append(chapter_opener(key, label, title))
         sections.append(f'<main class="chapter-body content">{fragment}</main>')
 
+    sections.append(build_special_page(
+        "references",
+        "Referências",
+        "Referências e recursos oficiais",
+        "linux-do-zero-referencias.md",
+        "Fontes confiáveis para verificar, aprofundar e continuar aprendendo.",
+    ))
+    sections.append(build_special_page(
+        "thanks",
+        "Agradecimento",
+        "Obrigado por chegar até aqui",
+        "linux-do-zero-agradecimento.md",
+        "O fim deste livro é só o começo da sua prática.",
+    ))
     sections.append(build_author_page())
+    sections.append(build_back_cover())
     body = "\n".join(sections)
     toc = build_toc()
     return f'''<!-- GENERATED by scripts/build-linux-ebook.py — do not edit manually -->\n<!doctype html>
@@ -304,6 +355,7 @@ FRONT = '''
     <div class="eyebrow">DejotaCode · Edição 2026</div>
     <h1>Linux<br>do Zero</h1>
     <p>Guia prático para começar com segurança, entender o sistema e ganhar autonomia.</p>
+    <div class="cover-author">Por Dejota</div>
   </div>
   <div class="cover-footer"><span>Tecnologia explicada de forma simples, prática e responsável.</span><span>DejotaCode</span></div>
 </section>

@@ -17,6 +17,7 @@
     <div class="eyebrow">DejotaCode · Edição 2026</div>
     <h1>Linux<br>do Zero</h1>
     <p>Guia prático para começar com segurança, entender o sistema e ganhar autonomia.</p>
+    <div class="cover-author">Por Dejota</div>
   </div>
   <div class="cover-footer"><span>Tecnologia explicada de forma simples, prática e responsável.</span><span>DejotaCode</span></div>
 </section>
@@ -40,6 +41,8 @@
 <li><a href="#c07"><span>Capítulo 7</span><strong>Arquivos, usuários e permissões sem mistério</strong></a></li>
 <li><a href="#c08"><span>Capítulo 8</span><strong>Problemas comuns e como procurar solução com segurança</strong></a></li>
 <li><a href="#bonus"><span>Bônus</span><strong>Materiais de consulta e prática</strong></a></li>
+<li><a href="#references"><span>Referências</span><strong>Fontes oficiais e recursos para continuar</strong></a></li>
+<li><a href="#thanks"><span>Agradecimento</span><strong>Obrigado por chegar até aqui</strong></a></li>
 <li><a href="#author"><span>Sobre o autor</span><strong>Dejota e o propósito do DejotaCode</strong></a></li></ol>
 </section>
 <section class="chapter-opener" id="intro">
@@ -56,30 +59,30 @@
 <p>Você não precisa memorizar centenas de comandos. Também não precisa trocar de computador, abandonar tudo o que já usa ou se transformar em especialista. O que precisa é curiosidade, paciência e disposição para entender um passo de cada vez.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Linux não é uma prova. Você não ganha pontos por lembrar comandos de cabeça. O objetivo deste livro é fazer você entender o que está acontecendo para conseguir tomar decisões com segurança.</p>
 </blockquote>
-<h2 id="o-que-você-vai-encontrar-neste-livro">O que você vai encontrar neste livro</h2>
+<h2 id="intro-o-que-você-vai-encontrar-neste-livro">O que você vai encontrar neste livro</h2>
 <p>Ao longo dos próximos capítulos, você vai aprender a escolher uma distribuição, preparar o computador, instalar Linux com cuidado, conhecer o sistema, usar o terminal, trabalhar com arquivos e permissões e resolver problemas comuns sem sair copiando qualquer solução da internet.</p>
 <p>A ideia é simples: primeiro entender, depois executar.</p>
-<h2 id="três-medos-comuns-e-por-que-eles-não-precisam-mandar-em-você">Três medos comuns — e por que eles não precisam mandar em você</h2>
-<h3 id="linux-é-só-para-programadores">“Linux é só para programadores”</h3>
+<h2 id="intro-três-medos-comuns-e-por-que-eles-não-precisam-mandar-em-você">Três medos comuns — e por que eles não precisam mandar em você</h2>
+<h3 id="intro-linux-é-só-para-programadores">“Linux é só para programadores”</h3>
 <p>Não é. Programadores usam Linux, assim como usam Windows e macOS. Servidores usam Linux. Empresas usam Linux. Pessoas comuns também usam Linux para navegar na internet, estudar, trabalhar, editar documentos, assistir vídeos e organizar arquivos.</p>
 <p>Você pode aprender Linux sem escrever uma linha de código.</p>
-<h3 id="vou-quebrar-meu-computador">“Vou quebrar meu computador”</h3>
+<h3 id="intro-vou-quebrar-meu-computador">“Vou quebrar meu computador”</h3>
 <p>Algumas ações podem causar problemas se forem feitas sem cuidado. Isso é verdade em qualquer sistema operacional. Por isso, este livro não vai tratar risco como detalhe. Antes de qualquer etapa importante, você vai entender o que pode dar errado e como se proteger.</p>
 <p>Backup, teste e leitura vêm antes da pressa.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Quando uma ação puder apagar arquivos, alterar partições ou modificar permissões importantes, isso será avisado de forma clara. Você nunca será incentivado a executar algo perigoso apenas para “ver o que acontece”.</p>
 </blockquote>
-<h3 id="eu-não-sou-bom-com-terminal">“Eu não sou bom com terminal”</h3>
+<h3 id="intro-eu-não-sou-bom-com-terminal">“Eu não sou bom com terminal”</h3>
 <p>Ótimo: você não precisa ser.</p>
 <p>O terminal será apresentado como uma ferramenta, não como um ritual de iniciação. Quando ele aparecer, vamos explicar o objetivo, o comando, o resultado esperado e o significado das partes importantes.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Saber consultar ajuda faz parte de saber usar Linux. Profissionais experientes também pesquisam opções, leem documentação e conferem comandos antes de executar.</p>
 </blockquote>
-<h2 id="como-usar-este-livro">Como usar este livro</h2>
+<h2 id="intro-como-usar-este-livro">Como usar este livro</h2>
 <p>Leia no seu ritmo. Quando encontrar uma prática, faça junto se tiver um ambiente seguro para testar. Se não tiver, leia primeiro e volte quando estiver preparado.</p>
 <p>Não existe prêmio por terminar rápido. Existe valor em terminar entendendo.</p>
 <div class="keep-together"><p>Sempre que surgir uma palavra nova, tente relacioná-la com algo que você já conhece. Sistema operacional, distribuição, terminal, diretório, usuário e permissão vão parecer naturais depois de aparecerem algumas vezes no contexto certo.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se alguma parte parecer confusa, não avance por obrigação. Releia o exemplo, teste com calma e só depois continue. Tecnologia fica muito mais simples quando você para de tentar aprender tudo ao mesmo tempo.</p>
 </blockquote></div>
-<h2 id="antes-de-começar">Antes de começar</h2>
+<h2 id="intro-antes-de-começar">Antes de começar</h2>
 <p>Você não precisa instalar nada agora.</p>
 <p>O primeiro passo é entender o terreno. No próximo capítulo, vamos descobrir o que Linux realmente é, onde ele aparece e por que tanta gente usa esse sistema mesmo quando não percebe.</p>
 </main>
@@ -91,28 +94,28 @@
     <h1>Linux sem medo: o que é e onde ele aparece</h1>
   </div>
 </section>
-<main class="chapter-body content"><h2 id="onde-estamos">Onde estamos</h2>
+<main class="chapter-body content"><h2 id="c01-onde-estamos">Onde estamos</h2>
 <p>Antes de escolher uma distribuição ou abrir um terminal, precisamos responder uma pergunta básica: afinal, o que é Linux?</p>
 <p>Essa pergunta parece simples, mas ela costuma receber respostas cheias de termos técnicos. Vamos fazer diferente.</p>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c01-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao terminar este capítulo, você será capaz de explicar, em palavras simples, o que é Linux, reconhecer onde ele aparece e entender a diferença entre Linux e uma distribuição.</p>
 <p>Você ainda não precisa instalar nada nem usar comandos.</p>
-<h2 id="entenda-antes-de-executar">Entenda antes de executar</h2>
+<h2 id="c01-entenda-antes-de-executar">Entenda antes de executar</h2>
 <p>Imagine um carro.</p>
 <p>O motor é uma parte essencial, mas ninguém dirige apenas um motor. É preciso carroceria, painel, bancos, volante, pneus e vários outros componentes funcionando juntos.</p>
 <p>Linux funciona de maneira parecida.</p>
 <p>Quando falamos de Linux com mais precisão, estamos falando do núcleo do sistema, chamado <strong>kernel</strong>. Ele faz a ponte entre o hardware do computador e os programas que você usa.</p>
 <p>O kernel conversa com processador, memória, discos, teclado, rede e outros dispositivos. Os programas dependem direta ou indiretamente dessa base para acessar recursos do computador. &gt; <strong>ENTENDA</strong> &gt; Pense no kernel como o responsável por organizar a conversa entre o que é físico e o que é software. Você normalmente não fala com ele diretamente, mas quase tudo passa por ele.</p>
-<h2 id="linux-não-é-apenas-uma-tela-preta">Linux não é apenas uma tela preta</h2>
+<h2 id="c01-linux-não-é-apenas-uma-tela-preta">Linux não é apenas uma tela preta</h2>
 <p>Muita gente conhece Linux por imagens de terminais com letras passando na tela. Isso cria a impressão de que usar Linux significa abandonar janelas, botões e menus.</p>
 <p>Não significa.</p>
 <p>Hoje existem ambientes Linux com interface gráfica completa, navegador, loja de aplicativos, editor de documentos, ferramentas de vídeo, jogos e praticamente tudo o que um usuário comum espera de um computador moderno.</p>
 <p>O terminal continua importante porque oferece uma forma direta e poderosa de conversar com o sistema. Mas ele é uma ferramenta entre várias — não a única forma de usar Linux.</p>
-<h2 id="onde-linux-aparece">Onde Linux aparece</h2>
+<h2 id="c01-onde-linux-aparece">Onde Linux aparece</h2>
 <p>Linux está em muitos lugares que você talvez use todos os dias sem perceber.</p>
 <p>Ele é muito comum em servidores, equipamentos de rede e infraestrutura de nuvem. Também está presente em muitos dispositivos do dia a dia.</p>
 <p>O próprio Android usa o kernel Linux como parte da sua base. Isso não significa que Android seja igual a uma distribuição Linux de desktop, mas mostra como esse núcleo pode servir a ambientes bem diferentes.</p>
-<h2 id="então-o-que-é-uma-distribuição">Então o que é uma distribuição?</h2>
+<h2 id="c01-então-o-que-é-uma-distribuição">Então o que é uma distribuição?</h2>
 <p>Se o kernel é o motor, uma distribuição é o carro montado para um determinado tipo de uso.</p>
 <p>Uma <strong>distribuição Linux</strong> reúne o kernel com programas, instalador, gerenciador de pacotes, interface gráfica, configurações e escolhas feitas por uma comunidade ou empresa.</p>
 <p>Ubuntu, Linux Mint, Fedora e Debian são exemplos de distribuições. Elas compartilham a base Linux, mas podem organizar a experiência de formas diferentes.</p>
@@ -121,31 +124,31 @@
 <p>No próximo capítulo, vamos escolher uma primeira distribuição usando critérios simples: facilidade, estabilidade, compatibilidade com seu equipamento e quantidade de ajuda disponível.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Kernel, distribuição e ambiente gráfico são conceitos diferentes. Por enquanto, basta guardar a ideia: O kernel Linux é a base; uma distribuição reúne essa base com as ferramentas necessárias para entregar um sistema utilizável.</p>
 </blockquote>
-<h2 id="por-que-aprender-linux">Por que aprender Linux?</h2>
+<h2 id="c01-por-que-aprender-linux">Por que aprender Linux?</h2>
 <p>Talvez você esteja pensando: se meu computador atual já funciona, por que aprender outro sistema?</p>
 <p>A resposta não precisa ser “porque Linux é melhor”. Sistemas diferentes resolvem necessidades diferentes. Aprender Linux pode fazer sentido porque ele ajuda você a entender melhor como um computador funciona, aparece com frequência em desenvolvimento e infraestrutura e oferece bastante liberdade de uso e configuração.</p>
 <p>Há também um ganho importante: autonomia. Quando você começa a entender arquivos, usuários, permissões e terminal, deixa de enxergar o computador como uma caixa misteriosa e passa a investigar problemas com mais critério.</p>
 <div class="keep-together"><p>Isso vale mesmo se, no futuro, você continuar usando Windows, macOS ou mais de um sistema.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Não escolha Linux por pressão de comunidade. Escolha porque você quer aprender, experimentar ou resolver uma necessidade real. Curiosidade é motivo suficiente.</p>
 </blockquote></div>
-<h2 id="o-que-linux-não-exige-de-você">O que Linux não exige de você</h2>
+<h2 id="c01-o-que-linux-não-exige-de-você">O que Linux não exige de você</h2>
 <p>Você não precisa odiar Windows.</p>
 <p>Você não precisa abandonar programas que já usa.</p>
 <p>Você não precisa defender uma distribuição como time de futebol.</p>
 <p>E definitivamente não precisa saber tudo antes de começar.</p>
 <p>O objetivo deste livro é dar uma base suficiente para você experimentar com consciência e decidir depois o lugar que Linux terá na sua rotina.</p>
-<h2 id="erros-comuns-de-entendimento">Erros comuns de entendimento</h2>
-<h3 id="achar-que-toda-distribuição-é-completamente-diferente">Achar que toda distribuição é completamente diferente</h3>
+<h2 id="c01-erros-comuns-de-entendimento">Erros comuns de entendimento</h2>
+<h3 id="c01-achar-que-toda-distribuição-é-completamente-diferente">Achar que toda distribuição é completamente diferente</h3>
 <p>Elas podem mudar bastante em aparência e ferramentas, mas compartilham muitos fundamentos. Aprender conceitos básicos em uma distribuição ajuda muito quando você conhece outra.</p>
-<h3 id="achar-que-terminal-é-sinônimo-de-dificuldade">Achar que terminal é sinônimo de dificuldade</h3>
+<h3 id="c01-achar-que-terminal-é-sinônimo-de-dificuldade">Achar que terminal é sinônimo de dificuldade</h3>
 <p>Terminal exige atenção, mas não precisa ser misterioso. Ele apenas torna explícitas algumas ações que interfaces gráficas escondem atrás de botões.</p>
-<h3 id="achar-que-linux-é-automaticamente-mais-seguro">Achar que Linux é automaticamente mais seguro</h3>
+<h3 id="c01-achar-que-linux-é-automaticamente-mais-seguro">Achar que Linux é automaticamente mais seguro</h3>
 <p>Linux oferece bons mecanismos de segurança, mas nenhum sistema fica seguro sozinho. Senhas fracas, atualizações ignoradas, comandos copiados sem entender e programas de fontes duvidosas continuam sendo riscos.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Segurança não é uma propriedade mágica do sistema operacional. Ela depende também de configuração, atualização e comportamento.</p>
 </blockquote>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se até aqui você consegue explicar para outra pessoa a diferença entre o kernel Linux e uma distribuição, já aprendeu o principal deste capítulo.</p>
 </blockquote>
-<h2 id="teste-você-mesmo-sem-instalar-nada">Teste você mesmo — sem instalar nada</h2>
+<h2 id="c01-teste-você-mesmo-sem-instalar-nada">Teste você mesmo — sem instalar nada</h2>
 <p>Reserve cinco minutos e responda, com suas próprias palavras:</p>
 <ol type="1">
 <li>O que o kernel faz?</li>
@@ -154,7 +157,7 @@
 <li>Qual é o principal motivo pelo qual você quer aprender Linux?</li>
 </ol>
 <p>Não procure uma resposta “perfeita”. Se consegue explicar os conceitos sem repetir frases decoradas, o capítulo cumpriu seu papel.</p>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c01-checklist-do-capítulo">Checklist do capítulo</h2>
 <p>Antes de continuar, confirme se você consegue dizer “sim” para estas frases:</p>
 <ul class="task-list">
 <li><label><input type="checkbox" />Entendo que Linux não é apenas uma interface ou um terminal.</label></li>
@@ -163,7 +166,7 @@
 <li><label><input type="checkbox" />Sei que não preciso memorizar comandos agora.</label></li>
 <li><label><input type="checkbox" />Consigo citar pelo menos um motivo pessoal para aprender Linux.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c01-próximo-passo">Próximo passo</h2>
 <p>Agora que você já sabe o que Linux é, chegou a hora de responder à próxima pergunta natural: <strong>qual distribuição escolher?</strong></p>
 <div class="keep-together"><p>No Capítulo 2, vamos comparar opções sem transformar essa escolha em uma guerra de opiniões. O objetivo será encontrar uma primeira distribuição que combine com seu computador, seu nível de experiência e o tipo de aprendizado que você quer construir.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> A melhor primeira distribuição não é a mais “profissional” nem a mais difícil. É aquela que permite aprender sem colocar obstáculos desnecessários entre você e o sistema.</p>
@@ -183,7 +186,7 @@
 <p>A resposta curta é: você não precisa encontrar a distribuição perfeita. Precisa encontrar uma opção estável, compatível com o seu computador e fácil de manter enquanto aprende.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Ubuntu, Mint, Fedora, Debian e outros nomes parecem muitos no início. Você não precisa entender todos agora. Neste capítulo, vamos usar critérios simples para reduzir as opções.</p>
 </blockquote>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c02-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao terminar este capítulo, você será capaz de:</p>
 <ul>
 <li>entender quais critérios realmente importam para um iniciante;</li>
@@ -191,12 +194,12 @@
 <li>identificar quando uma versão estável faz mais sentido do que uma versão de teste;</li>
 <li>escolher uma distribuição para experimentar sem transformar a decisão numa aposta definitiva.</li>
 </ul>
-<h2 id="não-escolha-pela-aparência-da-captura-de-tela">Não escolha pela aparência da captura de tela</h2>
+<h2 id="c02-não-escolha-pela-aparência-da-captura-de-tela">Não escolha pela aparência da captura de tela</h2>
 <p>É comum conhecer uma distribuição por um vídeo bonito ou por uma captura de tela cheia de efeitos. Isso pode despertar curiosidade, mas não é um bom critério de escolha.</p>
 <p>A interface pode ser personalizada depois. O que mais importa no começo é outra coisa: atualização simples, documentação acessível, comunidade ativa e compatibilidade com o seu equipamento.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Pense na distribuição como a combinação entre carro, manual e rede de assistência. A pintura chama atenção, mas para aprender a dirigir você se beneficia muito mais de um veículo previsível, com peças disponíveis e bastante gente que sabe explicar como ele funciona.</p>
 </blockquote>
-<h2 id="critério-1-seu-computador-precisa-ser-atendido">Critério 1 — Seu computador precisa ser atendido</h2>
+<h2 id="c02-critério-1-seu-computador-precisa-ser-atendido">Critério 1 — Seu computador precisa ser atendido</h2>
 <p>Antes de pensar em nomes, observe o equipamento que você realmente vai usar.</p>
 <p>Anote:</p>
 <ul>
@@ -209,7 +212,7 @@
 <div class="keep-together"><p>Não precisa virar especialista em hardware. O objetivo é apenas evitar instalar uma opção pesada demais ou descobrir tarde que algum componente exige cuidado extra.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se o computador já roda um sistema moderno de forma confortável, ele provavelmente consegue experimentar várias distribuições atuais. Em máquinas mais antigas, vale priorizar ambientes gráficos mais leves e verificar os requisitos oficiais antes do download.</p>
 </blockquote></div>
-<h2 id="critério-2-prefira-uma-versão-estável">Critério 2 — Prefira uma versão estável</h2>
+<h2 id="c02-critério-2-prefira-uma-versão-estável">Critério 2 — Prefira uma versão estável</h2>
 <p>Para aprender, previsibilidade costuma valer mais do que novidade.</p>
 <p>Alguns projetos oferecem versões estáveis e, ao mesmo tempo, versões de teste ou beta. Essas versões de teste existem para quem quer experimentar novidades e ajudar a encontrar problemas antes do lançamento final.</p>
 <p>Se este é o seu primeiro contato com Linux, a regra é simples:</p>
@@ -218,7 +221,7 @@
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> “Mais novo” não significa automaticamente “melhor para começar”. Uma versão beta pode ter recursos interessantes e ainda assim exigir paciência para lidar com falhas temporárias.</p>
 </blockquote>
 <p>As versões mudam com o tempo. Por isso, antes de baixar, consulte sempre a página oficial da distribuição e procure a edição estável e suportada. Quando esta edição do livro precisar citar uma versão específica, ela aparecerá como referência da edição — não como regra permanente.</p>
-<h2 id="critério-3-documentação-e-comunidade-importam">Critério 3 — Documentação e comunidade importam</h2>
+<h2 id="c02-critério-3-documentação-e-comunidade-importam">Critério 3 — Documentação e comunidade importam</h2>
 <p>Quando surgir uma dúvida, você vai procurar respostas. Nesse momento, uma distribuição com documentação clara e muita gente usando ajuda bastante.</p>
 <p>Você não precisa escolher a opção com a maior comunidade do mundo. Mas é útil que existam:</p>
 <ul>
@@ -228,21 +231,21 @@
 <li>respostas suficientes para problemas comuns.</li>
 </ul>
 <p>Quanto mais fácil for confirmar uma informação em fonte oficial, melhor para quem está começando.</p>
-<h2 id="critério-4-facilidade-de-manutenção">Critério 4 — Facilidade de manutenção</h2>
+<h2 id="c02-critério-4-facilidade-de-manutenção">Critério 4 — Facilidade de manutenção</h2>
 <p>Depois da instalação, você vai precisar atualizar o sistema, instalar programas e, de vez em quando, resolver pequenos problemas.</p>
 <p>Para a primeira experiência, prefira uma distribuição que torne essas tarefas previsíveis.</p>
 <p>Isso não significa que tudo precisa acontecer por interface gráfica. Significa que você deve conseguir entender o que está acontecendo sem depender de receitas obscuras.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Uma boa primeira distribuição não é aquela que esconde tudo. É aquela que permite aprender sem transformar cada atualização numa aventura.</p>
 </blockquote>
-<h2 id="quatro-opções-que-aparecem-muito">Quatro opções que aparecem muito</h2>
+<h2 id="c02-quatro-opções-que-aparecem-muito">Quatro opções que aparecem muito</h2>
 <p>Você provavelmente encontrará estes nomes durante sua pesquisa:</p>
-<h3 id="linux-mint">Linux Mint</h3>
+<h3 id="c02-linux-mint">Linux Mint</h3>
 <p>O Linux Mint usa por padrão uma interface de desktop tradicional, com menu, painel e uma organização que pode parecer familiar para quem vem do Windows. O projeto também oferece ferramentas gráficas voltadas ao uso diário em desktop.</p>
-<h3 id="ubuntu">Ubuntu</h3>
+<h3 id="c02-ubuntu">Ubuntu</h3>
 <p>É uma das distribuições mais conhecidas no desktop e possui grande quantidade de documentação, tutoriais e suporte comunitário. As edições LTS são pensadas para quem prefere ciclos mais longos de suporte.</p>
-<h3 id="fedora-workstation">Fedora Workstation</h3>
+<h3 id="c02-fedora-workstation">Fedora Workstation</h3>
 <p>Traz tecnologias recentes com uma experiência de desktop moderna e organizada. Pode interessar a quem quer aprender usando um sistema com novidades frequentes e documentação ativa.</p>
-<h3 id="debian">Debian</h3>
+<h3 id="c02-debian">Debian</h3>
 <p>É conhecido por priorizar estabilidade e serve de base para várias outras distribuições. É uma opção sólida, embora algumas etapas de configuração e escolha de software possam exigir mais contexto de quem está começando.</p>
 <p>Nenhuma dessas descrições significa “melhor” ou “pior”. Elas mostram perfis diferentes.</p>
 <table>
@@ -275,10 +278,10 @@
 </blockquote>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se você está completamente perdido, reduza a decisão para duas perguntas: “Meu computador roda esta distribuição com conforto?” e “Consigo encontrar documentação clara quando tiver uma dúvida?”. Isso já elimina muita confusão.</p>
 </blockquote>
-<h2 id="e-qual-eu-usaria-para-acompanhar-este-livro">E qual eu usaria para acompanhar este livro?</h2>
+<h2 id="c02-e-qual-eu-usaria-para-acompanhar-este-livro">E qual eu usaria para acompanhar este livro?</h2>
 <p>Para manter exemplos, capturas de tela e práticas consistentes, esta edição usará <strong>Ubuntu LTS</strong> como distribuição de referência. Isso não significa que Ubuntu seja “a melhor distribuição” nem que o conteúdo só funcione nela.</p>
 <p>A escolha é editorial: buscamos uma versão estável e suportada, instalação amigável, boa experiência em desktop e documentação abundante. Quando houver diferença relevante para outras distribuições, ela será indicada.</p>
-<h2 id="faça-comigo-reduza-suas-opções">Faça comigo — reduza suas opções</h2>
+<h2 id="c02-faça-comigo-reduza-suas-opções">Faça comigo — reduza suas opções</h2>
 <p>Pegue papel, bloco de notas ou um arquivo de texto e responda:</p>
 <ol type="1">
 <li>Meu computador é relativamente novo ou antigo?</li>
@@ -289,21 +292,21 @@
 </ol>
 <p>Agora escolha no máximo <strong>duas distribuições</strong> para testar.</p>
 <p>Não escolha cinco. A ideia não é montar um campeonato; é reduzir a indecisão. Depois do teste em modo live, escolha <strong>uma</strong> delas para acompanhar os próximos capítulos e ganhar consistência durante o aprendizado.</p>
-<h2 id="teste-antes-de-instalar">Teste antes de instalar</h2>
+<h2 id="c02-teste-antes-de-instalar">Teste antes de instalar</h2>
 <p>Muitas distribuições oferecem uma imagem “live”, capaz de iniciar pelo pendrive sem instalar imediatamente no disco.</p>
 <p>Esse modo serve para experimentar interface, Wi-Fi, teclado, áudio, vídeo e outros componentes antes de alterar o computador.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Iniciar uma sessão live não é a mesma coisa que instalar. No próximo capítulo vamos preparar backup, pendrive e testes com calma antes de qualquer mudança no disco.</p>
 </blockquote>
-<h2 id="erros-comuns-ao-escolher">Erros comuns ao escolher</h2>
-<h3 id="escolher-porque-alguém-disse-que-usuário-de-verdade-usa-x">Escolher porque alguém disse que “usuário de verdade usa X”</h3>
+<h2 id="c02-erros-comuns-ao-escolher">Erros comuns ao escolher</h2>
+<h3 id="c02-escolher-porque-alguém-disse-que-usuário-de-verdade-usa-x">Escolher porque alguém disse que “usuário de verdade usa X”</h3>
 <p>Isso é identidade de grupo, não critério técnico.</p>
-<h3 id="trocar-de-distribuição-toda-semana">Trocar de distribuição toda semana</h3>
+<h3 id="c02-trocar-de-distribuição-toda-semana">Trocar de distribuição toda semana</h3>
 <p>Você aprende menus diferentes, mas não aprofunda os fundamentos. Escolha uma, use por um tempo e só troque quando houver motivo concreto.</p>
-<h3 id="escolher-uma-versão-beta-sem-perceber">Escolher uma versão beta sem perceber</h3>
+<h3 id="c02-escolher-uma-versão-beta-sem-perceber">Escolher uma versão beta sem perceber</h3>
 <p>Leia a página oficial de download. Procure termos como stable, LTS ou versão recomendada e trate beta/testing como ambientes de teste.</p>
-<h3 id="ignorar-o-backup-porque-é-só-um-teste">Ignorar o backup porque “é só um teste”</h3>
+<h3 id="c02-ignorar-o-backup-porque-é-só-um-teste">Ignorar o backup porque “é só um teste”</h3>
 <p>Testar pelo modo live é uma ótima forma de reduzir risco, mas qualquer etapa que envolva instalação posterior merece backup. Confiança não substitui cópia dos seus arquivos importantes.</p>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c02-teste-você-mesmo">Teste você mesmo</h2>
 <p>Escolha duas distribuições entre as opções que pesquisou e abra apenas os sites oficiais.</p>
 <p>Para cada uma, anote:</p>
 <ul>
@@ -315,7 +318,7 @@
 </ul>
 <p>Depois responda em uma frase por distribuição: <strong>por que ela parece adequada ou inadequada para o seu computador?</strong></p>
 <p>O objetivo não é acertar uma resposta universal. É praticar uma decisão baseada em critérios.</p>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c02-checklist-do-capítulo">Checklist do capítulo</h2>
 <p>Antes de avançar, veja se você consegue marcar:</p>
 <ul class="task-list">
 <li><label><input type="checkbox" />Entendo que não existe uma única distribuição Linux.</label></li>
@@ -325,7 +328,7 @@
 <li><label><input type="checkbox" />Reduzi minhas opções para uma ou duas distribuições.</label></li>
 <li><label><input type="checkbox" />Sei que posso testar antes de instalar.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c02-próximo-passo">Próximo passo</h2>
 <p>Escolher a distribuição foi só a decisão inicial. Antes de instalar qualquer coisa, precisamos preparar o terreno.</p>
 <div class="keep-together"><p>No próximo capítulo vamos cuidar de <strong>backup, espaço em disco, imagem oficial, verificação do download e pendrive de instalação</strong>. É a parte que transforma ansiedade em processo.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Uma instalação segura começa antes de clicar em “Instalar”. Preparação é parte do aprendizado.</p>
@@ -339,17 +342,17 @@
     <h1>Preparação, backup e teste antes da instalação</h1>
   </div>
 </section>
-<main class="chapter-body content"><h3 id="onde-estamos">Onde estamos</h3>
+<main class="chapter-body content"><h3 id="c03-onde-estamos">Onde estamos</h3>
 <p>Você já entendeu o que é Linux e aprendeu a escolher uma distribuição sem transformar a decisão em campeonato. Agora começa a parte prática de verdade.</p>
 <p>Antes de instalar qualquer coisa, porém, vamos preparar o terreno.</p>
 <p>Este capítulo existe para diminuir risco. A instalação não deve começar pelo botão “Instalar”. Ela começa pelo backup, pela origem correta da imagem, pela verificação do arquivo e por um teste em modo live.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Instalar um sistema operacional pode alterar partições e apagar dados se a opção errada for escolhida. Por isso, nenhuma etapa deste capítulo deve ser tratada como burocracia.</p>
 </blockquote>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c03-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao final deste capítulo, você será capaz de: - preparar seus arquivos antes da instalação; - baixar uma imagem ISO de fonte oficial; - entender o que é checksum; - criar um pendrive inicializável com segurança; - iniciar uma sessão live; - testar o Linux sem instalar nada no disco.</p>
-<h2 id="antes-de-começar-tenha-energia-e-tempo">Antes de começar — tenha energia e tempo</h2>
+<h2 id="c03-antes-de-começar-tenha-energia-e-tempo">Antes de começar — tenha energia e tempo</h2>
 <p>Se estiver em notebook, conecte o carregador. Reserve um período em que você não precise desligar o computador às pressas ou interromper uma gravação de mídia no meio. Preparação também significa não fazer uma mudança importante correndo.</p>
-<h2 id="passo-1-faça-backup-antes-de-qualquer-mudança">Passo 1 — Faça backup antes de qualquer mudança</h2>
+<h2 id="c03-passo-1-faça-backup-antes-de-qualquer-mudança">Passo 1 — Faça backup antes de qualquer mudança</h2>
 <p>Backup é uma cópia de segurança dos seus arquivos importantes.</p>
 <p>Pode parecer óbvio, mas esta é a etapa que mais reduz o impacto de um erro. Se suas fotos, documentos, projetos e senhas exportadas existem em apenas um lugar, então você ainda não tem uma cópia de segurança.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Pense no backup como a chave reserva de casa. Você espera nunca precisar dela, mas o dia em que precisar não é o momento de descobrir que ela não existe.</p>
@@ -358,7 +361,7 @@
 <p>Não basta arrastar uma pasta e presumir que terminou. Verificar a cópia faz parte do backup.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Sincronização não é necessariamente a mesma coisa que backup. Se uma exclusão ou alteração for sincronizada para todos os dispositivos, você pode perder a cópia junto com o original. Para arquivos importantes, mantenha pelo menos uma cópia independente.</p>
 </blockquote>
-<h3 id="o-que-vale-revisar">O que vale revisar</h3>
+<h3 id="c03-o-que-vale-revisar">O que vale revisar</h3>
 <ul>
 <li>Documentos e trabalhos pessoais.</li>
 <li>Fotos e vídeos.</li>
@@ -369,29 +372,29 @@
 </ul>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se você não sabe onde seus arquivos importantes estão, não tenha pressa para instalar. Primeiro organize o que precisa ser preservado.</p>
 </blockquote>
-<h2 id="passo-2-baixe-a-iso-somente-do-projeto-oficial">Passo 2 — Baixe a ISO somente do projeto oficial</h2>
+<h2 id="c03-passo-2-baixe-a-iso-somente-do-projeto-oficial">Passo 2 — Baixe a ISO somente do projeto oficial</h2>
 <p>A instalação normalmente começa com um arquivo de imagem chamado <strong>ISO</strong>. Ele contém o sistema e pode ser gravado em um pendrive para iniciar o computador.</p>
 <p>Baixe a ISO no site oficial da distribuição escolhida ou em um espelho indicado por esse projeto. Evite links encurtados, fóruns aleatórios e arquivos repostados por terceiros.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> A ISO é como uma imagem pronta de um disco de instalação. Você não deve apenas “abrir” esse arquivo: ele será usado para criar uma mídia inicializável.</p>
 </blockquote>
 <p>Não baixe a ISO diretamente para o pendrive que será usado na instalação. Primeiro salve o arquivo no computador, verifique-o e só depois grave-o no dispositivo USB.</p>
-<h3 id="arquitetura-do-computador">Arquitetura do computador</h3>
+<h3 id="c03-arquitetura-do-computador">Arquitetura do computador</h3>
 <p>Em PCs comuns atuais, a imagem geralmente é indicada como <code>64-bit</code>, <code>x86_64</code> ou <code>amd64</code>. Esses nomes podem parecer diferentes, mas normalmente apontam para a mesma família de processadores usada na maioria dos computadores com Intel ou AMD.</p>
 <p>Dispositivos ARM, alguns notebooks específicos e placas como Raspberry Pi podem exigir imagens próprias.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Se você usa um PC convencional recente com Windows em processador Intel ou AMD, a imagem de 64 bits para PC costuma ser a opção esperada. Quando houver dúvida, consulte a página oficial de requisitos da distribuição antes de baixar.</p>
 </blockquote>
-<h2 id="passo-3-verifique-a-integridade-do-arquivo">Passo 3 — Verifique a integridade do arquivo</h2>
+<h2 id="c03-passo-3-verifique-a-integridade-do-arquivo">Passo 3 — Verifique a integridade do arquivo</h2>
 <p>Depois do download, a distribuição costuma publicar um valor de verificação, normalmente SHA256 ou SHA512.</p>
 <p>Esse valor funciona como uma impressão digital matemática do arquivo. Se o arquivo mudar — por corrupção no download ou outra alteração — o resultado calculado deixa de coincidir com o valor publicado.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Imagine duas malas fechadas. Por fora elas parecem iguais. O checksum funciona como uma conferência do conteúdo sem precisar abrir e comparar item por item.</p>
 </blockquote>
 <p>Em Linux, um exemplo de verificação SHA256 é:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sha256sum</span> nome-do-arquivo.iso</span></code></pre></div>
+<div class="sourceCode" id="c03-cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c03-cb1-1"><a href="#c03-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sha256sum</span> nome-do-arquivo.iso</span></code></pre></div>
 <p>O terminal exibirá uma sequência longa de letras e números. Compare exatamente com o valor publicado pelo projeto oficial.</p>
 <p>Se o valor não coincidir, não continue. Apague o arquivo e faça o download novamente a partir da fonte oficial.</p>
-<blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Um checksum correspondente confirma que o arquivo baixado é igual ao arquivo representado pelo valor publicado. Para confirmar também a autenticidade desse valor, alguns projetos fornecem assinaturas criptográficas. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.</p>
+<blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Um checksum correspondente confirma que o arquivo baixado corresponde ao valor publicado. Para verificar também a origem e a autenticidade desse valor, alguns projetos fornecem uma assinatura criptográfica do arquivo de checksums ou da própria imagem. Nesta edição, vamos manter a prática inicial simples; a verificação de assinaturas pode ser aprofundada depois.</p>
 </blockquote>
-<h2 id="passo-4-crie-o-pendrive-inicializável">Passo 4 — Crie o pendrive inicializável</h2>
+<h2 id="c03-passo-4-crie-o-pendrive-inicializável">Passo 4 — Crie o pendrive inicializável</h2>
 <p>Para iniciar o computador pela ISO, você precisa <strong>gravar</strong> a imagem no pendrive usando uma ferramenta apropriada. Copiar o arquivo <code>.iso</code> para o pendrive como se fosse uma foto não produz a mesma coisa.</p>
 <p>Use uma ferramenta indicada pela documentação da distribuição e pelo sistema que você já utiliza. Nesta edição, as capturas principais usarão <strong>Rufus no Windows</strong> e a ferramenta <strong>Discos no Ubuntu</strong> quando precisarmos mostrar a criação da mídia. Outras ferramentas continuam válidas quando forem recomendadas oficialmente.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Criar o pendrive inicializável apaga os dados do dispositivo USB selecionado. Confirme duas vezes se escolheu o pendrive correto antes de iniciar.</p>
@@ -399,7 +402,7 @@
 <div class="keep-together"><p>Uma sequência segura é: 1. conectar o pendrive; 2. abrir a ferramenta de criação de mídia; 3. selecionar a ISO verificada; 4. selecionar o pendrive correto; 5. confirmar que não há arquivos importantes nele; 6. iniciar a gravação; 7. aguardar a conclusão antes de remover o dispositivo.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se o computador mostrar mais de um dispositivo removível, compare nome e capacidade antes de confirmar. Não confie apenas na posição em que o item aparece na lista.</p>
 </blockquote></div>
-<div class="heading-figure"><h2 id="passo-5-inicie-pelo-pendrive-e-use-o-modo-live">Passo 5 — Inicie pelo pendrive e use o modo live</h2>
+<div class="heading-figure"><h2 id="c03-passo-5-inicie-pelo-pendrive-e-use-o-modo-live">Passo 5 — Inicie pelo pendrive e use o modo live</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c03-06-menu-boot.png" alt="Menu de boot com a opção Try or Install Ubuntu selecionada.">
 <figcaption>
@@ -425,7 +428,7 @@ Desktop da sessão live, usado para testar o sistema antes da instalação.
 </blockquote>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> O modo live é como visitar uma casa antes de assinar o contrato. Você consegue circular, testar portas e perceber problemas importantes antes de se comprometer.</p>
 </blockquote>
-<h3 id="o-que-testar">O que testar</h3>
+<h3 id="c03-o-que-testar">O que testar</h3>
 <ul>
 <li>Wi‑Fi e conexão de rede.</li>
 <li>Teclado e touchpad.</li>
@@ -440,7 +443,7 @@ Desktop da sessão live, usado para testar o sistema antes da instalação.
 <p>A sessão live pode ser mais lenta do que uma instalação real porque o sistema está sendo executado a partir do USB. Algumas funções também podem se comportar de forma diferente. Um recurso que falha no modo live não significa necessariamente que nunca funcionará depois da instalação, mas é um sinal para investigar <strong>antes</strong> de apagar ou alterar o sistema atual.</p>
 <blockquote class="callout trouble"><p><strong>SE DER ERRADO</strong> Se o computador não iniciar pelo USB, não conclua imediatamente que “Linux não funciona”. Primeiro confira se o pendrive foi criado corretamente, tente outra porta USB e consulte a documentação do fabricante sobre o menu de boot e UEFI.</p>
 </blockquote>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c03-teste-você-mesmo">Teste você mesmo</h2>
 <p>Antes de instalar, faça este exercício de 10–15 minutos:</p>
 <ol type="1">
 <li>confirme que seu backup existe e abra pelo menos dois arquivos da cópia;</li>
@@ -452,7 +455,7 @@ Desktop da sessão live, usado para testar o sistema antes da instalação.
 <li>entre no modo live e teste Wi‑Fi, som, teclado e tela.</li>
 </ol>
 <p>Não instale ainda. O objetivo deste exercício é terminar o capítulo com a certeza de que o ambiente está preparado.</p>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c03-checklist-do-capítulo">Checklist do capítulo</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" />Tenho uma cópia funcional dos meus arquivos importantes.</label></li>
 <li><label><input type="checkbox" />Baixei ou localizei a ISO em fonte oficial.</label></li>
@@ -464,7 +467,7 @@ Desktop da sessão live, usado para testar o sistema antes da instalação.
 <li><label><input type="checkbox" />Testei o hardware básico antes da instalação.</label></li>
 <li><label><input type="checkbox" />Ainda não alterei as partições do computador.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c03-próximo-passo">Próximo passo</h2>
 <p>Agora temos algo muito melhor do que entusiasmo: temos preparação.</p>
 <div class="keep-together"><p>No próximo capítulo vamos entrar no instalador e entender cada decisão antes de confirmar. Partições, usuário, senha, criptografia e destino do sistema deixarão de ser telas misteriosas e passarão a ter significado.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Chegar ao instalador preparado já é uma vitória. Em instalação de sistema, saber quando <strong>não</strong> clicar é tão importante quanto saber qual botão apertar.</p>
@@ -478,17 +481,17 @@ Desktop da sessão live, usado para testar o sistema antes da instalação.
     <h1>Instalação passo a passo</h1>
   </div>
 </section>
-<main class="chapter-body content"><h3 id="onde-estamos">Onde estamos</h3>
+<main class="chapter-body content"><h3 id="c04-onde-estamos">Onde estamos</h3>
 <p>Você já fez backup, baixou a ISO de uma fonte oficial, verificou o arquivo, criou o pendrive e testou o sistema em modo live.</p>
 <p>Agora chegamos à etapa em que mudanças permanentes podem acontecer no disco.</p>
 <p>A instalação não precisa ser assustadora, mas exige atenção. As telas desta edição usam <strong>Ubuntu LTS</strong> como referência visual; nomes e posições dos botões podem mudar entre versões, mas as decisões principais continuam as mesmas.</p>
 <p>O objetivo deste capítulo não é ensinar todas as combinações possíveis de dual boot, RAID, múltiplos discos ou particionamento avançado. A ideia é mostrar um caminho seguro para a primeira instalação.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Se você ainda não confirmou o backup ou não sabe qual disco pode ser alterado, não avance. Feche o instalador e volte ao capítulo anterior.</p>
 </blockquote>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c04-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao final deste capítulo, você deverá saber reconhecer as principais telas do instalador, entender as decisões que realmente importam e concluir uma instalação simples sem clicar no automático às cegas.</p>
 <p>Você também vai saber identificar situações em que o melhor movimento é parar e pesquisar antes de continuar.</p>
-<div class="heading-figure"><h2 id="passo-1-confirme-idioma-teclado-e-conexão">Passo 1 — Confirme idioma, teclado e conexão</h2>
+<div class="heading-figure"><h2 id="c04-passo-1-confirme-idioma-teclado-e-conexão">Passo 1 — Confirme idioma, teclado e conexão</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-01-idioma.png" alt="Tela de escolha de idioma com Português do Brasil selecionado.">
 <figcaption>
@@ -533,13 +536,13 @@ Opções de drivers de terceiros e formatos de mídia.
 </blockquote></div>
 <blockquote class="callout note"><p><strong>PARE AQUI SE…</strong> você não sabe qual disco contém seus arquivos atuais, não confirmou o backup ou não entende se a opção escolhida apagará o sistema existente. Feche o instalador e esclareça isso antes de continuar.</p>
 </blockquote>
-<h2 id="passo-2-entenda-a-escolha-mais-importante-o-disco">Passo 2 — Entenda a escolha mais importante: o disco</h2>
+<h2 id="c04-passo-2-entenda-a-escolha-mais-importante-o-disco">Passo 2 — Entenda a escolha mais importante: o disco</h2>
 <p>Em algum momento, o instalador perguntará onde o Linux será instalado.</p>
 <p>Essa é a tela que merece mais atenção de todo o processo.</p>
 <p>Você pode encontrar opções como apagar um disco inteiro, instalar ao lado de outro sistema ou configurar o espaço manualmente. Os nomes mudam entre distribuições e versões, mas a lógica é parecida.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> O instalador não sabe quais arquivos têm valor emocional ou profissional para você. Ele sabe apenas quais discos e partições existem. A responsabilidade de reconhecer o destino correto continua sendo sua.</p>
 </blockquote>
-<div class="heading-figure"><h3 id="cenário-a-usar-o-disco-inteiro-para-linux">Cenário A — Usar o disco inteiro para Linux</h3>
+<div class="heading-figure"><h3 id="c04-cenário-a-usar-o-disco-inteiro-para-linux">Cenário A — Usar o disco inteiro para Linux</h3>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-08-apagar-disco.png" alt="Tela do instalador Ubuntu com a opção Apagar o disco e instalar o Ubuntu e aviso de que os dados serão apagados.">
 <figcaption>
@@ -555,19 +558,19 @@ A opção que apaga o disco precisa ser compreendida antes de continuar.
 </ul>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> “Apagar disco e instalar” significa exatamente isso. Não trate essa opção como um botão de teste.</p>
 </blockquote>
-<h3 id="cenário-b-manter-outro-sistema">Cenário B — Manter outro sistema</h3>
+<h3 id="c04-cenário-b-manter-outro-sistema">Cenário B — Manter outro sistema</h3>
 <p>Alguns instaladores conseguem detectar um sistema existente e oferecer instalação ao lado dele.</p>
 <p>Isso é conhecido como <strong>dual boot</strong>: dois sistemas instalados no mesmo computador, escolhidos no momento da inicialização.</p>
 <p>Para um iniciante, dual boot adiciona variáveis: espaço em disco, bootloader, criptografia existente, BitLocker, partições de recuperação e atualizações de firmware.</p>
 <p>Se o seu objetivo principal é aprender Linux, uma máquina dedicada, um segundo disco ou uma máquina virtual pode ser mais simples do que começar pelo cenário mais complexo. <strong>Dual boot não será o fluxo principal desta primeira edição.</strong> Se você precisa manter outro sistema no mesmo disco, consulte também a documentação específica da distribuição e do sistema já instalado.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> EFI, partição de recuperação e bootloader vão aparecer ao longo da jornada. Neste momento, você só precisa reconhecer que mexer em um disco com outro sistema exige atenção extra.</p>
 </blockquote>
-<h3 id="cenário-c-particionamento-manual">Cenário C — Particionamento manual</h3>
+<h3 id="c04-cenário-c-particionamento-manual">Cenário C — Particionamento manual</h3>
 <p>O particionamento manual dá mais controle, mas também exige mais conhecimento.</p>
 <div class="keep-together"><p>Ele pode ser útil quando você já sabe exatamente como quer organizar partições de sistema, dados, swap e inicialização. Para a primeira instalação, não existe prêmio por escolher a opção mais difícil.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se você chegou ao particionamento manual sem saber explicar o papel de cada partição que pretende criar, volte. Controle sem entendimento é só risco com aparência de experiência.</p>
 </blockquote></div>
-<div class="heading-figure"><h2 id="passo-3-pense-na-criptografia-antes-de-clicar-em-instalar">Passo 3 — Pense na criptografia antes de clicar em instalar</h2>
+<div class="heading-figure"><h2 id="c04-passo-3-pense-na-criptografia-antes-de-clicar-em-instalar">Passo 3 — Pense na criptografia antes de clicar em instalar</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-11-criptografia.png" alt="Tela de criptografia do instalador com opções sem criptografia, senha e suporte de hardware.">
 <figcaption>
@@ -579,7 +582,7 @@ Opções de criptografia e sistema de arquivos.
 <p>A criptografia melhora a proteção, mas cria uma responsabilidade nova: guardar senhas e chaves de recuperação com cuidado. O ponto principal é entender como recuperar o acesso <strong>antes</strong> de depender dessa proteção.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Nunca deixe a única cópia da chave de recuperação dentro do mesmo computador criptografado. Se o sistema pedir essa chave e ela estiver inacessível no próprio disco, você criou um cofre com a chave trancada dentro.</p>
 </blockquote>
-<div class="heading-figure"><h2 id="passo-4-crie-seu-usuário-com-calma">Passo 4 — Crie seu usuário com calma</h2>
+<div class="heading-figure"><h2 id="c04-passo-4-crie-seu-usuário-com-calma">Passo 4 — Crie seu usuário com calma</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-13-conta.png" alt="Tela de criação de conta do Ubuntu preenchida com nome e usuário fictícios e senha mascarada.">
 <figcaption>
@@ -592,7 +595,7 @@ Conta de exemplo com dados fictícios.
 <p>Se o instalador oferecer login automático, pense no contexto. Em notebook ou computador compartilhado, exigir senha no login é a escolha mais segura. Login automático só deve ser ativado quando você entende a conveniência e o risco envolvidos.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Sua senha de usuário e uma eventual senha de criptografia podem ser coisas diferentes. Uma libera sua sessão; a outra pode proteger o disco antes mesmo de o sistema iniciar.</p>
 </blockquote>
-<div class="heading-figure"><h2 id="passo-5-leia-o-resumo-antes-da-mudança-definitiva">Passo 5 — Leia o resumo antes da mudança definitiva</h2>
+<div class="heading-figure"><h2 id="c04-passo-5-leia-o-resumo-antes-da-mudança-definitiva">Passo 5 — Leia o resumo antes da mudança definitiva</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-14-resumo.png" alt="Tela Revise suas escolhas com disco, partições, aplicativos e criptografia da instalação.">
 <figcaption>
@@ -611,7 +614,7 @@ Revise disco, partições, aplicativos e criptografia antes de instalar.
 <li>criptografia, se escolhida.</li>
 </ul>
 <p>Se algo não fizer sentido, volte. Nenhum instalador sério exige que você continue só porque chegou até ali.</p>
-<div class="heading-figure"><h2 id="passo-6-deixe-o-instalador-trabalhar">Passo 6 — Deixe o instalador trabalhar</h2>
+<div class="heading-figure"><h2 id="c04-passo-6-deixe-o-instalador-trabalhar">Passo 6 — Deixe o instalador trabalhar</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-15-instalacao.png" alt="Tela do Ubuntu mostrando o sistema sendo instalado.">
 <figcaption>
@@ -624,7 +627,7 @@ Instalação em andamento: agora é hora de esperar.
 <p>Siga a mensagem apresentada pelo próprio instalador.</p>
 <blockquote class="callout trouble"><p><strong>SE DER ERRADO</strong> Se o computador reiniciar e voltar ao instalador, verifique se o pendrive continua definido como primeira opção de boot. Removê-lo e reiniciar novamente costuma resolver esse cenário simples.</p>
 </blockquote>
-<div class="heading-figure"><h2 id="passo-7-o-primeiro-boot-não-é-hora-de-correr">Passo 7 — O primeiro boot não é hora de correr</h2>
+<div class="heading-figure"><h2 id="c04-passo-7-o-primeiro-boot-não-é-hora-de-correr">Passo 7 — O primeiro boot não é hora de correr</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c04-17-primeiro-boot.png" alt="Tela de login do Ubuntu após a instalação, com conta fictícia.">
 <figcaption>
@@ -639,16 +642,16 @@ Primeiro boot concluído e tela de login disponível.
 </ol>
 <p>Se você ativou criptografia, confirme também que entende como desbloquear o sistema e onde está guardada a chave de recuperação, quando houver.</p>
 <p>Não comece instalando vinte aplicativos imediatamente. Primeiro confirme que a base está saudável. A atualização será o primeiro passo do próximo capítulo.</p>
-<h2 id="erros-comuns-nesta-etapa">Erros comuns nesta etapa</h2>
-<h3 id="escolher-o-disco-pelo-tamanho-sem-conferir-o-nome">Escolher o disco pelo tamanho sem conferir o nome</h3>
+<h2 id="c04-erros-comuns-nesta-etapa">Erros comuns nesta etapa</h2>
+<h3 id="c04-escolher-o-disco-pelo-tamanho-sem-conferir-o-nome">Escolher o disco pelo tamanho sem conferir o nome</h3>
 <p>Dois discos podem ter capacidades parecidas. Compare modelo, capacidade e contexto antes de confirmar.</p>
-<h3 id="tratar-instalar-ao-lado-como-algo-sem-risco">Tratar “instalar ao lado” como algo sem risco</h3>
+<h3 id="c04-tratar-instalar-ao-lado-como-algo-sem-risco">Tratar “instalar ao lado” como algo sem risco</h3>
 <p>Dual boot é viável, mas ainda altera a estrutura de inicialização e o uso do disco. Backup continua obrigatório.</p>
-<h3 id="ativar-criptografia-e-ignorar-a-recuperação">Ativar criptografia e ignorar a recuperação</h3>
+<h3 id="c04-ativar-criptografia-e-ignorar-a-recuperação">Ativar criptografia e ignorar a recuperação</h3>
 <p>A proteção só é útil se você souber recuperar o acesso de forma legítima.</p>
-<h3 id="fazer-particionamento-manual-para-aprender-mais-rápido">Fazer particionamento manual para “aprender mais rápido”</h3>
+<h3 id="c04-fazer-particionamento-manual-para-aprender-mais-rápido">Fazer particionamento manual para “aprender mais rápido”</h3>
 <p>A primeira instalação não precisa virar laboratório de armazenamento. Aprender uma coisa por vez é progresso, não limitação.</p>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c04-teste-você-mesmo">Teste você mesmo</h2>
 <p>Antes de considerar o capítulo concluído, responda sem abrir o livro:</p>
 <ol type="1">
 <li>Em qual tela da instalação você deve redobrar a atenção?</li>
@@ -659,7 +662,7 @@ Primeiro boot concluído e tela de login disponível.
 <li>Quais três coisas você deve verificar no primeiro boot?</li>
 </ol>
 <p>Se alguma resposta ainda estiver nebulosa, releia apenas a seção correspondente. Você não precisa repetir tudo.</p>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c04-checklist-do-capítulo">Checklist do capítulo</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" />Confirmei novamente que meu backup existe e pode ser acessado.</label></li>
 <li><label><input type="checkbox" />Sei qual disco pode ser alterado.</label></li>
@@ -671,7 +674,7 @@ Primeiro boot concluído e tela de login disponível.
 <li><label><input type="checkbox" />Revisei o resumo antes da alteração definitiva.</label></li>
 <li><label><input type="checkbox" />Depois da instalação, confirmei boot, senha, rede, teclado e vídeo.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c04-próximo-passo">Próximo passo</h2>
 <div class="keep-together"><p>Seu Linux agora está instalado. No próximo capítulo, vamos fazer o que muita gente deveria fazer antes de começar a personalizar o sistema: atualizar, entender onde ficam as configurações, instalar programas com segurança e reconhecer os primeiros elementos da interface.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> A melhor primeira instalação não é a mais sofisticada. É aquela em que você consegue explicar as decisões que tomou e ainda sabe como recuperar seus dados se algo sair diferente do esperado.</p>
 </blockquote></div>
@@ -684,12 +687,12 @@ Primeiro boot concluído e tela de login disponível.
     <h1>Primeiros passos depois da instalação</h1>
   </div>
 </section>
-<main class="chapter-body content"><h3 id="onde-estamos">Onde estamos</h3>
+<main class="chapter-body content"><h3 id="c05-onde-estamos">Onde estamos</h3>
 <p>Seu Linux já está instalado e iniciou pelo disco. Agora começa uma etapa menos dramática, mas muito importante: transformar uma instalação recém-feita em um sistema pronto para uso diário.</p>
 <div class="keep-together"><p>O objetivo deste capítulo não é personalizar tudo nem instalar dezenas de programas. Primeiro vamos confirmar que o sistema está saudável, atualizado e confortável para você.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Nos primeiros minutos, resista à vontade de mudar tudo. Antes de personalizar, descubra como o sistema já funciona.</p>
 </blockquote></div>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c05-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao final deste capítulo, você será capaz de:</p>
 <ul>
 <li>atualizar o sistema com segurança;</li>
@@ -699,7 +702,7 @@ Primeiro boot concluído e tela de login disponível.
 <li>organizar uma rotina inicial simples;</li>
 <li>reconhecer quando uma mudança pode esperar.</li>
 </ul>
-<div class="heading-figure"><h2 id="passo-1-faça-a-primeira-atualização">Passo 1 — Faça a primeira atualização</h2>
+<div class="heading-figure"><h2 id="c05-passo-1-faça-a-primeira-atualização">Passo 1 — Faça a primeira atualização</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c05-02-atualizador.png" alt="Janela Atualizador de programas mostrando atualizações disponíveis no Ubuntu.">
 <figcaption>
@@ -713,7 +716,7 @@ Atualizador de programas indicando atualizações disponíveis.
 <p>Se a distribuição oferecer uma ferramenta gráfica de atualização, comece por ela. Leia o que será instalado e deixe o processo terminar antes de desligar a máquina. Depois de uma atualização grande, reinicie quando o sistema solicitar ou quando houver uma razão clara para isso.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Não interrompa uma atualização importante no meio. Se o sistema estiver trabalhando com pacotes essenciais, desligar à força pode deixar a instalação inconsistente.</p>
 </blockquote>
-<div class="heading-figure"><h2 id="passo-2-conheça-a-interface-antes-de-trocar-a-interface">Passo 2 — Conheça a interface antes de trocar a interface</h2>
+<div class="heading-figure"><h2 id="c05-passo-2-conheça-a-interface-antes-de-trocar-a-interface">Passo 2 — Conheça a interface antes de trocar a interface</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c05-01-desktop.png" alt="Desktop padrão do Ubuntu 26.04.1 LTS após a instalação.">
 <figcaption>
@@ -745,7 +748,7 @@ Arquivos mostra a pasta pessoal e as pastas padrão do usuário.
 <p>Abra cada um com calma. O objetivo não é decorar posições, mas descobrir onde procurar.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Ambientes gráficos mudam. Saber procurar em “Configurações”, “Aplicativos” e “Arquivos” é mais útil do que memorizar onde um botão fica numa versão específica.</p>
 </blockquote>
-<div class="heading-figure"><h2 id="passo-3-instale-programas-por-fontes-confiáveis">Passo 3 — Instale programas por fontes confiáveis</h2>
+<div class="heading-figure"><h2 id="c05-passo-3-instale-programas-por-fontes-confiáveis">Passo 3 — Instale programas por fontes confiáveis</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c05-05-app-center.png" alt="Centro de Aplicativos do Ubuntu na tela Explorar.">
 <figcaption>
@@ -757,7 +760,7 @@ Centro de Aplicativos: caminho gráfico para descobrir software.
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Um repositório é como uma prateleira mantida pela distribuição: em vez de procurar instaladores pela internet inteira, o sistema consulta fontes conhecidas e organiza instalação, atualização e remoção.</p>
 </blockquote>
 <p>Evite transformar a pesquisa “baixar programa para Linux” no seu primeiro método. Site oficial e repositório confiável vêm antes de links aleatórios.</p>
-<div class="heading-figure"><h2 id="passo-4-remover-também-faz-parte-de-aprender">Passo 4 — Remover também faz parte de aprender</h2>
+<div class="heading-figure"><h2 id="c05-passo-4-remover-também-faz-parte-de-aprender">Passo 4 — Remover também faz parte de aprender</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c05-06-07-gerenciar-apps.png" alt="Centro de Aplicativos na seção Gerenciar com aplicativos instalados e botões Desinstalar.">
 <figcaption>
@@ -766,7 +769,7 @@ A área Gerenciar mostra aplicativos instalados, atualizações e ações de des
 </figure></div>
 <p>Instale um aplicativo simples e, depois de entender como ele aparece no sistema, pratique removê-lo pela mesma ferramenta de software.</p>
 <p>Isso ensina uma ideia importante: experimentar não precisa significar acumular programas para sempre.</p>
-<div class="heading-figure"><h2 id="passo-5-revise-hardware-e-periféricos">Passo 5 — Revise hardware e periféricos</h2>
+<div class="heading-figure"><h2 id="c05-passo-5-revise-hardware-e-periféricos">Passo 5 — Revise hardware e periféricos</h2>
 <figure class="figure">
 <img src="../../assets/linux-do-zero/screenshots/c05-09a-bluetooth.png" alt="Configurações do Ubuntu na seção Bluetooth informando que nenhum Bluetooth foi encontrado.">
 <figcaption>
@@ -792,10 +795,10 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <p>Se tudo funcionou no modo live e deixou de funcionar após a instalação, registre o sintoma antes de sair alterando configurações. Se o Ubuntu oferecer uma ferramenta de <strong>drivers adicionais</strong> para o hardware detectado, consulte esse caminho antes de procurar scripts ou comandos aleatórios na internet.</p>
 <blockquote class="callout trouble"><p><strong>SE DER ERRADO</strong> Anote o que não funcionou, quando começou e o que você tentou. Um bom diagnóstico começa com uma descrição clara, não com dez mudanças feitas ao mesmo tempo.</p>
 </blockquote>
-<h2 id="passo-6-faça-poucas-personalizações-de-cada-vez">Passo 6 — Faça poucas personalizações de cada vez</h2>
+<h2 id="c05-passo-6-faça-poucas-personalizações-de-cada-vez">Passo 6 — Faça poucas personalizações de cada vez</h2>
 <p>Trocar papel de parede, tema ou posição do painel é inofensivo na maioria dos casos. Alterar componentes essenciais do ambiente ou instalar extensões desconhecidas já aumenta a complexidade.</p>
 <p>Faça uma mudança, observe o resultado e siga adiante só quando souber desfazer. Antes de uma alteração visual maior, uma captura de tela do estado atual pode servir como referência para voltar atrás.</p>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c05-teste-você-mesmo">Teste você mesmo</h2>
 <p>Em 10 minutos:</p>
 <ol type="1">
 <li>abra a ferramenta de atualizações e confirme que o sistema está em dia;</li>
@@ -805,7 +808,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>remova-o novamente se ele não for necessário;</li>
 <li>teste áudio, rede e suspensão.</li>
 </ol>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c05-checklist-do-capítulo">Checklist do capítulo</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" />Atualizei o sistema.</label></li>
 <li><label><input type="checkbox" />Sei onde ficam configurações, arquivos e aplicativos.</label></li>
@@ -815,7 +818,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li><label><input type="checkbox" />Evitei instalar ferramentas sem entender a origem.</label></li>
 <li><label><input type="checkbox" />Fiz mudanças pequenas e reversíveis.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c05-próximo-passo">Próximo passo</h2>
 <div class="keep-together"><p>Seu sistema agora está pronto para uso básico. No próximo capítulo vamos entrar no terminal com outro objetivo: não parecer técnico, mas ganhar precisão e autonomia.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Um Linux “pronto” não é aquele cheio de customizações. É aquele em que você sabe atualizar, instalar, remover e encontrar o que precisa sem medo.</p>
 </blockquote></div>
@@ -828,91 +831,91 @@ Som: valide saída, volume e entrada no seu próprio hardware.
     <h1>Terminal sem medo: 20 comandos essenciais</h1>
   </div>
 </section>
-<main class="chapter-body content"><h3 id="onde-estamos">Onde estamos</h3>
+<main class="chapter-body content"><h3 id="c06-onde-estamos">Onde estamos</h3>
 <p>Você já consegue usar o Linux pela interface gráfica. Agora vamos conhecer o terminal como uma ferramenta de precisão: ele permite dizer ao sistema exatamente o que você quer fazer e enxergar resultados de forma clara.</p>
 <p>Não existe prêmio por abandonar a interface gráfica. O objetivo é saber usar os dois caminhos.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Você não precisa memorizar vinte comandos hoje. Precisa reconhecer para que eles servem e saber onde consultar quando esquecer.</p>
 </blockquote>
-<h2 id="antes-de-começar-crie-uma-área-segura">Antes de começar — crie uma área segura</h2>
+<h2 id="c06-antes-de-começar-crie-uma-área-segura">Antes de começar — crie uma área segura</h2>
 <p>Abra o terminal e descubra onde você está:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
+<div class="sourceCode" id="c06-cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb1-1"><a href="#c06-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
 <p>Depois crie uma pasta exclusiva para os exercícios:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/linux-do-zero-lab</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/linux-do-zero-lab</span></code></pre></div>
+<div class="sourceCode" id="c06-cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb2-1"><a href="#c06-cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/linux-do-zero-lab</span>
+<span id="c06-cb2-2"><a href="#c06-cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/linux-do-zero-lab</span></code></pre></div>
 <p>Tudo deste capítulo será praticado dentro dessa pasta sempre que possível.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Confira o resultado de <code>pwd</code> antes de executar comandos que movem, sobrescrevem ou removem arquivos.</p>
 </blockquote>
-<h2 id="como-ler-um-comando">Como ler um comando</h2>
+<h2 id="c06-como-ler-um-comando">Como ler um comando</h2>
 <p>Em muitos casos, você pode pensar na estrutura assim:</p>
 <pre class="text"><code>comando [opções] [alvo]</code></pre>
 <p>Por exemplo:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> projetos</span></code></pre></div>
+<div class="sourceCode" id="c06-cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb4-1"><a href="#c06-cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> projetos</span></code></pre></div>
 <p>Aqui, <code>ls</code> é o comando, <code>-l</code> é uma opção e <code>projetos</code> é o alvo. Você não precisa decorar essa fórmula; a ideia é perceber que um comando tem partes com funções diferentes.</p>
-<h2 id="os-20-comandos">Os 20 comandos</h2>
-<h3 id="navegação">Navegação</h3>
-<h3 id="pwd-onde-estou">1. <code>pwd</code> — onde estou?</h3>
+<h2 id="c06-os-20-comandos">Os 20 comandos</h2>
+<h3 id="c06-navegação">Navegação</h3>
+<h3 id="c06-pwd-onde-estou">1. <code>pwd</code> — onde estou?</h3>
 <p>Mostra o caminho da pasta atual.</p>
-<h3 id="ls-o-que-existe-aqui">2. <code>ls</code> — o que existe aqui?</h3>
+<h3 id="c06-ls-o-que-existe-aqui">2. <code>ls</code> — o que existe aqui?</h3>
 <p>Lista arquivos e pastas. Comece com <code>ls</code>. Depois experimente <code>ls -l</code> para mais detalhes e <code>ls -a</code> para incluir itens ocultos. As opções podem ser combinadas: <code>ls -la</code>.</p>
-<h3 id="cd-mudar-de-pasta">3. <code>cd</code> — mudar de pasta</h3>
+<h3 id="c06-cd-mudar-de-pasta">3. <code>cd</code> — mudar de pasta</h3>
 <p><code>cd pasta</code> entra em uma pasta; <code>cd ..</code> sobe um nível; <code>cd ~</code> volta para sua pasta pessoal.</p>
-<h3 id="criação-e-arquivos">Criação e arquivos</h3>
-<h3 id="mkdir-criar-pasta">4. <code>mkdir</code> — criar pasta</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> projetos</span></code></pre></div>
-<h3 id="touch-criar-arquivo-vazio">5. <code>touch</code> — criar arquivo vazio</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> notas.txt</span></code></pre></div>
-<h3 id="cp-copiar">6. <code>cp</code> — copiar</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> notas.txt copia-notas.txt</span></code></pre></div>
-<h3 id="mv-mover-ou-renomear">7. <code>mv</code> — mover ou renomear</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> copia-notas.txt arquivo-renomeado.txt</span></code></pre></div>
-<h3 id="leitura-e-pesquisa">Leitura e pesquisa</h3>
-<h3 id="cat-mostrar-conteúdo-curto">8. <code>cat</code> — mostrar conteúdo curto</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> notas.txt</span></code></pre></div>
+<h3 id="c06-criação-e-arquivos">Criação e arquivos</h3>
+<h3 id="c06-mkdir-criar-pasta">4. <code>mkdir</code> — criar pasta</h3>
+<div class="sourceCode" id="c06-cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb5-1"><a href="#c06-cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> projetos</span></code></pre></div>
+<h3 id="c06-touch-criar-arquivo-vazio">5. <code>touch</code> — criar arquivo vazio</h3>
+<div class="sourceCode" id="c06-cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb6-1"><a href="#c06-cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> notas.txt</span></code></pre></div>
+<h3 id="c06-cp-copiar">6. <code>cp</code> — copiar</h3>
+<div class="sourceCode" id="c06-cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb7-1"><a href="#c06-cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> notas.txt copia-notas.txt</span></code></pre></div>
+<h3 id="c06-mv-mover-ou-renomear">7. <code>mv</code> — mover ou renomear</h3>
+<div class="sourceCode" id="c06-cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb8-1"><a href="#c06-cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> copia-notas.txt arquivo-renomeado.txt</span></code></pre></div>
+<h3 id="c06-leitura-e-pesquisa">Leitura e pesquisa</h3>
+<h3 id="c06-cat-mostrar-conteúdo-curto">8. <code>cat</code> — mostrar conteúdo curto</h3>
+<div class="sourceCode" id="c06-cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb9-1"><a href="#c06-cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> notas.txt</span></code></pre></div>
 <p>Use <code>cat</code> para conteúdo curto. Para textos maiores, prefira <code>less</code>.</p>
-<h3 id="less-ler-conteúdo-maior">9. <code>less</code> — ler conteúdo maior</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> /etc/os-release</span></code></pre></div>
+<h3 id="c06-less-ler-conteúdo-maior">9. <code>less</code> — ler conteúdo maior</h3>
+<div class="sourceCode" id="c06-cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb10-1"><a href="#c06-cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> /etc/os-release</span></code></pre></div>
 <p>Pressione <code>q</code> para sair.</p>
-<h3 id="head-ver-o-começo">10. <code>head</code> — ver o começo</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> /etc/os-release</span></code></pre></div>
-<h3 id="tail-ver-o-final">11. <code>tail</code> — ver o final</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> /etc/os-release</span></code></pre></div>
-<h3 id="grep-procurar-texto">12. <code>grep</code> — procurar texto</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> NAME /etc/os-release</span></code></pre></div>
-<h3 id="find-localizar-arquivos">13. <code>find</code> — localizar arquivos</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> ~/linux-do-zero-lab <span class="at">-name</span> <span class="st">&quot;*.txt&quot;</span></span></code></pre></div>
-<h3 id="informações-do-sistema">Informações do sistema</h3>
-<h3 id="df-espaço-dos-sistemas-de-arquivos">14. <code>df</code> — espaço dos sistemas de arquivos</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code></pre></div>
+<h3 id="c06-head-ver-o-começo">10. <code>head</code> — ver o começo</h3>
+<div class="sourceCode" id="c06-cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb11-1"><a href="#c06-cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> /etc/os-release</span></code></pre></div>
+<h3 id="c06-tail-ver-o-final">11. <code>tail</code> — ver o final</h3>
+<div class="sourceCode" id="c06-cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb12-1"><a href="#c06-cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> /etc/os-release</span></code></pre></div>
+<h3 id="c06-grep-procurar-texto">12. <code>grep</code> — procurar texto</h3>
+<div class="sourceCode" id="c06-cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb13-1"><a href="#c06-cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> NAME /etc/os-release</span></code></pre></div>
+<h3 id="c06-find-localizar-arquivos">13. <code>find</code> — localizar arquivos</h3>
+<div class="sourceCode" id="c06-cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb14-1"><a href="#c06-cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> ~/linux-do-zero-lab <span class="at">-name</span> <span class="st">&quot;*.txt&quot;</span></span></code></pre></div>
+<h3 id="c06-informações-do-sistema">Informações do sistema</h3>
+<h3 id="c06-df-espaço-dos-sistemas-de-arquivos">14. <code>df</code> — espaço dos sistemas de arquivos</h3>
+<div class="sourceCode" id="c06-cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb15-1"><a href="#c06-cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code></pre></div>
 <p>A opção <code>-h</code> mostra tamanhos em unidades mais fáceis de ler.</p>
-<h3 id="du-tamanho-ocupado-por-arquivos-e-pastas">15. <code>du</code> — tamanho ocupado por arquivos e pastas</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> ~/linux-do-zero-lab</span></code></pre></div>
-<h3 id="free-uso-de-memória">16. <code>free</code> — uso de memória</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span> <span class="at">-h</span></span></code></pre></div>
-<h3 id="uname-informações-do-sistema">17. <code>uname</code> — informações do sistema</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uname</span> <span class="at">-r</span></span></code></pre></div>
+<h3 id="c06-du-tamanho-ocupado-por-arquivos-e-pastas">15. <code>du</code> — tamanho ocupado por arquivos e pastas</h3>
+<div class="sourceCode" id="c06-cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb16-1"><a href="#c06-cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> ~/linux-do-zero-lab</span></code></pre></div>
+<h3 id="c06-free-uso-de-memória">16. <code>free</code> — uso de memória</h3>
+<div class="sourceCode" id="c06-cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb17-1"><a href="#c06-cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span> <span class="at">-h</span></span></code></pre></div>
+<h3 id="c06-uname-informações-do-sistema">17. <code>uname</code> — informações do sistema</h3>
+<div class="sourceCode" id="c06-cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb18-1"><a href="#c06-cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uname</span> <span class="at">-r</span></span></code></pre></div>
 <p>A opção <code>-r</code> mostra a versão do kernel. <code>uname -a</code> exibe mais informações quando você precisar de um diagnóstico mais completo.</p>
-<h3 id="whoami-qual-usuário-está-ativo">18. <code>whoami</code> — qual usuário está ativo?</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">whoami</span></span></code></pre></div>
-<h3 id="ajuda-e-histórico">Ajuda e histórico</h3>
-<h3 id="man-manual-do-comando">19. <code>man</code> — manual do comando</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
+<h3 id="c06-whoami-qual-usuário-está-ativo">18. <code>whoami</code> — qual usuário está ativo?</h3>
+<div class="sourceCode" id="c06-cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb19-1"><a href="#c06-cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">whoami</span></span></code></pre></div>
+<h3 id="c06-ajuda-e-histórico">Ajuda e histórico</h3>
+<h3 id="c06-man-manual-do-comando">19. <code>man</code> — manual do comando</h3>
+<div class="sourceCode" id="c06-cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb20-1"><a href="#c06-cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
 <p>Use as setas para navegar e <code>q</code> para sair.</p>
-<h3 id="history-histórico-recente">20. <code>history</code> — histórico recente</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">history</span></span></code></pre></div>
+<h3 id="c06-history-histórico-recente">20. <code>history</code> — histórico recente</h3>
+<div class="sourceCode" id="c06-cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb21-1"><a href="#c06-cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">history</span></span></code></pre></div>
 <p>Dependendo do shell e da configuração, comandos digitados podem ficar registrados. Evite colocar senhas, tokens ou outros segredos diretamente na linha de comando.</p>
-<h2 id="e-o-rm">E o <code>rm</code>?</h2>
+<h2 id="c06-e-o-rm">E o <code>rm</code>?</h2>
 <p>Você vai encontrar <code>rm</code> cedo ou tarde. Ele remove arquivos, mas não faz parte da nossa lista principal justamente porque queremos introduzi-lo com cuidado.</p>
 <p>Dentro da pasta de laboratório, crie um arquivo descartável:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> apagar-depois.txt</span></code></pre></div>
+<div class="sourceCode" id="c06-cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb22-1"><a href="#c06-cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> apagar-depois.txt</span></code></pre></div>
 <p>Confirme que ele existe com <code>ls</code>. Só então remova:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> apagar-depois.txt</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="c06-cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c06-cb23-1"><a href="#c06-cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> apagar-depois.txt</span>
+<span id="c06-cb23-2"><a href="#c06-cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 <p>O segundo <code>ls</code> confirma que o arquivo saiu da pasta. A ideia é praticar a sequência <strong>criar → conferir → remover → conferir</strong>.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Não copie exemplos com <code>rm -r</code>, curingas como <code>*</code> ou <code>sudo rm</code> sem entender exatamente o caminho atingido. No terminal, a lixeira nem sempre participa da história.</p>
 </blockquote>
-<h2 id="o-que-acabou-de-acontecer">O que acabou de acontecer</h2>
+<h2 id="c06-o-que-acabou-de-acontecer">O que acabou de acontecer</h2>
 <p>Você usou o terminal para navegar, criar, copiar, mover, ler, pesquisar e consultar o sistema. Nenhum desses comandos exige “ser programador”. Eles apenas oferecem uma forma textual e precisa de executar tarefas.</p>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c06-teste-você-mesmo">Teste você mesmo</h2>
 <p>Sem olhar o exemplo anterior, tente:</p>
 <ol type="1">
 <li>entrar em <code>~/linux-do-zero-lab</code>;</li>
@@ -925,7 +928,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>conferir quanto espaço o laboratório ocupa.</li>
 </ol>
 <p>Se esquecer um comando, consulte. Esse é o exercício.</p>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c06-checklist-do-capítulo">Checklist do capítulo</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" />Sei descobrir em qual pasta estou.</label></li>
 <li><label><input type="checkbox" />Sei listar e navegar por diretórios.</label></li>
@@ -935,7 +938,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li><label><input type="checkbox" />Sei abrir o manual de um comando.</label></li>
 <li><label><input type="checkbox" />Entendi por que remoção merece mais cuidado.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c06-próximo-passo">Próximo passo</h2>
 <div class="keep-together"><p>Agora que você sabe se orientar no terminal, vamos entender quem pode ler, alterar ou executar cada arquivo. Isso nos leva a usuários, grupos e permissões.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Quando esquecer um comando, não pense “eu não aprendi”. Pense “eu sei o que preciso procurar”. Isso já é autonomia.</p>
 </blockquote></div>
@@ -948,12 +951,12 @@ Som: valide saída, volume e entrada no seu próprio hardware.
     <h1>Arquivos, usuários e permissões sem mistério</h1>
   </div>
 </section>
-<main class="chapter-body content"><h3 id="onde-estamos">Onde estamos</h3>
+<main class="chapter-body content"><h3 id="c07-onde-estamos">Onde estamos</h3>
 <p>Você já sabe navegar pelo sistema e usar comandos básicos. Agora vamos entender uma das ideias mais importantes do Linux: nem todo usuário pode fazer tudo, e nem todo arquivo deve aceitar qualquer alteração.</p>
 <p>Permissões existem para limitar danos e organizar responsabilidades.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Pense numa casa compartilhada. Algumas portas são de uso comum, outras pertencem a uma pessoa, e algumas áreas exigem uma chave especial. Permissões são uma forma de dizer quem pode fazer o quê.</p>
 </blockquote>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c07-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao final deste capítulo, você será capaz de:</p>
 <ul>
 <li>identificar seu usuário e grupos;</li>
@@ -963,15 +966,15 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>reconhecer quando <code>sudo</code> é realmente necessário;</li>
 <li>evitar permissões excessivas como solução automática.</li>
 </ul>
-<h2 id="passo-1-descubra-quem-você-é-no-sistema">Passo 1 — Descubra quem você é no sistema</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">whoami</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">id</span></span></code></pre></div>
+<h2 id="c07-passo-1-descubra-quem-você-é-no-sistema">Passo 1 — Descubra quem você é no sistema</h2>
+<div class="sourceCode" id="c07-cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c07-cb1-1"><a href="#c07-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">whoami</span></span>
+<span id="c07-cb1-2"><a href="#c07-cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">id</span></span></code></pre></div>
 <p><code>whoami</code> mostra o usuário atual. <code>id</code> mostra também identificadores e grupos associados.</p>
-<h2 id="passo-2-leia-permissões-com-ls--l">Passo 2 — Leia permissões com <code>ls -l</code></h2>
+<h2 id="c07-passo-2-leia-permissões-com-ls--l">Passo 2 — Leia permissões com <code>ls -l</code></h2>
 <p>Entre no laboratório e crie um arquivo:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/linux-do-zero-lab</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> permissoes.txt</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> permissoes.txt</span></code></pre></div>
+<div class="sourceCode" id="c07-cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c07-cb2-1"><a href="#c07-cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/linux-do-zero-lab</span>
+<span id="c07-cb2-2"><a href="#c07-cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> permissoes.txt</span>
+<span id="c07-cb2-3"><a href="#c07-cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> permissoes.txt</span></code></pre></div>
 <p>Você verá uma linha parecida com:</p>
 <pre class="text"><code>-rw-r--r-- 1 usuario usuario 0 ... permissoes.txt</code></pre>
 <p>Leia o início assim:</p>
@@ -995,36 +998,36 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <p>Neste primeiro exercício estamos olhando principalmente <strong>arquivos</strong>. Em diretórios, essas permissões têm efeitos próprios; vamos deixar esse aprofundamento para depois para não misturar conceitos.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Leia da esquerda para a direita. Primeiro identifique o dono, depois o grupo, depois os demais. Com prática, a linha deixa de parecer um código secreto.</p>
 </blockquote>
-<h2 id="passo-3-altere-uma-permissão-simples">Passo 3 — Altere uma permissão simples</h2>
+<h2 id="c07-passo-3-altere-uma-permissão-simples">Passo 3 — Altere uma permissão simples</h2>
 <p>Vamos tornar um arquivo executável apenas como exercício. Use o editor de texto do sistema para criar, dentro de <code>~/linux-do-zero-lab</code>, um arquivo chamado <code>ola.sh</code> com estas duas linhas:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/sh</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Olá, Linux&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="c07-cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="c07-cb5-1"><a href="#c07-cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/sh</span></span>
+<span id="c07-cb5-2"><a href="#c07-cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Olá, Linux&quot;</span></span></code></pre></div>
 <p>Depois, no terminal:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> u+x ola.sh</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> ola.sh</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./ola.sh</span></span></code></pre></div>
+<div class="sourceCode" id="c07-cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c07-cb6-1"><a href="#c07-cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> u+x ola.sh</span>
+<span id="c07-cb6-2"><a href="#c07-cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> ola.sh</span>
+<span id="c07-cb6-3"><a href="#c07-cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./ola.sh</span></span></code></pre></div>
 <p><code>chmod u+x</code> significa: adicionar (<code>+</code>) permissão de execução (<code>x</code>) ao usuário dono (<code>u</code>).</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Usar a forma simbólica, como <code>u+x</code>, ajuda o iniciante a enxergar a intenção. Números como <code>755</code> existem e são comuns, mas não precisam ser seu primeiro idioma de permissões.</p>
 </blockquote>
-<h2 id="passo-4-entenda-sudo">Passo 4 — Entenda <code>sudo</code></h2>
-<p><code>sudo</code> permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada.</p>
-<p>Ele não é um prefixo mágico para fazer comandos “funcionarem”. A senha confirma sua identidade; <strong>ela não valida o comando nem garante que ele seja seguro</strong>.</p>
+<h2 id="c07-passo-4-entenda-sudo">Passo 4 — Entenda <code>sudo</code></h2>
+<p><code>sudo</code> permite pedir autorização para executar uma ação com privilégios administrativos quando sua conta está autorizada. Quando o sistema solicitar autenticação, normalmente você confirma sua identidade segundo a política configurada; isso não confirma que o comando seja seguro.</p>
+<p>Ele não é um prefixo mágico para fazer comandos “funcionarem”. A autenticação funciona como uma barreira de autorização; <strong>ela não revisa o comando nem garante que ele seja seguro</strong>.</p>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Se um comando falhou e você não entendeu o motivo, não coloque <code>sudo</code> automaticamente na frente. Primeiro descubra o que ele tenta modificar.</p>
 </blockquote>
 <p>Use a pausa da autenticação a seu favor: releia o comando antes de confirmar. Nem todo comando com <code>sudo</code> é perigoso, e nem todo comando sem <code>sudo</code> é inofensivo. O que importa é entender o que ele faz e onde atua.</p>
-<h2 id="passo-5-evite-permissões-amplas-demais">Passo 5 — Evite permissões amplas demais</h2>
-<p>Você pode encontrar na internet soluções do tipo “use <code>chmod 777</code>”. Isso dá leitura, escrita e execução para todos os grupos de permissão naquele item.</p>
+<h2 id="c07-passo-5-evite-permissões-amplas-demais">Passo 5 — Evite permissões amplas demais</h2>
+<p>Você pode encontrar na internet soluções do tipo “use <code>chmod 777</code>”. Isso dá leitura, escrita e execução ao dono, ao grupo e aos demais usuários naquele item.</p>
 <div class="keep-together"><p>Às vezes há cenários técnicos específicos, mas para resolver um erro comum de iniciante quase sempre é um sinal para investigar melhor.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> A melhor permissão é a menor que permite a tarefa legítima acontecer. Mais acesso não significa mais correto.</p>
 </blockquote></div>
-<h2 id="erros-comuns">Erros comuns</h2>
-<h3 id="usar-sudo-para-qualquer-erro">Usar <code>sudo</code> para qualquer erro</h3>
+<h2 id="c07-erros-comuns">Erros comuns</h2>
+<h3 id="c07-usar-sudo-para-qualquer-erro">Usar <code>sudo</code> para qualquer erro</h3>
 <p>Permissão negada pode ter causas diferentes. Elevar privilégios sem entender só aumenta o impacto possível.</p>
-<h3 id="tornar-tudo-executável">Tornar tudo executável</h3>
+<h3 id="c07-tornar-tudo-executável">Tornar tudo executável</h3>
 <p>Arquivos de texto, imagens e documentos não precisam de permissão de execução apenas porque “talvez ajude”.</p>
-<h3 id="alterar-dono-de-arquivos-do-sistema-por-tentativa">Alterar dono de arquivos do sistema por tentativa</h3>
+<h3 id="c07-alterar-dono-de-arquivos-do-sistema-por-tentativa">Alterar dono de arquivos do sistema por tentativa</h3>
 <p>Mudar propriedade pode quebrar expectativas de serviços e pacotes. Você também pode encontrar o comando <code>chown</code>, usado para alterar propriedade de arquivos. Reconheça o nome, mas não o use em arquivos do sistema por tentativa. Pratique mudanças apenas no laboratório.</p>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c07-teste-você-mesmo">Teste você mesmo</h2>
 <ol type="1">
 <li>entre em <code>~/linux-do-zero-lab</code>;</li>
 <li>crie <code>teste-permissao.txt</code>;</li>
@@ -1034,7 +1037,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>confirme a mudança com <code>ls -l</code>;</li>
 <li>remova a permissão com <code>chmod u-x ola.sh</code> e observe o resultado.</li>
 </ol>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c07-checklist-do-capítulo">Checklist do capítulo</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" />Sei qual usuário está ativo.</label></li>
 <li><label><input type="checkbox" />Entendo os três grupos de permissões.</label></li>
@@ -1044,7 +1047,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li><label><input type="checkbox" />Não uso <code>chmod 777</code> como solução genérica.</label></li>
 <li><label><input type="checkbox" />Pratico mudanças de permissão apenas em arquivos que posso perder.</label></li>
 </ul>
-<h2 id="próximo-passo">Próximo passo</h2>
+<h2 id="c07-próximo-passo">Próximo passo</h2>
 <div class="keep-together"><p>Você já instalou o sistema, aprendeu o terminal e entende permissões básicas. Falta uma habilidade que separa dependência de autonomia: saber investigar problemas sem piorá-los.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Segurança não é impedir você de usar o computador. É garantir que cada ação tenha o alcance necessário — e não muito mais.</p>
 </blockquote></div>
@@ -1057,12 +1060,12 @@ Som: valide saída, volume e entrada no seu próprio hardware.
     <h1>Problemas comuns e como procurar solução com segurança</h1>
   </div>
 </section>
-<main class="chapter-body content"><h3 id="onde-estamos">Onde estamos</h3>
+<main class="chapter-body content"><h3 id="c08-onde-estamos">Onde estamos</h3>
 <p>Você chegou ao ponto em que o Linux já não é mais um sistema desconhecido. Agora precisa aprender algo que nenhum livro consegue evitar: eventualmente alguma coisa não vai funcionar como você esperava.</p>
 <p>Autonomia não significa nunca ter problema. Significa saber investigar sem piorar a situação.</p>
 <blockquote class="callout understand"><p><strong>ENTENDA</strong> Resolver problemas é menos parecido com adivinhar uma senha e mais parecido com investigar uma cena: observe primeiro, altere depois.</p>
 </blockquote>
-<h2 id="o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
+<h2 id="c08-o-que-você-vai-conseguir-fazer">O que você vai conseguir fazer</h2>
 <p>Ao final deste capítulo, você será capaz de:</p>
 <ul>
 <li>descrever um problema de forma útil;</li>
@@ -1073,7 +1076,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>desfazer experimentos quando possível;</li>
 <li>saber quando parar e pedir ajuda.</li>
 </ul>
-<h2 id="passo-1-transforme-não-funciona-em-uma-descrição">Passo 1 — Transforme “não funciona” em uma descrição</h2>
+<h2 id="c08-passo-1-transforme-não-funciona-em-uma-descrição">Passo 1 — Transforme “não funciona” em uma descrição</h2>
 <p>Antes de pesquisar, responda:</p>
 <ol type="1">
 <li>O que eu estava tentando fazer?</li>
@@ -1084,7 +1087,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>O que mudou desde então?</li>
 </ol>
 <p>Uma descrição como “o Wi-Fi cai depois de voltar da suspensão” é muito mais útil que “Linux está com problema na internet”.</p>
-<h3 id="ficha-rápida-de-diagnóstico">Ficha rápida de diagnóstico</h3>
+<h3 id="c08-ficha-rápida-de-diagnóstico">Ficha rápida de diagnóstico</h3>
 <p>Antes de pedir ajuda, tente registrar:</p>
 <ul>
 <li>distribuição e versão;</li>
@@ -1094,16 +1097,16 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>mensagem exata exibida;</li>
 <li>o que mudou recentemente.</li>
 </ul>
-<h2 id="passo-2-colete-informações-sem-alterar-nada">Passo 2 — Colete informações sem alterar nada</h2>
+<h2 id="c08-passo-2-colete-informações-sem-alterar-nada">Passo 2 — Colete informações sem alterar nada</h2>
 <p>Alguns comandos de consulta ajudam a entender o ambiente:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uname</span> <span class="at">-r</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/os-release</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span> <span class="at">-h</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code></pre></div>
+<div class="sourceCode" id="c08-cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="c08-cb1-1"><a href="#c08-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uname</span> <span class="at">-r</span></span>
+<span id="c08-cb1-2"><a href="#c08-cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/os-release</span>
+<span id="c08-cb1-3"><a href="#c08-cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span> <span class="at">-h</span></span>
+<span id="c08-cb1-4"><a href="#c08-cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code></pre></div>
 <div class="keep-together"><p>Eles mostram versão do kernel, distribuição, memória e espaço em disco sem modificar o sistema. Essa diferença é importante: alguns comandos <strong>consultam</strong> o estado; outros <strong>alteram</strong> arquivos ou configurações. Antes de executar algo encontrado online, pergunte: “isso só observa ou modifica alguma coisa?”.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Antes de mexer, registre o estado atual. Uma captura de tela ou um arquivo de texto com a mensagem original pode economizar muito tempo depois.</p>
 </blockquote></div>
-<h2 id="passo-3-pesquise-a-mensagem-exata-mas-com-contexto">Passo 3 — Pesquise a mensagem exata, mas com contexto</h2>
+<h2 id="c08-passo-3-pesquise-a-mensagem-exata-mas-com-contexto">Passo 3 — Pesquise a mensagem exata, mas com contexto</h2>
 <p>Se houver um erro curto, pesquise uma parte distintiva da mensagem junto com o nome da distribuição e, quando fizer diferença, a versão.</p>
 <p>Prefira nesta ordem:</p>
 <ul>
@@ -1115,7 +1118,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </ul>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Data importa. Uma solução correta para uma versão antiga pode ser inadequada hoje. Compare a versão do seu sistema com a do tutorial.</p>
 </blockquote>
-<h3 id="sinais-de-uma-solução-suspeita">Sinais de uma solução suspeita</h3>
+<h3 id="c08-sinais-de-uma-solução-suspeita">Sinais de uma solução suspeita</h3>
 <p>Desconfie quando a instrução:</p>
 <ul>
 <li>manda desativar uma proteção sem explicar o motivo;</li>
@@ -1128,7 +1131,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </ul>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Antes de publicar logs, capturas de tela ou saída do terminal, confira se não há nome de usuário, caminhos pessoais, e-mail, chaves, tokens ou outros dados sensíveis.</p>
 </blockquote>
-<h2 id="passo-4-leia-o-comando-antes-de-copiar">Passo 4 — Leia o comando antes de copiar</h2>
+<h2 id="c08-passo-4-leia-o-comando-antes-de-copiar">Passo 4 — Leia o comando antes de copiar</h2>
 <p>Quando uma resposta sugerir terminal, pergunte:</p>
 <ul>
 <li>esse comando apenas consulta ou também altera?</li>
@@ -1141,7 +1144,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <p>Se você não consegue responder, ainda não está pronto para executar.</p>
 <blockquote class="callout memory"><p><strong>VOCÊ NÃO PRECISA DECORAR</strong> Você pode consultar <code>man</code>, documentação e explicações antes de executar. Cautela não é insegurança; é método.</p>
 </blockquote>
-<h2 id="passo-5-mude-uma-coisa-por-vez">Passo 5 — Mude uma coisa por vez</h2>
+<h2 id="c08-passo-5-mude-uma-coisa-por-vez">Passo 5 — Mude uma coisa por vez</h2>
 <p>Se você aplicar cinco soluções seguidas e o problema desaparecer, não saberá qual delas resolveu. Pior: pode ter criado outro problema escondido.</p>
 <p>Anote cada tentativa e o resultado. Um registro simples já ajuda:</p>
 <table>
@@ -1162,7 +1165,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </tr>
 </tbody>
 </table>
-<h2 id="passo-6-saiba-quando-parar">Passo 6 — Saiba quando parar</h2>
+<h2 id="c08-passo-6-saiba-quando-parar">Passo 6 — Saiba quando parar</h2>
 <p>Pare antes de continuar se a solução pedir:</p>
 <ul>
 <li>apagar partições;</li>
@@ -1176,16 +1179,16 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <p>Nesses casos, procure documentação melhor ou peça ajuda mostrando exatamente o que já investigou.</p>
 <blockquote class="callout trouble"><p><strong>SE DER ERRADO</strong> Volte à última configuração conhecida, reverta a mudança quando possível e preserve a mensagem original do erro. A pior hora para apagar evidências é justamente quando você precisa entender o que aconteceu.</p>
 </blockquote>
-<h2 id="problemas-comuns-de-iniciante">Problemas comuns de iniciante</h2>
-<h3 id="disco-cheio">Disco cheio</h3>
+<h2 id="c08-problemas-comuns-de-iniciante">Problemas comuns de iniciante</h2>
+<h3 id="c08-disco-cheio">Disco cheio</h3>
 <p>Sintomas podem incluir atualizações que falham ou aplicativos sem espaço para salvar. Verifique primeiro com <code>df -h</code> antes de apagar qualquer coisa.</p>
-<h3 id="aplicativo-não-abre">Aplicativo não abre</h3>
+<h3 id="c08-aplicativo-não-abre">Aplicativo não abre</h3>
 <p>Tente iniciar pela interface e, se necessário, procure logs ou execute pelo terminal apenas para observar a mensagem de erro. Não reinstale o sistema inteiro por causa de um programa.</p>
-<h3 id="wi-fi-ou-áudio-intermitente">Wi-Fi ou áudio intermitente</h3>
+<h3 id="c08-wi-fi-ou-áudio-intermitente">Wi-Fi ou áudio intermitente</h3>
 <p>Registre modelo do hardware, distribuição, kernel e quando o problema acontece. “Às vezes falha” vira uma investigação muito melhor quando você identifica o gatilho.</p>
-<h3 id="atualização-interrompida">Atualização interrompida</h3>
+<h3 id="c08-atualização-interrompida">Atualização interrompida</h3>
 <p>Não faça tentativas aleatórias com remoção de pacotes. Procure a documentação da sua distribuição sobre recuperação do gerenciador de pacotes.</p>
-<h2 id="teste-você-mesmo">Teste você mesmo</h2>
+<h2 id="c08-teste-você-mesmo">Teste você mesmo</h2>
 <p>Escolha um problema fictício: “o navegador não abre”. Escreva uma investigação sem alterar o sistema:</p>
 <ol type="1">
 <li>descreva o resultado esperado;</li>
@@ -1194,7 +1197,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>escolha três fontes que consultaria primeiro;</li>
 <li>explique quais sinais fariam você rejeitar uma solução encontrada.</li>
 </ol>
-<h2 id="checklist-do-capítulo">Checklist do capítulo</h2>
+<h2 id="c08-checklist-do-capítulo">Checklist do capítulo</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" />Sei transformar um problema em uma descrição objetiva.</label></li>
 <li><label><input type="checkbox" />Sei coletar informações básicas sem alterar o sistema.</label></li>
@@ -1204,7 +1207,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li><label><input type="checkbox" />Faço uma mudança por vez.</label></li>
 <li><label><input type="checkbox" />Sei quando parar e pedir ajuda.</label></li>
 </ul>
-<h2 id="encerramento-da-jornada-principal">Encerramento da jornada principal</h2>
+<h2 id="c08-encerramento-da-jornada-principal">Encerramento da jornada principal</h2>
 <p>Você começou perguntando o que era Linux. Agora consegue escolher uma distribuição, preparar a instalação, instalar com cuidado, atualizar o sistema, usar o terminal, entender permissões e investigar problemas.</p>
 <div class="keep-together"><p>Isso não significa que você “terminou Linux”. Significa algo melhor: você construiu uma base para continuar aprendendo sem depender de copiar passos às cegas.</p>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> A autonomia não aparece quando você sabe todas as respostas. Ela aparece quando você sabe fazer perguntas melhores, testar com cuidado e reconhecer os limites do que ainda não entende.</p>
@@ -1218,7 +1221,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
     <h1>Materiais de consulta e prática</h1>
   </div>
 </section>
-<main class="chapter-body content"><h2 id="bônus-1-checklist-pós-instalação">Bônus 1 — Checklist pós-instalação</h2>
+<main class="chapter-body content"><h2 id="bonus-bônus-1-checklist-pós-instalação">Bônus 1 — Checklist pós-instalação</h2>
 <p>Use esta lista nas primeiras horas com o sistema.</p>
 <ul class="task-list">
 <li><label><input type="checkbox" />Reiniciei sem o pendrive conectado e confirmei que o sistema inicia pelo disco esperado.</label></li>
@@ -1240,7 +1243,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </ul>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Não tente “otimizar” o sistema antes de saber como ele se comporta no estado normal. Primeiro crie uma referência estável.</p>
 </blockquote>
-<h2 id="bônus-2-checklist-de-segurança-digital-básica">Bônus 2 — Checklist de segurança digital básica</h2>
+<h2 id="bonus-bônus-2-checklist-de-segurança-digital-básica">Bônus 2 — Checklist de segurança digital básica</h2>
 <p>Segurança para iniciante não começa com ferramentas sofisticadas. Começa com hábitos consistentes.</p>
 <ul class="task-list">
 <li><label><input type="checkbox" />Mantenho o sistema atualizado.</label></li>
@@ -1262,7 +1265,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </ul>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Linux não torna uma pessoa automaticamente imune a golpes, phishing, senhas fracas ou arquivos maliciosos. O sistema ajuda, mas comportamento continua importando.</p>
 </blockquote>
-<h2 id="bônus-3-folha-rápida-dos-20-comandos">Bônus 3 — Folha rápida dos 20 comandos</h2>
+<h2 id="bonus-bônus-3-folha-rápida-dos-20-comandos">Bônus 3 — Folha rápida dos 20 comandos</h2>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -1379,9 +1382,9 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </tr>
 </tbody>
 </table>
-<h2 id="bônus-4-plano-de-prática-de-30-dias">Bônus 4 — Plano de prática de 30 dias</h2>
+<h2 id="bonus-bônus-4-plano-de-prática-de-30-dias">Bônus 4 — Plano de prática de 30 dias</h2>
 <p>A proposta não é estudar horas por dia. Use sessões de 15–30 minutos e pule dias quando precisar. O importante é voltar.</p>
-<h3 id="semana-1-orientação">Semana 1 — Orientação</h3>
+<h3 id="bonus-semana-1-orientação">Semana 1 — Orientação</h3>
 <ul>
 <li>Dia 1: reveja o que é Linux, kernel e distribuição.</li>
 <li>Dia 2: explore menus, configurações e gerenciador de arquivos.</li>
@@ -1391,7 +1394,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>Dia 6: teste áudio, rede, Bluetooth e suspensão.</li>
 <li>Dia 7: descanso ou revisão.</li>
 </ul>
-<h3 id="semana-2-terminal-básico">Semana 2 — Terminal básico</h3>
+<h3 id="bonus-semana-2-terminal-básico">Semana 2 — Terminal básico</h3>
 <ul>
 <li>Dia 8: <code>pwd</code>, <code>ls</code> e <code>cd</code>.</li>
 <li>Dia 9: <code>mkdir</code> e <code>touch</code>.</li>
@@ -1401,7 +1404,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>Dia 13: <code>find</code>, <code>df</code> e <code>du</code>.</li>
 <li>Dia 14: revisão usando apenas o laboratório.</li>
 </ul>
-<h3 id="semana-3-sistema-e-permissões">Semana 3 — Sistema e permissões</h3>
+<h3 id="bonus-semana-3-sistema-e-permissões">Semana 3 — Sistema e permissões</h3>
 <ul>
 <li>Dia 15: <code>free</code>, <code>uname -r</code>, <code>whoami</code> e <code>id</code>.</li>
 <li>Dia 16: leia <code>ls -l</code> em arquivos próprios.</li>
@@ -1411,7 +1414,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>Dia 20: escreva três riscos de permissões excessivas.</li>
 <li>Dia 21: descanso ou revisão.</li>
 </ul>
-<h3 id="semana-4-autonomia">Semana 4 — Autonomia</h3>
+<h3 id="bonus-semana-4-autonomia">Semana 4 — Autonomia</h3>
 <ul>
 <li>Dia 22: descreva um problema técnico fictício com contexto.</li>
 <li>Dia 23: colete informações do sistema sem alterar nada.</li>
@@ -1425,7 +1428,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </ul>
 <blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Se você perder três dias, não “recomece o desafio”. Continue de onde parou. Aprender tecnologia não precisa virar uma sequência perfeita para funcionar.</p>
 </blockquote>
-<h2 id="bônus-5-recursos-confiáveis-para-continuar">Bônus 5 — Recursos confiáveis para continuar</h2>
+<h2 id="bonus-bônus-5-recursos-confiáveis-para-continuar">Bônus 5 — Recursos confiáveis para continuar</h2>
 <p>Comece sempre pelos canais do projeto que você está usando. Como esta edição usa Ubuntu LTS como referência visual, a documentação e as notas de versão do Ubuntu serão um ponto de partida frequente. Para Linux em geral, estas categorias são boas referências:</p>
 <ul>
 <li>documentação oficial da sua distribuição;</li>
@@ -1436,7 +1439,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 <li>DejotaCode para trilhas e tutoriais voltados a iniciantes.</li>
 </ul>
 <p>A ArchWiki é uma referência técnica ampla e muito útil, mesmo para quem não usa Arch Linux, mas exige atenção: alguns procedimentos são específicos do Arch. Use-a para entender conceitos e sempre compare com a documentação da sua própria distribuição antes de alterar o sistema.</p>
-<h3 id="como-avaliar-uma-fonte">Como avaliar uma fonte</h3>
+<h3 id="bonus-como-avaliar-uma-fonte">Como avaliar uma fonte</h3>
 <p>Antes de confiar, pergunte:</p>
 <ol type="1">
 <li>quem publicou?</li>
@@ -1448,9 +1451,61 @@ Som: valide saída, volume e entrada no seu próprio hardware.
 </ol>
 <blockquote class="callout warning"><p><strong>ATENÇÃO</strong> Popularidade não é prova técnica. Um vídeo com milhares de visualizações ainda pode ensinar uma solução desatualizada ou arriscada.</p>
 </blockquote>
-<h2 id="fechamento-dos-bônus">Fechamento dos bônus</h2>
+<h2 id="bonus-fechamento-dos-bônus">Fechamento dos bônus</h2>
 <p>Use esses materiais como ferramentas de apoio, não como tarefas obrigatórias. O objetivo do livro é fazer você depender menos de listas prontas e mais da sua capacidade de entender, consultar e decidir com segurança.</p>
 </main>
+<section class="special-page" id="references">
+  <div class="special-page-inner">
+    <div class="eyebrow">Referências</div>
+    <div class="rule"></div>
+    <h1>Referências e recursos oficiais</h1>
+    <p class="special-kicker">Fontes confiáveis para verificar, aprofundar e continuar aprendendo.</p>
+    <div class="content special-content"><p>Este livro foi pensado para iniciantes, mas informação técnica muda com o tempo. Quando uma tela, versão ou procedimento estiver diferente, comece pela documentação oficial do projeto que você está usando.</p>
+<h2 id="references-fontes-principais">Fontes principais</h2>
+<ul>
+<li><p><strong>Ubuntu Desktop Documentation</strong> — instalação, configuração inicial, atualizações e uso do Ubuntu.<br />
+<a href="https://documentation.ubuntu.com/desktop/" class="uri">https://documentation.ubuntu.com/desktop/</a></p></li>
+<li><p><strong>Ubuntu — Install Ubuntu Desktop</strong> — referência oficial do processo de instalação.<br />
+<a href="https://ubuntu.com/tutorials/install-ubuntu-desktop" class="uri">https://ubuntu.com/tutorials/install-ubuntu-desktop</a></p></li>
+<li><p><strong>The Linux Kernel Documentation</strong> — documentação oficial do kernel Linux.<br />
+<a href="https://docs.kernel.org/" class="uri">https://docs.kernel.org/</a></p></li>
+<li><p><strong>GNU Coreutils</strong> — referência dos utilitários fundamentais de arquivos, texto e sistema usados no terminal.<br />
+<a href="https://www.gnu.org/software/coreutils/manual/" class="uri">https://www.gnu.org/software/coreutils/manual/</a></p></li>
+<li><p><strong>Debian Documentation</strong> — guias, referência, instalação e notas de versão do Debian.<br />
+<a href="https://www.debian.org/doc/" class="uri">https://www.debian.org/doc/</a></p></li>
+<li><p><strong>Linux Mint Documentation</strong> — guia de instalação, guia do usuário e solução de problemas.<br />
+<a href="https://linuxmint.com/documentation.php" class="uri">https://linuxmint.com/documentation.php</a></p></li>
+</ul>
+<h2 id="references-para-continuar-estudando">Para continuar estudando</h2>
+<ul>
+<li><p><strong>ArchWiki</strong> — referência técnica ampla e muito útil, inclusive para quem usa outras distribuições. Alguns procedimentos são específicos do Arch Linux; compare sempre com a documentação da sua distribuição.<br />
+<a href="https://wiki.archlinux.org/" class="uri">https://wiki.archlinux.org/</a></p></li>
+<li><p><strong>Manual local do sistema</strong> — no terminal, use <code>man comando</code> para consultar a documentação instalada da ferramenta.</p></li>
+</ul>
+<blockquote class="callout tip"><p><strong>DICA DO DEJOTA</strong> Não tente memorizar toda a documentação. Aprender a localizar a fonte certa, verificar a versão e entender o que será alterado é uma habilidade mais valiosa.</p>
+</blockquote>
+<p><strong>Consulta editorial das fontes:</strong> setembro de 2026.</p>
+</div>
+  </div>
+</section>
+<section class="special-page" id="thanks">
+  <div class="special-page-inner">
+    <div class="eyebrow">Agradecimento</div>
+    <div class="rule"></div>
+    <h1>Obrigado por chegar até aqui</h1>
+    <p class="special-kicker">O fim deste livro é só o começo da sua prática.</p>
+    <div class="content special-content"><p>Se você começou este livro com curiosidade, insegurança ou até um pouco de medo de “quebrar alguma coisa”, espero que agora o Linux pareça menos distante.</p>
+<p>Você não precisa decorar todos os comandos, conhecer todas as distribuições ou resolver qualquer problema sozinho. O objetivo sempre foi outro: <strong>entender o que está fazendo, praticar com segurança e ganhar autonomia aos poucos.</strong></p>
+<p>Cada instalação concluída, cada comando compreendido e cada problema investigado com calma faz parte desse processo.</p>
+<p>Continue experimentando. Continue perguntando. E, quando algo não fizer sentido, volte ao básico: leia a mensagem, procure uma fonte confiável e faça uma mudança de cada vez.</p>
+<p>Obrigado por confiar no <strong>Linux do Zero</strong> e no <strong>DejotaCode</strong> para acompanhar esse começo.</p>
+<blockquote class="callout note"><p><strong>Tecnologia não precisa ser complicada. Ela precisa fazer sentido na sua vida.</strong></p>
+</blockquote>
+<p><strong>— Dejota</strong></p>
+<p><strong>DejotaCode · Feito para quem constrói o futuro.</strong></p>
+</div>
+  </div>
+</section>
 <section class="author-page author-page-v06" id="author">
   <header class="author-header">
     <div class="author-book"><strong>LINUX DO ZERO</strong><span>Seu primeiro passo no mundo Linux</span></div>
@@ -1477,7 +1532,7 @@ Som: valide saída, volume e entrada no seu próprio hardware.
         <div class="stage-geo stage-geo-a"></div><div class="stage-geo stage-geo-b"></div>
         <div class="stage-dots"></div>
         <div class="stage-kicker">CONHECIMENTO<br>ABRE<br>CAMINHOS<div></div></div>
-        <img class="author-photo-cutout" src="../../assets/linux-do-zero/author-v06/dejota-author-cutout.png" alt="Retrato de Dejota, criador do DejotaCode.">
+        <img class="author-photo-approved" src="../../assets/linux-do-zero/author-v06/dejota-author-approved.jpg" alt="Retrato de Dejota, criador do DejotaCode.">
       </div>
 
       <div class="author-quote-v06"><strong>“</strong><span>Tecnologia não precisa<br>ser complicada.<br>Ela precisa fazer sentido<br>na sua vida.</span><small>DEJOTA</small></div>
@@ -1498,7 +1553,18 @@ Som: valide saída, volume e entrada no seu próprio hardware.
     <div class="author-cta-brand"><img src="../../assets/linux-do-zero/author-v06/dejotacode-symbol-light.svg" alt="Símbolo DejotaCode"><div><strong>DejotaCode</strong><span>CONHECIMENTO ABRE CAMINHOS</span></div></div>
   </div>
 
-  <footer class="author-page-footer"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i><b>85</b></footer>
+  <footer class="author-page-footer"><i></i><span>LINUX DO ZERO — SEU PRIMEIRO PASSO NO MUNDO LINUX</span><i></i></footer>
+</section>
+<section class="back-cover">
+  <div class="back-grid"></div>
+  <div class="back-accent"></div>
+  <div class="back-copy">
+    <div class="eyebrow">DejotaCode · Linux do Zero</div>
+    <h1>Seu primeiro passo<br>não precisa ser<br>complicado.</h1>
+    <p>Um guia para começar no Linux com segurança, entender o que está fazendo e construir autonomia sem depender de receitas prontas.</p>
+    <ul><li>Entenda antes de executar.</li><li>Pratique com exemplos seguros.</li><li>Aprenda onde procurar quando algo mudar.</li></ul>
+  </div>
+  <div class="back-footer"><strong>DejotaCode</strong><span>dejotacode.com.br · Feito para quem constrói o futuro.</span></div>
 </section>
 </body>
 </html>

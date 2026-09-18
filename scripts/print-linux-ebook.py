@@ -5,11 +5,13 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import time
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "docs/prototypes/linux-do-zero-full-v0.6/index.html"
+STAMP = ROOT / "scripts/stamp-linux-ebook.py"
 
 
 def request_json(base, path, data=None, method="POST"):
@@ -72,7 +74,20 @@ def main():
         })
         output = Path(args.output).expanduser().resolve()
         output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_bytes(base64.b64decode(result["value"]))
+        raw_output = output.with_name(f"{output.stem}.firefox-raw{output.suffix}")
+        raw_output.write_bytes(base64.b64decode(result["value"]))
+        subprocess.run(
+            [
+                sys.executable,
+                str(STAMP),
+                "--input",
+                str(raw_output),
+                "--output",
+                str(output),
+            ],
+            check=True,
+        )
+        raw_output.unlink()
         print(f"PDF gerado: {output}")
     finally:
         if session_id:
