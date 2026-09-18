@@ -72,6 +72,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       articleToProductClicks: number;
       trailToProductClicks: number;
       productToCheckoutClicks: number;
+      approvedPurchases: number;
     };
 
     type SummaryData = {
@@ -171,6 +172,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         ["Artigos → produto", Number(productFunnel?.articleToProductClicks ?? 0)],
         ["Trilha → produto", Number(productFunnel?.trailToProductClicks ?? 0)],
         ["Produto → checkout", Number(productFunnel?.productToCheckoutClicks ?? 0)],
+        ["Vendas aprovadas", Number(productFunnel?.approvedPurchases ?? 0)],
       ];
 
       linuxDoZeroFunnel.replaceChildren();
