@@ -98,12 +98,17 @@ export const preparePublicForm = (selector: string) => {
   const getCampaign = () => {
     const resource =
       form.querySelector<HTMLInputElement>('input[name="resource"]');
+    const subject =
+      form.querySelector<HTMLSelectElement>('select[name="subject"]');
 
-    return resource?.value.trim() ?? "";
+    return resource?.value.trim() ||
+      subject?.value.trim() ||
+      form.dataset.campaign?.trim() ||
+      "";
   };
 
   const trackFormStart = () => {
-    if (conversion !== "lead_submit" || formStartTracked) return;
+    if (!["lead_submit", "contact_submit"].includes(conversion) || formStartTracked) return;
 
     formStartTracked = true;
 

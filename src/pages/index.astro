@@ -119,7 +119,7 @@ const homeSchema = {
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">COMECE PELO CAMINHO CERTO</p><h2 id="tracks-title">Escolha uma trilha</h2></div><p>Conteúdos organizados em sequência para você aprender com clareza e avançar no seu ritmo.</p></div>
         <div class="tracks-grid">
-          {homeTrails.map((track) => <article class:list={["track-card", { "track-featured": track.slug === featuredHomeTrailSlug }]}><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div><div><span class="track-symbol">{track.icon}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={`/trilhas/${track.slug}/`}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
+          {homeTrails.map((track) => <article class:list={["track-card", { "track-featured": track.slug === featuredHomeTrailSlug }]}><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div><div><span class="track-symbol">{track.icon}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={`/trilhas/${track.slug}/`} data-analytics-cta={`home-trail-${track.slug}`}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
         </div>
       </div>
     </section>
@@ -181,6 +181,8 @@ const homeSchema = {
   </main>
 
   <script>
+    import { sendAnalyticsEvent } from "../scripts/analytics";
+
     document.querySelector("[data-newsletter-preview]")?.addEventListener("submit", (event) => {
       event.preventDefault();
 
@@ -191,6 +193,13 @@ const homeSchema = {
       if (typeof email !== "string") return;
 
       sessionStorage.setItem("dejotacode:newsletter-email", email.trim());
+
+      const apiBase =
+        typeof window.__DEJOTACODE_API_BASE__ === "string"
+          ? window.__DEJOTACODE_API_BASE__
+          : "";
+      sendAnalyticsEvent(apiBase, "cta_click", "home-newsletter-preview");
+
       window.location.assign("/newsletter/");
     });
   </script>

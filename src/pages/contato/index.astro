@@ -35,7 +35,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
         </div>
       </aside>
       <div class="institutional-card">
-        <form class="contact-form" data-contact-form data-api-base={apiBase} data-endpoint="/api/contact" data-conversion="contact_submit" data-success="Mensagem recebida com sucesso.">
+        <form class="contact-form" data-contact-form data-api-base={apiBase} data-endpoint="/api/contact" data-conversion="contact_submit" data-campaign="contact" data-success="Mensagem recebida com sucesso.">
           <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="100" required /></div>
           <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
           <div class="field"><label for="subject">Assunto</label><select id="subject" name="subject" required><option value="">Selecione</option><option>Dúvida</option><option>Sugestão de conteúdo</option><option>Correção</option><option value="orcamento-servicos">Orçamento de serviços</option><option>Parceria</option><option>Outro assunto</option></select></div>
