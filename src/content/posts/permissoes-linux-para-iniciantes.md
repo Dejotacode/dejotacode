@@ -181,6 +181,8 @@ Esse pequeno exercício já ensina uma habilidade importante: **observar antes d
 
 Agora que você consegue reconhecer permissões, pode avançar para outros conceitos de terminal e segurança com mais contexto.
 
-Continue pela [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/) para seguir uma sequência organizada.
+O próximo passo prático é entender [pipe e redirecionamento no Linux](/blog/pipe-redirecionamento-linux/), para aprender a combinar comandos e direcionar resultados sem perder de vista o que cada etapa faz.
+
+Continue também pela [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/) para seguir uma sequência organizada.
 
 Também vale conhecer [5 hábitos de segurança digital para começar hoje](/blog/habitos-seguranca-digital-iniciantes/), porque segurança no Linux não depende apenas de comandos: ela também depende das decisões que você toma ao usar o sistema.
