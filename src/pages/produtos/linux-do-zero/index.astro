@@ -14,6 +14,25 @@ const chapters = [
 ];
 
 const canonicalUrl = new URL("/produtos/linux-do-zero/", Astro.site ?? Astro.url.origin);
+const productBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Início",
+      item: new URL("/", canonicalUrl).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Linux do Zero",
+      item: canonicalUrl.href,
+    },
+  ],
+};
+
 const bookSchema = {
   "@context": "https://schema.org",
   "@type": "Book",
@@ -41,9 +60,12 @@ const bookSchema = {
   description="Aprenda Linux desde o primeiro passo com um e-book de 88 páginas, exemplos práticos, imagens reais e explicações pensadas para iniciantes."
   image="/assets/products/linux-do-zero/cover.png"
   imageAlt="Capa do e-book Linux do Zero, do DejotaCode"
+  imageWidth={1159}
+  imageHeight={1638}
   robots="index, follow"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(bookSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(productBreadcrumbSchema)} />
 
   <main id="conteudo" tabindex="-1" class="product-page">
     <header class="product-hero">
@@ -100,8 +122,10 @@ const bookSchema = {
           <img
             src="/assets/products/linux-do-zero/cover.png"
             alt="Capa real do e-book Linux do Zero"
-            width="1158"
-            height="1637"
+            width="1159"
+            height="1638"
+            fetchpriority="high"
+            decoding="async"
           />
           <figcaption>Imagem real da edição final v0.7.</figcaption>
         </figure>
@@ -151,9 +175,9 @@ const bookSchema = {
           <p>As imagens abaixo foram renderizadas diretamente do PDF final de 88 páginas.</p>
         </div>
         <div class="product-preview__grid">
-          <figure><img src="/assets/products/linux-do-zero/preview-01.png" alt="Página interna real do e-book Linux do Zero" loading="lazy" /><figcaption>Conteúdo didático e passo a passo.</figcaption></figure>
-          <figure><img src="/assets/products/linux-do-zero/preview-02.png" alt="Página de abertura real de um capítulo do e-book Linux do Zero" loading="lazy" /><figcaption>Aberturas e hierarquia editorial próprias.</figcaption></figure>
-          <figure><img src="/assets/products/linux-do-zero/preview-author.png" alt="Página Sobre o autor do e-book Linux do Zero" loading="lazy" /><figcaption>Autoria e propósito apresentados com transparência.</figcaption></figure>
+          <figure><img src="/assets/products/linux-do-zero/preview-01.png" alt="Página interna real do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" /><figcaption>Conteúdo didático e passo a passo.</figcaption></figure>
+          <figure><img src="/assets/products/linux-do-zero/preview-02.png" alt="Página de abertura real de um capítulo do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" /><figcaption>Aberturas e hierarquia editorial próprias.</figcaption></figure>
+          <figure><img src="/assets/products/linux-do-zero/preview-author.png" alt="Página Sobre o autor do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" /><figcaption>Autoria e propósito apresentados com transparência.</figcaption></figure>
         </div>
       </div>
     </section>
@@ -212,7 +236,10 @@ const bookSchema = {
         <img
           src="/assets/products/linux-do-zero/preview-author.png"
           alt="Página Sobre o autor do e-book Linux do Zero"
+          width="911"
+          height="1287"
           loading="lazy"
+          decoding="async"
         />
       </div>
     </section>
