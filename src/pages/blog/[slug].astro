@@ -62,7 +62,7 @@ const conversion = currentTrail && nextTrailLesson
       description: `Você está seguindo a trilha ${currentTrail.title}. Continue na sequência recomendada para avançar sem precisar escolher o próximo conteúdo sozinho.`,
       href: `/blog/${nextTrailLesson.slug}/`,
       label: "Continuar para a próxima etapa",
-      campaign: `article-next-${currentTrail.slug}`,
+      campaign: `article-next-${currentSlug}`,
     }
   : currentTrail
     ? {
@@ -70,7 +70,7 @@ const conversion = currentTrail && nextTrailLesson
         description: "Veja a sequência completa, marque seu progresso neste navegador e revise as etapas quando precisar.",
         href: `/trilhas/${currentTrail.slug}/`,
         label: "Ver trilha completa",
-        campaign: `article-trail-${currentTrail.slug}`,
+        campaign: `article-trail-${currentSlug}`,
       }
     : {
         title: "Receba o próximo conteúdo por e-mail",
@@ -255,7 +255,7 @@ const articleSchema = {
               description="O e-book Linux do Zero reúne 88 páginas para iniciantes, com instalação segura, terminal, permissões e solução de problemas. Preço de lançamento: R$ 19,90."
               href="/produtos/linux-do-zero/"
               label="Conhecer o e-book"
-              campaign="article-linux-ebook-product"
+              campaign={`article-linux-ebook-${currentSlug}`}
             />
           )}
         </div>
