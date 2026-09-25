@@ -146,7 +146,7 @@ export const trails: Trail[] = [
     slug: "seguranca-digital-essencial",
     number: "04",
     title: "Segurança digital essencial",
-    description: "Proteja contas, arquivos e dispositivos com hábitos simples.",
+    description: "Aprenda hábitos práticos para proteger contas, mensagens, arquivos e dispositivos no dia a dia, mesmo começando do zero.",
     outcome: "Uma rotina digital mais segura e previsível para contas e mensagens.",
     level: "Iniciante",
     icon: "[]",
