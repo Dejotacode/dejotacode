@@ -11,12 +11,14 @@ import {
 import "../../styles/editorial.css";
 
 export async function getStaticPaths() {
-  const PAGE_SIZE = 9;
+  const FIRST_PAGE_COUNT = 7;
+  const PAGE_SIZE = 6;
   const posts = await getPublishedPosts();
   const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
   const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
   const orderedPosts = featuredPost ? [featuredPost, ...remainingPosts] : remainingPosts;
-  const totalPages = Math.ceil(orderedPosts.length / PAGE_SIZE);
+  const remainingCount = Math.max(orderedPosts.length - FIRST_PAGE_COUNT, 0);
+  const totalPages = 1 + Math.ceil(remainingCount / PAGE_SIZE);
 
   return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
     const page = index + 2;
@@ -29,13 +31,14 @@ interface Props {
   totalPages: number;
 }
 
-const PAGE_SIZE = 9;
+const FIRST_PAGE_COUNT = 7;
+const PAGE_SIZE = 6;
 const { page, totalPages } = Astro.props;
 const posts = await getPublishedPosts();
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 const orderedPosts = featuredPost ? [featuredPost, ...remainingPosts] : remainingPosts;
-const start = (page - 1) * PAGE_SIZE;
+const start = FIRST_PAGE_COUNT + (page - 2) * PAGE_SIZE;
 const visiblePosts = orderedPosts.slice(start, start + PAGE_SIZE);
 
 const canonicalUrl = new URL(`/blog/${page}/`, Astro.site ?? Astro.url.origin);

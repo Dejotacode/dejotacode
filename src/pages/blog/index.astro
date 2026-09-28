@@ -10,16 +10,18 @@ import {
 } from "../../lib/content";
 import "../../styles/editorial.css";
 
-const PAGE_SIZE = 9;
+const FIRST_PAGE_COUNT = 7;
+const PAGE_SIZE = 6;
 const posts = await getPublishedPosts();
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 const orderedPosts = featuredPost
   ? [featuredPost, ...remainingPosts]
   : remainingPosts;
-const firstPagePosts = orderedPosts.slice(0, PAGE_SIZE);
+const firstPagePosts = orderedPosts.slice(0, FIRST_PAGE_COUNT);
 const visiblePosts = firstPagePosts.filter((post) => post.id !== featuredPost?.id);
-const totalPages = Math.ceil(orderedPosts.length / PAGE_SIZE);
+const remainingCount = Math.max(orderedPosts.length - FIRST_PAGE_COUNT, 0);
+const totalPages = 1 + Math.ceil(remainingCount / PAGE_SIZE);
 
 const canonicalUrl = new URL("/blog/", Astro.site ?? Astro.url.origin);
 
