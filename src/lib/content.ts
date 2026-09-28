@@ -7,6 +7,7 @@ export const categories = {
   "linux-seguranca": "Linux & Segurança",
   "inteligencia-artificial": "Inteligência Artificial",
   "tecnologia-pratica": "Tecnologia prática",
+  "renda-digital": "Renda Digital",
 } as const;
 
 export type CategorySlug = keyof typeof categories;
@@ -20,6 +21,8 @@ export const categoryDescriptions: Record<CategorySlug, string> = {
     "Inteligência artificial aplicada aos estudos e ao trabalho de maneira útil, responsável e compreensível.",
   "tecnologia-pratica":
     "Soluções simples, escolhas de ferramentas e respostas para dúvidas comuns do dia a dia digital.",
+  "renda-digital":
+    "Caminhos práticos para transformar habilidades em serviços, produtos digitais e primeiras oportunidades de renda online com responsabilidade.",
 };
 
 export async function getPublishedPosts() {

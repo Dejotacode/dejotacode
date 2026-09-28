@@ -10,20 +10,38 @@ import {
 } from "../../lib/content";
 import "../../styles/editorial.css";
 
+export async function getStaticPaths() {
+  const PAGE_SIZE = 9;
+  const posts = await getPublishedPosts();
+  const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+  const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+  const orderedPosts = featuredPost ? [featuredPost, ...remainingPosts] : remainingPosts;
+  const totalPages = Math.ceil(orderedPosts.length / PAGE_SIZE);
+
+  return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
+    const page = index + 2;
+    return { params: { page: String(page) }, props: { page, totalPages } };
+  });
+}
+
+interface Props {
+  page: number;
+  totalPages: number;
+}
+
 const PAGE_SIZE = 9;
+const { page, totalPages } = Astro.props;
 const posts = await getPublishedPosts();
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
-const orderedPosts = featuredPost
-  ? [featuredPost, ...remainingPosts]
-  : remainingPosts;
-const firstPagePosts = orderedPosts.slice(0, PAGE_SIZE);
-const visiblePosts = firstPagePosts.filter((post) => post.id !== featuredPost?.id);
-const totalPages = Math.ceil(orderedPosts.length / PAGE_SIZE);
+const orderedPosts = featuredPost ? [featuredPost, ...remainingPosts] : remainingPosts;
+const start = (page - 1) * PAGE_SIZE;
+const visiblePosts = orderedPosts.slice(start, start + PAGE_SIZE);
 
-const canonicalUrl = new URL("/blog/", Astro.site ?? Astro.url.origin);
-
+const canonicalUrl = new URL(`/blog/${page}/`, Astro.site ?? Astro.url.origin);
 const blogListId = `${canonicalUrl.href}#itemlist`;
+const title = `Blog de tecnologia para iniciantes — Página ${page} | DejotaCode`;
+const description = `Página ${page} do blog DejotaCode com tutoriais sobre Linux, programação, inteligência artificial, renda digital e tecnologia prática.`;
 
 const blogSchema = {
   "@context": "https://schema.org",
@@ -32,21 +50,20 @@ const blogSchema = {
       "@type": "CollectionPage",
       "@id": canonicalUrl.href,
       url: canonicalUrl.href,
-      name: "Blog de tecnologia para iniciantes | DejotaCode",
-      description:
-        "Tutoriais e artigos sobre Linux, programação, inteligência artificial, renda digital e tecnologia prática, explicados sem complicação.",
+      name: title,
+      description,
       inLanguage: "pt-BR",
       mainEntity: { "@id": blogListId },
-      isPartOf: { "@id": "https://dejotacode.com.br/#website" },
+      isPartOf: { "@id": "https://dejotacode.com.br/blog/" },
     },
     {
       "@type": "ItemList",
       "@id": blogListId,
-      numberOfItems: firstPagePosts.length,
+      numberOfItems: visiblePosts.length,
       itemListOrder: "https://schema.org/ItemListOrderDescending",
-      itemListElement: firstPagePosts.map((post, index) => ({
+      itemListElement: visiblePosts.map((post, index) => ({
         "@type": "ListItem",
-        position: index + 1,
+        position: start + index + 1,
         name: post.data.title,
         url: new URL(postHref(post), canonicalUrl).href,
       })),
@@ -55,10 +72,7 @@ const blogSchema = {
 };
 ---
 
-<BaseLayout
-  title="Blog de tecnologia para iniciantes | DejotaCode"
-  description="Tutoriais e artigos sobre Linux, programação, inteligência artificial, renda digital e tecnologia prática, explicados sem complicação."
->
+<BaseLayout title={title} description={description}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
 
   <main id="conteudo" tabindex="-1" class="editorial-page">
@@ -66,8 +80,7 @@ const blogSchema = {
       <p class="eyebrow">APRENDA NO SEU RITMO</p>
       <h1>Conteúdo prático,<br />sem complicação.</h1>
       <p class="editorial-hero__lead">
-        Tutoriais passo a passo, explicações simples e experiências reais para
-        você usar tecnologia com mais confiança.
+        Página {page} de {totalPages} do arquivo de conteúdos do DejotaCode.
       </p>
 
       <nav class="category-list" aria-label="Categorias do blog">
@@ -79,34 +92,20 @@ const blogSchema = {
       </nav>
     </header>
 
-    {
-      featuredPost && (
-        <section class="editorial-section container" aria-labelledby="destaque-title">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">COMECE POR AQUI</p>
-              <h2 id="destaque-title">Conteúdo em destaque</h2>
-            </div>
-          </div>
-          <PostCard post={featuredPost} featured />
-        </section>
-      )
-    }
-
-    <section class="editorial-section container" aria-labelledby="recentes-title">
+    <section class="editorial-section container" aria-labelledby="publicacoes-title">
       <div class="section-heading">
         <div>
           <p class="eyebrow">PUBLICAÇÕES</p>
-          <h2 id="recentes-title">Conteúdos recentes</h2>
+          <h2 id="publicacoes-title">Mais conteúdos</h2>
         </div>
-        <p>{posts.length} conteúdos publicados</p>
+        <p>Página {page} de {totalPages}</p>
       </div>
 
       <div class="post-grid">
         {visiblePosts.map((post) => <PostCard post={post} />)}
       </div>
 
-      <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
+      <Pagination currentPage={page} totalPages={totalPages} basePath="/blog/" />
     </section>
   </main>
 </BaseLayout>
