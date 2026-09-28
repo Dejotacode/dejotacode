@@ -5,7 +5,6 @@ import sitemap from "@astrojs/sitemap";
 const sitemapExcludedPages = new Set([
   "https://dejotacode.com.br/busca/",
   "https://dejotacode.com.br/guia/iniciante-em-tecnologia/",
-  "https://dejotacode.com.br/categoria/renda-digital/",
 ]);
 
 export default defineConfig({
