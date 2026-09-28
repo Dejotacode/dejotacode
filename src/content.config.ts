@@ -14,6 +14,7 @@ const posts = defineCollection({
       "linux-seguranca",
       "inteligencia-artificial",
       "tecnologia-pratica",
+      "renda-digital",
     ]),
     type: z.enum(["artigo", "tutorial"]),
     readingTime: z.number().int().positive(),
