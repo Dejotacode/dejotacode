@@ -117,6 +117,15 @@ const categorySchema =
         <strong>{posts.length}</strong>
         <span>{posts.length === 1 ? "conteúdo publicado" : "conteúdos publicados"}</span>
       </div>
+
+      {
+        category === "renda-digital" && (
+          <p class="discovery-guided-path">
+            Prefere aprender em sequência?
+            <a href="/trilhas/primeira-renda-online/">Seguir a trilha Primeira Renda Online →</a>
+          </p>
+        )
+      }
     </header>
 
     <section class="editorial-section container" aria-labelledby="category-posts-title">

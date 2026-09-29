@@ -239,3 +239,17 @@
     flex-direction: column;
   }
 }
+
+
+.discovery-guided-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.25rem 0 0;
+  color: var(--color-text-muted);
+}
+
+.discovery-guided-path a {
+  color: var(--color-accent-strong);
+  font-weight: 700;
+}
