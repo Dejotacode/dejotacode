@@ -118,7 +118,7 @@ const homeSchema = {
 
     <section class="section" id="trilhas" aria-labelledby="tracks-title">
       <div class="container">
-        <div class="section-heading"><div><p class="eyebrow">COMECE PELO CAMINHO CERTO</p><h2 id="tracks-title">Escolha uma trilha</h2></div><p>Conteúdos organizados em sequência para você aprender com clareza e avançar no seu ritmo.</p></div>
+        <div class="section-heading"><div><p class="eyebrow">COMECE PELO CAMINHO CERTO</p><h2 id="tracks-title">Escolha uma trilha</h2></div><div class="section-heading__aside"><p>Conteúdos organizados em sequência para você aprender com clareza e avançar no seu ritmo.</p><a class="text-link" href="/trilhas/" data-analytics-cta="home-trilhas-todas">Ver todas as trilhas <span aria-hidden="true">→</span></a></div></div>
         <div class="tracks-grid">
           {homeTrails.map((track) => <article class:list={["track-card", { "track-featured": track.slug === featuredHomeTrailSlug }]}><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div><div><span class="track-symbol">{track.icon}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={`/trilhas/${track.slug}/`} data-analytics-cta={`home-trail-${track.slug}`}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
         </div>

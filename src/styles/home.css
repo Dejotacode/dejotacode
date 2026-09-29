@@ -17,6 +17,7 @@
 .section-heading { display: grid; grid-template-columns: 1.15fr .85fr; align-items: end; gap: 2rem; margin-bottom: 2rem; }
 .section-heading h2, .section-bar h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
 .section-heading p { margin: 0; }
+.section-heading__aside { display: grid; gap: .75rem; justify-items: start; }
 .section-bar { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
 .text-link { display: inline-flex; align-items: center; gap: .55rem; color: var(--color-accent-strong); font-weight: 700; }
 .topic-strip { border-bottom: 1px solid var(--color-border); background: var(--color-surface-soft); }

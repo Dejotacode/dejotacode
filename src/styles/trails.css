@@ -82,6 +82,15 @@
   gap: 1rem;
 }
 
+.trails-grid > .trail-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  min-height: 20rem;
+}
+
+.trails-grid > .trail-card:last-child:nth-child(odd) > p {
+  max-width: 52rem;
+}
+
 .trail-card {
   display: flex;
   flex-direction: column;
@@ -372,6 +381,11 @@
 }
 
 @media (max-width: 560px) {
+  .trails-grid > .trail-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    min-height: 25rem;
+  }
+
   .trails-hero,
   .trail-detail__hero {
     padding-block: 3rem;
