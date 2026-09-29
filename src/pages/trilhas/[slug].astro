@@ -134,7 +134,7 @@ const trailListSchema = {
       <ol class="lesson-list">
         {
           trail.lessons.map((lesson) => (
-            <li class="lesson" data-lesson={lesson.slug}>
+            <li class="lesson" data-lesson={lesson.slug} data-optional={lesson.optional ? "true" : "false"}>
               <span class="lesson__number">{String(lesson.order).padStart(2, "0")}</span>
               <div class="lesson__content">
                 <div class="lesson__meta">
@@ -203,6 +203,9 @@ const trailListSchema = {
       const lessons = Array.from(
         root.querySelectorAll<HTMLElement>("[data-lesson]"),
       );
+      const requiredLessons = lessons.filter(
+        (lesson) => lesson.dataset.optional !== "true",
+      );
       const progressBar =
         root.querySelector<HTMLElement>("[data-progress-bar]");
       const progressFill =
@@ -251,8 +254,8 @@ const trailListSchema = {
       };
 
       const isTrailComplete = () =>
-        lessons.length > 0 &&
-        lessons.every((lesson) =>
+        requiredLessons.length > 0 &&
+        requiredLessons.every((lesson) =>
           completed.has(lesson.dataset.lesson ?? ""),
         );
 
@@ -269,11 +272,11 @@ const trailListSchema = {
           toggle?.setAttribute("aria-pressed", String(isCompleted));
         });
 
-        const completedCount = lessons.filter((lesson) =>
+        const completedCount = requiredLessons.filter((lesson) =>
           completed.has(lesson.dataset.lesson ?? ""),
         ).length;
-        const percentage = lessons.length
-          ? Math.round((completedCount / lessons.length) * 100)
+        const percentage = requiredLessons.length
+          ? Math.round((completedCount / requiredLessons.length) * 100)
           : 0;
 
         if (progressFill) progressFill.style.width = `${percentage}%`;
@@ -287,7 +290,7 @@ const trailListSchema = {
             ? "Trilha concluída. Parabéns por chegar até aqui!"
             : completedCount === 0
               ? "Comece pela primeira etapa."
-              : `${completedCount} de ${lessons.length} etapas concluídas.`;
+              : `${completedCount} de ${requiredLessons.length} etapas essenciais concluídas.`;
         }
       };
 

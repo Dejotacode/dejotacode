@@ -182,6 +182,93 @@ export const trails: Trail[] = [
       },
     ],
   },
+  {
+    slug: "primeira-renda-online",
+    number: "05",
+    title: "Primeira Renda Online",
+    description:
+      "Transforme uma habilidade simples em uma oferta clara, monte portfólio, defina preço, encontre o primeiro cliente e aprenda a entregar com responsabilidade.",
+    outcome:
+      "Ao concluir, você terá um caminho prático para escolher um serviço, apresentar seu trabalho, montar uma oferta, precificar um primeiro projeto e buscar oportunidades sem depender de promessas de dinheiro fácil.",
+    level: "Iniciante",
+    icon: "↗",
+    available: true,
+    lessons: [
+      {
+        order: 1,
+        slug: "como-conseguir-primeira-renda-online",
+        title: "Comece pela habilidade",
+        description: "Entenda como transformar uma habilidade simples em uma primeira oportunidade de renda online.",
+        duration: 12,
+      },
+      {
+        order: 2,
+        slug: "freelancer-para-iniciantes-como-escolher-um-servico",
+        title: "Escolha um serviço para oferecer",
+        description: "Defina um serviço pequeno, compatível com o que você sabe fazer hoje.",
+        duration: 11,
+      },
+      {
+        order: 3,
+        slug: "portfolio-para-freelancer-sem-clientes",
+        title: "Monte um portfólio mesmo sem clientes",
+        description: "Use projetos próprios e estudos reais para demonstrar capacidade sem inventar experiência.",
+        duration: 10,
+      },
+      {
+        order: 4,
+        slug: "como-montar-oferta-simples-pequenos-negocios",
+        title: "Transforme o serviço em uma oferta",
+        description: "Defina resultado, escopo, prazo, revisões e limites de uma oferta simples.",
+        duration: 10,
+      },
+      {
+        order: 5,
+        slug: "quanto-cobrar-primeiro-site",
+        title: "Defina um preço que você consiga explicar",
+        description: "Use escopo, tempo, custos e responsabilidade para chegar a um preço inicial.",
+        duration: 12,
+      },
+      {
+        order: 6,
+        slug: "como-conseguir-primeiro-cliente-sem-anuncios",
+        title: "Procure a primeira oportunidade",
+        description: "Use rede de contatos, abordagem direta e demonstrações reais sem depender de anúncios pagos.",
+        duration: 11,
+      },
+      {
+        order: 7,
+        slug: "landing-page-para-pequenos-negocios-o-que-entregar",
+        title: "Entregue um primeiro projeto web",
+        description: "Veja o que incluir, testar e documentar em uma landing page simples para pequenos negócios.",
+        duration: 12,
+      },
+      {
+        order: 8,
+        slug: "afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade",
+        title: "Afiliados com transparência",
+        description: "Entenda como recomendar produtos de terceiros sem transformar conteúdo em propaganda disfarçada.",
+        duration: 11,
+        optional: true,
+      },
+      {
+        order: 9,
+        slug: "produto-digital-como-transformar-conhecimento-em-ebook",
+        title: "Transforme conhecimento em produto digital",
+        description: "Veja como estruturar um e-book simples a partir de um problema real que você sabe resolver.",
+        duration: 12,
+        optional: true,
+      },
+      {
+        order: 10,
+        slug: "erros-iniciantes-desistem-renda-digital",
+        title: "Evite os erros mais comuns",
+        description: "Reconheça expectativas irreais, excesso de caminhos e outros erros que atrapalham iniciantes.",
+        duration: 10,
+        optional: true,
+      },
+    ],
+  },
 ];
 
 export const availableTrails = trails.filter((trail) => trail.available);
