@@ -1,6 +1,7 @@
 export type AnalyticsEvent =
   | "page_view"
   | "cta_click"
+  | "affiliate_click"
   | "lead_submit"
   | "contact_submit"
   | "form_start"
@@ -151,6 +152,26 @@ export const prepareAnalytics = (rawApiBase: string) => {
       rawApiBase,
       "cta_click",
       campaign,
+    );
+
+    const affiliateProvider =
+      cleanAttributionPart(cta.dataset.analyticsAffiliateProvider ?? null);
+    const affiliateId =
+      cleanAttributionPart(cta.dataset.analyticsAffiliateId ?? null);
+
+    if (!affiliateProvider || !affiliateId) return;
+
+    const acquisition = getAcquisitionCampaign();
+    const affiliateCampaign = cleanCampaign(
+      ["affiliate", affiliateProvider, affiliateId, acquisition]
+        .filter(Boolean)
+        .join(":"),
+    );
+
+    sendAnalyticsEvent(
+      rawApiBase,
+      "affiliate_click",
+      affiliateCampaign,
     );
   });
 };

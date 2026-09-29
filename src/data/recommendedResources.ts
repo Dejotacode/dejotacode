@@ -1,4 +1,5 @@
 export type CommercialRelationship = "none" | "affiliate";
+export type AffiliateProvider = "hotmart" | "shopee";
 
 export type RecommendedResource = {
   id: string;
@@ -11,6 +12,7 @@ export type RecommendedResource = {
   cta: string;
   priceLabel: string;
   relationship: CommercialRelationship;
+  affiliateProvider?: AffiliateProvider;
   lastReviewed: string;
 };
 
@@ -21,7 +23,7 @@ export const recommendedResources: RecommendedResource[] = [
   { id: "github", name: "GitHub", category: "infraestrutura", description: "Serviço usado para hospedar repositórios e colaborar em projetos.", bestFor: "Portfólio técnico, colaboração e automação de qualidade.", limitation: "Recursos avançados e privados podem depender do plano escolhido.", href: "https://docs.github.com/", cta: "Abrir documentação oficial", priceLabel: "Plano gratuito disponível", relationship: "none", lastReviewed: "17/09/2026" },
   { id: "cloudflare", name: "Cloudflare", category: "infraestrutura", description: "Plataforma de infraestrutura usada para publicação e serviços de borda.", bestFor: "Projetos web que precisam começar pequenos e crescer com controle.", limitation: "Os limites e produtos exigem leitura cuidadosa antes de publicar.", href: "https://developers.cloudflare.com/", cta: "Abrir documentação oficial", priceLabel: "Plano gratuito disponível", relationship: "none", lastReviewed: "17/09/2026" },
   { id: "linux", name: "Linux Foundation", category: "aprendizado", description: "Referência para conhecer o ecossistema Linux e continuar os estudos.", bestFor: "Iniciantes que desejam entender Linux além de comandos isolados.", limitation: "Parte do conteúdo e de alguns cursos está disponível apenas em inglês.", href: "https://www.linuxfoundation.org/", cta: "Abrir site oficial", priceLabel: "Conteúdo gratuito e opções pagas", relationship: "none", lastReviewed: "17/09/2026" },
-  { id: "ebook-programacao-hotmart", name: "Programação do Iniciante ao Avançado", category: "aprendizado", description: "E-book de terceiro que apresenta fundamentos, HTML, CSS, JavaScript, backend, Git, arquitetura de sistemas e carreira em tecnologia.", bestFor: "Iniciantes que querem ampliar a visão além dos primeiros exercícios de programação e desenvolvimento web.", limitation: "O DejotaCode não adquiriu nem avaliou o conteúdo completo; a descrição apresentada aqui foi conferida com as informações públicas exibidas atualmente pela página da Hotmart.", href: "https://go.hotmart.com/L107650536L", cta: "Ver detalhes na Hotmart", priceLabel: "E-book pago · preço sujeito a alteração", relationship: "affiliate", lastReviewed: "29/09/2026" },
+  { id: "ebook-programacao-hotmart", name: "Programação do Iniciante ao Avançado", category: "aprendizado", description: "E-book de terceiro que apresenta fundamentos, HTML, CSS, JavaScript, backend, Git, arquitetura de sistemas e carreira em tecnologia.", bestFor: "Iniciantes que querem ampliar a visão além dos primeiros exercícios de programação e desenvolvimento web.", limitation: "O DejotaCode não adquiriu nem avaliou o conteúdo completo; a descrição apresentada aqui foi conferida com as informações públicas exibidas atualmente pela página da Hotmart.", href: "https://go.hotmart.com/L107650536L", cta: "Ver detalhes na Hotmart", priceLabel: "E-book pago · preço sujeito a alteração", relationship: "affiliate", affiliateProvider: "hotmart", lastReviewed: "29/09/2026" },
 ];
 
 const resourcesById = new Map(recommendedResources.map((resource) => [resource.id, resource]));

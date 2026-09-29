@@ -29,7 +29,7 @@ const hasAffiliateLink = resources.some((resource) => resource.relationship === 
         <p>{resource.description}</p>
         <p><strong>Indicado para:</strong> {resource.bestFor}</p>
         <p><strong>Limitação:</strong> {resource.limitation}</p>
-        <a class="button button-secondary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} <span aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`} data-analytics-affiliate-provider={resource.affiliateProvider} data-analytics-affiliate-id={resource.id}>{resource.cta} <span aria-hidden="true">↗</span></a>
       </article>
     ))}
   </div>
