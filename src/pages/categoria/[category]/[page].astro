@@ -1,0 +1,157 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Pagination from "../../../components/Pagination.astro";
+import PostCard from "../../../components/PostCard.astro";
+import {
+  categories,
+  categoryDescriptions,
+  getPublishedPosts,
+  postHref,
+  type CategorySlug,
+} from "../../../lib/content";
+import "../../../styles/editorial.css";
+import "../../../styles/discovery.css";
+
+const categorySeoOverrides: Partial<Record<CategorySlug, string>> = {
+  "linux-seguranca": "Linux e segurança digital para iniciantes | DejotaCode",
+  "inteligencia-artificial": "Inteligência artificial para iniciantes | DejotaCode",
+  "tecnologia-pratica": "Tecnologia prática para iniciantes | DejotaCode",
+};
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 6;
+  const posts = await getPublishedPosts();
+  const paths = [];
+
+  for (const [category, label] of Object.entries(categories)) {
+    const categoryPosts = posts.filter((post) => post.data.category === category);
+    const totalPages = Math.ceil(categoryPosts.length / PAGE_SIZE);
+
+    for (let page = 2; page <= totalPages; page += 1) {
+      paths.push({
+        params: { category, page: String(page) },
+        props: {
+          category: category as CategorySlug,
+          label,
+          page,
+          totalPages,
+          totalPosts: categoryPosts.length,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+interface Props {
+  category: CategorySlug;
+  label: string;
+  page: number;
+  totalPages: number;
+  totalPosts: number;
+}
+
+const PAGE_SIZE = 6;
+const { category, label, page, totalPages, totalPosts } = Astro.props;
+const posts = (await getPublishedPosts()).filter(
+  (post) => post.data.category === category,
+);
+const start = (page - 1) * PAGE_SIZE;
+const visiblePosts = posts.slice(start, start + PAGE_SIZE);
+const baseSeoTitle =
+  categorySeoOverrides[category] ?? `${label} para iniciantes | DejotaCode`;
+const seoTitle = `${baseSeoTitle.replace(" | DejotaCode", "")} — Página ${page} | DejotaCode`;
+const description = `${categoryDescriptions[category]} Página ${page} de ${totalPages}.`;
+
+const canonicalUrl = new URL(
+  `/categoria/${category}/${page}/`,
+  Astro.site ?? Astro.url.origin,
+);
+
+const categoryListId = `${canonicalUrl.href}#itemlist`;
+
+const categorySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": canonicalUrl.href,
+      url: canonicalUrl.href,
+      name: seoTitle,
+      description,
+      inLanguage: "pt-BR",
+      mainEntity: { "@id": categoryListId },
+      isPartOf: { "@id": `https://dejotacode.com.br/categoria/${category}/` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": categoryListId,
+      numberOfItems: visiblePosts.length,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      itemListElement: visiblePosts.map((post, index) => ({
+        "@type": "ListItem",
+        position: start + index + 1,
+        name: post.data.title,
+        url: new URL(postHref(post), canonicalUrl).href,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", canonicalUrl).href },
+        { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog/", canonicalUrl).href },
+        { "@type": "ListItem", position: 3, name: label, item: new URL(`/categoria/${category}/`, canonicalUrl).href },
+        { "@type": "ListItem", position: 4, name: `Página ${page}`, item: canonicalUrl.href },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout title={seoTitle} description={description} robots="index, follow">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(categorySchema)} />
+
+  <main id="conteudo" tabindex="-1" class="editorial-page discovery-page">
+    <header class="editorial-hero container">
+      <nav class="breadcrumbs" aria-label="Navegação estrutural">
+        <a href="/">Início</a>
+        <span aria-hidden="true">/</span>
+        <a href="/blog/">Blog</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/categoria/${category}/`}>{label}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Página {page}</span>
+      </nav>
+
+      <p class="eyebrow">CATEGORIA</p>
+      <h1>{label}</h1>
+      <p class="editorial-hero__lead">{categoryDescriptions[category]}</p>
+
+      <div class="discovery-summary">
+        <strong>{totalPosts}</strong>
+        <span>{totalPosts === 1 ? "conteúdo publicado" : "conteúdos publicados"}</span>
+      </div>
+    </header>
+
+    <section class="editorial-section container" aria-labelledby="category-posts-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE O ASSUNTO</p>
+          <h2 id="category-posts-title">Publicações</h2>
+        </div>
+        <p>Página {page} de {totalPages}</p>
+      </div>
+
+      <div class="post-grid">
+        {visiblePosts.map((post) => <PostCard post={post} />)}
+      </div>
+
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        basePath={`/categoria/${category}/`}
+      />
+    </section>
+  </main>
+</BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Pagination from "../../components/Pagination.astro";
 import PostCard from "../../components/PostCard.astro";
 import {
   categories,
@@ -11,12 +12,12 @@ import {
 import "../../styles/editorial.css";
 import "../../styles/discovery.css";
 
-const categorySeoTitles: Record<CategorySlug, string> = {
-  programacao: "Programação para iniciantes | DejotaCode",
+const PAGE_SIZE = 6;
+
+const categorySeoOverrides: Partial<Record<CategorySlug, string>> = {
   "linux-seguranca": "Linux e segurança digital para iniciantes | DejotaCode",
   "inteligencia-artificial": "Inteligência artificial para iniciantes | DejotaCode",
   "tecnologia-pratica": "Tecnologia prática para iniciantes | DejotaCode",
-  "renda-digital": "Renda digital para iniciantes | DejotaCode",
 };
 
 export function getStaticPaths() {
@@ -35,7 +36,10 @@ const { category, label } = Astro.props;
 const posts = (await getPublishedPosts()).filter(
   (post) => post.data.category === category,
 );
-const seoTitle = categorySeoTitles[category];
+const visiblePosts = posts.slice(0, PAGE_SIZE);
+const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+const seoTitle =
+  categorySeoOverrides[category] ?? `${label} para iniciantes | DejotaCode`;
 
 const canonicalUrl = new URL(
   `/categoria/${category}/`,
@@ -56,19 +60,15 @@ const categorySchema =
             name: seoTitle,
             description: categoryDescriptions[category],
             inLanguage: "pt-BR",
-            mainEntity: {
-              "@id": categoryListId,
-            },
-            isPartOf: {
-              "@id": "https://dejotacode.com.br/#website",
-            },
+            mainEntity: { "@id": categoryListId },
+            isPartOf: { "@id": "https://dejotacode.com.br/#website" },
           },
           {
             "@type": "ItemList",
             "@id": categoryListId,
-            numberOfItems: posts.length,
+            numberOfItems: visiblePosts.length,
             itemListOrder: "https://schema.org/ItemListOrderDescending",
-            itemListElement: posts.map((post, index) => ({
+            itemListElement: visiblePosts.map((post, index) => ({
               "@type": "ListItem",
               position: index + 1,
               name: post.data.title,
@@ -78,24 +78,9 @@ const categorySchema =
           {
             "@type": "BreadcrumbList",
             itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Início",
-                item: new URL("/", canonicalUrl).href,
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Blog",
-                item: new URL("/blog/", canonicalUrl).href,
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: label,
-                item: canonicalUrl.href,
-              },
+              { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", canonicalUrl).href },
+              { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog/", canonicalUrl).href },
+              { "@type": "ListItem", position: 3, name: label, item: canonicalUrl.href },
             ],
           },
         ],
@@ -110,11 +95,7 @@ const categorySchema =
 >
   {
     categorySchema && (
-      <script
-        is:inline
-        type="application/ld+json"
-        set:html={JSON.stringify(categorySchema)}
-      />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(categorySchema)} />
     )
   }
 
@@ -149,9 +130,16 @@ const categorySchema =
 
       {
         posts.length > 0 ? (
-          <div class="post-grid">
-            {posts.map((post) => <PostCard post={post} />)}
-          </div>
+          <>
+            <div class="post-grid">
+              {visiblePosts.map((post) => <PostCard post={post} />)}
+            </div>
+            <Pagination
+              currentPage={1}
+              totalPages={totalPages}
+              basePath={`/categoria/${category}/`}
+            />
+          </>
         ) : (
           <div class="empty-state">
             <p class="eyebrow">EM PREPARAÇÃO</p>
