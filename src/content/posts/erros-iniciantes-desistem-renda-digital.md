@@ -1,6 +1,6 @@
 ---
 title: "10 erros que fazem iniciantes desistirem da renda digital"
-description: "Conheça erros comuns de quem tenta gerar renda online e veja como evitar excesso de promessas, falta de foco, projetos grandes demais e expectativas irreais."
+description: "Veja 10 erros comuns de quem tenta gerar renda online e como evitar promessas fáceis, falta de foco, projetos grandes demais e expectativas irreais."
 publishedAt: 2026-09-28
 category: renda-digital
 type: artigo

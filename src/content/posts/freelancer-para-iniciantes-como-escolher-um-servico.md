@@ -1,6 +1,6 @@
 ---
-title: "Freelancer para iniciantes: como escolher um serviço para oferecer"
-description: "Aprenda a escolher um serviço simples, compatível com o que você sabe fazer hoje, e transforme uma habilidade em uma oferta clara para seus primeiros clientes."
+title: "Freelancer para iniciantes: como escolher seu primeiro serviço"
+description: "Aprenda a escolher um serviço simples, compatível com o que você sabe fazer hoje, e transforme essa habilidade em uma oferta clara para começar como freelancer."
 publishedAt: 2026-09-28
 category: renda-digital
 type: artigo
@@ -226,7 +226,7 @@ Pode ser:
 
 Explique claramente que é projeto de estudo.
 
-Para organizar essa apresentação, veja [o que mostrar no portfólio mesmo sem clientes](/blog/portfolio-para-freelancer-sem-clientes/) quando esse conteúdo estiver publicado.
+Para organizar essa apresentação, veja [o que mostrar no portfólio mesmo sem clientes](/blog/portfolio-para-freelancer-sem-clientes/).
 
 ## Não tente oferecer cinco serviços ao mesmo tempo
 

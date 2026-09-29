@@ -1,5 +1,5 @@
 ---
-title: "Afiliados para iniciantes: como recomendar sem perder credibilidade"
+title: "Afiliados para iniciantes: como recomendar com transparência"
 description: "Entenda como usar links de afiliado com transparência, contexto e responsabilidade, sem transformar recomendações em propaganda disfarçada."
 publishedAt: 2026-09-28
 category: renda-digital
@@ -17,7 +17,7 @@ A parte técnica realmente pode ser simples.
 
 A parte difícil é fazer isso **sem destruir a confiança de quem acompanha seu conteúdo**.
 
-Para o DejotaCode, afiliado só faz sentido quando a recomendação ajuda o leitor e a relação comercial é clara.
+Para o DejotaCode, afiliado só faz sentido quando a recomendação ajuda o leitor e a relação comercial é clara. Se você ainda está escolhendo seu modelo de renda, comece pelo guia de [primeira renda online](/blog/como-conseguir-primeira-renda-online/).
 
 ## O que é um link afiliado?
 

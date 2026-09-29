@@ -17,7 +17,7 @@ Na prática, não existe um número único que funcione para todo projeto.
 
 O preço depende do que será entregue, do tempo necessário, dos custos envolvidos, do nível de responsabilidade e da sua experiência.
 
-O objetivo deste artigo não é dar uma tabela mágica. É mostrar **como chegar a um valor que você consiga explicar**.
+O objetivo deste artigo não é dar uma tabela mágica. É mostrar **como chegar a um valor que você consiga explicar**. Se você ainda está antes da etapa de preço, comece pelo guia de [primeira renda online](/blog/como-conseguir-primeira-renda-online/).
 
 ## Comece pelo escopo
 
