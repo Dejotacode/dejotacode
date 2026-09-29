@@ -27,7 +27,7 @@ Problema real → conteúdo útil → recomendação contextual → transparênc
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | O que é Linux | Entender Linux antes de instalar | `/blog/o-que-e-linux/` | Short educativo: “O que é Linux?” | Linux do Zero | — | Pendrive SanDisk Cruzer Blade 64GB | Trilha gratuita Linux do Zero | page_view → trail → product; affiliate_click do pendrive | Publicado / ativo |
 | Escolher distribuição Linux | Escolher uma distro sem se perder | `/blog/como-escolher-distribuicao-linux/` | Short: “Como escolher sua primeira distribuição Linux” | Linux do Zero | — | Pendrive SanDisk Cruzer Blade 64GB | Trilha gratuita | article → trail; affiliate_click | Publicado / ativo |
-| Criar mídia bootável Linux | Testar Linux sem substituir imediatamente o sistema atual | Conteúdo dedicado ainda não publicado | Tutorial curto + vídeo maior | Linux do Zero | — | Pendrive SanDisk Cruzer Blade 64GB | Tutorial → trilha | page_view; affiliate_click; trail_start | Prioridade de conteúdo |
+| Criar mídia bootável Linux | Testar Linux sem substituir imediatamente o sistema atual | `/blog/como-criar-pendrive-bootavel-linux/` | Tutorial curto + vídeo maior | Linux do Zero | — | Pendrive SanDisk Cruzer Blade 64GB | Tutorial → trilha | page_view; affiliate_click; trail_start | Publicado / ativo |
 | Comandos Linux básicos | Começar no terminal com segurança | `/blog/comandos-linux-para-iniciantes/` | Short: “3 comandos para começar no Linux” | Linux do Zero | — | Pendrive apenas como recurso relacionado | Continuar trilha | article → trail; affiliate_click contextual | Publicado / ativo |
 | Começar programação | Entender o caminho inicial de programação | `/blog/primeiro-site-html-css/` | Short: “Seu primeiro site: por onde começar” | — | Programação do Iniciante ao Avançado | — | Ler tutorial / aprofundar estudo | page_view; affiliate_click hotmart | Publicado / ativo |
 | HTML, CSS e JavaScript | Entender a função de cada tecnologia | `/blog/html-css-javascript-entenda-diferenca/` | Short comparativo | — | Programação do Iniciante ao Avançado | — | Continuar aprendizado | affiliate_click hotmart | Publicado / ativo |
@@ -110,15 +110,14 @@ Medição:
 
 ## Backlog imediato
 
-1. Criar conteúdo “Como criar um pendrive bootável Linux sem apagar o disco errado”.
-2. Derivar 2–3 Shorts desse conteúdo:
+1. Derivar 2–3 Shorts de “Como criar um pendrive bootável Linux sem apagar o disco errado”:
    - “O que é um pendrive bootável?”
    - “3 cuidados antes de instalar Linux”
    - “Como testar Linux sem instalar”.
-3. Criar conteúdo “Setup simples para começar a programar sem gastar demais”.
-4. Usar o AULA F75 apenas como uma opção contextual dentro desse conteúdo.
-5. Não adicionar SSD/hub antes de validar anúncios confiáveis e necessidade editorial.
-6. Revisar preços e disponibilidade dos recursos afiliados periodicamente.
+2. Criar conteúdo “Setup simples para começar a programar sem gastar demais”.
+3. Usar o AULA F75 apenas como uma opção contextual dentro desse conteúdo.
+4. Não adicionar SSD/hub antes de validar anúncios confiáveis e necessidade editorial.
+5. Revisar preços e disponibilidade dos recursos afiliados periodicamente.
 
 ## Convenção de medição
 

@@ -37,6 +37,7 @@ export const articleResourceIds: Record<string, string[]> = {
   "devtools-navegador-iniciantes": ["astro"],
   "o-que-e-linux": ["linux", "pendrive-sandisk-cruzer-blade-64gb-shopee"],
   "como-escolher-distribuicao-linux": ["linux", "pendrive-sandisk-cruzer-blade-64gb-shopee"],
+  "como-criar-pendrive-bootavel-linux": ["linux", "pendrive-sandisk-cruzer-blade-64gb-shopee"],
   "comandos-linux-para-iniciantes": ["linux", "git", "pendrive-sandisk-cruzer-blade-64gb-shopee"],
 };
 
