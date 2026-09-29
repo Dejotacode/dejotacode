@@ -1,5 +1,5 @@
 ---
-title: "Como conseguir sua primeira renda online usando uma habilidade simples"
+title: "Primeira renda online: como começar com uma habilidade simples"
 description: "Um caminho realista para escolher uma habilidade, montar uma oferta simples, encontrar o primeiro cliente e aprender com uma entrega pequena."
 publishedAt: 2026-09-28
 category: renda-digital
@@ -215,13 +215,13 @@ Você recomenda um produto ou serviço de terceiro e pode receber comissão quan
 
 A recomendação precisa ser transparente. Você não deve fingir experiência com algo que não testou ou avaliou.
 
-No DejotaCode, esse princípio também vale para a página de [Recursos](/recursos/).
+Veja também [Afiliados para iniciantes: como recomendar com transparência](/blog/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade/) e a página de [Recursos](/recursos/).
 
 ### Produtos digitais
 
 Você cria algo que pode ser vendido mais de uma vez, como um e-book, template ou curso.
 
-Isso pode escalar melhor do que um serviço, mas exige entender um problema real e construir um material útil.
+Isso pode escalar melhor do que um serviço, mas exige entender um problema real e construir um material útil. Se esse caminho interessa, veja [como criar seu primeiro e-book](/blog/produto-digital-como-transformar-conhecimento-em-ebook/).
 
 ### Conteúdo
 
@@ -253,6 +253,8 @@ O objetivo é completar o primeiro ciclo:
 **problema → oferta → acordo → trabalho → entrega → aprendizado.**
 
 ## Próximo passo
+
+Se você quer seguir pelo caminho de serviços, avance para [como escolher seu primeiro serviço freelancer](/blog/freelancer-para-iniciantes-como-escolher-um-servico/). Antes de começar, também vale conhecer os [erros que mais fazem iniciantes desistirem da renda digital](/blog/erros-iniciantes-desistem-renda-digital/).
 
 Se você quer começar pela área de sites, avance pelos conteúdos de [HTML, CSS e JavaScript](/blog/html-css-javascript-entenda-diferenca/), crie seu [primeiro site com HTML e CSS](/blog/primeiro-site-html-css/) e depois transforme esse aprendizado em um projeto pequeno de portfólio.
 

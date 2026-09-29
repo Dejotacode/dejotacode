@@ -1,6 +1,6 @@
 ---
 title: "Como conseguir o primeiro cliente sem investir em anúncios"
-description: "Veja formas práticas e responsáveis de encontrar o primeiro cliente usando rede de contatos, abordagem direta e demonstrações reais, sem depender de anúncios pagos."
+description: "Aprenda formas práticas de encontrar o primeiro cliente usando contatos, abordagem direta e demonstrações reais, sem investir em anúncios."
 publishedAt: 2026-09-28
 category: renda-digital
 type: artigo
@@ -19,7 +19,7 @@ A boa notícia é que o primeiro cliente não precisa vir de anúncio pago.
 
 Ele pode surgir de **pessoas que já conhecem você, negócios próximos, comunidades ou abordagens diretas bem feitas**.
 
-Antes de procurar clientes, tenha uma oferta clara. Se ainda não tem, leia [como montar uma oferta simples para pequenos negócios](/blog/como-montar-oferta-simples-pequenos-negocios/).
+Antes de procurar clientes, tenha uma oferta clara. Se você ainda está organizando o caminho, comece pelo guia de [primeira renda online](/blog/como-conseguir-primeira-renda-online/). Se a oferta já é sua dúvida principal, leia [como montar uma oferta simples para pequenos negócios](/blog/como-montar-oferta-simples-pequenos-negocios/).
 
 ## Comece pela sua rede real
 

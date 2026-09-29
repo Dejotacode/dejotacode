@@ -17,7 +17,7 @@ O cliente precisa entender **o que você vai entregar, para que serve e quanto e
 
 Uma oferta simples organiza essas informações.
 
-Se ainda estiver escolhendo o que vender, comece por [como escolher um serviço freelancer](/blog/freelancer-para-iniciantes-como-escolher-um-servico/).
+Se ainda estiver definindo seu caminho, comece pelo guia de [primeira renda online com uma habilidade simples](/blog/como-conseguir-primeira-renda-online/). Se já decidiu trabalhar como freelancer, avance para [como escolher um serviço](/blog/freelancer-para-iniciantes-como-escolher-um-servico/).
 
 ## Oferta não é apenas preço
 

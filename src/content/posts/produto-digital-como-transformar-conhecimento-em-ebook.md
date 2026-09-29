@@ -1,5 +1,5 @@
 ---
-title: "Produto digital: como transformar conhecimento em um e-book simples"
+title: "Produto digital: como criar seu primeiro e-book"
 description: "Aprenda a transformar um problema que você sabe resolver em um e-book útil, definindo público, estrutura, validação, produção e entrega."
 publishedAt: 2026-09-28
 category: renda-digital
@@ -17,7 +17,7 @@ Começa escolhendo **um problema específico que você consegue ajudar a resolve
 
 O Linux do Zero, por exemplo, nasceu como continuação natural de conteúdos gratuitos do DejotaCode, não como produto desconectado.
 
-Você pode seguir o mesmo raciocínio em qualquer área.
+Você pode seguir o mesmo raciocínio em qualquer área. Se ainda está decidindo entre serviço, afiliado ou produto próprio, comece pelo guia de [primeira renda online](/blog/como-conseguir-primeira-renda-online/).
 
 ## Produto digital não é PDF por si só
 
