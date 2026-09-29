@@ -11,3 +11,14 @@
   color: var(--color-accent-strong);
   font-weight: 700;
 }
+
+.services-cta .services-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+@media(max-width:850px) {
+  .services-cta .services-actions {
+    justify-content: flex-start;
+  }
+}
