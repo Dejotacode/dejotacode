@@ -48,6 +48,47 @@ const cleanCampaign = (value: string | undefined) => {
   return campaign.slice(0, 100);
 };
 
+const acquisitionSessionKey = "dejotacode:acquisition";
+
+const cleanAttributionPart = (value: string | null) =>
+  (value ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 28);
+
+const getAcquisitionCampaign = () => {
+  const params = new URLSearchParams(window.location.search);
+  const source = cleanAttributionPart(params.get("utm_source"));
+  const medium = cleanAttributionPart(params.get("utm_medium"));
+  const campaign = cleanAttributionPart(params.get("utm_campaign"));
+
+  const taggedCampaign = source
+    ? cleanCampaign(
+        ["acq", source, medium, campaign]
+          .filter(Boolean)
+          .join(":"),
+      )
+    : "";
+
+  if (taggedCampaign) {
+    try {
+      window.sessionStorage.setItem(acquisitionSessionKey, taggedCampaign);
+    } catch {}
+
+    return taggedCampaign;
+  }
+
+  try {
+    return cleanCampaign(
+      window.sessionStorage.getItem(acquisitionSessionKey) ?? undefined,
+    );
+  } catch {
+    return "";
+  }
+};
+
 const sendAnalytics = (
   apiBase: string,
   payload: AnalyticsPayload,
@@ -83,7 +124,13 @@ export const sendAnalyticsEvent = (
 };
 
 export const prepareAnalytics = (rawApiBase: string) => {
-  sendAnalyticsEvent(rawApiBase, "page_view");
+  const acquisitionCampaign = getAcquisitionCampaign();
+
+  sendAnalyticsEvent(
+    rawApiBase,
+    "page_view",
+    acquisitionCampaign || undefined,
+  );
 
   document.addEventListener("click", (event) => {
     const target = event.target;
