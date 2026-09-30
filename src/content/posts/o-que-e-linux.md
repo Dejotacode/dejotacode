@@ -74,4 +74,4 @@ Antes de escolher uma distribuição, anote:
 - Os aplicativos que precisa manter disponíveis.
 - Como pretende experimentar o sistema.
 
-Use essas respostas para seguir para [como escolher uma distribuição Linux](/blog/como-escolher-distribuicao-linux/). Você também pode acompanhar a [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/) e avançar na sequência proposta.
+Use essas respostas para seguir para [como escolher uma distribuição Linux](/blog/como-escolher-distribuicao-linux/). Quando quiser testar uma distribuição com segurança, veja também [como criar um pendrive bootável Linux](/blog/como-criar-pendrive-bootavel-linux/). Você também pode acompanhar a [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/) e avançar na sequência proposta.
