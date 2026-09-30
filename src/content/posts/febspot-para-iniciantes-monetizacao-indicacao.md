@@ -85,6 +85,17 @@ Embora a plataforma mencione promoção paga legítima, recomendamos começar co
 
 Seguiremos o método **testar → registrar → medir → verificar → publicar resultados**. Na data deste artigo, temos um link de indicação informado pelo responsável pela conta e documentação pública sobre os programas. Não apresentamos receita, saque ou pagamento recebido como comprovados.
 
+Para evitar confusão, usamos quatro estados diferentes:
+
+| Estado | O que significa |
+|---|---|
+| Recompensa anunciada | A plataforma informa publicamente que o programa pode gerar determinada recompensa, mas isso ainda não é resultado do DejotaCode. |
+| Recompensa registrada | Um valor aparece no painel da conta, ainda sujeito às regras e validações da plataforma. |
+| Recompensa confirmada | O valor foi aprovado e está elegível conforme o painel, mas ainda não significa dinheiro recebido. |
+| Recompensa recebida | O crédito foi efetivamente confirmado no meio de recebimento, com dados sensíveis ocultos. |
+
+No teste da plataforma, também registramos estas evidências operacionais:
+
 | Etapa | Evidência necessária |
 |---|---|
 | Publicação | Vídeo acessível e dados da publicação registrados |
@@ -127,17 +138,17 @@ O site apresenta um assistente para informações gerais. Na resposta compartilh
 
 ## Próximo passo
 
-Se a proposta fizer sentido para você, leia as condições e confira os recursos disponíveis na sua conta.
+Se a proposta fizer sentido para você, primeiro confira as regras atuais da plataforma e os recursos disponíveis para sua conta e região. Se decidir criar uma conta, você pode usar o link de indicação do DejotaCode abaixo.
 
-<a href="https://www.febspot.com/ref/1210970/" rel="sponsored noopener">Conhecer o Febspot pelo nosso link de indicação</a>
+<a href="https://www.febspot.com/ref/1210970/" rel="sponsored noopener">Conhecer o Febspot pelo link de indicação do DejotaCode</a>
 
-**Aviso de indicação:** podemos receber recompensa por atividades elegíveis vinculadas ao link. Não há garantia de renda.
+**Aviso de indicação:** podemos receber recompensa por atividade elegível aprovada vinculada ao link. Cadastro, visualização ou publicação isolados não garantem recompensa para você nem para o DejotaCode. Não há promessa de renda.
 
 Quer continuar aprendendo com conteúdo prático? Explore o [blog do DejotaCode](/blog/) e nossa [experiência de publicação no Bilibili](/blog/bilibili-para-iniciantes-monetizacao-brasil/).
 
 ## Fontes e atualização
 
-Informações consultadas em **30 de setembro de 2026**, a partir das páginas oficiais disponíveis na pesquisa. A abertura direta dessas páginas falhou durante esta revisão; não houve inspeção do painel autenticado. Condições específicas da conta permanecem pendentes de conferência.
+Informações consultadas em **30 de setembro de 2026** nas páginas oficiais do Febspot. Nesta revisão, confirmamos publicamente o mínimo transferível de US$ 20, a monetização baseada em visualizações aprovadas e o programa de indicação com recompensa de até 20% sobre atividade elegível aprovada. Condições específicas da conta DejotaCode continuam dependendo do painel autenticado e de resultados reais do teste.
 
 - [Página inicial do Febspot](https://www.febspot.com/)
 - [Monetização](https://www.febspot.com/monetization/)
