@@ -116,6 +116,8 @@ Se você já produz vídeos próprios, pode avaliar o Bilibili como um canal adi
 
 Nossa experiência inicial confirmou um fluxo de publicação e acesso ao painel de análise. Ainda falta confirmar um programa de monetização e indicação aplicável à conta brasileira. Por enquanto, o teste é de distribuição e descoberta de público.
 
+Se você quer comparar com uma plataforma em que também estamos acompanhando monetização e indicação, veja o nosso teste da [Febspot para iniciantes](/blog/febspot-para-iniciantes-monetizacao-indicacao/). As duas experiências são registradas separadamente para não misturar recursos anunciados com resultados realmente confirmados.
+
 ### Continue aprendendo com o DejotaCode
 
 Se você chegou pelos nossos vídeos e quer começar no Linux com um caminho organizado, [conheça o guia Linux do Zero](https://dejotacode.com.br/produtos/linux-do-zero/).
