@@ -95,6 +95,8 @@ Prefira páginas onde existe relação real:
 
 Não force link apenas porque existe comissão.
 
+Um exemplo prático desse cuidado é o nosso teste com a [Febspot: vídeos, monetização e indicação](/blog/febspot-para-iniciantes-monetizacao-indicacao/), onde separamos claramente o que a plataforma anuncia do que o DejotaCode já conseguiu verificar.
+
 ## Evite urgência artificial
 
 Frases como “última chance” só devem ser usadas se forem verdadeiras e verificáveis.
