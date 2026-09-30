@@ -160,6 +160,6 @@ Esse exercício é simples, mas ajuda a organizar mentalmente o papel de cada te
 
 ## Próximo passo
 
-Agora pratique construindo [seu primeiro site com HTML e CSS](/blog/primeiro-site-html-css/).
+Agora pratique construindo [seu primeiro site com HTML e CSS](/blog/primeiro-site-html-css/). Para investigar a página direto no navegador, continue com [DevTools para iniciantes](/blog/devtools-navegador-iniciantes/).
 
 Você também pode seguir a [trilha Primeiros passos na programação](/trilhas/primeiros-passos-programacao/) para manter a sequência.

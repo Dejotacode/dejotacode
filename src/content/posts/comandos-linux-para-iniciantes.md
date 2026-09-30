@@ -194,7 +194,7 @@ Aprender terminal também significa aprender a parar antes de confirmar uma aç�
 
 Depois que navegação por diretórios estiver confortável, o próximo conceito importante é entender por que alguns arquivos podem ser lidos ou alterados e outros não.
 
-Continue em [Permissões no Linux sem mistério](/blog/permissoes-linux-para-iniciantes/).
+Continue em [Permissões no Linux sem mistério](/blog/permissoes-linux-para-iniciantes/). Depois, avance para [pipe e redirecionamento no Linux](/blog/pipe-redirecionamento-linux/) para combinar comandos e controlar melhor a saída no terminal.
 
 Se você prefere aprender em uma sequência organizada desde o começo, acompanhe também a [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/).
 

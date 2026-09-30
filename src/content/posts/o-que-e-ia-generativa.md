@@ -136,7 +136,7 @@ Uma boa forma de estudar é pedir que a ferramenta:
 - mostre onde você errou;
 - proponha outro exercício.
 
-Assim, a IA vira parte do processo de aprendizagem em vez de simplesmente substituir a prática.
+Assim, a IA vira parte do processo de aprendizagem em vez de simplesmente substituir a prática. Para aplicar isso no dia a dia, veja [como usar IA para estudar sem terceirizar o raciocínio](/blog/usar-ia-estudar-sem-dependencia/).
 
 ## Próximo passo
 

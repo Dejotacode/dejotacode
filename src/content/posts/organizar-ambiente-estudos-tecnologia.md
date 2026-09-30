@@ -105,4 +105,4 @@ Quando concluir uma ação, escolha a seguinte. Isso mantém o estudo ligado a p
 
 Você não precisa de um aplicativo novo para começar. Pastas previsíveis, nomes claros, um README e uma pequena lista de próximos passos já resolvem boa parte da desorganização inicial.
 
-Se você ainda estiver definindo o que estudar, comece por [como estudar tecnologia sem se perder](/blog/como-estudar-tecnologia-sem-se-perder/). Quando estiver pronto para transformar o aprendizado em algo apresentável, veja também [como escolher seu primeiro projeto de portfólio](/blog/escolher-primeiro-projeto-portfolio/).
+Se você ainda estiver definindo o que estudar, comece por [como estudar tecnologia sem se perder](/blog/como-estudar-tecnologia-sem-se-perder/). Para manter um registro útil do que funcionou, veja também [como documentar o que você aprende em tecnologia](/blog/documentar-aprendizado-tecnologia/). Quando estiver pronto para transformar o aprendizado em algo apresentável, continue com [como escolher seu primeiro projeto de portfólio](/blog/escolher-primeiro-projeto-portfolio/).
