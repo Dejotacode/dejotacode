@@ -67,6 +67,14 @@ export const trails: Trail[] = [
         description: "Combine comandos e direcione resultados com |, > e >> de forma segura.",
         duration: 10,
       },
+      {
+        order: 6,
+        slug: "como-testar-linux-sem-instalar",
+        title: "Teste Linux sem instalar",
+        description: "Use o modo live para conferir Wi-Fi, áudio, vídeo e outros itens antes de decidir instalar.",
+        duration: 9,
+        optional: true,
+      },
     ],
   },
   {
