@@ -205,6 +205,8 @@ Depois de criar a mídia:
 4. use o sistema por alguns minutos;
 5. só depois decida se quer instalar.
 
+Se quiser seguir essa etapa com calma, use o guia [Como testar Linux sem instalar no computador](/blog/como-testar-linux-sem-instalar/).
+
 Se você ainda está conhecendo Linux, continue pela [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/).
 
 E, antes de escolher qual distribuição gravar no pendrive, veja também [Como escolher uma distribuição Linux](/blog/como-escolher-distribuicao-linux/).

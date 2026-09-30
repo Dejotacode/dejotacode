@@ -109,6 +109,8 @@ Esse modo de teste, muitas vezes chamado de **sessão live**, permite conferir:
 
 Esse teste não garante que tudo será idêntico depois da instalação, mas ajuda a identificar problemas óbvios antes de alterar seu computador.
 
+Para fazer esse teste passo a passo, veja [Como testar Linux sem instalar no computador](/blog/como-testar-linux-sem-instalar/).
+
 ## Máquina virtual também é uma opção
 
 Outra forma de experimentar é usar uma máquina virtual.
