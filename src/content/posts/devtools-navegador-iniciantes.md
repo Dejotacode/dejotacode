@@ -10,7 +10,7 @@ featured: false
 draft: false
 tags: [devtools, navegador, html, css, javascript]
 storeProducts:
-  - "logitech-mx-anywhere-3s"
+  - "logitech-pebble-2-m350s"
 ---
 
 Quando uma página não fica como você esperava, abrir o código e tentar alterações aleatórias costuma ser mais lento do que observar primeiro o que o navegador realmente recebeu.
