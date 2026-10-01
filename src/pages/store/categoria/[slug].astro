@@ -11,14 +11,20 @@ const categoryMap = {
   "ferramentas-digitais": { label: "Ferramentas digitais", description: "Hospedagem, IA, VPN, cursos e serviços." },
 } as const;
 
-export async function getStaticPaths() {
-  return Object.keys(categoryMap).map((slug) => ({ params: { slug } }));
+export function getStaticPaths() {
+  return [
+    "linux",
+    "setup",
+    "programacao",
+    "criadores",
+    "ferramentas-digitais",
+  ].map((slug) => ({ params: { slug } }));
 }
 
 const slug = Astro.params.slug as keyof typeof categoryMap;
 const category = categoryMap[slug];
-const products = (await getCollection("storeProducts", ({ data }) => !data.draft && data.category === slug));
-const guides = (await getCollection("storeGuides", ({ data }) => !data.draft && data.category === slug));
+const products = await getCollection("storeProducts", ({ data }) => !data.draft && data.category === slug);
+const guides = await getCollection("storeGuides", ({ data }) => !data.draft && data.category === slug);
 ---
 
 <BaseLayout title={`${category.label} na DejotaStore`} description={category.description}>
