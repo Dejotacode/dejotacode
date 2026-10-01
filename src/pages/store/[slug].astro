@@ -19,12 +19,12 @@ const { product } = Astro.props;
 const { Content } = await render(product);
 const links = product.data.affiliateLinks ?? {};
 const merchants = [
-  ["Amazon", links.amazon],
-  ["Mercado Livre", links.mercadolivre],
-  ["Shopee", links.shopee],
-  ["Hotmart", links.hotmart],
-  ["Parceiro", links.other],
-].filter((entry) => Boolean(entry[1]));
+  { name: "Amazon", provider: "amazon", href: links.amazon },
+  { name: "Mercado Livre", provider: "mercadolivre", href: links.mercadolivre },
+  { name: "Shopee", provider: "shopee", href: links.shopee },
+  { name: "Hotmart", provider: "hotmart", href: links.hotmart },
+  { name: "Parceiro", provider: "other", href: links.other },
+].filter((entry) => Boolean(entry.href));
 ---
 
 <BaseLayout title={product.data.title} description={product.data.description}>
@@ -76,9 +76,16 @@ const merchants = [
         <h2>Confira diretamente na plataforma parceira</h2>
         {merchants.length > 0 ? (
           <div class="offer-grid">
-            {merchants.map(([name, href]) => (
-              <a href={href} target="_blank" rel="nofollow sponsored noopener">
-                <strong>{name}</strong><span>Ver oferta →</span>
+            {merchants.map((merchant) => (
+              <a
+                href={merchant.href}
+                target="_blank"
+                rel="nofollow sponsored noopener"
+                data-analytics-cta={`store-offer:${product.id}:${merchant.provider}`}
+                data-analytics-affiliate-provider={merchant.provider}
+                data-analytics-affiliate-id={product.id}
+              >
+                <strong>{merchant.name}</strong><span>Ver oferta →</span>
               </a>
             ))}
           </div>
@@ -94,7 +101,12 @@ const merchants = [
           <h2>Conteúdos relacionados</h2>
           <div class="related-list">
             {product.data.relatedPosts.map((slug) => (
-              <a href={`/blog/${slug}/`}>{slug.replaceAll("-", " ")} <span>→</span></a>
+              <a
+                href={`/blog/${slug}/`}
+                data-store-related-article={`product:${product.id}:${slug}`}
+              >
+                {slug.replaceAll("-", " ")} <span>→</span>
+              </a>
             ))}
           </div>
         </section>
