@@ -9,6 +9,9 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [linux, pendrive bootável, ubuntu, instalação, iniciantes]
+storeProducts:
+  - "pendrive-32gb-linux"
+  - "ssd-externo-backup"
 ---
 
 Criar um pendrive bootável é uma das formas mais práticas de experimentar Linux antes de instalar qualquer coisa no computador.
