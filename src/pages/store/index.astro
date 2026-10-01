@@ -38,7 +38,13 @@ const categories = [
           </aside>
         </div>
         <div class="store-hero__visual" aria-hidden="true">
-          <span>Conteúdo</span><b>→</b><span>Contexto</span><b>→</b><span>Recomendação</span>
+          <div class="store-flow">
+            <div><small>01 · Conteúdo</small><strong>Aprenda no DejotaCode</strong><span>Tutoriais e guias explicam o problema primeiro.</span></div>
+            <i>↓</i>
+            <div><small>02 · Contexto</small><strong>Entenda o que faz sentido</strong><span>A necessidade aparece dentro do conteúdo.</span></div>
+            <i>↓</i>
+            <div><small>03 · Recomendação</small><strong>Compare antes de decidir</strong><span>A Store organiza opções e parceiros.</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -139,9 +145,13 @@ const categories = [
   .store-button--primary { border-color: var(--color-accent); background: var(--color-accent); color: var(--color-accent-contrast); }
   .store-principle { margin-top: 1.3rem; padding: .9rem 1rem; border-left: 2px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: linear-gradient(90deg, var(--color-glow), transparent); color: var(--color-text-muted); font-size: .9rem; }
   .store-principle strong { color: var(--color-text); }
-  .store-hero__visual { min-height: 24rem; display: flex; align-items: center; justify-content: center; gap: .65rem; padding: 1rem; background: radial-gradient(circle at 50% 35%, var(--color-glow), transparent 38%), var(--color-surface-soft); }
-  .store-hero__visual span { padding: .65rem .8rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); font-size: .82rem; font-weight: 800; }
-  .store-hero__visual b { color: var(--color-accent-strong); }
+  .store-hero__visual { min-height: 24rem; display: grid; place-items: center; padding: clamp(1rem, 3vw, 2rem); background: radial-gradient(circle at 50% 35%, var(--color-glow), transparent 38%), var(--color-surface-soft); }
+  .store-flow { width: min(100%, 25rem); display: grid; gap: .55rem; }
+  .store-flow div { display: grid; gap: .22rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-surface) 92%, transparent); }
+  .store-flow small { color: var(--color-accent-strong); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .store-flow strong { font-size: .95rem; }
+  .store-flow span { color: var(--color-text-muted); font-size: .8rem; }
+  .store-flow i { color: var(--color-accent-strong); text-align: center; font-style: normal; }
   .store-section { padding: 2rem 0; }
   .store-section--soft { border-block: 1px solid var(--color-border); background: var(--color-surface-soft); }
   .store-heading { margin-bottom: 1rem; }
@@ -171,6 +181,5 @@ const categories = [
   @media (max-width: 42rem) {
     .store-categories { grid-template-columns: 1fr 1fr; }
     .store-principles, .store-products, .store-two-column { grid-template-columns: 1fr; }
-    .store-hero__visual { flex-direction: column; }
   }
 </style>
