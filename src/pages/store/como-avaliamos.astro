@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Como avaliamos na DejotaStore" description="Entenda a metodologia editorial usada para diferenciar produtos usados, testados e pesquisados pelo DejotaCode.">
+  <main id="conteudo"><div class="container">
+    <nav class="breadcrumbs"><a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span>Como avaliamos</span></nav>
+    <section class="hero"><p class="eyebrow">Transparência</p><h1>Como avaliamos nossas recomendações</h1><p>A DejotaStore separa experiência prática de pesquisa editorial para que o visitante saiba exatamente o que está lendo.</p></section>
+    <section class="grid">
+      <article><strong>Uso no DejotaCode</strong><p>Item ou ferramenta atualmente usado na operação do projeto.</p></article>
+      <article><strong>Testado pelo Dejota</strong><p>Produto utilizado diretamente, ainda que não faça parte do setup atual.</p></article>
+      <article><strong>Pesquisado pelo DejotaCode</strong><p>Recomendação baseada em documentação, especificações, avaliações e comparação editorial.</p></article>
+    </section>
+    <section class="panel"><h2>Regras editoriais</h2><ul><li>Produto só entra quando resolve uma necessidade real.</li><li>Comissão não determina a recomendação.</li><li>Não simulamos teste que não aconteceu.</li><li>Preço só será exibido com fonte e atualização confiáveis.</li><li>Links comerciais serão identificados com transparência.</li></ul></section>
+  </div></main>
+</BaseLayout>
+<style>
+.container{width:min(calc(100% - (2 * var(--space-page))),var(--container));margin-inline:auto;padding-bottom:3rem}.breadcrumbs{display:flex;gap:.45rem;padding-top:1.5rem;color:var(--color-text-subtle);font-size:.82rem}.breadcrumbs a{color:inherit}.hero{padding:2.7rem 0}.hero h1{max-width:13ch;margin:.4rem 0;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1;letter-spacing:-.05em}.hero>p:last-child{max-width:60ch;color:var(--color-text-muted)}.eyebrow{margin:0;color:var(--color-accent-strong);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.grid article,.panel{padding:1.1rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface)}.grid p,.panel li{color:var(--color-text-muted)}.panel{margin-top:1rem}.panel h2{margin-top:0}@media(max-width:45rem){.grid{grid-template-columns:1fr}}
+</style>
