@@ -113,3 +113,132 @@ Status: programa de afiliados ativo na conta DejotaCode em 2026-10-01.
 - Destino do link: https://metricool.com/
 - Condições exibidas no painel: teste de 30 dias, somente para primeiro uso de usuários sem Premium, não aplicável à conta do próprio afiliado e sem data de vencimento do link.
 - Estratégia DejotaCode: usar apenas em conteúdos sobre gestão de redes sociais, calendário editorial, agendamento, métricas e operação de conteúdo.
+
+
+## Backlog oficial de oportunidades afiliadas
+
+Atualizado em: 2026-10-01
+
+Este backlog separa claramente programa pesquisado, candidatura enviada, programa aprovado e conteúdo publicado. A existência de comissão não é critério suficiente para produção. O critério principal continua sendo utilidade editorial para o público do DejotaCode.
+
+### Status — ativo/publicado
+
+| Parceiro | Status comercial | Conteúdo atual | Próxima ação |
+|---|---|---|---|
+| Metricool | Programa ativo na conta DejotaCode | Artigo + DejotaStore + Recursos | Fechamento editorial antes de distribuição/medição |
+| ElevenLabs | Programa ativo via PartnerStack | Artigo + DejotaStore + Recursos | Fechamento editorial antes de distribuição/medição |
+| Hotmart | Conta afiliada ativa | Produtos selecionados + páginas Store | Manter apenas produtos com encaixe editorial comprovado |
+| Leadlovers | Produto afiliado disponível via Hotmart | Store + conteúdo relacionado | Avaliar necessidade de artigo dedicado |
+
+### Status — candidatura enviada / aguardando análise
+
+| Parceiro | Status | Encaixe editorial | Regra atual |
+|---|---|---|---|
+| Hostinger | Candidatura enviada em 2026-10-01 | primeiro site, domínio, hospedagem, pequenos projetos | não publicar CTA afiliado antes da aprovação |
+| Elementor | Candidatura enviada em 2026-10-01 | WordPress, landing pages, freelancer | não publicar CTA afiliado antes da aprovação |
+| NordVPN | Candidatura enviada em 2026-10-01 | privacidade, Wi-Fi público, segurança | manter abordagem educativa; VPN não é solução universal |
+
+### Status — pesquisar / avaliar candidatura
+
+#### Semrush
+Status: programa ativo e operado via Impact; ainda sem candidatura DejotaCode registrada neste documento.
+
+Verificação em 2026-10-01:
+- atribuição de último clique;
+- cookie informado de 120 dias;
+- programa remunera vendas e ativações de teste;
+- valores podem variar conforme produto e nível do parceiro.
+
+Encaixe editorial:
+- SEO para iniciantes;
+- pesquisa de palavras-chave;
+- auditoria de site;
+- acompanhamento de posicionamento;
+- SEO aplicado ao próprio DejotaCode como estudo de caso.
+
+Conteúdos candidatos:
+1. “SEO para iniciantes: o que realmente acompanhar”;
+2. “Como encontrar palavras-chave sem escolher temas no escuro”;
+3. “Como fazer uma auditoria básica do seu site”;
+4. “Search Console e Semrush: para que serve cada um”.
+
+Prioridade: alta, mas somente depois de consolidar a frente de SEO do próprio DejotaCode.
+
+#### Envato
+Status: programas oficiais ativos via Impact; ainda sem candidatura DejotaCode registrada neste documento.
+
+Verificação em 2026-10-01:
+- Envato Market possui programa próprio;
+- Envato Elements e Placeit possuem ofertas/programas separados;
+- participação e pagamentos são gerenciados via Impact;
+- condições específicas de cada oferta ficam no painel e podem mudar.
+
+Encaixe editorial:
+- templates para sites;
+- assets de vídeo e áudio;
+- temas e componentes;
+- materiais para criadores;
+- recursos para projetos e portfólio.
+
+Conteúdos candidatos:
+1. “Onde encontrar templates sem comprometer a qualidade do projeto”;
+2. “Quando usar um template e quando criar do zero”;
+3. “Recursos para acelerar vídeos, sites e apresentações”;
+4. “ThemeForest, CodeCanyon e Elements: qual a diferença”.
+
+Prioridade: média-alta.
+
+#### Namecheap
+Status: candidato em pesquisa; condições comerciais ainda não consolidadas neste documento.
+
+Encaixe editorial:
+- registro de domínio;
+- DNS;
+- SSL;
+- e-mail profissional;
+- hospedagem para projetos iniciais.
+
+Conteúdos candidatos:
+1. “Como escolher e registrar seu primeiro domínio”;
+2. “Domínio, DNS e hospedagem: entenda a diferença”;
+3. “Preciso pagar por SSL?”.
+
+Prioridade: média. Verificar condições oficiais antes de candidatura ou publicação comercial.
+
+#### Kinsta
+Status: candidato em pesquisa; condições comerciais ainda não consolidadas neste documento.
+
+Encaixe editorial:
+- WordPress profissional;
+- hospedagem gerenciada;
+- projetos com maior exigência de desempenho e suporte.
+
+Conteúdos candidatos:
+1. “Quando hospedagem gerenciada faz sentido”;
+2. “Hospedagem barata ou gerenciada: como escolher”;
+3. “Quando um projeto WordPress deixa de ser iniciante”.
+
+Prioridade: baixa no momento. O público atual do DejotaCode é majoritariamente iniciante, então este parceiro só deve avançar quando houver conteúdo mais avançado.
+
+## Ordem de pesquisa recomendada
+
+1. Semrush — forte alinhamento com a próxima fase de SEO.
+2. Envato — amplia a frente de criação de sites, vídeos e recursos digitais.
+3. Namecheap — útil para domínio/DNS e primeiro site, evitando depender de um único parceiro de hospedagem.
+4. Kinsta — manter para uma fase mais avançada.
+
+## Gate antes de nova candidatura
+
+Antes de entrar em outro programa:
+1. confirmar que existe pelo menos um conteúdo editorial legítimo para sustentar a recomendação;
+2. verificar termos oficiais, cookie, modelo de comissão e restrições de divulgação;
+3. decidir se o recurso entra em Blog, Recursos, Store ou em mais de uma dessas camadas;
+4. não publicar link de afiliado antes da aprovação quando o programa exigir candidatura;
+5. registrar a data da verificação;
+6. manter transparência de afiliado e nunca marcar como “Testado pelo Dejota” sem evidência real.
+
+## Pipeline comercial padronizado
+
+`Pesquisa → Candidatura → Aprovado → Conteúdo planejado → Produção → Revisão → Publicado → Fechamento editorial → Distribuído → Medindo → Evidência → Decisão`
+
+Enquanto o fechamento editorial geral do site não estiver concluído, novas iniciativas podem avançar até **Publicado / Fechamento editorial**, mas a etapa **Distribuído → Medindo** fica deliberadamente pausada.
