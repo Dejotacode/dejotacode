@@ -59,7 +59,7 @@ const categories = [
         </div>
         <div class="store-categories">
           {categories.map((category) => (
-            <a class="store-category" href={`/store/categoria/${category.slug}/`}>
+            <a class="store-category" href={`/store/${category.slug}/`}>
               <strong>{category.label}</strong>
               <span>{category.description}</span>
             </a>
