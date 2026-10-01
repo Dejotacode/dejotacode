@@ -1,0 +1,73 @@
+---
+import StoreBadge from "./StoreBadge.astro";
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  status: "uso" | "testado" | "pesquisado";
+  category: string;
+}
+const { id, title, description, status, category } = Astro.props;
+const categoryLabels: Record<string, string> = {
+  linux: "Linux",
+  setup: "Setup",
+  programacao: "Programação",
+  criadores: "Criadores",
+  "ferramentas-digitais": "Ferramentas digitais",
+};
+---
+<article class="store-card">
+  <div class="store-card__visual" aria-hidden="true">
+    <span>{categoryLabels[category] ?? category}</span>
+  </div>
+  <div class="store-card__body">
+    <StoreBadge status={status} />
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={`/store/${id}/`}>Ver análise <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+
+<style>
+  .store-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .store-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent-strong);
+    box-shadow: var(--shadow-card);
+  }
+  .store-card__visual {
+    min-height: 10rem;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid var(--color-border);
+    background:
+      radial-gradient(circle at 50% 35%, var(--color-glow), transparent 44%),
+      var(--color-surface-soft);
+  }
+  .store-card__visual span {
+    color: var(--color-text-subtle);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .store-card__body { display: grid; gap: .7rem; padding: 1rem; }
+  .store-card h3 { margin: 0; font-size: 1.03rem; }
+  .store-card p { margin: 0; color: var(--color-text-muted); font-size: .9rem; }
+  .store-card a {
+    width: fit-content;
+    color: var(--color-accent-strong);
+    font-size: .88rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .store-card a:hover { color: var(--color-accent-hover); }
+</style>
