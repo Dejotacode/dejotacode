@@ -19,7 +19,9 @@ const categoryLabels: Record<string, string> = {
 ---
 <article class="store-card">
   <div class="store-card__visual" aria-hidden="true">
-    <span>{categoryLabels[category] ?? category}</span>
+    <span class="store-card__category">{categoryLabels[category] ?? category}</span>
+    <strong>Recomendação em validação</strong>
+    <small>Imagem oficial entra após confirmar o produto.</small>
   </div>
   <div class="store-card__body">
     <StoreBadge status={status} />
@@ -46,19 +48,24 @@ const categoryLabels: Record<string, string> = {
   .store-card__visual {
     min-height: 10rem;
     display: grid;
-    place-items: center;
+    place-content: center;
+    gap: .35rem;
+    padding: 1rem;
+    text-align: center;
     border-bottom: 1px solid var(--color-border);
     background:
       radial-gradient(circle at 50% 35%, var(--color-glow), transparent 44%),
       var(--color-surface-soft);
   }
-  .store-card__visual span {
-    color: var(--color-text-subtle);
-    font-size: .72rem;
+  .store-card__category {
+    color: var(--color-accent-strong);
+    font-size: .68rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
   }
+  .store-card__visual strong { font-size: .9rem; }
+  .store-card__visual small { color: var(--color-text-subtle); font-size: .76rem; }
   .store-card__body { display: grid; gap: .7rem; padding: 1rem; }
   .store-card h3 { margin: 0; font-size: 1.03rem; }
   .store-card p { margin: 0; color: var(--color-text-muted); font-size: .9rem; }
