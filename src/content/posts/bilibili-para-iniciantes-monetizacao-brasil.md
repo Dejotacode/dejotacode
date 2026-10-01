@@ -9,6 +9,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [Bilibili, renda digital, criação de conteúdo, monetização, transparência]
+storeProducts:
+  - "fifine-am8-usb-xlr"
 ---
 
 Quer experimentar outra plataforma para divulgar seus vídeos? O Bilibili internacional permite publicar conteúdo e acompanhar seu desempenho. O DejotaCode criou uma conta, configurou o perfil e enviou uma série própria sobre Linux para iniciantes.

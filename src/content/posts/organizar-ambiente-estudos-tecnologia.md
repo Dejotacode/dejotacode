@@ -11,7 +11,7 @@ draft: false
 tags: [estudo, organizacao, produtividade, iniciantes]
 storeProducts:
   - "logitech-mx-keys-mini"
-  - "logitech-mx-anywhere-3s"
+  - "logitech-pebble-2-m350s"
   - "ugreen-hub-usb-c-6-em-1"
 ---
 
