@@ -10,6 +10,7 @@ const groups = [
   { id: "infraestrutura", label: "Infraestrutura", description: "Serviços e equipamentos usados para publicar, manter e operar projetos web." },
   { id: "aprendizado", label: "Aprendizado", description: "Referências, cursos e materiais para continuar estudando com contexto." },
   { id: "seguranca", label: "Segurança", description: "Ferramentas e referências para proteção de contas, dados e navegação." },
+  { id: "renda-digital", label: "Renda digital", description: "Plataformas e experiências acompanhadas com foco em evidência, regras e transparência." },
 ] as const;
 
 const activeGroups = groups.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
