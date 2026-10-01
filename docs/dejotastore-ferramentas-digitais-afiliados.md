@@ -141,28 +141,39 @@ Este backlog separa claramente programa pesquisado, candidatura enviada, program
 ### Status — pesquisar / avaliar candidatura
 
 #### Semrush
-Status: programa ativo e operado via Impact; ainda sem candidatura DejotaCode registrada neste documento.
+Status: programa ativo e operado via Impact; candidatura DejotaCode ainda não enviada.
 
-Verificação em 2026-10-01:
+Verificação oficial em 2026-10-01:
 - atribuição de último clique;
 - cookie informado de 120 dias;
-- programa remunera vendas e ativações de teste;
-- valores podem variar conforme produto e nível do parceiro.
+- comissões publicadas variam por toolkit: atualmente a página do programa exibe valores entre US$ 50 e US$ 300 por venda e US$ 10 por ativação de teste em toolkits elegíveis;
+- pagamentos são processados pela Impact;
+- a própria Semrush informa que analisa qualidade, relevância, tráfego orgânico, frequência de conteúdo e verificabilidade das propriedades promocionais;
+- para criadores, o site normalmente deve ter pelo menos 1.000 visitantes únicos mensais; perfis sociais também devem demonstrar audiência orgânica significativa, tipicamente 1.000 ou mais seguidores/curtidas/visualizações;
+- sites inacabados, propriedades sem conteúdo relevante, aplicações sem URLs verificáveis, sites de cupons/cashback e estratégias baseadas apenas em e-mail ou mídia paga tendem a ser recusados;
+- autoindicação e compartilhamento de comissão são proibidos;
+- PPC precisa de aprovação prévia e não pode disputar palavras de marca ou variações de “Semrush”;
+- divulgação de relação de afiliado é obrigatória;
+- uso de marca/logos precisa respeitar a política oficial e não pode sugerir parceria/endosso inexistente.
+
+Observação sobre prazo de análise: páginas oficiais consultadas em 2026-10-01 mostram referências de até 2 e até 4 dias para revisão de candidatura. Tratar como estimativa, não como SLA garantido.
 
 Encaixe editorial:
 - SEO para iniciantes;
 - pesquisa de palavras-chave;
 - auditoria de site;
 - acompanhamento de posicionamento;
+- visibilidade em mecanismos de busca e IA;
 - SEO aplicado ao próprio DejotaCode como estudo de caso.
 
 Conteúdos candidatos:
 1. “SEO para iniciantes: o que realmente acompanhar”;
 2. “Como encontrar palavras-chave sem escolher temas no escuro”;
 3. “Como fazer uma auditoria básica do seu site”;
-4. “Search Console e Semrush: para que serve cada um”.
+4. “Search Console e Semrush: para que serve cada um”;
+5. “Como acompanhar a visibilidade do seu site sem depender de uma única métrica”.
 
-Prioridade: alta, mas somente depois de consolidar a frente de SEO do próprio DejotaCode.
+Decisão em 2026-10-01: **alta prioridade, candidatura condicionada à elegibilidade**. Antes de enviar, confirmar se o DejotaCode já atende aos sinais mínimos de audiência/qualidade exigidos pela Semrush. Se ainda não atender, manter no backlog e reaplicar quando o site ou os canais alcançarem maturidade suficiente.
 
 #### Envato
 Status: programas oficiais ativos via Impact; ainda sem candidatura DejotaCode registrada neste documento.
