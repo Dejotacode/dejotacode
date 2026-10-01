@@ -79,7 +79,7 @@ for (const filePath of htmlFiles.sort()) {
   }
 
   const ids = new Map();
-  for (const match of html.matchAll(/\bid\s*=\s*(?:"([^"]+)"|'([^']+)')/gi)) {
+  for (const match of html.matchAll(/(?:^|[\s<])id\s*=\s*(?:"([^"]+)"|'([^']+)')/gi)) {
     const id = match[1] ?? match[2];
     ids.set(id, (ids.get(id) ?? 0) + 1);
   }
