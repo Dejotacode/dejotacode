@@ -25,4 +25,41 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+const storeProducts = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/store/products" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.enum(["linux", "setup", "programacao", "criadores", "ferramentas-digitais"]),
+    editorialStatus: z.enum(["uso", "testado", "pesquisado"]),
+    recommendedFor: z.array(z.string()).default([]),
+    pros: z.array(z.string()).default([]),
+    cons: z.array(z.string()).default([]),
+    relatedPosts: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
+    updatedAt: z.coerce.date().optional(),
+    affiliateLinks: z.object({
+      amazon: z.string().url().optional(),
+      mercadolivre: z.string().url().optional(),
+      shopee: z.string().url().optional(),
+      hotmart: z.string().url().optional(),
+      other: z.string().url().optional(),
+    }).optional(),
+  }),
+});
+
+const storeGuides = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/store/guides" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.enum(["linux", "setup", "programacao", "criadores", "ferramentas-digitais"]),
+    productIds: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
+    updatedAt: z.coerce.date().optional(),
+  }),
+});
+
+export const collections = { posts, storeProducts, storeGuides };
