@@ -102,3 +102,14 @@ Sempre informar de forma clara quando um link puder gerar comissão para o Dejot
 4. revisar produtos/ferramentas Hotmart que tenham encaixe editorial;
 5. somente após aprovação, gerar links e materiais oficiais;
 6. integrar um parceiro por vez e medir cliques/conversões antes de escalar.
+
+## Metricool
+
+Status: programa de afiliados ativo na conta DejotaCode em 2026-10-01.
+
+- Nível atual: Associado Metricool.
+- Comissão exibida no painel: 25% até US$ 100 por usuário.
+- Link principal criado e validado no painel: https://i.mtr.cool/dejotacode
+- Destino do link: https://metricool.com/
+- Condições exibidas no painel: teste de 30 dias, somente para primeiro uso de usuários sem Premium, não aplicável à conta do próprio afiliado e sem data de vencimento do link.
+- Estratégia DejotaCode: usar apenas em conteúdos sobre gestão de redes sociais, calendário editorial, agendamento, métricas e operação de conteúdo.
