@@ -1,27 +1,30 @@
 ---
-title: "UGREEN Hub USB-C 6 em 1"
-description: "Hub USB-C multifuncional pesquisado para notebooks com poucas portas e setups de estudo ou programação."
+title: "UGREEN Uno Hub USB-C 6 em 1"
+description: "Hub USB-C UGREEN Uno com HDMI 4K/60 Hz, USB de alta velocidade e carregamento PD, pesquisado para setups de estudo e programação."
 category: programacao
 editorialStatus: pesquisado
 recommendedFor:
   - "Expandir portas de notebook"
-  - "Conectar monitor, pendrive e periféricos"
+  - "Conectar monitor e periféricos em um único hub"
 pros:
-  - "Concentra várias conexões em um único acessório"
-  - "Útil em notebooks modernos com poucas portas"
+  - "HDMI 4K a 60 Hz"
+  - "Power Delivery de até 100W, com até 85W repassados ao notebook na oferta validada"
 cons:
-  - "Recursos variam por versão"
-  - "É importante conferir compatibilidade com vídeo e carregamento"
+  - "Não inclui leitor SD/TF"
+  - "Recursos podem variar entre versões semelhantes"
 relatedPosts:
   - "organizar-ambiente-estudos-tecnologia"
   - "primeiro-site-html-css"
 featured: true
 draft: false
 updatedAt: 2026-10-01
+affiliateLinks:
+  mercadolivre: "https://meli.la/2tQM3Pd"
+  shopee: "https://s.shopee.com.br/7ptg2OBdaG"
 ---
 
-Um **hub USB-C 6 em 1 da UGREEN** pode resolver uma necessidade comum em notebooks modernos: poucas portas disponíveis para monitor, armazenamento e outros periféricos.
+O **UGREEN Uno Hub USB-C 6 em 1** entra na DejotaStore como solução para notebooks com poucas portas, especialmente em setups de estudo, programação e produtividade.
 
-Na DejotaStore, a recomendação fica ligada ao contexto de setup e produtividade. O modelo definitivo deve ser conferido antes da compra porque a UGREEN possui várias versões com combinações diferentes de portas.
+A oferta validada no Mercado Livre confirma HDMI 4K/60 Hz e PD100W, com até 85W repassados ao notebook. Na Shopee, encontramos uma oferta afiliada do UGREEN Uno com bom histórico de vendas.
 
-Esta recomendação é **pesquisada pelo DejotaCode** e ainda não tem link afiliado validado.
+Esta recomendação é **pesquisada pelo DejotaCode**. Os links comerciais levam diretamente aos marketplaces parceiros.
