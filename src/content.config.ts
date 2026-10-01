@@ -25,12 +25,20 @@ const posts = defineCollection({
   }),
 });
 
+const storeCategory = z.enum([
+  "linux",
+  "setup",
+  "programacao",
+  "criadores",
+  "ferramentas-digitais",
+]);
+
 const storeProducts = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/store/products" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(["linux", "setup", "programacao", "criadores", "ferramentas-digitais"]),
+    category: storeCategory,
     editorialStatus: z.enum(["uso", "testado", "pesquisado"]),
     recommendedFor: z.array(z.string()).default([]),
     pros: z.array(z.string()).default([]),
@@ -40,11 +48,11 @@ const storeProducts = defineCollection({
     draft: z.boolean().default(false),
     updatedAt: z.coerce.date().optional(),
     affiliateLinks: z.object({
-      amazon: z.string().url().optional(),
-      mercadolivre: z.string().url().optional(),
-      shopee: z.string().url().optional(),
-      hotmart: z.string().url().optional(),
-      other: z.string().url().optional(),
+      amazon: z.url().optional(),
+      mercadolivre: z.url().optional(),
+      shopee: z.url().optional(),
+      hotmart: z.url().optional(),
+      other: z.url().optional(),
     }).optional(),
   }),
 });
@@ -54,7 +62,7 @@ const storeGuides = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(["linux", "setup", "programacao", "criadores", "ferramentas-digitais"]),
+    category: storeCategory,
     productIds: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
