@@ -22,6 +22,7 @@ const posts = defineCollection({
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
+    storeProducts: z.array(z.string()).default([]),
   }),
 });
 
