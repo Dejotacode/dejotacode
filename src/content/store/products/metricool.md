@@ -16,7 +16,7 @@ cons:
 relatedPosts:
   - "metricool-para-iniciantes-organizar-agendar-conteudo"
 featured: false
-draft: true
+draft: false
 updatedAt: 2026-10-01
 affiliateLinks:
   other: "https://i.mtr.cool/dejotacode"
@@ -26,6 +26,8 @@ O **Metricool** é utilizado na operação do DejotaCode para organizar publica�
 
 Por esse motivo, esta ficha recebe o status editorial **Uso no DejotaCode**. Isso significa que a recomendação se baseia em uso real da ferramenta dentro do projeto, mas não implica que ela seja a melhor escolha para todos os cenários.
 
-O DejotaCode participa do programa de afiliados da Metricool e possui um link oficial validado diretamente no painel da própria conta.
+O DejotaCode participa do programa de afiliados da Metricool e possui um link oficial validado diretamente no painel da própria conta. Uma eventual assinatura realizada por esse link pode gerar comissão para o DejotaCode.
 
-Esta página permanece em rascunho enquanto revisamos os materiais oficiais e definimos em quais conteúdos a recomendação será realmente útil e contextual.
+O código promocional **DEJOTA30** está ativo e oferece **30 dias de teste** para usuários elegíveis que ainda não tiveram plano Premium. Para que a indicação seja atribuída ao DejotaCode, o cadastro deve ser iniciado pelo nosso link de afiliado; o código promocional, sozinho, não controla essa atribuição.
+
+O período de teste exige a escolha de um plano e o cadastro de uma forma de pagamento. Se não houver cancelamento antes do fim da avaliação, a cobrança do plano escolhido pode começar automaticamente. Confira as condições atuais da Metricool antes de concluir a contratação.
