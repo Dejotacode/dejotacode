@@ -7,3 +7,4 @@
 .dejotacode-material-card p{max-width:48rem}
 .dejotacode-material-card .button{margin-top:1rem;color:var(--color-accent-contrast)}
 @media(max-width:700px){.dejotacode-material-card{grid-template-columns:1fr}.dejotacode-material-card>img{max-width:13rem}.dejotacode-material-card .button{width:100%}}
+.resource-card__actions{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:auto;padding-top:1rem}.resource-card__actions .button{margin:0}.resource-card__actions .resource-link{margin:0;padding:0}.resource-link--secondary{color:var(--color-text-muted)}@media(max-width:700px){.resource-card__actions{align-items:stretch;flex-direction:column}.resource-card__actions .button{width:100%;text-align:center}}

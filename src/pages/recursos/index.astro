@@ -6,29 +6,33 @@ import "../../styles/resources.css";
 
 const groups = [
   { id: "desenvolvimento", label: "Desenvolvimento", description: "Ferramentas para escrever, testar e versionar projetos." },
-  { id: "infraestrutura", label: "Infraestrutura", description: "Serviços usados para publicar e manter projetos web." },
-  { id: "aprendizado", label: "Aprendizado", description: "Referências para continuar estudando com fontes confiáveis." },
+  { id: "digitais", label: "Ferramentas digitais", description: "Serviços usados para criação, publicação, automação e operação de conteúdo." },
+  { id: "infraestrutura", label: "Infraestrutura", description: "Serviços e equipamentos usados para publicar, manter e operar projetos web." },
+  { id: "aprendizado", label: "Aprendizado", description: "Referências, cursos e materiais para continuar estudando com contexto." },
+  { id: "seguranca", label: "Segurança", description: "Ferramentas e referências para proteção de contas, dados e navegação." },
 ] as const;
-const hasAffiliateLinks = recommendedResources.some((resource) => resource.relationship === "affiliate");
+
+const activeGroups = groups.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
+const hasCommercialRelationships = recommendedResources.some((resource) => resource.relationship === "affiliate");
 ---
 
-<BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Recursos avaliados com critérios claros, limitações e identificação transparente de qualquer relação comercial.">
+<BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Recursos avaliados com critérios claros, limitações e caminhos separados para aprender, avaliar e acessar ferramentas.">
   <main id="conteudo" tabindex="-1" class="institutional-page">
     <header class="institutional-hero container">
       <p class="eyebrow">FERRAMENTAS E REFERÊNCIAS</p>
       <h1>Recursos com contexto, não apenas links.</h1>
-      <p>Cada indicação informa para quem serve, suas limitações e se existe alguma relação comercial.</p>
+      <p>Descubra ferramentas por categoria e escolha o próximo passo: aprender no Blog, avaliar na DejotaStore ou consultar a fonte oficial.</p>
     </header>
 
     <section class="institutional-section container resource-intro" aria-labelledby="transparencia-title">
       <div class="notice">
         <strong id="transparencia-title">Transparência comercial</strong>
-        <p>{hasAffiliateLinks ? "Esta página contém links de afiliados identificados no próprio card. Se você comprar por meio deles, o DejotaCode poderá receber uma comissão, sem custo adicional para você. Essa relação não garante avaliação positiva." : "Atualmente, os recursos desta página usam links oficiais e não geram comissão. Se um link de afiliado for ativado, ele será identificado no próprio card antes do clique."}</p>
+        <p>{hasCommercialRelationships ? "Alguns recursos têm relação comercial com o DejotaCode. Quando existe uma recomendação monetizada, o card direciona primeiro para a DejotaStore ou identifica claramente o link externo. A relação comercial não garante avaliação positiva." : "Atualmente, os recursos desta página usam links oficiais e não geram comissão. Se uma relação comercial for ativada, ela será identificada antes do clique."}</p>
       </div>
       <ol class="resource-principles" aria-label="Critérios de recomendação">
-        <li>Relação direta com os conteúdos do site.</li>
+        <li>Aprender antes de comprar ou assinar.</li>
         <li>Benefícios e limitações apresentados juntos.</li>
-        <li>Revisão periódica de links e informações.</li>
+        <li>Separação clara entre Blog, DejotaStore e site oficial.</li>
       </ol>
     </section>
 
@@ -57,7 +61,7 @@ const hasAffiliateLinks = recommendedResources.some((resource) => resource.relat
     </section>
 
     <section class="institutional-section container resource-groups" aria-label="Recursos recomendados">
-      {groups.map((group) => (
+      {activeGroups.map((group) => (
         <section aria-labelledby={`group-${group.id}`}>
           <header class="resource-group__heading">
             <div>
@@ -71,13 +75,28 @@ const hasAffiliateLinks = recommendedResources.some((resource) => resource.relat
               <article class="institutional-card resource-card">
                 <div class="resource-card__meta">
                   <span>{resource.priceLabel}</span>
-                  <span>{resource.relationship === "affiliate" ? "Link de afiliado" : "Sem comissão"}</span>
+                  {resource.editorialLabel && <span>{resource.editorialLabel}</span>}
+                  <span>{resource.storePath ? "Detalhes na DejotaStore" : resource.relationship === "affiliate" ? "Link de afiliado" : "Sem comissão"}</span>
                 </div>
                 <h3>{resource.name}</h3>
                 <p>{resource.description}</p>
                 <p><strong>Indicado para:</strong> {resource.bestFor}</p>
                 <p><strong>Limitação:</strong> {resource.limitation}</p>
-                <a class="resource-link" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`} data-analytics-affiliate-provider={resource.affiliateProvider} data-analytics-affiliate-id={resource.id}>{resource.cta} ↗</a>
+
+                <div class="resource-card__actions" aria-label={`Caminhos para ${resource.name}`}>
+                  {resource.articlePath && (
+                    <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>Ver tutorial</a>
+                  )}
+                  {resource.storePath && (
+                    <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>
+                  )}
+                  {!resource.articlePath && !resource.storePath && (
+                    <a class="resource-link" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`} data-analytics-affiliate-provider={resource.affiliateProvider} data-analytics-affiliate-id={resource.id}>{resource.cta} ↗</a>
+                  )}
+                  {resource.officialHref && !resource.storePath && (
+                    <a class="resource-link resource-link--secondary" href={resource.officialHref} target="_blank" rel="noopener noreferrer" data-analytics-cta={`resource-${resource.id}-official`}>Site oficial ↗</a>
+                  )}
+                </div>
                 <p class="resource-review-date">Revisado em {resource.lastReviewed}</p>
               </article>
             ))}
