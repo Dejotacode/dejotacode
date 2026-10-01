@@ -7,7 +7,7 @@ type: tutorial
 readingTime: 12
 difficulty: iniciante
 featured: false
-draft: true
+draft: false
 tags: [metricool, redes sociais, calendario editorial, criadores]
 storeProducts:
   - "metricool"
@@ -141,8 +141,16 @@ Se você ainda publica ocasionalmente em apenas uma plataforma, uma agenda simpl
 
 O importante é adotar a ferramenta quando ela resolve um problema real, não apenas porque possui muitos recursos.
 
+## Teste de 30 dias com o código DEJOTA30
+
+O programa de afiliados da Metricool permite gerar códigos promocionais de teste. O código **DEJOTA30** está ativo na conta do DejotaCode e concede **30 dias de teste** para usuários elegíveis que ainda não tiveram um plano Premium.
+
+Para que a indicação seja registrada corretamente, o cadastro deve começar pelo **link de afiliado do DejotaCode**. Depois, durante a contratação de um plano elegível, o código **DEJOTA30** pode ser aplicado para ativar o período de teste.
+
+O teste exige a escolha de um plano e o cadastro de uma forma de pagamento. Se a assinatura não for cancelada antes do fim do período de avaliação, a cobrança do plano escolhido pode começar automaticamente. Confira sempre as condições exibidas pela Metricool no momento da contratação.
+
 ## Transparência sobre o link
 
-O DejotaCode utiliza o Metricool na própria operação e participa do programa de afiliados da plataforma.
+O DejotaCode utiliza o Metricool na própria operação e participa do programa de afiliados da plataforma. Uma eventual assinatura realizada pelo nosso link pode gerar comissão para o DejotaCode.
 
-Quando a ficha da ferramenta for publicada na DejotaStore, o link de indicação será identificado claramente. Uma eventual assinatura realizada por esse link poderá gerar comissão para o DejotaCode, sem alterar nossa obrigação de explicar limitações e contexto de uso.
+Isso não muda nossa obrigação de explicar limitações, contexto de uso e alternativas. O código promocional não substitui o link de afiliado para fins de atribuição da indicação.
