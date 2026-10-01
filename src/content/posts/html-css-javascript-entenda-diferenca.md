@@ -10,6 +10,8 @@ difficulty: iniciante
 featured: true
 draft: false
 tags: [html, css, javascript, web]
+storeProducts:
+  - "programacao-iniciante-avancado-hotmart"
 ---
 
 HTML, CSS e JavaScript aparecem juntos em quase toda introdução ao desenvolvimento web porque resolvem problemas diferentes.

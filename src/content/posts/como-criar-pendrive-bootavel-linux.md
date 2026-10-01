@@ -9,6 +9,9 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [linux, pendrive bootável, ubuntu, instalação, iniciantes]
+storeProducts:
+  - "sandisk-ultra-flair-32gb"
+  - "sandisk-portable-ssd-1tb"
 ---
 
 Criar um pendrive bootável é uma das formas mais práticas de experimentar Linux antes de instalar qualquer coisa no computador.

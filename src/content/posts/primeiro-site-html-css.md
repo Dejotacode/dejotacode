@@ -10,6 +10,10 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [html, css, projeto, frontend]
+storeProducts:
+  - "logitech-mx-keys-mini"
+  - "ugreen-hub-usb-c-6-em-1"
+  - "hospedagem-primeiro-site"
 ---
 
 Seu primeiro site não precisa ser grande. O objetivo é sair da teoria com uma página pequena que você entende por inteiro.

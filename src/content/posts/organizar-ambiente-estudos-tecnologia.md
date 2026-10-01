@@ -9,6 +9,10 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [estudo, organizacao, produtividade, iniciantes]
+storeProducts:
+  - "logitech-mx-keys-mini"
+  - "logitech-mx-anywhere-3s"
+  - "ugreen-hub-usb-c-6-em-1"
 ---
 
 Quando você começa a estudar tecnologia, é fácil espalhar arquivos pela área de trabalho, criar várias pastas com nomes parecidos e perder códigos que funcionaram. A organização não precisa ser sofisticada: ela precisa ajudar você a encontrar, repetir e explicar o que fez.

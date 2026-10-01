@@ -9,6 +9,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [linux, ubuntu, live usb, pendrive bootável, iniciantes]
+storeProducts:
+  - "sandisk-ultra-flair-32gb"
 ---
 
 Você não precisa instalar Linux para descobrir se vai gostar dele ou se o seu computador funciona bem com o sistema.

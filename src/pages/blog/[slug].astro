@@ -7,6 +7,7 @@ import PostCard from "../../components/PostCard.astro";
 import SocialShare from "../../components/SocialShare.astro";
 import ConversionCTA from "../../components/ConversionCTA.astro";
 import ResourceRecommendations from "../../components/ResourceRecommendations.astro";
+import StoreProductsInArticle from "../../components/store/StoreProductsInArticle.astro";
 import { availableTrails } from "../../data/trails";
 import { getArticleResources } from "../../data/recommendedResources";
 import {
@@ -228,6 +229,10 @@ const articleSchema = {
 
         <div class="article-content">
           <Content />
+
+          {post.data.storeProducts.length > 0 && (
+            <StoreProductsInArticle productIds={post.data.storeProducts} />
+          )}
 
           {articleResources.length > 0 && (
             <ResourceRecommendations resources={articleResources} />

@@ -1,0 +1,27 @@
+---
+interface Props {
+  status: "uso" | "testado" | "pesquisado";
+}
+const { status } = Astro.props;
+const labels = {
+  uso: "Uso no DejotaCode",
+  testado: "Testado pelo Dejota",
+  pesquisado: "Pesquisado pelo DejotaCode",
+};
+---
+<span class:list={["store-badge", `store-badge--${status}`]}>{labels[status]}</span>
+
+<style>
+  .store-badge {
+    display: inline-flex;
+    width: fit-content;
+    padding: .3rem .55rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 800;
+  }
+  .store-badge--uso { color: #ffbf5a; background: rgb(255 191 90 / 8%); }
+  .store-badge--testado { color: #43d690; background: rgb(67 214 144 / 8%); }
+  .store-badge--pesquisado { color: var(--color-accent-strong); background: var(--color-glow); }
+</style>

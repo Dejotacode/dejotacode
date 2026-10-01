@@ -10,6 +10,8 @@ difficulty: iniciante
 featured: true
 draft: false
 tags: [segurança, senhas, privacidade]
+storeProducts:
+  - "nordvpn"
 ---
 
 Segurança digital não começa com ferramentas complicadas.

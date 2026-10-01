@@ -1,6 +1,5 @@
 ---
 import Brand from "./Brand.astro";
-
 const year = new Date().getFullYear();
 ---
 
@@ -16,6 +15,7 @@ const year = new Date().getFullYear();
       <a href="/blog/">Blog</a>
       <a href="/trilhas/">Trilhas</a>
       <a href="/recursos/">Recursos</a>
+      <a href="/store/">DejotaStore</a>
     </nav>
 
     <nav aria-label="Institucional">
@@ -28,7 +28,9 @@ const year = new Date().getFullYear();
     </nav>
 
     <div>
-      <h2>Conecte-se</h2>
+      <h2>Store & transparência</h2>
+      <a class="footer-text-link" href="/store/como-avaliamos/">Como avaliamos</a>
+      <a class="footer-text-link" href="/store/setup-do-dejota/">Setup do Dejota</a>
       <div class="social-links">
         <a href="https://github.com/Dejotacode" target="_blank" rel="noopener noreferrer" aria-label="DejotaCode no GitHub">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.84a9.5 9.5 0 0 1 2.5.34c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"></path></svg>
@@ -58,10 +60,10 @@ const year = new Date().getFullYear();
   .footer-container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); margin-inline: auto; }
   .footer-grid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 2rem; padding-block: 3rem; }
   .footer-grid h2 { margin: 0 0 .75rem; font-size: .9rem; letter-spacing: 0; }
-  .footer-grid nav > a { display: block; width: fit-content; margin-top: .45rem; color: var(--color-text-muted); font-size: .88rem; text-decoration: none; }
+  .footer-grid nav > a, .footer-text-link { display: block; width: fit-content; margin-top: .45rem; color: var(--color-text-muted); font-size: .88rem; text-decoration: none; }
   .footer-grid a:hover { color: var(--color-accent-strong); }
   .footer-brand p { max-width: 22rem; margin: .75rem 0 0; font-size: .88rem; }
-  .social-links { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .social-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .9rem; }
   .social-links a { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text-muted); }
   .social-links svg { width: 1.1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
   .social-links a:first-child svg { fill: currentColor; stroke: none; }
