@@ -14,8 +14,7 @@ cons:
   - "Recursos disponíveis variam conforme o plano"
   - "Automação não substitui estratégia editorial nem revisão humana"
 relatedPosts:
-  - "documentar-aprendizado-tecnologia"
-  - "como-estudar-tecnologia-sem-se-perder"
+  - "metricool-para-iniciantes-organizar-agendar-conteudo"
 featured: false
 draft: true
 updatedAt: 2026-10-01
