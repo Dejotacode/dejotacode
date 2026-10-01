@@ -27,7 +27,13 @@ const categoryLabels: Record<string, string> = {
     <StoreBadge status={status} />
     <h3>{title}</h3>
     <p>{description}</p>
-    <a href={`/store/${id}/`}>Ver análise <span aria-hidden="true">→</span></a>
+    <a
+      href={`/store/${id}/`}
+      data-store-origin={`internal:${Astro.url.pathname}`}
+      data-analytics-cta={`store-card:${id}`}
+    >
+      Ver análise <span aria-hidden="true">→</span>
+    </a>
   </div>
 </article>
 
