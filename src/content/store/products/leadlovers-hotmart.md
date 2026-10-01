@@ -17,7 +17,7 @@ relatedPosts:
   - "como-montar-oferta-simples-pequenos-negocios"
   - "afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade"
 featured: false
-draft: true
+draft: false
 updatedAt: 2026-10-01
 affiliateLinks:
   hotmart: "https://go.hotmart.com/F107156300X"
@@ -29,4 +29,6 @@ A recomendação só deve aparecer quando o conteúdo estiver tratando de capta�
 
 O DejotaCode já possui afiliação ativa ao produto na Hotmart e validou o HotLink diretamente no painel da conta.
 
-Esta página permanece em rascunho enquanto revisamos os materiais de divulgação e a melhor forma de contextualizar a ferramenta antes da publicação.
+Esta é uma **recomendação editorial pesquisada**. O link abaixo é de afiliado do DejotaCode, portanto uma eventual compra pode gerar comissão sem custo adicional para o leitor.
+
+A ferramenta é apresentada como opção para quem já definiu objetivo, oferta e processo de captação. Ela não substitui estratégia, conteúdo nem acompanhamento dos leads.

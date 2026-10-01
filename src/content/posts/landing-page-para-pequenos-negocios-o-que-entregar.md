@@ -9,6 +9,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [landing page, pequenos negócios, freelancer, web]
+storeProducts:
+  - "leadlovers-hotmart"
 ---
 
 Landing page pode ser um bom primeiro serviço para quem está começando com desenvolvimento web.
