@@ -3,8 +3,8 @@ title: "Como escolher um pendrive para Linux"
 description: "Entenda capacidade, interface e frequência de uso antes de escolher um pendrive para criar mídia bootável Linux."
 category: linux
 productIds:
-  - "pendrive-32gb-linux"
-  - "ssd-externo-backup"
+  - "sandisk-ultra-flair-32gb"
+  - "sandisk-portable-ssd-1tb"
 featured: true
 draft: false
 updatedAt: 2026-09-30
