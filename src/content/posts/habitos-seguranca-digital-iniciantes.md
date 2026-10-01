@@ -12,6 +12,7 @@ draft: false
 tags: [segurança, senhas, privacidade]
 storeProducts:
   - "nordvpn"
+  - "seguranca-digital-essencial-hotmart"
 ---
 
 Segurança digital não começa com ferramentas complicadas.
