@@ -30,7 +30,7 @@ Uso sugerido no DejotaCode:
 - CTA em Recursos.
 
 ## Prioridade 2 — Elementor
-Status: candidato forte, principalmente para futura linha WordPress.
+Status: candidatura enviada em 2026-10-01; aguardando análise do Elementor (prazo informado: até 7 dias úteis).
 Encaixe: criação de sites, landing pages e pequenos negócios.
 Programa: até 45–55% na primeira compra, conforme produto/plano.
 Cookie: 45 dias.
