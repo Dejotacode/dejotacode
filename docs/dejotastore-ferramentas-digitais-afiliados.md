@@ -16,7 +16,7 @@ Exemplos:
 Não inserir banner genérico em artigos sem relação temática.
 
 ## Prioridade 1 — Hostinger
-Status: candidato forte para cadastro.
+Status: candidatura enviada em 2026-10-01; aguardando análise da Hostinger (prazo informado: até 5 dias úteis).
 Encaixe: hospedagem, domínio, e-mail, VPS e primeiro site.
 Programa: comissão baseada em venda elegível; página brasileira informa comissão a partir de 40%, com aumento por desempenho.
 Materiais: banners, capturas de tela e materiais promocionais no painel.
@@ -96,7 +96,7 @@ Ação: revisar novamente futuramente antes de planejar monetização.
 Sempre informar de forma clara quando um link puder gerar comissão para o DejotaCode, sem custo adicional para o leitor quando aplicável.
 
 ## Próxima execução sugerida
-1. solicitar aprovação/cadastro no programa Hostinger;
+1. acompanhar a análise da candidatura Hostinger e, se aprovada, validar painel, links e materiais oficiais;
 2. avaliar cadastro Elementor;
 3. solicitar programa NordVPN;
 4. revisar produtos/ferramentas Hotmart que tenham encaixe editorial;
