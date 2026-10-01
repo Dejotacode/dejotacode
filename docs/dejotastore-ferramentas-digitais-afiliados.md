@@ -176,28 +176,47 @@ Conteúdos candidatos:
 Decisão em 2026-10-01: **alta prioridade, candidatura condicionada à elegibilidade**. Antes de enviar, confirmar se o DejotaCode já atende aos sinais mínimos de audiência/qualidade exigidos pela Semrush. Se ainda não atender, manter no backlog e reaplicar quando o site ou os canais alcançarem maturidade suficiente.
 
 #### Envato
-Status: programas oficiais ativos via Impact; ainda sem candidatura DejotaCode registrada neste documento.
+Status: programas oficiais ativos via Impact; candidatura DejotaCode ainda não enviada.
 
-Verificação em 2026-10-01:
-- Envato Market possui programa próprio;
-- Envato Elements e Placeit possuem ofertas/programas separados;
-- participação e pagamentos são gerenciados via Impact;
-- condições específicas de cada oferta ficam no painel e podem mudar.
+Verificação oficial em 2026-10-01:
+- o ecossistema possui ofertas separadas para Envato Market, Envato Elements e Placeit;
+- todas são administradas pela plataforma Impact;
+- a candidatura é avaliada pela Envato, que pode considerar veracidade das informações, propriedade/direitos sobre o site e qualidade da propriedade promocional;
+- após aprovação, cada oferta dentro da Impact define sua própria comissão, ação válida e regras específicas;
+- a política geral usa atribuição de **primeiro clique**;
+- cookie geral: 90 dias para Envato Market e 60 dias para Envato Elements e Placeit, salvo condição específica de uma oferta;
+- pagamentos e documentação fiscal são processados pela Impact;
+- autoindicação não gera comissão;
+- spam, publicidade enganosa e uso de marca que sugira endosso ou operação oficial da Envato são proibidos;
+- não se deve usar marca, domínio ou palavra-chave de busca baseada nas marcas Envato sem autorização;
+- criativos e materiais promocionais devem ser os aprovados/disponibilizados pelo programa;
+- termos gerais foram revisados pela Envato em 11/08/2026.
+
+Estrutura comercial relevante:
+- **Envato Market**: compras individuais de temas, templates, código, vídeo, áudio, gráficos e outros itens;
+- **Envato Elements**: assinatura com biblioteca ampla de assets criativos e ferramentas de IA;
+- **Placeit**: ferramenta de criação visual/mockups com oferta afiliada separada.
+
+Importante: não registrar uma “comissão Envato” única no DejotaCode. A remuneração depende da oferta aceita dentro da Impact e pode mudar. Valores só devem ser publicados depois de conferidos no painel da conta aprovada.
 
 Encaixe editorial:
 - templates para sites;
-- assets de vídeo e áudio;
-- temas e componentes;
-- materiais para criadores;
-- recursos para projetos e portfólio.
+- temas WordPress;
+- plugins e componentes;
+- assets de vídeo, música e efeitos sonoros;
+- mockups e materiais para criadores;
+- recursos para portfólio;
+- assets para o futuro fluxo do `djotacode-video-system`.
 
 Conteúdos candidatos:
 1. “Onde encontrar templates sem comprometer a qualidade do projeto”;
 2. “Quando usar um template e quando criar do zero”;
 3. “Recursos para acelerar vídeos, sites e apresentações”;
-4. “ThemeForest, CodeCanyon e Elements: qual a diferença”.
+4. “ThemeForest, CodeCanyon e Envato: qual a diferença”;
+5. “Como escolher assets para vídeos sem transformar o projeto em uma colcha de retalhos”;
+6. “Envato para criadores: o que faz sentido assinar e o que pode ser dispensável”.
 
-Prioridade: média-alta.
+Decisão em 2026-10-01: **prioridade média-alta e candidatura viável**, mas somente quando definirmos qual oferta atende primeiro ao DejotaCode. A primeira candidata editorial é Envato Elements por conectar criação de sites, vídeo, áudio e assets; Envato Market fica como segunda frente para recomendações pontuais de temas/plugins.
 
 #### Namecheap
 Status: candidato em pesquisa; condições comerciais ainda não consolidadas neste documento.
