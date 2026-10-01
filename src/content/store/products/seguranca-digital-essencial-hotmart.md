@@ -18,7 +18,7 @@ relatedPosts:
   - "phishing-como-identificar"
   - "autenticacao-dois-fatores"
 featured: false
-draft: true
+draft: false
 updatedAt: 2026-10-01
 affiliateLinks:
   hotmart: "https://go.hotmart.com/P107818583J"
@@ -30,4 +30,6 @@ A ideia é utilizá-lo apenas como continuação opcional de conteúdos sobre h�
 
 O DejotaCode já possui afiliação ativa ao produto na Hotmart e validou o HotLink diretamente no painel da conta.
 
-Esta página permanece em rascunho até concluirmos a revisão editorial e dos materiais de divulgação disponibilizados pelo produtor.
+Esta é uma **recomendação editorial pesquisada**. O link abaixo é de afiliado do DejotaCode, portanto uma eventual compra pode gerar comissão sem custo adicional para o leitor.
+
+O curso é apresentado como aprofundamento opcional e não substitui boas práticas, atualização contínua ou as orientações gratuitas já publicadas no DejotaCode.
