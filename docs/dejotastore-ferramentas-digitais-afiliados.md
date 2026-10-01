@@ -44,7 +44,7 @@ Uso sugerido:
 - banner ou CTA dentro do tutorial, nunca no site inteiro.
 
 ## Prioridade 3 — NordVPN
-Status: programa oficial de afiliados e patrocínio confirmado; relação comercial do DejotaCode ainda precisa ser criada/aprovada.
+Status: candidatura enviada em 2026-10-01; aguardando análise e contato de um gerente de conta da NordVPN.
 Encaixe: segurança digital e privacidade.
 Formatos: links de afiliado; programa de patrocínio para vídeos, lives e outros conteúdos.
 Uso sugerido:
