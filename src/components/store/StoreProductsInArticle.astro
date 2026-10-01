@@ -27,7 +27,13 @@ const products = (await getCollection("storeProducts", ({ data }) => !data.draft
             <h3>{product.data.title}</h3>
             <p>{product.data.description}</p>
           </div>
-          <a href={`/store/${product.id}/`}>Ver recomendação <span aria-hidden="true">→</span></a>
+          <a
+            href={`/store/${product.id}/`}
+            data-store-origin={`article:${Astro.url.pathname}`}
+            data-analytics-cta={`article-store:${product.id}`}
+          >
+            Ver recomendação <span aria-hidden="true">→</span>
+          </a>
         </article>
       ))}
     </div>
