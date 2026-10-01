@@ -219,21 +219,42 @@ Conteúdos candidatos:
 Decisão em 2026-10-01: **prioridade média-alta e candidatura viável**, mas somente quando definirmos qual oferta atende primeiro ao DejotaCode. A primeira candidata editorial é Envato Elements por conectar criação de sites, vídeo, áudio e assets; Envato Market fica como segunda frente para recomendações pontuais de temas/plugins.
 
 #### Namecheap
-Status: candidato em pesquisa; condições comerciais ainda não consolidadas neste documento.
+Status: programa oficial ativo; candidatura DejotaCode ainda não enviada.
 
-Encaixe editorial:
+Verificação oficial em 2026-10-01:
+- o programa aceita cadastro via Impact ou Commission Junction;
+- a Namecheap informa que a Impact é a plataforma atual com rastreamento e relatórios aprimorados;
+- o afiliado só recebe comissão sobre a primeira compra válida de um novo cliente, salvo regras específicas de produtos que tenham estrutura própria;
+- a janela geral de atribuição é de 30 dias; outro link de indicação ou fonte codificada pode sobrescrever a atribuição durante essa janela;
+- comissão publicada atualmente: 20% para domínios, 35% para hospedagem, 35% para SSL, 20% para Private Email e 20% para PremiumDNS;
+- premium domains, Namecheap Marketplace e vários apps não entram na comissão geral;
+- autoindicação e compras feitas pelo próprio afiliado ou agentes não geram comissão;
+- sites de cupons, cashback e fidelidade podem receber condições inferiores às taxas padrão;
+- a aprovação é discricionária e considera site ativo, presença orgânica/traffic, conteúdo alinhado a domínio/segurança/hospedagem, domínio próprio e marketing compatível;
+- a Namecheap exige transparência sobre relação comercial e proíbe afirmações falsas ou enganosas;
+- uso da marca/logotipo precisa respeitar os materiais aprovados; banners próprios com logo não são permitidos sem autorização;
+- em mídia paga, a marca Namecheap e variações devem ser tratadas como palavras negativas; não é permitido disputar termos de marca, usar a marca em URL/display URL ou fazer direct linking pago para Namecheap;
+- spam, cookie stuffing, redirects/cloaking proibidos e tráfego não autorizado podem invalidar comissões.
+
+Encaixe editorial no DejotaCode:
 - registro de domínio;
 - DNS;
 - SSL;
 - e-mail profissional;
-- hospedagem para projetos iniciais.
+- primeiro site;
+- pequenas operações e freelancers que precisam separar domínio de hospedagem.
+
+Papel estratégico: não tratar a Namecheap como duplicação da Hostinger. A Hostinger pode continuar sendo candidata forte para hospedagem e criação de site; a Namecheap entra principalmente como alternativa editorial para **domínio, DNS, SSL e e-mail profissional**, permitindo comparações mais honestas e evitando dependência de uma única empresa.
 
 Conteúdos candidatos:
 1. “Como escolher e registrar seu primeiro domínio”;
 2. “Domínio, DNS e hospedagem: entenda a diferença”;
-3. “Preciso pagar por SSL?”.
+3. “Preciso pagar por SSL? O que é gratuito e o que pode ser pago”;
+4. “Como criar um e-mail profissional usando seu próprio domínio”;
+5. “Comprar domínio e hospedagem na mesma empresa ou separar?”;
+6. “Namecheap ou Hostinger: entendendo serviços, não escolhendo por propaganda”.
 
-Prioridade: média. Verificar condições oficiais antes de candidatura ou publicação comercial.
+Decisão em 2026-10-01: **prioridade média e candidatura viável**, mas não urgente. Avançar depois que Hostinger sair da análise ou quando fecharmos o primeiro cluster editorial sobre domínio/DNS. Antes da candidatura, confirmar que a apresentação atual do site atende claramente aos critérios de site ativo, domínio próprio e conteúdo alinhado.
 
 #### Kinsta
 Status: candidato em pesquisa; condições comerciais ainda não consolidadas neste documento.
