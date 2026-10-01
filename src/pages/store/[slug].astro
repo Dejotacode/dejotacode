@@ -1,0 +1,147 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StoreBadge from "../../components/store/StoreBadge.astro";
+
+export async function getStaticPaths() {
+  const products = await getCollection("storeProducts", ({ data }) => !data.draft);
+  return products.map((product) => ({
+    params: { slug: product.id },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: CollectionEntry<"storeProducts">;
+}
+
+const { product } = Astro.props;
+const { Content } = await render(product);
+const links = product.data.affiliateLinks ?? {};
+const merchants = [
+  ["Amazon", links.amazon],
+  ["Mercado Livre", links.mercadolivre],
+  ["Shopee", links.shopee],
+  ["Hotmart", links.hotmart],
+  ["Parceiro", links.other],
+].filter((entry) => Boolean(entry[1]));
+---
+
+<BaseLayout title={product.data.title} description={product.data.description}>
+  <main id="conteudo" class="store-product-page">
+    <div class="store-container">
+      <nav class="breadcrumbs" aria-label="Navegação estrutural">
+        <a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span>{product.data.title}</span>
+      </nav>
+
+      <section class="product-hero">
+        <div class="product-visual"><span>{product.data.category}</span></div>
+        <div class="product-summary">
+          <StoreBadge status={product.data.editorialStatus} />
+          <h1>{product.data.title}</h1>
+          <p class="lead">{product.data.description}</p>
+
+          {product.data.recommendedFor.length > 0 && (
+            <div class="recommended">
+              <strong>Recomendado para</strong>
+              <ul>{product.data.recommendedFor.map((item) => <li>{item}</li>)}</ul>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section class="product-grid">
+        <article class="product-panel product-copy">
+          <p class="eyebrow">Análise editorial</p>
+          <Content />
+        </article>
+
+        <aside class="product-panel">
+          <p class="eyebrow">Resumo</p>
+          <div class="pros-cons">
+            <div><strong>Pontos positivos</strong><ul>{product.data.pros.map((item) => <li>{item}</li>)}</ul></div>
+            <div><strong>Pontos de atenção</strong><ul>{product.data.cons.map((item) => <li>{item}</li>)}</ul></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="product-panel offers">
+        <p class="eyebrow">Onde encontrar</p>
+        <h2>Confira diretamente na plataforma parceira</h2>
+        {merchants.length > 0 ? (
+          <div class="offer-grid">
+            {merchants.map(([name, href]) => (
+              <a href={href} target="_blank" rel="nofollow sponsored noopener">
+                <strong>{name}</strong><span>Ver oferta →</span>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="empty-offers">Ainda estamos validando os parceiros e links desta recomendação. Nenhum link comercial foi publicado nesta versão.</p>
+        )}
+        <p class="affiliate-note">Alguns links podem gerar comissão para o DejotaCode sem custo adicional para você.</p>
+      </section>
+
+      {product.data.relatedPosts.length > 0 && (
+        <section class="product-panel">
+          <p class="eyebrow">Aprenda antes de comprar</p>
+          <h2>Conteúdos relacionados</h2>
+          <div class="related-list">
+            {product.data.relatedPosts.map((slug) => (
+              <a href={`/blog/${slug}/`}>{slug.replaceAll("-", " ")} <span>→</span></a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section class="product-panel methodology">
+        <p class="eyebrow">Transparência</p>
+        <h2>Por que esta recomendação existe?</h2>
+        <p>Um produto só entra na DejotaStore quando ajuda a resolver uma necessidade real do conteúdo. Comissão de afiliado não deve ser o motivo principal da recomendação.</p>
+        <a href="/store/como-avaliamos/">Conhecer a metodologia →</a>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .store-product-page { padding-bottom: 3rem; }
+  .store-container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); margin-inline: auto; }
+  .breadcrumbs { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: 1.5rem; color: var(--color-text-subtle); font-size: .82rem; }
+  .breadcrumbs a { color: inherit; text-decoration: none; }
+  .breadcrumbs a:hover { color: var(--color-accent-strong); }
+  .product-hero { display: grid; grid-template-columns: .9fr 1.1fr; gap: 1rem; padding: 1.5rem 0; }
+  .product-visual, .product-summary, .product-panel { border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+  .product-visual { min-height: 24rem; display: grid; place-items: center; background: radial-gradient(circle, var(--color-glow), transparent 45%), var(--color-surface-soft); }
+  .product-visual span { color: var(--color-text-subtle); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .product-summary { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.2rem, 4vw, 2rem); }
+  .product-summary h1 { margin: .8rem 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1; letter-spacing: -.045em; }
+  .lead { margin: 0; color: var(--color-text-muted); font-size: 1.02rem; }
+  .recommended { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+  .recommended ul { margin-bottom: 0; color: var(--color-text-muted); }
+  .product-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1rem; margin-bottom: 1rem; }
+  .product-panel { padding: 1.2rem; margin-bottom: 1rem; }
+  .product-grid .product-panel { margin-bottom: 0; }
+  .eyebrow { margin: 0 0 .5rem; color: var(--color-accent-strong); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .product-copy :global(p), .product-panel > p:not(.eyebrow) { color: var(--color-text-muted); }
+  .pros-cons { display: grid; gap: .8rem; }
+  .pros-cons > div { padding: .9rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface-soft); }
+  .pros-cons ul { margin-bottom: 0; padding-left: 1.2rem; color: var(--color-text-muted); font-size: .9rem; }
+  .offers h2, .methodology h2, .product-panel h2 { margin: .35rem 0 1rem; }
+  .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+  .offer-grid a { display: flex; justify-content: space-between; gap: .75rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface-soft); text-decoration: none; }
+  .offer-grid a:hover { border-color: var(--color-accent-strong); }
+  .offer-grid span { color: var(--color-accent-strong); font-size: .85rem; font-weight: 800; }
+  .empty-offers { padding: 1rem; border: 1px dashed var(--color-border-strong); border-radius: var(--radius-md); }
+  .affiliate-note { margin-bottom: 0; font-size: .8rem; }
+  .related-list { display: grid; gap: .55rem; }
+  .related-list a { display: flex; justify-content: space-between; gap: .75rem; padding: .75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text); text-decoration: none; text-transform: capitalize; }
+  .related-list a:hover { border-color: var(--color-accent-strong); }
+  .related-list span, .methodology a { color: var(--color-accent-strong); font-weight: 800; }
+  .methodology a { text-decoration: none; }
+  @media (max-width: 50rem) {
+    .product-hero, .product-grid { grid-template-columns: 1fr; }
+    .product-visual { min-height: 15rem; }
+    .offer-grid { grid-template-columns: 1fr; }
+  }
+</style>
