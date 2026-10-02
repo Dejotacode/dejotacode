@@ -4,27 +4,38 @@ import type { RecommendedResource } from "../../data/recommendedResources";
 interface Props { resource: RecommendedResource; loading?: "eager" | "lazy"; }
 const { resource, loading = "lazy" } = Astro.props;
 const categoryImage = `/assets/resources/category-${resource.category}.svg`;
+const categoryLabels: Record<RecommendedResource["category"], string> = {
+  desenvolvimento: "Desenvolvimento",
+  digitais: "Ferramentas digitais",
+  infraestrutura: "Infraestrutura",
+  aprendizado: "Aprendizado",
+  seguranca: "Segurança",
+  "renda-digital": "Renda digital",
+};
 ---
 <article class="resource-card-v2">
-  <VisualMedia
-    src={resource.image ?? categoryImage}
-    fallbackSrc={categoryImage}
-    alt={resource.imageAlt ?? `Ilustração da categoria ${resource.category} para ${resource.name}`}
-    label={resource.name}
-    loading={loading}
-  />
+  <div class="resource-card-v2__media">
+    <VisualMedia
+      src={resource.image ?? categoryImage}
+      fallbackSrc={categoryImage}
+      alt={resource.imageAlt ?? `Ilustração da categoria ${resource.category} para ${resource.name}`}
+      label={resource.name}
+      loading={loading}
+    />
+    <span class="resource-card-v2__category">{categoryLabels[resource.category]}</span>
+  </div>
   <div class="resource-card-v2__body">
     <div class="resource-card-v2__meta">
       {resource.editorialLabel && <span>{resource.editorialLabel}</span>}
       <span>{resource.storePath ? "DejotaStore" : resource.relationship === "affiliate" ? "Afiliado" : "Recurso"}</span>
     </div>
     <h3>{resource.name}</h3>
-    <p>{resource.description}</p>
-    <p class="resource-card-v2__fit"><strong>Indicado para:</strong> {resource.bestFor}</p>
+    <p class="resource-card-v2__description">{resource.description}</p>
+    <div class="resource-card-v2__fit"><span>Indicado para</span><strong>{resource.bestFor}</strong></div>
     <div class="resource-card-v2__actions" aria-label={`Caminhos para ${resource.name}`}>
       {resource.articlePath && <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>Ver conteúdo</a>}
       {resource.storePath && <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>}
-      {!resource.articlePath && !resource.storePath && <a class="resource-link" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} ↗</a>}
+      {!resource.articlePath && !resource.storePath && <a class="button button-primary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} ↗</a>}
     </div>
     <details class="resource-card-v2__details">
       <summary>Critérios e limitações</summary>
