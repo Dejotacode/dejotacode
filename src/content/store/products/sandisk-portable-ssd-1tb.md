@@ -3,6 +3,9 @@ title: "SanDisk Portable SSD 1 TB"
 description: "SSD externo SanDisk de 1 TB, USB 3.2, pesquisado para backup antes de instalações, projetos e armazenamento portátil."
 category: linux
 editorialStatus: pesquisado
+catalogStage: catalogo-v1
+brand: "SanDisk"
+productKind: fisico
 recommendedFor:
   - "Backup antes de instalar Linux"
   - "Armazenar projetos e arquivos importantes"
@@ -19,6 +22,21 @@ relatedPosts:
 featured: true
 draft: false
 updatedAt: 2026-10-01
+verification:
+  lastChecked: 2026-10-01
+  sourceLabel: "Oferta afiliada validada pelo DejotaCode"
+  notes: "Preço e disponibilidade devem ser conferidos diretamente no parceiro antes da compra."
+offers:
+  - provider: mercadolivre
+    href: "https://meli.la/1df4K5u"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver no Mercado Livre"
+  - provider: shopee
+    href: "https://s.shopee.com.br/3LRGgBic9o"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver na Shopee"
 affiliateLinks:
   mercadolivre: "https://meli.la/1df4K5u"
   shopee: "https://s.shopee.com.br/3LRGgBic9o"

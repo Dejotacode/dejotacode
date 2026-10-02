@@ -3,6 +3,9 @@ title: "Gshield Hub USB-C 6 em 1"
 description: "Hub Gshield 6 em 1 com HDMI 4K, USB 3.0 e leitores SD/TF, pesquisado como alternativa para expandir notebooks."
 category: setup
 editorialStatus: pesquisado
+catalogStage: catalogo-v1
+brand: "Gshield"
+productKind: fisico
 recommendedFor:
   - "Expandir conexões de notebook"
   - "Usar HDMI, USB e cartões de memória no mesmo acessório"
@@ -18,6 +21,16 @@ relatedPosts:
 featured: false
 draft: false
 updatedAt: 2026-10-01
+verification:
+  lastChecked: 2026-10-01
+  sourceLabel: "Oferta afiliada validada pelo DejotaCode"
+  notes: "Preço e disponibilidade devem ser conferidos diretamente no parceiro antes da compra."
+offers:
+  - provider: shopee
+    href: "https://s.shopee.com.br/6AlS3T14wh"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver na Shopee"
 affiliateLinks:
   shopee: "https://s.shopee.com.br/6AlS3T14wh"
 ---

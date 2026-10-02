@@ -3,6 +3,9 @@ title: "Logitech Pebble 2 M350s"
 description: "Mouse Bluetooth compacto e silencioso, pesquisado para produtividade, estudo e programação em setups minimalistas."
 category: setup
 editorialStatus: pesquisado
+catalogStage: catalogo-v1
+brand: "Logitech"
+productKind: fisico
 recommendedFor:
   - "Estudo e programação em notebook"
   - "Setup compacto e trabalho remoto"
@@ -19,6 +22,21 @@ relatedPosts:
 featured: true
 draft: false
 updatedAt: 2026-10-01
+verification:
+  lastChecked: 2026-10-01
+  sourceLabel: "Oferta afiliada validada pelo DejotaCode"
+  notes: "Preço e disponibilidade devem ser conferidos diretamente no parceiro antes da compra."
+offers:
+  - provider: mercadolivre
+    href: "https://meli.la/193s6rn"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver no Mercado Livre"
+  - provider: shopee
+    href: "https://s.shopee.com.br/1Aoi7KQFd"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver na Shopee"
 affiliateLinks:
   mercadolivre: "https://meli.la/193s6rn"
   shopee: "https://s.shopee.com.br/1Aoi7KQFd"
