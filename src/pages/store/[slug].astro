@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import StoreBadge from "../../components/store/StoreBadge.astro";
 import StoreCategoryNav from "../../components/store/StoreCategoryNav.astro";
 import VisualMedia from "../../components/visual/VisualMedia.astro";
+import { resolveStoreVisual } from "../../data/storeVisuals";
 
 export async function getStaticPaths() {
   const products = await getCollection("storeProducts", ({ data }) => !data.draft);
@@ -44,40 +45,7 @@ const legacyMerchants = [
   { name: "Parceiro", provider: "other", href: links.other, label: undefined, lastChecked: undefined },
 ].filter((entry) => Boolean(entry.href));
 const merchants = structuredOffers.length > 0 ? structuredOffers : legacyMerchants;
-const photorealVisuals: Record<string, string> = {
-  "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.webp",
-  "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.webp",
-  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.webp",
-  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.webp",
-  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.webp",
-  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1.webp",
-  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s.webp",
-  "elevenlabs": "/assets/resources/items/elevenlabs.webp",
-  "metricool": "/assets/resources/items/metricool.webp",
-  "nordvpn": "/assets/resources/items/nordvpn.webp",
-};
-const productSpecificVisuals: Record<string, string> = {
-  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.svg",
-  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.svg",
-  "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.svg",
-  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1.svg",
-  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s.svg",
-  "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.svg",
-  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.svg",
-};
-const categoryVisuals: Record<string, string> = {
-  linux: "/assets/resources/category-aprendizado.svg",
-  setup: "/assets/resources/category-infraestrutura.svg",
-  programacao: "/assets/resources/category-desenvolvimento.svg",
-  criadores: "/assets/resources/category-digitais.svg",
-  "ferramentas-digitais": "/assets/resources/category-digitais.svg",
-};
-const categoryLabels: Record<string, string> = {
-  linux: "Linux", setup: "Setup", programacao: "Programação", criadores: "Criadores", "ferramentas-digitais": "Ferramentas digitais",
-};
-const categoryFallback = categoryVisuals[product.data.category] ?? "/assets/resources/category-digitais.svg";
-const productVisual = photorealVisuals[product.id] ?? productSpecificVisuals[product.id] ?? categoryFallback;
-const productFallback = productSpecificVisuals[product.id] ?? categoryFallback;
+const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = resolveStoreVisual(product.id, product.data.category);
 
 ---
 
@@ -98,7 +66,7 @@ const productFallback = productSpecificVisuals[product.id] ?? categoryFallback;
             loading="eager"
           />
           <div class="product-visual__overlay">
-            <span>{categoryLabels[product.data.category] ?? product.data.category}</span>
+            <span>{categoryLabel}</span>
             <strong>{product.data.brand ?? "DejotaStore"}</strong>
           </div>
         </div>
@@ -109,7 +77,7 @@ const productFallback = productSpecificVisuals[product.id] ?? categoryFallback;
           <div class="product-commercial-summary">
             <div><span>Preço</span><strong>Consultar no parceiro</strong></div>
             <div><span>Ofertas ativas</span><strong>{merchants.length}</strong></div>
-            <div><span>Categoria</span><strong>{categoryLabels[product.data.category] ?? product.data.category}</strong></div>
+            <div><span>Categoria</span><strong>{categoryLabel}</strong></div>
           </div>
 
           {product.data.recommendedFor.length > 0 && (

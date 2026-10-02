@@ -1,6 +1,7 @@
 ---
 import StoreBadge from "./StoreBadge.astro";
 import VisualMedia from "../visual/VisualMedia.astro";
+import { resolveStoreVisual } from "../../data/storeVisuals";
 
 interface Props {
   id: string;
@@ -14,44 +15,7 @@ interface Props {
   loading?: "eager" | "lazy";
 }
 const { id, title, description, status, category, brand, offerCount = 0, relatedPost, loading = "lazy" } = Astro.props;
-const categoryLabels: Record<string, string> = {
-  linux: "Linux",
-  setup: "Setup",
-  programacao: "Programação",
-  criadores: "Criadores",
-  "ferramentas-digitais": "Ferramentas digitais",
-};
-const photorealVisuals: Record<string, string> = {
-  "elevenlabs": "/assets/resources/items/elevenlabs.webp",
-  "metricool": "/assets/resources/items/metricool.webp",
-  "nordvpn": "/assets/resources/items/nordvpn.webp",
-  "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.webp",
-  "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.webp",
-  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.webp",
-  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.webp",
-  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.webp",
-  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1.webp",
-  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s.webp",
-};
-const productSpecificVisuals: Record<string, string> = {
-  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.svg",
-  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.svg",
-  "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.svg",
-  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1.svg",
-  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s.svg",
-  "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.svg",
-  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.svg",
-};
-const categoryVisuals: Record<string, string> = {
-  linux: "/assets/resources/category-aprendizado.svg",
-  setup: "/assets/resources/category-infraestrutura.svg",
-  programacao: "/assets/resources/category-desenvolvimento.svg",
-  criadores: "/assets/resources/category-digitais.svg",
-  "ferramentas-digitais": "/assets/resources/category-digitais.svg",
-};
-const categoryFallback = categoryVisuals[category] ?? "/assets/resources/category-digitais.svg";
-const productVisual = photorealVisuals[id] ?? productSpecificVisuals[id] ?? categoryFallback;
-const productFallback = productSpecificVisuals[id] ?? categoryFallback;
+const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = resolveStoreVisual(id, category);
 ---
 <article class="store-card">
   <div class="store-card__media">
@@ -62,7 +26,7 @@ const productFallback = productSpecificVisuals[id] ?? categoryFallback;
       label={title}
       loading={loading}
     />
-    <span class="store-card__category">{categoryLabels[category] ?? category}</span>
+    <span class="store-card__category">{categoryLabel}</span>
   </div>
   <div class="store-card__body">
     <div class="store-card__topline">

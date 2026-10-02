@@ -91,3 +91,15 @@ Regras:
 - o hero visual da home deve preencher integralmente o painel direito, sem aparência de placeholder dentro de outro container;
 - chips de confiança podem sobrepor a imagem, mas sem criar um bloco visual pesado no mobile;
 - a navegação de categorias deve permanecer legível em desktop e reorganizar em 2/1 colunas no mobile.
+
+## Componentes reutilizáveis — base premium v1
+
+A linguagem premium não deve ser copiada página por página. A base reutilizável atual é:
+
+- `VisualMedia.astro`: mídia 16:9, dimensões intrínsecas, loading controlado e fallback;
+- `StoreCategoryNav.astro`: navegação persistente das categorias da DejotaStore, com estado ativo;
+- `StoreCard.astro`: card comercial/editorial especializado da Store;
+- `ResourceCard.astro`: card editorial/utilitário especializado de Recursos;
+- `storeVisuals.ts`: fonte única para mídia específica, fallback e rótulo de categoria dos produtos/serviços da Store.
+
+Regra arquitetural: compartilhar comportamento e linguagem visual, sem forçar um componente genérico único quando Store e Recursos têm semânticas diferentes. Novas áreas (Blog, Trilhas e Home) devem consumir `VisualMedia` e os mesmos tokens, mas podem ter cards próprios quando a intenção da interface for diferente.
