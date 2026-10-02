@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResourceCard from "../../components/resources/ResourceCard.astro";
+import VisualMedia from "../../components/visual/VisualMedia.astro";
 import { recommendedResources } from "../../data/recommendedResources";
 import "../../styles/institutional.css";
 import "../../styles/resources.css";
@@ -12,95 +14,67 @@ const groups = [
   { id: "seguranca", label: "Segurança", description: "Ferramentas e referências para proteção de contas, dados e navegação." },
   { id: "renda-digital", label: "Renda digital", description: "Plataformas e experiências acompanhadas com foco em evidência, regras e transparência." },
 ] as const;
-
 const activeGroups = groups.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
 const hasCommercialRelationships = recommendedResources.some((resource) => resource.relationship === "affiliate");
 ---
 
 <BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Recursos avaliados com critérios claros, limitações e caminhos separados para aprender, avaliar e acessar ferramentas.">
-  <main id="conteudo" tabindex="-1" class="institutional-page">
-    <header class="institutional-hero container">
-      <p class="eyebrow">FERRAMENTAS E REFERÊNCIAS</p>
-      <h1>Recursos com contexto, não apenas links.</h1>
-      <p>Descubra ferramentas por categoria e escolha o próximo passo: aprender no Blog, avaliar na DejotaStore ou consultar a fonte oficial.</p>
-    </header>
-
-    <section class="institutional-section container resource-intro" aria-labelledby="transparencia-title">
-      <div class="notice">
-        <strong id="transparencia-title">Transparência comercial</strong>
-        <p>{hasCommercialRelationships ? "Alguns recursos têm relação comercial com o DejotaCode. Quando existe uma recomendação monetizada, o card direciona primeiro para a DejotaStore ou identifica claramente o link externo. A relação comercial não garante avaliação positiva." : "Atualmente, os recursos desta página usam links oficiais e não geram comissão. Se uma relação comercial for ativada, ela será identificada antes do clique."}</p>
+  <main id="conteudo" tabindex="-1" class="resources-page">
+    <section class="resources-hero container">
+      <div class="resources-hero__copy">
+        <p class="eyebrow">RECURSOS DEJOTACODE</p>
+        <h1>Ferramentas com contexto para você decidir melhor.</h1>
+        <p>Guias, serviços, referências e produtos organizados pelo que ajudam a resolver — sem transformar a página em uma lista de links.</p>
+        <div class="resources-hero__actions">
+          <a class="button button-primary" href="#categorias">Explorar recursos</a>
+          <a class="button" href="/store/">Conhecer a DejotaStore</a>
+        </div>
       </div>
-      <ol class="resource-principles" aria-label="Critérios de recomendação">
-        <li>Aprender antes de comprar ou assinar.</li>
-        <li>Benefícios e limitações apresentados juntos.</li>
-        <li>Separação clara entre Blog, DejotaStore e site oficial.</li>
-      </ol>
+      <VisualMedia src="/assets/og/recursos.png" alt="Identidade visual da página de Recursos do DejotaCode" loading="eager" />
     </section>
 
-    <section class="institutional-section container" aria-labelledby="materials-title">
-      <header class="resource-group__heading">
-        <div>
-          <p class="eyebrow">MATERIAIS DO DEJOTACODE</p>
-          <h2 id="materials-title">Criados aqui para aprofundar o aprendizado</h2>
-        </div>
-        <p>Produtos próprios aparecem separados das recomendações de terceiros para deixar clara a autoria e a relação comercial.</p>
-      </header>
+    <nav id="categorias" class="resource-category-nav container" aria-label="Categorias de recursos">
+      {activeGroups.map((group) => <a href={`#${group.id}`}>{group.label}</a>)}
+    </nav>
 
-      <article class="institutional-card dejotacode-material-card">
-        <img src="/assets/products/linux-do-zero/cover.png" alt="Capa real do e-book Linux do Zero" width="1159" height="1638" loading="lazy" decoding="async" />
-        <div>
-          <div class="resource-card__meta">
-            <span>Produto próprio</span>
-            <span>Disponível agora</span>
-          </div>
+    <section class="container resource-trust-grid" aria-labelledby="transparencia-title">
+      <article class="resource-trust-card">
+        <span>01</span><strong>Aprenda antes do clique</strong><p>Quando existe conteúdo explicando o contexto, ele aparece antes da recomendação comercial.</p>
+      </article>
+      <article class="resource-trust-card">
+        <span>02</span><strong>Limitações visíveis</strong><p>Benefícios, custo e pontos de atenção ficam disponíveis no próprio card.</p>
+      </article>
+      <article class="resource-trust-card">
+        <span>03</span><strong>Relação comercial clara</strong><p>{hasCommercialRelationships ? "Recursos monetizados são identificados e direcionados de forma transparente." : "Nenhum recurso atual gera comissão para o DejotaCode."}</p>
+      </article>
+    </section>
+
+    <section class="container resource-featured" aria-labelledby="materials-title">
+      <div class="resource-section-heading">
+        <div><p class="eyebrow">MATERIAL DO DEJOTACODE</p><h2 id="materials-title">Criado aqui para quem está começando</h2></div>
+        <p>Produtos próprios ficam separados das recomendações de terceiros para preservar autoria e transparência.</p>
+      </div>
+      <article class="resource-featured-card">
+        <div class="resource-featured-card__cover"><img src="/assets/products/linux-do-zero/cover.png" alt="Capa do e-book Linux do Zero" loading="lazy" decoding="async" /></div>
+        <div class="resource-featured-card__copy">
+          <div class="resource-card-v2__meta"><span>Produto próprio</span><span>88 páginas</span></div>
           <h3>Linux do Zero</h3>
-          <p>E-book de 88 páginas para iniciantes, com instalação segura, primeiros passos, terminal, permissões e solução de problemas.</p>
+          <p>E-book para iniciantes com instalação segura, primeiros passos, terminal, permissões e solução de problemas.</p>
           <p><strong>Indicado para:</strong> quem quer começar no Linux sem depender de conhecimento técnico prévio.</p>
           <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="resource-linux-ebook-own">Conhecer o e-book</a>
         </div>
       </article>
     </section>
 
-    <section class="institutional-section container resource-groups" aria-label="Recursos recomendados">
+    <section class="container resource-groups" aria-label="Recursos recomendados">
       {activeGroups.map((group) => (
-        <section aria-labelledby={`group-${group.id}`}>
-          <header class="resource-group__heading">
-            <div>
-              <p class="eyebrow">SELEÇÃO EDITORIAL</p>
-              <h2 id={`group-${group.id}`}>{group.label}</h2>
-            </div>
+        <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
+          <header class="resource-section-heading">
+            <div><p class="eyebrow">SELEÇÃO EDITORIAL</p><h2 id={`group-${group.id}`}>{group.label}</h2></div>
             <p>{group.description}</p>
           </header>
-          <div class="institutional-grid">
-            {recommendedResources.filter((resource) => resource.category === group.id).map((resource) => (
-              <article class="institutional-card resource-card">
-                <div class="resource-card__meta">
-                  <span>{resource.priceLabel}</span>
-                  {resource.editorialLabel && <span>{resource.editorialLabel}</span>}
-                  <span>{resource.storePath ? "Detalhes na DejotaStore" : resource.relationship === "affiliate" ? "Link de afiliado" : "Sem comissão"}</span>
-                </div>
-                <h3>{resource.name}</h3>
-                <p>{resource.description}</p>
-                <p><strong>Indicado para:</strong> {resource.bestFor}</p>
-                <p><strong>Limitação:</strong> {resource.limitation}</p>
-
-                <div class="resource-card__actions" aria-label={`Caminhos para ${resource.name}`}>
-                  {resource.articlePath && (
-                    <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>Ver tutorial</a>
-                  )}
-                  {resource.storePath && (
-                    <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>
-                  )}
-                  {!resource.articlePath && !resource.storePath && (
-                    <a class="resource-link" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`} data-analytics-affiliate-provider={resource.affiliateProvider} data-analytics-affiliate-id={resource.id}>{resource.cta} ↗</a>
-                  )}
-                  {resource.officialHref && !resource.storePath && (
-                    <a class="resource-link resource-link--secondary" href={resource.officialHref} target="_blank" rel="noopener noreferrer" data-analytics-cta={`resource-${resource.id}-official`}>Site oficial ↗</a>
-                  )}
-                </div>
-                <p class="resource-review-date">Revisado em {resource.lastReviewed}</p>
-              </article>
-            ))}
+          <div class="resource-grid-v2">
+            {recommendedResources.filter((resource) => resource.category === group.id).map((resource) => <ResourceCard resource={resource} />)}
           </div>
         </section>
       ))}
