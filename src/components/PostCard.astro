@@ -16,7 +16,7 @@ interface Props {
 
 const { post, featured = false } = Astro.props;
 const category = post.data.category;
-const visual = resolvePostVisual(category);
+const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
 ---
 
 <article class:list={["post-card", { "post-card--featured": featured }]}>

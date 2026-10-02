@@ -85,7 +85,7 @@ const conversion = currentTrail && nextTrailLesson
 
 const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
 const categoryLabel = categories[post.data.category];
-const articleVisual = resolvePostVisual(post.data.category);
+const articleVisual = resolvePostVisual(post.data.category, currentSlug);
 const categoryUrl = new URL(
   categoryHref(post.data.category),
   Astro.site ?? Astro.url,
