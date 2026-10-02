@@ -198,4 +198,4 @@ Continue em [Permissões no Linux sem mistério](/blog/permissoes-linux-para-ini
 
 Se você prefere aprender em uma sequência organizada desde o começo, acompanhe também a [trilha gratuita Linux do Zero](/trilhas/linux-do-zero/).
 
-![Terminal Linux com comandos básicos para iniciantes](https://api.dejotacode.com.br/api/media/public/posts/comandos-linux-para-iniciantes/2026/09/d68be448-0cb3-4e50-ae3d-6ef0658c1f0f.png)
+<img src="https://api.dejotacode.com.br/api/media/public/posts/comandos-linux-para-iniciantes/2026/09/d68be448-0cb3-4e50-ae3d-6ef0658c1f0f.png" alt="Terminal Linux com comandos básicos para iniciantes" width="1200" height="630" loading="lazy" decoding="async" />
