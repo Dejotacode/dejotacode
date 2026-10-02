@@ -10,12 +10,16 @@ import { guide } from "../../../data/guide";
   robots={guide.meta.robots}
 >
   <main id="conteudo" tabindex="-1" class="institutional-page">
-    <header class="institutional-hero container">
-      <p class="eyebrow">{guide.hero.eyebrow}</p>
-
-      <h1>{guide.hero.title}</h1>
-
-      <p>{guide.hero.description}</p>
+    <header class="institutional-hero institutional-hero--media container">
+      <div class="institutional-hero__copy">
+        <p class="eyebrow">{guide.hero.eyebrow}</p>
+        <h1>{guide.hero.title}</h1>
+        <p>{guide.hero.description}</p>
+        <div class="institutional-hero__chips"><span>Comece do zero</span><span>Pratique</span><span>Avance por etapas</span></div>
+      </div>
+      <div class="institutional-hero__media">
+        <img src="/assets/resources/items/vscode.webp" alt="Ambiente de programação representando o início dos estudos em tecnologia" width="720" height="405" loading="eager" decoding="async" />
+      </div>
     </header>
 
     <section class="institutional-section container">

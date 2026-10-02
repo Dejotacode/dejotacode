@@ -8,6 +8,8 @@ import SocialShare from "../../components/SocialShare.astro";
 import ConversionCTA from "../../components/ConversionCTA.astro";
 import ResourceRecommendations from "../../components/ResourceRecommendations.astro";
 import StoreProductsInArticle from "../../components/store/StoreProductsInArticle.astro";
+import VisualMedia from "../../components/visual/VisualMedia.astro";
+import { resolvePostVisual } from "../../data/editorialVisuals";
 import { availableTrails } from "../../data/trails";
 import { getArticleResources } from "../../data/recommendedResources";
 import {
@@ -83,6 +85,7 @@ const conversion = currentTrail && nextTrailLesson
 
 const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
 const categoryLabel = categories[post.data.category];
+const articleVisual = resolvePostVisual(post.data.category);
 const categoryUrl = new URL(
   categoryHref(post.data.category),
   Astro.site ?? Astro.url,
@@ -200,10 +203,9 @@ const articleSchema = {
           </div>
         </div>
 
-        <div class="article-cover" aria-hidden="true">
-          <span class="article-cover__label">GUIA PRÁTICO</span>
-          <strong>{post.data.type === "tutorial" ? "</>" : "01"}</strong>
-          <span>{categoryLabel}</span>
+        <div class="article-cover">
+          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da categoria ${categoryLabel}`} label={post.data.title} loading="eager" />
+          <div class="article-cover__overlay"><span>{post.data.type === "tutorial" ? "Tutorial" : "Artigo"}</span><strong>{categoryLabel}</strong></div>
         </div>
       </header>
 

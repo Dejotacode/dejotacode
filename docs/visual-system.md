@@ -126,3 +126,18 @@ A linguagem premium foi estendida às áreas editoriais sem copiar a estética c
 
 ### Evolução futura
 Quando artigos ou trilhas receberem capas próprias, a resolução visual deve priorizar a mídia específica e manter categoria/tema apenas como fallback.
+
+## Premium Alignment v1 — páginas secundárias e detalhes editoriais
+
+Passe de alinhamento aplicado para reduzir a diferença visual entre as áreas premium mais novas e páginas da geração anterior.
+
+Inclui:
+- heroes com mídia editorial em Sobre, Portfólio e Guia do iniciante;
+- Setup do Dejota transformado de placeholder em página de curadoria deliberada;
+- cards institucionais com profundidade visual discreta e estados de hover coerentes;
+- artigos internos com mídia editorial por categoria no hero;
+- trilhas internas com mídia temática integrada ao bloco de progresso;
+- correção do title duplicado da Home;
+- dimensões intrínsecas declaradas nas imagens antigas auditadas para reduzir layout shift.
+
+Regra: premium significa consistência, hierarquia, mídia contextual e acabamento; não significa adicionar decoração indiscriminadamente. Páginas legais, formulários e fluxos utilitários podem permanecer mais sóbrios.

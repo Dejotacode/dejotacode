@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { availableTrails, type Trail } from "../../data/trails";
+import VisualMedia from "../../components/visual/VisualMedia.astro";
+import { resolveTrailVisual } from "../../data/editorialVisuals";
 import "../../styles/trails.css";
 
 export function getStaticPaths() {
@@ -16,6 +18,7 @@ interface Props {
 
 const { trail } = Astro.props;
 const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
+const trailVisual = resolveTrailVisual(trail.slug);
 
 const canonicalUrl = new URL(
   `/trilhas/${trail.slug}/`,
@@ -96,21 +99,27 @@ const trailListSchema = {
         </div>
       </div>
 
-      <div class="trail-progress-card">
-        <div class="trail-progress-card__top">
-          <span>Seu progresso</span>
-          <strong data-progress-percent>0%</strong>
+      <div class="trail-detail__aside">
+        <div class="trail-detail__media">
+          <VisualMedia src={trailVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${trail.title}`} label={trail.title} loading="eager" />
+          <span>{trail.icon}</span>
         </div>
-        <div
-          class="trail-progress"
-          role="progressbar"
-          aria-label="Progresso na trilha"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuenow="0"
-          data-progress-bar
-        ><span data-progress-fill></span></div>
-        <p data-progress-label>Comece pela primeira etapa.</p>
+        <div class="trail-progress-card">
+          <div class="trail-progress-card__top">
+            <span>Seu progresso</span>
+            <strong data-progress-percent>0%</strong>
+          </div>
+          <div
+            class="trail-progress"
+            role="progressbar"
+            aria-label="Progresso na trilha"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            data-progress-bar
+          ><span data-progress-fill></span></div>
+          <p data-progress-label>Comece pela primeira etapa.</p>
+        </div>
       </div>
     </header>
 

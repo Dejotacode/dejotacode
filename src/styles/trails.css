@@ -199,6 +199,11 @@
   margin-right: 0.65rem;
 }
 
+.trail-detail__aside { display:grid;gap:.8rem; }
+.trail-detail__media { position:relative;min-height:12rem;overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface-soft);box-shadow:var(--shadow-card); }
+.trail-detail__media > .visual-media { height:100%;min-height:12rem;border:0;border-radius:0; }
+.trail-detail__media > span { position:absolute;left:.8rem;bottom:.8rem;display:grid;place-items:center;width:2.5rem;height:2.5rem;border:1px solid color-mix(in srgb,var(--color-border) 78%,transparent);border-radius:var(--radius-md);background:color-mix(in srgb,var(--color-surface) 90%,transparent);backdrop-filter:blur(10px);color:var(--color-accent-strong);font-family:var(--font-code);font-weight:850; }
+
 .trail-progress-card {
   padding: 1.5rem;
   border: 1px solid var(--color-border);

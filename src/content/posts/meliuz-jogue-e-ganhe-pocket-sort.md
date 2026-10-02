@@ -59,7 +59,7 @@ Somando somente as quatro tarefas efetivamente concluídas:
 
 Não incluímos no resultado metas futuras só porque elas aparecem na oferta.
 
-![Oferta Pocket Sort no Méliuz Jogue e Ganhe com prazo de 90 dias e recompensas por níveis](/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp)
+<img src="/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp" alt="Oferta Pocket Sort no Méliuz Jogue e Ganhe com prazo de 90 dias e recompensas por níveis" width="691" height="1536" loading="lazy" decoding="async" />
 
 *Oferta do Pocket Sort exibida na nossa conta do Méliuz durante o teste. Valores e condições podem mudar.*
 
@@ -67,7 +67,7 @@ Não incluímos no resultado metas futuras só porque elas aparecem na oferta.
 
 Sim. Uma das capturas feitas durante o teste mostra o **Pocket Sort no nível 20**.
 
-![Tarefas do Pocket Sort no Méliuz com níveis 3, 6, 15 e 20 marcados como concluídos](/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp)
+<img src="/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp" alt="Tarefas do Pocket Sort no Méliuz com níveis 3, 6, 15 e 20 marcados como concluídos" width="691" height="1536" loading="lazy" decoding="async" />
 
 *Na captura de 30/09/2026, o Méliuz já marcava como concluídas as metas dos níveis 3, 6, 15 e 20.*
 
@@ -99,7 +99,7 @@ Por isso, classificamos o estado atual desta forma:
 
 Essa tabela será atualizada se o status mudar.
 
-![Extrato Méliuz mostrando R$ 0,20 confirmado e R$ 0,33 pendente no Jogue e Ganhe](/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp)
+<img src="/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp" alt="Extrato Méliuz mostrando R$ 0,20 confirmado e R$ 0,33 pendente no Jogue e Ganhe" width="691" height="1536" loading="lazy" decoding="async" />
 
 *Extrato observado em 30/09/2026: R$ 0,20 confirmado e R$ 0,33 pendente no Jogue e Ganhe.*
 
@@ -180,7 +180,7 @@ Portanto, esses R$ 20 são uma **recompensa anunciada pela campanha**, não um r
 
 Os valores e critérios podem mudar. Confira sempre as regras que aparecem para sua conta antes de indicar alguém.
 
-![Tela Indique e Ganhe do Méliuz mostrando R$ 20 por indicação, R$ 5 para o amigo, zero cadastros e saldo pendente de R$ 0,00](/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp)
+<img src="/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp" alt="Tela Indique e Ganhe do Méliuz mostrando R$ 20 por indicação, R$ 5 para o amigo, zero cadastros e saldo pendente de R$ 0,00" width="691" height="1536" loading="lazy" decoding="async" />
 
 *Campanha exibida em 30/09/2026. A tela também mostrava 0 cadastros e R$ 0,00 de saldo pendente de indicações.*
 
