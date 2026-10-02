@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import VisualMedia from "../components/visual/VisualMedia.astro";
+import { resolvePostVisual, resolveTrailVisual } from "../data/editorialVisuals";
 import {
   featuredHomeTrailSlug,
   featuredPostSlugs,
@@ -40,13 +42,7 @@ const homeTrails = resolveCurated(homeTrailSlugs, trailsBySlug, "trilha");
 const featuredPosts = resolveCurated(featuredPostSlugs, postsBySlug, "conteúdo em destaque");
 const recentTutorialPosts = resolveCurated(recentTutorialSlugs, postsBySlug, "tutorial recente");
 
-const categorySymbols = {
-  programacao: "</>",
-  "linux-seguranca": "$ _",
-  "inteligencia-artificial": "IA",
-  "tecnologia-pratica": "▥",
-  "renda-digital": "↗",
-} as const;
+
 
 const difficultyLabels = {
   iniciante: "Iniciante",
@@ -103,9 +99,13 @@ const homeSchema = {
             <a class="button button-secondary" href="/blog/" data-analytics-cta="home-hero-blog">Explorar conteúdos</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <span class="visual-label">IDEIAS<br />CÓDIGO<br />CONHECIMENTO<br />RESULTADOS</span>
-          <span class="visual-mark"></span><span class="visual-dot"></span>
+        <div class="hero-visual" aria-label="Tecnologia, aprendizado e construção no DejotaCode">
+          <div class="hero-visual__collage">
+            <img src="/assets/resources/items/linux.webp" alt="Ambiente Linux em um setup de tecnologia" width="720" height="405" loading="eager" decoding="async" />
+            <img src="/assets/resources/items/vscode.webp" alt="Editor de código Visual Studio Code" width="720" height="405" loading="eager" decoding="async" />
+            <img src="/assets/resources/items/cloudflare.webp" alt="Infraestrutura e publicação com Cloudflare" width="720" height="405" loading="eager" decoding="async" />
+          </div>
+          <div class="hero-visual__caption"><span>APRENDER</span><span>CONSTRUIR</span><span>PUBLICAR</span></div>
         </div>
       </div>
     </section>
@@ -120,7 +120,7 @@ const homeSchema = {
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">COMECE PELO CAMINHO CERTO</p><h2 id="tracks-title">Escolha uma trilha</h2></div><div class="section-heading__aside"><p>Conteúdos organizados em sequência para você aprender com clareza e avançar no seu ritmo.</p><a class="text-link" href="/trilhas/" data-analytics-cta="home-trilhas-todas">Ver todas as trilhas <span aria-hidden="true">→</span></a></div></div>
         <div class="tracks-grid">
-          {homeTrails.map((track) => <article class:list={["track-card", { "track-featured": track.slug === featuredHomeTrailSlug }]}><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div><div><span class="track-symbol">{track.icon}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={`/trilhas/${track.slug}/`} data-analytics-cta={`home-trail-${track.slug}`}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
+          {homeTrails.map((track) => <article class:list={["track-card", { "track-featured": track.slug === featuredHomeTrailSlug }]}><div class="track-card__media"><VisualMedia src={resolveTrailVisual(track.slug)} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${track.title}`} label={track.title} loading="lazy" /><div class="card-topline"><span>{track.number}</span><span class="level">{track.level}</span></div></div><div class="track-card__body"><span class="track-symbol">{track.icon}</span><h3>{track.title}</h3><p>{track.description}</p></div><a class="text-link" href={`/trilhas/${track.slug}/`} data-analytics-cta={`home-trail-${track.slug}`}>Ver trilha <span aria-hidden="true">→</span></a></article>)}
         </div>
       </div>
     </section>
@@ -129,7 +129,7 @@ const homeSchema = {
       <div class="container">
         <div class="section-bar"><div><p class="eyebrow">CONHECIMENTO QUE GERA RESULTADOS</p><h2 id="featured-title">Conteúdos em destaque</h2></div><a class="text-link" href="/blog/">Ver todos <span aria-hidden="true">→</span></a></div>
         <div class="featured-grid">
-          {featuredPosts.map((post) => <a class="content-card" href={postHref(post)}><div class="editorial-art" aria-hidden="true"><span>{categorySymbols[post.data.category]}</span></div><div class="card-content"><span class="category">{categories[post.data.category]}</span><h3>{post.data.title}</h3><p>{post.data.description}</p><div class="meta"><span>{formatPostDate(post.data.publishedAt)}</span><span>{post.data.readingTime} min de leitura</span></div></div></a>)}
+          {featuredPosts.map((post) => <a class="content-card" href={postHref(post)}><div class="home-content-media"><VisualMedia src={resolvePostVisual(post.data.category)} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial de ${categories[post.data.category]}`} label={post.data.title} loading="lazy" /><span>{categories[post.data.category]}</span></div><div class="card-content"><span class="category">{categories[post.data.category]}</span><h3>{post.data.title}</h3><p>{post.data.description}</p><div class="meta"><span>{formatPostDate(post.data.publishedAt)}</span><span>{post.data.readingTime} min de leitura</span></div></div></a>)}
         </div>
       </div>
     </section>
