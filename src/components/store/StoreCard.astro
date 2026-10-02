@@ -23,10 +23,17 @@ const photorealVisuals: Record<string, string> = {
   "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.webp",
   "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.webp",
 };
-const productVisual = photorealVisuals[id] ?? `/assets/store/${id}.svg`;
+const productFallback = `/assets/store/${id}.svg`;
+const productVisual = photorealVisuals[id] ?? productFallback;
 ---
 <article class="store-card">
-  <VisualMedia src={productVisual} alt={`Imagem editorial de ${title}`} label={title} />
+  <VisualMedia
+    src={productVisual}
+    fallbackSrc={productFallback}
+    alt={`Imagem editorial de ${title}`}
+    label={title}
+    loading="eager"
+  />
   <div class="store-card__body">
     <StoreBadge status={status} />
     <div class="store-card__context"><span>{categoryLabels[category] ?? category}</span><span>·</span><span>{brand ?? "DejotaStore"}</span><span>·</span><span>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta" : "ofertas"}` : "sem oferta ativa"}</span></div>
