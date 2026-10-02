@@ -25,8 +25,25 @@ const photorealVisuals: Record<string, string> = {
   "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.webp",
   "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.webp",
 };
-const productFallback = `/assets/store/${id}.svg`;
-const productVisual = photorealVisuals[id] ?? productFallback;
+const productSpecificVisuals: Record<string, string> = {
+  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.svg",
+  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.svg",
+  "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.svg",
+  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1.svg",
+  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s.svg",
+  "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.svg",
+  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.svg",
+};
+const categoryVisuals: Record<string, string> = {
+  linux: "/assets/resources/category-aprendizado.svg",
+  setup: "/assets/resources/category-infraestrutura.svg",
+  programacao: "/assets/resources/category-desenvolvimento.svg",
+  criadores: "/assets/resources/category-digitais.svg",
+  "ferramentas-digitais": "/assets/resources/category-digitais.svg",
+};
+const categoryFallback = categoryVisuals[category] ?? "/assets/resources/category-digitais.svg";
+const productVisual = photorealVisuals[id] ?? productSpecificVisuals[id] ?? categoryFallback;
+const productFallback = productSpecificVisuals[id] ?? categoryFallback;
 ---
 <article class="store-card">
   <VisualMedia
