@@ -70,3 +70,18 @@ A migração de todos os produtos antigos para `offers` pode ser feita depois da
 `feat/dejotastore-catalog-v1`
 
 A branch não deve ser mergeada na main até a revisão final do DejotaCode.
+
+## Evolução futura da home da DejotaStore
+
+Não executar nesta versão. Registrar para planejamento futuro.
+
+A home da DejotaStore hoje destaca os sete produtos físicos do catálogo inicial. No futuro, a área de recomendações pode evoluir de uma vitrine fixa para um catálogo editorial dinâmico, mais próximo da lógica de um blog/feed:
+
+- misturar produtos físicos, ferramentas digitais, serviços e conteúdos comerciais das categorias existentes;
+- dar visibilidade equilibrada a Linux, Setup, Programação, Criadores e Ferramentas digitais, evitando que a home pareça apenas uma vitrine de links de Shopee/Mercado Livre;
+- ordenar itens por uma regra editorial explícita, com conteúdos/recomendações mais recentes aparecendo primeiro quando fizer sentido;
+- preparar paginação, “carregar mais” ou outra forma de navegação quando o volume crescer;
+- preservar curadoria e relevância: novidade não deve substituir contexto editorial nem transformar a Store em marketplace;
+- manter as páginas de categoria como caminhos de exploração específicos, mesmo que a home passe a funcionar como feed misto.
+
+Antes de implementar, definir o campo canônico de ordenação (por exemplo, `publishedAt`, `updatedAt` ou `catalogPublishedAt`) e a política para itens fixos/destaques editoriais.
