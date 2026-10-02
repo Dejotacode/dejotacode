@@ -47,5 +47,5 @@ const categories: Category[] = [
   .store-category-nav--compact .store-category-card{min-height:7rem}
   @media(max-width:60rem){.store-category-nav{grid-template-columns:repeat(3,minmax(0,1fr))}}
   @media(max-width:42rem){.store-category-nav{grid-template-columns:1fr 1fr}.store-category-card,.store-category-nav--compact .store-category-card{min-height:auto}}
-  @media(max-width:30rem){.store-category-nav{grid-template-columns:1fr}}
+  @media(max-width:30rem){.store-category-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}.store-category-nav:not(.store-category-nav--compact) .store-category-card{min-height:7rem;padding:.8rem}.store-category-nav:not(.store-category-nav--compact) .store-category-card>span:not(.store-category-card__index){display:none}.store-category-nav:not(.store-category-nav--compact) .store-category-card:last-child{grid-column:1 / -1}.store-category-nav--compact .store-category-card{padding:.75rem}}@media(max-width:22rem){.store-category-nav{grid-template-columns:1fr}.store-category-nav:not(.store-category-nav--compact) .store-category-card:last-child{grid-column:auto}}
 </style>

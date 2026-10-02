@@ -141,3 +141,18 @@ Inclui:
 - dimensões intrínsecas declaradas nas imagens antigas auditadas para reduzir layout shift.
 
 Regra: premium significa consistência, hierarquia, mídia contextual e acabamento; não significa adicionar decoração indiscriminadamente. Páginas legais, formulários e fluxos utilitários podem permanecer mais sóbrios.
+
+## Premium Reality v2 — refinamento de produto real
+
+Segundo passe de acabamento com foco em reduzir sinais de template e encurtar fricções no mobile.
+
+Inclui:
+- artigos usam mídia específica quando já existe asset realmente relacionado ao assunto;
+- fallback por categoria permanece para conteúdos sem mídia específica;
+- a trilha `Primeiros passos na programação` passa a usar mídia do VS Code em vez de arte genérica;
+- navegação compacta de categorias da Store usa duas colunas no mobile;
+- navegação principal de categorias da Store também compacta no mobile, sem carrossel horizontal;
+- a quinta categoria ocupa a largura inteira para fechar o grid;
+- previews do e-book Linux do Zero passam a WebP lossless, preservando pixels e reduzindo transferência.
+
+Regra: mídia específica só deve substituir o fallback quando existir relação editorial clara entre imagem e conteúdo. Não usar imagem de marca ou produto apenas para criar variedade visual.
