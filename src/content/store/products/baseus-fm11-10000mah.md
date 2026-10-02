@@ -3,6 +3,9 @@ title: "Baseus FM11 Power Bank 10.000 mAh"
 description: "Power bank Baseus FM11 de 10.000 mAh, USB-C e carregamento magnético, pesquisado para mobilidade e criação de conteúdo."
 category: criadores
 editorialStatus: pesquisado
+catalogStage: catalogo-v1
+brand: "Baseus"
+productKind: fisico
 recommendedFor:
   - "Trabalhar ou gravar conteúdo fora de casa"
   - "Ter energia extra para celular e acessórios"
@@ -18,6 +21,16 @@ relatedPosts:
 featured: true
 draft: false
 updatedAt: 2026-10-01
+verification:
+  lastChecked: 2026-10-01
+  sourceLabel: "Oferta afiliada validada pelo DejotaCode"
+  notes: "Preço e disponibilidade devem ser conferidos diretamente no parceiro antes da compra."
+offers:
+  - provider: mercadolivre
+    href: "https://meli.la/2iymyS3"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver no Mercado Livre"
 affiliateLinks:
   mercadolivre: "https://meli.la/2iymyS3"
 ---

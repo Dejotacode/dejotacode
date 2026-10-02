@@ -7,8 +7,10 @@ interface Props {
   description: string;
   status: "uso" | "testado" | "pesquisado";
   category: string;
+  brand?: string;
+  offerCount?: number;
 }
-const { id, title, description, status, category } = Astro.props;
+const { id, title, description, status, category, brand, offerCount = 0 } = Astro.props;
 const categoryLabels: Record<string, string> = {
   linux: "Linux",
   setup: "Setup",
@@ -20,8 +22,8 @@ const categoryLabels: Record<string, string> = {
 <article class="store-card">
   <div class="store-card__visual" aria-hidden="true">
     <span class="store-card__category">{categoryLabels[category] ?? category}</span>
-    <strong>Recomendação em validação</strong>
-    <small>Imagem oficial entra após confirmar o produto.</small>
+    <strong>{brand ?? "DejotaStore"}</strong>
+    <small>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta verificada" : "ofertas verificadas"}` : "Ficha editorial sem oferta ativa"}</small>
   </div>
   <div class="store-card__body">
     <StoreBadge status={status} />

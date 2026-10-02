@@ -3,8 +3,11 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StoreCard from "../../components/store/StoreCard.astro";
 
-const products = (await getCollection("storeProducts", ({ data }) => !data.draft))
+const allProducts = (await getCollection("storeProducts", ({ data }) => !data.draft))
   .sort((a, b) => Number(b.data.featured) - Number(a.data.featured));
+const products = allProducts
+  .filter((product) => product.data.catalogStage === "catalogo-v1")
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, "pt-BR"));
 
 const categories = [
   { slug: "linux", label: "Linux", description: "Pendrives, SSDs e acessórios para aprender e testar com segurança." },
@@ -82,7 +85,7 @@ const categories = [
           <div>
             <p class="store-eyebrow">Catálogo inicial</p>
             <h2>Recomendações em destaque</h2>
-            <p>Uma seleção pequena e conectada aos conteúdos já publicados no DejotaCode.</p>
+            <p>{products.length} produtos formam o catálogo inicial. Todos têm oferta afiliada registrada e ficha editorial própria; preço e disponibilidade são conferidos no parceiro.</p>
           </div>
         </div>
         <div class="store-products">
@@ -93,6 +96,8 @@ const categories = [
               description={product.data.description}
               status={product.data.editorialStatus}
               category={product.data.category}
+              brand={product.data.brand}
+              offerCount={product.data.offers.filter((offer) => offer.active).length}
             />
           ))}
         </div>

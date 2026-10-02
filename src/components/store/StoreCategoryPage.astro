@@ -37,6 +37,8 @@ const guides = await getCollection("storeGuides", ({ data }) => !data.draft && d
               description={product.data.description}
               status={product.data.editorialStatus}
               category={product.data.category}
+              brand={product.data.brand}
+              offerCount={product.data.offers.filter((offer) => offer.active).length}
             />
           )) : <p class="empty">Ainda não há recomendações publicadas nesta categoria.</p>}
         </div>

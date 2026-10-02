@@ -3,6 +3,9 @@ title: "Baseus FC11 Power Bank 10.000/20.000 mAh"
 description: "Power bank Baseus FC11 com USB-C, carregamento rápido e display digital, pesquisado para mobilidade e criação de conteúdo."
 category: criadores
 editorialStatus: pesquisado
+catalogStage: catalogo-v1
+brand: "Baseus"
+productKind: fisico
 recommendedFor:
   - "Trabalhar ou gravar conteúdo fora de casa"
   - "Ter energia extra para celular e acessórios"
@@ -18,6 +21,16 @@ relatedPosts:
 featured: false
 draft: false
 updatedAt: 2026-10-01
+verification:
+  lastChecked: 2026-10-01
+  sourceLabel: "Oferta afiliada validada pelo DejotaCode"
+  notes: "Preço e disponibilidade devem ser conferidos diretamente no parceiro antes da compra."
+offers:
+  - provider: shopee
+    href: "https://s.shopee.com.br/6VOIRz6dKp"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver na Shopee"
 affiliateLinks:
   shopee: "https://s.shopee.com.br/6VOIRz6dKp"
 ---

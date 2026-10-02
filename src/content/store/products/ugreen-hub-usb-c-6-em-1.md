@@ -3,6 +3,9 @@ title: "UGREEN Uno Hub USB-C 6 em 1"
 description: "Hub USB-C UGREEN Uno com HDMI 4K/60 Hz, USB de alta velocidade e carregamento PD, pesquisado para setups de estudo e programação."
 category: programacao
 editorialStatus: pesquisado
+catalogStage: catalogo-v1
+brand: "UGREEN"
+productKind: fisico
 recommendedFor:
   - "Expandir portas de notebook"
   - "Conectar monitor e periféricos em um único hub"
@@ -18,6 +21,21 @@ relatedPosts:
 featured: true
 draft: false
 updatedAt: 2026-10-01
+verification:
+  lastChecked: 2026-10-01
+  sourceLabel: "Oferta afiliada validada pelo DejotaCode"
+  notes: "Preço e disponibilidade devem ser conferidos diretamente no parceiro antes da compra."
+offers:
+  - provider: mercadolivre
+    href: "https://meli.la/2tQM3Pd"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver no Mercado Livre"
+  - provider: shopee
+    href: "https://s.shopee.com.br/7ptg2OBdaG"
+    active: true
+    lastChecked: 2026-10-01
+    label: "Ver na Shopee"
 affiliateLinks:
   mercadolivre: "https://meli.la/2tQM3Pd"
   shopee: "https://s.shopee.com.br/7ptg2OBdaG"
