@@ -52,3 +52,17 @@ Estrutura do card:
 - a ficha interna continua responsável por disclosure, contexto, limitações e links externos de afiliado.
 
 A imagem pode elevar a percepção de qualidade, mas não deve substituir informação verificável. Em produto físico, imagem oficial/autorizada continua tendo prioridade sobre mockup editorial quando disponível.
+
+## Recursos — Resource Card Premium v1
+
+O card editorial de Recursos usa a mesma linguagem premium da DejotaStore, mas preserva caráter utilitário e educativo.
+
+Estrutura do card:
+- imagem 16:9 como elemento visual principal;
+- categoria sobre a imagem para leitura rápida;
+- status editorial e relação comercial identificados separadamente;
+- título e descrição com hierarquia forte e limite visual de linhas;
+- bloco `Indicado para` destacado para orientar decisão;
+- CTAs mantêm prioridade editorial: conteúdo, Store ou fonte oficial conforme contexto;
+- critérios, custo e limitações permanecem recolhíveis no próprio card;
+- nenhum elemento visual deve esconder a relação comercial nem transformar Recursos em vitrine de vendas.
