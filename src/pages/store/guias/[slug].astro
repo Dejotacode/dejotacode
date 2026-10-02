@@ -37,7 +37,7 @@ const products = allProducts.filter((product) => guide.data.productIds.includes(
           <p class="eyebrow">Relacionados</p>
           <h2>Recomendações citadas</h2>
           <div class="products">{products.map((product) => (
-            <StoreCard id={product.id} title={product.data.title} description={product.data.description} status={product.data.editorialStatus} category={product.data.category} />
+            <StoreCard id={product.id} title={product.data.title} description={product.data.description} status={product.data.editorialStatus} category={product.data.category} relatedPost={product.data.relatedPosts?.[0]} />
           ))}</div>
         </section>
       )}
