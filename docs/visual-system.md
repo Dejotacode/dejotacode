@@ -103,3 +103,26 @@ A linguagem premium não deve ser copiada página por página. A base reutilizá
 - `storeVisuals.ts`: fonte única para mídia específica, fallback e rótulo de categoria dos produtos/serviços da Store.
 
 Regra arquitetural: compartilhar comportamento e linguagem visual, sem forçar um componente genérico único quando Store e Recursos têm semânticas diferentes. Novas áreas (Blog, Trilhas e Home) devem consumir `VisualMedia` e os mesmos tokens, mas podem ter cards próprios quando a intenção da interface for diferente.
+
+## Editorial Premium v1 — Blog, Trilhas e Home
+
+A linguagem premium foi estendida às áreas editoriais sem copiar a estética comercial da Store.
+
+### Blog
+- `PostCard` usa mídia editorial por categoria até que cada artigo possua capa própria;
+- a imagem comunica contexto editorial, não promessa específica sobre o conteúdo;
+- categoria, tipo, data, tempo de leitura e dificuldade continuam visíveis.
+
+### Trilhas
+- `TrailCard` usa mídia temática por trilha;
+- número, nível, ícone e progresso continuam sendo os elementos de orientação;
+- a mídia reforça o tema sem transformar trilha em produto.
+
+### Home
+- hero usa collage de mídias já aprovadas do próprio ecossistema DejotaCode;
+- trilhas da home reutilizam a resolução visual editorial;
+- conteúdos em destaque usam a mesma mídia por categoria do Blog;
+- a Home representa a marca como fluxo `aprender → construir → publicar`.
+
+### Evolução futura
+Quando artigos ou trilhas receberem capas próprias, a resolução visual deve priorizar a mídia específica e manter categoria/tema apenas como fallback.

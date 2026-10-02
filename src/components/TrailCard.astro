@@ -1,5 +1,7 @@
 ---
 import type { Trail } from "../data/trails";
+import VisualMedia from "./visual/VisualMedia.astro";
+import { resolveTrailVisual } from "../data/editorialVisuals";
 
 interface Props {
   trail: Trail;
@@ -7,15 +9,18 @@ interface Props {
 
 const { trail } = Astro.props;
 const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
+const visual = resolveTrailVisual(trail.slug);
 ---
 
 <article class:list={["trail-card", { "trail-card--available": trail.available }]}>
-  <div class="trail-card__top">
-    <span>{trail.number}</span>
-    <span>{trail.available ? trail.level : "Em breve"}</span>
+  <div class="trail-card__media">
+    <VisualMedia src={visual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${trail.title}`} label={trail.title} loading="lazy" />
+    <div class="trail-card__top">
+      <span>{trail.number}</span>
+      <span>{trail.available ? trail.level : "Em breve"}</span>
+    </div>
+    <span class="trail-card__icon" aria-hidden="true">{trail.icon}</span>
   </div>
-
-  <span class="trail-card__icon" aria-hidden="true">{trail.icon}</span>
   <h2>{trail.title}</h2>
   <p>{trail.description}</p>
 
