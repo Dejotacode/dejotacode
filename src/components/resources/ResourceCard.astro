@@ -6,7 +6,13 @@ const { resource } = Astro.props;
 const categoryImage = `/assets/resources/category-${resource.category}.svg`;
 ---
 <article class="resource-card-v2">
-  <VisualMedia src={resource.image ?? categoryImage} alt={resource.imageAlt ?? `Ilustração da categoria ${resource.category} para ${resource.name}`} label={resource.name} />
+  <VisualMedia
+    src={resource.image ?? categoryImage}
+    fallbackSrc={categoryImage}
+    alt={resource.imageAlt ?? `Ilustração da categoria ${resource.category} para ${resource.name}`}
+    label={resource.name}
+    loading="eager"
+  />
   <div class="resource-card-v2__body">
     <div class="resource-card-v2__meta">
       {resource.editorialLabel && <span>{resource.editorialLabel}</span>}

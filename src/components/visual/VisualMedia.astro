@@ -5,12 +5,22 @@ interface Props {
   label?: string;
   aspect?: "wide" | "card" | "square";
   loading?: "eager" | "lazy";
+  fallbackSrc?: string;
 }
-const { src, alt = "", label = "DejotaCode", aspect = "wide", loading = "lazy" } = Astro.props;
+const { src, alt = "", label = "DejotaCode", aspect = "wide", loading = "lazy", fallbackSrc } = Astro.props;
+const dimensions = aspect === "square" ? { width: 900, height: 900 } : aspect === "card" ? { width: 1200, height: 900 } : { width: 1600, height: 900 };
 ---
 <div class:list={["visual-media", `visual-media--${aspect}`, { "visual-media--fallback": !src }]}>
   {src ? (
-    <img src={src} alt={alt} loading={loading} decoding="async" />
+    <img
+      src={src}
+      alt={alt}
+      width={dimensions.width}
+      height={dimensions.height}
+      loading={loading}
+      decoding="async"
+      onerror={fallbackSrc ? `this.onerror=null;this.src=\'${fallbackSrc}\'` : undefined}
+    />
   ) : (
     <div class="visual-media__fallback" aria-hidden="true">
       <img src="/assets/brand/dejotacode-symbol-dark.svg" alt="" width="72" height="72" />
