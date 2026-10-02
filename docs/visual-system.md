@@ -79,3 +79,15 @@ Elementos principais:
 - seção de recomendações mantém os sete produtos iniciais com Store Card Premium v1;
 - faixa de confiança explica parceiro, compra externa, preço variável e curadoria;
 - não exibir avaliações, selos de loja oficial, garantia, entrega ou preço fixo sem fonte atual e verificável.
+
+## DejotaStore — navegação e hero v3
+
+A navegação por categorias da Store é persistente entre home e páginas de categoria.
+
+Regras:
+- a home exibe todas as categorias como cards clicáveis em grid, sem barra horizontal;
+- páginas de categoria exibem a mesma navegação, destacando a categoria atual;
+- o visitante pode trocar de categoria sem voltar para `/store/`;
+- o hero visual da home deve preencher integralmente o painel direito, sem aparência de placeholder dentro de outro container;
+- chips de confiança podem sobrepor a imagem, mas sem criar um bloco visual pesado no mobile;
+- a navegação de categorias deve permanecer legível em desktop e reorganizar em 2/1 colunas no mobile.
