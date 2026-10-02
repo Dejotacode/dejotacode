@@ -40,34 +40,36 @@ const categories = [
             A Store organiza soluções que complementam o conteúdo do DejotaCode. Ela não substitui os tutoriais.
           </aside>
         </div>
-        <div class="store-hero__visual" aria-hidden="true">
-          <div class="store-flow">
-            <div><small>01 · Conteúdo</small><strong>Aprenda no DejotaCode</strong><span>Tutoriais e guias explicam o problema primeiro.</span></div>
-            <i>↓</i>
-            <div><small>02 · Contexto</small><strong>Entenda o que faz sentido</strong><span>A necessidade aparece dentro do conteúdo.</span></div>
-            <i>↓</i>
-            <div><small>03 · Recomendação</small><strong>Compare antes de decidir</strong><span>A Store organiza opções e parceiros.</span></div>
+        <div class="store-hero__visual" aria-label="Seleção visual de produtos da DejotaStore">
+          <div class="store-hero__collage">
+            <img src="/assets/store/fifine-am8-usb-xlr.webp" alt="Microfone Fifine AM8 em ambiente de criação" width="720" height="405" loading="eager" decoding="async" />
+            <img src="/assets/store/sandisk-portable-ssd-1tb.webp" alt="SSD portátil SanDisk em mesa de trabalho" width="720" height="405" loading="eager" decoding="async" />
+            <img src="/assets/store/ugreen-hub-usb-c-6-em-1.webp" alt="Hub USB-C UGREEN em setup de tecnologia" width="720" height="405" loading="eager" decoding="async" />
+          </div>
+          <div class="store-hero__trust">
+            <span>Curadoria editorial</span><span>Links verificados</span><span>Compra no parceiro</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="store-section">
+    <section class="store-section store-section--compact">
       <div class="store-container">
-        <div class="store-heading">
+        <div class="store-heading store-heading--inline">
           <div>
             <p class="store-eyebrow">Navegue por contexto</p>
             <h2>Encontre o que você precisa</h2>
           </div>
+          <span class="store-heading__count">{allProducts.length} itens editoriais</span>
         </div>
-        <div class="store-categories">
+        <nav class="store-category-pills" aria-label="Categorias da DejotaStore">
           {categories.map((category) => (
-            <a class="store-category" href={`/store/${category.slug}/`}>
+            <a href={`/store/${category.slug}/`}>
               <strong>{category.label}</strong>
               <span>{category.description}</span>
             </a>
           ))}
-        </div>
+        </nav>
       </div>
     </section>
 
@@ -81,12 +83,13 @@ const categories = [
 
     <section id="recomendacoes" class="store-section">
       <div class="store-container">
-        <div class="store-heading">
+        <div class="store-heading store-heading--inline">
           <div>
             <p class="store-eyebrow">Catálogo inicial</p>
             <h2>Recomendações em destaque</h2>
             <p>{products.length} produtos formam o catálogo inicial. Todos têm oferta afiliada registrada e ficha editorial própria; preço e disponibilidade são conferidos no parceiro.</p>
           </div>
+          <a class="store-heading__link" href="/store/setup-do-dejota/">Ver setup do Dejota →</a>
         </div>
         <div class="store-products">
           {products.map((product, productIndex) => (
@@ -103,6 +106,16 @@ const categories = [
             />
           ))}
         </div>
+      </div>
+    </section>
+
+
+    <section class="store-section store-section--trust-strip">
+      <div class="store-container store-trust-strip" aria-label="Princípios de confiança da DejotaStore">
+        <article><span>↗</span><div><strong>Links dos parceiros</strong><p>Shopee, Mercado Livre e outros parceiros verificados.</p></div></article>
+        <article><span>✓</span><div><strong>Compra fora da Store</strong><p>Pagamento, entrega e garantia ficam com a loja parceira.</p></div></article>
+        <article><span>◇</span><div><strong>Preço não congelado</strong><p>Valores e disponibilidade são conferidos antes da compra.</p></div></article>
+        <article><span>★</span><div><strong>Curadoria editorial</strong><p>A recomendação precisa ter contexto, não apenas comissão.</p></div></article>
       </div>
     </section>
 
@@ -153,27 +166,37 @@ const categories = [
   .store-principle { margin-top: 1.3rem; padding: .9rem 1rem; border-left: 2px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: linear-gradient(90deg, var(--color-glow), transparent); color: var(--color-text-muted); font-size: .9rem; }
   .store-principle strong { color: var(--color-text); }
   .store-hero__visual { min-height: 24rem; display: grid; place-items: center; padding: clamp(1rem, 3vw, 2rem); background: radial-gradient(circle at 50% 35%, var(--color-glow), transparent 38%), var(--color-surface-soft); }
-  .store-flow { width: min(100%, 25rem); display: grid; gap: .55rem; }
-  .store-flow div { display: grid; gap: .22rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-surface) 92%, transparent); }
-  .store-flow small { color: var(--color-accent-strong); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-  .store-flow strong { font-size: .95rem; }
-  .store-flow span { color: var(--color-text-muted); font-size: .8rem; }
-  .store-flow i { color: var(--color-accent-strong); text-align: center; font-style: normal; }
+  .store-hero__visual { overflow: hidden; align-content: center; }
+  .store-hero__collage { width: 100%; display: grid; grid-template-columns: 1.3fr .9fr; grid-template-rows: 1fr 1fr; gap: .55rem; }
+  .store-hero__collage img { width: 100%; height: 100%; min-height: 9rem; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+  .store-hero__collage img:first-child { grid-row: 1 / 3; }
+  .store-hero__trust { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .75rem; }
+  .store-hero__trust span { padding: .35rem .55rem; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-surface); color: var(--color-text-muted); font-size: .7rem; font-weight: 800; }
   .store-section { padding: 2rem 0; }
+  .store-section--compact { padding-top: .75rem; }
+  .store-heading--inline { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+  .store-heading__count { flex: none; color: var(--color-text-subtle); font: 700 .75rem/1.2 var(--font-code); }
+  .store-heading__link { flex: none; color: var(--color-accent-strong); font-size: .85rem; font-weight: 850; text-decoration: none; }
   .store-section--soft { border-block: 1px solid var(--color-border); background: var(--color-surface-soft); }
   .store-heading { margin-bottom: 1rem; }
   .store-heading h2, .store-panel h2 { margin: .35rem 0; font-size: clamp(1.5rem, 3vw, 2rem); }
   .store-heading p:not(.store-eyebrow), .store-panel p { max-width: 60ch; margin: .35rem 0 0; color: var(--color-text-muted); }
-  .store-categories { display: grid; grid-template-columns: repeat(5, 1fr); gap: .75rem; }
-  .store-category { min-height: 8rem; display: grid; align-content: end; gap: .35rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); text-decoration: none; }
-  .store-category:hover { border-color: var(--color-accent-strong); }
-  .store-category span { color: var(--color-text-muted); font-size: .82rem; }
+  .store-category-pills { display: flex; gap: .6rem; overflow-x: auto; padding-bottom: .35rem; scrollbar-width: thin; }
+  .store-category-pills a { flex: 0 0 min(17rem, 78vw); display: grid; gap: .3rem; padding: .85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); text-decoration: none; }
+  .store-category-pills a:hover { border-color: var(--color-accent-strong); transform: translateY(-1px); }
+  .store-category-pills strong { color: var(--color-accent-strong); font-size: .9rem; }
+  .store-category-pills span { color: var(--color-text-muted); font-size: .78rem; }
   .store-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
   .store-principles article { padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
   .store-principles span { color: var(--color-accent-strong); font-size: .75rem; font-weight: 800; }
   .store-principles strong { display: block; margin: .35rem 0; }
   .store-principles p { margin: 0; color: var(--color-text-muted); font-size: .88rem; }
   .store-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+  .store-trust-strip { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .6rem; }
+  .store-trust-strip article { display: flex; gap: .75rem; align-items: flex-start; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+  .store-trust-strip article>span { display: grid; place-items: center; flex: 0 0 2rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--color-glow); color: var(--color-accent-strong); font-weight: 900; }
+  .store-trust-strip strong { font-size: .86rem; }
+  .store-trust-strip p { margin: .2rem 0 0; color: var(--color-text-muted); font-size: .76rem; }
   .store-two-column { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
   .store-panel { padding: 1.2rem; }
   .store-panel a { display: inline-block; margin-top: 1rem; color: var(--color-accent-strong); font-weight: 800; text-decoration: none; }
@@ -182,11 +205,13 @@ const categories = [
   @media (max-width: 60rem) {
     .store-hero__grid { grid-template-columns: 1fr; }
     .store-hero__visual { min-height: 14rem; }
-    .store-categories { grid-template-columns: repeat(3, 1fr); }
     .store-products { grid-template-columns: repeat(2, 1fr); }
+    .store-trust-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
   }
   @media (max-width: 42rem) {
-    .store-categories { grid-template-columns: 1fr 1fr; }
-    .store-principles, .store-products, .store-two-column { grid-template-columns: 1fr; }
+    .store-heading--inline { align-items: start; flex-direction: column; }
+    .store-principles, .store-products, .store-two-column, .store-trust-strip { grid-template-columns: 1fr; }
+    .store-hero__collage { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+    .store-hero__collage img:first-child { grid-column: 1 / 3; grid-row: auto; }
   }
 </style>
