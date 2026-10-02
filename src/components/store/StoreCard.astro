@@ -1,5 +1,6 @@
 ---
 import StoreBadge from "./StoreBadge.astro";
+import VisualMedia from "../visual/VisualMedia.astro";
 
 interface Props {
   id: string;
@@ -18,15 +19,13 @@ const categoryLabels: Record<string, string> = {
   criadores: "Criadores",
   "ferramentas-digitais": "Ferramentas digitais",
 };
+const productVisual = `/assets/store/${id}.svg`;
 ---
 <article class="store-card">
-  <div class="store-card__visual" aria-hidden="true">
-    <span class="store-card__category">{categoryLabels[category] ?? category}</span>
-    <strong>{brand ?? "DejotaStore"}</strong>
-    <small>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta verificada" : "ofertas verificadas"}` : "Ficha editorial sem oferta ativa"}</small>
-  </div>
+  <VisualMedia src={productVisual} alt={`Ilustração editorial de ${title}`} label={title} />
   <div class="store-card__body">
     <StoreBadge status={status} />
+    <div class="store-card__context"><span>{categoryLabels[category] ?? category}</span><span>·</span><span>{brand ?? "DejotaStore"}</span><span>·</span><span>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta" : "ofertas"}` : "sem oferta ativa"}</span></div>
     <h3>{title}</h3>
     <p>{description}</p>
     <a
@@ -40,49 +39,13 @@ const categoryLabels: Record<string, string> = {
 </article>
 
 <style>
-  .store-card {
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface);
-    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
-  }
-  .store-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-accent-strong);
-    box-shadow: var(--shadow-card);
-  }
-  .store-card__visual {
-    min-height: 10rem;
-    display: grid;
-    place-content: center;
-    gap: .35rem;
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 1px solid var(--color-border);
-    background:
-      radial-gradient(circle at 50% 35%, var(--color-glow), transparent 44%),
-      var(--color-surface-soft);
-  }
-  .store-card__category {
-    color: var(--color-accent-strong);
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-  }
-  .store-card__visual strong { font-size: .9rem; }
-  .store-card__visual small { color: var(--color-text-subtle); font-size: .76rem; }
+  .store-card { min-width: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast); }
+  .store-card:hover { transform: translateY(-2px); border-color: var(--color-accent-strong); box-shadow: var(--shadow-card); }
+  .store-card > .visual-media { border: 0; border-bottom: 1px solid var(--color-border); border-radius: 0; }
   .store-card__body { display: grid; gap: .7rem; padding: 1rem; }
+  .store-card__context { display: flex; flex-wrap: wrap; gap: .4rem; color: var(--color-text-subtle); font: 700 .7rem/1.2 var(--font-code); }
   .store-card h3 { margin: 0; font-size: 1.03rem; }
   .store-card p { margin: 0; color: var(--color-text-muted); font-size: .9rem; }
-  .store-card a {
-    width: fit-content;
-    color: var(--color-accent-strong);
-    font-size: .88rem;
-    font-weight: 800;
-    text-decoration: none;
-  }
+  .store-card a { width: fit-content; color: var(--color-accent-strong); font-size: .88rem; font-weight: 800; text-decoration: none; }
   .store-card a:hover { color: var(--color-accent-hover); }
 </style>

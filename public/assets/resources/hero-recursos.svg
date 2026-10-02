@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Ilustração de recursos DejotaCode</title><desc id="desc">Ambiente visual de tecnologia com painel, cartões e símbolo do DejotaCode.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#0a203b"/></linearGradient><radialGradient id="glow"><stop stop-color="#12bfe5" stop-opacity=".38"/><stop offset="1" stop-color="#12bfe5" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="675" rx="36" fill="url(#bg)"/><circle cx="930" cy="170" r="300" fill="url(#glow)"/>
+<g fill="#0d1c31" stroke="#264666" stroke-width="3"><rect x="150" y="115" width="900" height="445" rx="28"/><rect x="205" y="180" width="355" height="255" rx="20"/><rect x="600" y="180" width="395" height="75" rx="18"/><rect x="600" y="280" width="185" height="155" rx="18"/><rect x="810" y="280" width="185" height="155" rx="18"/></g>
+<g fill="none" stroke="#58b7ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="m304 257-54 54 54 54M450 257l54 54-54 54M414 227l-74 168"/><path d="M653 218h160M653 326h80M653 365h55M863 326h80M863 365h55"/></g>
+<g fill="#12c5df"><circle cx="644" cy="218" r="8"/><circle cx="644" cy="326" r="8"/><circle cx="854" cy="326" r="8"/></g>
+<path d="M545 492h110" stroke="#58b7ff" stroke-width="8" stroke-linecap="round"/>
+<path d="M570 470h60l12 22h-84z" fill="#122a46" stroke="#264666" stroke-width="3"/>
+</svg>
