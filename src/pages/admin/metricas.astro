@@ -30,6 +30,12 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         <div class="funnel-cards" data-funnel></div>
       </section>
 
+      <section class="metrics-section" aria-labelledby="store-funnel-title">
+        <h2 id="store-funnel-title">DejotaStore</h2>
+        <p class="metrics-section__note">Funil agregado dos últimos 30 dias. Mostra navegação na Store e cliques de afiliado, sem identificação de visitantes.</p>
+        <div class="funnel-cards funnel-cards--embedded" data-store-funnel></div>
+      </section>
+
       <section class="metrics-section" aria-labelledby="linux-do-zero-funnel-title">
         <h2 id="linux-do-zero-funnel-title">Linux do Zero</h2>
         <p class="metrics-section__note">Funil agregado dos últimos 30 dias. Os valores representam eventos e cliques, não visitantes únicos.</p>
@@ -100,6 +106,13 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       trail_start: "Trilhas iniciadas",
       trail_lesson_click: "Etapas acessadas",
       trail_complete: "Trilhas concluídas",
+      store_view: "Visitas à Store",
+      store_category_view: "Visitas a categorias",
+      store_product_view: "Visualizações de produtos",
+      store_guide_view: "Guias da Store",
+      store_related_article_click: "Store → artigos",
+      store_setup_click: "Cliques no setup",
+      affiliate_click: "Cliques de afiliado",
     };
 
     const numberFormat = new Intl.NumberFormat("pt-BR");
@@ -137,11 +150,12 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     const renderSummary = (data: SummaryData) => {
       const totals = document.querySelector<HTMLElement>("[data-totals]");
       const funnel = document.querySelector<HTMLElement>("[data-funnel]");
+      const storeFunnel = document.querySelector<HTMLElement>("[data-store-funnel]");
       const linuxDoZeroFunnel = document.querySelector<HTMLElement>("[data-linux-do-zero-funnel]");
       const pages = document.querySelector<HTMLElement>("[data-pages]");
       const campaigns = document.querySelector<HTMLElement>("[data-campaigns]");
 
-      if (!totals || !funnel || !linuxDoZeroFunnel || !pages || !campaigns) return;
+      if (!totals || !funnel || !storeFunnel || !linuxDoZeroFunnel || !pages || !campaigns) return;
 
       totals.replaceChildren();
       data.totals.forEach((item) => {
@@ -165,6 +179,24 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
       funnel.replaceChildren();
       funnelItems.forEach(([label, value]) => funnel.append(createMetricCard(label, value)));
+
+      const storeViews = totalFor(data, "store_view");
+      const storeCategoryViews = totalFor(data, "store_category_view");
+      const storeProductViews = totalFor(data, "store_product_view");
+      const affiliateClicks = totalFor(data, "affiliate_click");
+      const storeRelatedClicks = totalFor(data, "store_related_article_click");
+
+      const storeItems: Array<[string, string]> = [
+        ["Visitas à Store", numberFormat.format(storeViews)],
+        ["Visualizações de produtos", numberFormat.format(storeProductViews)],
+        ["Cliques de afiliado", numberFormat.format(affiliateClicks)],
+        ["CTR produto → afiliado", percentFormat.format(ratio(affiliateClicks, storeProductViews))],
+        ["Categorias acessadas", numberFormat.format(storeCategoryViews)],
+        ["Store → artigos", numberFormat.format(storeRelatedClicks)],
+      ];
+
+      storeFunnel.replaceChildren();
+      storeItems.forEach(([label, value]) => storeFunnel.append(createMetricCard(label, value)));
 
       const productFunnel = data.productFunnel?.linuxDoZero;
       const linuxDoZeroItems: Array<[string, number]> = [
