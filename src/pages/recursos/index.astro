@@ -67,14 +67,14 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
     </section>
 
     <section class="container resource-groups" aria-label="Recursos recomendados">
-      {activeGroups.map((group) => (
+      {activeGroups.map((group, groupIndex) => (
         <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
           <header class="resource-section-heading">
             <div><p class="eyebrow">SELEÇÃO EDITORIAL</p><h2 id={`group-${group.id}`}>{group.label}</h2></div>
             <p>{group.description}</p>
           </header>
           <div class="resource-grid-v2">
-            {recommendedResources.filter((resource) => resource.category === group.id).map((resource) => <ResourceCard resource={resource} />)}
+            {recommendedResources.filter((resource) => resource.category === group.id).map((resource, resourceIndex) => <ResourceCard resource={resource} loading={groupIndex === 0 && resourceIndex < 3 ? "eager" : "lazy"} />)}
           </div>
         </section>
       ))}

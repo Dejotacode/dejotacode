@@ -89,7 +89,7 @@ const categories = [
           </div>
         </div>
         <div class="store-products">
-          {products.map((product) => (
+          {products.map((product, productIndex) => (
             <StoreCard
               id={product.id}
               title={product.data.title}
@@ -98,6 +98,7 @@ const categories = [
               category={product.data.category}
               brand={product.data.brand}
               offerCount={product.data.offers.filter((offer) => offer.active).length}
+              loading={productIndex < 3 ? "eager" : "lazy"}
             />
           ))}
         </div>

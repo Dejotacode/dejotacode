@@ -10,8 +10,9 @@ interface Props {
   category: string;
   brand?: string;
   offerCount?: number;
+  loading?: "eager" | "lazy";
 }
-const { id, title, description, status, category, brand, offerCount = 0 } = Astro.props;
+const { id, title, description, status, category, brand, offerCount = 0, loading = "lazy" } = Astro.props;
 const categoryLabels: Record<string, string> = {
   linux: "Linux",
   setup: "Setup",
@@ -51,7 +52,7 @@ const productFallback = productSpecificVisuals[id] ?? categoryFallback;
     fallbackSrc={productFallback}
     alt={`Imagem editorial de ${title}`}
     label={title}
-    loading="eager"
+    loading={loading}
   />
   <div class="store-card__body">
     <StoreBadge status={status} />
