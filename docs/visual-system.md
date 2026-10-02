@@ -25,3 +25,13 @@ Centralizar o uso de imagens e mídia para evitar páginas visualmente vazias e 
 
 ## Fluxo para novas imagens
 `@dev` define necessidade → `@studio` gera/entrega asset → asset entra em `public/assets/<area>/` → componente recebe `src` e `alt` → build e revisão visual.
+
+## Contrato visual oficial — v1.1
+1. Prioridade de fonte: imagem real/autorizada do conteúdo ou produto → arte editorial específica → fallback específico → fallback da categoria.
+2. Produto físico: imagem real/autorizada tem prioridade. Mockup fotorealista é arte editorial e não deve afirmar detalhes físicos não verificados.
+3. Raster padrão para cards: WebP 720×405 (16:9), otimizado e validado por decodificação antes de entrar no repositório.
+4. Todo raster novo deve passar por `ffmpeg -v error -i <arquivo> -f null -`; HTTP 200 sozinho não valida a imagem.
+5. Carregamento: `eager` apenas na primeira linha imediatamente visível; demais cards usam `lazy`.
+6. Todo card deve ter fallback válido e dimensões intrínsecas para evitar layout shift e área vazia.
+7. Antes de escalar um lote visual: build, check, QA, revisão desktop, revisão mobile e teste de navegação/scroll real.
+8. Recursos e Store compartilham linguagem visual, mas não significado: Recursos é editorial/utilitário; Store é comercial/editorial.

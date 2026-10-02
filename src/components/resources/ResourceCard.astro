@@ -1,8 +1,8 @@
 ---
 import VisualMedia from "../visual/VisualMedia.astro";
 import type { RecommendedResource } from "../../data/recommendedResources";
-interface Props { resource: RecommendedResource; }
-const { resource } = Astro.props;
+interface Props { resource: RecommendedResource; loading?: "eager" | "lazy"; }
+const { resource, loading = "lazy" } = Astro.props;
 const categoryImage = `/assets/resources/category-${resource.category}.svg`;
 ---
 <article class="resource-card-v2">
@@ -11,7 +11,7 @@ const categoryImage = `/assets/resources/category-${resource.category}.svg`;
     fallbackSrc={categoryImage}
     alt={resource.imageAlt ?? `Ilustração da categoria ${resource.category} para ${resource.name}`}
     label={resource.name}
-    loading="eager"
+    loading={loading}
   />
   <div class="resource-card-v2__body">
     <div class="resource-card-v2__meta">

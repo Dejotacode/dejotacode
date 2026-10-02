@@ -30,7 +30,7 @@ const guides = await getCollection("storeGuides", ({ data }) => !data.draft && d
           <div><p class="eyebrow">Curadoria</p><h2>Produtos e ferramentas</h2></div>
         </div>
         <div class="products">
-          {products.length > 0 ? products.map((product) => (
+          {products.length > 0 ? products.map((product, productIndex) => (
             <StoreCard
               id={product.id}
               title={product.data.title}
@@ -39,6 +39,7 @@ const guides = await getCollection("storeGuides", ({ data }) => !data.draft && d
               category={product.data.category}
               brand={product.data.brand}
               offerCount={product.data.offers.filter((offer) => offer.active).length}
+              loading={productIndex < 3 ? "eager" : "lazy"}
             />
           )) : <p class="empty">Ainda não há recomendações publicadas nesta categoria.</p>}
         </div>
