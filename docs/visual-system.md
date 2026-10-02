@@ -35,3 +35,20 @@ Centralizar o uso de imagens e mídia para evitar páginas visualmente vazias e 
 6. Todo card deve ter fallback válido e dimensões intrínsecas para evitar layout shift e área vazia.
 7. Antes de escalar um lote visual: build, check, QA, revisão desktop, revisão mobile e teste de navegação/scroll real.
 8. Recursos e Store compartilham linguagem visual, mas não significado: Recursos é editorial/utilitário; Store é comercial/editorial.
+
+## DejotaStore — Store Card Premium v1
+
+O card comercial da DejotaStore usa a referência visual premium aprovada em 02/10/2026 sem transformar a Store em marketplace.
+
+Estrutura do card:
+- imagem 16:9 como elemento visual principal;
+- categoria sobre a imagem para leitura rápida de contexto;
+- status editorial e marca separados do conteúdo comercial;
+- título e descrição curta com hierarquia forte;
+- bloco comercial com preço tratado como dado volátil: enquanto não houver fonte automatizada e verificada, exibir `Consultar no parceiro`;
+- quantidade de ofertas ativas visível;
+- CTA primário `Ver produto` aponta para a ficha interna da DejotaStore;
+- CTA secundário `Ver artigo` aparece quando houver conteúdo editorial relacionado;
+- a ficha interna continua responsável por disclosure, contexto, limitações e links externos de afiliado.
+
+A imagem pode elevar a percepção de qualidade, mas não deve substituir informação verificável. Em produto físico, imagem oficial/autorizada continua tendo prioridade sobre mockup editorial quando disponível.

@@ -98,6 +98,7 @@ const categories = [
               category={product.data.category}
               brand={product.data.brand}
               offerCount={product.data.offers.filter((offer) => offer.active).length}
+              relatedPost={product.data.relatedPosts?.[0]}
               loading={productIndex < 3 ? "eager" : "lazy"}
             />
           ))}
