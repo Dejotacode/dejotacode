@@ -19,16 +19,10 @@ const categoryLabels: Record<string, string> = {
   criadores: "Criadores",
   "ferramentas-digitais": "Ferramentas digitais",
 };
-const categoryVisuals: Record<string, string> = {
-  linux: "/assets/resources/category-aprendizado.svg",
-  setup: "/assets/resources/category-infraestrutura.svg",
-  programacao: "/assets/resources/category-desenvolvimento.svg",
-  criadores: "/assets/resources/category-digitais.svg",
-  "ferramentas-digitais": "/assets/resources/category-digitais.svg",
-};
+const productVisual = `/assets/store/${id}.svg`;
 ---
 <article class="store-card">
-  <VisualMedia src={categoryVisuals[category]} alt={`Ilustração da categoria ${categoryLabels[category] ?? category} na DejotaStore`} label={categoryLabels[category] ?? category} />
+  <VisualMedia src={productVisual} alt={`Ilustração editorial de ${title}`} label={title} />
   <div class="store-card__body">
     <StoreBadge status={status} />
     <div class="store-card__context"><span>{categoryLabels[category] ?? category}</span><span>·</span><span>{brand ?? "DejotaStore"}</span><span>·</span><span>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta" : "ofertas"}` : "sem oferta ativa"}</span></div>
