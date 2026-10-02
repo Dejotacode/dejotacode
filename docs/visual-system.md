@@ -66,3 +66,16 @@ Estrutura do card:
 - CTAs mantêm prioridade editorial: conteúdo, Store ou fonte oficial conforme contexto;
 - critérios, custo e limitações permanecem recolhíveis no próprio card;
 - nenhum elemento visual deve esconder a relação comercial nem transformar Recursos em vitrine de vendas.
+
+## DejotaStore — Store Home Premium v2
+
+A home da DejotaStore evolui a referência premium aprovada sem alterar o modelo editorial nem criar dados comerciais não verificados.
+
+Elementos principais:
+- hero com collage de produtos reais já presentes no catálogo;
+- chips de confiança: curadoria editorial, links verificados e compra no parceiro;
+- navegação horizontal por categorias, preparada para crescer sem alongar a página;
+- contagem de itens editoriais como informação de catálogo, não como prova social;
+- seção de recomendações mantém os sete produtos iniciais com Store Card Premium v1;
+- faixa de confiança explica parceiro, compra externa, preço variável e curadoria;
+- não exibir avaliações, selos de loja oficial, garantia, entrega ou preço fixo sem fonte atual e verificável.
