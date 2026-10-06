@@ -3,13 +3,13 @@
 .portfolio-page .statement{margin-top:clamp(4.5rem,8vw,7.5rem)}.portfolio-page .portfolio-section--dense{margin-top:clamp(5rem,9vw,8rem)}.portfolio-closing__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}@media(max-width:580px){.portfolio-page .statement{margin-top:4rem}.portfolio-page .portfolio-section--dense{margin-top:4.5rem}.portfolio-closing__actions{margin-top:1.5rem}.portfolio-closing__actions .button{width:100%}}
 
 /* Premium alignment v1 */
-.institutional-hero--media{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(22rem,.95fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.institutional-hero--media{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(22rem,.95fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-block:clamp(3rem,5.5vw,5.25rem)}
 .institutional-hero--media h1{max-width:13ch}
 .institutional-hero__copy>p:last-of-type{max-width:44rem;color:var(--color-text-muted);font-size:clamp(1.05rem,2vw,1.25rem)}
 .institutional-hero__chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.25rem}
 .institutional-hero__chips span{padding:.4rem .65rem;border:1px solid var(--color-border);border-radius:999px;background:var(--color-surface);color:var(--color-text-muted);font-size:.72rem;font-weight:800;box-shadow:0 .25rem .8rem rgb(0 0 0 / .05)}
-.institutional-hero__media{min-height:22rem;overflow:hidden;padding:.45rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface-soft);box-shadow:var(--shadow-card)}
-.institutional-hero__media img{width:100%;height:100%;min-height:21rem;object-fit:cover;border-radius:calc(var(--radius-lg) - .45rem)}
+.institutional-hero__media{min-height:20rem;overflow:hidden;padding:.45rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface-soft);box-shadow:var(--shadow-card)}
+.institutional-hero__media img{width:100%;height:100%;min-height:19rem;object-fit:cover;border-radius:calc(var(--radius-lg) - .45rem)}
 .institutional-hero__media--split{display:grid;grid-template-columns:1.15fr .85fr;gap:.45rem}
 .institutional-hero__media--split img{min-width:0}
 .institutional-card{position:relative;overflow:hidden;transition:transform var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast)}
