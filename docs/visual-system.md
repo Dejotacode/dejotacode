@@ -182,3 +182,15 @@ Regras:
 - CTAs continuam presos ao rodapé e “Critérios e limitações” preserva transparência;
 - no mobile, hero e mídia são mais compactos e cards deixam de usar altura mínima fixa;
 - o material próprio Linux do Zero recebe tratamento editorial distinto das recomendações de terceiros.
+
+## DejotaStore Premium v3
+
+Refinamento aplicado para reduzir densidade comercial e alinhar a Store ao acabamento de Recursos.
+
+Regras:
+- cards de produto usam descrição curta (até duas linhas) e CTA preso ao rodapé;
+- bloco comercial fica reduzido a `Consultar no parceiro` + quantidade de ofertas;
+- hover segue o padrão global de elevação discreta de 2px e respeita `prefers-reduced-motion`;
+- faixas de confiança não usam glifos improvisados como ícones; usam rótulos editoriais curtos;
+- hero mobile deve permitir chegar às categorias rapidamente, evitando collage excessivamente alta;
+- preço e disponibilidade continuam tratados como dados voláteis consultados no parceiro.
