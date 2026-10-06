@@ -236,6 +236,26 @@ Estrutura recomendada:
 - corpo do conteúdo com largura confortável;
 - navegação auxiliar/sumário/progresso quando necessário.
 
+
+### Família D — Conversão / Utilidade
+Exemplos: Newsletter, Contato e fluxos utilitários semelhantes.
+
+Estrutura recomendada:
+- H1 direto e orientado à tarefa;
+- descrição curta;
+- formulário ou ação principal como elemento dominante;
+- superfícies simples, sem mídia obrigatória;
+- sinais de confiança, privacidade e expectativa claros;
+- feedback de sucesso/erro visível e acessível;
+- decoração reduzida para não competir com a tarefa.
+
+Regras específicas:
+- não usar numeração decorativa quando não houver sequência real;
+- números só devem aparecer quando representarem etapas, prioridade, ordem ou oferta claramente sequencial;
+- links externos podem usar o indicador `↗` quando isso comunicar saída do site;
+- formulários não devem receber imagens ou cards adicionais apenas para parecerem premium;
+- premium nesta família significa clareza, confiança, foco e acabamento dos estados de interação.
+
 ### Regras compartilhadas entre as famílias
 - H1 com largura controlada, evitando linhas excessivamente longas;
 - lead com largura máxima aproximada de 44–48rem;
