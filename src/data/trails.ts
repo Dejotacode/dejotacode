@@ -1,3 +1,5 @@
+import type { OfficialIconId } from "./categoryIcons";
+
 export interface TrailLesson {
   order: number;
   slug: string;
@@ -14,7 +16,7 @@ export interface Trail {
   description: string;
   outcome: string;
   level: "Iniciante" | "Intermediário";
-  icon: string;
+  iconId: OfficialIconId;
   available: boolean;
   lessons: TrailLesson[];
 }
@@ -29,7 +31,7 @@ export const trails: Trail[] = [
     outcome:
       "Ao concluir, você entenderá como o Linux funciona, navegará pelo terminal, reconhecerá permissões e saberá combinar comandos e redirecionar resultados com mais segurança.",
     level: "Iniciante",
-    icon: "$_",
+    iconId: "terminal",
     available: true,
     lessons: [
       {
@@ -84,7 +86,7 @@ export const trails: Trail[] = [
     description: "Entenda como a web funciona, construa uma página com HTML e CSS, pratique JavaScript e registre a evolução com Git e GitHub.",
     outcome: "Ao concluir, você terá uma página própria, fundamentos de JavaScript e um fluxo básico de versionamento para continuar praticando com mais autonomia.",
     level: "Iniciante",
-    icon: "</>",
+    iconId: "code",
     available: true,
     lessons: [
       {
@@ -131,7 +133,7 @@ export const trails: Trail[] = [
     description: "Entenda IA generativa, faça pedidos mais claros e verifique respostas antes de usá-las em decisões ou projetos.",
     outcome: "Ao concluir, você saberá estruturar prompts, reconhecer limitações e aplicar um processo simples de verificação antes de confiar em uma resposta.",
     level: "Iniciante",
-    icon: "IA",
+    iconId: "ai-nodes",
     available: true,
     lessons: [
       {
@@ -164,7 +166,7 @@ export const trails: Trail[] = [
     description: "Crie uma base prática de segurança com senhas únicas, autenticação em dois fatores, backups e verificação de mensagens suspeitas.",
     outcome: "Ao concluir, você terá uma rotina mais segura para proteger contas, recuperar acessos e reconhecer tentativas comuns de phishing.",
     level: "Iniciante",
-    icon: "[]",
+    iconId: "shield-check",
     available: true,
     lessons: [
       {
@@ -199,7 +201,7 @@ export const trails: Trail[] = [
     outcome:
       "Ao concluir, você terá um caminho prático para escolher um serviço, apresentar seu trabalho, montar uma oferta, precificar um primeiro projeto e buscar oportunidades sem depender de promessas de dinheiro fácil.",
     level: "Iniciante",
-    icon: "↗",
+    iconId: "wallet",
     available: true,
     lessons: [
       {

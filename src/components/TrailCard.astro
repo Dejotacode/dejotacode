@@ -1,6 +1,7 @@
 ---
 import type { Trail } from "../data/trails";
 import VisualMedia from "./visual/VisualMedia.astro";
+import CategoryIcon from "./CategoryIcon.astro";
 import { resolveTrailVisual } from "../data/editorialVisuals";
 
 interface Props {
@@ -15,7 +16,7 @@ const visual = resolveTrailVisual(trail.slug);
 <article class:list={["trail-card", { "trail-card--available": trail.available }]}>
   <div class="trail-card__media">
     <VisualMedia src={visual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${trail.title}`} label={trail.title} loading="lazy" />
-    <span class="trail-card__icon" aria-hidden="true">{trail.icon}</span>
+    <span class="trail-card__icon"><CategoryIcon icon={trail.iconId} size={24} /></span>
   </div>
   <h2>{trail.title}</h2>
   <p>{trail.description}</p>

@@ -1,8 +1,12 @@
 ---
+import CategoryIcon from "../CategoryIcon.astro";
+import type { OfficialIconId } from "../../data/categoryIcons";
+
 interface Category {
   slug: "linux" | "setup" | "programacao" | "criadores" | "ferramentas-digitais";
   label: string;
   description: string;
+  iconId: OfficialIconId;
 }
 
 interface Props {
@@ -12,22 +16,22 @@ interface Props {
 
 const { activeSlug, compact = false } = Astro.props;
 const categories: Category[] = [
-  { slug: "linux", label: "Linux", description: "Pendrives, SSDs e acessórios para aprender e testar com segurança." },
-  { slug: "setup", label: "Setup", description: "Equipamentos para estudar e trabalhar com mais conforto." },
-  { slug: "programacao", label: "Programação", description: "Ferramentas e periféricos para desenvolvimento." },
-  { slug: "criadores", label: "Criadores", description: "Áudio, vídeo e iluminação para produção de conteúdo." },
-  { slug: "ferramentas-digitais", label: "Ferramentas digitais", description: "Hospedagem, IA, VPN, cursos e serviços." },
+  { slug: "linux", label: "Linux", description: "Pendrives, SSDs e acessórios para aprender e testar com segurança.", iconId: "terminal" },
+  { slug: "setup", label: "Setup", description: "Equipamentos para estudar e trabalhar com mais conforto.", iconId: "monitor" },
+  { slug: "programacao", label: "Programação", description: "Ferramentas e periféricos para desenvolvimento.", iconId: "code" },
+  { slug: "criadores", label: "Criadores", description: "Áudio, vídeo e iluminação para produção de conteúdo.", iconId: "microphone" },
+  { slug: "ferramentas-digitais", label: "Ferramentas digitais", description: "Hospedagem, IA, VPN, cursos e serviços.", iconId: "apps" },
 ];
 ---
 
 <nav class:list={["store-category-nav", { "store-category-nav--compact": compact }]} aria-label="Categorias da DejotaStore">
-  {categories.map((category, categoryIndex) => (
+  {categories.map((category) => (
     <a
       href={`/store/${category.slug}/`}
       class:list={["store-category-card", { "is-active": activeSlug === category.slug }]}
       aria-current={activeSlug === category.slug ? "page" : undefined}
     >
-      <span class="store-category-card__index">{String(categoryIndex + 1).padStart(2, "0")}</span>
+      <span class="store-category-card__icon"><CategoryIcon icon={category.iconId} size={22} /></span>
       <strong>{category.label}</strong>
       {!compact && <span>{category.description}</span>}
       <small>{activeSlug === category.slug ? "Categoria atual" : "Explorar categoria →"}</small>
@@ -40,12 +44,12 @@ const categories: Category[] = [
   .store-category-card{min-width:0;display:grid;align-content:start;gap:.45rem;min-height:10rem;padding:1rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface);text-decoration:none;transition:transform var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast)}
   .store-category-card:hover{transform:translateY(-2px);border-color:var(--color-accent-strong);box-shadow:var(--shadow-card)}
   .store-category-card.is-active{border-color:var(--color-accent-strong);background:linear-gradient(180deg,var(--color-glow),var(--color-surface));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--color-accent-strong) 32%,transparent)}
-  .store-category-card__index{color:var(--color-accent-strong);font:800 .7rem/1 var(--font-code)}
+  .store-category-card__icon{display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--color-border);border-radius:var(--radius-md);color:var(--color-accent-strong);background:var(--color-surface-soft)}
   .store-category-card strong{color:var(--color-text);font-size:1rem}
-  .store-category-card>span:not(.store-category-card__index){color:var(--color-text-muted);font-size:.8rem;line-height:1.4}
+  .store-category-card>span:not(.store-category-card__icon){color:var(--color-text-muted);font-size:.8rem;line-height:1.4}
   .store-category-card small{margin-top:auto;color:var(--color-accent-strong);font-size:.75rem;font-weight:800}
   .store-category-nav--compact .store-category-card{min-height:7rem}
   @media(max-width:60rem){.store-category-nav{grid-template-columns:repeat(3,minmax(0,1fr))}}
   @media(max-width:42rem){.store-category-nav{grid-template-columns:1fr 1fr}.store-category-card,.store-category-nav--compact .store-category-card{min-height:auto}}
-  @media(max-width:30rem){.store-category-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}.store-category-nav:not(.store-category-nav--compact) .store-category-card{min-height:7rem;padding:.8rem}.store-category-nav:not(.store-category-nav--compact) .store-category-card>span:not(.store-category-card__index){display:none}.store-category-nav:not(.store-category-nav--compact) .store-category-card:last-child{grid-column:1 / -1}.store-category-nav--compact .store-category-card{padding:.75rem}}@media(max-width:22rem){.store-category-nav{grid-template-columns:1fr}.store-category-nav:not(.store-category-nav--compact) .store-category-card:last-child{grid-column:auto}}
+  @media(max-width:30rem){.store-category-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}.store-category-nav:not(.store-category-nav--compact) .store-category-card{min-height:7rem;padding:.8rem}.store-category-nav:not(.store-category-nav--compact) .store-category-card>span:not(.store-category-card__icon){display:none}.store-category-nav:not(.store-category-nav--compact) .store-category-card:last-child{grid-column:1 / -1}.store-category-nav--compact .store-category-card{padding:.75rem}}@media(max-width:22rem){.store-category-nav{grid-template-columns:1fr}.store-category-nav:not(.store-category-nav--compact) .store-category-card:last-child{grid-column:auto}}
 </style>
