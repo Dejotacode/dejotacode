@@ -109,7 +109,6 @@
   border-top: 3px solid var(--color-accent);
 }
 
-.trail-card__top,
 .trail-card__meta {
   display:flex;
   justify-content: space-between;
@@ -121,7 +120,6 @@
   letter-spacing: 0.08em;
 }
 
-.trail-card__top { position:absolute;left:1rem;right:1rem;top:1rem;z-index:2;padding:.45rem .6rem;border:1px solid color-mix(in srgb,var(--color-border) 78%,transparent);border-radius:999px;background:color-mix(in srgb,var(--color-surface) 88%,transparent);backdrop-filter:blur(10px); }
 .trail-card__icon { position:absolute;left:1rem;bottom:1rem;width:3.25rem;height:3.25rem;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--color-border) 78%,transparent);border-radius:var(--radius-md);background:color-mix(in srgb,var(--color-surface) 90%,transparent);backdrop-filter:blur(10px);color:var(--color-accent-strong);font-family:var(--font-code);font-weight:850; }
 
 .trail-card h2 {
