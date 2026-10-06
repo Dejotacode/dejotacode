@@ -156,3 +156,15 @@ Inclui:
 - previews do e-book Linux do Zero passam a WebP lossless, preservando pixels e reduzindo transferência.
 
 Regra: mídia específica só deve substituir o fallback quando existir relação editorial clara entre imagem e conteúdo. Não usar imagem de marca ou produto apenas para criar variedade visual.
+
+## Premium Cohesion v3 — coerência entre Home e institucionais
+
+Passe de coesão focado em remover resquícios da linguagem abstrata antiga e aproximar o ritmo das páginas secundárias da experiência premium atual.
+
+Inclui:
+- Guia do iniciante na Home passa a usar mídia editorial real em vez de composição abstrata;
+- preview de Portfólio na Home passa a usar mídia contextual de infraestrutura Cloudflare;
+- heros institucionais com mídia recebem menor altura e menor padding vertical para reduzir espaço morto;
+- páginas utilitárias e legais permanecem inalteradas.
+
+Regra: quando já existir mídia editorial contextual aprovada, ela deve substituir padrões abstratos legados. Elementos abstratos continuam válidos apenas quando tiverem função clara de marca, não como preenchimento visual.
