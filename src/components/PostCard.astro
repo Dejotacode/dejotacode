@@ -22,7 +22,6 @@ const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
 <article class:list={["post-card", { "post-card--featured": featured }]}>
   <div class="post-card__visual">
     <VisualMedia src={visual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial de ${categories[category]}`} label={post.data.title} loading={featured ? "eager" : "lazy"} />
-    <span class="post-card__visual-label">{categories[category]}</span>
   </div>
 
   <div class="post-card__body">
@@ -40,7 +39,6 @@ const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
         {formatPostDate(post.data.publishedAt)}
       </time>
       <span>{post.data.readingTime} min de leitura</span>
-      <span>{post.data.difficulty}</span>
     </div>
   </div>
 </article>
