@@ -256,6 +256,24 @@ Regras específicas:
 - formulários não devem receber imagens ou cards adicionais apenas para parecerem premium;
 - premium nesta família significa clareza, confiança, foco e acabamento dos estados de interação.
 
+
+### Família E — Marca / Institucional
+Exemplos: Sobre, Portfólio e Parcerias.
+
+Estrutura recomendada:
+- hero de marca com H1 forte e mídia contextual quando existir;
+- mensagem institucional clara antes de detalhes operacionais;
+- cards usados para princípios, formatos, provas ou aprendizados;
+- CTAs secundários e contextualizados;
+- maior liberdade visual que páginas utilitárias, sem competir com a Home.
+
+Regras específicas:
+- numeração só deve aparecer quando houver narrativa ou sequência real;
+- princípios, valores e formatos independentes usam rótulos semânticos em vez de `01/02/03`;
+- Portfólio pode usar etapas numeradas quando representar a progressão do case;
+- páginas legais permanecem sóbrias e não entram nesta família apenas por serem institucionais;
+- mídia deve demonstrar contexto real do projeto, não decorar a página.
+
 ### Regras compartilhadas entre as famílias
 - H1 com largura controlada, evitando linhas excessivamente longas;
 - lead com largura máxima aproximada de 44–48rem;
