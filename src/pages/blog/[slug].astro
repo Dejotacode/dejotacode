@@ -192,9 +192,9 @@ const articleSchema = {
           <p class="eyebrow">{categoryLabel} · {post.data.type}</p>
           <h1>{post.data.title}</h1>
           <p class="article-hero__description">{post.data.description}</p>
+          <p class="article-byline">Por <a href="/sobre/">Dejota</a></p>
 
           <div class="article-meta">
-            <span>Por Dejota</span>
             <time datetime={post.data.publishedAt.toISOString()}>
               {formatPostDate(post.data.publishedAt)}
             </time>
@@ -204,8 +204,7 @@ const articleSchema = {
         </div>
 
         <div class="article-cover">
-          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da categoria ${categoryLabel}`} label={post.data.title} loading="eager" />
-          <div class="article-cover__overlay"><span>{post.data.type === "tutorial" ? "Tutorial" : "Artigo"}</span><strong>{categoryLabel}</strong></div>
+          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} loading="eager" />
         </div>
       </header>
 
