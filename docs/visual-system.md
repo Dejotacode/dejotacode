@@ -194,3 +194,70 @@ Regras:
 - faixas de confiança não usam glifos improvisados como ícones; usam rótulos editoriais curtos;
 - hero mobile deve permitir chegar às categorias rapidamente, evitando collage excessivamente alta;
 - preço e disponibilidade continuam tratados como dados voláteis consultados no parceiro.
+
+## Famílias de página — padrão oficial v1
+
+O DejotaCode deve evoluir por famílias de página, compartilhando a mesma linguagem visual sem forçar todos os layouts a serem iguais.
+
+### Família A — Descoberta
+Exemplos: Home, Trilhas, Recursos, DejotaStore.
+
+Estrutura recomendada:
+- eyebrow curto;
+- H1 com largura controlada;
+- descrição objetiva;
+- mídia contextual forte quando fizer sentido;
+- navegação visual por categoria/assunto;
+- cards com mídia, título, descrição curta, metadados discretos e CTA alinhado ao rodapé;
+- maior liberdade de composição e contraste.
+
+### Família B — Editorial
+Exemplos: Blog e páginas de categoria.
+
+Estrutura recomendada:
+- eyebrow ou ícone oficial + eyebrow;
+- H1 editorial;
+- lead curto;
+- navegação/filtros discretos;
+- cards de conteúdo como elemento principal;
+- menos mídia hero que páginas de descoberta;
+- foco em curadoria e escaneabilidade.
+
+### Família C — Conteúdo
+Exemplos: artigo, trilha interna e ficha interna de produto.
+
+Estrutura recomendada:
+- breadcrumbs;
+- contexto/eyebrow;
+- H1;
+- descrição;
+- autoria/metadados essenciais;
+- mídia contextual;
+- corpo do conteúdo com largura confortável;
+- navegação auxiliar/sumário/progresso quando necessário.
+
+### Regras compartilhadas entre as famílias
+- H1 com largura controlada, evitando linhas excessivamente longas;
+- lead com largura máxima aproximada de 44–48rem;
+- eyebrow sempre com o mesmo sistema tipográfico;
+- ícone oficial quando houver categoria real;
+- cards com borda, radius e sombra da mesma família visual;
+- hover de 2px em superfícies clicáveis;
+- `prefers-reduced-motion` respeitado;
+- imagem de card com proporção consistente;
+- descrição curta e metadados de menor contraste;
+- CTA alinhado ao rodapé quando houver ação;
+- não adicionar decoração apenas para preencher espaço.
+
+### Critério de escolha
+Antes de criar uma nova página, definir primeiro a sua família.
+
+Exemplos futuros:
+- Windows / Android / iOS como hubs de assunto → Família B ou A, conforme tiverem curadoria simples ou múltiplas rotas/recursos;
+- novo artigo/tutorial → Família C;
+- nova trilha → Família C internamente e A na listagem;
+- nova categoria do Blog → Família B;
+- nova área comercial da Store → Família A;
+- ficha de produto/serviço → Família C.
+
+A regra central é: compartilhar linguagem, não copiar layout literalmente.
