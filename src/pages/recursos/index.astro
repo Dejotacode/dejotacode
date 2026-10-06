@@ -2,17 +2,19 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ResourceCard from "../../components/resources/ResourceCard.astro";
 import VisualMedia from "../../components/visual/VisualMedia.astro";
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import type { OfficialIconId } from "../../data/categoryIcons";
 import { recommendedResources } from "../../data/recommendedResources";
 import "../../styles/institutional.css";
 import "../../styles/resources.css";
 
 const groups = [
-  { id: "desenvolvimento", label: "Desenvolvimento", description: "Ferramentas para escrever, testar e versionar projetos." },
-  { id: "digitais", label: "Ferramentas digitais", description: "Serviços usados para criação, publicação, automação e operação de conteúdo." },
-  { id: "infraestrutura", label: "Infraestrutura", description: "Serviços e equipamentos usados para publicar, manter e operar projetos web." },
-  { id: "aprendizado", label: "Aprendizado", description: "Referências, cursos e materiais para continuar estudando com contexto." },
-  { id: "seguranca", label: "Segurança", description: "Ferramentas e referências para proteção de contas, dados e navegação." },
-  { id: "renda-digital", label: "Renda digital", description: "Plataformas e experiências acompanhadas com foco em evidência, regras e transparência." },
+  { id: "desenvolvimento", label: "Desenvolvimento", description: "Ferramentas para escrever, testar e versionar projetos.", iconId: "code" satisfies OfficialIconId },
+  { id: "digitais", label: "Ferramentas digitais", description: "Serviços usados para criação, publicação, automação e operação de conteúdo.", iconId: "apps" satisfies OfficialIconId },
+  { id: "infraestrutura", label: "Infraestrutura", description: "Serviços e equipamentos usados para publicar, manter e operar projetos web.", iconId: "cloud-server" satisfies OfficialIconId },
+  { id: "aprendizado", label: "Aprendizado", description: "Referências, cursos e materiais para continuar estudando com contexto.", iconId: "checklist" satisfies OfficialIconId },
+  { id: "seguranca", label: "Segurança", description: "Ferramentas e referências para proteção de contas, dados e navegação.", iconId: "shield-check" satisfies OfficialIconId },
+  { id: "renda-digital", label: "Renda digital", description: "Plataformas e experiências acompanhadas com foco em evidência, regras e transparência.", iconId: "wallet" satisfies OfficialIconId },
 ] as const;
 const activeGroups = groups.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
 const hasCommercialRelationships = recommendedResources.some((resource) => resource.relationship === "affiliate");
@@ -34,7 +36,7 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
     </section>
 
     <nav id="categorias" class="resource-category-nav container" aria-label="Categorias de recursos">
-      {activeGroups.map((group) => <a href={`#${group.id}`}>{group.label}</a>)}
+      {activeGroups.map((group) => <a href={`#${group.id}`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.label}</span></a>)}
     </nav>
 
     <section class="container resource-trust-grid" aria-labelledby="transparencia-title">

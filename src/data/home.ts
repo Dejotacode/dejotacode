@@ -1,8 +1,10 @@
+import type { OfficialIconId } from "./categoryIcons";
+
 export const topics = [
-  { symbol: "</>", title: "Programação", description: "Desenvolvimento sem complicação", href: "/categoria/programacao/" },
-  { symbol: "⌁", title: "Linux & Segurança", description: "Sistemas, privacidade e proteção", href: "/categoria/linux-seguranca/" },
-  { symbol: "IA", title: "Inteligência Artificial", description: "Uso prático e responsável", href: "/categoria/inteligencia-artificial/" },
-  { symbol: "▥", title: "Tecnologia prática", description: "Soluções para o dia a dia", href: "/categoria/tecnologia-pratica/" },
+  { iconId: "code" satisfies OfficialIconId, title: "Programação", description: "Desenvolvimento sem complicação", href: "/categoria/programacao/" },
+  { iconId: "terminal" satisfies OfficialIconId, title: "Linux & Segurança", description: "Sistemas, privacidade e proteção", href: "/categoria/linux-seguranca/" },
+  { iconId: "ai-nodes" satisfies OfficialIconId, title: "Inteligência Artificial", description: "Uso prático e responsável", href: "/categoria/inteligencia-artificial/" },
+  { iconId: "grid" satisfies OfficialIconId, title: "Tecnologia prática", description: "Soluções para o dia a dia", href: "/categoria/tecnologia-pratica/" },
 ] as const;
 
 export const homeTrailSlugs = [

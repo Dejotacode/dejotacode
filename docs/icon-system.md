@@ -113,3 +113,16 @@ Para criar uma nova categoria:
 **Status: OFICIAL — v1**
 
 Este documento é a referência canônica do sistema de ícones do DejotaCode.
+
+## Adoção no projeto — v1
+
+O sistema oficial já está aplicado em:
+
+- atalhos de assuntos da Home;
+- cards de trilhas da Home;
+- cards da página `/trilhas/`;
+- hero/mídia das trilhas internas;
+- navegação de categorias da DejotaStore;
+- navegação de categorias da página Recursos.
+
+Os símbolos textuais anteriores (`$_`, `</>`, `IA`, `[]`, setas ou glifos usados como ícone) não devem voltar como linguagem de categoria. Texto técnico pode continuar aparecendo dentro de conteúdo quando fizer parte da explicação, mas não como substituto do ícone oficial.
