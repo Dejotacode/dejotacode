@@ -168,3 +168,17 @@ Inclui:
 - páginas utilitárias e legais permanecem inalteradas.
 
 Regra: quando já existir mídia editorial contextual aprovada, ela deve substituir padrões abstratos legados. Elementos abstratos continuam válidos apenas quando tiverem função clara de marca, não como preenchimento visual.
+
+## Recursos Premium v2 — densidade e hierarquia
+
+Refinamento da página `/recursos/` para reduzir sensação de catálogo denso e reforçar curadoria editorial.
+
+Regras:
+- navegação de categorias usa grid responsivo em vez de faixa horizontal longa;
+- títulos de grupo exibem o ícone oficial da categoria;
+- cards mostram apenas um metadado principal no topo;
+- descrição visível fica limitada a duas linhas;
+- “Indicado para” funciona como linha auxiliar, não como bloco interno dominante;
+- CTAs continuam presos ao rodapé e “Critérios e limitações” preserva transparência;
+- no mobile, hero e mídia são mais compactos e cards deixam de usar altura mínima fixa;
+- o material próprio Linux do Zero recebe tratamento editorial distinto das recomendações de terceiros.

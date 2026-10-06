@@ -59,10 +59,11 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
       <article class="resource-featured-card">
         <div class="resource-featured-card__cover"><img src="/assets/products/linux-do-zero/cover.png" alt="Capa do e-book Linux do Zero" width="1159" height="1638" loading="lazy" decoding="async" /></div>
         <div class="resource-featured-card__copy">
-          <div class="resource-card-v2__meta"><span>Produto próprio</span><span>88 páginas</span></div>
+          <p class="resource-featured-card__eyebrow">Material DejotaCode</p>
           <h3>Linux do Zero</h3>
           <p>E-book para iniciantes com instalação segura, primeiros passos, terminal, permissões e solução de problemas.</p>
-          <p><strong>Indicado para:</strong> quem quer começar no Linux sem depender de conhecimento técnico prévio.</p>
+          <div class="resource-featured-card__facts"><span>88 páginas</span><span>Para iniciantes</span><span>Conteúdo próprio</span></div>
+          <p class="resource-featured-card__fit"><strong>Ideal para:</strong> quem quer começar no Linux sem depender de conhecimento técnico prévio.</p>
           <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="resource-linux-ebook-own">Conhecer o e-book</a>
         </div>
       </article>
@@ -71,8 +72,11 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
     <section class="container resource-groups" aria-label="Recursos recomendados">
       {activeGroups.map((group, groupIndex) => (
         <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
-          <header class="resource-section-heading">
-            <div><p class="eyebrow">SELEÇÃO EDITORIAL</p><h2 id={`group-${group.id}`}>{group.label}</h2></div>
+          <header class="resource-section-heading resource-section-heading--category">
+            <div>
+              <p class="eyebrow">SELEÇÃO EDITORIAL</p>
+              <div class="resource-section-title"><CategoryIcon icon={group.iconId} size={24} /><h2 id={`group-${group.id}`}>{group.label}</h2></div>
+            </div>
             <p>{group.description}</p>
           </header>
           <div class="resource-grid-v2">

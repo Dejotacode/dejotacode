@@ -4,6 +4,7 @@ import type { RecommendedResource } from "../../data/recommendedResources";
 interface Props { resource: RecommendedResource; loading?: "eager" | "lazy"; }
 const { resource, loading = "lazy" } = Astro.props;
 const categoryImage = `/assets/resources/category-${resource.category}.svg`;
+const primaryMeta = resource.editorialLabel ?? (resource.storePath ? "DejotaStore" : resource.relationship === "affiliate" ? "Afiliado" : "Recurso");
 const categoryLabels: Record<RecommendedResource["category"], string> = {
   desenvolvimento: "Desenvolvimento",
   digitais: "Ferramentas digitais",
@@ -25,13 +26,10 @@ const categoryLabels: Record<RecommendedResource["category"], string> = {
     <span class="resource-card-v2__category">{categoryLabels[resource.category]}</span>
   </div>
   <div class="resource-card-v2__body">
-    <div class="resource-card-v2__meta">
-      {resource.editorialLabel && <span>{resource.editorialLabel}</span>}
-      <span>{resource.storePath ? "DejotaStore" : resource.relationship === "affiliate" ? "Afiliado" : "Recurso"}</span>
-    </div>
+    <div class="resource-card-v2__meta"><span>{primaryMeta}</span></div>
     <h3>{resource.name}</h3>
     <p class="resource-card-v2__description">{resource.description}</p>
-    <div class="resource-card-v2__fit"><span>Indicado para</span><strong>{resource.bestFor}</strong></div>
+    <p class="resource-card-v2__fit"><span>Indicado para</span><strong>{resource.bestFor}</strong></p>
     <div class="resource-card-v2__actions" aria-label={`Caminhos para ${resource.name}`}>
       {resource.articlePath && <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>Ver conteúdo</a>}
       {resource.storePath && <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>}
