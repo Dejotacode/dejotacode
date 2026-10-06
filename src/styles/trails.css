@@ -381,6 +381,14 @@
   .trail-progress span {
     transition: none;
   }
+
+  .trail-card {
+    transition: none;
+  }
+
+  .trail-card:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 560px) {
