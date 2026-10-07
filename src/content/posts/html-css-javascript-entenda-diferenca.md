@@ -7,7 +7,7 @@ category: programacao
 type: artigo
 readingTime: 9
 difficulty: iniciante
-featured: true
+featured: false
 draft: false
 tags: [html, css, javascript, web]
 storeProducts:

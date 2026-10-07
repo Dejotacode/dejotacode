@@ -147,3 +147,25 @@
 .product-highlight__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 56.25rem) { .product-highlight { grid-template-columns:1fr; } .product-highlight__cover { max-width:18rem; } }
 @media (max-width: 37.5rem) { .product-highlight { padding:1rem; } .product-highlight__cover { max-width:14rem; } .product-highlight__actions { align-items:stretch;flex-direction:column; } .product-highlight__actions .button { width:100%; } }
+
+/* Local alignment experiment — Store reference */
+@media (min-width: 56.3125rem) {
+  .hero {
+    min-height: auto;
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+    background: var(--color-bg);
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(22.5rem, .9fr);
+    gap: 1rem;
+    padding-block: 0;
+  }
+  .hero-visual {
+    min-height: 32rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+  .hero-visual {
+    aspect-ratio: auto;
+  }
+}

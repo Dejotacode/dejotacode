@@ -7,7 +7,7 @@ category: linux-seguranca
 type: tutorial
 readingTime: 10
 difficulty: iniciante
-featured: true
+featured: false
 draft: false
 tags: [segurança, senhas, privacidade]
 storeProducts:

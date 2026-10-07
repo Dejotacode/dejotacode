@@ -13,7 +13,7 @@ import "../../styles/institutional.css";
         <p class="eyebrow">CASE DE PORTFÓLIO</p>
         <h1>De uma ideia editorial a uma plataforma que pode ser explicada.</h1>
         <p>O DejotaCode é o próprio laboratório do projeto: conteúdo para iniciantes, identidade visual, arquitetura estática, conversão, métricas first-party e operação com gates de qualidade antes de cada integração.</p>
-        <div class="institutional-hero__chips"><span>Produto</span><span>Conteúdo</span><span>Engenharia</span></div>
+        <div class="portfolio-case-meta" aria-label="Resumo do case"><span><strong>CASE</strong> 01</span><span><strong>STATUS</strong> Em evolução</span><span><strong>ESCOPO</strong> Produto + Conteúdo + Engenharia</span></div>
       </div>
       <div class="institutional-hero__media institutional-hero__media--split">
         <img src="/assets/resources/items/vscode.webp" alt="Visual Studio Code representando a camada de desenvolvimento do projeto" width="720" height="405" loading="eager" decoding="async" />
@@ -21,7 +21,8 @@ import "../../styles/institutional.css";
       </div>
     </header>
 
-    <section class="institutional-section container">
+    <section class="institutional-section container portfolio-evidence">
+      <div class="portfolio-section-label"><span>00</span><p>VISÃO GERAL DO CASE</p></div>
       <article class="project-case">
         <div>
           <p class="eyebrow">PROJETO EM DESTAQUE</p>
@@ -41,9 +42,10 @@ import "../../styles/institutional.css";
       </article>
     </section>
 
-    <section class="institutional-section container">
+    <section class="institutional-section container portfolio-step">
+      <div class="portfolio-step__rail"><span>01</span><p>PROBLEMA</p></div>
       <div class="institutional-heading">
-        <div><p class="eyebrow">01 — PROBLEMA</p><h2>Começar em tecnologia costuma ter opções demais e sequência de menos.</h2></div>
+        <div><p class="eyebrow">PROBLEMA</p><h2>Começar em tecnologia costuma ter opções demais e sequência de menos.</h2></div>
         <p>O projeto parte de uma pergunta simples: como ajudar uma pessoa iniciante a entender um assunto, praticar e encontrar o próximo passo sem depender de uma pilha infinita de cursos e ferramentas?</p>
       </div>
       <div class="institutional-grid">
@@ -53,17 +55,19 @@ import "../../styles/institutional.css";
       </div>
     </section>
 
-    <section class="statement">
+    <section class="statement portfolio-step portfolio-step--statement">
       <div class="container">
-        <p class="eyebrow">02 — DECISÃO DE PRODUTO</p>
+        <div class="portfolio-step__rail"><span>02</span><p>DECISÃO DE PRODUTO</p></div>
+        <p class="eyebrow">DECISÃO DE PRODUTO</p>
         <h2>Menos dependências no caminho crítico, mais previsibilidade.</h2>
         <p>O frontend é gerado estaticamente com Astro. Formulários e métricas ficam em uma API separada. Essa divisão mantém leitura e navegação simples, enquanto recursos dinâmicos evoluem sem transformar cada página em uma dependência do backend.</p>
       </div>
     </section>
 
-    <section class="institutional-section container">
+    <section class="institutional-section container portfolio-step">
+      <div class="portfolio-step__rail"><span>03</span><p>ARQUITETURA</p></div>
       <div class="institutional-heading">
-        <div><p class="eyebrow">03 — ARQUITETURA</p><h2>Responsabilidades separadas por camada.</h2></div>
+        <div><p class="eyebrow">ARQUITETURA</p><h2>Responsabilidades separadas por camada.</h2></div>
         <p>As decisões técnicas foram escolhidas para serem pequenas o bastante para auditar e claras o bastante para explicar.</p>
       </div>
       <div class="institutional-grid">
@@ -73,9 +77,10 @@ import "../../styles/institutional.css";
       </div>
     </section>
 
-    <section class="institutional-section container portfolio-section--dense">
+    <section class="institutional-section container portfolio-section--dense portfolio-step">
+      <div class="portfolio-step__rail"><span>04</span><p>ENTREGAS</p></div>
       <div class="institutional-heading">
-        <div><p class="eyebrow">04 — O QUE FOI CONSTRUÍDO</p><h2>O projeto virou um sistema editorial conectado.</h2></div>
+        <div><p class="eyebrow">O QUE FOI CONSTRUÍDO</p><h2>O projeto virou um sistema editorial conectado.</h2></div>
         <p>As entregas abaixo são partes concretas do produto, não uma lista de tecnologias usadas.</p>
       </div>
       <div class="institutional-grid">
@@ -88,16 +93,18 @@ import "../../styles/institutional.css";
       </div>
     </section>
 
-    <section class="statement">
+    <section class="statement portfolio-step portfolio-step--statement">
       <div class="container">
-        <p class="eyebrow">05 — PROCESSO</p>
+        <div class="portfolio-step__rail"><span>05</span><p>PROCESSO</p></div>
+        <p class="eyebrow">PROCESSO</p>
         <h2>Auditar, mudar pouco, validar, integrar.</h2>
         <p>As fases recentes adotaram branches pequenas, escopo explícito, revisão de diff e CI antes de fast-forward na main. Deploy, tag e release permanecem separados da integração de código para reduzir o raio de impacto de cada decisão.</p>
       </div>
     </section>
 
-    <section class="institutional-section container">
-      <div class="institutional-heading"><div><p class="eyebrow">06 — APRENDIZADOS</p><h2>O valor do projeto está nas decisões repetíveis.</h2></div></div>
+    <section class="institutional-section container portfolio-step">
+      <div class="portfolio-step__rail"><span>06</span><p>APRENDIZADOS</p></div>
+      <div class="institutional-heading"><div><p class="eyebrow">APRENDIZADOS</p><h2>O valor do projeto está nas decisões repetíveis.</h2></div></div>
       <div class="institutional-grid">
         <article class="institutional-card"><span>CONTEÚDO</span><h3>Conteúdo também é arquitetura</h3><p>Taxonomia, trilhas, links internos e CTAs precisam ser planejados juntos para o visitante não chegar a um beco sem saída.</p></article>
         <article class="institutional-card"><span>MEDIÇÃO</span><h3>Métrica precisa responder pergunta</h3><p>Instrumentar poucos eventos úteis é melhor do que coletar grande volume sem objetivo operacional definido.</p></article>
@@ -111,7 +118,7 @@ import "../../styles/institutional.css";
         <p>Este estudo de caso descreve entregas verificáveis no repositório e no fluxo de desenvolvimento. Não apresenta métricas de audiência, receita ou conversão que ainda não tenham sido medidas e validadas.</p>
       </div>
       <div class="portfolio-closing__actions">
-        <a class="button button-primary" href="/servicos/" data-analytics-cta="portfolio-services">Conhecer os serviços <span aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="/servicos/" data-analytics-cta="portfolio-services">Transformar isso em um projeto <span aria-hidden="true">→</span></a>
         <a class="button button-secondary" href="/sobre/">Conhecer os princípios editoriais</a>
       </div>
     </section>

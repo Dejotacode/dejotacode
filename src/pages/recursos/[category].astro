@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResourceCard from "../../components/resources/ResourceCard.astro";
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import { resourceCategories, getResourceCategory } from "../../data/resourceCategories";
+import { recommendedResources, sortResourcesNewestFirst } from "../../data/recommendedResources";
+import "../../styles/resources.css";
+
+export function getStaticPaths() {
+  return resourceCategories
+    .filter((category) => recommendedResources.some((resource) => resource.category === category.id))
+    .map((category) => ({ params: { category: category.id } }));
+}
+
+const { category } = Astro.params;
+const currentCategory = getResourceCategory(category ?? "");
+if (!currentCategory) throw new Error(`Categoria de recursos inválida: ${category}`);
+const resources = sortResourcesNewestFirst(recommendedResources.filter((resource) => resource.category === currentCategory.id));
+---
+
+<BaseLayout
+  title={`${currentCategory.label}: recursos recomendados | DejotaCode`}
+  description={`${currentCategory.description} Veja recursos selecionados pelo DejotaCode com contexto, limitações e caminhos claros.`}
+>
+  <main id="conteudo" tabindex="-1" class="resources-page resource-category-page">
+    <header class="resource-category-hero container">
+      <a class="resource-category-back" href="/recursos/">← Todos os recursos</a>
+      <div class="resource-category-hero__icon"><CategoryIcon icon={currentCategory.iconId} size={28} /></div>
+      <p class="eyebrow">DIRETÓRIO DE RECURSOS</p>
+      <h1>{currentCategory.label}</h1>
+      <p>{currentCategory.description}</p>
+      <div class="resource-category-hero__meta"><span>{resources.length} {resources.length === 1 ? "recurso" : "recursos"}</span><span>Critérios e limitações visíveis</span></div>
+    </header>
+
+    <nav class="resource-category-switcher container" aria-label="Outras categorias de recursos">
+      {resourceCategories.filter((item) => item.id !== currentCategory.id && recommendedResources.some((resource) => resource.category === item.id)).map((item) => (
+        <a href={`/recursos/${item.id}/`}><CategoryIcon icon={item.iconId} size={16} /><span>{item.label}</span></a>
+      ))}
+    </nav>
+
+    <section class="container resource-category-list" aria-labelledby="resource-category-list-title">
+      <div class="resource-section-heading">
+        <div><p class="eyebrow">SELEÇÃO COMPLETA</p><h2 id="resource-category-list-title">Todos em {currentCategory.label}</h2></div>
+        <p>Os mesmos critérios da página principal, agora sem limite de itens.</p>
+      </div>
+      <div class="resource-grid-v2">
+        {resources.map((resource, index) => <ResourceCard resource={resource} loading={index < 3 ? "eager" : "lazy"} />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

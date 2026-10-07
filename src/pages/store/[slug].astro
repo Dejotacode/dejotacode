@@ -46,6 +46,16 @@ const legacyMerchants = [
 ].filter((entry) => Boolean(entry.href));
 const merchants = structuredOffers.length > 0 ? structuredOffers : legacyMerchants;
 const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = resolveStoreVisual(product.id, product.data.category);
+const compatibilityLabels: Record<string, string> = {
+  linux: "Linux",
+  windows: "Windows",
+  macos: "macOS",
+  android: "Android",
+  ios: "iOS",
+};
+const compatibilityItems = Object.entries(product.data.compatibility ?? {})
+  .filter((entry): entry is [string, string] => Boolean(entry[1]?.trim()))
+  .map(([platform, details]) => ({ label: compatibilityLabels[platform] ?? platform, details }));
 
 ---
 
@@ -53,7 +63,7 @@ const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = reso
   <main id="conteudo" class="store-product-page">
     <div class="store-container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
-        <a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span>{product.data.title}</span>
+        <a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span aria-current="page">{product.data.title}</span>
       </nav>
 
       <section class="product-hero">
@@ -84,6 +94,19 @@ const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = reso
             <div class="recommended">
               <strong>Recomendado para</strong>
               <ul>{product.data.recommendedFor.map((item) => <li>{item}</li>)}</ul>
+            </div>
+          )}
+          {compatibilityItems.length > 0 && (
+            <div class="product-compatibility">
+              <strong>Compatibilidade</strong>
+              <dl class="product-compatibility__list">
+                {compatibilityItems.map((item) => (
+                  <div>
+                    <dt>{item.label}</dt>
+                    <dd>{item.details}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           )}
         </div>
@@ -182,23 +205,30 @@ const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = reso
   .product-summary { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.2rem, 4vw, 2rem); }
   .product-summary h1 { margin: .8rem 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1; letter-spacing: -.045em; }
   .lead { margin:0;color:var(--color-text-muted);font-size:1.02rem; }
-  .product-commercial-summary { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin-top:1.2rem; }
-  .product-commercial-summary>div { display:grid;gap:.2rem;padding:.75rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface-soft); }
+  .product-commercial-summary { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin-top:1.2rem;padding-block:.75rem;border-block:1px solid var(--color-border); }
+  .product-commercial-summary>div { display:grid;gap:.2rem; }
   .product-commercial-summary span { color:var(--color-text-subtle);font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase; }
   .product-commercial-summary strong { font-size:.82rem; }
-  .recommended { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+  .recommended { margin-top: 1.2rem; }
   .recommended ul { margin-bottom: 0; color: var(--color-text-muted); }
-  .product-category-nav { margin-bottom:1rem;padding:1rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface); }
+  .product-compatibility { margin-top:1rem;padding-top:1rem;border-top:1px solid var(--color-border); }
+  .product-compatibility__list { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:.65rem 1rem;margin:.65rem 0 0; }
+  .product-compatibility__list div { display:grid;gap:.15rem; }
+  .product-compatibility__list dt { color:var(--color-text-subtle);font-size:.72rem;font-weight:800; }
+  .product-compatibility__list dd { margin:0;color:var(--color-text-muted);font-size:.9rem; }
+  .product-category-nav { margin-bottom:1rem;padding:1rem 0;border-bottom:1px solid var(--color-border); }
   .product-category-nav__heading { display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:.75rem; }
   .product-category-nav__heading .eyebrow { margin:0; }
   .product-category-nav__heading strong { font-size:.95rem; }
-  .product-grid { display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;margin-bottom:1rem; }
+  .product-grid { display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:1rem;margin-bottom:1rem; }
+  .product-grid > .product-panel { min-width:0; }
   .product-panel { padding: 1.2rem; margin-bottom: 1rem; }
   .product-grid .product-panel { margin-bottom: 0; }
   .eyebrow { margin: 0 0 .5rem; color: var(--color-accent-strong); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
   .product-copy :global(p), .product-panel > p:not(.eyebrow) { color: var(--color-text-muted); }
+  .product-copy :global(a) { overflow-wrap:anywhere; }
   .pros-cons { display: grid; gap: .8rem; }
-  .pros-cons > div { padding: .9rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface-soft); }
+  .pros-cons > div { padding: .8rem 0; border-top: 1px solid var(--color-border); }
   .pros-cons ul { margin-bottom: 0; padding-left: 1.2rem; color: var(--color-text-muted); font-size: .9rem; }
   .offers h2, .methodology h2, .product-panel h2 { margin: .35rem 0 1rem; }
   .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
@@ -216,7 +246,8 @@ const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = reso
   .related-list span, .methodology a { color: var(--color-accent-strong); font-weight: 800; }
   .methodology a { text-decoration: none; }
   @media (max-width: 50rem) {
-    .product-hero, .product-grid { grid-template-columns: 1fr; }
+    .product-hero { grid-template-columns: minmax(0,1fr); }
+    .product-grid { grid-template-columns: minmax(0,1fr); }
     .product-visual,.product-visual > :global(.visual-media) { min-height:15rem; }
     .product-commercial-summary { grid-template-columns:1fr; }
     .product-category-nav__heading { align-items:start;flex-direction:column; }
