@@ -123,7 +123,7 @@ const isCurrent = (href: string) =>
   .moon-icon, .menu-button { display: none; }
   :global([data-theme="light"]) .sun-icon { display: none; }
   :global([data-theme="light"]) .moon-icon { display: block; }
-  .mobile-panel { border-top: 1px solid var(--color-border); padding: 1rem var(--space-page) 1.25rem; background: var(--color-bg); }
+  .mobile-panel { max-height: calc(100dvh - 4.5rem); overflow-y: auto; overscroll-behavior: contain; border-top: 1px solid var(--color-border); padding: 1rem var(--space-page) 1.25rem; background: var(--color-bg); }
   .mobile-panel[hidden] { display: none; }
   .mobile-search label { color: var(--color-text-muted); font-size: .8rem; font-weight: 700; }
   .mobile-search div { display: grid; grid-template-columns: 1fr auto; gap: .5rem; margin-top: .4rem; }
