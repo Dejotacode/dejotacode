@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import StoreCard from "../../../components/store/StoreCard.astro";
+import StoreCategoryNav from "../../../components/store/StoreCategoryNav.astro";
+import Pagination from "../../../components/Pagination.astro";
+
+const PAGE_SIZE = 12;
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 12;
+  const products = (await getCollection("storeProducts", ({ data }) => !data.draft && data.catalogStage !== "avaliacao"))
+    .sort((a, b) => a.data.title.localeCompare(b.data.title, "pt-BR"));
+  const totalPages = Math.max(1, Math.ceil(products.length / PAGE_SIZE));
+  return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
+    const page = index + 2;
+    return { params: { page: String(page) }, props: { page, totalPages } };
+  });
+}
+
+interface Props { page: number; totalPages: number; }
+const { page, totalPages } = Astro.props;
+const products = (await getCollection("storeProducts", ({ data }) => !data.draft && data.catalogStage !== "avaliacao"))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, "pt-BR"));
+const start = (page - 1) * PAGE_SIZE;
+const visibleProducts = products.slice(start, start + PAGE_SIZE);
+---
+
+<BaseLayout
+  title={`DejotaStore — Página ${page} | DejotaCode`}
+  description={`Página ${page} do catálogo editorial da DejotaStore com produtos, ferramentas e serviços selecionados pelo DejotaCode.`}
+>
+  <main id="conteudo" tabindex="-1" class="store-archive-page">
+    <header class="store-archive-hero container">
+      <p class="eyebrow">DEJOTASTORE</p>
+      <h1>Escolha melhor antes de comprar.</h1>
+      <p>Página {page} de {totalPages} da curadoria editorial de produtos, ferramentas e serviços do DejotaCode.</p>
+      <StoreCategoryNav compact />
+    </header>
+
+    <section class="store-archive-section container" aria-labelledby="catalogo-title">
+      <div class="store-archive-heading">
+        <div><p class="eyebrow">CATÁLOGO</p><h2 id="catalogo-title">Mais recomendações</h2></div>
+        <p>Página {page} de {totalPages}</p>
+      </div>
+      <div class="store-archive-products">
+        {visibleProducts.map((product, productIndex) => (
+          <StoreCard
+            id={product.id}
+            title={product.data.title}
+            description={product.data.description}
+            status={product.data.editorialStatus}
+            category={product.data.category}
+            brand={product.data.brand}
+            offerCount={product.data.offers.filter((offer) => offer.active).length}
+            relatedPost={product.data.relatedPosts?.[0]}
+            loading={productIndex < 3 ? "eager" : "lazy"}
+          />
+        ))}
+      </div>
+      <Pagination currentPage={page} totalPages={totalPages} basePath="/store/pagina/" firstPagePath="/store/" />
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .store-archive-page{padding-bottom:clamp(5rem,9vw,8rem)}
+  .store-archive-hero{padding-block:clamp(3.5rem,7vw,6.5rem);text-align:center}
+  .store-archive-hero h1{max-width:12ch;margin:.7rem auto 1rem;font-size:clamp(3rem,6vw,5.5rem);line-height:1;letter-spacing:-.055em}
+  .store-archive-hero>p:not(.eyebrow){max-width:46rem;margin:0 auto 2rem;color:var(--color-text-muted);font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.7}
+  .store-archive-section{padding-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--color-border)}
+  .store-archive-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}
+  .store-archive-heading h2{margin:.4rem 0 0;font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;letter-spacing:-.045em}
+  .store-archive-heading>p{margin:0;color:var(--color-text-subtle)}
+  .store-archive-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media(max-width:60rem){.store-archive-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:42rem){.store-archive-hero{text-align:left}.store-archive-hero h1,.store-archive-hero>p:not(.eyebrow){margin-left:0}.store-archive-heading{align-items:start;flex-direction:column;gap:.5rem}.store-archive-products{grid-template-columns:1fr}}
+</style>

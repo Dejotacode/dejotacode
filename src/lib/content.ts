@@ -33,6 +33,16 @@ export async function getPublishedPosts() {
   );
 }
 
+export function getFeaturedPost(posts: Post[]) {
+  const featuredPosts = posts.filter((post) => post.data.featured);
+
+  if (featuredPosts.length > 1) {
+    throw new Error(`[content] Mais de um artigo marcado como destaque: ${featuredPosts.map((post) => post.id).join(", ")}`);
+  }
+
+  return featuredPosts[0] ?? posts[0];
+}
+
 export function postSlug(post: Post) {
   return post.id.replace(/\.(md|mdx)$/, "").replace(/\/index$/, "");
 }

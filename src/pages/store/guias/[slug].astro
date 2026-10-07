@@ -18,7 +18,7 @@ const products = allProducts.filter((product) => guide.data.productIds.includes(
 <BaseLayout title={guide.data.title} description={guide.data.description}>
   <main id="conteudo">
     <div class="container">
-      <nav class="breadcrumbs"><a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span>Guias</span><span>›</span><span>{guide.data.title}</span></nav>
+      <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span>Guias</span><span>›</span><span aria-current="page">{guide.data.title}</span></nav>
       <section class="guide-hero">
         <p class="eyebrow">Guia de compra</p>
         <h1>{guide.data.title}</h1>

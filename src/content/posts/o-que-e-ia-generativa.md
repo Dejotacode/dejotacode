@@ -7,7 +7,7 @@ category: inteligencia-artificial
 type: artigo
 readingTime: 10
 difficulty: iniciante
-featured: true
+featured: false
 draft: false
 tags: [ia, ia-generativa, llm, responsabilidade]
 ---

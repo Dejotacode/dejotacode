@@ -462,3 +462,12 @@
 .trail-related .button {
   margin-top: 0.75rem;
 }
+
+/* Local alignment experiment — centered trails hero */
+@media (min-width: 56.3125rem) {
+  .trails-page > .trails-hero.container {
+    width: min(calc(100% - (2 * var(--space-page))), 58rem);
+    text-align: center;
+  }
+  .trails-page > .trails-hero.container > p:last-child { margin-inline: auto; }
+}

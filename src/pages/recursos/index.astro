@@ -3,20 +3,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ResourceCard from "../../components/resources/ResourceCard.astro";
 import VisualMedia from "../../components/visual/VisualMedia.astro";
 import CategoryIcon from "../../components/CategoryIcon.astro";
-import type { OfficialIconId } from "../../data/categoryIcons";
-import { recommendedResources } from "../../data/recommendedResources";
+import { resourceCategories } from "../../data/resourceCategories";
+import { recommendedResources, sortResourcesNewestFirst } from "../../data/recommendedResources";
 import "../../styles/institutional.css";
 import "../../styles/resources.css";
 
-const groups = [
-  { id: "desenvolvimento", label: "Desenvolvimento", description: "Ferramentas para escrever, testar e versionar projetos.", iconId: "code" satisfies OfficialIconId },
-  { id: "digitais", label: "Ferramentas digitais", description: "Serviços usados para criação, publicação, automação e operação de conteúdo.", iconId: "apps" satisfies OfficialIconId },
-  { id: "infraestrutura", label: "Infraestrutura", description: "Serviços e equipamentos usados para publicar, manter e operar projetos web.", iconId: "cloud-server" satisfies OfficialIconId },
-  { id: "aprendizado", label: "Aprendizado", description: "Referências, cursos e materiais para continuar estudando com contexto.", iconId: "checklist" satisfies OfficialIconId },
-  { id: "seguranca", label: "Segurança", description: "Ferramentas e referências para proteção de contas, dados e navegação.", iconId: "shield-check" satisfies OfficialIconId },
-  { id: "renda-digital", label: "Renda digital", description: "Plataformas e experiências acompanhadas com foco em evidência, regras e transparência.", iconId: "wallet" satisfies OfficialIconId },
-] as const;
-const activeGroups = groups.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
+const activeGroups = resourceCategories.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
 const hasCommercialRelationships = recommendedResources.some((resource) => resource.relationship === "affiliate");
 ---
 
@@ -35,11 +27,17 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
       <VisualMedia src="/assets/resources/hero-recursos.svg" alt="Ilustração de tecnologia e recursos do DejotaCode" loading="eager" />
     </section>
 
-    <nav id="categorias" class="resource-category-nav container" aria-label="Categorias de recursos">
-      {activeGroups.map((group) => <a href={`#${group.id}`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.label}</span></a>)}
-    </nav>
+    <section id="categorias" class="resource-directory container" aria-labelledby="resource-directory-title">
+      <div class="resource-directory__heading">
+        <div><p class="eyebrow">NAVEGUE POR NECESSIDADE</p><h2 id="resource-directory-title">Encontre o tipo de recurso certo</h2></div>
+        <p>Use as categorias como atalhos para chegar direto ao que você precisa.</p>
+      </div>
+      <nav class="resource-category-nav" aria-label="Categorias de recursos">
+        {activeGroups.map((group) => <a href={`#${group.id}`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.label}</span></a>)}
+      </nav>
+    </section>
 
-    <section class="container resource-trust-grid" aria-labelledby="transparencia-title">
+    <section class="container resource-trust-grid" aria-label="Critérios de transparência">
       <article class="resource-trust-card">
         <span>01</span><strong>Aprenda antes do clique</strong><p>Quando existe conteúdo explicando o contexto, ele aparece antes da recomendação comercial.</p>
       </article>
@@ -70,20 +68,28 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
     </section>
 
     <section class="container resource-groups" aria-label="Recursos recomendados">
-      {activeGroups.map((group, groupIndex) => (
-        <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
-          <header class="resource-section-heading resource-section-heading--category">
-            <div>
-              <p class="eyebrow">SELEÇÃO EDITORIAL</p>
-              <div class="resource-section-title"><CategoryIcon icon={group.iconId} size={24} /><h2 id={`group-${group.id}`}>{group.label}</h2></div>
+      {activeGroups.map((group, groupIndex) => {
+        const groupResources = sortResourcesNewestFirst(recommendedResources.filter((resource) => resource.category === group.id));
+        const visibleResources = groupResources.slice(0, 3);
+        return (
+          <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
+            <header class="resource-section-heading resource-section-heading--category">
+              <div>
+                <p class="eyebrow">SELEÇÃO EDITORIAL</p>
+                <div class="resource-section-title"><CategoryIcon icon={group.iconId} size={24} /><h2 id={`group-${group.id}`}>{group.label}</h2></div>
+              </div>
+              <p>{group.description}</p>
+            </header>
+            <div class="resource-grid-v2">
+              {visibleResources.map((resource, resourceIndex) => <ResourceCard resource={resource} loading={groupIndex === 0 && resourceIndex < 3 ? "eager" : "lazy"} />)}
             </div>
-            <p>{group.description}</p>
-          </header>
-          <div class="resource-grid-v2">
-            {recommendedResources.filter((resource) => resource.category === group.id).map((resource, resourceIndex) => <ResourceCard resource={resource} loading={groupIndex === 0 && resourceIndex < 3 ? "eager" : "lazy"} />)}
-          </div>
-        </section>
-      ))}
+            <div class="resource-group__footer">
+              <span>{groupResources.length} {groupResources.length === 1 ? "recurso" : "recursos"} nesta categoria</span>
+              <a class="resource-group__all" href={`/recursos/${group.id}/`}>Ver todos em {group.label} <span aria-hidden="true">→</span></a>
+            </div>
+          </section>
+        );
+      })}
     </section>
   </main>
 </BaseLayout>

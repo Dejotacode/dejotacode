@@ -8,6 +8,7 @@ import {
   categories,
   categoryHref,
   getPublishedPosts,
+  getFeaturedPost,
   postHref,
 } from "../../lib/content";
 import "../../styles/editorial.css";
@@ -15,7 +16,7 @@ import "../../styles/editorial.css";
 const FIRST_PAGE_COUNT = 7;
 const PAGE_SIZE = 6;
 const posts = await getPublishedPosts();
-const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const featuredPost = getFeaturedPost(posts);
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 const orderedPosts = featuredPost
   ? [featuredPost, ...remainingPosts]
