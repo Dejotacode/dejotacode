@@ -29,9 +29,9 @@ const postSpecificVisuals: Record<string, string> = {
 export const trailVisuals: Record<string, string> = {
   "linux-do-zero": "/assets/resources/items/linux.webp",
   "primeiros-passos-programacao": "/assets/resources/items/vscode.webp",
-  "ia-no-dia-a-dia": "/assets/resources/category-digitais.svg",
-  "seguranca-digital-essencial": "/assets/resources/category-seguranca.svg",
-  "primeira-renda-online": "/assets/resources/category-renda-digital.svg",
+  "ia-no-dia-a-dia": "/assets/trails/ia-no-dia-a-dia.svg",
+  "seguranca-digital-essencial": "/assets/trails/seguranca-digital-essencial.svg",
+  "primeira-renda-online": "/assets/trails/primeira-renda-online.svg",
 };
 
 export function resolvePostVisual(category: string, slug?: string) {

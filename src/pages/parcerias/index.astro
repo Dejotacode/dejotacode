@@ -1,4 +1,22 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";import "../../styles/institutional.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import VisualMedia from "../../components/visual/VisualMedia.astro";
+import "../../styles/institutional.css";
 ---
-<BaseLayout title="Parcerias e anúncios | DejotaCode" description="Conheça as possibilidades de parceria editorial, publicidade e projetos comerciais transparentes com o DejotaCode e sua audiência de tecnologia."><main id="conteudo" tabindex="-1" class="institutional-page"><header class="institutional-hero container"><p class="eyebrow">PARCERIAS E ANÚNCIOS</p><h1>Marcas úteis para uma audiência que quer aprender.</h1><p>Buscamos relações transparentes, relevantes e compatíveis com quem está começando em tecnologia.</p></header><section class="institutional-section container"><div class="institutional-heading"><div><p class="eyebrow">FORMATOS</p><h2>Como podemos colaborar</h2></div></div><div class="institutional-grid"><article class="institutional-card"><span>EDITORIAL</span><h3>Conteúdo patrocinado</h3><p>Materiais identificados como publicidade e produzidos com independência editorial.</p></article><article class="institutional-card"><span>INDICAÇÃO</span><h3>Afiliados</h3><p>Recomendações de recursos que tenham relação direta com o conteúdo.</p></article><article class="institutional-card"><span>ESPECIAL</span><h3>Projetos especiais</h3><p>Guias, séries ou experiências educativas com objetivo e responsabilidade definidos.</p></article></div></section><section class="institutional-section container"><div class="notice"><strong>O que não aceitamos</strong><p>Promessas de enriquecimento rápido, produtos sem transparência, práticas enganosas ou publicidade disfarçada de opinião.</p></div><p><a class="button button-primary" href="/contato/?assunto=parceria">Propor uma parceria</a></p></section></main></BaseLayout>
+<BaseLayout title="Parcerias e anúncios | DejotaCode" description="Conheça as possibilidades de parceria editorial, publicidade e projetos comerciais transparentes com o DejotaCode e sua audiência de tecnologia.">
+  <main id="conteudo" tabindex="-1" class="institutional-page">
+    <header class="institutional-hero institutional-hero--media container">
+      <div class="institutional-hero__copy">
+        <p class="eyebrow">PARCERIAS E ANÚNCIOS</p>
+        <h1>Marcas úteis para uma audiência que quer aprender.</h1>
+        <p>Buscamos relações transparentes, relevantes e compatíveis com quem está começando em tecnologia.</p>
+        <div class="institutional-hero__chips" aria-label="Princípios de parceria"><span>Transparência</span><span>Relevância</span><span>Independência editorial</span></div>
+      </div>
+      <div class="institutional-hero__media">
+        <VisualMedia src="/assets/og/parcerias.png" alt="Composição visual DejotaCode sobre parcerias e colaboração editorial" label="Parcerias DejotaCode" loading="eager" />
+      </div>
+    </header>
+    <section class="institutional-section container"><div class="institutional-heading"><div><p class="eyebrow">FORMATOS</p><h2>Como podemos colaborar</h2></div></div><div class="institutional-grid"><article class="institutional-card"><span>EDITORIAL</span><h3>Conteúdo patrocinado</h3><p>Materiais identificados como publicidade e produzidos com independência editorial.</p></article><article class="institutional-card"><span>INDICAÇÃO</span><h3>Afiliados</h3><p>Recomendações de recursos que tenham relação direta com o conteúdo.</p></article><article class="institutional-card"><span>ESPECIAL</span><h3>Projetos especiais</h3><p>Guias, séries ou experiências educativas com objetivo e responsabilidade definidos.</p></article></div></section>
+    <section class="institutional-section container"><div class="notice"><strong>O que não aceitamos</strong><p>Promessas de enriquecimento rápido, produtos sem transparência, práticas enganosas ou publicidade disfarçada de opinião.</p></div><p><a class="button button-primary" href="/contato/?assunto=parceria">Propor uma parceria</a></p></section>
+  </main>
+</BaseLayout>
