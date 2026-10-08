@@ -8,7 +8,7 @@ const { compact = false } = Astro.props;
 
 <a class:list={["brand", { "brand--compact": compact }]} href="/" aria-label="DejotaCode — página inicial">
   <span class="brand__symbol" aria-hidden="true"></span>
-  {!compact && <span class="brand__name">DejotaCode</span>}
+  {!compact && <span class="brand__name">Dejota<span class="brand__name-accent">Code</span></span>}
 </a>
 
 <style>
@@ -27,6 +27,10 @@ const { compact = false } = Astro.props;
     height: 2.25rem;
     flex: none;
     background: center / contain no-repeat var(--brand-symbol);
+  }
+
+  .brand__name-accent {
+    color: var(--color-accent-strong);
   }
 
   .brand--compact .brand__symbol {
