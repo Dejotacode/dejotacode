@@ -8,6 +8,7 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "gerenciador-de-senhas-para-iniciantes": "/assets/store/nordpass-sem-texto-v1.webp",
   "comandos-linux-para-iniciantes": "/assets/resources/items/linux.webp",
   "como-criar-pendrive-bootavel-linux": "/assets/resources/items/linux.webp",
   "como-escolher-distribuicao-linux": "/assets/resources/items/linux.webp",
