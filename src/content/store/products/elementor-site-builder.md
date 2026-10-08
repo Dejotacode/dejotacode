@@ -16,16 +16,21 @@ cons:
 relatedPosts:
   - "landing-page-para-pequenos-negocios-o-que-entregar"
 featured: false
-draft: true
-updatedAt: 2026-10-01
+draft: false
+updatedAt: 2026-10-08
+offers:
+  - provider: other
+    href: "https://be.elementor.com/visit/?bta=232681&brand=elementor"
+    active: true
+    label: "Conhecer Elementor"
 ---
 
 O **Elementor** está sendo pesquisado pelo DejotaCode como opção para leitores que desejam criar sites e landing pages em WordPress com uma abordagem mais visual.
 
 A ferramenta só deve ser recomendada quando estiver diretamente relacionada ao objetivo do conteúdo. Em materiais sobre HTML e CSS puro, por exemplo, a prioridade continua sendo ensinar a base antes de apresentar alternativas com construtores visuais.
 
-**Status comercial:** a candidatura do DejotaCode ao programa de afiliados do Elementor foi enviada em 1º de outubro de 2026 e está aguardando análise. O e-mail de confirmação informa prazo de até 7 dias úteis.
+## Transparência comercial
 
-Enquanto não houver aprovação, esta página permanece em rascunho e não contém link afiliado, banner, preço ou chamada comercial.
+O DejotaCode foi aprovado no programa de afiliados da Elementor. Ao contratar pelo botão de indicação desta página, o DejotaCode poderá receber uma comissão, sem custo adicional para você.
 
-Se a parceria for aprovada, os links, criativos e condições comerciais serão validados no painel oficial antes da publicação.
+A classificação editorial permanece **Pesquisado**: a aprovação comercial não representa teste ou uso do produto. Confira planos, recursos e condições no site do parceiro antes de contratar.

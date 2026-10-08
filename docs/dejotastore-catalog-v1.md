@@ -226,3 +226,16 @@ Próximo comando recomendado: `@studio criar imagem SanDisk Ultra Flair 32 GB`.
 - Esta aprovação não autoriza publicação; nenhum push ou deploy executado.
 - Próximo passo: `@control sincronizar`; publicação aguarda comando explícito de Dejota.
 - Preview: http://127.0.0.1:4340/store/
+
+
+## Afiliados aprovados — 08/10/2026
+
+Aplicação local autorizada de Elementor, NordVPN e NordPass. Links exclusivos recebidos do usuário; parceria sinalizada na Store, Recursos e artigos relacionados. Selo Pesquisado preservado. NordPass usa ilustração genérica de segurança até aprovação de arte própria. Nenhuma campanha, preço ou desconto de aniversário da Elementor aplicado. Sem deploy nesta etapa.
+
+
+### Arte NordPass aprovada — 08/10/2026
+
+Arte própria sem texto promocional, símbolo oficial DejotaCode no canto superior esquerdo. Aplicada em Store e Recursos como nordpass-sem-texto-v1.webp. Ilustração conceitual de gerenciamento de senhas, sem representar captura real do aplicativo. Apenas aplicação local; sem publicação.
+
+
+Publicação dos três afiliados e da arte NordPass autorizada pelo usuário em 08/10/2026. A promoção datada da Elementor permanece excluída.

@@ -10,6 +10,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [seguranca, mfa, 2fa, contas]
+storeProducts:
+  - "nordpass"
 ---
 
 Uma senha forte é importante, mas não precisa ser a única barreira entre sua conta e um invasor.
