@@ -9,6 +9,10 @@ import "../../styles/institutional.css";
 import "../../styles/resources.css";
 
 const activeGroups = resourceCategories.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
+const editorialGroups = [
+  { id: "criacao-produtividade", label: "Criação e Produtividade", description: "Ferramentas para trabalhar com vídeos, áudio e documentos.", iconId: "apps" as const },
+  { id: "manutencao-recuperacao", label: "Manutenção e Recuperação", description: "Ferramentas para avaliar recuperação de arquivos e cuidar de dados em dispositivos.", iconId: "shield-check" as const },
+];
 const hasCommercialRelationships = recommendedResources.some((resource) => resource.relationship === "affiliate");
 ---
 
@@ -33,6 +37,7 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
         <p>Use as categorias como atalhos para chegar direto ao que você precisa.</p>
       </div>
       <nav class="resource-category-nav" aria-label="Categorias de recursos">
+        {editorialGroups.map((group) => <a href={`#${group.id}`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.label}</span></a>)}
         {activeGroups.map((group) => <a href={`#${group.id}`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.label}</span></a>)}
       </nav>
     </section>
@@ -68,9 +73,20 @@ const hasCommercialRelationships = recommendedResources.some((resource) => resou
     </section>
 
     <section class="container resource-groups" aria-label="Recursos recomendados">
+      {editorialGroups.map((group) => (
+        <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
+          <header class="resource-section-heading resource-section-heading--category">
+            <div><p class="eyebrow">SELEÇÃO EDITORIAL</p><div class="resource-section-title"><CategoryIcon icon={group.iconId} size={24} /><h2 id={`group-${group.id}`}>{group.label}</h2></div></div>
+            <p>{group.description}</p>
+          </header>
+          <div class="resource-grid-v2">
+            {recommendedResources.filter((resource) => resource.editorialGroup === group.id).map((resource) => <ResourceCard resource={resource} />)}
+          </div>
+        </section>
+      ))}
       {activeGroups.map((group, groupIndex) => {
         const groupResources = sortResourcesNewestFirst(recommendedResources.filter((resource) => resource.category === group.id));
-        const visibleResources = groupResources.slice(0, 3);
+        const visibleResources = groupResources.filter((resource) => !resource.editorialGroup).slice(0, 3);
         return (
           <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
             <header class="resource-section-heading resource-section-heading--category">
