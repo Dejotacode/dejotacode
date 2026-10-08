@@ -8,6 +8,7 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "elementor-para-iniciantes": "/assets/posts/elementor-para-iniciantes-v1.webp",
   "vpn-para-iniciantes": "/assets/store/nordvpn-sem-texto-v2.webp",
   "gerenciador-de-senhas-para-iniciantes": "/assets/store/nordpass-sem-texto-v1.webp",
   "comandos-linux-para-iniciantes": "/assets/resources/items/linux.webp",
