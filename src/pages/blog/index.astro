@@ -12,6 +12,7 @@ import {
   postHref,
 } from "../../lib/content";
 import "../../styles/editorial.css";
+import "../../styles/blog.css";
 
 const FIRST_PAGE_COUNT = 7;
 const PAGE_SIZE = 6;
@@ -66,10 +67,10 @@ const blogSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
 
-  <main id="conteudo" tabindex="-1" class="editorial-page">
+  <main id="conteudo" tabindex="-1" class="editorial-page blog-page">
     <header class="editorial-hero container">
       <p class="eyebrow">APRENDA NO SEU RITMO</p>
-      <h1>Conteúdo prático,<br />sem complicação.</h1>
+      <h1>Conteúdo prático, sem complicação.</h1>
       <p class="editorial-hero__lead">
         Tutoriais passo a passo, explicações simples e experiências reais para
         você usar tecnologia com mais confiança.
@@ -93,13 +94,8 @@ const blogSchema = {
     {
       featuredPost && (
         <section class="editorial-section container" aria-labelledby="destaque-title">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">COMECE POR AQUI</p>
-              <h2 id="destaque-title">Conteúdo em destaque</h2>
-            </div>
-          </div>
-          <PostCard post={featuredPost} featured />
+          <h2 id="destaque-title" class="blog-sr-only">Conteúdo em destaque</h2>
+          <PostCard post={featuredPost} featured showReadLink />
         </section>
       )
     }
@@ -119,5 +115,13 @@ const blogSchema = {
 
       <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
     </section>
+
+    <aside class="blog-trails container" aria-labelledby="blog-trails-title">
+      <div>
+        <h2 id="blog-trails-title">Prefere aprender em sequência?</h2>
+        <p>Nossas trilhas organizam os conteúdos por tema, com um próximo passo claro.</p>
+      </div>
+      <a href="/trilhas/">Conheça nossas trilhas <span aria-hidden="true">→</span></a>
+    </aside>
   </main>
 </BaseLayout>

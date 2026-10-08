@@ -12,9 +12,10 @@ import {
 interface Props {
   post: Post;
   featured?: boolean;
+  showReadLink?: boolean;
 }
 
-const { post, featured = false } = Astro.props;
+const { post, featured = false, showReadLink = false } = Astro.props;
 const category = post.data.category;
 const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
 ---
@@ -29,6 +30,7 @@ const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
       <a href={categoryHref(category)}>{categories[category]}</a>
       <span aria-hidden="true">•</span>
       <span>{post.data.type}</span>
+      {showReadLink && <span class="blog-featured-label">Em destaque</span>}
     </div>
 
     <h2><a href={postHref(post)}>{post.data.title}</a></h2>
@@ -40,5 +42,10 @@ const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
       </time>
       <span>{post.data.readingTime} min de leitura</span>
     </div>
+    {showReadLink && (
+      <a class="blog-read-link" href={postHref(post)} aria-label={`Ler conteúdo: ${post.data.title}`}>
+        Ler conteúdo <span aria-hidden="true">→</span>
+      </a>
+    )}
   </div>
 </article>

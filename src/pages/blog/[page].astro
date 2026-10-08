@@ -1,6 +1,8 @@
 ---
 import Pagination from "../../components/Pagination.astro";
 import PostCard from "../../components/PostCard.astro";
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import { getOfficialCategoryIcon } from "../../data/categoryIcons";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import {
   categories,
@@ -10,6 +12,7 @@ import {
   postHref,
 } from "../../lib/content";
 import "../../styles/editorial.css";
+import "../../styles/blog.css";
 
 export async function getStaticPaths() {
   const FIRST_PAGE_COUNT = 7;
@@ -79,19 +82,25 @@ const blogSchema = {
 <BaseLayout title={title} description={description}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
 
-  <main id="conteudo" tabindex="-1" class="editorial-page">
+  <main id="conteudo" tabindex="-1" class="editorial-page blog-page">
     <header class="editorial-hero container">
       <p class="eyebrow">APRENDA NO SEU RITMO</p>
-      <h1>Conteúdo prático,<br />sem complicação.</h1>
+      <h1>Conteúdo prático, sem complicação.</h1>
       <p class="editorial-hero__lead">
         Página {page} de {totalPages} do arquivo de conteúdos do DejotaCode.
       </p>
 
       <nav class="category-list" aria-label="Categorias do blog">
         {
-          Object.entries(categories).map(([slug, label]) => (
-            <a href={categoryHref(slug as keyof typeof categories)}>{label}</a>
-          ))
+          Object.entries(categories).map(([slug, label]) => {
+            const icon = getOfficialCategoryIcon(slug);
+            return (
+              <a href={categoryHref(slug as keyof typeof categories)}>
+                {icon && <CategoryIcon icon={icon.iconId} size={17} />}
+                <span>{label}</span>
+              </a>
+            );
+          })
         }
       </nav>
     </header>
