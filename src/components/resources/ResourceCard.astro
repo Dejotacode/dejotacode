@@ -30,6 +30,7 @@ const categoryLabels: Record<RecommendedResource["category"], string> = {
     <h3>{resource.name}</h3>
     <p class="resource-card-v2__description">{resource.description}</p>
     <p class="resource-card-v2__fit"><span>Indicado para</span><strong>{resource.bestFor}</strong></p>
+    {resource.affiliateProvider === "awin" && <p class="resource-card-v2__description"><small>Link de afiliado: o DejotaCode pode receber comissão por compras elegíveis.</small></p>}
     <div class="resource-card-v2__actions" aria-label={`Caminhos para ${resource.name}`}>
       {resource.articlePath && <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>Ver conteúdo</a>}
       {resource.storePath && <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>}
@@ -43,3 +44,7 @@ const categoryLabels: Record<RecommendedResource["category"], string> = {
     </details>
   </div>
 </article>
+
+<style>
+  .resource-card-v2__media :global(img[src$="-resource-v1.webp"]) { object-position: left top; }
+</style>
