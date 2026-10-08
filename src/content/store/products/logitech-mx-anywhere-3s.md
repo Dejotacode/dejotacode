@@ -19,11 +19,22 @@ relatedPosts:
   - "devtools-navegador-iniciantes"
 featured: true
 draft: false
-updatedAt: 2026-10-01
+updatedAt: 2026-10-07
+brand: "Logitech"
+productKind: fisico
+offers:
+  - provider: shopee
+    href: "https://s.shopee.com.br/8Kq6zmDSfk"
+    active: true
+  - provider: mercadolivre
+    href: "https://meli.la/2kbJ7KA"
+    active: true
 ---
 
 O **Logitech MX Anywhere 3S** é um mouse compacto pesquisado para quem estuda, programa e trabalha em diferentes ambientes.
 
 A Logitech informa sensor de alta precisão, cliques discretos, conexão Bluetooth e compatibilidade com Windows, macOS, ChromeOS e Linux.
 
-Esta recomendação é **pesquisada pelo DejotaCode** e ainda não possui link comercial publicado.
+Esta recomendação é **pesquisada pelo DejotaCode**. Consulte as ofertas na Shopee e no Mercado Livre pelos links abaixo. Preço, disponibilidade e condições de compra são definidos pelo parceiro.
+
+Os links podem gerar comissão para o DejotaCode sem custo adicional para você.
