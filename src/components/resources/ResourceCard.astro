@@ -1,8 +1,10 @@
 ---
+import { getResourceDiscovery } from "../../data/resourceDiscovery";
 import VisualMedia from "../visual/VisualMedia.astro";
 import type { RecommendedResource } from "../../data/recommendedResources";
-interface Props { resource: RecommendedResource; loading?: "eager" | "lazy"; }
-const { resource, loading = "lazy" } = Astro.props;
+interface Props { resource: RecommendedResource; loading?: "eager" | "lazy"; compact?: boolean; }
+const { resource, loading = "lazy", compact = false } = Astro.props;
+const discovery = getResourceDiscovery(resource);
 const categoryImage = `/assets/resources/category-${resource.category}.svg`;
 const primaryMeta = resource.editorialLabel ?? (resource.storePath ? "DejotaStore" : resource.relationship === "affiliate" ? "Afiliado" : "Recurso");
 const categoryLabels: Record<RecommendedResource["category"], string> = {
@@ -14,7 +16,7 @@ const categoryLabels: Record<RecommendedResource["category"], string> = {
   "renda-digital": "Renda digital",
 };
 ---
-<article class="resource-card-v2">
+<article class:list={["resource-card-v2", { "resource-card-v2--compact": compact }]}>
   <div class="resource-card-v2__media">
     <VisualMedia
       src={resource.image ?? categoryImage}
@@ -26,18 +28,21 @@ const categoryLabels: Record<RecommendedResource["category"], string> = {
     <span class="resource-card-v2__category">{categoryLabels[resource.category]}</span>
   </div>
   <div class="resource-card-v2__body">
-    <div class="resource-card-v2__meta"><span>{primaryMeta}</span></div>
+    <div class="resource-card-v2__meta"><span>{compact ? discovery.status : primaryMeta}</span></div>
     <h3>{resource.name}</h3>
-    <p class="resource-card-v2__description">{resource.description}</p>
-    <p class="resource-card-v2__fit"><span>Indicado para</span><strong>{resource.bestFor}</strong></p>
-    {resource.affiliateProvider === "awin" && <p class="resource-card-v2__description"><small>Link de afiliado: o DejotaCode pode receber comissão por compras elegíveis.</small></p>}
+    <p class="resource-card-v2__description">{compact ? discovery.summary : resource.description}</p>
+    <p class="resource-card-v2__fit"><span>Ideal para</span><strong>{compact ? discovery.ideal : resource.bestFor}</strong></p>
+    {resource.relationship === "affiliate" && <p class="resource-card-v2__affiliate"><small>{compact ? "Link de afiliado" : "Link de afiliado: o DejotaCode pode receber comissão por compras elegíveis."}</small></p>}
     <div class="resource-card-v2__actions" aria-label={`Caminhos para ${resource.name}`}>
-      {resource.articlePath && <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>Ver conteúdo</a>}
+      {resource.articlePath && <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>{resource.articleCta ?? "Ver conteúdo"}</a>}
       {resource.storePath && <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>}
       {!resource.articlePath && !resource.storePath && <a class="button button-primary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} ↗</a>}
     </div>
     <details class="resource-card-v2__details">
       <summary>Critérios e limitações</summary>
+      <p><strong>Contexto:</strong> {resource.description}</p>
+      <p><strong>Ideal para:</strong> {resource.bestFor}</p>
+      <p><strong>Registro editorial:</strong> {primaryMeta}</p>
       <p><strong>Custo:</strong> {resource.priceLabel}</p>
       <p><strong>Limitação:</strong> {resource.limitation}</p>
       <small>Revisado em {resource.lastReviewed}</small>
