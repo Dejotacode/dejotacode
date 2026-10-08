@@ -7,6 +7,7 @@ export const storeCategoryLabels: Record<string, string> = {
 };
 
 const storePhotorealVisuals: Record<string, string> = {
+  nordpass: "/assets/store/nordpass-sem-texto-v1.webp",
   "sandisk-ultra-flair-32gb": "/assets/store/sandisk-ultra-flair-32gb.webp",
   "leadlovers-hotmart": "/assets/store/leadlovers-hotmart.webp",
   "programacao-iniciante-avancado-hotmart": "/assets/store/programacao-iniciante-avancado-hotmart.webp",
@@ -30,6 +31,7 @@ const storePhotorealVisuals: Record<string, string> = {
 };
 
 const storeSpecificFallbacks: Record<string, string> = {
+  nordpass: "/assets/resources/category-seguranca.svg",
   "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.svg",
   "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.svg",
   "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.svg",

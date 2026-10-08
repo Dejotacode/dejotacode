@@ -10,6 +10,7 @@ featured: false
 draft: false
 tags: [landing page, pequenos negócios, freelancer, web]
 storeProducts:
+  - "elementor-site-builder"
   - "leadlovers-hotmart"
 ---
 
