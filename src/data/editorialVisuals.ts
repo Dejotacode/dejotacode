@@ -8,6 +8,20 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "quanto-cobrar-primeiro-site": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1.webp",
+  "produto-digital-como-transformar-conhecimento-em-ebook": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1.webp",
+  "portfolio-para-freelancer-sem-clientes": "/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1.webp",
+  "organizar-ambiente-estudos-tecnologia": "/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1.webp",
+  "landing-page-para-pequenos-negocios-o-que-entregar": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1.webp",
+  "freelancer-para-iniciantes-como-escolher-um-servico": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1.webp",
+  "erros-iniciantes-desistem-renda-digital": "/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1.webp",
+  "documentar-aprendizado-tecnologia": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1.webp",
+  "como-montar-oferta-simples-pequenos-negocios": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1.webp",
+  "como-estudar-tecnologia-sem-se-perder": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1.webp",
+  "como-conseguir-primeiro-cliente-sem-anuncios": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1.webp",
+  "como-conseguir-primeira-renda-online": "/assets/posts/como-conseguir-primeira-renda-online-capa-v1.webp",
+  "bilibili-para-iniciantes-monetizacao-brasil": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1.webp",
+  "afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1.webp",
   "como-verificar-respostas-de-ia": "/assets/posts/como-verificar-respostas-de-ia-capa-v1.webp",
   "usar-ia-estudar-sem-dependencia": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1.webp",
   "prompts-melhores-estudar-trabalhar": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1.webp",
