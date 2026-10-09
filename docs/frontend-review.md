@@ -295,3 +295,6 @@ Pendências restantes exigem revisão própria: inventário de Setup, organizaç
 
 ## Correção de contraste WhatsApp — 09/10/2026
 Símbolo de canal nos botões passa a herdar a cor do texto, evitando ciano sobre ciano. Todos os CTA wa.me de Serviços agora têm o símbolo, inclusive diagnóstico, landing page e manutenção. Check/build/QA aprovados; 16 combinações de Contato/Serviços em quatro larguras e dois temas sem overflow, com símbolo presente e cor computada igual ao texto do botão. Sem publicação.
+
+## Case de Serviços — reprodução do notebook do esboço, 09/10/2026
+Moldura e base em CSS, com captura atual da Home; imagens aprovadas da Home não substituídas. Check zero erros/avisos; build 115 páginas; QA aprovado. Oito combinações em 320/390/768/1440 nos dois temas sem overflow e captura carregada; screenshots desktop escuro e mobile claro inspecionadas. Revisão visual do usuário pendente; sem publicação.

@@ -84,3 +84,11 @@
  border-color:var(--color-accent-strong);
  color:var(--color-accent-strong);
 }
+
+/* Notebook frontal: tela real do projeto em moldura ilustrativa. */
+.services-notebook { width:100%; padding-bottom:1rem; }
+.services-notebook__screen { position:relative; width:86%; margin-inline:auto; padding:3.2% 2.4% 2%; background:#080a0c; border:2px solid #697078; border-radius:clamp(.6rem,2vw,1.4rem) clamp(.6rem,2vw,1.4rem) .2rem .2rem; box-shadow:inset 0 0 0 2px #191d21; }
+.services-notebook__screen::before { content:""; position:absolute; top:2%; left:50%; width:3px; height:3px; border-radius:50%; background:#3a4248; }
+.services-proof__visual .services-notebook__screen img { width:100%; height:auto; aspect-ratio:8/5; border:0; border-radius:.15rem; }
+.services-notebook__base { position:relative; height:clamp(.55rem,1.2vw,.9rem); margin-top:-1px; border:1px solid #777f86; border-radius:0 0 45% 45% / 0 0 100% 100%; background:linear-gradient(90deg,#454a4f 0%,#bdc3c8 5%,#6d757b 17%,#a6adb2 50%,#6d757b 83%,#bdc3c8 95%,#454a4f 100%); box-shadow:0 .45rem .6rem rgb(0 0 0 / 18%); }
+.services-notebook__base::before { content:""; position:absolute; top:0; left:42%; width:16%; height:35%; background:#555e65; border-radius:0 0 .35rem .35rem; }

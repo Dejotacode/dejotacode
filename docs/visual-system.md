@@ -100,3 +100,6 @@ Home e Store usam grid sem intervalo e mídia com avanço de 5rem sob a coluna d
 
 ## Contato — destinos comerciais compactos
 contact-destinations--attendance reutiliza os cartões de Serviços/Parcerias em uma coluna dentro do atendimento, abaixo do WhatsApp e antes do mapa; padding .8rem, ícones 24px, título 1rem e descrição .85rem. URLs e descrições preservados.
+
+## Case de Serviços — notebook ilustrativo
+services-notebook apresenta captura real dentro de tela com borda escura, câmera decorativa e base metálica CSS. Moldura mantém cor de hardware nos dois temas, tela 8:5, largura 86% da base. Elementos de hardware são decorativos; texto e ação do case permanecem HTML fora da captura.

@@ -40,3 +40,6 @@ Pendência de recorte resolvida na trilha em 09/10/2026: novo /assets/trails/pri
 
 ## Atualização final da captura de Trilhas — décima primeira etapa
 /assets/portfolio/trilhas.webp recapturada em 09/10/2026 após a nova capa de programação. Mantém 1280 × 960, tema escuro, WebP qualidade 85 e caminho estável. Exportação pelo ImageMagick; imagem real do preview, sem assinatura. Home/Blog não alterados. Evidências em frontend-review.md.
+
+## Notebook do case de Serviços — 09/10/2026
+Captura services-dejotacode-case.webp atualizada do preview Home 4321, escuro, 1440x900, WebP qualidade 85, fontes e imagens aguardadas e toolbar removida. Tela real dentro de moldura ilustrativa CSS, sem assinatura adicionada.
