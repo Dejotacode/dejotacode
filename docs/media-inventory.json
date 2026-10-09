@@ -181,13 +181,13 @@
   },
   {
     "path": "/assets/portfolio/blog.webp",
-    "bytes": 87710,
-    "sha256": "3371aa125f240d63a61071ea88dc327645833ddb8e8847e21464989afe9b0614"
+    "bytes": 86264,
+    "sha256": "036b25c7273e4bad387f299d6a4f7f5d72c3dc40387b73ab18a62e4890005099"
   },
   {
     "path": "/assets/portfolio/home.webp",
-    "bytes": 91034,
-    "sha256": "5a6d5a4b7f2e1807c401d538275a0c3d794288a915217d9c9ec6e8e5c8600125"
+    "bytes": 83138,
+    "sha256": "f69fc19a1aacd5251e6e3ae48bd3babc6dd1b78f58c80b39a71097922784863c"
   },
   {
     "path": "/assets/portfolio/trilhas.webp",
@@ -926,8 +926,8 @@
   },
   {
     "path": "/assets/services-dejotacode-case.webp",
-    "bytes": 94574,
-    "sha256": "34b286aa3ea542c58dbaaae1ffbb41a9c4c38f40238d9b5ad22c3f73d8e35b67"
+    "bytes": 79426,
+    "sha256": "0b2c55048d3a8e7436f91e962867fab9f8c62340f441d1de35e2c70c1b65f79e"
   },
   {
     "path": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
