@@ -131,3 +131,6 @@ O merge na `main` pode disparar deploy automático do frontend, mas não cria ta
 O workflow do frontend não altera D1, não executa migrations e não modifica secrets ou DNS. A API possui repositório e ciclo de release independentes.
 
 Essa separação mantém as validações automáticas com menor privilégio e reduz o impacto de uma falha no pipeline de qualidade.
+
+## Limite dos formulários confirmado localmente — 09/10/2026
+POST /api/contact grava contact_messages e métrica; POST /api/leads grava leads com consentimento. Recebimento no banco não significa envio de e-mails: esses handlers não integram provedor de notificações/newsletter. Nona etapa de frontend-review.md registra teste integrado com banco local isolado. O nome opcional vazio da Newsletter é omitido pelo frontend para respeitar o schema da API.

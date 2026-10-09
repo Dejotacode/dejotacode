@@ -141,6 +141,12 @@ export const preparePublicForm = (selector: string) => {
 
     formData.delete("website");
 
+    // Omitir nome opcional vazio: a API valida nomes informados.
+    const nameInput = form.querySelector<HTMLInputElement>('input[name="name"]');
+    if (nameInput && !nameInput.required && !nameInput.value.trim()) {
+      formData.delete("name");
+    }
+
     const body: Record<string, FormDataEntryValue | boolean> =
       Object.fromEntries(formData.entries());
 
