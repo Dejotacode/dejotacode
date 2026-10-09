@@ -164,7 +164,7 @@ Cada rota dinâmica tem uma linha própria. A evidência de 320/768 aplica-se ao
 ## Limites e pendências atuais — após a nona etapa
 - Aplicação técnica local do Documento Mestre concluída nas famílias públicas; aprovação visual final do usuário permanece separada.
 - Capa de programação resolvida na trilha por composição vetorial sem texto; raster original preservado nos Recursos.
-- Portfólio usa capturas reais de 09/10/2026; a captura de Trilhas foi feita antes da troca da capa na sétima etapa e pode ser atualizada no próximo fechamento visual.
+- Portfólio usa capturas reais de 09/10/2026; Trilhas recapturada após a troca da capa na décima primeira etapa.
 - Setup: computador reconfirmado; modelos comerciais e relação dos discos ainda dependem da conferência do usuário.
 - Contato/Newsletter: recebimento e gravação validados na API local com banco isolado; envio de e-mails/notificações e integração em produção não validados.
 - Marca/origem/licença interna das artes não certificadas automaticamente.
@@ -259,3 +259,8 @@ Check sem erros/avisos/hints; build 115 páginas; QA de links e HTML passou. Lay
 Frontend 4321 respondeu 200; API 8787 confirmou environment local. API usa banco temporário isolado /tmp/dejotacode-forms-stage9. Código limpo antes desta etapa; somente documentos atualizados.
 Orca não instalado. Firefox disponível no sistema, porém motores Firefox/WebKit do Playwright não instalados; nenhum teste com esses motores ou leitor real foi executado. Não transformar inspeção de árvore de acessibilidade em certificação com leitor de tela.
 Próximo passo dentro do fechamento visual: atualizar a captura de Trilhas do Portfólio após a nova capa e revisão final do usuário. Integração de envio de e-mails requer uma etapa própria. Sem publicação.
+
+## Décima primeira etapa — captura final de Trilhas no Portfólio
+Recapturada /trilhas/ no preview 4321, tema escuro, viewport 1280 × 960; fontes e imagens decodificadas antes da captura, toolbar oculta. Exportação WebP qualidade 85 pelo ImageMagick; mesmo caminho /assets/portfolio/trilhas.webp, dimensões e proporção 4:3. Captura inspecionada visualmente com nova capa de programação. Só esse raster foi alterado; inventário atualizado.
+Portfólio: oito combinações (320/390/768/1440, claro/escuro) passaram sem overflow e com imagens decodificadas. Primeiro teste sinalizou lazy loading abaixo da dobra, corrigido no procedimento ao rolar até a galeria; nenhum ajuste de código necessário. Build 115 páginas e QA de links/HTML passaram.
+Pendência da captura resolvida; revisão visual final do usuário, confirmação do Setup, leitor de tela e integração de e-mails continuam separados. Sem push/publicação. Preview http://localhost:4321/portfolio/.

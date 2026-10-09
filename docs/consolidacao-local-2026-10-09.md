@@ -36,7 +36,7 @@ Check/build/QA e 556 combinações de página/tela/tema concluídos; conteúdo, 
 
 ## Próximas etapas — estado vigente após as etapas 7–10
 1. Revisão visual final do usuário no preview 4321; base, cards, CTA, formulários, teclado/texto ampliado e zoom já tratados.
-2. Atualizar a captura de Trilhas do Portfólio após a troca local de capa; Home/Blog permanecem capturas reais atuais.
+2. Captura de Trilhas do Portfólio atualizada após a troca da capa na etapa 11; Home/Blog preservadas.
 3. Usuário conferir modelos/periféricos e relação dos discos do Setup; hardware principal reconfirmado.
 4. Planejar entrega de e-mails/notificações em etapa própria. Recebimento e persistência dos formulários passaram na API local com dados fictícios; produção não testada.
 5. Testes com leitor de tela real e navegadores alternativos permanecem pendentes.
