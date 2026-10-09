@@ -216,3 +216,14 @@ Preview: http://localhost:4321/contato/ e http://localhost:4321/newsletter/. Som
 Home/Blog/Trilhas capturados em 1280 × 960 no tema escuro e inspecionados visualmente. Somente três arquivos de mídia alterados; hashes/bytes atualizados no inventário. Código, conteúdo editorial, rotas, metadados e links não receberam alterações.
 Pendência: texto incorporado da capa de programação cortado nas Trilhas. Não é falha de carregamento; precisa revisão específica da arte. Origem/licença e modelos exatos de Setup continuam pendentes.
 Build/QA repetidos após a troca das capturas. Preview http://localhost:4321/portfolio/. Sem publicação.
+
+
+## Quinta etapa — teclado e texto ampliado
+Correções: largura mínima global independente da fonte; ícones do cabeçalho mantêm alvos de 44px em telas estreitas; textos podem quebrar sem alargar a área de leitura. Blog e Sobre permitem encolher links longos; resumo de categoria respeita a largura do grid; link de aula permite quebra.
+Teste de ampliação: 26 representantes × claro/escuro, viewport 320px e tamanho da raiz 200% (32px): 52 combinações sem overflow após ajustes. É um teste de texto ampliado via CSS; não equivale a zoom real de todos os navegadores. Quebras adicionais de palavras são esperadas nessa combinação estreita.
+Regressão: 27 representantes × 320/390/768/1440 × claro/escuro = 216 combinações; sem overflow, H1 ausente/duplicado ou divergência dos rótulos oficiais.
+Teclado: oito combinações de largura/tema no cabeçalho passaram: skip link primeiro e foco no main; busca abre e recebe foco; Escape retorna ao controle; menu abre com Espaço, Tab chega à busca mobile e Escape retorna ao botão; tema alterna por teclado.
+Contato, Newsletter e Busca: Tab e foco visual dos controles principais verificados em 390px. Busca já usa contorno no conjunto do campo com focus-within; preservado após conferir o estilo do ancestral. Nenhum envio real.
+Inspeção visual de 320px com texto ampliado em Home, Categoria, Contato e Trilha; contorno da Busca inspecionado. Check/build/QA passaram. Alterações somente em CSS e estilos do cabeçalho; conteúdo, mídia, links e lógica comercial preservados.
+Limites: leitor de tela, zoom nativo e outros navegadores não certificados. Pendências anteriores de mídia/Setup/API permanecem explícitas.
+Preview: http://localhost:4321/ e http://localhost:4321/busca/. Sem publicação.

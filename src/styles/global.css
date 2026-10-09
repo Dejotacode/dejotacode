@@ -8,7 +8,7 @@
 }
 
 html {
-  min-width: 20rem;
+  min-width: 320px;
   scroll-behavior: smooth;
   background: var(--color-bg);
 }
@@ -203,3 +203,6 @@ p {
 :is(.contact-page, .newsletter-page) form[aria-busy="true"] button[type="submit"] {
   cursor: progress;
 }
+
+/* Enlarged text must wrap without widening the public reading area. */
+main, .site-footer { overflow-wrap: anywhere; }

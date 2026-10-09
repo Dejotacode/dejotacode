@@ -293,3 +293,7 @@ Recortes existentes preservados: Blog usa foco superior esquerdo; Store foco cen
 
 ### Formulários — aplicação da terceira etapa
 Campos públicos de Contato e Newsletter usam tipografia do corpo com 1rem. Estados de envio anunciam aria-busy; ao finalizar, preservar a estrutura original do botão. Rótulos, consentimento, validação e mensagens de retorno permanecem obrigatórios. Testes de interface podem simular a API; não equivalem a entrega real. Andamento e evidências em frontend-review.md.
+
+
+### Texto ampliado e foco — aplicação da quinta etapa
+A largura mínima da página não cresce com a fonte. Em telas estreitas, controles somente com ícone mantêm alvo de 44px; conteúdo e links longos permitem quebra. Grids usam minmax(0,1fr) quando precisam encolher. Foco pode ser indicado no controle ou em seu conjunto com focus-within, desde que visível. Testar texto ampliado separadamente do zoom nativo e registrar o método.

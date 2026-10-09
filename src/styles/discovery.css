@@ -281,3 +281,9 @@
 .discovery-page .discovery-categories a:hover, .discovery-page .discovery-categories a[aria-current=page] { border-color: var(--color-accent-strong); color: var(--color-accent-strong); background: var(--color-surface); }
 .discovery-page .discovery-categories a:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
 @media(max-width:600px) { .discovery-page.editorial-page { padding-block: 1.5rem 2.5rem; } .discovery-page .editorial-section, .discovery-page .search-results { margin-top: 1.5rem; } }
+
+.discovery-page .editorial-hero > * { min-width: 0; }
+.discovery-summary { max-width: 100%; flex-wrap: wrap; }
+
+.discovery-page .editorial-hero { grid-template-columns: minmax(0, 1fr); }
+.discovery-summary > span { min-width: 0; }

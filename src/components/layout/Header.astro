@@ -411,5 +411,12 @@ const isCurrent = (href: string) =>
     .search-close { transition: none !important; }
   }
 
-  @media (max-width: 30rem) { .header-container :global(.brand__name) { display: none; } }
+  @media (max-width: 30rem) {
+    .header-container :global(.brand__name) { display: none; }
+    .header-container { gap: min(1.25rem, 2vw); }
+    .header-actions { gap: min(.55rem, 2vw); }
+    .icon-button, .search-toggle, .search-fallback {
+      width: 44px; height: 44px; min-height: 44px; flex: none;
+    }
+  }
 </style>
