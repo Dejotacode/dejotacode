@@ -340,3 +340,5 @@ Galeria conjunta: http://localhost:4323/, servidor restrito a 127.0.0.1; fronten
 Registro: docs/brand/signature-batch-20261009.json. Recortes preparados persistidos em docs/brand/signature-batch-sources; receita em scripts/compose-signature-batch.py, sem sobrescrever originais ou versões divergentes.
 Validação: check 78 arquivos, zero erros/avisos/hints; build 115 páginas; QA de links e HTML passou. Galeria em 320/390/768/1440 e claro/escuro: oito combinações, 98 imagens carregadas, sem overflow; capturas desktop/mobile inspecionadas. Assinatura regular conferida na imagem de pendrive e montagem das 49 versões. Sem publicação, push ou deploy. Ottocast preexistente preservado fora do commit.
 Próximo passo: revisão conjunta do lote, ajustes pontuais se necessários e integração local das versões aprovadas.
+
+Integração pendente: VisualMedia atualmente ancora no topo esquerdo por seletor img[src$="-capa-v1.webp"]. Os novos nomes terminam em -assinatura-v2.webp e não recebem essa regra; ao integrar, explicitar ancoragem para preservar a assinatura nos recortes 16:9/16:10. Não considerar testes da galeria como validação das novas imagens nos cards do site.
