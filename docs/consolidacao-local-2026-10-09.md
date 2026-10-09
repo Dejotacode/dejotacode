@@ -29,13 +29,18 @@ Todas as famílias públicas foram estruturadas. Privacidade, 404, rodapé, meto
 Revisão final: 112 rotas públicas, 448 combinações de tela/tema. Resultado e limites em revisao-final-publica-2026-10-09.md.
 Nenhuma publicação realizada.
 
+## Documento Mestre aplicado localmente
+Referência vigente: docs/frontend-master.md; índice: docs/README.md.
+Inventário, papéis compartilhados, organização de componentes e instruções aplicados. Andamento por rota em docs/frontend-review.md.
+Check/build/QA e 556 combinações de página/tela/tema concluídos; conteúdo, mídia, rotas, SEO, links e controles preservados por comparação.
+
 ## Próximas etapas
-1. Localizar e conferir a versão vigente do Documento Mestre preparado na conversa própria. O documento-base v1.3 é estratégico e não deve ser presumido como esse novo Documento Mestre.
-2. Aplicar o Documento Mestre localmente por etapas, preservando estruturas aprovadas e entregando preview 4321.
+1. Revisão do usuário da base padronizada no preview 4321.
+2. Refinamentos específicos de cards/CTAs/recortes conforme divergências reais, sem redesenhar layouts aprovados.
 3. Confirmar equipamentos/armazenamento do Setup.
 4. Validar envio real dos formulários com a API configurada.
 5. Atualizar capturas do Portfólio após estabilizar a padronização.
-6. Revisão final do usuário; publicação exige autorização específica.
+6. Publicação exige autorização específica; nenhum push/deploy nesta etapa.
 
 ## Validação na pasta principal
 - Astro check: 78 arquivos, zero erros, avisos e hints.

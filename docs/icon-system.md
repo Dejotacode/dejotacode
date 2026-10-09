@@ -1,3 +1,5 @@
+> Referência atual de frontend: [Documento Mestre](frontend-master.md), [sistema visual](visual-system.md), [registro de mídia](media-registry.md). Revisão 09/10/2026.
+
 # DejotaCode — Sistema Oficial de Ícones v1
 
 ## Objetivo

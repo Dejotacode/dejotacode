@@ -215,3 +215,6 @@ Deploy, tag e release são tratados como etapas separadas do desenvolvimento e n
 ## Licença
 
 Nenhuma licença de distribuição foi definida neste repositório até o momento.
+
+## Padrões de frontend
+Consultar [índice da documentação](docs/README.md) e [Documento Mestre](docs/frontend-master.md) antes de evoluir páginas ou conteúdo.
