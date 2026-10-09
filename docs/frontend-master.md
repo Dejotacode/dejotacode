@@ -300,3 +300,7 @@ A largura mínima da página não cresce com a fonte. Em telas estreitas, contro
 
 ## Setas de ação — padrão aprovado em 09/10/2026
 Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.
+
+
+### Assinatura editorial aprovada em 09/10/2026
+Regra vigente detalhada em media-registry.md: símbolo oficial único, sem fundo adicional, canto superior esquerdo, largura de 5%, margens horizontais/verticais de 3% das respectivas dimensões. Capturas e artes de terceiros mantêm exceções descritas. Modelos vetoriais de produção em docs/brand/. Acervo existente exige migração individual, sem assinatura dupla.

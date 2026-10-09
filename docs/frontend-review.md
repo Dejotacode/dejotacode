@@ -327,3 +327,7 @@ Limites: aprovação do notebook não representa autorização de publicação n
 ## Rodada única de fechamento dos esboços — 09/10/2026
 Trilha Linux reordenada: modo live opcional na posição 3, antes do terminal, preservando slugs e progresso essencial. Oito combinações de largura/tema passaram, incluindo progresso previamente salvo de dois artigos (40%). Check zero erros/avisos/hints, build 115 páginas, QA de links/HTML passou.
 Triagem visual de 21 rasters Store e 43 editoriais, com caminhos individuais e diferenças de assinatura registradas em revisao-esbocos-fechamento-2026-10-09.md. Rasters preservados: aplicação do padrão visual requer tratamento individual após revisão conjunta. Setup reconfirmado com WDC de classe 640 GB, relação com discos declarados ainda pendente. Termos permanece pendência de conteúdo, sem link inexistente. Esta atualização prevalece sobre a pendência antiga de sequência Linux. Sem push/deploy.
+
+
+## Padrão de assinatura aprovado — 09/10/2026
+Usuário aprovou símbolo oficial único, sem placa, no topo esquerdo, largura de 5% e margens de 3%; variantes conforme o fundo. Regra registrada no Documento Mestre e registro de mídia, com dois modelos SVG transparentes copiados da geometria oficial. XML validado. Nenhum raster ou código de página alterado; não atribuir a esta etapa os testes responsivos anteriores. Migração individual do acervo permanece pendente, com lista por caminho na revisão dos esboços. Sem publicação.

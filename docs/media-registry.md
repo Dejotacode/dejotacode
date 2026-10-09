@@ -43,3 +43,22 @@ Pendência de recorte resolvida na trilha em 09/10/2026: novo /assets/trails/pri
 
 ## Notebook do case de Serviços — 09/10/2026
 Captura services-dejotacode-case.webp atualizada do preview Home 4321, escuro, 1440x900, WebP qualidade 85, fontes e imagens aguardadas e toolbar removida. Tela real dentro de moldura ilustrativa CSS, sem assinatura adicionada.
+
+
+## Padrão de assinatura aprovado — 09/10/2026
+Aplica-se a artes editoriais próprias que receberem assinatura. Símbolo único, arquivo oficial dark em fundo escuro ou light em fundo claro; não redesenhar, distorcer, adicionar sombra, efeitos, quadrado ou placa de fundo. Preservar as cores do arquivo oficial.
+
+| Parâmetro | Regra |
+| --- | --- |
+| Posição | Canto superior esquerdo |
+| Escala | Caixa do símbolo com largura de 5% da largura total da imagem; altura proporcional |
+| Margens | 3% da largura à esquerda e 3% da altura no topo, medidas até a caixa SVG |
+| Quantidade | Um símbolo por arte |
+| Fundo | Transparente atrás do símbolo; escolher versão pela região da imagem |
+| Captura real | Sem assinatura adicional; preservar a marca já capturada |
+| Arte de fornecedor/foto de produto | Preservar identidade do fornecedor; não acrescentar marca DejotaCode |
+| Recorte | Conferir 16:9, 16:10 e 4:3 no uso real; não duplicar marca para compensar recorte |
+
+Exemplo 1600 × 900: caixa 80 × 80; posição x=48, y=27. Modelos vetoriais transparentes em docs/brand/assinatura-editorial-dark.svg e assinatura-editorial-light.svg; contêm geometria copiada dos símbolos oficiais, sem recriação. São referências de produção, não assets carregados pelas páginas.
+
+Migração do acervo: consultar revisao-esbocos-fechamento-2026-10-09.md. Remover assinatura antiga antes de aplicar a nova, sem cobrir com placa nem empilhar símbolos. Se a marca estiver fundida ao raster, tratar a imagem individualmente e conferir assunto/produto após edição. Aprovação do padrão não certifica que os rasters atuais já foram migrados.
