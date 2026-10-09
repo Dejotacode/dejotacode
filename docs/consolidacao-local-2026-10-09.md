@@ -34,13 +34,13 @@ Referência vigente: docs/frontend-master.md; índice: docs/README.md.
 Inventário, papéis compartilhados, organização de componentes e instruções aplicados. Andamento por rota em docs/frontend-review.md.
 Check/build/QA e 556 combinações de página/tela/tema concluídos; conteúdo, mídia, rotas, SEO, links e controles preservados por comparação.
 
-## Próximas etapas
-1. Revisão do usuário da base padronizada no preview 4321.
-2. Refinamentos específicos de cards/CTAs/recortes conforme divergências reais, sem redesenhar layouts aprovados.
-3. Confirmar equipamentos/armazenamento do Setup.
-4. Validar envio real dos formulários com a API configurada.
-5. Capturas do Portfólio atualizadas localmente; revisar arte de programação com texto incorporado cortado.
-6. Publicação exige autorização específica; nenhum push/deploy nesta etapa.
+## Próximas etapas — estado vigente após as etapas 7–10
+1. Revisão visual final do usuário no preview 4321; base, cards, CTA, formulários, teclado/texto ampliado e zoom já tratados.
+2. Atualizar a captura de Trilhas do Portfólio após a troca local de capa; Home/Blog permanecem capturas reais atuais.
+3. Usuário conferir modelos/periféricos e relação dos discos do Setup; hardware principal reconfirmado.
+4. Planejar entrega de e-mails/notificações em etapa própria. Recebimento e persistência dos formulários passaram na API local com dados fictícios; produção não testada.
+5. Testes com leitor de tela real e navegadores alternativos permanecem pendentes.
+6. Publicação exige autorização específica; nenhum push/deploy.
 
 ## Validação na pasta principal
 - Astro check: 78 arquivos, zero erros, avisos e hints.
@@ -54,3 +54,7 @@ Check/build/QA e 556 combinações de página/tela/tema concluídos; conteúdo, 
 
 ## Continuidade — etapas 3 e 4
 Formulários padronizados e estados testados com respostas simuladas. Capturas reais de Home, Blog e Trilhas no Portfólio atualizadas. Evidências e pendências em frontend-review.md e media-registry.md. Integrações reais e publicação continuam fora desta validação local.
+
+## Estado de serviços após a nona etapa
+Frontend canônico na porta 4321. API em ../dejotacode-api ativa na porta 8787 em modo local, com persistência de teste /tmp/dejotacode-forms-stage9; esse acervo é temporário e distinto do banco habitual. Contém somente dados fictícios produzidos pelos testes desta etapa. Não usar como evidência de entrega por e-mail ou funcionamento em produção.
+Referência atual de progresso e limites: frontend-review.md. Se serviços estiverem desligados numa retomada, conferir processos antes de iniciá-los; não iniciar 4322.

@@ -1,6 +1,6 @@
 # DejotaCode — Documento Mestre de Frontend, Identidade Visual e Organização
 
-Versão: 1.0 — regras vigentes; migração local em validação  
+Versão: 1.0 — regras vigentes; aplicação técnica local concluída, revisão visual final pendente
 Revisão: 09/10/2026  
 Aplicação: projeto local canônico /home/dejota/Workspace/fullstack/dejotacode, preview 4321. Sem publicação.
 

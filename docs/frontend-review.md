@@ -161,14 +161,15 @@ Cada rota dinâmica tem uma linha própria. A evidência de 320/768 aplica-se ao
 | /trilhas/primeira-renda-online/ | src/pages/trilhas/[slug].astro | Validada tecnicamente nesta etapa | 390/1440, claro/escuro; herda modelo | Aprovação visual final do usuário |
 | /trilhas/primeiros-passos-programacao/ | src/pages/trilhas/[slug].astro | Validada tecnicamente nesta etapa | 390/1440, claro/escuro; herda modelo | Aprovação visual final do usuário |
 | /trilhas/seguranca-digital-essencial/ | src/pages/trilhas/[slug].astro | Validada tecnicamente nesta etapa | 390/1440, claro/escuro; herda modelo | Aprovação visual final do usuário |
-## Limites e pendências
-- Todos os assets aprovados preservados; inventário em media-inventory.json. Origem/licença e conteúdo interno das artes não são certificados automaticamente.
-- Padronização de marca nas próximas artes segue Documento Mestre; não regenerar automaticamente imagens aprovadas.
-- Conteúdo Setup e capturas Portfólio continuam pendentes.
-- Contato/Newsletter: entregas reais e API não exercitadas.
-- Admin preservado funcionalmente, fora da padronização pública.
-- Acessibilidade completa, zoom amplo e navegadores alternativos exigem etapa específica.
-
+## Limites e pendências atuais — após a nona etapa
+- Aplicação técnica local do Documento Mestre concluída nas famílias públicas; aprovação visual final do usuário permanece separada.
+- Capa de programação resolvida na trilha por composição vetorial sem texto; raster original preservado nos Recursos.
+- Portfólio usa capturas reais de 09/10/2026; a captura de Trilhas foi feita antes da troca da capa na sétima etapa e pode ser atualizada no próximo fechamento visual.
+- Setup: computador reconfirmado; modelos comerciais e relação dos discos ainda dependem da conferência do usuário.
+- Contato/Newsletter: recebimento e gravação validados na API local com banco isolado; envio de e-mails/notificações e integração em produção não validados.
+- Marca/origem/licença interna das artes não certificadas automaticamente.
+- Admin fora da padronização pública. Leitor de tela real e navegadores alternativos não certificados.
+- Publicação/push/deploy continuam sem autorização.
 
 ## Evidências desta aplicação
 - Check: 78 arquivos, zero erros, avisos ou hints. Build: 115 páginas. QA: zero links internos quebrados e zero problemas básicos de HTML.
@@ -252,3 +253,9 @@ Erro reproduzido: API /api/leads recusa name vazio com status 400 e mensagem de 
 Um envio inicial de Newsletter sem nome passou com 201 após correção; quatro envios adicionais via navegador (Contato/Newsletter em 320 claro e 1440 escuro) retornaram 201, restauraram conteúdo dos botões e limparam campos, sem overflow. Consulta ao banco isolado confirmou três leads e dois contatos fictícios, usando endereços example.invalid. Chamadas externas e analytics bloqueados nos testes.
 Recebimento local e persistência validados; os endpoints atuais não enviam e-mail. Entrega de newsletter, notificações e integração em produção não validadas nem implementadas nesta etapa. API local permanece na porta 8787 com banco isolado temporário; não confundir com banco habitual.
 Check sem erros/avisos/hints; build 115 páginas; QA de links e HTML passou. Layout adicional em 320/390/768/1440, claro/escuro: 16 combinações passaram sem overflow, tema confirmado; sem envios adicionais. Preview http://localhost:4321/contato/ e http://localhost:4321/newsletter/. Sem push ou publicação.
+
+## Décima etapa — consolidação do encerramento técnico local
+Índice, estado de retomada e pendências sincronizados após as etapas 7–9, distinguindo resultados locais de entrega por e-mail/produção. Checagem env:check:preview e env:check:production passou; são validações de configuração, sem deploy ou requisição de envio remoto.
+Frontend 4321 respondeu 200; API 8787 confirmou environment local. API usa banco temporário isolado /tmp/dejotacode-forms-stage9. Código limpo antes desta etapa; somente documentos atualizados.
+Orca não instalado. Firefox disponível no sistema, porém motores Firefox/WebKit do Playwright não instalados; nenhum teste com esses motores ou leitor real foi executado. Não transformar inspeção de árvore de acessibilidade em certificação com leitor de tela.
+Próximo passo dentro do fechamento visual: atualizar a captura de Trilhas do Portfólio após a nova capa e revisão final do usuário. Integração de envio de e-mails requer uma etapa própria. Sem publicação.
