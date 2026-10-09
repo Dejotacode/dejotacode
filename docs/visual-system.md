@@ -107,3 +107,7 @@ services-notebook apresenta captura real dentro de tela com borda escura, câmer
 
 ## Recortes das imagens assinadas — 09/10/2026
 Versões -assinatura-v2.webp mantêm SVG oficial no canto superior esquerdo. VisualMedia e StoreCard ancoram essas versões em left top; hero Home e recomendação de artigos fazem o mesmo. Não depender do sufixo antigo -capa-v1.webp para preservar a marca. Molduras e degradês aprovados permanecem; a assinatura integrada ao raster não troca de cor com o tema da página. Variantes dark/light são escolhidas conforme o fundo da própria imagem, pelo registro de mídia.
+
+
+## Ilustração do Setup — aproximação do esboço, 09/10/2026
+SetupIllustration.astro substitui a moldura CSS simples por SVG decorativo responsivo: monitor com editor, gabinete, teclado, mouse, planta e porta-lápis. Traços usam currentColor e tokens dos temas; brilho discreto usa color-glow. É ilustração editorial, não fotografia nem representação exata do hardware. Conteúdo e rotas preservados.
