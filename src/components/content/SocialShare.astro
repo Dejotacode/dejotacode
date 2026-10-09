@@ -1,4 +1,5 @@
 ---
+import CategoryIcon from "../ui/CategoryIcon.astro";
 interface Props {
   title: string;
   url: string;
@@ -60,7 +61,7 @@ const networks = [
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.2V18M6.5 5.4v.1M10.5 18v-5.4c0-2.9 4-3.1 4 0V18M10.5 9.8V18M3.5 3.5h17v17h-17z" /></svg>
           )}
           {network.icon === "whatsapp" && (
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1 1.1-4A8 8 0 1 1 20 11.6Z" /><path d="M9 8.5c.3 2.4 2.1 4.2 4.5 4.8l1.1-1.1 2 .9-.3 1.8c-4.9 1-9-3.1-8.1-8l1.8-.3.9 2Z" /></svg>
+            <CategoryIcon icon="whatsapp" size={20} />
           )}
           {network.icon === "facebook" && (
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h2.8l.4-3H14V8.1c0-.9.3-1.6 1.7-1.6h1.7V3.8c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H8v3h2.7v8" /></svg>

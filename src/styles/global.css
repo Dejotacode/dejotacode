@@ -210,3 +210,6 @@ main, .site-footer { overflow-wrap: anywhere; }
 /* Setas de ação: mesma família de ícones, medidas independentes da fonte. */
 svg.action-arrow.action-arrow { width: var(--size-action-arrow); height: var(--size-action-arrow); min-width: var(--size-action-arrow); flex-shrink: 0; display: inline-block; vertical-align: middle; color: currentColor; }
 .button-primary svg.action-arrow.action-arrow { width: var(--size-action-arrow-primary); height: var(--size-action-arrow-primary); min-width: var(--size-action-arrow-primary); }
+
+/* Canal de atendimento: símbolo estável ao lado do texto do botão. */
+svg.contact-channel-icon { flex-shrink: 0; width: 20px; height: 20px; }

@@ -274,3 +274,10 @@ Tokens compartilhados e regra CSS documentados. Botão inicial da trilha atualiz
 - Guia /store/guias/como-escolher-pendrive-linux/: SSD retirado dos cartões principais de pendrive; referência preservada em seção complementar de backup, com finalidade explícita.
 - Modelo /blog/[slug]/: chamada distingue trilha associada de listagem geral; não promete uma próxima etapa que o link não abre.
 - Escopo local, sem publicação. Check: 78 arquivos, zero erros/avisos; build: 115 páginas; QA de links e HTML aprovado. Verificação no preview: guia, artigo sem trilha e artigo com trilha, em 320/390/768/1440px nos dois temas (24 combinações), sem overflow; destinos dos CTA e separação do SSD conferidos.
+
+## Atendimento e ícones — revisão local 09/10/2026
+- /contato/: marcador de localização em Serra e Maps; pictograma WhatsApp no número e botão; seta externa SVG.
+- /servicos/: pictograma compartilhado WhatsApp nos CTA de conversa; seta para seção abaixo em SVG.
+- SocialShare centraliza o pictograma já existente no CategoryIcon, preservando links e nomes acessíveis.
+- Check sem erros/avisos, build 115 páginas e QA aprovado. Contato, Serviços e artigo em 320/390/768/1440px, claro/escuro: 24 combinações sem overflow e sem SVG vazio; foco inicial por teclado conferido. Captura do atendimento em 320px inspecionada. Mapa externo bloqueado no teste, sem avaliar carregamento do provedor.
+- Linux e degradês continuam pendentes. Sem publicação.

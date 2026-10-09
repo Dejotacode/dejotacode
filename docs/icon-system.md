@@ -131,3 +131,6 @@ Os símbolos textuais anteriores (`$_`, `</>`, `IA`, `[]`, setas ou glifos usado
 
 ## Setas de ação — padrão aprovado em 09/10/2026
 Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.
+
+## Atendimento — revisão 09/10/2026
+CategoryIcon map-pin representa localização; arrow-down representa navegação para uma seção abaixo. WhatsApp reutiliza o pictograma linear antes existente em SocialShare, centralizado no componente e aplicado no compartilhamento e atendimento. É um pictograma de interface, não um arquivo de logotipo certificado. Ícones junto a texto são decorativos; símbolos de canal usam 20px nos botões e 28px nos detalhes de Contato.

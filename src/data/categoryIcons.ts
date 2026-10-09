@@ -28,7 +28,10 @@ export type OfficialIconId =
   | "mouse"
   | "usb-hub"
   | "arrow-right"
-  | "arrow-up-right";
+  | "arrow-up-right"
+  | "arrow-down"
+  | "map-pin"
+  | "whatsapp";
 
 export type IconCategoryStatus = "current" | "future";
 
