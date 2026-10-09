@@ -6,9 +6,10 @@ import { resolveTrailVisual } from "../data/editorialVisuals";
 
 interface Props {
   trail: Trail;
+  editorial?: boolean;
 }
 
-const { trail } = Astro.props;
+const { trail, editorial = false } = Astro.props;
 const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
 const visual = resolveTrailVisual(trail.slug);
 ---
@@ -26,7 +27,7 @@ const visual = resolveTrailVisual(trail.slug);
       <>
         <div class="trail-card__meta">
           <span>{trail.lessons.length} etapas</span>
-          <span>{totalDuration} min</span>
+          <span>{totalDuration} min{editorial ? " de leitura estimada" : ""}</span>
         </div>
         <a href={`/trilhas/${trail.slug}/`}>Começar trilha <span aria-hidden="true">→</span></a>
       </>

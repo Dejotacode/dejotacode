@@ -22,8 +22,7 @@ const totalSearchableItems = posts.length + availableTrails.length;
       <p class="eyebrow">ENCONTRE O PRÓXIMO PASSO</p>
       <h1>O que você quer aprender?</h1>
       <p>
-        Busque por uma trilha, assunto, ferramenta ou dúvida. A pesquisa acontece
-        somente no seu navegador.
+        Busque por uma trilha, assunto, ferramenta ou dúvida para encontrar seu próximo passo.
       </p>
 
       <form class="search-page__form" action="/busca/" role="search" data-search-form>
@@ -101,7 +100,7 @@ const totalSearchableItems = posts.length + availableTrails.length;
                   ...post.data.tags,
                 ].join(" ")}
               >
-                <PostCard post={post} />
+                <PostCard post={post} blogMetaIcons />
               </div>
             ))
           }
@@ -121,8 +120,8 @@ const totalSearchableItems = posts.length + availableTrails.length;
   </main>
 
   <script>
-    const form = document.querySelector<HTMLFormElement>("[data-search-form]");
-    const input = document.querySelector<HTMLInputElement>("[data-search-input]");
+    const form = document.querySelector<HTMLFormElement>(".search-page [data-search-form]");
+    const input = document.querySelector<HTMLInputElement>(".search-page [data-search-input]");
     const items = Array.from(
       document.querySelectorAll<HTMLElement>("[data-search-item]"),
     );

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import CategoryIcon from "../../components/CategoryIcon.astro";
 import TrailCard from "../../components/TrailCard.astro";
 import { trails } from "../../data/trails";
 import "../../styles/trails.css";
@@ -54,8 +55,8 @@ const trailsSchema = {
 
   <main id="conteudo" tabindex="-1" class="trails-page">
     <header class="trails-hero container">
-      <p class="eyebrow">COMECE PELO CAMINHO CERTO</p>
-      <h1>Aprenda em sequência,<br />no seu ritmo.</h1>
+      <p class="eyebrow">APRENDA NO SEU RITMO</p>
+      <h1>O que você quer aprender?</h1>
       <p>
         Cada trilha transforma um assunto amplo em passos pequenos e ordenados.
         Você sabe por onde começar e qual será o próximo conteúdo.
@@ -64,10 +65,9 @@ const trailsSchema = {
 
     <section class="trail-benefits" aria-label="Como funcionam as trilhas">
       <div class="container">
-        <article><strong>01</strong><span>Comece do básico</span></article>
-        <article><strong>02</strong><span>Pratique cada etapa</span></article>
-        <article><strong>03</strong><span>Acompanhe seu progresso</span></article>
-        <article><strong>04</strong><span>Avance com confiança</span></article>
+        <article><CategoryIcon icon="grid" /><span>Escolha seu objetivo</span></article>
+        <article><CategoryIcon icon="workflow" /><span>Siga as etapas</span></article>
+        <article><CategoryIcon icon="checklist" /><span>Acompanhe seu progresso</span></article>
       </div>
     </section>
 
@@ -75,14 +75,18 @@ const trailsSchema = {
       <div class="trails-heading">
         <div>
           <p class="eyebrow">ESCOLHA UMA TRILHA</p>
-          <h2 id="trails-title">Rotas de aprendizagem</h2>
+          <h2 id="trails-title">Escolha sua trilha</h2>
         </div>
-        <p>Novas etapas serão publicadas gradualmente.</p>
+        <p>{availableTrails.length} caminhos para começar.</p>
       </div>
 
       <div class="trails-grid">
-        {trails.map((trail) => <TrailCard trail={trail} />)}
+        {trails.map((trail) => <TrailCard trail={trail} editorial />)}
       </div>
     </section>
+    <aside class="trails-note container">
+      <CategoryIcon icon="workflow" size={28} />
+      <div><h2>Um passo de cada vez</h2><p>Seu progresso fica salvo neste navegador. Prefere explorar um assunto? <a href="/blog/">Veja os conteúdos do Blog →</a></p></div>
+    </aside>
   </main>
 </BaseLayout>

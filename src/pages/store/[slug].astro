@@ -5,6 +5,11 @@ import StoreBadge from "../../components/store/StoreBadge.astro";
 import StoreCategoryNav from "../../components/store/StoreCategoryNav.astro";
 import VisualMedia from "../../components/visual/VisualMedia.astro";
 import { resolveStoreVisual } from "../../data/storeVisuals";
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import { getStoreMerchants } from "../../lib/storeOffers";
+import { getPublishedPosts, postSlug } from "../../lib/content";
+import "../../styles/store-catalog.css";
+import "../../styles/store-product.css";
 
 export async function getStaticPaths() {
   const products = await getCollection("storeProducts", ({ data }) => !data.draft);
@@ -20,31 +25,12 @@ interface Props {
 
 const { product } = Astro.props;
 const { Content } = await render(product);
-const links = product.data.affiliateLinks ?? {};
-const providerLabels: Record<string, string> = {
-  amazon: "Amazon",
-  mercadolivre: "Mercado Livre",
-  shopee: "Shopee",
-  hotmart: "Hotmart",
-  other: "Parceiro",
-};
-const structuredOffers = product.data.offers
-  .filter((offer) => offer.active)
-  .map((offer) => ({
-    name: providerLabels[offer.provider] ?? "Parceiro",
-    provider: offer.provider,
-    href: offer.href,
-    label: offer.label,
-    lastChecked: offer.lastChecked,
-  }));
-const legacyMerchants = [
-  { name: "Amazon", provider: "amazon", href: links.amazon, label: undefined, lastChecked: undefined },
-  { name: "Mercado Livre", provider: "mercadolivre", href: links.mercadolivre, label: undefined, lastChecked: undefined },
-  { name: "Shopee", provider: "shopee", href: links.shopee, label: undefined, lastChecked: undefined },
-  { name: "Hotmart", provider: "hotmart", href: links.hotmart, label: undefined, lastChecked: undefined },
-  { name: "Parceiro", provider: "other", href: links.other, label: undefined, lastChecked: undefined },
-].filter((entry) => Boolean(entry.href));
-const merchants = structuredOffers.length > 0 ? structuredOffers : legacyMerchants;
+const merchants = getStoreMerchants(product.data);
+const posts = await getPublishedPosts();
+const relatedPosts = product.data.relatedPosts.flatMap(slug => {
+  const post = posts.find(post => postSlug(post) === slug);
+  return post ? [{ slug, title: post.data.title, description: post.data.description }] : [];
+});
 const { src: productVisual, fallbackSrc: productFallback, categoryLabel } = resolveStoreVisual(product.id, product.data.category);
 const compatibilityLabels: Record<string, string> = {
   linux: "Linux",
@@ -60,8 +46,8 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
 ---
 
 <BaseLayout title={product.data.title} description={product.data.description}>
-  <main id="conteudo" class="store-product-page">
-    <div class="store-container">
+  <main id="conteudo" tabindex="-1" class="store-product-page store-catalog-page">
+    <div class="store-container container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span aria-current="page">{product.data.title}</span>
       </nav>
@@ -87,7 +73,11 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
             <div><span>Categoria</span><strong>{categoryLabel}</strong></div>
           </div>
 
-          {product.data.recommendedFor.length > 0 && (
+          <div class="product-actions">{merchants.length > 0 ? <a class="button button-secondary" href="#ofertas">Ver opções no parceiro <span aria-hidden="true">↓</span></a> : <span class="product-no-offer">Sem oferta ativa nesta recomendação</span>}<a href={`/store/${product.data.category}/`}>Explorar {categoryLabel} →</a></div>
+        </div>
+      </section>
+
+      {(product.data.recommendedFor.length > 0 || compatibilityItems.length > 0) && <section class="product-usage" aria-label="Indicação de uso e compatibilidade">          {product.data.recommendedFor.length > 0 && (
             <div class="recommended">
               <strong>Recomendado para</strong>
               <ul>{product.data.recommendedFor.map((item) => <li>{item}</li>)}</ul>
@@ -106,9 +96,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
               </dl>
             </div>
           )}
-        </div>
-      </section>
-
+      </section>}
       <section class="product-category-nav">
         <div class="product-category-nav__heading"><p class="eyebrow">Continue explorando</p><strong>Outras categorias da DejotaStore</strong></div>
         <StoreCategoryNav activeSlug={product.data.category} compact />
@@ -129,7 +117,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
         </aside>
       </section>
 
-      <section class="product-panel offers">
+      <section id="ofertas" class="product-panel offers">
         <p class="eyebrow">Onde encontrar</p>
         <h2>Confira diretamente na plataforma parceira</h2>
         {merchants.length > 0 ? (
@@ -159,17 +147,17 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
         <p class="affiliate-note">Alguns links podem gerar comissão para o DejotaCode sem custo adicional para você.</p>
       </section>
 
-      {product.data.relatedPosts.length > 0 && (
+      {relatedPosts.length > 0 && (
         <section class="product-panel">
           <p class="eyebrow">Aprenda antes de comprar</p>
           <h2>Conteúdos relacionados</h2>
           <div class="related-list">
-            {product.data.relatedPosts.map((slug) => (
+            {relatedPosts.map(({ slug, title, description }) => (
               <a
                 href={`/blog/${slug}/`}
                 data-store-related-article={`product:${product.id}:${slug}`}
               >
-                {slug.replaceAll("-", " ")} <span>→</span>
+                <CategoryIcon icon="news" size={26} /><div><strong>{title}</strong><p>{description}</p></div><span aria-hidden="true">→</span>
               </a>
             ))}
           </div>
@@ -185,68 +173,3 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
     </div>
   </main>
 </BaseLayout>
-
-<style>
-  .store-product-page { padding-bottom: 3rem; }
-  .store-container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); margin-inline: auto; }
-  .breadcrumbs { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: 1.5rem; color: var(--color-text-subtle); font-size: .82rem; }
-  .breadcrumbs a { color: inherit; text-decoration: none; }
-  .breadcrumbs a:hover { color: var(--color-accent-strong); }
-  .product-hero { display: grid; grid-template-columns: .9fr 1.1fr; gap: 1rem; padding: 1.5rem 0; }
-  .product-visual, .product-summary, .product-panel { border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
-  .product-visual { position:relative;align-self:stretch;min-width:0;min-height:24rem;overflow:hidden;padding:0;background:var(--color-surface-soft); }
-  .product-visual > :global(.visual-media) { position:absolute;inset:0;height:100%;aspect-ratio:auto;border:0;border-radius:0; }
-  .product-visual :global(.visual-media img) { width:100%;height:100%;object-fit:cover;object-position:center; }
-  .product-summary { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.2rem, 4vw, 2rem); }
-  .product-summary h1 { margin: .8rem 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1; letter-spacing: -.045em; }
-  .lead { margin:0;color:var(--color-text-muted);font-size:1.02rem; }
-  .product-commercial-summary { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin-top:1.2rem;padding-block:.75rem;border-block:1px solid var(--color-border); }
-  .product-commercial-summary>div { display:grid;gap:.2rem; }
-  .product-commercial-summary span { color:var(--color-text-subtle);font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase; }
-  .product-commercial-summary strong { font-size:.82rem; }
-  .recommended { margin-top: 1.2rem; }
-  .recommended ul { margin-bottom: 0; color: var(--color-text-muted); }
-  .product-compatibility { margin-top:1rem;padding-top:1rem;border-top:1px solid var(--color-border); }
-  .product-compatibility__list { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:.65rem 1rem;margin:.65rem 0 0; }
-  .product-compatibility__list div { display:grid;gap:.15rem; }
-  .product-compatibility__list dt { color:var(--color-text-subtle);font-size:.72rem;font-weight:800; }
-  .product-compatibility__list dd { margin:0;color:var(--color-text-muted);font-size:.9rem; }
-  .product-category-nav { margin-bottom:1rem;padding:1rem 0;border-bottom:1px solid var(--color-border); }
-  .product-category-nav__heading { display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:.75rem; }
-  .product-category-nav__heading .eyebrow { margin:0; }
-  .product-category-nav__heading strong { font-size:.95rem; }
-  .product-grid { display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:1rem;margin-bottom:1rem; }
-  .product-grid > .product-panel { min-width:0; }
-  .product-panel { padding: 1.2rem; margin-bottom: 1rem; }
-  .product-grid .product-panel { margin-bottom: 0; }
-  .eyebrow { margin: 0 0 .5rem; color: var(--color-accent-strong); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-  .product-copy :global(p), .product-panel > p:not(.eyebrow) { color: var(--color-text-muted); }
-  .product-copy :global(a) { overflow-wrap:anywhere; }
-  .pros-cons { display: grid; gap: .8rem; }
-  .pros-cons > div { padding: .8rem 0; border-top: 1px solid var(--color-border); }
-  .pros-cons ul { margin-bottom: 0; padding-left: 1.2rem; color: var(--color-text-muted); font-size: .9rem; }
-  .offers h2, .methodology h2, .product-panel h2 { margin: .35rem 0 1rem; }
-  .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
-  .offer-grid a { display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface-soft);text-decoration:none; }
-  .offer-grid a>div { display:grid;gap:.12rem; }
-  .offer-grid small { color:var(--color-text-subtle);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em; }
-  .offer-grid a:hover { border-color: var(--color-accent-strong); }
-  .offer-grid span { color: var(--color-accent-strong); font-size: .85rem; font-weight: 800; }
-  .empty-offers { padding: 1rem; border: 1px dashed var(--color-border-strong); border-radius: var(--radius-md); }
-  .verification-note { margin: .9rem 0 0; padding: .8rem; border-left: 2px solid var(--color-accent); background: var(--color-surface-soft); font-size: .82rem; }
-  .affiliate-note { margin-bottom: 0; font-size: .8rem; }
-  .related-list { display: grid; gap: .55rem; }
-  .related-list a { display: flex; justify-content: space-between; gap: .75rem; padding: .75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text); text-decoration: none; text-transform: capitalize; }
-  .related-list a:hover { border-color: var(--color-accent-strong); }
-  .related-list span, .methodology a { color: var(--color-accent-strong); font-weight: 800; }
-  .methodology a { text-decoration: none; }
-  @media (max-width: 50rem) {
-    .product-hero { grid-template-columns: minmax(0,1fr); }
-    .product-grid { grid-template-columns: minmax(0,1fr); }
-    .product-visual { min-height:0;aspect-ratio:4 / 3; }
-    .product-commercial-summary { grid-template-columns:1fr; }
-    .product-category-nav__heading { align-items:start;flex-direction:column; }
-    .offer-grid { grid-template-columns:1fr; }
-  }
-  .product-visual :global(img[src$="-sem-texto-v2.webp"]) { object-position:left top; }
-</style>

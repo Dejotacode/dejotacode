@@ -23,7 +23,10 @@ export type OfficialIconId =
   | "chip"
   | "database"
   | "calendar"
-  | "clock";
+  | "clock"
+  | "keyboard"
+  | "mouse"
+  | "usb-hub";
 
 export type IconCategoryStatus = "current" | "future";
 

@@ -90,20 +90,39 @@ const trailListSchema = {
       </nav>
 
       <div>
-        <p class="eyebrow">TRILHA {trail.number} · {trail.level}</p>
+        <p class="eyebrow"><CategoryIcon icon={trail.iconId} size={24} /> APRENDA NO SEU RITMO</p>
         <h1>{trail.title}</h1>
         <p>{trail.description}</p>
         <div class="trail-detail__meta">
           <span>{trail.lessons.length} etapas</span>
-          <span>{totalDuration} min de leitura</span>
+          <span>{totalDuration} min de leitura estimada</span>
           <span>Progresso local</span>
         </div>
+        <a class="button button-primary" href={`/blog/${trail.lessons[0].slug}/`} data-trail-start>Começar trilha →</a>
       </div>
 
       <div class="trail-detail__aside">
         <div class="trail-detail__media">
           <VisualMedia src={trailVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${trail.title}`} label={trail.title} loading="eager" />
           <span><CategoryIcon icon={trail.iconId} size={24} /></span>
+        </div>
+
+      </div>
+    </header>
+
+    <section class="trail-outcome container">
+      <div>
+        <p class="eyebrow">OBJETIVO DA TRILHA</p>
+
+        <p>{trail.outcome}</p>
+      </div>
+    </section>
+
+    <section class="trail-lessons container" aria-labelledby="lessons-title">
+      <div class="trails-heading">
+        <div>
+          <p class="eyebrow">PASSO A PASSO</p>
+          <h2 id="lessons-title">Seu caminho de aprendizagem</h2>
         </div>
         <div class="trail-progress-card">
           <div class="trail-progress-card__top">
@@ -122,30 +141,12 @@ const trailListSchema = {
           <p data-progress-label>Comece pela primeira etapa.</p>
         </div>
       </div>
-    </header>
-
-    <section class="trail-outcome">
-      <div class="container">
-        <p class="eyebrow">OBJETIVO DA TRILHA</p>
-        <h2>O que você será capaz de fazer</h2>
-        <p>{trail.outcome}</p>
-      </div>
-    </section>
-
-    <section class="trail-lessons container" aria-labelledby="lessons-title">
-      <div class="trails-heading">
-        <div>
-          <p class="eyebrow">PASSO A PASSO</p>
-          <h2 id="lessons-title">Etapas da trilha</h2>
-        </div>
-        <p>Marque uma etapa depois de concluir a leitura.</p>
-      </div>
 
       <ol class="lesson-list">
         {
           trail.lessons.map((lesson) => (
             <li class="lesson" data-lesson={lesson.slug} data-optional={lesson.optional ? "true" : "false"}>
-              <span class="lesson__number">{String(lesson.order).padStart(2, "0")}</span>
+              <span class="lesson__number" aria-hidden="true"><CategoryIcon icon="checklist" size={22} /></span>
               <div class="lesson__content">
                 <div class="lesson__meta">
                   <span>{lesson.optional ? "Opcional" : "Essencial"}</span>
@@ -161,26 +162,20 @@ const trailListSchema = {
                 </h3>
                 <p>{lesson.description}</p>
               </div>
+              <a class="lesson__read" href={`/blog/${lesson.slug}/`} data-lesson-read={lesson.slug} aria-label={`Ler conteúdo: ${lesson.title}`}>Ler conteúdo <span aria-hidden="true">→</span></a>
               <button
                 class="lesson__check"
                 type="button"
                 aria-pressed="false"
                 aria-label={`Marcar “${lesson.title}” como concluída`}
                 data-lesson-toggle
-              ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg></button>
+              ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg><span>Concluir</span></button>
             </li>
           ))
         }
       </ol>
 
-      {trail.slug === "linux-do-zero" && (
-        <aside class="trail-interest" aria-labelledby="linux-ebook-interest-title">
-          <p class="eyebrow">CONTINUE APRENDENDO</p>
-          <h2 id="linux-ebook-interest-title">Aprofunde a trilha com o e-book Linux do Zero.</h2>
-          <p>O Linux do Zero reúne 88 páginas para iniciantes, com instalação segura, terminal, permissões e solução de problemas. O preço de lançamento é R$ 19,90.</p>
-          <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="trail-linux-ebook-product">Conhecer o e-book por R$ 19,90</a>
-        </aside>
-      )}
+
 
       {
         trail.slug === "primeira-renda-online" && (
@@ -203,6 +198,17 @@ const trailListSchema = {
         <button type="button" data-progress-reset>Reiniciar progresso</button>
       </aside>
     </section>
+      {trail.slug === "linux-do-zero" && (
+        <aside class="trail-interest container" aria-labelledby="linux-ebook-interest-title">
+          <img src="/assets/products/linux-do-zero/cover.png" alt="Capa do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" />
+          <div><p class="eyebrow">PARA APROFUNDAR · PRODUTO DEJOTACODE</p>
+          <h2 id="linux-ebook-interest-title">Aprofunde seus estudos com o e-book Linux do Zero</h2>
+          <p><strong>88 páginas para iniciantes</strong>, com instalação segura, terminal, permissões e solução de problemas.</p>
+          <p class="trail-interest__price"><span>Preço de lançamento</span><strong>R$ 19,90</strong></p>
+          <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="trail-linux-ebook-product">Conhecer o e-book →</a></div>
+        </aside>
+      )}
+    <p class="trail-back container"><a href="/trilhas/">← Todas as trilhas</a></p>
   </main>
 
   <script>
@@ -291,6 +297,9 @@ const trailListSchema = {
 
           lesson.classList.toggle("is-complete", isCompleted);
           toggle?.setAttribute("aria-pressed", String(isCompleted));
+          toggle?.setAttribute("aria-label", `${isCompleted ? "Desmarcar" : "Marcar"} “${lesson.querySelector("h3")?.textContent?.trim()}” como concluída`);
+          const toggleLabel = toggle?.querySelector("span");
+          if (toggleLabel) toggleLabel.textContent = isCompleted ? "Concluída" : "Concluir";
         });
 
         const completedCount = requiredLessons.filter((lesson) =>
@@ -299,6 +308,13 @@ const trailListSchema = {
         const percentage = requiredLessons.length
           ? Math.round((completedCount / requiredLessons.length) * 100)
           : 0;
+
+        const startLink = root.querySelector<HTMLAnchorElement>("[data-trail-start]");
+        const nextLesson = requiredLessons.find((lesson) => !completed.has(lesson.dataset.lesson ?? ""));
+        if (startLink) {
+          startLink.href = nextLesson?.querySelector<HTMLAnchorElement>("[data-lesson-link]")?.href ?? "#lessons-title";
+          startLink.textContent = percentage === 100 ? "Rever etapas →" : completedCount ? "Continuar trilha →" : "Começar trilha →";
+        }
 
         if (progressFill) progressFill.style.width = `${percentage}%`;
         if (progressPercent) progressPercent.textContent = `${percentage}%`;
@@ -343,10 +359,11 @@ const trailListSchema = {
             ? completed.delete(lessonSlug)
             : completed.add(lessonSlug);
 
-          localStorage.setItem(
-            storageKey,
-            JSON.stringify([...completed]),
-          );
+          try {
+            localStorage.setItem(storageKey, JSON.stringify([...completed]));
+          } catch {
+            // Keep progress usable during this visit when storage is unavailable.
+          }
 
           const becameComplete =
             !wasComplete && isTrailComplete();
@@ -370,10 +387,21 @@ const trailListSchema = {
 
       resetButton?.addEventListener("click", () => {
         completed = new Set();
-        localStorage.removeItem(storageKey);
+        try { localStorage.removeItem(storageKey); } catch { /* Storage unavailable. */ }
         renderProgress();
       });
 
+      root.querySelector("[data-trail-start]")?.addEventListener("click", () => {
+        trackTrailStart();
+        const next = requiredLessons.find((lesson) => !completed.has(lesson.dataset.lesson ?? ""));
+        if (next) sendAnalyticsEvent(apiBase, "trail_lesson_click", `${trailSlug}:${next.dataset.lesson}`);
+      });
+      root.querySelectorAll<HTMLElement>("[data-lesson-read]").forEach((link) => {
+        link.addEventListener("click", () => {
+          trackTrailStart();
+          sendAnalyticsEvent(apiBase, "trail_lesson_click", `${trailSlug}:${link.dataset.lessonRead}`);
+        });
+      });
       renderProgress();
     }
   </script>

@@ -47,3 +47,66 @@ Visual aprovado pelo usuário. Candidato isolado em `release/blog-editorial-2026
 Validação independente do candidato: Astro check sem erros, avisos ou hints; build de 115 páginas; QA com 6251 referências internas, zero links quebrados, 403 imagens e zero problemas de HTML. Auditoria visual exaustiva em mais navegadores permanece fora desta validação.
 
 Sem push ou publicação. Próximo passo: autorização específica para publicar o candidato.
+
+## Refinamento local de páginas de artigo — 08/10/2026
+
+Estado: implementado no worktree `dejotacode-blog-release`, branch `release/blog-editorial-20261008`, sobre o candidato `0f8d8ef`. Sem commit, push, merge ou publicação.
+
+### Alterações
+- `src/pages/blog/[slug].astro`: usa o ícone oficial da categoria e ícones decorativos de calendário/relógio; filtra H2 para o sumário e não exibe sumário vazio; mantém sumário desktop e oferece `details/summary` acessível em tablet/celular; prioriza a próxima ação contextual antes do compartilhamento.
+- `src/styles/article.css`: reduz e amplia a área útil do título; mantém texto e capa em duas colunas no desktop e empilha informações antes da capa em telas menores; estabiliza a capa em 4:3 com enquadramento no topo/esquerda; refina leitura, sumário e encerramento sem alterar recomendações ou lógica comercial.
+- `PostCard.astro` e `VisualMedia.astro` foram preservados; os estilos de capa são exclusivos dos artigos.
+- Conteúdo, rotas, SEO, dados estruturados, links comerciais, tags, disclosures, recursos e cards relacionados foram preservados.
+
+### Validação
+- No worktree indicado: `npm run check` — passou, 76 arquivos, zero erros, avisos ou hints.
+- No worktree indicado: `npm run build` — passou, 115 páginas geradas.
+- No worktree indicado: `npm run qa` — passou; 115 HTMLs, 6.251 referências internas, zero destinos quebrados, 403 imagens e zero problemas de HTML/acessibilidade básica.
+- `git diff --check` — passou.
+- Artigos conferidos no preview: Elementor (8 H2), Metricool (bloco de produto e link `/store/metricool/`, conteúdo de afiliado/disclosure preservados) e Comandos Linux (10 H2, recursos, CTA para a próxima etapa da trilha, e-book e dois artigos relacionados).
+- Em 360, 390, 768 e 1440 px: sem overflow horizontal; informações precedem a capa em telas até 1100 px; desktop mantém texto/capa lado a lado e sumário sticky; tablet/celular usam disclosure.
+- Teclado: disclosure do sumário abre com Espaço e mostra foco visível de 3 px; link do sumário atualiza o fragmento para a seção correspondente.
+- Capas reais verificadas visualmente em desktop e celular: símbolo DejotaCode permanece visível no Elementor e em Comandos Linux.
+- Blog e categoria Programação conferidos sem regressão aparente: o Blog continua com três colunas e metadados com ícones; os cards da categoria permanecem sem ícones adicionais. Cards relacionados do artigo Linux continuam presentes.
+- Contraste medido para o texto turquesa da categoria e da marca: 4,97:1 no tema claro e 13,15:1 no escuro.
+- Capturas do hero foram conferidas nos dois temas e em desktop/celular durante a revisão; não foram exportadas como arquivos do repositório.
+
+### Preview e pendências
+- Preview local estático: http://localhost:4322/blog/elementor-para-iniciantes/ (também conferir `/blog/metricool-para-iniciantes-organizar-agendar-conteudo/` e `/blog/comandos-linux-para-iniciantes/`).
+- Chamadas externas de analytics registraram CORS no console em `localhost`; isso não bloqueou o render nem as verificações locais, mas o serviço externo não foi validado.
+- A validação visual cobre os artigos representativos e quatro larguras no navegador integrado; não substitui testes em navegadores/dispositivos físicos diferentes.
+- Alterações seguem locais e não commitadas. Sem push, merge ou publicação.
+
+
+## Ajustes após capturas anotadas — 08/10/2026
+
+Aplicados localmente: breadcrumbs com menor espaço vertical; avatar oficial circular e autoria junto aos metadados; sumário alinhado à margem esquerda do container; produtos em card horizontal com ícone oficial, selo e disclosure preservados; CTA horizontal responsivo e compartilhamento enxuto. Tokens de identidade preservados, sem adotar o verde do esboço.
+
+Astro check: zero erros, avisos e hints. Build: 115 páginas. QA: zero links quebrados e zero problemas HTML, 445 imagens. Diff check aprovado. Revisão visual final pelo usuário pendente; sem push ou publicação.
+
+
+## Grid do encerramento — capturas 04 a 08
+
+Sumário limitado ao bloco de leitura; assuntos imediatamente após o texto. Encerramento separado em container completo: produtos com título, descrição e disclosure dentro do painel, CTA compacto e compartilhamento alinhados ao grid. Metadados da autoria mais espaçados; ícones opt-in nos relacionados somente nesta página. Cores oficiais mantidas. Astro check sem erros/avisos/hints; build 115 páginas; QA e diff check aprovados. Revisão visual final pendente; sem publicação.
+
+
+## Padrão comum dos artigos — 08/10/2026
+
+Corpo, fontes, assuntos e recursos/produtos vinculados permanecem na coluna de leitura; divisória lateral acompanha todo o conjunto. Cards têm espaçamento interno ampliado. Bloco explicativo repetido removido; disclosure comercial preservado. Continuidade de trilha aparece abaixo somente quando há vínculo cadastrado; e-book contextual e relacionados preservados. Regra implementada no template comum, sem editar artigos individuais. Revisão visual pendente; sem publicação.
+
+
+## Cards unificados e continuidade fixa
+
+ArticleGuideResources reúne produtos e recursos em cards com imagem à esquerda, descrição e seta para conteúdo; elimina duplicação por destino Store. Disclosure, status editorial e informações do recurso preservados. Continue aprendendo fixo em todos os artigos, com texto aprovado e link à trilha vinculada ou /trilhas/. Borda acompanha os recursos. Build: 115 páginas; QA aprovado, 480 imagens. Exemplos de revisão: Comandos Linux e Elementor. Sem publicação; revisão visual pendente.
+
+
+## Conferência ampla — 08/10/2026, 20:19
+
+Astro check: 77 arquivos, zero erros, avisos e hints. Build: 115 páginas. QA: 6208 referências internas, zero destinos quebrados, 480 imagens, 259 controles, zero problemas HTML. Auditoria adicional dos 42 artigos: um H1 por página, IDs únicos, fragmentos existentes, destinos de cards não duplicados, imagens com alt/dimensões, CTA de trilha único em todos. Arquivo Blog: sete páginas e 42 artigos encontrados. Total: 35 cards de guia.
+
+Limitações: conferência atual de código/HTML, sem nova inspeção visual em navegador; screenshots anteriores cobrem etapas anteriores. CSS ainda contém sobrescritas acumuladas de ajustes e deve ser consolidado sem mudar o resultado aprovado. StoreProductsInArticle não é mais utilizado no template; as alterações locais desse componente ficaram fora do fluxo atual e devem ser retiradas do pacote final após conferir o diff. Integração real de analytics e testes em dispositivos/navegadores continuam pendentes. Sem push ou publicação.
+
+
+## Organização final local
+
+CSS reduzido de 661 para 591 linhas: removidas 25 declarações já sobrescritas por regras posteriores idênticas e estilos de blocos sem uso no template. Alterações experimentais de StoreProductsInArticle retiradas do candidato; componente original preservado. Check sem erros/avisos/hints, build 115 páginas, QA aprovado. Revisão visual final do estado consolidado pendente. Sem publicação.

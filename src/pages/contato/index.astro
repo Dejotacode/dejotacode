@@ -1,52 +1,30 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../styles/institutional.css";
+import CategoryIcon from "../../components/CategoryIcon.astro";
 import "../../styles/contact.css";
 const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
 ---
 <BaseLayout title="Contato | DejotaCode" description="Entre em contato com o DejotaCode para dúvidas, sugestões ou parcerias.">
-  <main id="conteudo" tabindex="-1" class="institutional-page">
-    <header class="institutional-hero container"><p class="eyebrow">CONTATO</p><h1>Vamos conversar.</h1><p>Envie uma dúvida, sugestão de conteúdo, correção ou proposta de parceria.</p></header>
-    <section class="institutional-section container contact-layout">
-      <aside class="institutional-card contact-aside">
-        <span>ATENDIMENTO</span>
-        <h2>Como podemos ajudar?</h2>
-        <p>Descreva o assunto com contexto e não envie senhas, documentos ou outras informações sensíveis.</p>
-        <div class="contact-details">
-          <address>
-            <strong>Serra — Espírito Santo</strong>
-            <span>Atendimento online para todo o Brasil</span>
-          </address>
-          <div>
-            <strong>WhatsApp</strong>
-            <a class="contact-phone" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" data-analytics-cta="contact-whatsapp">(27) 99971-7193</a>
-          </div>
-          <a class="button button-primary contact-whatsapp" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" data-analytics-cta="contact-whatsapp-button">Conversar pelo WhatsApp <span aria-hidden="true">→</span></a>
-          <p><strong>Horário de atendimento</strong><span>Segunda a sexta, das 9h às 18h</span></p>
-        </div>
-        <div class="contact-map">
-          <iframe
-            title="Localização aproximada do DejotaCode em Serra, Espírito Santo"
-            src="https://www.google.com/maps?q=Serra%2C%20Esp%C3%ADrito%20Santo%2C%20Brasil&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <a href="https://www.google.com/maps/search/?api=1&query=Serra%2C%20Esp%C3%ADrito%20Santo%2C%20Brasil" target="_blank" rel="noopener noreferrer">Abrir no Google Maps <span aria-hidden="true">↗</span></a>
-        </div>
-      </aside>
-      <div class="institutional-card">
+  <main id="conteudo" tabindex="-1" class="contact-page">
+    <header class="contact-hero container"><p class="eyebrow">CONTATO</p><h1>Vamos conversar.</h1><p>Dúvidas, sugestões, correções ou propostas: escolha o assunto e conte como podemos ajudar.</p></header>
+    <section class="container contact-layout">
+      <aside class="contact-panel contact-aside" aria-labelledby="contact-attendance-title"><p class="eyebrow">ATENDIMENTO</p><h2 id="contact-attendance-title">Fale com o Dejota</h2><p>Atendimento online para todo o Brasil.</p><div class="contact-details"><div class="contact-detail"><CategoryIcon icon="network" size={28}/><address>Serra — Espírito Santo</address></div><div class="contact-detail"><CategoryIcon icon="clock" size={28}/><p>Segunda a sexta, das 9h às 18h</p></div><div class="contact-detail"><CategoryIcon icon="smartphone" size={28}/><a class="contact-phone" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20vim%20pelo%20DejotaCode%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" data-analytics-cta="contact-whatsapp">(27) 99971-7193</a></div></div><a class="button button-primary contact-whatsapp" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20vim%20pelo%20DejotaCode%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" data-analytics-cta="contact-whatsapp-button">Conversar pelo WhatsApp <span aria-hidden="true">→</span></a><div class="contact-mini-map"><iframe title="Mapa de localização aproximada em Serra, Espírito Santo" src="https://www.google.com/maps?q=Serra%2C%20Esp%C3%ADrito%20Santo%2C%20Brasil&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a class="contact-location" href="https://www.google.com/maps/search/?api=1&amp;query=Serra%2C%20Esp%C3%ADrito%20Santo%2C%20Brasil" target="_blank" rel="noopener noreferrer"><CategoryIcon icon="grid" size={26}/>Abrir localização no Maps <span aria-hidden="true">↗</span></a></div></aside>
+      <section class="contact-panel contact-form-panel" aria-labelledby="contact-form-title"><h2 id="contact-form-title">Envie sua mensagem</h2><p class="contact-form-intro">Preencha os campos abaixo para entrar em contato.</p>
         <form class="contact-form" data-contact-form data-api-base={apiBase} data-endpoint="/api/contact" data-conversion="contact_submit" data-campaign="contact" data-success="Mensagem recebida com sucesso.">
-          <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="100" required /></div>
-          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
-          <div class="field"><label for="subject">Assunto</label><select id="subject" name="subject" required><option value="">Selecione</option><option>Dúvida</option><option>Sugestão de conteúdo</option><option>Correção</option><option value="orcamento-servicos">Orçamento de serviços</option><option value="parceria">Parceria</option><option>Outro assunto</option></select></div>
-          <div class="field"><label for="message">Mensagem</label><textarea id="message" name="message" minlength="20" maxlength="3000" rows="8" required aria-describedby="message-help"></textarea><small id="message-help">Entre 20 e 3.000 caracteres.</small></div>
+          <div class="contact-form-row"><div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="100" required /></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required /></div></div>
+          <div class="field"><label for="subject">Assunto</label><select id="subject" name="subject" required aria-describedby="subject-help"><option value="">Selecione o assunto</option><option>Dúvida</option><option>Sugestão de conteúdo</option><option>Correção</option><option value="orcamento-servicos">Orçamento de serviços</option><option value="parceria">Parceria</option><option>Outro assunto</option></select><small id="subject-help">Dúvida, sugestão, correção, serviços ou parceria.</small></div>
+          <div class="field"><label for="message">Mensagem</label><textarea id="message" name="message" minlength="20" maxlength="3000" rows="5" required aria-describedby="message-help"></textarea><small id="message-help">Conte o contexto da sua mensagem. Entre 20 e 3.000 caracteres.</small></div>
           <div class="form-trap" aria-hidden="true"><label for="contact-website">Não preencha este campo</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off" /></div>
           <label class="form-consent"><input name="consent" type="checkbox" value="true" required /><span>Concordo com o uso dos dados para responder esta mensagem e li a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</span></label>
-          <button class="button button-primary" type="submit">Enviar mensagem</button>
+          <button class="button button-primary" type="submit">Enviar mensagem <span aria-hidden="true">→</span></button>
           <output class="form-status" aria-live="polite" aria-atomic="true"></output>
         </form>
-      </div>
+      </section>
     </section>
+    <section class="container contact-faq" aria-labelledby="contact-faq-title"><h2 id="contact-faq-title">Antes de enviar</h2><details><summary>Quero solicitar um orçamento. Como faço?</summary><p>Conheça os <a href="/servicos/">serviços disponíveis</a> e escolha “Orçamento de serviços” no formulário. Descreva seu negócio, o que precisa e o prazo desejado.</p></details><details><summary>Como envio uma proposta de parceria?</summary><p>Consulte os <a href="/parcerias/">formatos e critérios de parceria</a>. Selecione “Parceria” e apresente sua marca, objetivo, escopo e prazo desejado.</p></details><details><summary>Posso sugerir um conteúdo ou informar uma correção?</summary><p>Sim. Escolha “Sugestão de conteúdo” ou “Correção”. Para corrigir algo, inclua o link da página e explique o ponto que precisa ser revisto.</p></details></section>
+    <aside class="container contact-context"><CategoryIcon icon="shield-check" size={34}/><div><strong>Sua mensagem merece contexto.</strong><p>Não envie senhas, documentos ou informações sensíveis pelo formulário.</p></div></aside>
+    <nav class="container contact-destinations" aria-label="Serviços e parcerias"><a href="/servicos/"><CategoryIcon icon="browser" size={32}/><div><strong>Serviços</strong><span>Conheça as soluções para o seu negócio.</span></div><span aria-hidden="true">→</span></a><a href="/parcerias/"><CategoryIcon icon="network" size={32}/><div><strong>Parcerias</strong><span>Vamos construir uma colaboração com propósito.</span></div><span aria-hidden="true">→</span></a></nav>
   </main>
   <script>
     import { preparePublicForm } from "../../scripts/form-adapter";
@@ -59,6 +37,12 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
         (option) => option.value === requestedSubject,
       );
       if (hasRequestedSubject) subject.value = requestedSubject;
+      const formats: Record<string, string> = { patrocinado: "conteúdo patrocinado", afiliados: "afiliados", especial: "projetos especiais" };
+      const requestedFormat = new URLSearchParams(window.location.search).get("formato");
+      const message = document.querySelector<HTMLTextAreaElement>("#message");
+      if (requestedSubject === "parceria" && requestedFormat && Object.hasOwn(formats, requestedFormat) && message && !message.value) {
+        message.value = `Olá! Gostaria de conversar sobre uma parceria de ${formats[requestedFormat]}.\n\nMarca ou projeto: \nObjetivo: \nEscopo: \nPrazo desejado: `;
+      }
     }
   </script>
 </BaseLayout>

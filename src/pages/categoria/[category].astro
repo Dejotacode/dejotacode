@@ -102,7 +102,7 @@ const categorySchema =
     )
   }
 
-  <main id="conteudo" tabindex="-1" class="editorial-page discovery-page">
+  <main id="conteudo" tabindex="-1" class="editorial-page discovery-page category-page">
     <header class="editorial-hero container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="/">Início</a>
@@ -134,6 +134,13 @@ const categorySchema =
       }
     </header>
 
+    <nav class="container discovery-categories" aria-label="Assuntos do Blog">
+      {Object.entries(categories).map(([slug, name]) => {
+        const icon = getOfficialCategoryIcon(slug);
+        return <a href={`/categoria/${slug}/`} aria-current={slug === category ? "page" : undefined}>{icon && <CategoryIcon icon={icon.iconId} size={18} />}<span>{name}</span></a>;
+      })}
+    </nav>
+
     <section class="editorial-section container" aria-labelledby="category-posts-title">
       <div class="section-heading">
         <div>
@@ -147,7 +154,7 @@ const categorySchema =
         posts.length > 0 ? (
           <>
             <div class="post-grid">
-              {visiblePosts.map((post) => <PostCard post={post} />)}
+              {visiblePosts.map((post) => <PostCard post={post} blogMetaIcons />)}
             </div>
             <Pagination
               currentPage={1}
