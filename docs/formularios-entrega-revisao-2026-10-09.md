@@ -32,3 +32,7 @@ Teste concreto proposto: uma mensagem de texto com assunto “DejotaCode — tes
 
 ## Teste real autorizado — 09/10/2026
 Usuário autorizou um único envio. POST direto na API Email Sending da Cloudflare, com mensagem de teste sem dados de visitantes, remetente contato@dejotacode.com.br e destino Gmail previamente verificado. Resposta HTTP 200, success=true, delivered=1, queued=0, permanent_bounces=0; identificador de mensagem retornado. Sem repetição. O serviço declarou entrega imediata; localização na caixa principal/spam e leitura ainda dependem de confirmação do destinatário. Este teste verifica o transporte REST, não execução do binding da rota de contato implantada. Nenhum formulário público ativado, binding/configuração alterado, push ou deploy realizado.
+
+
+## Recebimento confirmado no Gmail — 09/10/2026
+Consulta autorizada pelo usuário encontrou exatamente o teste na caixa de entrada (INBOX/CATEGORY_PERSONAL), enviado às 14:33 BRT, sem etiqueta SPAM. Corpo coincide com o teste aprovado. Cabeçalho Authentication-Results do Gmail: SPF pass, DKIM pass para dejotacode.com.br e DMARC pass. Nenhuma etiqueta, estado de leitura ou mensagem alterada. Confirma recebimento desta mensagem; não certifica todos os envios futuros nem ativa o binding dos formulários.
