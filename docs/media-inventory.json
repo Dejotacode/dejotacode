@@ -940,6 +940,11 @@
     "sha256": "da66b6074ddbb2c26207e93a6df64fdaeb14db63268353505315cac984f8d1c8"
   },
   {
+    "path": "/assets/trails/primeiros-passos-programacao.svg",
+    "bytes": 863,
+    "sha256": "322bf4078b60630c8176e2e36269a86609544a4c092dd2e2980654e4b8a399f7"
+  },
+  {
     "path": "/assets/trails/seguranca-digital-essencial.svg",
     "bytes": 1355,
     "sha256": "782ea2f7a1f6cfa2c1c52bd571b448ce71dd6a5eb2e121acd1b3dac935b9cf22"

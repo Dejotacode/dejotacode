@@ -54,7 +54,7 @@ const postSpecificVisuals: Record<string, string> = {
 
 export const trailVisuals: Record<string, string> = {
   "linux-do-zero": "/assets/resources/items/linux.webp",
-  "primeiros-passos-programacao": "/assets/resources/items/vscode.webp",
+  "primeiros-passos-programacao": "/assets/trails/primeiros-passos-programacao.svg",
   "ia-no-dia-a-dia": "/assets/trails/ia-no-dia-a-dia.svg",
   "seguranca-digital-essencial": "/assets/trails/seguranca-digital-essencial.svg",
   "primeira-renda-online": "/assets/trails/primeira-renda-online.svg",

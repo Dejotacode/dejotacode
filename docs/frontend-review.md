@@ -236,3 +236,8 @@ Teste com Chromium completo e perfil temporário isolado; zoom aplicado pela API
 Todos os POST foram bloqueados no navegador de teste. Sem envio real, publicação ou alteração do navegador pessoal. QA de links/HTML passou novamente sobre o build existente.
 Esta etapa não alterou layout nem conteúdo. A verificação da árvore não substitui uso com leitor de tela; outros navegadores e leitores de tela reais continuam pendentes. Pendências de arte da trilha de programação, Setup e entrega da API permanecem.
 Preview: http://localhost:4321/.
+
+## Sétima etapa — capa da trilha de programação
+O corte fazia parte do raster original vscode.webp; CSS não recuperaria o conteúdo. A trilha passou a usar /assets/trails/primeiros-passos-programacao.svg, composição vetorial 16:9 derivada da ilustração de desenvolvimento existente, sem texto incorporado. Raster original e conteúdo dos Recursos preservados.
+Trilhas, detalhe de programação e Busca por programacao: 3 rotas × 320/390/768/1440 × claro/escuro = 24 combinações sem overflow ou falhas de carregamento da nova capa. Capturas desktop nos dois temas inspecionadas. Check: 78 arquivos, zero erros/avisos/hints. Build: 115 páginas. QA: 6383 referências sem destinos quebrados; HTML sem problemas básicos.
+Somente o resolver de mídia, novo SVG e registros foram alterados; nenhum texto editorial, rota, SEO, afiliado ou formulário alterado. Pendência visual de programação resolvida na trilha; arte original continua preservada nos Recursos. Permanecem confirmação de Setup, entrega real da API e uso com leitores de tela reais/outros navegadores. Preview http://localhost:4321/trilhas/. Sem publicação ou push.
