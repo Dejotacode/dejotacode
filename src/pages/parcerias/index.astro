@@ -1,58 +1,44 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../styles/institutional.css";
+import "../../styles/partnerships.css";
+import CategoryIcon from "../../components/CategoryIcon.astro";
 ---
 <BaseLayout title="Parcerias e anúncios | DejotaCode" description="Conheça as possibilidades de parceria editorial, publicidade e projetos comerciais transparentes com o DejotaCode e sua audiência de tecnologia.">
   <main id="conteudo" tabindex="-1" class="institutional-page partnerships-page">
     <header class="container partnerships-hero">
-      <p class="eyebrow">PARCERIAS E ANÚNCIOS</p>
-      <h1>Parcerias que fazem sentido para quem está aprendendo.</h1>
-      <p>O DejotaCode trabalha com marcas, ferramentas e projetos que tenham utilidade real para uma audiência interessada em tecnologia, aprendizado e construção prática.</p>
-      <div class="institutional-hero__chips" aria-label="Princípios de parceria"><span>Transparência</span><span>Relevância</span><span>Independência editorial</span></div>
+      <div><p class="eyebrow">PARCERIAS E ANÚNCIOS</p>
+      <h1>Conecte sua marca a quem está aprendendo tecnologia.</h1>
+      <p>Colaborações úteis, transparentes e alinhadas ao conteúdo do DejotaCode.</p>
+      <div class="partnerships-actions"><a class="button button-primary" href="/contato/?assunto=parceria">Propor uma parceria <span aria-hidden="true">→</span></a><a class="button" href="#formatos">Conhecer os formatos</a></div></div>
+      <div class="partnerships-visual" aria-hidden="true"><div class="visual-connections"></div>{["code", "terminal", "ai-nodes"].map((icon, i) => <div class={`visual-window visual-window--${i}`}><div class="visual-window__bar"><i></i><i></i><i></i></div><div class="visual-window__body"><div class="visual-code">{[1,2,3,4,5].map(n => <span style={`--line:${[80,55,95,65,42][n-1]}%`}></span>)}</div><CategoryIcon icon={icon as "code" | "terminal" | "ai-nodes"} size={62}/></div></div>)}</div>
     </header>
-
-    <section class="institutional-section container partnerships-value">
-      <div class="institutional-heading">
-        <div><p class="eyebrow">POR QUE COLABORAR</p><h2>Contexto antes da exposição.</h2></div>
-        <p>A parceria precisa acrescentar algo à experiência de quem acompanha o DejotaCode. Alcance sem relevância não é o objetivo.</p>
-      </div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>01</span><h3>Audiência em construção</h3><p>Pessoas que estão aprendendo tecnologia, testando ferramentas e buscando caminhos mais claros para evoluir.</p></article>
-        <article class="institutional-card"><span>02</span><h3>Conteúdo com contexto</h3><p>A ferramenta ou marca aparece conectada a uma necessidade real, não como publicidade solta.</p></article>
-        <article class="institutional-card"><span>03</span><h3>Relação identificada</h3><p>Links de afiliado, conteúdo patrocinado e outras relações comerciais são sinalizados de forma explícita.</p></article>
-      </div>
-    </section>
-
-    <section class="partnerships-formats" aria-labelledby="partnerships-formats-title">
+    <div class="container partnerships-principles" aria-label="Princípios de parceria"><div><CategoryIcon icon="shield-check" size={38}/><div><strong>Transparência</strong><p>A relação comercial é sempre identificada de forma clara.</p></div></div><div><CategoryIcon icon="network" size={38}/><div><strong>Relevância</strong><p>Parcerias que fazem sentido para quem acompanha o conteúdo.</p></div></div><div><CategoryIcon icon="news" size={38}/><div><strong>Independência editorial</strong><p>O conteúdo continua guiado pelo que é útil e verdadeiro.</p></div></div></div>
+    <section class="container partnerships-value"><h2>Quem acompanha o DejotaCode</h2><p>Pessoas que estão construindo sua base, explorando ferramentas e aprendendo a aplicar tecnologia no dia a dia.</p><div class="partnerships-topics" aria-label="Temas do projeto">{[{icon:"code",label:"Programação"},{icon:"terminal",label:"Linux & Segurança"},{icon:"ai-nodes",label:"Inteligência Artificial"},{icon:"grid",label:"Tecnologia prática"},{icon:"wallet",label:"Renda Digital"}].map(topic => <div><CategoryIcon icon={topic.icon as "code" | "terminal" | "ai-nodes" | "grid" | "wallet"} size={30}/><span>{topic.label}</span></div>)}</div><p class="partnerships-audience-note">Uma audiência em construção, com foco em conteúdo útil.</p></section>
+    <section id="formatos" class="partnerships-formats" aria-labelledby="partnerships-formats-title">
       <div class="container">
-        <div class="institutional-heading">
-          <div><p class="eyebrow">FORMATOS</p><h2 id="partnerships-formats-title">Como podemos colaborar</h2></div>
-          <p>Cada formato começa pela mesma pergunta: isso é útil e coerente para quem acompanha o projeto?</p>
-        </div>
+        <h2 id="partnerships-formats-title">Como podemos colaborar</h2>
         <div class="partnerships-formats__grid">
-          <article><span>EDITORIAL</span><h3>Conteúdo patrocinado</h3><p>Materiais identificados como publicidade, produzidos com liberdade para explicar contexto, vantagens, limitações e uso real.</p></article>
-          <article><span>INDICAÇÃO</span><h3>Afiliados</h3><p>Ferramentas, serviços ou produtos relacionados diretamente aos conteúdos e recursos do ecossistema DejotaCode.</p></article>
-          <article><span>ESPECIAL</span><h3>Projetos especiais</h3><p>Guias, séries, testes ou experiências educativas construídas com objetivo, escopo e responsabilidade definidos.</p></article>
+          <article><CategoryIcon icon="news" size={30}/><h3>Conteúdo patrocinado</h3><p>Materiais identificados como publicidade, produzidos com liberdade para explicar contexto, vantagens, limitações e uso real.</p><a href="/contato/?assunto=parceria&amp;formato=patrocinado">Conversar sobre conteúdo <span aria-hidden="true">→</span></a></article>
+          <article><CategoryIcon icon="network" size={30}/><h3>Afiliados</h3><p>Ferramentas, serviços ou produtos relacionados diretamente aos conteúdos e recursos do ecossistema DejotaCode.</p><a href="/contato/?assunto=parceria&amp;formato=afiliados">Propor uma indicação <span aria-hidden="true">→</span></a></article>
+          <article><CategoryIcon icon="workflow" size={30}/><h3>Projetos especiais</h3><p>Guias, séries, testes ou experiências educativas construídas com objetivo, escopo e responsabilidade definidos.</p><a href="/contato/?assunto=parceria&amp;formato=especial">Apresentar um projeto <span aria-hidden="true">→</span></a></article>
         </div>
       </div>
     </section>
 
-    <section class="institutional-section container partnerships-criteria">
-      <div class="institutional-heading">
-        <div><p class="eyebrow">COMO AVALIAMOS</p><h2>Uma proposta precisa passar por quatro filtros.</h2></div>
-      </div>
+    <div class="container partnerships-evaluation"><section class="institutional-section partnerships-criteria">
+      <h2>Utilidade antes da exposição</h2>
       <ol class="partnerships-criteria__list">
-        <li><span>01</span><div><strong>Relevância</strong><p>Existe conexão clara com tecnologia, aprendizado, criação, produtividade ou construção de renda responsável?</p></div></li>
-        <li><span>02</span><div><strong>Utilidade</strong><p>A marca ou ferramenta resolve uma necessidade real de quem acompanha o projeto?</p></div></li>
-        <li><span>03</span><div><strong>Transparência</strong><p>Condições comerciais, limitações e relação com o DejotaCode podem ser explicadas sem ambiguidade?</p></div></li>
-        <li><span>04</span><div><strong>Compatibilidade editorial</strong><p>A parceria permite manter opinião independente e comunicar o que realmente foi observado?</p></div></li>
+        <li><CategoryIcon icon="shield-check" size={30}/><div><strong>Relevância</strong><p>Existe conexão clara com tecnologia, aprendizado, criação, produtividade ou construção de renda responsável?</p></div></li>
+        <li><CategoryIcon icon="shield-check" size={30}/><div><strong>Utilidade</strong><p>A marca ou ferramenta resolve uma necessidade real de quem acompanha o projeto?</p></div></li>
+        <li><CategoryIcon icon="shield-check" size={30}/><div><strong>Transparência</strong><p>Condições comerciais, limitações e relação com o DejotaCode podem ser explicadas sem ambiguidade?</p></div></li>
+        <li><CategoryIcon icon="shield-check" size={30}/><div><strong>Compatibilidade editorial</strong><p>A parceria permite manter opinião independente e comunicar o que realmente foi observado?</p></div></li>
       </ol>
     </section>
 
     <section class="partnerships-editorial">
-      <div class="container partnerships-editorial__grid">
+      <div class="partnerships-editorial__grid">
         <div>
-          <p class="eyebrow">INDEPENDÊNCIA EDITORIAL</p>
+          <CategoryIcon icon="microphone" size={48}/>
           <h2>Pagamento não compra opinião positiva.</h2>
         </div>
         <div>
@@ -62,18 +48,18 @@ import "../../styles/institutional.css";
       </div>
     </section>
 
+    </div>
+
     <section class="institutional-section container partnerships-boundaries">
       <div class="partnerships-boundaries__box">
-        <div><p class="eyebrow">LIMITES</p><h2>O que não aceitamos</h2></div>
-        <p>Promessas de enriquecimento rápido, produtos sem transparência, práticas enganosas, publicidade disfarçada de opinião ou qualquer condição que exija esconder limitações importantes da audiência.</p>
+        <CategoryIcon icon="privacy" size={38}/><div><h2>O que não aceitamos</h2>
+        <p>Promessas de enriquecimento rápido, produtos sem transparência, práticas enganosas, publicidade disfarçada de opinião ou qualquer condição que exija esconder limitações importantes da audiência.</p></div>
       </div>
     </section>
 
-    <section class="partnerships-cta container">
-      <p class="eyebrow">TEM UMA PROPOSTA?</p>
-      <h2>Vamos entender se existe um bom encaixe.</h2>
-      <p>Conte rapidamente quem é sua marca, o que você gostaria de construir e por que acredita que isso faz sentido para a audiência do DejotaCode.</p>
-      <a class="button button-primary" href="/contato/?assunto=parceria">Propor uma parceria <span aria-hidden="true">→</span></a>
-    </section>
+    <section class="container partnerships-proposal"><h2>Uma proposta começa com quatro informações</h2><div class="partnerships-proposal__grid"><div><CategoryIcon icon="browser" size={36}/><div><h3>Sua marca</h3><p>Apresente a marca, ferramenta ou projeto e o que oferece.</p></div></div><div><CategoryIcon icon="workflow" size={36}/><div><h3>O objetivo</h3><p>Explique o que deseja construir e a utilidade para a audiência.</p></div></div><div><CategoryIcon icon="news" size={36}/><div><h3>O formato</h3><p>Indique a colaboração e o escopo que tem em mente.</p></div></div><div><CategoryIcon icon="calendar" size={36}/><div><h3>O prazo desejado</h3><p>Compartilhe o período previsto para avaliarmos a possibilidade.</p></div></div></div></section>
+    <section class="container partnerships-faq"><h2>Perguntas frequentes</h2><details><summary>Quais formatos estão disponíveis?</summary><p>Conteúdo patrocinado, afiliados e projetos especiais. O formato e o escopo são avaliados conforme a utilidade e a compatibilidade com o projeto.</p></details><details><summary>A relação comercial será identificada?</summary><p>Sim. Conteúdo patrocinado, links de afiliado e outras relações comerciais são sinalizados de forma explícita.</p></details><details><summary>Toda proposta é aceita?</summary><p>Não. Avaliamos relevância, utilidade, transparência e compatibilidade editorial. Uma condição que impeça uma análise honesta não faz sentido para o DejotaCode.</p></details></section>
+
+    <section class="partnerships-cta container"><CategoryIcon icon="news" size={42}/><div><h2>Vamos entender se existe um bom encaixe.</h2><p>Conte quem é sua marca e o que você gostaria de construir.</p></div><a class="button button-primary" href="/contato/?assunto=parceria">Propor uma parceria <span aria-hidden="true">→</span></a></section>
   </main>
 </BaseLayout>

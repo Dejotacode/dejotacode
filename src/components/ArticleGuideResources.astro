@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import type { RecommendedResource } from "../data/recommendedResources";
+import { resolveStoreVisual } from "../data/storeVisuals";
+import VisualMedia from "./visual/VisualMedia.astro";
+import StoreBadge from "./store/StoreBadge.astro";
+interface Props { productIds: string[]; resources: RecommendedResource[]; }
+const { productIds, resources } = Astro.props;
+const products = (await getCollection("storeProducts", ({ data }) => !data.draft)).filter(p => productIds.includes(p.id));
+const paths = new Set(products.map(p => `/store/${p.id}/`));
+const uniqueResources = resources.filter(r => !paths.has(r.storePath ?? r.href));
+---
+{(products.length > 0 || uniqueResources.length > 0) && (
+ <section class="article-guide-resources" aria-label="Recursos para este guia">
+  {products.map(product => {
+   const visual = resolveStoreVisual(product.id, product.data.category);
+   return <article class="article-guide-card">
+    <div class="article-guide-card__image"><VisualMedia src={visual.src} fallbackSrc={visual.fallbackSrc} alt={product.data.title} aspect="card" /></div>
+    <div class="article-guide-card__copy"><p class="article-guide-card__label">Recursos para este guia</p><StoreBadge status={product.data.editorialStatus} /><h3>{product.data.title}</h3><p>{product.data.description}</p></div>
+    <a class="article-guide-card__link" href={`/store/${product.id}/`} data-store-origin={`article:${Astro.url.pathname}`} data-analytics-cta={`article-store:${product.id}`} aria-label={`Ver conteúdo: ${product.data.title}`}><span aria-hidden="true">→</span></a>
+   </article>;
+  })}
+  {uniqueResources.map(resource => {
+   const href = resource.storePath ?? (resource.articlePath !== Astro.url.pathname ? resource.articlePath : undefined) ?? resource.href;
+   const external = href.startsWith("http");
+   return <article class="article-guide-card">
+    <div class="article-guide-card__image"><VisualMedia src={resource.image} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={resource.imageAlt ?? resource.name} aspect="card" /></div>
+    <div class="article-guide-card__copy"><p class="article-guide-card__label">Recursos para este guia</p><h3>{resource.name}</h3><p>{resource.description}</p><small>{resource.relationship === "affiliate" ? "Link de afiliado" : "Sem comissão"} · {resource.priceLabel}</small><details><summary>Informações do recurso</summary><p><strong>Indicado para:</strong> {resource.bestFor}</p><p><strong>Limitação:</strong> {resource.limitation}</p><p>Revisado em {resource.lastReviewed}.</p></details></div>
+    <a class="article-guide-card__link" href={href} target={external ? "_blank" : undefined} rel={external ? (resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer") : undefined} data-analytics-cta={`resource-${resource.id}`} data-analytics-affiliate-provider={resource.affiliateProvider} data-analytics-affiliate-id={resource.id} aria-label={`Ver conteúdo: ${resource.name}${external ? " — abre em nova aba" : ""}`}><span aria-hidden="true">{external ? "↗" : "→"}</span></a>
+   </article>;
+  })}
+  <p class="article-guide-resources__disclosure">{products.length > 0 ? "Algumas recomendações poderão conter links de afiliados; a relação comercial é informada na página de destino." : uniqueResources.some(r => r.relationship === "affiliate") ? "Este bloco contém links de afiliados. O DejotaCode poderá receber uma comissão, sem custo adicional para você." : "Recomendações editoriais sem comissão para o DejotaCode."}</p>
+ </section>
+)}

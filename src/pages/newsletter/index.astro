@@ -1,4 +1,6 @@
 ---
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import "../../styles/acquisition.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/institutional.css";
 import "../../styles/newsletter.css";
@@ -148,7 +150,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
 
       <div class="institutional-grid newsletter-benefits">
         <article class="institutional-card">
-          <span>CLAREZA</span>
+          <CategoryIcon icon="news" size={28} /><span>CLAREZA</span>
           <h3>Uma explicação</h3>
           <p>
             Um conceito importante apresentado em linguagem acessível.
@@ -156,7 +158,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
         </article>
 
         <article class="institutional-card">
-          <span>PRÁTICA</span>
+          <CategoryIcon icon="code" size={28} /><span>PRÁTICA</span>
           <h3>Uma prática</h3>
           <p>
             Uma pequena ação para transformar leitura em aprendizado.
@@ -164,7 +166,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
         </article>
 
         <article class="institutional-card">
-          <span>RECURSO</span>
+          <CategoryIcon icon="checklist" size={28} /><span>RECURSO</span>
           <h3>Um recurso</h3>
           <p>
             Uma ferramenta, guia ou referência útil para continuar.

@@ -1,197 +1,25 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getStoreMerchants } from "../../lib/storeOffers";
 import StoreCard from "../../components/store/StoreCard.astro";
 import StoreCategoryNav from "../../components/store/StoreCategoryNav.astro";
+import CategoryIcon from "../../components/CategoryIcon.astro";
 import Pagination from "../../components/Pagination.astro";
-
-const allProducts = (await getCollection("storeProducts", ({ data }) => !data.draft))
-  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured));
+import "../../styles/store-catalog.css";
 const PAGE_SIZE = 12;
-const products = allProducts
-  .filter((product) => product.data.catalogStage !== "avaliacao")
-  .sort((a, b) => a.data.title.localeCompare(b.data.title, "pt-BR"));
-const totalPages = Math.max(1, Math.ceil(products.length / PAGE_SIZE));
-const visibleProducts = products.slice(0, PAGE_SIZE);
-
-
+const products = (await getCollection("storeProducts", ({ data }) => !data.draft && data.catalogStage !== "avaliacao"))
+  .sort((a,b) => a.data.title.localeCompare(b.data.title,"pt-BR"));
+const totalPages = Math.max(1,Math.ceil(products.length/PAGE_SIZE));
+const visibleProducts = products.slice(0,PAGE_SIZE);
 ---
-
-<BaseLayout
-  title="DejotaStore"
-  description="Curadoria editorial do DejotaCode para produtos, ferramentas e serviços ligados a tecnologia, Linux, programação e criação de conteúdo."
->
-  <main id="conteudo" class="store-page">
-    <section class="store-hero">
-      <div class="store-container store-hero__grid">
-        <div class="store-hero__copy">
-          <p class="store-eyebrow">DejotaStore</p>
-          <h1>Escolha melhor antes de comprar.</h1>
-          <p class="store-lead">
-            Curadoria editorial do DejotaCode para produtos, ferramentas e serviços que realmente fazem sentido para quem aprende, trabalha e constrói com tecnologia.
-          </p>
-          <div class="store-actions">
-            <a class="store-button store-button--primary" href="#recomendacoes">Explorar recomendações</a>
-            <a class="store-button" href="/store/setup-do-dejota/" data-store-setup="home-hero">Setup do Dejota</a>
-          </div>
-          <aside class="store-principle">
-            <strong>Ensinar primeiro, recomendar depois.</strong>
-            A Store organiza soluções que complementam o conteúdo do DejotaCode. Ela não substitui os tutoriais.
-          </aside>
-        </div>
-        <div class="store-hero__visual">
-          <img src="/assets/store/dejotastore-hero.webp" alt="Seleção editorial de tecnologia representando a DejotaStore" width="1440" height="810" loading="eager" decoding="async" />
-          <div class="store-hero__trust">
-            <span>Curadoria editorial</span><span>Links verificados</span><span>Compra no parceiro</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="store-section store-section--compact">
-      <div class="store-container">
-        <div class="store-heading store-heading--inline">
-          <div>
-            <p class="store-eyebrow">Navegue por contexto</p>
-            <h2>Encontre o que você precisa</h2>
-          </div>
-          <span class="store-heading__count">{allProducts.length} itens editoriais</span>
-        </div>
-        <StoreCategoryNav />
-      </div>
-    </section>
-
-    <section class="store-section store-section--soft">
-      <div class="store-container store-principles">
-        <article><span>CURADORIA</span><strong>Contexto antes do clique</strong><p>Explicamos quando e por que uma recomendação faz sentido.</p></article>
-        <article><span>STATUS</span><strong>Critério editorial claro</strong><p>Uso real, teste prático e pesquisa editorial ficam separados.</p></article>
-        <article><span>CHECKOUT</span><strong>Compra fora da DejotaStore</strong><p>Você escolhe a plataforma parceira. Não existe checkout interno.</p></article>
-      </div>
-    </section>
-
-    <section id="recomendacoes" class="store-section">
-      <div class="store-container">
-        <div class="store-heading store-heading--inline">
-          <div>
-            <p class="store-eyebrow">Catálogo inicial</p>
-            <h2>Recomendações em destaque</h2>
-            <p>{products.length} produtos formam o catálogo inicial. Todos têm oferta afiliada registrada e ficha editorial própria; preço e disponibilidade são conferidos no parceiro.</p>
-          </div>
-          <a class="store-heading__link" href="/store/setup-do-dejota/">Ver setup do Dejota →</a>
-        </div>
-        <div class="store-products">
-          {visibleProducts.map((product, productIndex) => (
-            <StoreCard
-              id={product.id}
-              title={product.data.title}
-              description={product.data.description}
-              status={product.data.editorialStatus}
-              category={product.data.category}
-              brand={product.data.brand}
-              offerCount={product.data.offers.filter((offer) => offer.active).length}
-              relatedPost={product.data.relatedPosts?.[0]}
-              loading={productIndex < 3 ? "eager" : "lazy"}
-            />
-          ))}
-        </div>
-        <Pagination currentPage={1} totalPages={totalPages} basePath="/store/pagina/" firstPagePath="/store/" />
-      </div>
-    </section>
-
-
-    <section class="store-section store-section--trust-strip">
-      <div class="store-container store-trust-strip" aria-label="Princípios de confiança da DejotaStore">
-        <article><span>PARCEIROS</span><div><strong>Links verificados</strong><p>Shopee, Mercado Livre e outros parceiros identificados.</p></div></article>
-        <article><span>COMPRA</span><div><strong>Fora da DejotaStore</strong><p>Pagamento, entrega e garantia ficam com a loja parceira.</p></div></article>
-        <article><span>PREÇO</span><div><strong>Valor atualizado no parceiro</strong><p>Preço e disponibilidade são conferidos antes da compra.</p></div></article>
-        <article><span>CRITÉRIO</span><div><strong>Curadoria editorial</strong><p>A recomendação precisa ter contexto, não apenas comissão.</p></div></article>
-      </div>
-    </section>
-
-    <section class="store-section">
-      <div class="store-container store-two-column">
-        <article class="store-panel">
-          <p class="store-eyebrow">Blog + Store</p>
-          <h2>Aprenda antes de comprar</h2>
-          <p>As recomendações surgem quando um tutorial cria uma necessidade real, como preparar um pendrive ou fazer backup antes de instalar Linux.</p>
-          <a href="/blog/">Explorar conteúdos →</a>
-        </article>
-        <article class="store-panel">
-          <p class="store-eyebrow">Transparência</p>
-          <h2>Como avaliamos</h2>
-          <p>Deixamos claro quando um item foi usado no DejotaCode, testado diretamente ou apenas pesquisado editorialmente.</p>
-          <a href="/store/como-avaliamos/">Conhecer a metodologia →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="store-section">
-      <div class="store-container store-disclosure">
-        <strong>Transparência sobre afiliados</strong>
-        <p>Alguns links poderão gerar comissão para o DejotaCode sem custo adicional para você. Uma comissão nunca deve ser o motivo principal de uma recomendação.</p>
-      </div>
-    </section>
-  </main>
-</BaseLayout>
-
-<style>
-  .store-page { overflow: hidden; }
-  .store-container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); margin-inline: auto; }
-  .store-hero { padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(3rem, 5vw, 4.5rem); border-bottom: 1px solid var(--color-border); }
-  .store-hero__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
-  .store-hero__copy { display:flex;flex-direction:column;justify-content:center;min-height:30rem;padding-right:clamp(.5rem,1.5vw,1.5rem); }
-  .store-hero__visual { position:relative;min-height:30rem;display:flex;align-self:stretch;overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface-soft);box-shadow:var(--shadow-card); }
-  .store-eyebrow { margin: 0; color: var(--color-accent-strong); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-  .store-hero h1 { max-width: 10ch; margin: .7rem 0 1rem; font-size: clamp(3rem, 6vw, 5.5rem); line-height: .98; letter-spacing: -.055em; }
-  .store-lead { max-width: 44rem; margin: 0; color: var(--color-text-muted); font-size: clamp(1.05rem, 2vw, 1.2rem); line-height:1.65; }
-  .store-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
-  .store-button { min-height: 3rem; display: inline-flex; align-items: center; justify-content: center; padding: 0 1.05rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text); font-weight: 800; text-decoration: none; }
-  .store-button:hover { border-color: var(--color-accent-strong); }
-  .store-button--primary { border-color: var(--color-accent); background: var(--color-accent); color: var(--color-accent-contrast); }
-  .store-principle { max-width:42rem;margin-top: 1.6rem; padding: 1rem 0 1rem 1rem; border-left: 2px solid var(--color-accent); color: var(--color-text-muted); font-size: .92rem; line-height:1.6; }
-  .store-principle strong { color: var(--color-text); }
-  .store-hero__visual>img { width:100%;height:100%;min-height:30rem;object-fit:cover;object-position:center; }
-  .store-hero__trust { position:absolute;left:1rem;right:1rem;bottom:1rem;display:flex;flex-wrap:wrap;gap:.45rem; }
-  .store-hero__trust span { padding:.42rem .65rem;border:1px solid color-mix(in srgb,var(--color-border) 78%,transparent);border-radius:999px;background:color-mix(in srgb,var(--color-surface) 90%,transparent);backdrop-filter:blur(10px);color:var(--color-accent-strong);font:700 .68rem var(--font-code);letter-spacing:.06em; }
-  .store-section { padding-block: clamp(4rem, 7vw, 6rem); }
-  .store-section--compact { padding-block: clamp(3rem, 5vw, 4rem); }
-  .store-section--soft,.store-section--trust-strip { border-block: 1px solid var(--color-border); background: var(--color-surface-soft); }
-  .store-heading { margin-bottom: 2rem; }
-  .store-heading--inline { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
-  .store-heading h2, .store-panel h2 { max-width:18ch;margin:.4rem 0 .75rem;font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;letter-spacing:-.045em; }
-  .store-heading p:not(.store-eyebrow), .store-panel p { max-width: 48rem; margin: 0; color: var(--color-text-muted); line-height:1.7; }
-  .store-heading__count { flex:none;color:var(--color-text-subtle);font:700 .75rem/1.2 var(--font-code); }
-  .store-heading__link { flex:none;color:var(--color-accent-strong);font-size:.85rem;font-weight:850;text-decoration:none; }
-  .store-principles { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;background:var(--color-border); }
-  .store-principles article { min-height:12rem;padding:clamp(1.4rem,3vw,2rem);background:var(--color-bg); }
-  .store-principles span { color:var(--color-accent-strong);font:800 .7rem/1 var(--font-code);letter-spacing:.08em; }
-  .store-principles strong { display:block;margin:1.4rem 0 .55rem;font-size:1.08rem; }
-  .store-principles p { margin:0;color:var(--color-text-muted);line-height:1.6; }
-  .store-products { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem; }
-  .store-trust-strip { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;background:var(--color-border); }
-  .store-trust-strip article { min-height:11rem;display:grid;align-content:start;gap:.35rem;padding:1.4rem;background:var(--color-bg); }
-  .store-trust-strip article>span { color:var(--color-accent-strong);font:800 .68rem/1 var(--font-code);letter-spacing:.08em; }
-  .store-trust-strip strong { margin-top:1rem;font-size:1rem; }
-  .store-trust-strip p { margin:.2rem 0 0;color:var(--color-text-muted);font-size:.86rem;line-height:1.55; }
-  .store-two-column { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
-  .store-panel { padding:clamp(1.75rem,4vw,2.5rem);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface); }
-  .store-panel a { display:inline-block;margin-top:1.25rem;color:var(--color-accent-strong);font-weight:800;text-decoration:none; }
-  .store-disclosure { padding:clamp(1.5rem,3vw,2rem);border:1px solid var(--color-border);border-left:3px solid var(--color-accent-strong);border-radius:var(--radius-lg);background:var(--color-surface); }
-  .store-disclosure p { margin:.45rem 0 0;color:var(--color-text-muted);line-height:1.65; }
-  @media (max-width: 60rem) {
-    .store-hero__grid { grid-template-columns: 1fr; }
-    .store-hero__copy { min-height:auto;padding-right:0; }
-    .store-hero__visual { min-height:22rem; }
-    .store-products { grid-template-columns: repeat(2, 1fr); }
-    .store-trust-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  }
-  @media (max-width: 42rem) {
-    .store-hero { padding-top:3rem; }
-    .store-hero h1 { font-size:clamp(2.6rem,12vw,4rem); }
-    .store-actions,.store-actions .store-button { width:100%; }
-    .store-heading--inline { align-items:start;flex-direction:column;gap:1rem; }
-    .store-principles,.store-products,.store-two-column,.store-trust-strip { grid-template-columns:1fr; }
-    .store-principles article,.store-trust-strip article { min-height:auto; }
-    .store-hero__visual>img { min-height:22rem; }
-  }
-</style>
+<BaseLayout title="DejotaStore" description="Curadoria editorial do DejotaCode para produtos, ferramentas e serviços ligados a tecnologia, Linux, programação e criação de conteúdo.">
+<main id="conteudo" tabindex="-1" class="store-catalog-page">
+  <header class="catalog-hero container"><div><p class="eyebrow">DEJOTASTORE</p><h1>Escolha melhor antes de comprar.</h1><p class="catalog-lead">Produtos e ferramentas com contexto para quem aprende, trabalha e constrói com tecnologia.</p><div class="catalog-actions"><a class="button button-primary" href="#recomendacoes">Explorar recomendações <span aria-hidden="true">↓</span></a><a class="button button-secondary" href="/store/setup-do-dejota/" data-store-setup="home-hero">Setup do Dejota <span aria-hidden="true">→</span></a></div><p class="catalog-motto">Ensinar primeiro, recomendar depois.</p></div><figure><img src="/assets/store/logitech-mx-anywhere-3s.webp" alt="Imagem editorial de um mouse Logitech em um ambiente de trabalho tecnológico" width="1440" height="810" loading="eager" decoding="async" /></figure></header>
+  <div class="container"><StoreCategoryNav compact />
+  <section class="catalog-trust" aria-label="Como funciona a DejotaStore"><div><CategoryIcon icon="news" size={28}/><div><h2>Curadoria com contexto</h2><p>Recomendações ligadas ao conteúdo.</p></div></div><div><CategoryIcon icon="checklist" size={28}/><div><h2>Uso, teste e pesquisa separados</h2><p>Cada selo indica o nível de evidência.</p></div></div><div><CategoryIcon icon="browser" size={28}/><div><h2>Compra no parceiro</h2><p>Ofertas ativas levam à plataforma parceira.</p></div></div></section>
+  <section id="recomendacoes" class="catalog-section" aria-labelledby="catalog-title"><div class="catalog-heading"><div><h2 id="catalog-title">Recomendações para o seu contexto</h2><p>Explore o catálogo. Preço e disponibilidade são consultados na plataforma parceira.</p></div><span>{products.length} itens no catálogo</span></div><div class="catalog-products">{visibleProducts.map((product,index)=><StoreCard editorial id={product.id} title={product.data.title} description={product.data.description} status={product.data.editorialStatus} category={product.data.category} brand={product.data.brand} offerCount={getStoreMerchants(product.data).length} relatedPost={product.data.relatedPosts?.[0]} loading={index<3 ? "eager" : "lazy"}/>)}</div><Pagination currentPage={1} totalPages={totalPages} basePath="/store/pagina/" firstPagePath="/store/" /></section>
+  <section class="catalog-context" aria-label="Conteúdo e critérios editoriais"><a href="/blog/"><CategoryIcon icon="news" size={32}/><div><h2>Aprenda antes de comprar</h2><p>Veja os conteúdos que dão contexto às recomendações.</p><span>Explorar o Blog →</span></div></a><a href="/store/como-avaliamos/"><CategoryIcon icon="shield-check" size={32}/><div><h2>Como avaliamos</h2><p>Entenda os selos de uso, teste e pesquisa.</p><span>Conhecer os critérios →</span></div></a></section>
+  <aside class="catalog-disclosure"><CategoryIcon icon="privacy" size={26}/><div><h2>Transparência sobre afiliados</h2><p>Alguns links podem gerar comissão para o DejotaCode, sem custo adicional para você. A compra, entrega e garantia ficam com o parceiro. Uma comissão nunca deve ser o motivo principal de uma recomendação.</p></div></aside>
+  </div>
+</main></BaseLayout>

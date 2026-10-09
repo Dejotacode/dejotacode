@@ -1,126 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../styles/institutional.css";
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import type { OfficialIconId } from "../../data/categoryIcons";
+import { getPublishedPosts } from "../../lib/content";
+import { availableTrails } from "../../data/trails";
+import "../../styles/portfolio.css";
+const posts = await getPublishedPosts();
+const summary: {icon: OfficialIconId; title: string; description: string}[] = [
+{icon:"browser",title:"Projeto próprio",description:"Idealizado e desenvolvido por Dejota."},
+{icon:"news",title:"Portal educativo",description:"Conteúdo e trilhas para quem está começando."},
+{icon:"code",title:"Design e desenvolvimento",description:"Da ideia à implementação, com foco na experiência."},
+{icon:"workflow",title:"Em evolução",description:"Novas ideias e conteúdos são adicionados."}];
+const views = [
+{id:"home",href:"/",title:"Home — ponto de partida",description:"Apresenta o projeto e facilita o acesso a conteúdos, trilhas e recursos."},
+{id:"blog",href:"/blog/",title:"Blog — conteúdo organizado",description:"Artigos e tutoriais por assunto, com leitura clara e próximos passos."},
+{id:"trilhas",href:"/trilhas/",title:"Trilhas — aprendizado com direção",description:"Percursos que conectam os conteúdos e ajudam a escolher o que estudar depois."}];
+const deliveries: {icon: OfficialIconId; title: string; description: string}[] = [
+{icon:"news",title:"Conteúdo organizado",description:`${posts.length} artigos e tutoriais, com ${availableTrails.length} trilhas disponíveis para orientar o aprendizado.`},
+{icon:"network",title:"Navegação consistente",description:"Blog, trilhas e recursos conectados, com uma identidade visual presente em todo o portal."},
+{icon:"workflow",title:"Base preparada para evoluir",description:"Componentes reutilizáveis e verificações de qualidade para receber novos conteúdos e recursos."}];
 ---
-
-<BaseLayout
-  title="Case DejotaCode: produto, conteúdo e engenharia | DejotaCode"
-  description="Estudo de caso do DejotaCode: problema, decisões de produto, arquitetura, SEO, conteúdo, conversão, CI e aprendizados verificáveis do projeto."
->
-  <main id="conteudo" tabindex="-1" class="institutional-page portfolio-page">
-    <header class="institutional-hero institutional-hero--media container">
-      <div class="institutional-hero__copy">
-        <p class="eyebrow">CASE DE PORTFÓLIO</p>
-        <h1>De uma ideia editorial a uma plataforma que pode ser explicada.</h1>
-        <p>O DejotaCode é o próprio laboratório do projeto: conteúdo para iniciantes, identidade visual, arquitetura estática, conversão, métricas first-party e operação com gates de qualidade antes de cada integração.</p>
-        <div class="portfolio-case-meta" aria-label="Resumo do case"><span><strong>CASE</strong> 01</span><span><strong>STATUS</strong> Em evolução</span><span><strong>ESCOPO</strong> Produto + Conteúdo + Engenharia</span></div>
-      </div>
-      <div class="institutional-hero__media institutional-hero__media--split">
-        <img src="/assets/resources/items/vscode.webp" alt="Visual Studio Code representando a camada de desenvolvimento do projeto" width="720" height="405" loading="eager" decoding="async" />
-        <img src="/assets/resources/items/cloudflare.webp" alt="Cloudflare representando a infraestrutura do projeto" width="720" height="405" loading="eager" decoding="async" />
-      </div>
-    </header>
-
-    <section class="institutional-section container portfolio-evidence">
-      <div class="portfolio-section-label"><span>00</span><p>VISÃO GERAL DO CASE</p></div>
-      <article class="project-case">
-        <div>
-          <p class="eyebrow">PROJETO EM DESTAQUE</p>
-          <h2>DejotaCode</h2>
-          <p>Portal educacional construído para transformar assuntos técnicos em caminhos práticos, com foco em quem está começando e precisa saber o que fazer depois de cada leitura.</p>
-          <ul>
-            <li>Astro com geração estática</li>
-            <li>API separada em Cloudflare Workers</li>
-            <li>Conteúdo estruturado em blog e trilhas</li>
-            <li>SEO, RSS e sitemap integrados</li>
-            <li>Analytics first-party agregado</li>
-            <li>CI em pull requests e push para main</li>
-          </ul>
-          <a class="button button-primary" href="/trilhas/">Explorar o produto</a>
-        </div>
-        <div class="project-case__visual"><img src="/assets/resources/items/github.webp" alt="GitHub representando versionamento, colaboração e entrega contínua no DejotaCode" width="720" height="405" loading="lazy" decoding="async" /></div>
-      </article>
-    </section>
-
-    <section class="institutional-section container portfolio-step">
-      <div class="portfolio-step__rail"><span>01</span><p>PROBLEMA</p></div>
-      <div class="institutional-heading">
-        <div><p class="eyebrow">PROBLEMA</p><h2>Começar em tecnologia costuma ter opções demais e sequência de menos.</h2></div>
-        <p>O projeto parte de uma pergunta simples: como ajudar uma pessoa iniciante a entender um assunto, praticar e encontrar o próximo passo sem depender de uma pilha infinita de cursos e ferramentas?</p>
-      </div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>CONTEÚDO</span><h3>Explicação acionável</h3><p>Cada publicação busca terminar com uma ação, exercício, decisão ou continuação clara.</p></article>
-        <article class="institutional-card"><span>NAVEGAÇÃO</span><h3>Trilhas em vez de catálogo</h3><p>Conteúdos relacionados são agrupados em sequências para reduzir a dúvida sobre o que estudar depois.</p></article>
-        <article class="institutional-card"><span>CONFIANÇA</span><h3>Sem promessa fácil</h3><p>O posicionamento evita atalhos de enriquecimento, resultados inventados e recomendações sem contexto.</p></article>
-      </div>
-    </section>
-
-    <section class="statement portfolio-step portfolio-step--statement">
-      <div class="container">
-        <div class="portfolio-step__rail"><span>02</span><p>DECISÃO DE PRODUTO</p></div>
-        <p class="eyebrow">DECISÃO DE PRODUTO</p>
-        <h2>Menos dependências no caminho crítico, mais previsibilidade.</h2>
-        <p>O frontend é gerado estaticamente com Astro. Formulários e métricas ficam em uma API separada. Essa divisão mantém leitura e navegação simples, enquanto recursos dinâmicos evoluem sem transformar cada página em uma dependência do backend.</p>
-      </div>
-    </section>
-
-    <section class="institutional-section container portfolio-step">
-      <div class="portfolio-step__rail"><span>03</span><p>ARQUITETURA</p></div>
-      <div class="institutional-heading">
-        <div><p class="eyebrow">ARQUITETURA</p><h2>Responsabilidades separadas por camada.</h2></div>
-        <p>As decisões técnicas foram escolhidas para serem pequenas o bastante para auditar e claras o bastante para explicar.</p>
-      </div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>FRONTEND</span><h3>Astro + TypeScript</h3><p>Páginas estáticas, conteúdo estruturado, componentes reutilizáveis e build validado para produção.</p></article>
-        <article class="institutional-card"><span>EDGE</span><h3>Cloudflare</h3><p>Pages no frontend e Workers na API, com D1 para persistência e R2 previsto para mídia do ecossistema.</p></article>
-        <article class="institutional-card"><span>QUALIDADE</span><h3>GitHub Actions</h3><p>Pull requests e pushes para main executam instalação determinística, Astro check e build de produção.</p></article>
-      </div>
-    </section>
-
-    <section class="institutional-section container portfolio-section--dense portfolio-step">
-      <div class="portfolio-step__rail"><span>04</span><p>ENTREGAS</p></div>
-      <div class="institutional-heading">
-        <div><p class="eyebrow">O QUE FOI CONSTRUÍDO</p><h2>O projeto virou um sistema editorial conectado.</h2></div>
-        <p>As entregas abaixo são partes concretas do produto, não uma lista de tecnologias usadas.</p>
-      </div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>EDITORIAL</span><h3>32 conteúdos estruturados</h3><p>Artigos e tutoriais distribuídos entre programação, Linux e segurança, IA, tecnologia prática e renda digital.</p></article>
-        <article class="institutional-card"><span>APRENDIZAGEM</span><h3>5 trilhas disponíveis</h3><p>Linux do zero, primeiros passos na programação, IA no dia a dia, segurança digital essencial e Primeira Renda Online.</p></article>
-        <article class="institutional-card"><span>AQUISIÇÃO</span><h3>Guia + newsletter</h3><p>Um recurso gratuito conecta homepage e newsletter com consentimento explícito no envio real.</p></article>
-        <article class="institutional-card"><span>DESCOBERTA</span><h3>SEO técnico</h3><p>Metadados por rota, dados estruturados, sitemap, RSS, canonical e links internos contextuais.</p></article>
-        <article class="institutional-card"><span>MEDIÇÃO</span><h3>Analytics first-party</h3><p>Page views e CTAs usam caminho da página e campanhas explícitas, sem cookies ou fingerprinting nesse fluxo.</p></article>
-        <article class="institutional-card"><span>OPERAÇÃO</span><h3>CI seguro</h3><p>Qualidade é validada antes e depois da integração, sem credenciais de deploy no workflow.</p></article>
-      </div>
-    </section>
-
-    <section class="statement portfolio-step portfolio-step--statement">
-      <div class="container">
-        <div class="portfolio-step__rail"><span>05</span><p>PROCESSO</p></div>
-        <p class="eyebrow">PROCESSO</p>
-        <h2>Auditar, mudar pouco, validar, integrar.</h2>
-        <p>As fases recentes adotaram branches pequenas, escopo explícito, revisão de diff e CI antes de fast-forward na main. Deploy, tag e release permanecem separados da integração de código para reduzir o raio de impacto de cada decisão.</p>
-      </div>
-    </section>
-
-    <section class="institutional-section container portfolio-step">
-      <div class="portfolio-step__rail"><span>06</span><p>APRENDIZADOS</p></div>
-      <div class="institutional-heading"><div><p class="eyebrow">APRENDIZADOS</p><h2>O valor do projeto está nas decisões repetíveis.</h2></div></div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>CONTEÚDO</span><h3>Conteúdo também é arquitetura</h3><p>Taxonomia, trilhas, links internos e CTAs precisam ser planejados juntos para o visitante não chegar a um beco sem saída.</p></article>
-        <article class="institutional-card"><span>MEDIÇÃO</span><h3>Métrica precisa responder pergunta</h3><p>Instrumentar poucos eventos úteis é melhor do que coletar grande volume sem objetivo operacional definido.</p></article>
-        <article class="institutional-card"><span>QUALIDADE</span><h3>Gates reduzem retrabalho</h3><p>Check e build automáticos transformam qualidade básica em condição do fluxo, e não em lembrança manual.</p></article>
-      </div>
-    </section>
-
-    <section class="institutional-section container portfolio-closing">
-      <div class="notice">
-        <strong>Transparência do case</strong>
-        <p>Este estudo de caso descreve entregas verificáveis no repositório e no fluxo de desenvolvimento. Não apresenta métricas de audiência, receita ou conversão que ainda não tenham sido medidas e validadas.</p>
-      </div>
-      <div class="portfolio-closing__actions">
-        <a class="button button-primary" href="/servicos/" data-analytics-cta="portfolio-services">Transformar isso em um projeto <span aria-hidden="true">→</span></a>
-        <a class="button button-secondary" href="/sobre/">Conhecer os princípios editoriais</a>
-      </div>
-    </section>
-  </main>
-</BaseLayout>
+<BaseLayout title="Case DejotaCode: produto, conteúdo e engenharia | DejotaCode" description="Estudo de caso do DejotaCode: problema, decisões de produto, arquitetura, SEO, conteúdo, conversão, CI e aprendizados verificáveis do projeto.">
+<main id="conteudo" tabindex="-1" class="portfolio-page"><div class="container">
+<header class="portfolio-hero"><div><p class="eyebrow">PORTFÓLIO</p><h1>Conteúdo, design e desenvolvimento na prática.</h1><p class="portfolio-lead">Conheça as decisões por trás do DejotaCode, um projeto próprio em constante evolução.</p><a class="button button-primary" href="#projeto">Conhecer o projeto <span aria-hidden="true">↓</span></a></div><div class="portfolio-browser"><div class="portfolio-browser__bar" aria-hidden="true"><span class="portfolio-browser__dots"><i></i><i></i><i></i></span><span>dejotacode.com</span></div><img src="/assets/portfolio/home.webp" alt="Captura real da página inicial do DejotaCode no tema escuro" width="1280" height="960" loading="eager" decoding="async" /></div></header>
+<section class="portfolio-summary" aria-label="Resumo do projeto">{summary.map(item => <div><CategoryIcon icon={item.icon} size={30}/><div><h2>{item.title}</h2><p>{item.description}</p></div></div>)}</section>
+<section id="projeto" class="portfolio-about portfolio-section" aria-labelledby="portfolio-project-title"><div><p class="eyebrow">SOBRE</p><h2 id="portfolio-project-title">O projeto DejotaCode</h2><p>O DejotaCode é um portal educativo criado para ajudar iniciantes a encontrar conteúdo sobre tecnologia, com trilhas de aprendizado e materiais organizados de forma simples e prática.</p></div><article class="portfolio-panel"><CategoryIcon icon="checklist" size={28}/><h3>O desafio</h3><p>Transformar opções demais e sequência de menos em um caminho compreensível para quem está começando.</p></article><article class="portfolio-panel"><CategoryIcon icon="browser" size={28}/><h3>A solução</h3><p>Um portal com artigos, trilhas e recursos conectados, com explicações práticas e uma continuação clara.</p></article></section>
+<section class="portfolio-section" aria-labelledby="portfolio-views-title"><div class="portfolio-heading"><p class="eyebrow">VISUALIZAÇÃO</p><h2 id="portfolio-views-title">Uma experiência conectada</h2><p>As principais partes do DejotaCode trabalhando juntas para orientar o aprendizado.</p></div><div class="portfolio-gallery">{views.map(view => <a class="portfolio-view" href={view.href}><div class="portfolio-browser"><div class="portfolio-browser__bar" aria-hidden="true"><span class="portfolio-browser__dots"><i></i><i></i><i></i></span><span>DejotaCode</span></div><img src={`/assets/portfolio/${view.id}.webp`} alt={`Captura real: ${view.title}`} width="1280" height="960" loading="lazy" decoding="async" /></div><h3>{view.title} <span aria-hidden="true">↗</span></h3><p>{view.description}</p></a>)}</div></section>
+<section class="portfolio-section" aria-labelledby="portfolio-deliveries-title"><div class="portfolio-heading"><p class="eyebrow">DETALHES</p><h2 id="portfolio-deliveries-title">O que foi construído</h2></div><div class="portfolio-deliveries">{deliveries.map(item => <article class="portfolio-panel"><CategoryIcon icon={item.icon} size={32}/><div><h3>{item.title}</h3><p>{item.description}</p></div></article>)}</div></section>
+<section class="portfolio-section" aria-labelledby="portfolio-tech-title"><div class="portfolio-tech-heading"><div><p class="eyebrow">TECNOLOGIAS E PROCESSO</p><h2 id="portfolio-tech-title">Tecnologias e processo</h2><p>Ferramentas escolhidas para organizar o conteúdo, facilitar a manutenção e sustentar a evolução do projeto.</p></div><ul class="portfolio-technologies" aria-label="Tecnologias utilizadas"><li><CategoryIcon icon="code" size={28}/><span>Astro</span></li><li><strong aria-hidden="true">TS</strong><span>TypeScript</span></li><li><CategoryIcon icon="cloud-server" size={28}/><span>Cloudflare</span></li><li><CategoryIcon icon="workflow" size={28}/><span>GitHub</span></li></ul></div>
+<div class="portfolio-details"><details><summary>Decisões técnicas <span aria-hidden="true">+</span></summary><div class="portfolio-detail-body"><h3>Responsabilidades separadas por camada</h3><p>O frontend é gerado estaticamente com Astro e TypeScript. Formulários e métricas ficam em uma API separada em Cloudflare Workers, mantendo leitura e navegação independentes desses serviços.</p><ul><li>Cloudflare Pages no frontend e D1 para persistência na API. R2 está previsto para mídia do ecossistema.</li><li>Conteúdo estruturado em Blog e Trilhas, com componentes reutilizáveis.</li><li>Metadados por rota, dados estruturados, canonical, RSS, sitemap e links internos contextuais.</li><li>Guia gratuito e newsletter com consentimento explícito no envio.</li><li>Analytics first-party agregado para páginas e chamadas, sem cookies ou fingerprinting nesse fluxo.</li><li>GitHub Actions executa instalação determinística, Astro check e build em pull requests e pushes para main, sem credenciais de deploy no workflow.</li></ul></div></details><details><summary>Como o projeto evolui <span aria-hidden="true">+</span></summary><div class="portfolio-detail-body"><h3>Auditar, ajustar e validar</h3><p>As mudanças partem de uma revisão do estado atual, seguem um escopo definido e passam por comparação visual e verificações de qualidade. Integração de código e publicação são etapas separadas.</p><p>Branches pequenas, revisão de diff e CI antes da integração ajudam a reduzir retrabalho. Deploy, tag e release permanecem separados desse fluxo.</p><h3>Aprendizados que orientam as próximas entregas</h3><ul><li>Conteúdo também é arquitetura: categorias, trilhas, links e próximas ações precisam funcionar juntos.</li><li>Métricas precisam responder perguntas úteis sobre o projeto.</li><li>Verificações automáticas fazem da qualidade básica uma condição do desenvolvimento.</li><li>Recomendações precisam de contexto; o projeto evita promessas de enriquecimento e resultados inventados.</li></ul><a href="/sobre/">Conhecer os princípios editoriais →</a></div></details></div><p class="portfolio-transparency">Este é um projeto próprio em evolução. As entregas descrevem o produto e seu desenvolvimento; não representam resultados de audiência, receita ou conversão.</p></section>
+<section class="portfolio-cta" aria-labelledby="portfolio-cta-title"><div><p class="eyebrow">VAMOS CONVERSAR?</p><h2 id="portfolio-cta-title">Vamos tirar sua ideia do papel?</h2><p>Conheça os serviços e converse sobre seu projeto.</p></div><div class="portfolio-cta__actions"><a class="button button-primary" href="/servicos/" data-analytics-cta="portfolio-services">Conhecer serviços <span aria-hidden="true">→</span></a><a class="button button-secondary" href="/contato/">Conversar sobre um projeto</a></div></section>
+</div></main></BaseLayout>

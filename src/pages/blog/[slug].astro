@@ -6,10 +6,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 import SocialShare from "../../components/SocialShare.astro";
 import ConversionCTA from "../../components/ConversionCTA.astro";
-import ResourceRecommendations from "../../components/ResourceRecommendations.astro";
-import StoreProductsInArticle from "../../components/store/StoreProductsInArticle.astro";
+import ArticleGuideResources from "../../components/ArticleGuideResources.astro";
+import CategoryIcon from "../../components/CategoryIcon.astro";
 import VisualMedia from "../../components/visual/VisualMedia.astro";
 import { resolvePostVisual } from "../../data/editorialVisuals";
+import { getOfficialCategoryIcon } from "../../data/categoryIcons";
 import { availableTrails } from "../../data/trails";
 import { getArticleResources } from "../../data/recommendedResources";
 import {
@@ -39,6 +40,7 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
+const tocHeadings = headings.filter((heading) => heading.depth === 2);
 const allPosts = await getPublishedPosts();
 const currentSlug = postSlug(post);
 const articleResources = getArticleResources(currentSlug);
@@ -52,39 +54,9 @@ const relatedPosts = allPosts
 const currentTrail = availableTrails.find((trail) =>
   trail.lessons.some((lesson) => lesson.slug === currentSlug),
 );
-const currentTrailLessonIndex = currentTrail?.lessons.findIndex(
-  (lesson) => lesson.slug === currentSlug,
-) ?? -1;
-const nextTrailLesson = currentTrail && currentTrailLessonIndex >= 0
-  ? currentTrail.lessons[currentTrailLessonIndex + 1]
-  : undefined;
-
-const conversion = currentTrail && nextTrailLesson
-  ? {
-      title: `Próxima etapa: ${nextTrailLesson.title}`,
-      description: `Você está seguindo a trilha ${currentTrail.title}. Continue na sequência recomendada para avançar sem precisar escolher o próximo conteúdo sozinho.`,
-      href: `/blog/${nextTrailLesson.slug}/`,
-      label: "Continuar para a próxima etapa",
-      campaign: `article-next-${currentSlug}`,
-    }
-  : currentTrail
-    ? {
-        title: `Continue pela trilha ${currentTrail.title}`,
-        description: "Veja a sequência completa, marque seu progresso neste navegador e revise as etapas quando precisar.",
-        href: `/trilhas/${currentTrail.slug}/`,
-        label: "Ver trilha completa",
-        campaign: `article-trail-${currentSlug}`,
-      }
-    : {
-        title: "Receba o próximo conteúdo por e-mail",
-        description: "A newsletter reúne novos tutoriais, guias e recursos do DejotaCode sem transformar sua caixa de entrada em um feed infinito.",
-        href: "/newsletter/?resource=artigo",
-        label: "Conhecer a newsletter",
-        campaign: "article-newsletter",
-      };
-
 const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
 const categoryLabel = categories[post.data.category];
+const categoryIcon = getOfficialCategoryIcon(post.data.category);
 const articleVisual = resolvePostVisual(post.data.category, currentSlug);
 const categoryUrl = new URL(
   categoryHref(post.data.category),
@@ -189,73 +161,85 @@ const articleSchema = {
         </nav>
 
         <div class="article-hero__content">
-          <p class="eyebrow">{categoryLabel} · {post.data.type}</p>
+          <p class="article-category">
+            {categoryIcon && <CategoryIcon icon={categoryIcon.iconId} size={17} />}
+            <span class="article-category__name">{categoryLabel}</span>
+            <span aria-hidden="true">·</span>
+            <span class="article-category__type">{post.data.type}</span>
+          </p>
           <h1>{post.data.title}</h1>
           <p class="article-hero__description">{post.data.description}</p>
-          <p class="article-byline">Por <a href="/sobre/">Dejota</a></p>
+          <div class="article-author-meta">
+          <p class="article-byline"><img src="/assets/brand/dejota-author.webp" alt="" width="32" height="32" /> Por <a href="/sobre/">Dejota</a></p>
 
           <div class="article-meta">
-            <time datetime={post.data.publishedAt.toISOString()}>
-              {formatPostDate(post.data.publishedAt)}
-            </time>
-            <span>{post.data.readingTime} min de leitura</span>
-            <span>{post.data.difficulty}</span>
+            <span class="article-meta__item">
+              <CategoryIcon icon="calendar" size={15} />
+              <time datetime={post.data.publishedAt.toISOString()}>
+                {formatPostDate(post.data.publishedAt)}
+              </time>
+            </span>
+            <span class="article-meta__item">
+              <CategoryIcon icon="clock" size={15} />
+              <span>{post.data.readingTime} min de leitura</span>
+            </span>
+            <span class="article-meta__difficulty">{post.data.difficulty}</span>
+          </div>
           </div>
         </div>
 
         <div class="article-cover">
-          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} loading="eager" />
+          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} aspect="card" loading="eager" />
         </div>
       </header>
 
-      <div class="article-layout container">
-        <aside class="article-aside" aria-label="Sumário do artigo">
-          <div class="article-aside__sticky">
-            <p class="article-aside__title">Neste conteúdo</p>
-            {
-              headings.length > 0 ? (
-                <ol>
-                  {headings
-                    .filter((heading) => heading.depth === 2)
-                    .map((heading) => (
-                      <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
-                    ))}
-                </ol>
-              ) : (
-                <p>Leitura direta e prática.</p>
-              )
-            }
-          </div>
-        </aside>
+      <div class:list={["article-layout", "container", { "article-layout--no-toc": tocHeadings.length === 0 }]}>
+        {tocHeadings.length > 0 && (
+          <aside class="article-aside" aria-label="Sumário do artigo">
+            <nav class="article-aside__desktop" aria-label="Neste conteúdo">
+              <p class="article-aside__title">Neste conteúdo</p>
+              <ol>
+                {tocHeadings.map((heading) => (
+                  <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+                ))}
+              </ol>
+            </nav>
+            <details class="article-aside__mobile">
+              <summary>Neste conteúdo</summary>
+              <ol>
+                {tocHeadings.map((heading) => (
+                  <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+                ))}
+              </ol>
+            </details>
+          </aside>
+        )}
 
         <div class="article-content">
           <Content />
-
-          {post.data.storeProducts.length > 0 && (
-            <StoreProductsInArticle productIds={post.data.storeProducts} />
-          )}
-
-          {articleResources.length > 0 && (
-            <ResourceRecommendations resources={articleResources} />
-          )}
 
           <section class="article-tags" aria-label="Assuntos relacionados">
             <strong>Assuntos:</strong>
             {post.data.tags.map((tag) => <span>{tag}</span>)}
           </section>
 
-          <SocialShare title={post.data.title} url={canonicalUrl.href} />
+          <ArticleGuideResources productIds={post.data.storeProducts} resources={articleResources} />
+        </div>
+      </div>
 
-          <ConversionCTA
-            title={conversion.title}
-            description={conversion.description}
-            href={conversion.href}
-            label={conversion.label}
-            campaign={conversion.campaign}
+      <div class="article-ending container">
+
+          <ConversionCTA compact
+            eyebrow="CONTINUE APRENDENDO"
+            title="Veja a próxima etapa da sua trilha"
+            description="Aprofunde seus conhecimentos e avance no seu aprendizado."
+            href={currentTrail ? `/trilhas/${currentTrail.slug}/` : "/trilhas/"}
+            label="Ver trilha"
+            campaign={currentTrail ? `article-trail-${currentSlug}` : "article-trails"}
           />
 
           {currentTrail?.slug === "linux-do-zero" && (
-            <ConversionCTA
+            <ConversionCTA compact
               eyebrow="APROFUNDE O APRENDIZADO"
               title="Quer continuar com o Linux do Zero em um material completo?"
               description="O e-book Linux do Zero reúne 88 páginas para iniciantes, com instalação segura, terminal, permissões e solução de problemas. Preço de lançamento: R$ 19,90."
@@ -264,7 +248,8 @@ const articleSchema = {
               campaign={`article-linux-ebook-${currentSlug}`}
             />
           )}
-        </div>
+
+          <SocialShare title={post.data.title} url={canonicalUrl.href} />
       </div>
     </article>
 
@@ -278,7 +263,7 @@ const articleSchema = {
             </div>
           </div>
           <div class="post-grid">
-            {relatedPosts.map((relatedPost) => <PostCard post={relatedPost} />)}
+            {relatedPosts.map((relatedPost) => <PostCard post={relatedPost} blogMetaIcons />)}
           </div>
         </section>
       )

@@ -1,5 +1,7 @@
 ---
+import CategoryIcon from "./CategoryIcon.astro";
 interface Props {
+  compact?: boolean;
   eyebrow?: string;
   title: string;
   description: string;
@@ -9,6 +11,7 @@ interface Props {
 }
 
 const {
+  compact = false,
   eyebrow = "PRÓXIMO PASSO",
   title,
   description,
@@ -18,10 +21,13 @@ const {
 } = Astro.props;
 ---
 
-<aside class="conversion-cta" aria-label="Próximo passo recomendado">
+<aside class:list={["conversion-cta", { "conversion-cta--compact": compact }]} aria-label="Próximo passo recomendado">
+  {compact && <span class="conversion-cta__icon" aria-hidden="true"><CategoryIcon icon="workflow" size={26} /></span>}
+  <div class="conversion-cta__copy">
   <p class="eyebrow">{eyebrow}</p>
   <h2>{title}</h2>
   <p>{description}</p>
+  </div>
   <a
     class="button button-primary"
     href={href}
