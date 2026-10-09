@@ -24,12 +24,17 @@ Verificação de hashes: todos os arquivos src/public da versão editorial foram
 
 Documentos anteriores que citam 4322, a pasta release ou trabalho não commitado são históricos. Este arquivo define a pasta e o preview atuais.
 
+## Estado sincronizado após a revisão final
+Todas as famílias públicas foram estruturadas. Privacidade, 404, rodapé, metodologia e guia da Store foram refinados após a consolidação.
+Revisão final: 112 rotas públicas, 448 combinações de tela/tema. Resultado e limites em revisao-final-publica-2026-10-09.md.
+Nenhuma publicação realizada.
+
 ## Próximas etapas
-1. Refinar apresentação de Privacidade e 404.
-2. Confirmar equipamentos/armazenamento do Setup.
-3. Validar envio real dos formulários com a API configurada.
-4. Atualizar capturas do Portfólio depois de estabilizar a interface.
-5. Aplicar Documento Mestre de padronização em etapa própria após finalizar as estruturas.
+1. Localizar e conferir a versão vigente do Documento Mestre preparado na conversa própria. O documento-base v1.3 é estratégico e não deve ser presumido como esse novo Documento Mestre.
+2. Aplicar o Documento Mestre localmente por etapas, preservando estruturas aprovadas e entregando preview 4321.
+3. Confirmar equipamentos/armazenamento do Setup.
+4. Validar envio real dos formulários com a API configurada.
+5. Atualizar capturas do Portfólio após estabilizar a padronização.
 6. Revisão final do usuário; publicação exige autorização específica.
 
 ## Validação na pasta principal

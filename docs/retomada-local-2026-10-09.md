@@ -1,3 +1,5 @@
+> REGISTRO HISTÓRICO: esta retomada foi substituída pela consolidação. Para continuar, ler docs/consolidacao-local-2026-10-09.md e docs/revisao-final-publica-2026-10-09.md. Pasta atual: /home/dejota/Workspace/fullstack/dejotacode; branch local/consolidacao-editorial-20261009; preview 4321. Porta 4322 desativada. Não executar os comandos antigos abaixo.
+
 # Retomada das melhorias locais — 09/10/2026
 
 ## Fonte de trabalho desta rodada
