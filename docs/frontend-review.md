@@ -322,3 +322,8 @@ Esta tabela prevalece sobre as pendências históricas registradas nas etapas an
 | Assinatura nas artes | Revisão individual ainda pendente | Comparar rasters com marca oficial; não substituir todas as imagens automaticamente |
 
 Limites: aprovação do notebook não representa autorização de publicação nem aprovação automática de todas as páginas. Check/build/QA e verificações responsivas referem-se às etapas descritas acima; esta consolidação apenas atualiza documentação. Entrega de e-mail e testes com leitor de tela permanecem frentes próprias.
+
+
+## Rodada única de fechamento dos esboços — 09/10/2026
+Trilha Linux reordenada: modo live opcional na posição 3, antes do terminal, preservando slugs e progresso essencial. Oito combinações de largura/tema passaram, incluindo progresso previamente salvo de dois artigos (40%). Check zero erros/avisos/hints, build 115 páginas, QA de links/HTML passou.
+Triagem visual de 21 rasters Store e 43 editoriais, com caminhos individuais e diferenças de assinatura registradas em revisao-esbocos-fechamento-2026-10-09.md. Rasters preservados: aplicação do padrão visual requer tratamento individual após revisão conjunta. Setup reconfirmado com WDC de classe 640 GB, relação com discos declarados ainda pendente. Termos permanece pendência de conteúdo, sem link inexistente. Esta atualização prevalece sobre a pendência antiga de sequência Linux. Sem push/deploy.

@@ -61,3 +61,8 @@ Referência atual de progresso e limites: frontend-review.md. Se serviços estiv
 
 ## Retomada após revisão dos esboços — 12:12 BRT
 P1, ícones de atendimento, setas, degradês, atalhos do Contato e notebook de Serviços ajustados localmente. Notebook aprovado pelo usuário. Situação atual e pendências individuais em frontend-review.md, seção “Situação consolidada dos esboços”. Próxima frente recomendada: revisão editorial da trilha Linux, preservando progresso salvo; inventário de Setup aguarda confirmação. Não criar Termos de Uso nem substituir artes em lote por inferência. Nenhum push/deploy autorizado.
+
+
+## Rodada única de fechamento dos esboços — 09/10/2026
+Trilha Linux reordenada: modo live opcional na posição 3, antes do terminal, preservando slugs e progresso essencial. Oito combinações de largura/tema passaram, incluindo progresso previamente salvo de dois artigos (40%). Check zero erros/avisos/hints, build 115 páginas, QA de links/HTML passou.
+Triagem visual de 21 rasters Store e 43 editoriais, com caminhos individuais e diferenças de assinatura registradas em revisao-esbocos-fechamento-2026-10-09.md. Rasters preservados: aplicação do padrão visual requer tratamento individual após revisão conjunta. Setup reconfirmado com WDC de classe 640 GB, relação com discos declarados ainda pendente. Termos permanece pendência de conteúdo, sem link inexistente. Esta atualização prevalece sobre a pendência antiga de sequência Linux. Sem push/deploy.
