@@ -29,6 +29,7 @@ export type OfficialIconId =
   | "usb-hub"
   | "arrow-right"
   | "arrow-up-right"
+  | "arrow-left"
   | "arrow-down"
   | "map-pin"
   | "whatsapp";

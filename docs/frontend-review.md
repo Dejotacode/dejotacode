@@ -281,3 +281,6 @@ Tokens compartilhados e regra CSS documentados. Botão inicial da trilha atualiz
 - SocialShare centraliza o pictograma já existente no CategoryIcon, preservando links e nomes acessíveis.
 - Check sem erros/avisos, build 115 páginas e QA aprovado. Contato, Serviços e artigo em 320/390/768/1440px, claro/escuro: 24 combinações sem overflow e sem SVG vazio; foco inicial por teclado conferido. Captura do atendimento em 320px inspecionada. Mapa externo bloqueado no teste, sem avaliar carregamento do provedor.
 - Linux e degradês continuam pendentes. Sem publicação.
+
+## Setas restantes — 09/10/2026
+E-book, Portfólio, Store, Recursos, Trilhas e paginação usam SVG compartilhado nas ações antes representadas por glifos. Check zero erros/avisos; build 115 páginas; QA aprovado. Preview de seis rotas em quatro larguras e dois temas: 48 combinações sem overflow e sem setas vazias/ocultas. Links, downloads e analytics preservados. Sem publicação; degradês e decisão de Linux pendentes.

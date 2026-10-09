@@ -112,12 +112,12 @@ const bookSchema = {
               target="_blank"
               rel="noopener noreferrer"
               data-analytics-cta="product-linux-buy-kiwify-hero"
-            >Comprar o e-book <span aria-hidden="true">↗</span></a>
+            >Comprar o e-book <span aria-hidden="true"><CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></span></a>
             <a
               class="button button-secondary"
               href="#preview-title"
               data-analytics-cta="product-linux-preview"
-            >Ver páginas do e-book ↓</a>
+            >Ver páginas do e-book <CategoryIcon icon="arrow-down" size={18} class="action-arrow" /></a>
           </div>
 
           <p class="product-status">
@@ -187,7 +187,7 @@ const bookSchema = {
               <a href={sample.src} data-sample-open={index} aria-label={`Ampliar: ${sample.title}, página ${sample.page}`}>
                 <img src={sample.src} alt={`Página ${sample.page} do e-book: ${sample.title}`} width="1133" height="1600" loading="lazy" decoding="async" />
               </a>
-              <figcaption><strong>{sample.title}</strong><span>{sample.description}</span><a href={sample.src} data-sample-open={index}>Ampliar página {sample.page} ↗</a></figcaption>
+              <figcaption><strong>{sample.title}</strong><span>{sample.description}</span><a href={sample.src} data-sample-open={index}>Ampliar página {sample.page} <CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></a></figcaption>
             </figure>
           ))}
         </div>
@@ -198,7 +198,7 @@ const bookSchema = {
           </div>
           <p data-sample-caption aria-live="polite"></p>
           <div class="product-sample-dialog__navigation">
-            <button type="button" data-sample-prev>← Anterior</button>
+            <button type="button" data-sample-prev><CategoryIcon icon="arrow-left" size={18} class="action-arrow" /> Anterior</button>
             <span data-sample-count></span>
             <button type="button" data-sample-next>Próxima <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></button>
           </div>
@@ -229,7 +229,7 @@ const bookSchema = {
           <strong>Quer estudar tudo em uma sequência única?</strong>
           <p>O e-book reúne os 8 capítulos em 88 páginas para você consultar no seu ritmo, do primeiro contato aos problemas mais comuns.</p>
         </div>
-        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-middle">Comprar por R$ 19,90 <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-middle">Comprar por R$ 19,90 <span aria-hidden="true"><CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></span></a>
       </div>
     </section>
 
@@ -311,7 +311,7 @@ const bookSchema = {
           <h2>Seu próximo passo no Linux</h2>
           <p>Leve o e-book Linux do Zero por R$ 19,90 e avance no seu ritmo.</p>
         </div>
-        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-final">Comprar por R$ 19,90 <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-final">Comprar por R$ 19,90 <span aria-hidden="true"><CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></span></a>
       </div>
     </section>
   </main>

@@ -20,11 +20,11 @@ const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
     <nav class="pagination" aria-label="Paginação">
       {currentPage > 1 ? (
         <a class="pagination__direction" href={pageHref(currentPage - 1)} rel="prev">
-          ← Anterior
+          <CategoryIcon icon="arrow-left" size={18} class="action-arrow" /> Anterior
         </a>
       ) : (
         <span class="pagination__direction pagination__direction--disabled" aria-disabled="true">
-          ← Anterior
+          <CategoryIcon icon="arrow-left" size={18} class="action-arrow" /> Anterior
         </span>
       )}
 

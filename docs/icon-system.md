@@ -134,3 +134,6 @@ Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-ar
 
 ## Atendimento — revisão 09/10/2026
 CategoryIcon map-pin representa localização; arrow-down representa navegação para uma seção abaixo. WhatsApp reutiliza o pictograma linear antes existente em SocialShare, centralizado no componente e aplicado no compartilhamento e atendimento. É um pictograma de interface, não um arquivo de logotipo certificado. Ícones junto a texto são decorativos; símbolos de canal usam 20px nos botões e 28px nos detalhes de Contato.
+
+## Setas direcionais — conclusão local 09/10/2026
+Setas de ação para esquerda, baixo e abertura externa usam CategoryIcon arrow-left/arrow-down/arrow-up-right com action-arrow. Aplicado a paginação, retorno de recursos/trilhas, e-book, Portfólio, Store e recomendações. Manter a direção segundo a ação; conteúdo editorial não é convertido.

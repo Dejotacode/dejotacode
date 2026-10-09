@@ -73,7 +73,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
             <div><span>Categoria</span><strong>{categoryLabel}</strong></div>
           </div>
 
-          <div class="product-actions">{merchants.length > 0 ? <a class="button button-secondary" href="#ofertas">Ver opções no parceiro <span aria-hidden="true">↓</span></a> : <span class="product-no-offer">Sem oferta ativa nesta recomendação</span>}<a href={`/store/${product.data.category}/`}>Explorar {categoryLabel} <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a></div>
+          <div class="product-actions">{merchants.length > 0 ? <a class="button button-secondary" href="#ofertas">Ver opções no parceiro <span aria-hidden="true"><CategoryIcon icon="arrow-down" size={18} class="action-arrow" /></span></a> : <span class="product-no-offer">Sem oferta ativa nesta recomendação</span>}<a href={`/store/${product.data.category}/`}>Explorar {categoryLabel} <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a></div>
         </div>
       </section>
 
