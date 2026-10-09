@@ -98,7 +98,7 @@ const trailListSchema = {
           <span>{totalDuration} min de leitura estimada</span>
           <span>Progresso local</span>
         </div>
-        <a class="button button-primary" href={`/blog/${trail.lessons[0].slug}/`} data-trail-start>Começar trilha →</a>
+        <a class="button button-primary" href={`/blog/${trail.lessons[0].slug}/`} data-trail-start><span data-trail-start-label>Começar trilha</span> <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a>
       </div>
 
       <div class="trail-detail__aside">
@@ -162,7 +162,7 @@ const trailListSchema = {
                 </h3>
                 <p>{lesson.description}</p>
               </div>
-              <a class="lesson__read" href={`/blog/${lesson.slug}/`} data-lesson-read={lesson.slug} aria-label={`Ler conteúdo: ${lesson.title}`}>Ler conteúdo <span aria-hidden="true">→</span></a>
+              <a class="lesson__read" href={`/blog/${lesson.slug}/`} data-lesson-read={lesson.slug} aria-label={`Ler conteúdo: ${lesson.title}`}>Ler conteúdo <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
               <button
                 class="lesson__check"
                 type="button"
@@ -205,7 +205,7 @@ const trailListSchema = {
           <h2 id="linux-ebook-interest-title">Aprofunde seus estudos com o e-book Linux do Zero</h2>
           <p><strong>88 páginas para iniciantes</strong>, com instalação segura, terminal, permissões e solução de problemas.</p>
           <p class="trail-interest__price"><span>Preço de lançamento</span><strong>R$ 19,90</strong></p>
-          <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="trail-linux-ebook-product">Conhecer o e-book →</a></div>
+          <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="trail-linux-ebook-product">Conhecer o e-book <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a></div>
         </aside>
       )}
     <p class="trail-back container"><a href="/trilhas/">← Todas as trilhas</a></p>
@@ -313,7 +313,8 @@ const trailListSchema = {
         const nextLesson = requiredLessons.find((lesson) => !completed.has(lesson.dataset.lesson ?? ""));
         if (startLink) {
           startLink.href = nextLesson?.querySelector<HTMLAnchorElement>("[data-lesson-link]")?.href ?? "#lessons-title";
-          startLink.textContent = percentage === 100 ? "Rever etapas →" : completedCount ? "Continuar trilha →" : "Começar trilha →";
+          const startLabel = startLink.querySelector("[data-trail-start-label]");
+          if (startLabel) startLabel.textContent = percentage === 100 ? "Rever etapas" : completedCount ? "Continuar trilha" : "Começar trilha";
         }
 
         if (progressFill) progressFill.style.width = `${percentage}%`;

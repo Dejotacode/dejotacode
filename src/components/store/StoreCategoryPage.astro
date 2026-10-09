@@ -30,7 +30,7 @@ const guides = await getCollection("storeGuides", ({ data }) => !data.draft && d
           <h1>{label}</h1>
           <p>{description}</p>
         </div>
-        <a class="hero__store-link" href="/store/">Voltar à Store →</a>
+        <a class="hero__store-link" href="/store/">Voltar à Store <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a>
       </section>
 
       <section class="category-switcher" aria-label="Categorias da Store">
@@ -44,7 +44,7 @@ const guides = await getCollection("storeGuides", ({ data }) => !data.draft && d
             <a href={`/store/guias/${guide.id}/`}>
               <CategoryIcon icon="news" size={28} />
               <div><strong>{guide.data.title}</strong><p>{guide.data.description}</p></div>
-              <span class="guide-action">Ler guia <span aria-hidden="true">→</span></span>
+              <span class="guide-action">Ler guia <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></span>
             </a>
           )) : <p class="empty empty--state">Os primeiros guias desta categoria ainda estão sendo preparados.</p>}
         </div>
@@ -73,8 +73,8 @@ const guides = await getCollection("storeGuides", ({ data }) => !data.draft && d
         </div>
       </section>
       <section class="catalog-context" aria-label="Conteúdo e critérios editoriais">
-        <a href="/blog/"><CategoryIcon icon="news" size={32} /><div><h2>Aprenda antes de comprar</h2><p>Veja os conteúdos que dão contexto às recomendações.</p><span>Explorar o Blog →</span></div></a>
-        <a href="/store/como-avaliamos/"><CategoryIcon icon="shield-check" size={32} /><div><h2>Como avaliamos</h2><p>Entenda os selos de uso, teste e pesquisa.</p><span>Conhecer os critérios →</span></div></a>
+        <a href="/blog/"><CategoryIcon icon="news" size={32} /><div><h2>Aprenda antes de comprar</h2><p>Veja os conteúdos que dão contexto às recomendações.</p><span>Explorar o Blog <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></div></a>
+        <a href="/store/como-avaliamos/"><CategoryIcon icon="shield-check" size={32} /><div><h2>Como avaliamos</h2><p>Entenda os selos de uso, teste e pesquisa.</p><span>Conhecer os critérios <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></div></a>
       </section>
       <aside class="catalog-disclosure"><CategoryIcon icon="privacy" size={26} /><div><h2>Transparência sobre afiliados</h2><p>Alguns links podem gerar comissão para o DejotaCode, sem custo adicional para você. A compra, entrega e garantia ficam com o parceiro. Uma comissão nunca deve ser o motivo principal de uma recomendação.</p></div></aside>
     </div>

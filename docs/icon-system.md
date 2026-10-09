@@ -128,3 +128,6 @@ O sistema oficial já está aplicado em:
 - navegação de categorias da página Recursos.
 
 Os símbolos textuais anteriores (`$_`, `</>`, `IA`, `[]`, setas ou glifos usados como ícone) não devem voltar como linguagem de categoria. Texto técnico pode continuar aparecendo dentro de conteúdo quando fizer parte da explicação, mas não como substituto do ícone oficial.
+
+## Setas de ação — padrão aprovado em 09/10/2026
+Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.

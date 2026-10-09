@@ -26,7 +26,9 @@ export type OfficialIconId =
   | "clock"
   | "keyboard"
   | "mouse"
-  | "usb-hub";
+  | "usb-hub"
+  | "arrow-right"
+  | "arrow-up-right";
 
 export type IconCategoryStatus = "current" | "future";
 

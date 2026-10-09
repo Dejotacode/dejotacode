@@ -29,7 +29,7 @@ const visual = resolveTrailVisual(trail.slug);
           <span>{trail.lessons.length} etapas</span>
           <span>{totalDuration} min{editorial ? " de leitura estimada" : ""}</span>
         </div>
-        <a href={`/trilhas/${trail.slug}/`}>Começar trilha <span aria-hidden="true">→</span></a>
+        <a href={`/trilhas/${trail.slug}/`}>Começar trilha <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
       </>
     ) : (
       <span class="trail-card__soon">Conteúdo em preparação</span>

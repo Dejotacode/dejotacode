@@ -297,3 +297,6 @@ Campos públicos de Contato e Newsletter usam tipografia do corpo com 1rem. Esta
 
 ### Texto ampliado e foco — aplicação da quinta etapa
 A largura mínima da página não cresce com a fonte. Em telas estreitas, controles somente com ícone mantêm alvo de 44px; conteúdo e links longos permitem quebra. Grids usam minmax(0,1fr) quando precisam encolher. Foco pode ser indicado no controle ou em seu conjunto com focus-within, desde que visível. Testar texto ampliado separadamente do zoom nativo e registrar o método.
+
+## Setas de ação — padrão aprovado em 09/10/2026
+Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.

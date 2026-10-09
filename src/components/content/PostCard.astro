@@ -56,7 +56,7 @@ const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
       </span>
       {showReadLink && (
         <a class="blog-read-link" href={postHref(post)} aria-label={`Ler conteúdo: ${post.data.title}`}>
-          Ler conteúdo <span aria-hidden="true">→</span>
+          Ler conteúdo <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span>
         </a>
       )}
     </div>

@@ -1,4 +1,5 @@
 ---
+import CategoryIcon from "./CategoryIcon.astro";
 interface Props {
   currentPage: number;
   totalPages: number;
@@ -43,11 +44,11 @@ const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
       {currentPage < totalPages ? (
         <a class="pagination__direction" href={pageHref(currentPage + 1)} rel="next">
-          Próxima →
+          Próxima <CategoryIcon icon="arrow-right" size={18} class="action-arrow" />
         </a>
       ) : (
         <span class="pagination__direction pagination__direction--disabled" aria-disabled="true">
-          Próxima →
+          Próxima <CategoryIcon icon="arrow-right" size={18} class="action-arrow" />
         </span>
       )}
     </nav>

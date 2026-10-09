@@ -49,8 +49,8 @@ const products = allProducts.filter((product) => guide.data.productIds.includes(
                 <div class="guide-product__body">
                   <StoreBadge status={product.data.editorialStatus} />
                   <h3>{product.data.title}</h3>
-                  <a href={`/store/${product.id}/`} data-store-origin={`internal:${Astro.url.pathname}`} data-analytics-cta={`store-card:${product.id}`}>Ver análise <span aria-hidden="true">→</span></a>
-                  {product.data.relatedPosts?.[0] && <a class="guide-product__article" href={`/blog/${product.data.relatedPosts[0]}/`} data-analytics-cta={`store-card:${product.id}:article`}>Ver artigo <span aria-hidden="true">→</span></a>}
+                  <a href={`/store/${product.id}/`} data-store-origin={`internal:${Astro.url.pathname}`} data-analytics-cta={`store-card:${product.id}`}>Ver análise <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
+                  {product.data.relatedPosts?.[0] && <a class="guide-product__article" href={`/blog/${product.data.relatedPosts[0]}/`} data-analytics-cta={`store-card:${product.id}:article`}>Ver artigo <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>}
                 </div>
               </article>
             );
@@ -59,7 +59,7 @@ const products = allProducts.filter((product) => guide.data.productIds.includes(
       )}
       <nav class="guide-endlinks" aria-label="Continue na DejotaStore">
         <a href="/store/como-avaliamos/">Como avaliamos</a>
-        <a href="/store/">Voltar à DejotaStore <span aria-hidden="true">→</span></a>
+        <a href="/store/">Voltar à DejotaStore <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
       </nav>
     </div>
   </main>

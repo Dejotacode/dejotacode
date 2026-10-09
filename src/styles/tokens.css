@@ -1,4 +1,6 @@
 :root {
+  --size-action-arrow: 18px;
+  --size-action-arrow-primary: 20px;
   color-scheme: dark;
   --font-heading: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", Inter, system-ui, sans-serif;
   --font-body: "Inter Variable", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

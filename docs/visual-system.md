@@ -91,3 +91,6 @@ Esta tabela foi extraída do código na consolidação. Alterar o código e atua
 Não fundir cards de finalidades diferentes. CSS específico pode definir layout e variantes justificadas, sem recriar valores de identidade.
 
 CTA normal usa --size-title-cta = clamp(1.6rem,3vw,2.4rem). Cards regulares de Blog/categorias usam --size-card-title; destaque usa --size-card-title-featured. Recortes existentes permanecem por família.
+
+## Setas de ação — padrão aprovado em 09/10/2026
+Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.

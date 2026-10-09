@@ -34,7 +34,7 @@ const categories: Category[] = [
       <span class="store-category-card__icon"><CategoryIcon icon={category.iconId} size={22} /></span>
       <strong>{category.label}</strong>
       {!compact && <span>{category.description}</span>}
-      <small>{activeSlug === category.slug ? "Categoria atual" : "Explorar categoria →"}</small>
+      <small>{activeSlug === category.slug ? "Categoria atual" : "Explorar categoria"}{activeSlug !== category.slug && <CategoryIcon icon="arrow-right" size={18} class="action-arrow" />}</small>
     </a>
   ))}
 </nav>

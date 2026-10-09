@@ -73,7 +73,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
             <div><span>Categoria</span><strong>{categoryLabel}</strong></div>
           </div>
 
-          <div class="product-actions">{merchants.length > 0 ? <a class="button button-secondary" href="#ofertas">Ver opções no parceiro <span aria-hidden="true">↓</span></a> : <span class="product-no-offer">Sem oferta ativa nesta recomendação</span>}<a href={`/store/${product.data.category}/`}>Explorar {categoryLabel} →</a></div>
+          <div class="product-actions">{merchants.length > 0 ? <a class="button button-secondary" href="#ofertas">Ver opções no parceiro <span aria-hidden="true">↓</span></a> : <span class="product-no-offer">Sem oferta ativa nesta recomendação</span>}<a href={`/store/${product.data.category}/`}>Explorar {categoryLabel} <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a></div>
         </div>
       </section>
 
@@ -131,7 +131,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
                 data-analytics-affiliate-provider={merchant.provider}
                 data-analytics-affiliate-id={product.id}
               >
-                <div><small>Parceiro</small><strong>{merchant.name}</strong></div><span>{merchant.label ?? "Ver oferta →"}</span>
+                <div><small>Parceiro</small><strong>{merchant.name}</strong></div><span>{merchant.label ?? "Ver oferta"}<CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span>
               </a>
             ))}
           </div>
@@ -157,7 +157,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
                 href={`/blog/${slug}/`}
                 data-store-related-article={`product:${product.id}:${slug}`}
               >
-                <CategoryIcon icon="news" size={26} /><div><strong>{title}</strong><p>{description}</p></div><span aria-hidden="true">→</span>
+                <CategoryIcon icon="news" size={26} /><div><strong>{title}</strong><p>{description}</p></div><span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span>
               </a>
             ))}
           </div>
@@ -168,7 +168,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
         <p class="eyebrow">Transparência</p>
         <h2>Por que esta recomendação existe?</h2>
         <p>Um produto só entra na DejotaStore quando ajuda a resolver uma necessidade real do conteúdo. Comissão de afiliado não deve ser o motivo principal da recomendação.</p>
-        <a href="/store/como-avaliamos/">Conhecer a metodologia →</a>
+        <a href="/store/como-avaliamos/">Conhecer a metodologia <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a>
       </section>
     </div>
   </main>

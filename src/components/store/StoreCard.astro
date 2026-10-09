@@ -1,4 +1,5 @@
 ---
+import CategoryIcon from "../ui/CategoryIcon.astro";
 import StoreBadge from "./StoreBadge.astro";
 import VisualMedia from "../visual/VisualMedia.astro";
 import { resolveStoreVisual } from "../../data/storeVisuals";
@@ -47,7 +48,7 @@ const { src: productVisual, fallbackSrc: productFallback } = resolveStoreVisual(
         data-store-origin={`internal:${Astro.url.pathname}`}
         data-analytics-cta={`store-card:${id}`}
       >
-        {editorial && offerCount === 0 ? "Conhecer recomendação" : "Ver produto"} <span aria-hidden="true">→</span>
+        {editorial && offerCount === 0 ? "Conhecer recomendação" : "Ver produto"} <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span>
       </a>
       {relatedPost && (
         <a class="store-card__secondary" href={`/blog/${relatedPost}/`} data-analytics-cta={`store-card:${id}:article`}>
