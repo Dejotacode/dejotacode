@@ -90,3 +90,7 @@ Arquivo novo ottocast-mini-cube-3-0.md encontrado durante a retomada: preservado
 ## Fechamento atualizado — 09/10/2026, 14:04 BRT
 Usuário aprovou o visual final do Setup: SVG decorativo com monitor/editor, gabinete, teclado, mouse, planta e porta-lápis, ampliado no desktop com avanço sob a descrição e fade discreto. Evidências técnicas da alteração em frontend-review.md. Capturas do Portfólio e notebook de Serviços sincronizadas com o site atualizado.
 Próxima revisão conjunta no preview 4321: Home, Store, Blog/artigos, Trilhas, Contato/Serviços, Portfólio e Setup. Pendências separadas: identificar modelos da TV/periféricos, decidir conteúdo de Termos de Uso, validar entrega real de e-mails e testar leitor de tela/navegadores alternativos. Nenhum push ou deploy autorizado.
+
+
+## Tela e periféricos confirmados — 09/10/2026
+Dejota informou teclado Logitech K270 e mouse Logitech M150. Foto da tela de informações da TV confirma Samsung UN43T5300AGXZD, usada como monitor de 43 polegadas conforme declaração anterior. Apenas o modelo foi transcrito; números de série e identificadores do dispositivo excluídos. Modelos do teclado/mouse registrados como declaração do usuário, sem inferir especificações adicionais. No inventário de equipamentos, somente o modelo do hub USB continua pendente. Página atualizada localmente; sem publicação.
