@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CategoryIcon from "../components/CategoryIcon.astro";
 import "../styles/auxiliary.css";
 ---
 
@@ -13,34 +12,24 @@ import "../styles/auxiliary.css";
   <main id="conteudo" tabindex="-1" class="not-found-page">
     <section class="not-found container" aria-labelledby="not-found-title">
       <div class="not-found__copy">
-      <p class="eyebrow">ERRO 404</p>
-
-      <h1 id="not-found-title">Essa página não existe.</h1>
-
-      <p class="not-found__lead">
-        O endereço pode ter mudado, sido removido ou talvez tenha sido digitado
-        incorretamente.
-      </p>
-
-      <div class="not-found__actions">
-        <a class="button button-primary" href="/">
-          Voltar para o início
-        </a>
-
-        <a class="button button-secondary" href="/blog/">
-          Explorar conteúdos
+        <p class="not-found__status">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M13 2H4v20h8M13 2l5 5h-5V2M18 7v3" />
+            <circle cx="16" cy="16" r="4" /><path d="m19 19 3 3" />
+          </svg>
+          <span>404</span>
+        </p>
+        <h1 id="not-found-title">Página não encontrada.</h1>
+        <p class="not-found__lead">O endereço pode ter mudado ou a página pode ter sido removida.</p>
+        <div class="not-found__actions">
+          <a class="button button-primary" href="/">Voltar para o início</a>
+          <a class="button button-secondary" href="/blog/">Explorar o Blog</a>
+        </div>
+        <a class="not-found__find" href="/busca/">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg>
+          Buscar conteúdo <span aria-hidden="true">→</span>
         </a>
       </div>
-      </div>
-      <aside class="not-found__search" aria-labelledby="not-found-search-title">
-        <CategoryIcon icon="grid" size={32} />
-        <h2 id="not-found-search-title">Encontre o que procura.</h2>
-        <form action="/busca/" method="get" role="search" aria-label="Buscar conteúdo no site">
-          <label for="not-found-query">Buscar no DejotaCode</label>
-          <input id="not-found-query" name="q" type="search" placeholder="Linux, programação, ferramentas…" required />
-          <button class="button button-primary" type="submit">Buscar</button>
-        </form>
-      </aside>
     </section>
   </main>
 </BaseLayout>
