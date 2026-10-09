@@ -97,3 +97,6 @@ Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-ar
 
 ## Hero com imagem integrada — revisão local 09/10/2026
 Home e Store usam grid sem intervalo e mídia com avanço de 5rem sob a coluna de texto; texto em camada superior. Máscara horizontal tem fade até 42% e termina suavemente na borda oposta. No celular, avanço vertical de 1–1,5rem e máscara vertical até 35%. Home respeita superfície do painel; Store respeita fundo da página. Não mudar as imagens para criar o efeito; títulos e ações permanecem HTML. Aplicação restrita aos dois heroes, sem alterar cards do catálogo.
+
+## Contato — destinos comerciais compactos
+contact-destinations--attendance reutiliza os cartões de Serviços/Parcerias em uma coluna dentro do atendimento, abaixo do WhatsApp e antes do mapa; padding .8rem, ícones 24px, título 1rem e descrição .85rem. URLs e descrições preservados.
