@@ -122,3 +122,7 @@ API agora possui adaptador Cloudflare e chamada em segundo plano após persistê
 
 ## Transporte de e-mail testado — 09/10/2026
 Um e-mail de teste autorizado foi enviado via REST Cloudflare; serviço confirmou entrega a um destinatário, sem fila ou bounce. Detalhes em formularios-entrega-revisao-2026-10-09.md. Notificações da rota permanecem desativadas; implantação/ativação não autorizadas. Próximo passo: usuário confirmar recebimento e validar binding em ambiente controlado antes de publicação.
+
+
+## Binding pronto para revisão — 09/10/2026
+Configuração local da API declara CONTACT_EMAIL e remetente limitado ao domínio nos três ambientes, com flag false explícita em todos; destinatário pessoal ainda não configurado nem versionado. Check, sete cenários simulados e bundle Wrangler dry-run aprovados. Nenhum envio adicional ou deploy. Antes de ativar, configurar destinatário privado e restringir binding ao destino concreto; validar fluxo real da rota em ambiente controlado. Revisão visual e teste de transporte concluídos; ativação pública exige autorização de publicação própria.
