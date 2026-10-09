@@ -38,7 +38,8 @@
   --leading-section: 1.25;
   --tracking-title: -.035em;
   --tracking-section: -.025em;
-  --size-card-title: 1.05rem;
+  --size-card-title: clamp(1.1rem, 1.6vw, 1.35rem);
+  --size-title-cta: clamp(1.6rem, 3vw, 2.4rem);
   --size-card-title-featured: clamp(1.45rem, 2.4vw, 2.15rem);
   --size-card-title-trail: 1.35rem;
   --size-meta: .82rem;

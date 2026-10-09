@@ -283,3 +283,9 @@ Não alterar conteúdo, rotas, SEO, afiliados ou comportamento para padronizar a
 Comparar hashes de src/content e public, rotas e metadados do build antes/depois. Validar check/build/QA, famílias em 320/390/768/1440, ambos temas, foco, navegação e estados reais.
 Tabela por modelo e por rota em frontend-review.md. Validação automatizada não equivale a aprovação visual do usuário nem a teste completo de integrações.
 Publicação requer instrução explícita separada; nenhum push/deploy nesta aplicação.
+
+## 18. Cards e CTA — segunda etapa
+Card de artigo regular: --size-card-title clamp(1.1rem,1.6vw,1.35rem), entrelinha 1.3 e tracking de seção. Blog e categorias compartilham esse papel.
+Destaque editorial: --size-card-title-featured. Trilhas mantêm variante --size-card-title-trail; cards comerciais e utilitários mantêm variantes de sua função.
+CTA normal: --size-title-cta; compactos de artigo continuam menores conforme seu contexto documentado. Botões mantêm alvo de 44px e removem transição em redução de movimento.
+Recortes existentes preservados: Blog usa foco superior esquerdo; Store foco central salvo capas específicas; e-book página integral. Não substituir imagens para igualar layouts.

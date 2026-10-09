@@ -42,7 +42,7 @@ Esta tabela foi extraída do código na consolidação. Alterar o código e atua
 | Escuro e medidas | --leading-section | 1.25 |
 | Escuro e medidas | --tracking-title | -.035em |
 | Escuro e medidas | --tracking-section | -.025em |
-| Escuro e medidas | --size-card-title | 1.05rem |
+| Escuro e medidas | --size-card-title | clamp(1.1rem, 1.6vw, 1.35rem) |
 | Escuro e medidas | --size-card-title-featured | clamp(1.45rem, 2.4vw, 2.15rem) |
 | Escuro e medidas | --size-card-title-trail | 1.35rem |
 | Escuro e medidas | --size-meta | .82rem |
@@ -89,3 +89,5 @@ Esta tabela foi extraída do código na consolidação. Alterar o código e atua
 | Rótulo | .eyebrow em global.css | Papel comum; margens/display podem variar |
 | Botão | .button/.button-primary em global.css | Primário, secundário, ações especializadas |
 Não fundir cards de finalidades diferentes. CSS específico pode definir layout e variantes justificadas, sem recriar valores de identidade.
+
+CTA normal usa --size-title-cta = clamp(1.6rem,3vw,2.4rem). Cards regulares de Blog/categorias usam --size-card-title; destaque usa --size-card-title-featured. Recortes existentes permanecem por família.

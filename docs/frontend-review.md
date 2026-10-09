@@ -185,3 +185,11 @@ Cada rota dinâmica tem uma linha própria. A evidência de 320/768 aplica-se ao
 
 ## Continuidade
 A base e suas regras estão aplicadas. A próxima etapa visual pode tratar títulos de cards, CTAs e recortes por família, somente quando houver divergência real e respeitando as variantes existentes. Não marcar auditoria completa de origem/licença ou aprovação geral do usuário por inferência.
+
+## Segunda etapa — cards, CTA e recortes
+Cards regulares de artigos compartilham o papel de título entre Blog e categorias. Destaque mantém variante maior; comerciais, recursos e trilhas mantêm a função própria.
+ConversionCTA normal consome token de título; variantes compactas preservadas. Botões respeitam redução de movimento.
+Nenhuma mudança de mídia: recortes aprovados e URLs preservados. Auditoria anterior de carregamento complementa a inspeção desta etapa.
+Check/build/QA passaram; 260 hashes e manifesto de 115 rotas/metadados/links/controles continuam idênticos.
+Reteste de 27 representantes em 320/768, ambos temas: 108 combinações, sem problemas. Blog/categoria/Home/artigo também conferidos em 390/1440, ambos temas.
+Etapa local; sem aprovação de publicação.

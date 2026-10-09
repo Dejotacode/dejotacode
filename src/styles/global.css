@@ -189,3 +189,7 @@ p {
   text-transform: uppercase;
 }
 .button { gap: .5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}
