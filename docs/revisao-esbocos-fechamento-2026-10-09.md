@@ -10,7 +10,7 @@ Escopo: revisão local, sem push ou publicação. Referência de marca: public/a
 | Contato e Serviços | P1 | Ícones WhatsApp e contraste já corrigidos; atalhos comerciais e notebook revisados nas etapas anteriores. |
 | Home e Store | P2 | Setas e transições revisadas nas etapas anteriores; avaliação visual conjunta do usuário ainda necessária. |
 | Blog e Store / artes | P2 | Concluído: padrão aprovado e 49 versões integradas localmente; 48 usadas em 81 rotas. Originais e mestres preservados; galeria de comparação em 4323. |
-| Setup do Dejota | P1 editorial | Concluído: SSD Rapidin 128 GB, Samsung HM160HI 160 GB e Western Digital WD6400BPVT 640 GB confirmados. Ilustração ampliada aprovada pelo usuário. Modelos de TV e periféricos ainda pendentes. |
+| Setup do Dejota | P1 editorial | Concluído: SSD Rapidin 128 GB, Samsung HM160HI 160 GB e Western Digital WD6400BPVT 640 GB confirmados. Ilustração ampliada aprovada pelo usuário. TV Samsung UN43T5300AGXZD, teclado Logitech K270 e mouse Logitech M150 confirmados; somente modelo do hub USB pendente. |
 | Rodapé / Termos de Uso | P2 conteúdo | Item de esboço antigo sem página atual. Não inserir destino inexistente. Necessidade e texto continuam pendência de conteúdo; esta revisão não determina obrigação jurídica. |
 
 ## Inventário histórico da triagem inicial
@@ -94,3 +94,10 @@ Próxima revisão conjunta no preview 4321: Home, Store, Blog/artigos, Trilhas, 
 
 ## Tela e periféricos confirmados — 09/10/2026
 Dejota informou teclado Logitech K270 e mouse Logitech M150. Foto da tela de informações da TV confirma Samsung UN43T5300AGXZD, usada como monitor de 43 polegadas conforme declaração anterior. Apenas o modelo foi transcrito; números de série e identificadores do dispositivo excluídos. Modelos do teclado/mouse registrados como declaração do usuário, sem inferir especificações adicionais. No inventário de equipamentos, somente o modelo do hub USB continua pendente. Página atualizada localmente; sem publicação.
+
+
+## Estado consolidado — 09/10/2026, 15:05 BRT
+Correções visuais, setas, ícones, degradês, 49 assinaturas e Setup concluídos localmente; frontend canônico permanece em http://localhost:4321/, sem publicação desta rodada. TV/teclado/mouse confirmados; somente modelo do hub USB pendente no inventário. Revisão técnica de dez páginas em 80 combinações e navegação em nove cenários já concluídas; evidências anteriores continuam válidas, sem repetir testes por alteração apenas documental.
+Notificação de contato da API ativada/publicada mediante autorização específica. Release isolada em /home/dejota/Workspace/fullstack/dejotacode-api-contact-release, base 97f9271 e apenas commits de contato; versão Cloudflare 7fab067d-98d9-44c6-9716-122bf8523e02. Alterações editoriais/auth/platform do branch de desenvolvimento não incluídas; migrations não aplicadas. Remetente do domínio e destinatário verificado restrito no binding privado.
+Teste público autorizado: um único envio fictício pelo formulário mobile, HTTP 201, sucesso na interface, exatamente um registro no D1 e notificação recebida na INBOX às 15:00 BRT; SPF/DKIM/DMARC pass e Reply-To correto. Registro operacional: ../dejotacode-api/CONTACT_NOTIFICATION_DEPLOY_2026-10-09.json. Entrega de contato concluída; newsletter continua com comportamento anterior. Sem fila persistente ou reenvio automático.
+Pendências atuais: revisão visual final conjunta e publicação específica do frontend; modelo do hub USB; decisão de conteúdo de Termos; leitor de tela/navegadores alternativos; definição própria de eventual entrega da newsletter. Arquivo Ottocast preexistente preservado fora dos commits desta rodada. Entradas anteriores que descrevem contato desativado são histórico e não prevalecem sobre este estado.

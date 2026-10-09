@@ -17,7 +17,7 @@ Revisão: 09/10/2026. Responsável: @control. Escopo: índice das referências a
 Publicação não é autorizada pela existência de um runbook.
 
 ## Estado atual
-Aplicação técnica local do Documento Mestre concluída nas famílias públicas; revisão visual final ainda pendente. Andamento e limites atuais em [Revisão por página](frontend-review.md). Recebimento dos formulários validado apenas na API local; entrega por e-mail e produção são etapas separadas. Armazenamento do Setup confirmado; modelo do hub USB ainda pendente. Nenhuma publicação autorizada.
+Aplicação técnica local do Documento Mestre e revisão técnica das famílias públicas concluídas; revisão visual final do usuário disponível no preview 4321. Correções visuais e imagens desta rodada permanecem locais. Notificação de contato da API publicada com autorização específica e teste end-to-end concluído em 09/10/2026: um contato fictício persistido e notificação recebida na caixa de entrada. Essa autorização não publica o frontend nem altera newsletter. Detalhes em [Entrega dos formulários](formularios-entrega-revisao-2026-10-09.md). Setup confirmado, exceto modelo do hub USB. Pendências de conteúdo de Termos, leitor de tela e navegadores alternativos permanecem separadas. [Estado atual e retomada](consolidacao-local-2026-10-09.md) registra os limites.
 
 ## Histórico e pendências
 [Revisão pública anterior](revisao-final-publica-2026-10-09.md) é o retrato anterior à aplicação do Documento Mestre; pendências atuais em frontend-review.md prevalecem.
