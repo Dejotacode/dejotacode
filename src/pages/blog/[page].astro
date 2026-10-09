@@ -115,7 +115,7 @@ const blogSchema = {
       </div>
 
       <div class="post-grid">
-        {visiblePosts.map((post) => <PostCard post={post} />)}
+        {visiblePosts.map((post) => <PostCard post={post} blogMetaIcons />)}
       </div>
 
       <Pagination currentPage={page} totalPages={totalPages} basePath="/blog/" />

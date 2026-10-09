@@ -1,6 +1,7 @@
 ---
 import type { Post } from "../lib/content";
 import VisualMedia from "./visual/VisualMedia.astro";
+import CategoryIcon from "./CategoryIcon.astro";
 import { resolvePostVisual } from "../data/editorialVisuals";
 import {
   categories,
@@ -13,9 +14,15 @@ interface Props {
   post: Post;
   featured?: boolean;
   showReadLink?: boolean;
+  blogMetaIcons?: boolean;
 }
 
-const { post, featured = false, showReadLink = false } = Astro.props;
+const {
+  post,
+  featured = false,
+  showReadLink = false,
+  blogMetaIcons = false,
+} = Astro.props;
 const category = post.data.category;
 const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
 ---
@@ -27,25 +34,31 @@ const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
 
   <div class="post-card__body">
     <div class="post-card__eyebrow">
-      <a href={categoryHref(category)}>{categories[category]}</a>
+      <a class="post-card__category" href={categoryHref(category)}>{categories[category]}</a>
       <span aria-hidden="true">•</span>
-      <span>{post.data.type}</span>
-      {showReadLink && <span class="blog-featured-label">Em destaque</span>}
+      <span class="post-card__type">{post.data.type}</span>
+      {showReadLink && <span class="post-card__featured-label">Em destaque</span>}
     </div>
 
     <h2><a href={postHref(post)}>{post.data.title}</a></h2>
     <p>{post.data.description}</p>
 
     <div class="post-card__meta">
-      <time datetime={post.data.publishedAt.toISOString()}>
-        {formatPostDate(post.data.publishedAt)}
-      </time>
-      <span>{post.data.readingTime} min de leitura</span>
+      <span class="post-card__meta-item">
+        {blogMetaIcons && <CategoryIcon icon="calendar" size={14} />}
+        <time datetime={post.data.publishedAt.toISOString()}>
+          {formatPostDate(post.data.publishedAt)}
+        </time>
+      </span>
+      <span class="post-card__meta-item">
+        {blogMetaIcons && <CategoryIcon icon="clock" size={14} />}
+        <span>{post.data.readingTime} min de leitura</span>
+      </span>
+      {showReadLink && (
+        <a class="blog-read-link" href={postHref(post)} aria-label={`Ler conteúdo: ${post.data.title}`}>
+          Ler conteúdo <span aria-hidden="true">→</span>
+        </a>
+      )}
     </div>
-    {showReadLink && (
-      <a class="blog-read-link" href={postHref(post)} aria-label={`Ler conteúdo: ${post.data.title}`}>
-        Ler conteúdo <span aria-hidden="true">→</span>
-      </a>
-    )}
   </div>
 </article>

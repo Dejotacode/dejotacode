@@ -74,11 +74,8 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
             alt={`Imagem editorial de ${product.data.title}`}
             label={product.data.title}
             loading="eager"
+            aspect="card"
           />
-          <div class="product-visual__overlay">
-            <span>{categoryLabel}</span>
-            <strong>{product.data.brand ?? "DejotaStore"}</strong>
-          </div>
         </div>
         <div class="product-summary">
           <StoreBadge status={product.data.editorialStatus} />
@@ -197,11 +194,9 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
   .breadcrumbs a:hover { color: var(--color-accent-strong); }
   .product-hero { display: grid; grid-template-columns: .9fr 1.1fr; gap: 1rem; padding: 1.5rem 0; }
   .product-visual, .product-summary, .product-panel { border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
-  .product-visual { position:relative;min-height:24rem;overflow:hidden;padding:0;background:var(--color-surface-soft); }
-  .product-visual > :global(.visual-media) { height:100%;min-height:24rem;border:0;border-radius:0; }
-  .product-visual__overlay { position:absolute;left:1rem;right:1rem;bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem .75rem;border:1px solid color-mix(in srgb,var(--color-border) 75%,transparent);border-radius:999px;background:color-mix(in srgb,var(--color-surface) 90%,transparent);backdrop-filter:blur(10px); }
-  .product-visual__overlay span { color:var(--color-accent-strong);font-size:.72rem;font-weight:850; }
-  .product-visual__overlay strong { font-size:.8rem; }
+  .product-visual { position:relative;align-self:stretch;min-width:0;min-height:24rem;overflow:hidden;padding:0;background:var(--color-surface-soft); }
+  .product-visual > :global(.visual-media) { position:absolute;inset:0;height:100%;aspect-ratio:auto;border:0;border-radius:0; }
+  .product-visual :global(.visual-media img) { width:100%;height:100%;object-fit:cover;object-position:center; }
   .product-summary { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.2rem, 4vw, 2rem); }
   .product-summary h1 { margin: .8rem 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1; letter-spacing: -.045em; }
   .lead { margin:0;color:var(--color-text-muted);font-size:1.02rem; }
@@ -248,9 +243,10 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
   @media (max-width: 50rem) {
     .product-hero { grid-template-columns: minmax(0,1fr); }
     .product-grid { grid-template-columns: minmax(0,1fr); }
-    .product-visual,.product-visual > :global(.visual-media) { min-height:15rem; }
+    .product-visual { min-height:0;aspect-ratio:4 / 3; }
     .product-commercial-summary { grid-template-columns:1fr; }
     .product-category-nav__heading { align-items:start;flex-direction:column; }
     .offer-grid { grid-template-columns:1fr; }
   }
+  .product-visual :global(img[src$="-sem-texto-v2.webp"]) { object-position:left top; }
 </style>

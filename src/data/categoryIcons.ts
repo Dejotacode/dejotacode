@@ -21,7 +21,9 @@ export type OfficialIconId =
   | "privacy"
   | "network"
   | "chip"
-  | "database";
+  | "database"
+  | "calendar"
+  | "clock";
 
 export type IconCategoryStatus = "current" | "future";
 

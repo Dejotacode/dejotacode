@@ -1,95 +1,212 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ResourceCard from "../../components/resources/ResourceCard.astro";
-import VisualMedia from "../../components/visual/VisualMedia.astro";
 import CategoryIcon from "../../components/CategoryIcon.astro";
 import { resourceCategories } from "../../data/resourceCategories";
-import { recommendedResources, sortResourcesNewestFirst } from "../../data/recommendedResources";
+import { recommendedResources } from "../../data/recommendedResources";
+import { getResourceDiscovery, resourceNeeds } from "../../data/resourceDiscovery";
 import "../../styles/institutional.css";
 import "../../styles/resources.css";
-
-const activeGroups = resourceCategories.filter((group) => recommendedResources.some((resource) => resource.category === group.id));
-const hasCommercialRelationships = recommendedResources.some((resource) => resource.relationship === "affiliate");
+const resources = [...recommendedResources].sort((a,b) => a.name.localeCompare(b.name, "pt-BR"));
 ---
-
 <BaseLayout title="Ferramentas e recursos para tecnologia | DejotaCode" description="Recursos avaliados com critérios claros, limitações e caminhos separados para aprender, avaliar e acessar ferramentas.">
-  <main id="conteudo" tabindex="-1" class="resources-page">
-    <section class="resources-hero container">
-      <div class="resources-hero__copy">
-        <p class="eyebrow">RECURSOS DEJOTACODE</p>
-        <h1>Ferramentas com contexto para você decidir melhor.</h1>
-        <p>Guias, serviços, referências e produtos organizados pelo que ajudam a resolver — sem transformar a página em uma lista de links.</p>
-        <div class="resources-hero__actions">
-          <a class="button button-primary" href="#categorias">Explorar recursos</a>
-          <a class="button" href="/store/">Conhecer a DejotaStore</a>
+  <main id="conteudo" tabindex="-1" class="resources-page resources-discovery">
+    <section class="container resources-intro">
+      <p class="eyebrow">RECURSOS DEJOTACODE</p>
+      <h1>Ferramentas para aprender, criar e trabalhar com tecnologia.</h1>
+      <p>Encontre uma ferramenta que faça sentido para o seu próximo passo.</p>
+    </section>
+    <resource-directory class="container resource-explorer">
+      <div data-controls hidden>
+        <label class="resource-search" for="resource-search">Busque uma ferramenta ou o que precisa fazer
+          <input id="resource-search" type="search" placeholder="Ex.: editar vídeo, senhas, criar site…" autocomplete="off" aria-controls="resource-results" />
+        </label>
+        <div class="resource-need-filters" role="group" aria-label="Filtrar por necessidade">
+          <button type="button" data-need="" aria-pressed="true" aria-controls="resource-results">Todas</button>
+          {resourceNeeds.map(need => <button type="button" data-need={need.id} aria-pressed="false" aria-controls="resource-results">{need.label}</button>)}
         </div>
       </div>
-      <VisualMedia src="/assets/resources/hero-recursos.svg" alt="Ilustração de tecnologia e recursos do DejotaCode" loading="eager" />
-    </section>
-
-    <section id="categorias" class="resource-directory container" aria-labelledby="resource-directory-title">
-      <div class="resource-directory__heading">
-        <div><p class="eyebrow">NAVEGUE POR NECESSIDADE</p><h2 id="resource-directory-title">Encontre o tipo de recurso certo</h2></div>
-        <p>Use as categorias como atalhos para chegar direto ao que você precisa.</p>
+      <div class="resource-status-legend" aria-label="Como avaliamos os recursos">
+        <span><strong>Usado</strong> · faz parte do nosso fluxo</span>
+        <span><strong>Pesquisado</strong> · informações conferidas, sem afirmar teste</span>
+        <span><strong>Em avaliação</strong> · acompanhamento em andamento</span>
       </div>
+      <noscript><p>Sem JavaScript, todas as ferramentas são exibidas em ordem alfabética; busca e filtros não estão disponíveis.</p></noscript>
+      <div class="resource-results-header">
+        <h2 id="resource-results-heading" tabindex="-1">Todas as ferramentas</h2>
+        <p data-count aria-live="polite" aria-atomic="true">{resources.length} ferramentas</p>
+        <button type="button" class="button" data-clear hidden>Limpar filtros</button>
+      </div>
+      <div id="resource-results" class="resource-grid-v2" aria-labelledby="resource-results-heading">
+        {resources.map((resource, index) => {
+          const discovery = getResourceDiscovery(resource);
+          return <div data-resource={resource.id} data-needs={discovery.needs.join(" ")} data-search={[resource.name, resource.description, resource.bestFor, discovery.summary, discovery.ideal, ...resourceNeeds.filter(n => discovery.needs.includes(n.id)).map(n => n.label)].join(" ")}>
+            <ResourceCard resource={resource} compact loading={index < 3 ? "eager" : "lazy"} />
+          </div>;
+        })}
+      </div>
+      <nav class="resource-pagination" data-pagination hidden aria-label="Paginação das ferramentas">
+        <button type="button" class="resource-pagination__direction" data-page-step="previous">← Anterior</button>
+        <div class="resource-pagination__pages" data-page-buttons></div>
+        <button type="button" class="resource-pagination__direction" data-page-step="next">Próxima →</button>
+      </nav>
+      <div class="resource-empty" data-empty hidden>
+        <h3>Nenhuma ferramenta encontrada</h3>
+        <p>Tente outro termo ou limpe os filtros para ver todas as ferramentas.</p>
+        <button type="button" class="button button-secondary" data-clear>Limpar filtros</button>
+      </div>
+    </resource-directory>
+    <section class="container resource-browse" aria-labelledby="categories-title">
+      <h2 id="categories-title">Explore por categoria</h2>
       <nav class="resource-category-nav" aria-label="Categorias de recursos">
-        {activeGroups.map((group) => <a href={`#${group.id}`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.label}</span></a>)}
+        {resourceCategories.map(group => <a href={`/recursos/${group.id}/`}><CategoryIcon icon={group.iconId} size={18} /><span>{group.id === "digitais" ? "Criação e produtividade" : group.id === "seguranca" ? "Segurança e recuperação" : group.label}</span></a>)}
       </nav>
     </section>
-
-    <section class="container resource-trust-grid" aria-label="Critérios de transparência">
-      <article class="resource-trust-card">
-        <span>01</span><strong>Aprenda antes do clique</strong><p>Quando existe conteúdo explicando o contexto, ele aparece antes da recomendação comercial.</p>
-      </article>
-      <article class="resource-trust-card">
-        <span>02</span><strong>Limitações visíveis</strong><p>Benefícios, custo e pontos de atenção ficam disponíveis no próprio card.</p>
-      </article>
-      <article class="resource-trust-card">
-        <span>03</span><strong>Relação comercial clara</strong><p>{hasCommercialRelationships ? "Recursos monetizados são identificados e direcionados de forma transparente." : "Nenhum recurso atual gera comissão para o DejotaCode."}</p>
-      </article>
-    </section>
-
-    <section class="container resource-featured" aria-labelledby="materials-title">
-      <div class="resource-section-heading">
-        <div><p class="eyebrow">MATERIAL DO DEJOTACODE</p><h2 id="materials-title">Criado aqui para quem está começando</h2></div>
-        <p>Produtos próprios ficam separados das recomendações de terceiros para preservar autoria e transparência.</p>
+    <aside class="container resource-commercial-note" aria-label="Transparência sobre links de afiliado">
+      <strong>Transparência</strong>
+      <p>Algumas ferramentas possuem links de afiliado, identificados nos cards como “Link de afiliado”. Se você realizar uma compra elegível por esses links, o DejotaCode poderá receber uma comissão. Consulte os critérios e limitações de cada recurso antes de escolher.</p>
+    </aside>
+    <section class="container resource-own-material" aria-labelledby="own-title">
+      <img src="/assets/products/linux-do-zero/cover.png" alt="Capa do e-book Linux do Zero" width="1159" height="1638" loading="lazy" decoding="async" />
+      <div class="resource-own-material__content">
+        <p class="eyebrow">MATERIAL PRÓPRIO DEJOTACODE</p>
+        <h2 id="own-title">Linux do Zero</h2>
+        <p>Um guia prático para começar a usar Linux com mais segurança e confiança.</p>
+        <ul>
+          <li>Instalação segura</li>
+          <li>Primeiros passos no terminal</li>
+          <li>Permissões de arquivos</li>
+        </ul>
+        <a class="button button-secondary" href="/produtos/linux-do-zero/" data-analytics-cta="resource-linux-ebook-own">Conhecer o e-book</a>
       </div>
-      <article class="resource-featured-card">
-        <div class="resource-featured-card__cover"><img src="/assets/products/linux-do-zero/cover.png" alt="Capa do e-book Linux do Zero" width="1159" height="1638" loading="lazy" decoding="async" /></div>
-        <div class="resource-featured-card__copy">
-          <p class="resource-featured-card__eyebrow">Material DejotaCode</p>
-          <h3>Linux do Zero</h3>
-          <p>E-book para iniciantes com instalação segura, primeiros passos, terminal, permissões e solução de problemas.</p>
-          <div class="resource-featured-card__facts"><span>88 páginas</span><span>Para iniciantes</span><span>Conteúdo próprio</span></div>
-          <p class="resource-featured-card__fit"><strong>Ideal para:</strong> quem quer começar no Linux sem depender de conhecimento técnico prévio.</p>
-          <a class="button button-primary" href="/produtos/linux-do-zero/" data-analytics-cta="resource-linux-ebook-own">Conhecer o e-book</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="container resource-groups" aria-label="Recursos recomendados">
-      {activeGroups.map((group, groupIndex) => {
-        const groupResources = sortResourcesNewestFirst(recommendedResources.filter((resource) => resource.category === group.id));
-        const visibleResources = groupResources.slice(0, 3);
-        return (
-          <section id={group.id} class="resource-group" aria-labelledby={`group-${group.id}`}>
-            <header class="resource-section-heading resource-section-heading--category">
-              <div>
-                <p class="eyebrow">SELEÇÃO EDITORIAL</p>
-                <div class="resource-section-title"><CategoryIcon icon={group.iconId} size={24} /><h2 id={`group-${group.id}`}>{group.label}</h2></div>
-              </div>
-              <p>{group.description}</p>
-            </header>
-            <div class="resource-grid-v2">
-              {visibleResources.map((resource, resourceIndex) => <ResourceCard resource={resource} loading={groupIndex === 0 && resourceIndex < 3 ? "eager" : "lazy"} />)}
-            </div>
-            <div class="resource-group__footer">
-              <span>{groupResources.length} {groupResources.length === 1 ? "recurso" : "recursos"} nesta categoria</span>
-              <a class="resource-group__all" href={`/recursos/${group.id}/`}>Ver todos em {group.label} <span aria-hidden="true">→</span></a>
-            </div>
-          </section>
-        );
-      })}
     </section>
   </main>
 </BaseLayout>
+<script>
+  class ResourceDirectory extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.initialized) return;
+      this.dataset.initialized = "true";
+      const controls = this.querySelector<HTMLElement>("[data-controls]");
+      const search = this.querySelector<HTMLInputElement>("input");
+      const cards = Array.from(this.querySelectorAll<HTMLElement>("[data-resource]"));
+      const count = this.querySelector<HTMLElement>("[data-count]");
+      const empty = this.querySelector<HTMLElement>("[data-empty]");
+      const heading = this.querySelector<HTMLElement>("#resource-results-heading");
+      const resultsHeader = this.querySelector<HTMLElement>(".resource-results-header");
+      const pagination = this.querySelector<HTMLElement>("[data-pagination]");
+      const pageButtons = this.querySelector<HTMLElement>("[data-page-buttons]");
+      const reset = Array.from(this.querySelectorAll<HTMLButtonElement>("[data-clear]"));
+      const filters = Array.from(this.querySelectorAll<HTMLButtonElement>("[data-need]"));
+      if (!controls || !search || !count || !empty || !heading || !resultsHeader || !pagination || !pageButtons) return;
+      const pageSize = 9;
+      const validNeeds = new Set(filters.map(button => button.dataset.need ?? ""));
+      let need = "";
+      const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
+      const currentUrl = () => new URL(window.location.href);
+      const writeUrl = (mode: "push" | "replace") => {
+        const url = currentUrl();
+        if (search.value) url.searchParams.set("q", search.value);
+        else url.searchParams.delete("q");
+        if (need) url.searchParams.set("need", need);
+        else url.searchParams.delete("need");
+        if (page > 1) url.searchParams.set("page", String(page));
+        else url.searchParams.delete("page");
+        const method = mode === "push" ? "pushState" : "replaceState";
+        window.history[method](null, "", `${url.pathname}${url.search}${url.hash}`);
+      };
+      let page = 1;
+      const renderPagination = (pageCount: number) => {
+        pagination.hidden = pageCount <= 1;
+        const buttons = Array.from({ length: pageCount }, (_, index) => {
+          const pageNumber = index + 1;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "resource-pagination__page";
+          button.textContent = String(pageNumber);
+          button.setAttribute("aria-label", `Ir para a página ${pageNumber}`);
+          button.dataset.page = String(pageNumber);
+          if (pageNumber === page) button.setAttribute("aria-current", "page");
+          return button;
+        });
+        pageButtons.replaceChildren(...buttons);
+        const previous = pagination.querySelector<HTMLButtonElement>('[data-page-step="previous"]');
+        const next = pagination.querySelector<HTMLButtonElement>('[data-page-step="next"]');
+        if (previous) previous.disabled = page <= 1;
+        if (next) next.disabled = page >= pageCount;
+      };
+      const apply = (options: { urlMode?: "push" | "replace"; moveToResults?: boolean } = {}) => {
+        const words = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
+        const matchingCards = cards.filter(card =>
+          (!need || (card.dataset.needs ?? "").split(" ").includes(need)) &&
+          words.every(word => normalize(card.dataset.search ?? "").includes(word))
+        );
+        const total = matchingCards.length;
+        const pageCount = Math.ceil(total / pageSize);
+        page = Math.max(1, Math.min(page, pageCount || 1));
+        const firstIndex = (page - 1) * pageSize;
+        const visibleCards = new Set(matchingCards.slice(firstIndex, firstIndex + pageSize));
+        cards.forEach(card => {
+          card.hidden = !visibleCards.has(card);
+        });
+        const firstVisible = total ? firstIndex + 1 : 0;
+        const lastVisible = Math.min(firstIndex + pageSize, total);
+        const resultsLabel = need || words.length ? "ferramentas encontradas" : "ferramentas";
+        count.textContent = total
+          ? `Página ${page} de ${pageCount || 1}. Mostrando ${firstVisible}–${lastVisible} de ${total} ${resultsLabel}.`
+          : "Nenhuma ferramenta encontrada.";
+        empty.hidden = total > 0;
+        heading.textContent = need || words.length ? "Resultados da busca" : "Todas as ferramentas";
+        reset.forEach(button => { button.hidden = !need && !words.length; });
+        filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.need === need)));
+        renderPagination(pageCount);
+        if (options.urlMode) writeUrl(options.urlMode);
+        if (options.moveToResults) {
+          heading.focus({ preventScroll: true });
+          resultsHeader.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+        }
+      };
+      const restoreFromUrl = () => {
+        const url = currentUrl();
+        search.value = url.searchParams.get("q") ?? "";
+        const requestedNeed = url.searchParams.get("need") ?? "";
+        need = validNeeds.has(requestedNeed) ? requestedNeed : "";
+        const requestedPage = url.searchParams.get("page") ?? "";
+        page = /^\d+$/.test(requestedPage) && Number(requestedPage) > 0 ? Number(requestedPage) : 1;
+        apply({ urlMode: "replace" });
+      };
+      const changePage = (newPage: number) => {
+        if (newPage === page) return;
+        page = newPage;
+        apply({ urlMode: "push", moveToResults: true });
+      };
+
+      controls.hidden = false;
+      search.addEventListener("input", () => { page = 1; apply({ urlMode: "replace" }); });
+      filters.forEach(button => button.addEventListener("click", () => {
+        const selectedNeed = button.dataset.need ?? "";
+        if (selectedNeed === need) return;
+        need = selectedNeed;
+        page = 1;
+        apply({ urlMode: "push", moveToResults: true });
+      }));
+      reset.forEach(button => button.addEventListener("click", () => {
+        need = "";
+        search.value = "";
+        page = 1;
+        apply({ urlMode: "push", moveToResults: true });
+        search.focus();
+      }));
+      pagination.addEventListener("click", event => {
+        const target = event.target;
+        if (!(target instanceof HTMLButtonElement)) return;
+        if (target.dataset.page) changePage(Number(target.dataset.page));
+        else if (target.dataset.pageStep === "previous") changePage(page - 1);
+        else if (target.dataset.pageStep === "next") changePage(page + 1);
+      });
+      window.addEventListener("popstate", restoreFromUrl);
+      restoreFromUrl();
+    }
+  }
+  if (!customElements.get("resource-directory")) customElements.define("resource-directory", ResourceDirectory);
+</script>

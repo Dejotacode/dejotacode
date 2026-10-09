@@ -7,19 +7,31 @@ export const storeCategoryLabels: Record<string, string> = {
 };
 
 const storePhotorealVisuals: Record<string, string> = {
+  nordpass: "/assets/store/nordpass-sem-texto-v1.webp",
+  "sandisk-ultra-flair-32gb": "/assets/store/sandisk-ultra-flair-32gb.webp",
+  "leadlovers-hotmart": "/assets/store/leadlovers-hotmart.webp",
+  "programacao-iniciante-avancado-hotmart": "/assets/store/programacao-iniciante-avancado-hotmart.webp",
+  "seguranca-digital-essencial-hotmart": "/assets/store/seguranca-digital-essencial-hotmart.webp",
+  "hospedagem-primeiro-site": "/assets/store/hospedagem-primeiro-site.webp",
+  "hotmart-extensoes": "/assets/store/hotmart-extensoes.webp",
   elevenlabs: "/assets/resources/items/elevenlabs.webp",
-  metricool: "/assets/resources/items/metricool.webp",
-  nordvpn: "/assets/resources/items/nordvpn.webp",
+  metricool: "/assets/store/metricool-sem-texto-v2.webp",
+  nordvpn: "/assets/store/nordvpn-sem-texto-v2.webp",
+  "elementor-site-builder": "/assets/store/elementor-site-builder.webp",
+  "hostinger-hospedagem": "/assets/store/hostinger-hospedagem.webp",
+  "logitech-mx-keys-mini": "/assets/store/logitech-mx-keys-mini.webp",
+  "logitech-mx-anywhere-3s": "/assets/store/logitech-mx-anywhere-3s.webp",
   "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.webp",
   "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.webp",
-  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.webp",
-  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1.webp",
-  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.webp",
-  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1.webp",
-  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s.webp",
+  "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah-sem-texto-v2.webp",
+  "ugreen-hub-usb-c-6-em-1": "/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2.webp",
+  "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank-sem-texto-v2.webp",
+  "gshield-hub-usb-c-6-em-1": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2.webp",
+  "logitech-pebble-2-m350s": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2.webp",
 };
 
 const storeSpecificFallbacks: Record<string, string> = {
+  nordpass: "/assets/resources/category-seguranca.svg",
   "baseus-fc11-power-bank": "/assets/store/baseus-fc11-power-bank.svg",
   "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah.svg",
   "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.svg",

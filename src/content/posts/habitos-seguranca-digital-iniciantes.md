@@ -11,6 +11,7 @@ featured: false
 draft: false
 tags: [segurança, senhas, privacidade]
 storeProducts:
+  - "nordpass"
   - "nordvpn"
   - "seguranca-digital-essencial-hotmart"
 ---

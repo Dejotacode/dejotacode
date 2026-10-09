@@ -95,7 +95,7 @@ const blogSchema = {
       featuredPost && (
         <section class="editorial-section container" aria-labelledby="destaque-title">
           <h2 id="destaque-title" class="blog-sr-only">Conteúdo em destaque</h2>
-          <PostCard post={featuredPost} featured showReadLink />
+          <PostCard post={featuredPost} featured showReadLink blogMetaIcons />
         </section>
       )
     }
@@ -110,18 +110,21 @@ const blogSchema = {
       </div>
 
       <div class="post-grid">
-        {visiblePosts.map((post) => <PostCard post={post} />)}
+        {visiblePosts.map((post) => <PostCard post={post} blogMetaIcons />)}
       </div>
 
       <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
     </section>
 
-    <aside class="blog-trails container" aria-labelledby="blog-trails-title">
+    <aside class="blog-useful-resources container" aria-labelledby="blog-resources-title">
       <div>
-        <h2 id="blog-trails-title">Prefere aprender em sequência?</h2>
-        <p>Nossas trilhas organizam os conteúdos por tema, com um próximo passo claro.</p>
+        <h2 id="blog-resources-title">Recursos úteis para continuar</h2>
+        <p>Encontre ferramentas avaliadas ou siga uma trilha com próximos passos organizados.</p>
       </div>
-      <a href="/trilhas/">Conheça nossas trilhas <span aria-hidden="true">→</span></a>
+      <nav aria-label="Mais recursos para aprender">
+        <a href="/recursos/">Explorar recursos <span aria-hidden="true">→</span></a>
+        <a href="/trilhas/">Ver trilhas <span aria-hidden="true">→</span></a>
+      </nav>
     </aside>
   </main>
 </BaseLayout>
