@@ -301,3 +301,24 @@ Moldura e base em CSS, com captura atual da Home; imagens aprovadas da Home não
 
 ## Refinamento do notebook — 09/10/2026
 Acabamento metálico vertical da base, borda suavizada, câmera discreta e sombra de apoio; captura e links preservados. Check/build/QA aprovados; oito combinações de largura/tema sem overflow, screenshot desktop inspecionada. Sem publicação.
+
+## Situação consolidada dos esboços — 09/10/2026, 12:12 BRT
+Esta tabela prevalece sobre as pendências históricas registradas nas etapas anteriores.
+
+| Item | Situação atual | Próximo passo |
+| --- | --- | --- |
+| SSD no guia de pendrive | Corrigido: referência complementar de backup | Sem ajuste técnico pendente |
+| CTA de trilhas em artigos | Corrigido: promessa corresponde ao destino | Sem ajuste técnico pendente |
+| WhatsApp | Símbolo compartilhado e contraste corrigidos em todos os botões de atendimento | Revisão visual final |
+| Localização e Maps | Marcador semântico e seta SVG aplicados | Carregamento externo do mapa não certificado pelos testes bloqueados |
+| Setas públicas | SVG compartilhado, 18px/20px conforme papel | Sem ajuste técnico identificado nesta etapa |
+| Home e Store | Degradês integrados aplicados e validados | Revisão visual final do usuário |
+| Atalhos comerciais do Contato | Movidos para o atendimento | Revisão visual final |
+| Notebook do case de Serviços | Reproduzido e refinado; usuário respondeu “show” em 09/10/2026 | Aprovado visualmente pelo usuário |
+| Linux | Terminal mantido por coerência com a regra vigente | Alternativa visual futura, não defeito |
+| Sequência da trilha Linux | Diferença editorial em relação ao esboço | Revisar pedagogia e artigos antes de reordenar; preservar progresso existente |
+| Termos de Uso | Presente em esboços antigos, ausente no site | Definir necessidade e conteúdo; não criar link sem página |
+| Setup | Divergência entre discos declarados e leitura local | Aguardar conferência do usuário |
+| Assinatura nas artes | Revisão individual ainda pendente | Comparar rasters com marca oficial; não substituir todas as imagens automaticamente |
+
+Limites: aprovação do notebook não representa autorização de publicação nem aprovação automática de todas as páginas. Check/build/QA e verificações responsivas referem-se às etapas descritas acima; esta consolidação apenas atualiza documentação. Entrega de e-mail e testes com leitor de tela permanecem frentes próprias.

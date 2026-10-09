@@ -58,3 +58,6 @@ Formulários padronizados e estados testados com respostas simuladas. Capturas r
 ## Estado de serviços após a nona etapa
 Frontend canônico na porta 4321. API em ../dejotacode-api ativa na porta 8787 em modo local, com persistência de teste /tmp/dejotacode-forms-stage9; esse acervo é temporário e distinto do banco habitual. Contém somente dados fictícios produzidos pelos testes desta etapa. Não usar como evidência de entrega por e-mail ou funcionamento em produção.
 Referência atual de progresso e limites: frontend-review.md. Se serviços estiverem desligados numa retomada, conferir processos antes de iniciá-los; não iniciar 4322.
+
+## Retomada após revisão dos esboços — 12:12 BRT
+P1, ícones de atendimento, setas, degradês, atalhos do Contato e notebook de Serviços ajustados localmente. Notebook aprovado pelo usuário. Situação atual e pendências individuais em frontend-review.md, seção “Situação consolidada dos esboços”. Próxima frente recomendada: revisão editorial da trilha Linux, preservando progresso salvo; inventário de Setup aguarda confirmação. Não criar Termos de Uso nem substituir artes em lote por inferência. Nenhum push/deploy autorizado.
