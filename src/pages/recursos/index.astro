@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ResourceCard from "../../components/resources/ResourceCard.astro";
-import CategoryIcon from "../../components/CategoryIcon.astro";
+import CategoryIcon from "../../components/ui/CategoryIcon.astro";
 import { resourceCategories } from "../../data/resourceCategories";
 import { recommendedResources } from "../../data/recommendedResources";
 import { getResourceDiscovery, resourceNeeds } from "../../data/resourceDiscovery";
@@ -46,9 +46,9 @@ const resources = [...recommendedResources].sort((a,b) => a.name.localeCompare(b
         })}
       </div>
       <nav class="resource-pagination" data-pagination hidden aria-label="Paginação das ferramentas">
-        <button type="button" class="resource-pagination__direction" data-page-step="previous">← Anterior</button>
+        <button type="button" class="resource-pagination__direction" data-page-step="previous"><CategoryIcon icon="arrow-left" size={18} class="action-arrow" /> Anterior</button>
         <div class="resource-pagination__pages" data-page-buttons></div>
-        <button type="button" class="resource-pagination__direction" data-page-step="next">Próxima →</button>
+        <button type="button" class="resource-pagination__direction" data-page-step="next">Próxima <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></button>
       </nav>
       <div class="resource-empty" data-empty hidden>
         <h3>Nenhuma ferramenta encontrada</h3>

@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ResourceCard from "../../components/resources/ResourceCard.astro";
-import CategoryIcon from "../../components/CategoryIcon.astro";
+import CategoryIcon from "../../components/ui/CategoryIcon.astro";
 import { resourceCategories, getResourceCategory } from "../../data/resourceCategories";
 import { recommendedResources, sortResourcesNewestFirst } from "../../data/recommendedResources";
 import "../../styles/resources.css";
+import "../../styles/resource-category.css";
 
 export function getStaticPaths() {
   return resourceCategories
@@ -24,7 +25,7 @@ const resources = sortResourcesNewestFirst(recommendedResources.filter((resource
 >
   <main id="conteudo" tabindex="-1" class="resources-page resource-category-page">
     <header class="resource-category-hero container">
-      <a class="resource-category-back" href="/recursos/">← Todos os recursos</a>
+      <a class="resource-category-back" href="/recursos/"><CategoryIcon icon="arrow-left" size={18} class="action-arrow" /> Todos os recursos</a>
       <div class="resource-category-hero__icon"><CategoryIcon icon={currentCategory.iconId} size={28} /></div>
       <p class="eyebrow">DIRETÓRIO DE RECURSOS</p>
       <h1>{currentCategory.label}</h1>
@@ -44,8 +45,13 @@ const resources = sortResourcesNewestFirst(recommendedResources.filter((resource
         <p>Os mesmos critérios da página principal, agora sem limite de itens.</p>
       </div>
       <div class="resource-grid-v2">
-        {resources.map((resource, index) => <ResourceCard resource={resource} loading={index < 3 ? "eager" : "lazy"} />)}
+        {resources.map((resource, index) => <ResourceCard resource={resource} compact loading={index < 3 ? "eager" : "lazy"} />)}
       </div>
     </section>
+    <aside class="container resource-category-transparency" aria-label="Transparência comercial">
+      <h2>Recomendações com contexto</h2>
+      <p>Alguns recursos possuem links de afiliado identificados nos cards. O DejotaCode poderá receber comissão por compras elegíveis. Consulte os critérios e limitações antes de escolher.</p>
+      <a class="text-link" href="/recursos/">Explorar todas as ferramentas <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
+    </aside>
   </main>
 </BaseLayout>

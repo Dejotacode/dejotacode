@@ -25,3 +25,7 @@ Check Astro: sem erros, avisos ou dicas. Preview: 115 páginas. QA de HTML/links
 ## Revisão final antes de publicar
 
 Paginação 9/9/4, persistência na URL/histórico e fallback sem JavaScript. Seções finais: paginação, categorias, transparência, painel Linux do Zero. Tutoriais ElevenLabs/Metricool mantêm Aprenda a usar; demais conteúdos usam Ver conteúdo. Status mantidos conservadores. Build de produção e check aprovados: 115 páginas, 403 imagens, QA sem problemas. Publicação ainda pendente. Arquivo de dados recommendedResources.ts também inclui articleCta explícito.
+
+## Publicação
+
+Publicação autorizada. PR #264; commit f09705f8f97bca5527ece0b4c72eadcbe8c7160b; deploy 37815889481 aprovado. Navegação validada em https://dejotacode.com.br/recursos/.

@@ -47,3 +47,7 @@ Cinco artes geradas com ferramenta integrada: Filmora (edição), PDFelement (do
 Após aplicação das artes: build aprovado; QA HTML/links aprovado; 8 combinações responsivas claro/escuro sem overflow ou imagens quebradas. Enquadramento dos cinco arquivos alinhado ao topo esquerdo para preservar o símbolo no formato atual dos cards. Nenhuma publicação realizada.
 
 08/10/2026: usuário autorizou continuar após revisão das cinco artes. Estado READY; publicação não autorizada nesta etapa. Próximo comando: @dev publicar integração Wondershare na página Recursos. Links contextuais seguem apenas mapeados.
+
+
+## Wondershare publicada — 08/10/2026
+PR #262: https://github.com/Dejotacode/dejotacode/pull/262. Produção: 3dd6089b930fbbe0847a94af5a65675a4fee058d. CI/deploy/smoke: https://github.com/Dejotacode/dejotacode/actions/runs/37750895096 concluído com sucesso. Recursos HTTP 200; cinco links Awin e avisos visíveis, sponsored/nofollow; cinco imagens públicas idênticas aos arquivos aprovados. Links contextuais permanecem apenas mapeados.

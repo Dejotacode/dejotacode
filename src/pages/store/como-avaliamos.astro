@@ -1,8 +1,10 @@
 ---
+import CategoryIcon from "../../components/ui/CategoryIcon.astro";
+import "../../styles/store-method.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Como avaliamos na DejotaStore" description="Entenda a metodologia editorial usada para diferenciar produtos usados, testados e pesquisados pelo DejotaCode.">
-  <main id="conteudo" class="method-page">
+  <main id="conteudo" tabindex="-1" class="method-page">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span aria-current="page">Como avaliamos</span></nav>
 
@@ -25,9 +27,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>Os selos existem para não misturar uso próprio, teste direto e pesquisa editorial.</p>
         </div>
         <div class="evidence-grid">
-          <article><span class="evidence-index">01</span><strong>Uso no DejotaCode</strong><p>Item ou ferramenta atualmente usado na operação real do projeto.</p></article>
-          <article><span class="evidence-index">02</span><strong>Testado pelo Dejota</strong><p>Produto utilizado diretamente, mesmo que não faça parte do setup atual.</p></article>
-          <article><span class="evidence-index">03</span><strong>Pesquisado pelo DejotaCode</strong><p>Recomendação baseada em documentação, especificações, avaliações e comparação editorial.</p></article>
+          <article><CategoryIcon icon="monitor" size={28} /><strong>Uso no DejotaCode</strong><p>Item ou ferramenta atualmente usado na operação real do projeto.</p></article>
+          <article><CategoryIcon icon="shield-check" size={28} /><strong>Testado pelo Dejota</strong><p>Produto utilizado diretamente, mesmo que não faça parte do setup atual.</p></article>
+          <article><CategoryIcon icon="checklist" size={28} /><strong>Pesquisado pelo DejotaCode</strong><p>Recomendação baseada em documentação, especificações, avaliações e comparação editorial.</p></article>
         </div>
       </section>
 
@@ -36,24 +38,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p class="eyebrow">CRITÉRIOS FIXOS</p>
           <h2 id="rules-title">O que não muda de produto para produto</h2>
           <p>A lógica editorial é a mesma para hardware, software, serviços ou cursos. A comissão pode existir, mas não define o que entra na curadoria.</p>
-          <a class="button button-secondary" href="/recursos/">Ver recursos recomendados</a>
+
         </div>
         <ol class="rules-list">
-          <li><span>01</span><p><strong>Necessidade real</strong>O produto precisa resolver um problema concreto do conteúdo ou do fluxo de trabalho.</p></li>
-          <li><span>02</span><p><strong>Estado declarado</strong>Nunca apresentamos pesquisa como teste, nem teste como uso contínuo.</p></li>
-          <li><span>03</span><p><strong>Preço com cautela</strong>Preço só aparece quando há fonte e atualização suficientemente confiáveis.</p></li>
-          <li><span>04</span><p><strong>Afiliado identificado</strong>Links comerciais são informados com transparência e a compra acontece no parceiro.</p></li>
+          <li><CategoryIcon icon="workflow" size={24} /><p><strong>Necessidade real</strong>O produto precisa resolver um problema concreto do conteúdo ou do fluxo de trabalho.</p></li>
+          <li><CategoryIcon icon="checklist" size={24} /><p><strong>Estado declarado</strong>Nunca apresentamos pesquisa como teste, nem teste como uso contínuo.</p></li>
+          <li><CategoryIcon icon="wallet" size={24} /><p><strong>Preço com cautela</strong>Preço só aparece quando há fonte e atualização suficientemente confiáveis.</p></li>
+          <li><CategoryIcon icon="shield-check" size={24} /><p><strong>Afiliado identificado</strong>Links comerciais são informados com transparência e a compra acontece no parceiro.</p></li>
         </ol>
       </section>
 
       <section class="method-cta">
         <div><p class="eyebrow">DEJOTASTORE</p><h2>Curadoria com contexto, não uma vitrine infinita.</h2><p>Veja os produtos e ferramentas selecionados dentro desse padrão editorial.</p></div>
-        <a class="button button-primary" href="/store/">Explorar a DejotaStore <span aria-hidden="true">→</span></a>
+        <div class="method-actions"><a class="button button-primary" href="/store/">Explorar a DejotaStore <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a><a href="/recursos/">Ver recursos recomendados <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a></div>
       </section>
     </div>
   </main>
 </BaseLayout>
-
-<style>
-.method-page{padding-bottom:3.5rem}.container{width:min(calc(100% - (2 * var(--space-page))),var(--container));margin-inline:auto}.breadcrumbs{display:flex;flex-wrap:wrap;gap:.45rem;padding-top:1.5rem;color:var(--color-text-subtle);font-size:.82rem}.breadcrumbs a{color:inherit}.breadcrumbs a:hover{color:var(--color-accent-strong)}.eyebrow{margin:0;color:var(--color-accent-strong);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.method-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(18rem,.8fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:end;padding:clamp(2.7rem,7vw,5rem) 0}.method-hero h1{max-width:13ch;margin:.55rem 0 1rem;font-size:clamp(2.6rem,7vw,5rem);line-height:.98;letter-spacing:-.055em}.method-lead{max-width:62ch;margin:0;color:var(--color-text-muted);font-size:clamp(1rem,2vw,1.14rem);line-height:1.7}.method-summary{display:grid;gap:.65rem;padding:clamp(1.25rem,3vw,1.75rem);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:linear-gradient(145deg,var(--color-surface),var(--color-surface-soft));box-shadow:var(--shadow-card)}.method-summary span,.evidence-index{color:var(--color-accent-strong);font-size:.72rem;font-weight:800;letter-spacing:.08em}.method-summary strong{font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.025em}.method-summary p{margin:0;color:var(--color-text-muted);line-height:1.65}.method-levels{padding:clamp(1.5rem,4vw,2.5rem) 0}.section-heading{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:1rem}.section-heading h2{margin:.35rem 0 0;font-size:clamp(1.6rem,3vw,2.25rem);letter-spacing:-.035em}.section-heading>p{max-width:34rem;margin:0;color:var(--color-text-muted)}.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.evidence-grid article{display:grid;gap:.65rem;min-height:13rem;padding:1.25rem;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface)}.evidence-grid strong{font-size:1.08rem}.evidence-grid p{margin:0;color:var(--color-text-muted);line-height:1.65}.rules-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(1.5rem,4vw,3rem);align-items:start;padding:clamp(2rem,5vw,4rem) 0}.rules-copy h2{max-width:15ch;margin:.45rem 0 .8rem;font-size:clamp(1.8rem,4vw,3rem);line-height:1.04;letter-spacing:-.045em}.rules-copy>p:not(.eyebrow){max-width:52ch;color:var(--color-text-muted);line-height:1.7}.rules-copy .button{margin-top:.7rem}.rules-list{display:grid;gap:.7rem;margin:0;padding:0;list-style:none}.rules-list li{display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;padding:1rem;border-top:1px solid var(--color-border)}.rules-list li:last-child{border-bottom:1px solid var(--color-border)}.rules-list>li>span{color:var(--color-accent-strong);font-size:.75rem;font-weight:800}.rules-list p{display:grid;gap:.2rem;margin:0;color:var(--color-text-muted);line-height:1.55}.rules-list strong{color:var(--color-text)}.method-cta{display:flex;justify-content:space-between;gap:2rem;align-items:end;padding:clamp(1.4rem,4vw,2.3rem);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:linear-gradient(145deg,var(--color-surface),var(--color-surface-soft));box-shadow:var(--shadow-card)}.method-cta h2{max-width:18ch;margin:.4rem 0;font-size:clamp(1.55rem,3vw,2.4rem);letter-spacing:-.04em}.method-cta p:last-child{max-width:52ch;margin-bottom:0;color:var(--color-text-muted)}.method-cta .button{flex:none}@media(max-width:52rem){.method-hero,.rules-layout{grid-template-columns:1fr}.method-summary{max-width:38rem}.section-heading,.method-cta{align-items:flex-start;flex-direction:column}.evidence-grid{grid-template-columns:1fr}.evidence-grid article{min-height:auto}.method-cta .button{width:100%}}@media(max-width:34rem){.method-hero{padding-top:2.3rem}.method-hero h1{font-size:clamp(2.3rem,13vw,3.5rem)}.rules-list li{grid-template-columns:2rem 1fr;padding-inline:0}}
-</style>

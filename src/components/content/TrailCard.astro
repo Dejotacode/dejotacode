@@ -1,0 +1,38 @@
+---
+import type { Trail } from "../../data/trails";
+import VisualMedia from "../visual/VisualMedia.astro";
+import CategoryIcon from "../ui/CategoryIcon.astro";
+import { resolveTrailVisual } from "../../data/editorialVisuals";
+
+interface Props {
+  trail: Trail;
+  editorial?: boolean;
+}
+
+const { trail, editorial = false } = Astro.props;
+const totalDuration = trail.lessons.reduce((total, lesson) => total + lesson.duration, 0);
+const visual = resolveTrailVisual(trail.slug);
+---
+
+<article class:list={["trail-card", { "trail-card--available": trail.available }]}>
+  <div class="trail-card__media">
+    <VisualMedia src={visual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${trail.title}`} label={trail.title} loading="lazy" />
+    <span class="trail-card__icon"><CategoryIcon icon={trail.iconId} size={24} /></span>
+  </div>
+  <h2>{trail.title}</h2>
+  <p>{trail.description}</p>
+
+  {
+    trail.available ? (
+      <>
+        <div class="trail-card__meta">
+          <span>{trail.lessons.length} etapas</span>
+          <span>{totalDuration} min{editorial ? " de leitura estimada" : ""}</span>
+        </div>
+        <a href={`/trilhas/${trail.slug}/`}>Começar trilha <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
+      </>
+    ) : (
+      <span class="trail-card__soon">Conteúdo em preparação</span>
+    )
+  }
+</article>

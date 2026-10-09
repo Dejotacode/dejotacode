@@ -10,10 +10,9 @@
 .editorial-hero h1 {
   max-width: 12ch;
   margin: 0;
-  font-size: clamp(3rem, 7vw, 6.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
-}
+
+
+   font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 
 .editorial-hero__lead {
   max-width: 48rem;
@@ -59,9 +58,8 @@
 
 .section-heading h2 {
   margin: 0.35rem 0 0;
-  font-size: clamp(2rem, 4vw, 3.35rem);
-  letter-spacing: -0.045em;
-}
+
+   font-size: var(--size-title-section); line-height: var(--leading-section); letter-spacing: var(--tracking-section);}
 
 .section-heading > p {
   color: var(--color-text-subtle);
@@ -89,7 +87,7 @@
 }
 
 .post-grid .post-card h2 {
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-size: var(--size-card-title);
 }
 
 .post-card {
@@ -150,9 +148,9 @@
 
 .post-card h2 {
   margin: 1rem 0 0;
-  font-size: clamp(1.45rem, 3vw, 2.35rem);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-size: var(--size-card-title);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-section);
 }
 
 .post-card h2 a {

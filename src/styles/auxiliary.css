@@ -1,0 +1,19 @@
+/* Página 404 editorial: mensagem e caminhos de navegação em um único bloco. */
+.not-found-page { padding-block: clamp(2rem,5vw,4rem); }
+.not-found { display: flex; align-items: center; min-height: clamp(20rem,43vh,27rem); }
+.not-found__copy { min-width: 0; max-width: 52rem; }
+.not-found__status { display: flex; align-items: center; gap: 1rem; margin: 0 0 1.5rem; color: var(--color-text-subtle); font: 600 .9rem/1.4 var(--font-code); }
+.not-found__status svg { flex-shrink: 0; color: var(--color-accent-strong); }
+.not-found h1 { margin: 0 0 1rem;    font-size: var(--size-title-reading); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
+.not-found__lead { max-width: 48rem; margin: 0; color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; }
+.not-found__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.not-found__find { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; margin-top: 1.25rem; color: var(--color-accent-strong); font-weight: 650; text-decoration: none; }
+.not-found__find:hover { text-decoration: underline; text-underline-offset: .25em; }
+.not-found__find:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; border-radius: .25rem; }
+@media(max-width:580px) {
+  .not-found { min-height: 0; }
+  .not-found-page { padding-block: 2rem 2.5rem; }
+  .not-found__status { margin-bottom: 1.25rem; }
+  .not-found__actions { flex-direction: column; align-items: stretch; margin-top: 1.5rem; }
+  .not-found__find { margin-top: 1rem; }
+}

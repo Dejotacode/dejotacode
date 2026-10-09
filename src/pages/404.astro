@@ -1,5 +1,7 @@
 ---
+import CategoryIcon from "../components/ui/CategoryIcon.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/auxiliary.css";
 ---
 
 <BaseLayout
@@ -9,66 +11,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   canonicalEnabled={false}
 >
   <main id="conteudo" tabindex="-1" class="not-found-page">
-    <section class="not-found container">
-      <p class="eyebrow">ERRO 404</p>
-
-      <h1>Essa página não existe.</h1>
-
-      <p class="not-found__lead">
-        O endereço pode ter mudado, sido removido ou talvez tenha sido digitado
-        incorretamente.
-      </p>
-
-      <div class="not-found__actions">
-        <a class="button button-primary" href="/">
-          Voltar para o início
-        </a>
-
-        <a class="button button-secondary" href="/blog/">
-          Explorar conteúdos
+    <section class="not-found container" aria-labelledby="not-found-title">
+      <div class="not-found__copy">
+        <p class="not-found__status">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M13 2H4v20h8M13 2l5 5h-5V2M18 7v3" />
+            <circle cx="16" cy="16" r="4" /><path d="m19 19 3 3" />
+          </svg>
+          <span>404</span>
+        </p>
+        <h1 id="not-found-title">Página não encontrada.</h1>
+        <p class="not-found__lead">O endereço pode ter mudado ou a página pode ter sido removida.</p>
+        <div class="not-found__actions">
+          <a class="button button-primary" href="/">Voltar para o início</a>
+          <a class="button button-secondary" href="/blog/">Explorar o Blog</a>
+        </div>
+        <a class="not-found__find" href="/busca/">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg>
+          Buscar conteúdo <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span>
         </a>
       </div>
     </section>
   </main>
 </BaseLayout>
-
-<style>
-  .not-found-page {
-    min-height: clamp(32rem, 70vh, 48rem);
-    display: grid;
-    align-items: center;
-  }
-
-  .not-found {
-    padding-block: clamp(5rem, 12vw, 9rem);
-  }
-
-  .not-found h1 {
-    max-width: 12ch;
-    margin: 0.75rem 0 1rem;
-    font-size: clamp(2.6rem, 8vw, 5.5rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
-  }
-
-  .not-found__lead {
-    max-width: 38rem;
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: clamp(1rem, 2vw, 1.15rem);
-  }
-
-  .not-found__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 32rem) {
-    .not-found__actions {
-      align-items: stretch;
-      flex-direction: column;
-    }
-  }
-</style>

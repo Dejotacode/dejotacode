@@ -1,4 +1,5 @@
 ---
+import CategoryIcon from "../ui/CategoryIcon.astro";
 import { getResourceDiscovery } from "../../data/resourceDiscovery";
 import VisualMedia from "../visual/VisualMedia.astro";
 import type { RecommendedResource } from "../../data/recommendedResources";
@@ -36,7 +37,7 @@ const categoryLabels: Record<RecommendedResource["category"], string> = {
     <div class="resource-card-v2__actions" aria-label={`Caminhos para ${resource.name}`}>
       {resource.articlePath && <a class="button button-secondary" href={resource.articlePath} data-analytics-cta={`resource-${resource.id}-article`}>{resource.articleCta ?? "Ver conteúdo"}</a>}
       {resource.storePath && <a class="button button-primary" href={resource.storePath} data-analytics-cta={`resource-${resource.id}-store`}>Ver na DejotaStore</a>}
-      {!resource.articlePath && !resource.storePath && <a class="button button-primary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} ↗</a>}
+      {!resource.articlePath && !resource.storePath && <a class="button button-primary" href={resource.href} target="_blank" rel={resource.relationship === "affiliate" ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"} data-analytics-cta={`resource-${resource.id}`}>{resource.cta} <CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></a>}
     </div>
     <details class="resource-card-v2__details">
       <summary>Critérios e limitações</summary>

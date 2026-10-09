@@ -1,4 +1,14 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "github.vscode-pull-request-github",
+    "google.google-antigravity",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "rangav.vscode-thunder-client",
+    "branchline.todo-lens"
+  ],
   "unwantedRecommendations": []
 }

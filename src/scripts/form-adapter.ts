@@ -14,6 +14,7 @@ const setState = (
   message: string,
 ) => {
   form.dataset.state = state;
+  form.setAttribute("aria-busy", String(state === "loading"));
   output.dataset.state = state;
   output.textContent = message;
 };
@@ -140,6 +141,12 @@ export const preparePublicForm = (selector: string) => {
 
     formData.delete("website");
 
+    // Omitir nome opcional vazio: a API valida nomes informados.
+    const nameInput = form.querySelector<HTMLInputElement>('input[name="name"]');
+    if (nameInput && !nameInput.required && !nameInput.value.trim()) {
+      formData.delete("name");
+    }
+
     const body: Record<string, FormDataEntryValue | boolean> =
       Object.fromEntries(formData.entries());
 
@@ -149,7 +156,7 @@ export const preparePublicForm = (selector: string) => {
 
     if (!endpoint?.startsWith("/api/")) return;
 
-    const originalLabel = button.textContent;
+    const originalContent = Array.from(button.childNodes, (node) => node.cloneNode(true));
 
     button.disabled = true;
     button.textContent = "Enviando…";
@@ -229,7 +236,7 @@ export const preparePublicForm = (selector: string) => {
     } finally {
       window.clearTimeout(timeout);
       button.disabled = false;
-      button.textContent = originalLabel;
+      button.replaceChildren(...originalContent);
     }
   });
 };

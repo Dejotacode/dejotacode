@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getStoreMerchants } from "../../../lib/storeOffers";
 import StoreCard from "../../../components/store/StoreCard.astro";
 import StoreCategoryNav from "../../../components/store/StoreCategoryNav.astro";
-import Pagination from "../../../components/Pagination.astro";
+import Pagination from "../../../components/ui/Pagination.astro";
+import "../../../styles/store-catalog.css";
 
 const PAGE_SIZE = 12;
 
@@ -30,7 +32,7 @@ const visibleProducts = products.slice(start, start + PAGE_SIZE);
   title={`DejotaStore — Página ${page} | DejotaCode`}
   description={`Página ${page} do catálogo editorial da DejotaStore com produtos, ferramentas e serviços selecionados pelo DejotaCode.`}
 >
-  <main id="conteudo" tabindex="-1" class="store-archive-page">
+  <main id="conteudo" tabindex="-1" class="store-archive-page store-catalog-page">
     <header class="store-archive-hero container">
       <p class="eyebrow">DEJOTASTORE</p>
       <h1>Escolha melhor antes de comprar.</h1>
@@ -46,13 +48,14 @@ const visibleProducts = products.slice(start, start + PAGE_SIZE);
       <div class="store-archive-products">
         {visibleProducts.map((product, productIndex) => (
           <StoreCard
+            editorial
             id={product.id}
             title={product.data.title}
             description={product.data.description}
             status={product.data.editorialStatus}
             category={product.data.category}
             brand={product.data.brand}
-            offerCount={product.data.offers.filter((offer) => offer.active).length}
+            offerCount={getStoreMerchants(product.data).length}
             relatedPost={product.data.relatedPosts?.[0]}
             loading={productIndex < 3 ? "eager" : "lazy"}
           />
@@ -64,15 +67,5 @@ const visibleProducts = products.slice(start, start + PAGE_SIZE);
 </BaseLayout>
 
 <style>
-  .store-archive-page{padding-bottom:clamp(5rem,9vw,8rem)}
-  .store-archive-hero{padding-block:clamp(3.5rem,7vw,6.5rem);text-align:center}
-  .store-archive-hero h1{max-width:12ch;margin:.7rem auto 1rem;font-size:clamp(3rem,6vw,5.5rem);line-height:1;letter-spacing:-.055em}
-  .store-archive-hero>p:not(.eyebrow){max-width:46rem;margin:0 auto 2rem;color:var(--color-text-muted);font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.7}
-  .store-archive-section{padding-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--color-border)}
-  .store-archive-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}
-  .store-archive-heading h2{margin:.4rem 0 0;font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;letter-spacing:-.045em}
-  .store-archive-heading>p{margin:0;color:var(--color-text-subtle)}
-  .store-archive-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-  @media(max-width:60rem){.store-archive-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media(max-width:42rem){.store-archive-hero{text-align:left}.store-archive-hero h1,.store-archive-hero>p:not(.eyebrow){margin-left:0}.store-archive-heading{align-items:start;flex-direction:column;gap:.5rem}.store-archive-products{grid-template-columns:1fr}}
+.store-archive-hero{padding-block:2rem;text-align:left}.store-archive-hero h1{font-size:clamp(2rem,3.5vw,3rem);max-width:22ch;margin:.6rem 0 .8rem;line-height:1.12;letter-spacing:-.035em}.store-archive-hero>p:not(.eyebrow){color:var(--color-text-muted);margin:0 0 1.5rem}.store-archive-section{padding-top:1rem}.store-archive-heading{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.2rem}.store-archive-heading h2{font-size:clamp(1.5rem,2.3vw,2rem);margin:.5rem 0 0}.store-archive-heading>p{color:var(--color-text-muted);font-size:.85rem}.store-archive-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}@media(max-width:960px){.store-archive-products{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.store-archive-products{grid-template-columns:1fr}.store-archive-heading{align-items:start;flex-direction:column}}
 </style>

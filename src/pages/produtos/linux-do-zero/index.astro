@@ -1,7 +1,13 @@
 ---
+import CategoryIcon from "../../../components/ui/CategoryIcon.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/product.css";
 
+const samples = [
+  { src: "/assets/products/linux-do-zero/preview-01.webp", title: "Entenda o Linux", description: "Conceitos explicados com analogias e linguagem simples.", page: 9 },
+  { src: "/assets/products/linux-do-zero/preview-install.webp", title: "Revise antes de instalar", description: "Cuidados com disco, partições e configurações.", page: 42 },
+  { src: "/assets/products/linux-do-zero/preview-terminal.webp", title: "Comandos com exemplos", description: "Veja o que cada comando faz e como utilizá-lo.", page: 59 },
+];
 const chapters = [
   ["01", "Linux sem medo", "Entenda o que é Linux e onde ele aparece no dia a dia."],
   ["02", "Escolhendo sua primeira distribuição", "Critérios simples para escolher sem transformar a decisão em um labirinto."],
@@ -78,7 +84,8 @@ const bookSchema = {
           </nav>
 
           <p class="eyebrow">E-BOOK DEJOTACODE · DISPONÍVEL AGORA</p>
-          <h1>Linux do Zero, sem pular os passos que fazem diferença.</h1>
+          <h1>Linux do Zero</h1>
+          <p class="product-tagline">Comece no Linux com uma base mais segura.</p>
           <p class="product-lead">
             Um guia de 88 páginas para quem quer entender Linux, testar com segurança,
             instalar, usar o terminal e resolver os primeiros problemas sem depender de
@@ -93,7 +100,7 @@ const bookSchema = {
           </div>
 
           <div class="product-price" aria-label="Preço do e-book">
-            <span>Preço de lançamento</span>
+            <span>Preço de lançamento · pagamento único</span>
             <strong>R$ 19,90</strong>
             <small>Pagamento processado pela Kiwify. Acesso liberado após a aprovação da compra.</small>
           </div>
@@ -105,12 +112,12 @@ const bookSchema = {
               target="_blank"
               rel="noopener noreferrer"
               data-analytics-cta="product-linux-buy-kiwify-hero"
-            >Comprar Linux do Zero <span aria-hidden="true">↗</span></a>
+            >Comprar o e-book <span aria-hidden="true"><CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></span></a>
             <a
               class="button button-secondary"
-              href="/trilhas/linux-do-zero/"
-              data-analytics-cta="product-linux-trail"
-            >Começar pela trilha gratuita</a>
+              href="#preview-title"
+              data-analytics-cta="product-linux-preview"
+            >Ver páginas do e-book <CategoryIcon icon="arrow-down" size={18} class="action-arrow" /></a>
           </div>
 
           <p class="product-status">
@@ -127,7 +134,7 @@ const bookSchema = {
             fetchpriority="high"
             decoding="async"
           />
-          <figcaption>Imagem real da edição final v0.7.</figcaption>
+          <figcaption>Capa real do e-book digital.</figcaption>
         </figure>
       </div>
     </header>
@@ -136,24 +143,24 @@ const bookSchema = {
       <div class="product-section__heading">
         <div>
           <p class="eyebrow">PARA QUEM ESTÁ COMEÇANDO</p>
-          <h2 id="for-title">Feito para tirar o Linux do campo da curiosidade.</h2>
+          <h2 id="for-title">Aprenda com uma sequência prática.</h2>
         </div>
         <p>Você não precisa saber programar nem decorar comandos antes de começar.</p>
       </div>
 
       <div class="product-audience-grid">
         <article>
-          <span>01</span>
+          <CategoryIcon icon="terminal" size={26} />
           <h3>É seu primeiro contato com Linux</h3>
           <p>O material começa pelos conceitos básicos e explica o motivo de cada etapa.</p>
         </article>
         <article>
-          <span>02</span>
+          <CategoryIcon icon="shield-check" size={26} />
           <h3>Você tem medo de instalar errado</h3>
           <p>Backup, modo live e decisões de instalação aparecem antes das mudanças no disco.</p>
         </article>
         <article>
-          <span>03</span>
+          <CategoryIcon icon="code" size={26} />
           <h3>O terminal parece complicado</h3>
           <p>Os comandos entram aos poucos, sempre acompanhados de contexto e exemplos.</p>
         </article>
@@ -170,15 +177,33 @@ const bookSchema = {
         <div class="product-section__heading">
           <div>
             <p class="eyebrow">POR DENTRO DO MATERIAL</p>
-            <h2 id="preview-title">Páginas reais, não uma promessa abstrata.</h2>
+            <h2 id="preview-title">Veja o conteúdo antes de comprar.</h2>
           </div>
-          <p>As imagens abaixo foram renderizadas diretamente do PDF final de 88 páginas.</p>
+          <p>Explore algumas páginas reais e conheça a forma de ensinar do DejotaCode.</p>
         </div>
         <div class="product-preview__grid">
-          <figure><img src="/assets/products/linux-do-zero/preview-01.webp" alt="Página interna real do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" /><figcaption>Conteúdo didático e passo a passo.</figcaption></figure>
-          <figure><img src="/assets/products/linux-do-zero/preview-02.webp" alt="Página de abertura real de um capítulo do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" /><figcaption>Aberturas e hierarquia editorial próprias.</figcaption></figure>
-          <figure><img src="/assets/products/linux-do-zero/preview-author.webp" alt="Página Sobre o autor do e-book Linux do Zero" width="911" height="1287" loading="lazy" decoding="async" /><figcaption>Autoria e propósito apresentados com transparência.</figcaption></figure>
+          {samples.map((sample, index) => (
+            <figure>
+              <a href={sample.src} data-sample-open={index} aria-label={`Ampliar: ${sample.title}, página ${sample.page}`}>
+                <img src={sample.src} alt={`Página ${sample.page} do e-book: ${sample.title}`} width="1133" height="1600" loading="lazy" decoding="async" />
+              </a>
+              <figcaption><strong>{sample.title}</strong><span>{sample.description}</span><a href={sample.src} data-sample-open={index}>Ampliar página {sample.page} <CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></a></figcaption>
+            </figure>
+          ))}
         </div>
+        <dialog class="product-sample-dialog" aria-labelledby="sample-dialog-title">
+          <div class="product-sample-dialog__toolbar">
+            <h2 id="sample-dialog-title">Páginas do e-book</h2>
+            <button type="button" data-sample-close autofocus>Fechar ✕</button>
+          </div>
+          <p data-sample-caption aria-live="polite"></p>
+          <div class="product-sample-dialog__navigation">
+            <button type="button" data-sample-prev><CategoryIcon icon="arrow-left" size={18} class="action-arrow" /> Anterior</button>
+            <span data-sample-count></span>
+            <button type="button" data-sample-next>Próxima <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></button>
+          </div>
+          <img data-sample-image alt="" width="1133" height="1600" />
+        </dialog>
       </div>
     </section>
 
@@ -186,7 +211,7 @@ const bookSchema = {
       <div class="product-section__heading">
         <div>
           <p class="eyebrow">O QUE VOCÊ VAI ENCONTRAR</p>
-          <h2 id="contents-title">Do primeiro contato ao uso com mais confiança.</h2>
+          <h2 id="contents-title">Um caminho organizado em 8 capítulos.</h2>
         </div>
         <p>O conteúdo segue uma sequência para evitar que você precise adivinhar qual deveria ser o próximo passo.</p>
       </div>
@@ -204,7 +229,7 @@ const bookSchema = {
           <strong>Quer estudar tudo em uma sequência única?</strong>
           <p>O e-book reúne os 8 capítulos em 88 páginas para você consultar no seu ritmo, do primeiro contato aos problemas mais comuns.</p>
         </div>
-        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-middle">Comprar por R$ 19,90 <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-middle">Comprar por R$ 19,90 <span aria-hidden="true"><CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></span></a>
       </div>
     </section>
 
@@ -212,18 +237,17 @@ const bookSchema = {
       <div class="container product-learning__grid">
         <div>
           <p class="eyebrow">CONTEÚDO GRATUITO + MATERIAL COMPLETO</p>
-          <h2>Você pode começar antes de comprar qualquer coisa.</h2>
+          <h2>Comece gratuitamente. Aprofunde no seu ritmo.</h2>
           <p>
             A trilha Linux do Zero continua gratuita no DejotaCode. Ela serve como primeiro
             contato e também ajuda você a decidir se a forma de ensinar combina com seu jeito
             de aprender.
           </p>
-          <a class="text-link" href="/trilhas/linux-do-zero/" data-analytics-cta="product-linux-trail-middle">Explorar a trilha gratuita <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="/trilhas/linux-do-zero/" data-analytics-cta="product-linux-trail-middle">Explorar a trilha gratuita <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
         </div>
-        <div class="product-learning__steps" aria-label="Jornada de aprendizado">
-          <span>Artigos</span><i aria-hidden="true">→</i>
-          <span>Trilha Linux do Zero</span><i aria-hidden="true">→</i>
-          <strong>E-book Linux do Zero</strong>
+        <div class="product-learning__comparison">
+          <article><CategoryIcon icon="workflow" size={26} /><h3>Trilha gratuita</h3><ul><li>Artigos introdutórios organizados</li><li>Primeiro contato com Linux</li><li>Progresso neste navegador</li></ul></article>
+          <article><CategoryIcon icon="checklist" size={26} /><h3>E-book Linux do Zero</h3><ul><li>88 páginas em um único material</li><li>Preparação e instalação</li><li>20 comandos, permissões e problemas comuns</li></ul></article>
         </div>
       </div>
     </section>
@@ -238,15 +262,12 @@ const bookSchema = {
             forma simples, prática e responsável, respeitando quem ainda está construindo a
             base.
           </p>
-          <a class="text-link" href="/sobre/">Conhecer a história do DejotaCode <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="/sobre/">Conhecer a história do DejotaCode <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
         </div>
         <img
-          src="/assets/products/linux-do-zero/preview-author.webp"
-          alt="Página Sobre o autor do e-book Linux do Zero"
-          width="911"
-          height="1287"
-          loading="lazy"
-          decoding="async"
+          src="/assets/brand/dejota-author.webp"
+          alt="Dejota, autor do e-book Linux do Zero"
+          width="160" height="160" loading="lazy" decoding="async"
         />
       </div>
     </section>
@@ -287,11 +308,49 @@ const bookSchema = {
       <div class="container">
         <div>
           <p class="eyebrow">PRÓXIMO PASSO</p>
-          <h2>Pronto para começar no Linux com uma base mais segura?</h2>
+          <h2>Seu próximo passo no Linux</h2>
           <p>Leve o e-book Linux do Zero por R$ 19,90 e avance no seu ritmo.</p>
         </div>
-        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-final">Comprar por R$ 19,90 <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://pay.kiwify.com.br/hT8bZNY" target="_blank" rel="noopener noreferrer" data-analytics-cta="product-linux-buy-kiwify-final">Comprar por R$ 19,90 <span aria-hidden="true"><CategoryIcon icon="arrow-up-right" size={18} class="action-arrow" /></span></a>
       </div>
     </section>
   </main>
+  <script>
+    const dialog = document.querySelector<HTMLDialogElement>(".product-sample-dialog");
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-sample-open]"));
+    const images = Array.from(document.querySelectorAll<HTMLImageElement>(".product-preview__grid img"));
+    let current = 0;
+    let opener: HTMLElement | null = null;
+    if (dialog) {
+      const image = dialog.querySelector<HTMLImageElement>("[data-sample-image]");
+      const prev = dialog.querySelector<HTMLButtonElement>("[data-sample-prev]");
+      const next = dialog.querySelector<HTMLButtonElement>("[data-sample-next]");
+      const show = (index: number) => {
+        current = index;
+        const source = images[index];
+        if (image) { image.src = source.src; image.alt = source.alt; }
+        const caption = dialog.querySelector("[data-sample-caption]");
+        const count = dialog.querySelector("[data-sample-count]");
+        if (caption) caption.textContent = source.alt;
+        if (count) count.textContent = `${index + 1} de ${images.length}`;
+        if (prev) prev.disabled = index === 0;
+        if (next) next.disabled = index === images.length - 1;
+      };
+      links.forEach(link => link.addEventListener("click", event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        opener = link;
+        show(Number(link.dataset.sampleOpen));
+        dialog.showModal();
+      }));
+      prev?.addEventListener("click", () => { if (current > 0) show(current - 1); });
+      next?.addEventListener("click", () => { if (current < images.length - 1) show(current + 1); });
+      dialog.querySelector("[data-sample-close]")?.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("close", () => opener?.focus());
+      dialog.addEventListener("keydown", event => {
+        if (event.key === "ArrowRight" && current < images.length - 1) { event.preventDefault(); show(current + 1); }
+        if (event.key === "ArrowLeft" && current > 0) { event.preventDefault(); show(current - 1); }
+      });
+    }
+  </script>
 </BaseLayout>

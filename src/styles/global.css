@@ -8,7 +8,7 @@
 }
 
 html {
-  min-width: 20rem;
+  min-width: 320px;
   scroll-behavior: smooth;
   background: var(--color-bg);
 }
@@ -127,7 +127,7 @@ p {
 }
 
 .button {
-  min-height: 2.75rem;
+  min-height: var(--space-control);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -179,3 +179,40 @@ p {
     transition: none;
   }
 }
+
+
+/* Shared semantic label; layout-specific selectors only control placement. */
+.eyebrow {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-accent-strong);
+  text-transform: uppercase;
+}
+.button { gap: .5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}
+
+/* Public acquisition forms share control typography; layout stays local. */
+:is(.contact-page, .newsletter-page) .field :is(input, select, textarea) {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+:is(.contact-page, .newsletter-page) form[aria-busy="true"] button[type="submit"] {
+  cursor: progress;
+}
+
+/* Enlarged text must wrap without widening the public reading area. */
+main, .site-footer { overflow-wrap: anywhere; }
+
+/* Setas de ação: mesma família de ícones, medidas independentes da fonte. */
+svg.action-arrow.action-arrow { width: var(--size-action-arrow); height: var(--size-action-arrow); min-width: var(--size-action-arrow); flex-shrink: 0; display: inline-block; vertical-align: middle; color: currentColor; }
+.button-primary svg.action-arrow.action-arrow { width: var(--size-action-arrow-primary); height: var(--size-action-arrow-primary); min-width: var(--size-action-arrow-primary); }
+
+/* Canal de atendimento: símbolo estável ao lado do texto do botão. */
+svg.contact-channel-icon { flex-shrink: 0; width: 20px; height: 20px; }
+
+/* Símbolo do canal acompanha o contraste do botão, inclusive no primário ciano. */
+.button svg.contact-channel-icon { color: inherit; }

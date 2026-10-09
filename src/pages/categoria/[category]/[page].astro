@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import Pagination from "../../../components/Pagination.astro";
-import PostCard from "../../../components/PostCard.astro";
+import CategoryIcon from "../../../components/ui/CategoryIcon.astro";
+import { getOfficialCategoryIcon } from "../../../data/categoryIcons";
+import Pagination from "../../../components/ui/Pagination.astro";
+import PostCard from "../../../components/content/PostCard.astro";
 import {
   categories,
   categoryDescriptions,
@@ -57,6 +59,7 @@ const { category, label, page, totalPages, totalPosts } = Astro.props;
 const posts = (await getPublishedPosts()).filter(
   (post) => post.data.category === category,
 );
+const categoryIcon = getOfficialCategoryIcon(category);
 const start = (page - 1) * PAGE_SIZE;
 const visiblePosts = posts.slice(start, start + PAGE_SIZE);
 const baseSeoTitle =
@@ -112,7 +115,7 @@ const categorySchema = {
 <BaseLayout title={seoTitle} description={description} robots="index, follow">
   <script is:inline type="application/ld+json" set:html={JSON.stringify(categorySchema)} />
 
-  <main id="conteudo" tabindex="-1" class="editorial-page discovery-page">
+  <main id="conteudo" tabindex="-1" class="editorial-page discovery-page category-page">
     <header class="editorial-hero container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="/">Início</a>
@@ -124,7 +127,7 @@ const categorySchema = {
         <span aria-current="page">Página {page}</span>
       </nav>
 
-      <p class="eyebrow">CATEGORIA</p>
+      <div class="discovery-category-kicker">{categoryIcon && <CategoryIcon icon={categoryIcon.iconId} size={24} />}<p class="eyebrow">CATEGORIA</p></div>
       <h1>{label}</h1>
       <p class="editorial-hero__lead">{categoryDescriptions[category]}</p>
 
@@ -133,6 +136,13 @@ const categorySchema = {
         <span>{totalPosts === 1 ? "conteúdo publicado" : "conteúdos publicados"}</span>
       </div>
     </header>
+
+    <nav class="container discovery-categories" aria-label="Assuntos do Blog">
+      {Object.entries(categories).map(([slug, name]) => {
+        const icon = getOfficialCategoryIcon(slug);
+        return <a href={`/categoria/${slug}/`} aria-current={slug === category ? "page" : undefined}>{icon && <CategoryIcon icon={icon.iconId} size={18} />}<span>{name}</span></a>;
+      })}
+    </nav>
 
     <section class="editorial-section container" aria-labelledby="category-posts-title">
       <div class="section-heading">
@@ -144,7 +154,7 @@ const categorySchema = {
       </div>
 
       <div class="post-grid">
-        {visiblePosts.map((post) => <PostCard post={post} />)}
+        {visiblePosts.map((post) => <PostCard post={post} blogMetaIcons />)}
       </div>
 
       <Pagination

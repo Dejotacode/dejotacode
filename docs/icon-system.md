@@ -1,3 +1,5 @@
+> Referência atual de frontend: [Documento Mestre](frontend-master.md), [sistema visual](visual-system.md), [registro de mídia](media-registry.md). Revisão 09/10/2026.
+
 # DejotaCode — Sistema Oficial de Ícones v1
 
 ## Objetivo
@@ -126,3 +128,12 @@ O sistema oficial já está aplicado em:
 - navegação de categorias da página Recursos.
 
 Os símbolos textuais anteriores (`$_`, `</>`, `IA`, `[]`, setas ou glifos usados como ícone) não devem voltar como linguagem de categoria. Texto técnico pode continuar aparecendo dentro de conteúdo quando fizer parte da explicação, mas não como substituto do ícone oficial.
+
+## Setas de ação — padrão aprovado em 09/10/2026
+Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.
+
+## Atendimento — revisão 09/10/2026
+CategoryIcon map-pin representa localização; arrow-down representa navegação para uma seção abaixo. WhatsApp reutiliza o pictograma linear antes existente em SocialShare, centralizado no componente e aplicado no compartilhamento e atendimento. É um pictograma de interface, não um arquivo de logotipo certificado. Ícones junto a texto são decorativos; símbolos de canal usam 20px nos botões e 28px nos detalhes de Contato.
+
+## Setas direcionais — conclusão local 09/10/2026
+Setas de ação para esquerda, baixo e abertura externa usam CategoryIcon arrow-left/arrow-down/arrow-up-right com action-arrow. Aplicado a paginação, retorno de recursos/trilhas, e-book, Portfólio, Store e recomendações. Manter a direção segundo a ação; conteúdo editorial não é convertido.

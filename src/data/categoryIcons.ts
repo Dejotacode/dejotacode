@@ -21,7 +21,18 @@ export type OfficialIconId =
   | "privacy"
   | "network"
   | "chip"
-  | "database";
+  | "database"
+  | "calendar"
+  | "clock"
+  | "keyboard"
+  | "mouse"
+  | "usb-hub"
+  | "arrow-right"
+  | "arrow-up-right"
+  | "arrow-left"
+  | "arrow-down"
+  | "map-pin"
+  | "whatsapp";
 
 export type IconCategoryStatus = "current" | "future";
 

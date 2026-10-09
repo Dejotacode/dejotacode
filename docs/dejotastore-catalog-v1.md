@@ -228,6 +228,18 @@ Próximo comando recomendado: `@studio criar imagem SanDisk Ultra Flair 32 GB`.
 - Preview: http://127.0.0.1:4340/store/
 
 
+## 07/10/2026 — Store publicada
+
+- Publicação autorizada por Dejota às 23:42: `@dev publicar Store`.
+- PR: https://github.com/Dejotacode/dejotacode/pull/254
+- Commit publicado: `5026fe06d8d7248d5b954e11c3ce61af429323fc`.
+- CI, deploy Cloudflare e smoke aprovados: https://github.com/Dejotacode/dejotacode/actions/runs/37719490064
+- Produção conferida: sete fichas e sete imagens HTTP 200; MX Anywhere com imagem e dois links corretos; Store HTTP 200.
+- URL: https://dejotacode.com.br/store/
+- Estado: PUBLICADO / PRODUÇÃO_VALIDADA.
+- Projeto local original e alterações anteriores preservados; release feita em worktree isolada. Sem alterações na API, D1, Worker, DNS, R2 ou secrets.
+
+
 ## Afiliados aprovados — 08/10/2026
 
 Aplicação local autorizada de Elementor, NordVPN e NordPass. Links exclusivos recebidos do usuário; parceria sinalizada na Store, Recursos e artigos relacionados. Selo Pesquisado preservado. NordPass usa ilustração genérica de segurança até aprovação de arte própria. Nenhuma campanha, preço ou desconto de aniversário da Elementor aplicado. Sem deploy nesta etapa.
@@ -238,4 +250,80 @@ Aplicação local autorizada de Elementor, NordVPN e NordPass. Links exclusivos 
 Arte própria sem texto promocional, símbolo oficial DejotaCode no canto superior esquerdo. Aplicada em Store e Recursos como nordpass-sem-texto-v1.webp. Ilustração conceitual de gerenciamento de senhas, sem representar captura real do aplicativo. Apenas aplicação local; sem publicação.
 
 
-Publicação dos três afiliados e da arte NordPass autorizada pelo usuário em 08/10/2026. A promoção datada da Elementor permanece excluída.
+## Afiliados publicados — 08/10/2026
+
+PR #255; produção f190e080e5e3cf0f9c9a07c9ac575ab7bd7ed397. CI/deploy/smoke concluídos: https://github.com/Dejotacode/dejotacode/actions/runs/37722137788. Elementor, NordVPN e NordPass ativos na Store e Recursos, com transparência e selo Pesquisado. Arte NordPass aprovada aplicada; hash público conferido. Sem promoção de aniversário da Elementor. Três páginas HTTP 200 e links exclusivos conferidos. Estado: PUBLICADO / PRODUÇÃO_VALIDADA.
+
+
+## Guia de gerenciadores de senhas publicado — 08/10/2026
+
+Artigo e imagem aprovados; publicação autorizada. URL: https://dejotacode.com.br/blog/gerenciador-de-senhas-para-iniciantes/
+PR #256: https://github.com/Dejotacode/dejotacode/pull/256
+Produção: 4b07b0d4a9e78f98c502e1bd35fb127c392c7d9f
+CI/deploy/smoke: https://github.com/Dejotacode/dejotacode/actions/runs/37723399597
+Página pública HTTP 200 com imagem aprovada, alternativas e transparência NordPass; presença no blog, categoria e sitemap conferida. Fonte local sincronizada para draft false.
+
+
+## VPN para iniciantes publicado — 08/10/2026
+
+Artigo e imagem aprovados, publicação autorizada. URL: https://dejotacode.com.br/blog/vpn-para-iniciantes/
+PR #257: https://github.com/Dejotacode/dejotacode/pull/257
+Produção: d1dff1be80f062908af750ed23d38c20623533bc
+CI/deploy/smoke: https://github.com/Dejotacode/dejotacode/actions/runs/37724055175
+Página HTTP 200 com imagem aprovada, NordVPN e transparência; blog, categoria e sitemap conferidos. Fonte local sincronizada para draft false. Próximo conteúdo planejado: Elementor para iniciantes.
+
+
+## Elementor para iniciantes publicado — 08/10/2026
+
+Artigo e capa aprovados, publicação autorizada. URL: https://dejotacode.com.br/blog/elementor-para-iniciantes/
+PR #258: https://github.com/Dejotacode/dejotacode/pull/258
+Produção: 542e730e9bbf1e2f8f328a1bbf9f26dff6ab4c15
+CI/deploy/smoke: https://github.com/Dejotacode/dejotacode/actions/runs/37724824538
+Página HTTP 200 com capa própria sem texto promocional e transparência comercial. Hash da capa pública idêntico ao aprovado. Blog, categoria e sitemap conferidos. Fonte local sincronizada para draft false. Próximo conteúdo planejado: checklist de landing page no WordPress.
+
+
+### 2026-10-08 — nove capas editoriais aprovadas
+
+Aplicadas localmente aos artigos e cards via editorialVisuals.ts: phishing-como-identificar, habitos-seguranca-digital-iniciantes, autenticacao-dois-fatores, como-a-web-funciona, escolher-primeiro-projeto-portfolio, o-que-e-ia-generativa, prompts-melhores-estudar-trabalhar, usar-ia-estudar-sem-dependencia, como-verificar-respostas-de-ia. Assets WebP em public/assets/posts; object-position left top preserva o símbolo. Astro check, build:production e QA passaram. Publicação pendente.
+
+
+### 2026-10-08 — onze capas editoriais aprovadas
+
+Aplicadas localmente aos artigos e cards: comandos-linux-para-iniciantes, como-criar-pendrive-bootavel-linux, como-escolher-distribuicao-linux, como-testar-linux-sem-instalar, o-que-e-linux, permissoes-linux-para-iniciantes, pipe-redirecionamento-linux, devtools-navegador-iniciantes, html-css-javascript-entenda-diferenca, javascript-variaveis-funcoes, primeiro-site-html-css. Assets WebP individuais; recorte superior preservado. Check, build e QA aprovados. Auditoria das três categorias: 25 artigos, nenhuma capa ausente ou repetida. Publicação pendente.
+
+
+### 2026-10-08 — publicação das 20 capas editoriais concluída
+
+Revisão local aprovada e publicação autorizada. PR #259 integrado; produção 66be27049be9d34c1a74f9526a32d2fb099d8a89. CI/deploy 37733414272 concluído com sucesso. Verificadas as 20 páginas de artigos, os 20 WebP por hash e os cards nas cinco páginas das categorias de Linux e Segurança, Programação e IA. Nenhuma capa ausente ou repetida entre os 25 artigos dessas categorias.
+
+
+### 2026-10-08 — 14 capas restantes aplicadas localmente
+
+Capas aprovadas de Tecnologia Prática (3) e Renda Digital (11) aplicadas aos artigos e cards. Check, build e QA passaram. Auditoria das cinco categorias: 42 artigos, nenhuma capa ausente, genérica ou repetida entre artigos. Publicação pendente.
+
+
+### 2026-10-08 — 14 capas restantes publicadas
+
+PR #260 integrado; produção d9b64c8ea5a9158dad20b9582cb6af401ecbb3e3; CI/deploy 37736719417 concluído com sucesso. Capas de Tecnologia Prática (3) e Renda Digital (11) publicadas nos artigos e cards. Verificação em produção dos 42 artigos e imagens por conteúdo/hash, além das nove páginas de categorias: nenhuma capa ausente, genérica ou repetida entre artigos.
+
+
+### 2026-10-08 — correção de três capas vazias
+
+Capturas do usuário revelaram fallback em cards. Diagnóstico: WebP de como-montar-oferta-simples-pequenos-negocios, html-css-javascript-entenda-diferenca e usar-ia-estudar-sem-dependencia tinham zero bytes. Recuperados localmente dos PNG aprovados; todas as 34 capas geradas decodificadas com sucesso. Verificações anteriores por existência/hash não detectavam arquivos vazios; relatório anterior de ausência de fallback era incompleto. Publicação da correção pendente.
+
+
+### 2026-10-08 — correção das três capas publicada
+
+PR #261; commit 90792ec51681a716e04dfd357aeaecb86fbbaca0; CI/deploy 37742526262 concluído. Recuperados três WebP vazios que acionavam fallback. Em produção, 34 WebP com conteúdo/cabeçalho válido e bytes idênticos aos arquivos decodificados; verificados os assets dos cards nas sete páginas do blog. Artes antigas de Febspot e Méliuz com texto permanecem fora desta correção.
+
+
+## Status consolidado — etapa de capas encerrada em 08/10/2026
+
+- Estado: CONCLUÍDO / PUBLICADO. Tarefa: DC-BLOG-COVERS-2026-001.
+- 42 artigos com capas; 34 capas novas publicadas e 8 existentes preservadas.
+- PRs #259 e #260 publicaram as capas; #261 corrigiu três WebP vazios que acionavam fallback.
+- Produção: `90792ec51681a716e04dfd357aeaecb86fbbaca0`; CI/deploy: https://github.com/Dejotacode/dejotacode/actions/runs/37742526262.
+- Verificação final: 34 WebP decodificados e comparados aos arquivos públicos; assets dos cards nas sete páginas do blog conferidos.
+- Sem pendências nesta etapa. Criação de conteúdo permanece pausada. Padronização das artes antigas de Febspot e Méliuz com texto fica fora deste encerramento.
+- Os registros abaixo são históricos; declarações anteriores de ausência de falhas foram corrigidas após identificar os três arquivos vazios.
+

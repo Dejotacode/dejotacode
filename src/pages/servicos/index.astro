@@ -1,4 +1,5 @@
 ---
+import CategoryIcon from "../../components/ui/CategoryIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/services.css";
 ---
@@ -12,17 +13,17 @@ import "../../styles/services.css";
       <div class="container services-hero__grid">
         <div class="services-hero__copy">
           <p class="eyebrow">SERVIÇOS DEJOTACODE</p>
-          <h1>Sua presença digital, simples e pronta para trabalhar.</h1>
-          <p>Landing pages objetivas para apresentar seu negócio e transformar visitantes em conversas pelo WhatsApp.</p>
+          <h1>Sites e landing pages para pequenos negócios</h1>
+          <p>Apresente seu negócio com clareza e facilite o contato pelo WhatsApp.</p>
           <div class="services-actions">
-            <a class="button button-primary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." data-analytics-cta="services-hero-whatsapp" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp <span aria-hidden="true">→</span></a>
-            <a class="button" href="/portfolio/" data-analytics-cta="services-hero-portfolio">Ver Case 01</a>
+            <a class="button button-primary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." data-analytics-cta="services-hero-whatsapp" target="_blank" rel="noopener noreferrer"><CategoryIcon icon="whatsapp" size={20} class="contact-channel-icon" /> Conversar pelo WhatsApp <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
+            <a class="button" href="#proof-title" data-analytics-cta="services-hero-portfolio">Ver trabalhos <CategoryIcon icon="arrow-down" size={18} class="action-arrow" /></a>
           </div>
         </div>
         <aside class="services-offer" aria-label="Oferta de lançamento">
           <span>OFERTA DE LANÇAMENTO</span>
-          <strong>R$ 790</strong>
           <p>Landing Page Essencial</p>
+          <strong>R$ 790</strong>
           <ul>
             <li>Entrega em até 7 dias úteis</li>
             <li>Layout responsivo</li>
@@ -34,62 +35,66 @@ import "../../styles/services.css";
       </div>
     </header>
 
-    <section class="services-proof container" aria-labelledby="proof-title">
-      <div class="services-proof__copy">
-        <p class="eyebrow">PROVA ANTES DA OFERTA</p>
-        <h2 id="proof-title">Veja como as decisões são documentadas antes de contratar.</h2>
-        <p>O Portfólio mostra problema, decisões, arquitetura, entregas e aprendizados do DejotaCode. A proposta é simples: você entende como o trabalho é conduzido antes de conversar sobre orçamento.</p>
-        <div class="services-proof__meta" aria-label="Resumo do case relacionado">
-          <span><strong>CASE</strong> 01</span>
-          <span><strong>FOCO</strong> Produto + Conteúdo + Engenharia</span>
-        </div>
-        <a class="button" href="/portfolio/" data-analytics-cta="services-proof-portfolio">Ver o Case 01 <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="services-proof__visual">
-        <img src="/assets/resources/items/github.webp" alt="GitHub representando o processo documentado do Case DejotaCode" width="720" height="405" loading="lazy" decoding="async" />
-      </div>
-    </section>
+
 
     <section class="services-section container" aria-labelledby="offers-title">
       <div class="services-heading">
-        <div><p class="eyebrow">ESCOLHA O PRIMEIRO PASSO</p><h2 id="offers-title">Serviços com escopo claro</h2></div>
+        <div><p class="eyebrow">ESCOLHA O PRIMEIRO PASSO</p><h2 id="offers-title">Escolha o serviço para o seu momento</h2></div>
         <p>Comece por um diagnóstico ou vá direto para uma página completa.</p>
       </div>
       <div class="services-grid">
         <article class="service-card">
-          <span>01 / ENTRADA</span>
+          <CategoryIcon icon="checklist" size={28} />
           <div><h3>Diagnóstico Express</h3><p>Análise da página principal, experiência mobile, clareza da oferta e chamadas para ação.</p></div>
           <div><strong>R$ 149</strong><small>Relatório objetivo e conversa de até 30 minutos.</small></div>
+          <a class="button button-secondary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20o%20servi%C3%A7o%20Diagn%C3%B3stico%20Express%20do%20DejotaCode." target="_blank" rel="noopener noreferrer" data-analytics-cta="services-diagnC3B3stico20express"><CategoryIcon icon="whatsapp" size={20} class="contact-channel-icon" /> Solicitar diagnóstico <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a>
         </article>
         <article class="service-card service-card--featured">
-          <span>02 / PRINCIPAL</span>
+          <CategoryIcon icon="browser" size={28} />
           <div><h3>Landing Page Essencial</h3><p>Uma página profissional para apresentar seu negócio e facilitar contatos pelo celular.</p></div>
           <div><strong>R$ 790</strong><small>50% para iniciar e 50% na entrega.</small></div>
+          <a class="button button-primary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20o%20servi%C3%A7o%20Landing%20Page%20Essencial%20do%20DejotaCode." target="_blank" rel="noopener noreferrer" data-analytics-cta="services-landing20page20essencial"><CategoryIcon icon="whatsapp" size={20} class="contact-channel-icon" /> Quero minha página <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a>
         </article>
         <article class="service-card">
-          <span>03 / RECORRENTE</span>
+          <CategoryIcon icon="workflow" size={28} />
           <div><h3>Cuidado contínuo</h3><p>Pequenas atualizações de conteúdo, acompanhamento e manutenção preventiva.</p></div>
           <div><strong>R$ 149/mês</strong><small>Disponível após a entrega do projeto.</small></div>
+          <a class="button button-secondary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20o%20servi%C3%A7o%20Cuidado%20cont%C3%ADnuo%20do%20DejotaCode." target="_blank" rel="noopener noreferrer" data-analytics-cta="services-cuidado20contC3ADnuo"><CategoryIcon icon="whatsapp" size={20} class="contact-channel-icon" /> Conversar sobre manutenção <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a>
         </article>
+      </div>
+    </section>
+
+    <section class="services-proof container" aria-labelledby="proof-title">
+      <div class="services-proof__copy">
+        <p class="eyebrow">PROJETO PRÓPRIO</p>
+        <h2 id="proof-title">DejotaCode: do planejamento à publicação</h2>
+        <p>Conheça as decisões e entregas do nosso próprio projeto: conteúdo organizado, navegação clara e apresentação responsiva.</p>
+        <div class="services-proof__meta" aria-label="Resumo do case relacionado">
+          <span>Responsivo</span><span>Conteúdo organizado</span><span>Navegação clara</span>
+        </div>
+        <a class="button" href="/portfolio/" data-analytics-cta="services-proof-portfolio">Ver o projeto <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
+      </div>
+      <div class="services-proof__visual">
+        <div class="services-notebook"><div class="services-notebook__screen"><img src="/assets/services-dejotacode-case.webp" alt="Captura atual da Home do DejotaCode apresentada em uma moldura ilustrativa de notebook" width="1440" height="900" loading="lazy" decoding="async" /></div><div class="services-notebook__base" aria-hidden="true"></div></div>
       </div>
     </section>
 
     <section class="services-process" aria-labelledby="process-title">
       <div class="container">
         <p class="eyebrow">COMO FUNCIONA</p>
-        <h2 id="process-title">Do briefing à publicação</h2>
+        <h2 id="process-title">Como funciona</h2>
         <ol>
-          <li><span>01</span><strong>Conversa inicial</strong><p>Entendemos objetivo, público e prioridade.</p></li>
-          <li><span>02</span><strong>Proposta clara</strong><p>Você recebe escopo, prazo e condições.</p></li>
-          <li><span>03</span><strong>Construção</strong><p>A página é desenvolvida e revisada.</p></li>
-          <li><span>04</span><strong>Publicação</strong><p>O projeto é entregue com orientação final.</p></li>
+          <li><CategoryIcon icon="apps" size={26} /><strong>Conversa inicial</strong><p>Entendemos objetivo, público e prioridade.</p></li>
+          <li><CategoryIcon icon="news" size={26} /><strong>Proposta clara</strong><p>Você recebe escopo, prazo e condições.</p></li>
+          <li><CategoryIcon icon="code" size={26} /><strong>Construção</strong><p>A página é desenvolvida e revisada.</p></li>
+          <li><CategoryIcon icon="cloud-server" size={26} /><strong>Publicação</strong><p>O projeto é entregue com orientação final.</p></li>
         </ol>
       </div>
     </section>
 
     <section class="services-section container" aria-labelledby="scope-title">
       <div class="services-heading">
-        <div><p class="eyebrow">SEM SURPRESAS</p><h2 id="scope-title">O que está incluído</h2></div>
+        <div><p class="eyebrow">SEM SURPRESAS</p><h2 id="scope-title">Escopo claro, desde o início</h2></div>
         <p>O escopo inicial foi desenhado para manter prazo, qualidade e preço previsíveis.</p>
       </div>
       <div class="scope-grid">
@@ -98,16 +103,23 @@ import "../../styles/services.css";
       </div>
     </section>
 
+    <section class="services-section services-faq container" aria-labelledby="faq-title">
+      <h2 id="faq-title">Antes de começar</h2>
+      <details><summary>O que está incluído na Landing Page Essencial?</summary><p>Uma página única personalizada e responsiva, com seções essenciais do negócio, contato por WhatsApp, SEO e métricas básicas e uma rodada de ajustes. O escopo é definido na proposta.</p></details>
+      <details><summary>Domínio e hospedagem estão no preço?</summary><p>Domínio, hospedagem e serviços de terceiros são contratados separadamente quando necessários.</p></details>
+      <details><summary>Como funciona o pagamento da Landing Page Essencial?</summary><p>O valor apresentado é R$ 790, com 50% para iniciar e 50% na entrega. Você recebe a proposta com escopo, prazo e condições antes da construção.</p></details>
+    </section>
+
     <section class="services-cta">
       <div class="container">
         <div>
           <p class="eyebrow">PRÓXIMO PASSO</p>
           <h2>Conte um pouco sobre o seu negócio.</h2>
           <p>Você receberá uma resposta com as próximas perguntas, sem compromisso de contratação.</p>
-          <p class="services-learning-link">Ainda está aprendendo e prefere fazer por conta própria? <a href="/trilhas/primeira-renda-online/">Comece pela trilha Primeira Renda Online →</a></p>
+          <p class="services-learning-link">Ainda está aprendendo e prefere fazer por conta própria? <a href="/trilhas/primeira-renda-online/">Comece pela trilha Primeira Renda Online <CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></a></p>
         </div>
         <div class="services-actions">
-          <a class="button button-primary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." data-analytics-cta="services-final-whatsapp" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp <span aria-hidden="true">→</span></a>
+          <a class="button button-primary" href="https://wa.me/5527999717193?text=Ol%C3%A1%2C%20encontrei%20os%20servi%C3%A7os%20do%20DejotaCode%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." data-analytics-cta="services-final-whatsapp" target="_blank" rel="noopener noreferrer"><CategoryIcon icon="whatsapp" size={20} class="contact-channel-icon" /> Conversar pelo WhatsApp <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>
           <a class="button" href="/contato/?assunto=orcamento-servicos" data-analytics-cta="services-final-form">Prefiro enviar pelo formulário</a>
         </div>
       </div>

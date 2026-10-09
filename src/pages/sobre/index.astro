@@ -1,130 +1,49 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../styles/institutional.css";
+import CategoryIcon from "../../components/ui/CategoryIcon.astro";
+import type { OfficialIconId } from "../../data/categoryIcons";
+import "../../styles/about.css";
+const principles: {icon: OfficialIconId; title: string; description: string}[] = [
+  {icon: "news", title: "Clareza", description: "Explicar de forma simples, sem esconder detalhes que mudam uma decisão. O conteúdo vem antes da indicação."},
+  {icon: "checklist", title: "Prática com evidência", description: "Mostrar o processo e diferenciar pesquisa, opinião, teste e confirmação antes de apresentar uma conclusão."},
+  {icon: "shield-check", title: "Responsabilidade", description: "Apresentar contexto e limitações, sem atalhos perigosos, resultados inventados ou promessas fáceis."},
+];
+const steps: {icon: OfficialIconId; title: string; description: string}[] = [
+  {icon: "terminal", title: "Testar", description: "Experimentar a ferramenta, processo ou hipótese."},
+  {icon: "news", title: "Registrar", description: "Anotar etapas, condições e resultados observados."},
+  {icon: "database", title: "Medir", description: "Usar dados quando ajudam a responder uma pergunta."},
+  {icon: "checklist", title: "Verificar", description: "Separar o anunciado, o observado e o confirmado."},
+  {icon: "network", title: "Publicar", description: "Transformar a experiência em conteúdo claro e útil."},
+];
+const areas: {icon: OfficialIconId; title: string; description: string; href: string}[] = [
+  {icon: "news", title: "Blog", description: "Entender um assunto", href: "/blog/"},
+  {icon: "workflow", title: "Trilhas", description: "Seguir uma sequência", href: "/trilhas/"},
+  {icon: "apps", title: "Recursos", description: "Escolher ferramentas", href: "/recursos/"},
+  {icon: "browser", title: "Portfólio", description: "Ver como construímos", href: "/portfolio/"},
+];
 ---
-
-<BaseLayout
-  title="Sobre o DejotaCode para iniciantes | DejotaCode"
-  description="Conheça o propósito, os princípios editoriais e a abordagem do DejotaCode para ensinar tecnologia de forma simples, prática e responsável."
->
-  <main id="conteudo" tabindex="-1" class="institutional-page about-page">
+<BaseLayout title="Sobre o DejotaCode para iniciantes | DejotaCode" description="Conheça o propósito, os princípios editoriais e a abordagem do DejotaCode para ensinar tecnologia de forma simples, prática e responsável.">
+  <main id="conteudo" tabindex="-1" class="about-page">
     <header class="about-hero container">
-      <div class="about-hero__mark" aria-hidden="true">
-        <img src="/assets/brand/dejotacode-app-icon.svg" alt="" width="320" height="320" loading="eager" decoding="async" />
+      <div class="about-hero__copy">
+        <p class="eyebrow">SOBRE O DEJOTACODE</p>
+        <h1>Tecnologia explicada para quem está começando.</h1>
+        <p class="about-introduction">Eu sou Joceilton. Por aqui, assino como Dejota.</p>
+        <p class="about-lead">Aprendo colocando a mão na massa e compartilho o caminho de forma simples, prática e responsável.</p>
+        <ul class="about-signature" aria-label="O propósito do projeto"><li><CategoryIcon icon="news" size={28} />Aprender</li><li><CategoryIcon icon="code" size={28} />Construir</li><li><CategoryIcon icon="network" size={28} />Compartilhar</li></ul>
       </div>
-      <p class="eyebrow">SOBRE O PROJETO</p>
-      <h1>Tecnologia explicada para quem está começando.</h1>
-      <p class="about-hero__lead">O DejotaCode transforma assuntos difíceis em passos claros, úteis e responsáveis.</p>
-      <div class="institutional-hero__chips"><span>Aprender</span><span>Construir</span><span>Compartilhar</span></div>
+      <figure class="about-portrait"><img src="/assets/brand/dejota-author.webp" alt="Joceilton, conhecido como Dejota, criador do DejotaCode" width="900" height="1197" loading="eager" decoding="async" /><figcaption><strong>Joceilton — Dejota</strong><span>Criador do DejotaCode</span></figcaption></figure>
     </header>
 
-    <section class="about-person" aria-labelledby="about-person-title">
-      <div class="container about-person__intro">
-        <div class="about-person__headline">
-          <p class="eyebrow">QUEM ESTÁ POR TRÁS</p>
-          <h2 id="about-person-title">Eu sou Joceilton. Por aqui, assino como Dejota.</h2>
-          <p class="about-person__lead">Aprendo tecnologia colocando a mão na massa, tentando entender o processo e transformando o que descubro em algo que possa ser explicado de forma simples.</p>
-        </div>
-        <figure class="about-person__portrait">
-          <img src="/assets/brand/dejota-author.webp" alt="Joceilton, conhecido como Dejota, criador do DejotaCode" width="402" height="440" loading="lazy" decoding="async" />
-          <figcaption>
-            <span>CRIADOR DO DEJOTACODE</span>
-            <strong>Joceilton — Dejota</strong>
-            <small>Conhecimento abre caminhos.</small>
-          </figcaption>
-        </figure>
-      </div>
+    <section class="about-section about-story" aria-labelledby="about-story-title"><div class="container about-story__grid"><div><p class="eyebrow">COMO TUDO SE CONECTA</p><h2 id="about-story-title">Da curiosidade ao DejotaCode</h2><div class="about-story__copy"><p>Meu interesse por tecnologia me acompanha há anos. Aprendo instalando sistemas, testando ferramentas, construindo projetos, errando e pesquisando até entender por que cada coisa funciona. Linux, desenvolvimento web, programação e ferramentas digitais fazem parte desse caminho.</p><p>Mais do que decorar comandos, gosto de entender o processo e registrar o que aprendo. No DejotaCode, organizo essas descobertas em conteúdo prático para quem também está começando — com contexto para decidir o que faz sentido e qual é o próximo passo.</p></div></div><aside class="about-panel"><CategoryIcon icon="news" size={30} /><h3>Um espaço para aprender e compartilhar</h3><p>Transformo testes, experiências e projetos em explicações que possam ser repetidas, melhoradas e compartilhadas.</p><p class="about-motto">Conhecimento abre caminhos.</p></aside></div></section>
 
-      <div class="container about-person__story">
-        <div class="about-person__story-copy">
-          <p class="eyebrow">SOBRE MIM</p>
-          <p>Meu interesse por tecnologia me acompanha há anos. Sou do tipo que aprende instalando sistemas, testando ferramentas, construindo projetos, errando, pesquisando e voltando até entender por que cada coisa funciona.</p>
-          <p>Gosto especialmente de Linux, desenvolvimento web, programação e ferramentas digitais. Mais do que decorar comandos, gosto de entender o processo, transformar uma ideia em algo que funcione e registrar o caminho para conseguir repetir, melhorar e explicar depois.</p>
-        </div>
-        <div class="about-person__story-project">
-          <p class="eyebrow">COMO ISSO VIROU O DEJOTACODE</p>
-          <p>O DejotaCode nasceu dessa forma de aprender. É onde organizo testes, experiências e projetos para transformar o que descubro em conteúdo claro, prático e responsável para quem também está começando.</p>
-          <div class="about-person__signature" aria-label="Aprender, testar, construir e compartilhar">
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21V5.5Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5A2.5 2.5 0 0 1 20 21V5.5Z"/></svg>Aprender</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 17l-5-9V3"/><path d="M8 14h8"/></svg>Testar</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>Construir</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><path d="m6.5 10.5 4-4M13.5 6.5l4 4"/></svg>Compartilhar</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="about-section" aria-labelledby="about-principles-title"><div class="container"><p class="eyebrow">O QUE ORIENTA CADA CONTEÚDO</p><h2 id="about-principles-title">Clareza, prática e responsabilidade</h2><div class="about-principles">{principles.map(item => <article class="about-panel"><CategoryIcon icon={item.icon} size={34} /><div><h3>{item.title}</h3><p>{item.description}</p></div></article>)}</div></div></section>
 
-    <section class="institutional-section container about-purpose">
-      <div class="institutional-heading">
-        <div><p class="eyebrow">POR QUE EXISTE</p><h2>Menos confusão. Mais contexto para decidir.</h2></div>
-        <p>O objetivo não é acumular ferramentas, cursos ou promessas. É ajudar quem está começando a entender o que faz sentido, por quê e qual é o próximo passo.</p>
-      </div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>01</span><h3>Explicar antes de recomendar</h3><p>Conteúdo vem antes do clique, da compra ou da indicação.</p></article>
-        <article class="institutional-card"><span>02</span><h3>Mostrar o processo</h3><p>Decisões, testes e limitações fazem parte da explicação.</p></article>
-        <article class="institutional-card"><span>03</span><h3>Evitar promessas fáceis</h3><p>Resultado só é tratado como resultado quando existe evidência para sustentar a afirmação.</p></article>
-      </div>
-    </section>
+    <section class="about-section" aria-labelledby="about-method-title"><div class="container"><p class="eyebrow">DA EXPERIÊNCIA À PUBLICAÇÃO</p><h2 id="about-method-title">Do teste ao conteúdo que chega até você</h2><p class="about-section-lead">Uma sequência para reduzir achismos e deixar claro o que foi realmente observado.</p><ol class="about-method">{steps.map((step,index) => <li><div><span aria-hidden="true">{String(index+1).padStart(2,"0")}</span><CategoryIcon icon={step.icon} size={28} /></div><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol></div></section>
 
-    <section class="about-method" aria-labelledby="about-method-title">
-      <div class="container">
-        <div class="institutional-heading">
-          <div><p class="eyebrow">COMO TRABALHAMOS</p><h2 id="about-method-title">Da experiência à publicação</h2></div>
-          <p>Uma sequência simples para reduzir achismos e deixar claro o que foi realmente observado.</p>
-        </div>
-        <ol class="about-method__steps">
-          <li><span>01</span><strong>Testar</strong><p>Experimentar a ferramenta, processo ou hipótese.</p></li>
-          <li><span>02</span><strong>Registrar</strong><p>Anotar etapas, condições e resultados observados.</p></li>
-          <li><span>03</span><strong>Medir</strong><p>Usar dados quando eles realmente ajudam a responder uma pergunta.</p></li>
-          <li><span>04</span><strong>Verificar</strong><p>Separar o que foi anunciado, observado e confirmado.</p></li>
-          <li><span>05</span><strong>Publicar</strong><p>Transformar a experiência em conteúdo compreensível e útil.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="institutional-section container">
-      <div class="institutional-heading"><div><p class="eyebrow">NOSSOS PRINCÍPIOS</p><h2>O que orienta cada publicação</h2></div></div>
-      <div class="institutional-grid">
-        <article class="institutional-card"><span>CLAREZA</span><h3>Clareza</h3><p>Explicar de forma simples sem esconder detalhes que mudam a decisão.</p></article>
-        <article class="institutional-card"><span>EVIDÊNCIA</span><h3>Evidência</h3><p>Diferenciar opinião, teste, registro e confirmação antes de apresentar uma conclusão.</p></article>
-        <article class="institutional-card"><span>RESPONSABILIDADE</span><h3>Responsabilidade</h3><p>Evitar atalhos perigosos, resultados inventados e promessas que não podem ser sustentadas.</p></article>
-      </div>
-    </section>
-
-    <section class="institutional-section container about-ecosystem">
-      <div class="institutional-heading">
-        <div><p class="eyebrow">O QUE VOCÊ ENCONTRA AQUI</p><h2>Um ecossistema conectado, não páginas isoladas.</h2></div>
-        <p>Cada área tem uma função diferente e aponta para o próximo passo quando isso faz sentido.</p>
-      </div>
-      <div class="about-ecosystem__links">
-        <a href="/blog/"><span>Blog</span><strong>Entender um assunto</strong><small>Artigos e tutoriais →</small></a>
-        <a href="/trilhas/"><span>Trilhas</span><strong>Seguir uma sequência</strong><small>Aprendizado guiado →</small></a>
-        <a href="/recursos/"><span>Recursos</span><strong>Escolher ferramentas</strong><small>Curadoria com contexto →</small></a>
-        <a href="/portfolio/"><span>Portfólio</span><strong>Ver como construímos</strong><small>Cases e decisões →</small></a>
-      </div>
-    </section>
-
-    <section class="about-transparency">
-      <div class="container about-transparency__grid">
-        <div>
-          <p class="eyebrow">TRANSPARÊNCIA</p>
-          <h2>Recomendação e relação comercial não são a mesma coisa.</h2>
-        </div>
-        <div>
-          <p>Quando existe link de afiliado, produto próprio ou outra relação comercial, isso deve ficar claro. Testes em andamento também são identificados como testes — sem tratar expectativa como resultado confirmado.</p>
-          <a class="button button-secondary" href="/recursos/">Ver como avaliamos recursos</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-next container">
-      <p class="eyebrow">COMECE POR ONDE FIZER SENTIDO</p>
-      <h2>Você não precisa aprender tudo de uma vez.</h2>
-      <p>Escolha uma trilha para seguir uma sequência ou explore o Blog para resolver uma dúvida específica.</p>
-      <div class="about-next__actions">
-        <a class="button button-primary" href="/trilhas/">Explorar trilhas <span aria-hidden="true">→</span></a>
-        <a class="button" href="/blog/">Ir para o Blog</a>
-      </div>
-    </section>
+    <section class="about-section about-destinations" aria-labelledby="about-areas-title"><div class="container"><p class="eyebrow">ENCONTRE SEU PRÓXIMO PASSO</p><h2 id="about-areas-title">Conteúdos para o seu momento</h2><div class="about-areas">{areas.map(area => <a class="about-panel" href={area.href}><CategoryIcon icon={area.icon} size={30} /><h3>{area.title}</h3><p>{area.description}</p><span class="about-arrow" aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a>)}</div>
+      <aside class="about-transparency"><CategoryIcon icon="shield-check" size={32} /><div><h3>Transparência em cada recomendação</h3><p>Links de afiliados, produtos próprios e outras relações comerciais são identificados. Pesquisa, uso e testes têm contextos diferentes; testes em andamento não são apresentados como resultados confirmados.</p></div><a href="/store/como-avaliamos/">Como avaliamos recomendações <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a></aside>
+      <section class="about-next" aria-labelledby="about-next-title"><h2 id="about-next-title">Você não precisa aprender tudo de uma vez.</h2><p>Escolha uma trilha ou explore o Blog para resolver uma dúvida.</p><div><a class="button button-primary" href="/trilhas/">Explorar trilhas <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a><a class="button button-secondary" href="/blog/">Ir para o Blog</a></div></section>
+    </div></section>
   </main>
 </BaseLayout>

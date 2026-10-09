@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-09",
+  "scope": "10 páginas principais, 4 larguras, 2 temas",
+  "combinations": 80,
+  "failures": [],
+  "limits": "Verificação automatizada de carregamento, overflow e estrutura; não certifica contraste, todos os recortes visuais nem integrações externas."
+}

@@ -32,3 +32,7 @@ Preview: http://127.0.0.1:4325/recursos/
 
 ## Verificação concluída
 Build: 115 páginas; QA HTML e links internos aprovados. 22 recursos com imagens não vazias e hashes únicos. 56 combinações de sete páginas, quatro larguras (320, 390, 768, 1440) e dois temas: nenhuma falha. Capturas do inventário completo e da categoria Desenvolvimento inspecionadas. Diff de recommendedResources altera somente image e imageAlt. Estado REVIEW; sem publicação.
+
+## Publicação concluída
+
+Revisão e publicação autorizadas pelo usuário. PR #263 integrada no commit b37bdb5fe2bd4a0a4e99f584fab481ee24ca63d4. Deploy 37783670066 aprovado. Verificação pública: 22 imagens distintas, idênticas aos arquivos aprovados, e sete páginas de Recursos disponíveis.

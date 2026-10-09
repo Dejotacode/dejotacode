@@ -1,4 +1,5 @@
 ---
+import CategoryIcon from "../ui/CategoryIcon.astro";
 import StoreBadge from "./StoreBadge.astro";
 import VisualMedia from "../visual/VisualMedia.astro";
 import { resolveStoreVisual } from "../../data/storeVisuals";
@@ -13,11 +14,12 @@ interface Props {
   offerCount?: number;
   relatedPost?: string;
   loading?: "eager" | "lazy";
+  editorial?: boolean;
 }
-const { id, title, description, status, category, brand, offerCount = 0, relatedPost, loading = "lazy" } = Astro.props;
+const { id, title, description, status, category, brand, offerCount = 0, relatedPost, loading = "lazy", editorial = false } = Astro.props;
 const { src: productVisual, fallbackSrc: productFallback } = resolveStoreVisual(id, category);
 ---
-<article class="store-card">
+<article class:list={["store-card", {"store-card--editorial": editorial}]}>
   <div class="store-card__media">
     <VisualMedia
       src={productVisual}
@@ -36,8 +38,8 @@ const { src: productVisual, fallbackSrc: productFallback } = resolveStoreVisual(
     <h3>{title}</h3>
     <p class="store-card__description">{description}</p>
     <div class="store-card__commercial" aria-label="Informações comerciais">
-      <strong>Consultar no parceiro</strong>
-      <span>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta" : "ofertas"}` : "Sem oferta ativa"}</span>
+      {!editorial && <strong>Consultar no parceiro</strong>}
+      <span>{offerCount > 0 ? `${offerCount} ${offerCount === 1 ? "oferta" : "ofertas"}${editorial ? (offerCount === 1 ? " ativa" : " ativas") : ""}` : "Sem oferta ativa"}</span>
     </div>
     <div class="store-card__actions">
       <a
@@ -46,7 +48,7 @@ const { src: productVisual, fallbackSrc: productFallback } = resolveStoreVisual(
         data-store-origin={`internal:${Astro.url.pathname}`}
         data-analytics-cta={`store-card:${id}`}
       >
-        Ver produto <span aria-hidden="true">→</span>
+        {editorial && offerCount === 0 ? "Conhecer recomendação" : "Ver produto"} <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span>
       </a>
       {relatedPost && (
         <a class="store-card__secondary" href={`/blog/${relatedPost}/`} data-analytics-cta={`store-card:${id}:article`}>
@@ -80,5 +82,5 @@ const { src: productVisual, fallbackSrc: productFallback } = resolveStoreVisual(
   .store-card__actions > :only-child { grid-column: 1 / -1; }
   @media (max-width:30rem){.store-card__commercial{align-items:flex-start;flex-direction:column}.store-card__commercial span{text-align:left}.store-card__actions{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){.store-card{transition:none}.store-card:hover{transform:none}}
-  .store-card__media :global(img[src$="-sem-texto-v2.webp"]) { object-position:left top; }
+  .store-card__media :global(img[src$="-sem-texto-v2.webp"]), .store-card__media :global(img[src$="-assinatura-v2.webp"]) { object-position:left top; }
 </style>

@@ -1,0 +1,15 @@
+.resource-category-page { padding-bottom: 2.5rem; }
+.resource-category-page .resource-category-hero { padding-block: 2rem 1.5rem; text-align: left; }
+.resource-category-page .resource-category-back { margin-bottom: 1rem; }
+.resource-category-page .resource-category-hero__icon { margin: 0 0 .8rem; }
+.resource-category-page .resource-category-hero h1 {   overflow-wrap: anywhere; font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
+.resource-category-page .resource-category-hero > p:not(.eyebrow) { margin-left: 0; font-size: 1rem; }
+.resource-category-page .resource-category-hero__meta { justify-content: flex-start; margin-top: 1rem; }
+.resource-category-page .resource-category-switcher { justify-content: flex-start; padding-bottom: 1.25rem; }
+.resource-category-page .resource-category-list { padding-top: 1.5rem; }
+.resource-category-page .resource-section-heading { gap: 1rem; }
+.resource-category-page .resource-card-v2--compact .visual-media { aspect-ratio: 2 / 1; }
+.resource-category-page .resource-category-transparency { margin-top: 1.5rem; padding-block: 1.25rem; border-top: 1px solid var(--color-border); }
+.resource-category-page .resource-category-transparency h2 { font-size: 1.2rem; }
+.resource-category-page .resource-category-transparency p { max-width: 80ch; color: var(--color-text-muted); font-size: .9rem; }
+.resource-category-page .resource-category-transparency .text-link { color: var(--color-accent-strong); }
