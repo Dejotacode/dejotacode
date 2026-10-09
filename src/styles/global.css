@@ -213,3 +213,6 @@ svg.action-arrow.action-arrow { width: var(--size-action-arrow); height: var(--s
 
 /* Canal de atendimento: símbolo estável ao lado do texto do botão. */
 svg.contact-channel-icon { flex-shrink: 0; width: 20px; height: 20px; }
+
+/* Símbolo do canal acompanha o contraste do botão, inclusive no primário ciano. */
+.button svg.contact-channel-icon { color: inherit; }

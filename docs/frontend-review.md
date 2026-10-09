@@ -292,3 +292,6 @@ Transição ampliada e mídia próxima do texto, com avanço sob a coluna de lei
 Atalhos Serviços/Parcerias movidos para atendimento conforme esboço, sem duplicação. Check zero erros/avisos, build 115 páginas, QA aprovado; oito combinações em 320/390/768/1440px e ambos temas sem overflow; destinos no atendimento conferidos, captura mobile inspecionada.
 Linux: terminal corresponde ao icon-system.md vigente e ao registro categoryIcons.ts. O ponto da auditoria é alternativa visual, não defeito de padronização; mantido o símbolo atual.
 Pendências restantes exigem revisão própria: inventário de Setup, organização editorial da trilha, Termos de Uso e assinatura incorporada nas artes. Sem publicação.
+
+## Correção de contraste WhatsApp — 09/10/2026
+Símbolo de canal nos botões passa a herdar a cor do texto, evitando ciano sobre ciano. Todos os CTA wa.me de Serviços agora têm o símbolo, inclusive diagnóstico, landing page e manutenção. Check/build/QA aprovados; 16 combinações de Contato/Serviços em quatro larguras e dois temas sem overflow, com símbolo presente e cor computada igual ao texto do botão. Sem publicação.
