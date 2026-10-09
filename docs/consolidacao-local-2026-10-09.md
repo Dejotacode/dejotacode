@@ -31,3 +31,12 @@ Documentos anteriores que citam 4322, a pasta release ou trabalho não commitado
 4. Atualizar capturas do Portfólio depois de estabilizar a interface.
 5. Aplicar Documento Mestre de padronização em etapa própria após finalizar as estruturas.
 6. Revisão final do usuário; publicação exige autorização específica.
+
+## Validação na pasta principal
+- Astro check: 78 arquivos, zero erros, avisos e hints.
+- Build: 115 páginas.
+- QA: zero links internos quebrados; 471 imagens e 259 controles, zero problemas básicos de HTML.
+- 356 arquivos de src/public comparados com a versão editorial auditada: hashes idênticos, exceto editorialVisuals, cuja única diferença é a ordem de linhas com conteúdo equivalente.
+- Servidor anterior da pasta release encerrado pelo gerenciamento do Astro; novo servidor em background na pasta principal, porta 4321. Porta 4322 permanece desativada.
+- A versão original não commitada do principal foi preservada adicionalmente em stash: recuperacao principal antes da consolidacao 20261009. Não aplicar esse stash sobre a consolidação sem comparar, pois duplicaria mudanças antigas.
+- Commit de integração: 9352332. Diretório temporário de merge removido após registrar o resultado; backups Git e pasta release preservados.
