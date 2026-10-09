@@ -39,7 +39,7 @@ Check/build/QA e 556 combinações de página/tela/tema concluídos; conteúdo, 
 2. Refinamentos específicos de cards/CTAs/recortes conforme divergências reais, sem redesenhar layouts aprovados.
 3. Confirmar equipamentos/armazenamento do Setup.
 4. Validar envio real dos formulários com a API configurada.
-5. Atualizar capturas do Portfólio após estabilizar a padronização.
+5. Capturas do Portfólio atualizadas localmente; revisar arte de programação com texto incorporado cortado.
 6. Publicação exige autorização específica; nenhum push/deploy nesta etapa.
 
 ## Validação na pasta principal
@@ -50,3 +50,7 @@ Check/build/QA e 556 combinações de página/tela/tema concluídos; conteúdo, 
 - Servidor anterior da pasta release encerrado pelo gerenciamento do Astro; novo servidor em background na pasta principal, porta 4321. Porta 4322 permanece desativada.
 - A versão original não commitada do principal foi preservada adicionalmente em stash: recuperacao principal antes da consolidacao 20261009. Não aplicar esse stash sobre a consolidação sem comparar, pois duplicaria mudanças antigas.
 - Commit de integração: 9352332. Diretório temporário de merge removido após registrar o resultado; backups Git e pasta release preservados.
+
+
+## Continuidade — etapas 3 e 4
+Formulários padronizados e estados testados com respostas simuladas. Capturas reais de Home, Blog e Trilhas no Portfólio atualizadas. Evidências e pendências em frontend-review.md e media-registry.md. Integrações reais e publicação continuam fora desta validação local.

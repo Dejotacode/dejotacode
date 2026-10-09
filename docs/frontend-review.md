@@ -202,3 +202,17 @@ Respostas de envio simuladas no navegador; nenhum POST real foi encaminhado. Ent
 Check: 78 arquivos sem erros/avisos/hints. Build: 115 páginas. QA: zero links quebrados e zero problemas básicos de HTML. Preservação: 260 hashes e manifesto de SEO/links/controles das 115 rotas sem diferenças.
 Busca mantém a validação da etapa anterior; não recebeu mudanças nesta etapa.
 Preview: http://localhost:4321/contato/ e http://localhost:4321/newsletter/. Somente local, sem publicação.
+
+
+## Quarta etapa — mídia e capturas do Portfólio
+| Página/modelo | Resultado |
+| --- | --- |
+| Home, Blog e Trilhas | Carregamento conferido; novas capturas reais usadas pelo Portfólio |
+| Store, Linux, produto e Setup | Imagens presentes e sem overflow; mídias aprovadas preservadas |
+| Recursos, Sobre, e-book e Guia iniciante | Imagens presentes e sem overflow; proporções preservadas |
+| Portfólio | Três capturas antigas substituídas pelo preview atual, mesmos caminhos e dimensões |
+
+12 representantes × 320/390/768/1440 × claro/escuro = 96 combinações. Sem overflow, imagens visíveis quebradas ou atributo alt ausente. A existência do alt não certifica sua qualidade semântica. Amostra fechada do e-book não foi tratada como imagem quebrada; teste de abertura consta na primeira etapa.
+Home/Blog/Trilhas capturados em 1280 × 960 no tema escuro e inspecionados visualmente. Somente três arquivos de mídia alterados; hashes/bytes atualizados no inventário. Código, conteúdo editorial, rotas, metadados e links não receberam alterações.
+Pendência: texto incorporado da capa de programação cortado nas Trilhas. Não é falha de carregamento; precisa revisão específica da arte. Origem/licença e modelos exatos de Setup continuam pendentes.
+Build/QA repetidos após a troca das capturas. Preview http://localhost:4321/portfolio/. Sem publicação.
