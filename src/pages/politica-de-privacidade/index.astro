@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../styles/institutional.css";
-import "../../styles/auxiliary.css";
+import CategoryIcon from "../../components/CategoryIcon.astro";
+import "../../styles/article.css";
+import "../../styles/privacy.css";
 
 const sections = [
   { id: "sobre", title: "Sobre esta política" },
@@ -24,30 +25,31 @@ const sections = [
   title="Política de Privacidade | DejotaCode"
   description="Entenda como o DejotaCode trata informações pessoais, quais dados podem ser coletados e quais direitos estão disponíveis aos usuários."
 >
-  <main id="conteudo" tabindex="-1" class="institutional-page privacy-page">
-    <header class="privacy-hero container">
-      <p class="eyebrow">PRIVACIDADE</p>
-      <h1>Política de Privacidade</h1>
-      <p class="privacy-hero__lead">Transparência sobre quais dados podem ser tratados, por que isso acontece e quais escolhas você tem.</p>
-      <p class="privacy-hero__updated">Última atualização: 7 de outubro de 2026</p>
+  <main id="conteudo" tabindex="-1" class="article-page privacy-page">
+    <header class="article-hero container">
+      <nav class="breadcrumbs" aria-label="Navegação estrutural">
+        <a href="/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Política de Privacidade</span>
+      </nav>
+      <div class="article-hero__content">
+        <p class="article-category"><CategoryIcon icon="shield-check" size={17} /><span class="article-category__name">PRIVACIDADE</span></p>
+        <h1>Política de Privacidade</h1>
+        <p class="article-hero__description">Transparência sobre quais dados podem ser tratados, por que isso acontece e quais escolhas você tem.</p>
+        <div class="article-meta"><span class="article-meta__item"><CategoryIcon icon="calendar" size={15} /><span>Última atualização: <time datetime="2026-10-07">7 de outubro de 2026</time></span></span></div>
+      </div>
     </header>
-
-    <div class="legal-layout container privacy-layout">
-      <details class="privacy-mobile-nav">
-        <summary>Nesta página</summary>
-        <nav aria-label="Seções da política de privacidade">
-          {sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
+    <div class="article-layout container">
+      <aside class="article-aside" aria-label="Sumário da política">
+        <nav class="article-aside__desktop" aria-label="Neste conteúdo">
+          <p class="article-aside__title">Neste conteúdo</p>
+          <ol>{sections.map((section) => <li><a href={`#${section.id}`}>{section.title}</a></li>)}</ol>
         </nav>
-      </details>
-
-      <aside class="privacy-aside">
-        <nav class="legal-nav" aria-label="Nesta página">
-          <strong>NESTA PÁGINA</strong>
-          {sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
-        </nav>
+        <details class="article-aside__mobile">
+          <summary>Neste conteúdo</summary>
+          <ol>{sections.map((section) => <li><a href={`#${section.id}`}>{section.title}</a></li>)}</ol>
+        </details>
       </aside>
 
-      <article class="legal-content privacy-content">
+      <article class="article-content privacy-content">
         <section id="sobre">
           <span class="eyebrow">01</span>
           <h2>Sobre esta política</h2>

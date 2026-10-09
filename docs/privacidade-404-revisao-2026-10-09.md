@@ -10,3 +10,8 @@ Privacidade: abertura alinhada à esquerda, escala compacta de títulos e espaç
 Validação: Astro check sem erros/avisos/hints; build 115 páginas; QA HTML/links sem problemas, 471 imagens e 260 controles. Chromium: duas páginas em 320/390/768/1440 px, claro/escuro (16 combinações); sem overflow, um H1, âncoras válidas, temas corretos, Privacidade 200 e rota inexistente 404. Sumário abre por teclado e link navega para a seção Dados; busca da 404 encaminha linux à Busca. Capturas desktop escuro e mobile claro inspecionadas. Nenhuma alteração de conteúdo jurídico nem auditoria jurídica nesta etapa.
 
 Próximo passo: revisão visual do usuário e regressão/consolidação de cabeçalho e rodapé. Setup e entrega real de formulários continuam pendentes conforme consolidação.
+
+## Política no padrão dos artigos — ajuste solicitado
+Política agora importa article.css e reutiliza article-page, article-hero, breadcrumbs, article-category, article-meta, article-layout, article-aside e article-content. Título, descrição, metadados, coluna de leitura, tipografia e sumário desktop/mobile usam a base real dos artigos. Ícones oficiais de privacidade e calendário. Números decorativos das seções ocultos visualmente. privacy.css contém apenas exceções da página; regras antigas de Privacidade removidas de auxiliary.css, que continua exclusivo da 404. Corpo completo das 13 seções preservado byte a byte; data, links e SEO preservados.
+
+Check sem erros/avisos/hints; build 115 páginas; QA sem links quebrados/problemas básicos de HTML. Reteste de Privacidade e 404 em quatro larguras e dois temas: 16 combinações sem falhas. Sumário por teclado, âncoras e busca da 404 funcionando. Captura desktop escuro inspecionada. Sem publicação.
