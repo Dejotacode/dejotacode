@@ -23,3 +23,6 @@ Aplicação técnica local do Documento Mestre e revisão técnica das famílias
 [Revisão pública anterior](revisao-final-publica-2026-10-09.md) é o retrato anterior à aplicação do Documento Mestre; pendências atuais em frontend-review.md prevalecem.
 Arquivos datados ou versionados registram etapas anteriores, não regras concorrentes. Históricos mantêm seus caminhos para não quebrar referências.
 Sistema visual antigo em history/. Em conflito visual, Documento Mestre e catálogo vigente prevalecem; registrar a decisão.
+
+
+Newsletter em preparação: [integração Brevo](newsletter-brevo-integracao-2026-10-09.md), lista/template configurados, integração ainda desativada.

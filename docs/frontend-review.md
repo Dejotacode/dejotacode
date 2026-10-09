@@ -402,3 +402,8 @@ Pendências atuais: revisão visual final conjunta e publicação específica do
 Foto enviada por Dejota e autorização para descrição genérica: Hub USB multifuncional 6 em 1. Marca e modelo não identificados; nenhum fabricante, velocidade, áudio ou outra especificação inferida da aparência. Informação pública atualizada localmente, sem vínculo comercial ou publicação do frontend. Identificação exata permanece opcional e pendente de etiqueta/link de compra.
 
 Validação do texto do hub: check/build/QA aprovados, 115 páginas, zero links internos quebrados e zero problemas básicos de HTML. Setup em 320/390/768/1440 nos temas claro/escuro: oito combinações com texto atualizado e sem overflow. Primeira tentativa durante recarga do preview interrompida; rodada estável posterior passou.
+
+
+## Newsletter — integração Brevo local, 09/10/2026
+
+Newsletter (rota `/newsletter/`): texto e variante Guia orientam confirmação por e-mail; redirect imediato removido; consentimento e analytics preservados. Registro: [Integração newsletter](newsletter-brevo-integracao-2026-10-09.md). Revisão local, sem publicação/envio real.
