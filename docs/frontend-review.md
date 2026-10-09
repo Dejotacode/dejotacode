@@ -284,3 +284,6 @@ Tokens compartilhados e regra CSS documentados. Botão inicial da trilha atualiz
 
 ## Setas restantes — 09/10/2026
 E-book, Portfólio, Store, Recursos, Trilhas e paginação usam SVG compartilhado nas ações antes representadas por glifos. Check zero erros/avisos; build 115 páginas; QA aprovado. Preview de seis rotas em quatro larguras e dois temas: 48 combinações sem overflow e sem setas vazias/ocultas. Links, downloads e analytics preservados. Sem publicação; degradês e decisão de Linux pendentes.
+
+## Degradês Home e Store — 09/10/2026
+Transição ampliada e mídia próxima do texto, com avanço sob a coluna de leitura no desktop e transição vertical no celular. Assets, texto e destinos preservados. Check sem erros/avisos, build 115 páginas e QA aprovado. Preview em 320/390/768/1440px e claro/escuro: 16 combinações sem overflow; capturas de Home/Store em desktop e celular inspecionadas em ambos os temas representativos. Revisão visual do usuário pendente. Sem publicação.

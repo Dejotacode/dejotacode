@@ -94,3 +94,6 @@ CTA normal usa --size-title-cta = clamp(1.6rem,3vw,2.4rem). Cards regulares de B
 
 ## Setas de ação — padrão aprovado em 09/10/2026
 Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-arrow: --size-action-arrow 18px em links/cards e --size-action-arrow-primary 20px em .button-primary. Decorativas com aria-hidden; nome do destino permanece no texto. Variante arrow-up-right preserva indicação externa quando já usada em recomendações. Não converter setas que fazem parte de texto editorial ou fluxos de dados. Botões com rótulo dinâmico preservam o SVG e atualizam somente o nó do texto.
+
+## Hero com imagem integrada — revisão local 09/10/2026
+Home e Store usam grid sem intervalo e mídia com avanço de 5rem sob a coluna de texto; texto em camada superior. Máscara horizontal tem fade até 42% e termina suavemente na borda oposta. No celular, avanço vertical de 1–1,5rem e máscara vertical até 35%. Home respeita superfície do painel; Store respeita fundo da página. Não mudar as imagens para criar o efeito; títulos e ações permanecem HTML. Aplicação restrita aos dois heroes, sem alterar cards do catálogo.

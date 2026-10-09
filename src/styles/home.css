@@ -107,3 +107,21 @@
   .home-content-media { aspect-ratio: auto; min-height: 0; height: auto; }
   .home-content-media .visual-media { min-height: 0; height: auto; width: 100%; }
 }
+
+/* Hero integrado: mídia avança sob a área de leitura, com fade gradual. */
+.home-editorial .hero-grid { isolation: isolate; gap: 0; }
+.home-editorial .hero-copy { position: relative; z-index: 1; }
+.home-editorial .hero-visual { margin-left: -5rem; border-radius: 0; background: transparent; }
+.home-editorial .hero-visual img {
+  mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 88%, transparent 100%);
+}
+.home-editorial .hero-visual::after { background: linear-gradient(0deg, var(--color-surface-soft), transparent 30%); }
+@media(max-width: 40rem) {
+  .home-editorial .hero-visual { margin-left: 0; margin-top: -1.5rem; }
+  .home-editorial .hero-visual img {
+    mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 85%, transparent 100%);
+  }
+  .home-editorial .hero-visual::after { background: none; }
+}
