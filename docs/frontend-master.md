@@ -289,3 +289,7 @@ Card de artigo regular: --size-card-title clamp(1.1rem,1.6vw,1.35rem), entrelinh
 Destaque editorial: --size-card-title-featured. Trilhas mantêm variante --size-card-title-trail; cards comerciais e utilitários mantêm variantes de sua função.
 CTA normal: --size-title-cta; compactos de artigo continuam menores conforme seu contexto documentado. Botões mantêm alvo de 44px e removem transição em redução de movimento.
 Recortes existentes preservados: Blog usa foco superior esquerdo; Store foco central salvo capas específicas; e-book página integral. Não substituir imagens para igualar layouts.
+
+
+### Formulários — aplicação da terceira etapa
+Campos públicos de Contato e Newsletter usam tipografia do corpo com 1rem. Estados de envio anunciam aria-busy; ao finalizar, preservar a estrutura original do botão. Rótulos, consentimento, validação e mensagens de retorno permanecem obrigatórios. Testes de interface podem simular a API; não equivalem a entrega real. Andamento e evidências em frontend-review.md.

@@ -193,3 +193,12 @@ Nenhuma mudança de mídia: recortes aprovados e URLs preservados. Auditoria ant
 Check/build/QA passaram; 260 hashes e manifesto de 115 rotas/metadados/links/controles continuam idênticos.
 Reteste de 27 representantes em 320/768, ambos temas: 108 combinações, sem problemas. Blog/categoria/Home/artigo também conferidos em 390/1440, ambos temas.
 Etapa local; sem aprovação de publicação.
+
+
+## Terceira etapa — formulários e estados de interação
+Contato e Newsletter: tipografia dos campos alinhada ao corpo, estado de carregamento com aria-busy e cursor de progresso. O adaptador compartilhado restaura os nós originais do botão, preservando a seta e demais marcações após sucesso ou erro.
+Validação no Chromium: duas páginas × 320/1440 × claro/escuro = oito combinações. Campos obrigatórios e consentimento bloquearam envio inválido; carregamento desabilitou o botão; erro 429 preservou os campos; sucesso restaurou o botão e limpou o formulário. Fonte de 16px e ausência de overflow verificadas.
+Respostas de envio simuladas no navegador; nenhum POST real foi encaminhado. Entrega real pela API permanece pendente.
+Check: 78 arquivos sem erros/avisos/hints. Build: 115 páginas. QA: zero links quebrados e zero problemas básicos de HTML. Preservação: 260 hashes e manifesto de SEO/links/controles das 115 rotas sem diferenças.
+Busca mantém a validação da etapa anterior; não recebeu mudanças nesta etapa.
+Preview: http://localhost:4321/contato/ e http://localhost:4321/newsletter/. Somente local, sem publicação.

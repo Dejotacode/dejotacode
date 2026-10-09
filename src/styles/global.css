@@ -193,3 +193,13 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .button { transition: none; }
 }
+
+/* Public acquisition forms share control typography; layout stays local. */
+:is(.contact-page, .newsletter-page) .field :is(input, select, textarea) {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+:is(.contact-page, .newsletter-page) form[aria-busy="true"] button[type="submit"] {
+  cursor: progress;
+}
