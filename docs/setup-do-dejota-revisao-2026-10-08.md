@@ -32,3 +32,8 @@ Revisão final: oito combinações de viewport/tema sem overflow, foco visível,
 
 ## Aprovação visual
 Usuário aprovou o visual local. Modelos e divergência de armazenamento seguem pendentes; publicação não autorizada.
+
+## Reconferência local — 09/10/2026, oitava etapa
+Leitura somente: i5-3470, quatro núcleos/threads; RAM aproximadamente 16 GB; placa H61 V1.3, fabricante não identificado; vídeo Intel integrado; CachyOS. EDID apresenta SAMSUNG, sem modelo comercial legível. Entradas Logitech Wireless Keyboard PID:4023 e Wireless Mouse PID:4022 não identificam modelos comerciais com segurança. Nenhum serial, UUID ou identificador pessoal foi registrado.
+Armazenamento conectado: WDC WD6400BPVT-75HXZT3 SATA, aproximadamente 640 GB comerciais (596,2 GiB); zram é memória comprimida, não outro disco físico. SSD 128 GB, HD Samsung 160 GB e HD 500 GB não aparecem nesta leitura. Usuário respondeu que precisa conferir; manter pendência, sem substituir sua declaração ou relacionar os discos por inferência.
+Página e catálogo preservados. Modelos de TV, teclado, mouse e hub continuam pendentes. Esta etapa não altera interface e não exige novo build; validações da etapa anterior permanecem como evidências anteriores. Preview http://localhost:4321/store/setup-do-dejota/. Sem publicação.
