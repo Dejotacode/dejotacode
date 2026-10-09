@@ -298,3 +298,6 @@ Símbolo de canal nos botões passa a herdar a cor do texto, evitando ciano sobr
 
 ## Case de Serviços — reprodução do notebook do esboço, 09/10/2026
 Moldura e base em CSS, com captura atual da Home; imagens aprovadas da Home não substituídas. Check zero erros/avisos; build 115 páginas; QA aprovado. Oito combinações em 320/390/768/1440 nos dois temas sem overflow e captura carregada; screenshots desktop escuro e mobile claro inspecionadas. Revisão visual do usuário pendente; sem publicação.
+
+## Refinamento do notebook — 09/10/2026
+Acabamento metálico vertical da base, borda suavizada, câmera discreta e sombra de apoio; captura e links preservados. Check/build/QA aprovados; oito combinações de largura/tema sem overflow, screenshot desktop inspecionada. Sem publicação.
