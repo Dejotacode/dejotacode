@@ -102,3 +102,7 @@ Dejota aprovou o visual final às 14:03 BRT. Armazenamento reconciliado e ilustr
 
 ## Tela e periféricos confirmados — 09/10/2026
 Dejota informou teclado Logitech K270 e mouse Logitech M150. Foto da tela de informações da TV confirma Samsung UN43T5300AGXZD, usada como monitor de 43 polegadas conforme declaração anterior. Apenas o modelo foi transcrito; números de série e identificadores do dispositivo excluídos. Modelos do teclado/mouse registrados como declaração do usuário, sem inferir especificações adicionais. No inventário de equipamentos, somente o modelo do hub USB continua pendente. Página atualizada localmente; sem publicação.
+
+
+## Revisão do conjunto — 09/10/2026
+Home, Store, Blog, Trilhas, Contato, Serviços, Portfólio, Setup, Recursos e Sobre: 320/390/768/1440 px nos dois temas, 80 combinações. HTTP 200, um main/h1 principal por página, imagens locais carregadas e nenhum overflow horizontal. Aberturas de Home/Store/Contato/Serviços no desktop escuro inspecionadas em montagem: nenhum novo ajuste identificado na amostra. Evidência em revisao-conjunto-validacao-2026-10-09.json. Esta rodada não cobre todos os recortes de todas as páginas, contraste completo, envio real de formulários, leitor de tela ou navegadores alternativos. Nenhuma interface alterada; não exige repetir build/QA aprovados na alteração anterior. Hub USB permanece pendente de modelo; conteúdo de Termos e integrações reais seguem separados. Sem publicação.
