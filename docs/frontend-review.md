@@ -381,3 +381,7 @@ Validação dos modelos: check/build/QA aprovados; 8 combinações de largura/te
 
 ## Revisão do conjunto — 09/10/2026
 Home, Store, Blog, Trilhas, Contato, Serviços, Portfólio, Setup, Recursos e Sobre: 320/390/768/1440 px nos dois temas, 80 combinações. HTTP 200, um main/h1 principal por página, imagens locais carregadas e nenhum overflow horizontal. Aberturas de Home/Store/Contato/Serviços no desktop escuro inspecionadas em montagem: nenhum novo ajuste identificado na amostra. Evidência em revisao-conjunto-validacao-2026-10-09.json. Esta rodada não cobre todos os recortes de todas as páginas, contraste completo, envio real de formulários, leitor de tela ou navegadores alternativos. Nenhuma interface alterada; não exige repetir build/QA aprovados na alteração anterior. Hub USB permanece pendente de modelo; conteúdo de Termos e integrações reais seguem separados. Sem publicação.
+
+
+## Navegação principal — fechamento funcional, 09/10/2026
+Nove verificações no Chromium local: troca de tema e persistência após recarga em 390/1440 px; menu mobile abre e fecha com Escape; busca desktop abre com foco no campo, Escape fecha e devolve foco ao botão; envio de consulta linux navega para /busca/?q=linux e apresenta conteúdo relacionado. Solicitações externas bloqueadas, sem formulários de contato/newsletter enviados. Nenhum defeito encontrado nos cenários testados. Não equivale a teste completo por leitor de tela ou outros navegadores. Nenhuma interface alterada; validações de build/QA da última alteração permanecem como evidências anteriores.

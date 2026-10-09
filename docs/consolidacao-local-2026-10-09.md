@@ -106,3 +106,7 @@ Dejota informou teclado Logitech K270 e mouse Logitech M150. Foto da tela de inf
 
 ## Revisão do conjunto — 09/10/2026
 Home, Store, Blog, Trilhas, Contato, Serviços, Portfólio, Setup, Recursos e Sobre: 320/390/768/1440 px nos dois temas, 80 combinações. HTTP 200, um main/h1 principal por página, imagens locais carregadas e nenhum overflow horizontal. Aberturas de Home/Store/Contato/Serviços no desktop escuro inspecionadas em montagem: nenhum novo ajuste identificado na amostra. Evidência em revisao-conjunto-validacao-2026-10-09.json. Esta rodada não cobre todos os recortes de todas as páginas, contraste completo, envio real de formulários, leitor de tela ou navegadores alternativos. Nenhuma interface alterada; não exige repetir build/QA aprovados na alteração anterior. Hub USB permanece pendente de modelo; conteúdo de Termos e integrações reais seguem separados. Sem publicação.
+
+
+## Encerramento desta rodada de revisão — 09/10/2026
+Revisão de layout das dez páginas principais (80 combinações) e navegação principal (9 verificações) concluídas, sem novos defeitos identificados nos cenários testados. Correções visuais autorizadas, assinaturas, capturas e Setup concluídos localmente. Preview 4321 disponível para revisão do usuário. Pendências: modelo do hub USB, decisão de conteúdo de Termos, entrega real de e-mails/notificações, leitor de tela e navegadores alternativos. Não iniciar implementação dessas frentes por simples repetição desta revisão; definir a próxima frente pelo objetivo do usuário. Sem push/deploy/publicação.
