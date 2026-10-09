@@ -40,3 +40,7 @@ Consulta autorizada pelo usuário encontrou exatamente o teste na caixa de entra
 
 ## Binding pronto para revisão — 09/10/2026
 Configuração local da API declara CONTACT_EMAIL e remetente limitado ao domínio nos três ambientes, com flag false explícita em todos; destinatário pessoal ainda não configurado nem versionado. Check, sete cenários simulados e bundle Wrangler dry-run aprovados. Nenhum envio adicional ou deploy. Antes de ativar, configurar destinatário privado e restringir binding ao destino concreto; validar fluxo real da rota em ambiente controlado. Revisão visual e teste de transporte concluídos; ativação pública exige autorização de publicação própria.
+
+
+## Fluxo local completo validado — 09/10/2026
+Destinatário conhecido preparado em arquivo privado ignorado da API, permissão 0600 e flag false; não é carregado automaticamente pelo Worker. Teste isolado em 8788, banco temporário novo, binding remote=false e destinatário fictício: POST direto e envio pela tela mobile de Contato passaram. Dois contatos fictícios persistidos; retorno 201 e notificações simuladas observadas. Servidor isolado encerrado; frontend 4321/API habitual preservados. Nenhum e-mail real adicional ou publicação. Resta ativação/configuração concreta do destino restrito em ambiente escolhido e validação pós-implantação; produção desativada.
