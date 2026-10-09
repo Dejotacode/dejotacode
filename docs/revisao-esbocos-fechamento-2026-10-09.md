@@ -9,11 +9,13 @@ Escopo: revisão local, sem push ou publicação. Referência de marca: public/a
 | Trilhas / Linux do zero | P1 | Teste sem instalação movido à posição 3, ainda opcional; comandos, permissões e pipe seguem em sequência. Progresso por slug preservado. |
 | Contato e Serviços | P1 | Ícones WhatsApp e contraste já corrigidos; atalhos comerciais e notebook revisados nas etapas anteriores. |
 | Home e Store | P2 | Setas e transições revisadas nas etapas anteriores; avaliação visual conjunta do usuário ainda necessária. |
-| Blog e Store / artes | P2 | Inventário individual abaixo; assinaturas com e sem fundo, escalas e margens distintas. Não editar raster em lote: preparar tratamento por imagem após escolha do padrão visual. |
-| Setup do Dejota | P1 editorial | Leitura atual: WDC WD6400BPVT-75HXZT3, 596,2 GiB (classe comercial 640 GB). Relação com SSD 128 GB e HDs 160/500 GB declarados continua sem confirmação; conteúdo preservado. |
+| Blog e Store / artes | P2 | Concluído: padrão aprovado e 49 versões integradas localmente; 48 usadas em 81 rotas. Originais e mestres preservados; galeria de comparação em 4323. |
+| Setup do Dejota | P1 editorial | Concluído: SSD Rapidin 128 GB, Samsung HM160HI 160 GB e Western Digital WD6400BPVT 640 GB confirmados. Ilustração ampliada aprovada pelo usuário. Modelos de TV e periféricos ainda pendentes. |
 | Rodapé / Termos de Uso | P2 conteúdo | Item de esboço antigo sem página atual. Não inserir destino inexistente. Necessidade e texto continuam pendência de conteúdo; esta revisão não determina obrigação jurídica. |
 
-## Artes mapeadas e pontos para revisão conjunta
+## Inventário histórico da triagem inicial
+
+As observações abaixo descrevem os rasters originais antes do tratamento. Não são pendências atuais de assinatura. Mapeamento vigente, versões e hashes em docs/brand/signature-batch-20261009.json; 12 imagens sem assinatura ficaram fora do lote.
 
 | Caminho do raster | Prioridade | Observação de triagem |
 | --- | --- | --- |
@@ -83,3 +85,8 @@ Escopo: revisão local, sem push ou publicação. Referência de marca: public/a
 Astro check: 78 arquivos, zero erros, avisos e hints. Build: 115 páginas. QA: 6.382 referências internas, zero destinos quebrados; HTML básico passou. Trilha Linux em 320/390/768/1440, claro/escuro: oito combinações sem overflow; dois artigos concluídos preservados e 40% de progresso essencial. Nenhum teste de envio real ou publicação.
 
 Arquivo novo ottocast-mini-cube-3-0.md encontrado durante a retomada: preservado e excluído do commit desta revisão, pois não pertence a esta alteração.
+
+
+## Fechamento atualizado — 09/10/2026, 14:04 BRT
+Usuário aprovou o visual final do Setup: SVG decorativo com monitor/editor, gabinete, teclado, mouse, planta e porta-lápis, ampliado no desktop com avanço sob a descrição e fade discreto. Evidências técnicas da alteração em frontend-review.md. Capturas do Portfólio e notebook de Serviços sincronizadas com o site atualizado.
+Próxima revisão conjunta no preview 4321: Home, Store, Blog/artigos, Trilhas, Contato/Serviços, Portfólio e Setup. Pendências separadas: identificar modelos da TV/periféricos, decidir conteúdo de Termos de Uso, validar entrega real de e-mails e testar leitor de tela/navegadores alternativos. Nenhum push ou deploy autorizado.

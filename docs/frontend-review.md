@@ -368,3 +368,7 @@ SetupIllustration.astro substitui a moldura CSS simples por SVG decorativo respo
 Validação: check/build/QA aprovados; 8 combinações de largura e tema sem overflow; captura desktop escura inspecionada. Ajuste local, sem publicação.
 
 Setup: ilustração ampliada e deslocada 7rem à esquerda no desktop, com fade e texto em camada superior. Check/build/QA aprovados e 8 combinações responsivas/temas sem overflow; captura desktop inspecionada. Sem publicação.
+
+
+## Aprovação e fechamento atual do Setup — 09/10/2026
+Dejota aprovou o visual final às 14:03 BRT. Armazenamento reconciliado e ilustração ampliada concluídos localmente; somente modelos comerciais da TV, teclado, mouse e hub permanecem pendentes nessa página. Estado atual da revisão dos esboços consolidado em revisao-esbocos-fechamento-2026-10-09.md; entradas anteriores são histórico. Próxima etapa: revisão visual conjunta do conjunto no preview 4321. Integrações externas e publicação permanecem etapas separadas. Esta rodada altera somente documentação; validações anteriores continuam identificadas como evidência das respectivas alterações.

@@ -94,3 +94,7 @@ Padrão de assinaturas e atualização das capturas concluídos localmente. Setu
 ## Armazenamento confirmado — 09/10/2026
 Dejota confirmou que o disco anteriormente informado como 500 GB é o Western Digital WD6400BPVT de 640 GB detectado localmente. Foto confirma SSD Rapidin SATA de 128 GB e Samsung HM160HI de 160 GB em case USB. Finalidades mantidas conforme declaração do usuário; a foto não certifica conexão atual nem disco de inicialização. Página /store/setup-do-dejota/ atualizada, sem números de série. Pendências de modelos da TV, teclado, mouse e hub permanecem. Sem publicação.
 Validação desta alteração: check sem erros/avisos; build de 115 páginas; QA de links/HTML aprovado. Setup conferido em 320/390/768/1440 px nos dois temas (8 combinações), sem overflow, com conteúdo confirmado e foco inicial por teclado.
+
+
+## Aprovação e fechamento atual do Setup — 09/10/2026
+Dejota aprovou o visual final às 14:03 BRT. Armazenamento reconciliado e ilustração ampliada concluídos localmente; somente modelos comerciais da TV, teclado, mouse e hub permanecem pendentes nessa página. Estado atual da revisão dos esboços consolidado em revisao-esbocos-fechamento-2026-10-09.md; entradas anteriores são histórico. Próxima etapa: revisão visual conjunta do conjunto no preview 4321. Integrações externas e publicação permanecem etapas separadas. Esta rodada altera somente documentação; validações anteriores continuam identificadas como evidência das respectivas alterações.
