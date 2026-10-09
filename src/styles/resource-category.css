@@ -2,7 +2,7 @@
 .resource-category-page .resource-category-hero { padding-block: 2rem 1.5rem; text-align: left; }
 .resource-category-page .resource-category-back { margin-bottom: 1rem; }
 .resource-category-page .resource-category-hero__icon { margin: 0 0 .8rem; }
-.resource-category-page .resource-category-hero h1 { font-size: clamp(2rem,4vw,3rem); line-height: 1.15; overflow-wrap: anywhere; }
+.resource-category-page .resource-category-hero h1 {   overflow-wrap: anywhere; font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .resource-category-page .resource-category-hero > p:not(.eyebrow) { margin-left: 0; font-size: 1rem; }
 .resource-category-page .resource-category-hero__meta { justify-content: flex-start; margin-top: 1rem; }
 .resource-category-page .resource-category-switcher { justify-content: flex-start; padding-bottom: 1.25rem; }

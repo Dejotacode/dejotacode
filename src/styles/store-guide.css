@@ -2,9 +2,9 @@
 .store-guide-page .container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); margin-inline: auto; }
 .store-guide-page .breadcrumbs { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: 1.5rem; color: var(--color-text-subtle); font-size: .82rem; }
 .store-guide-page .breadcrumbs a { color: inherit; }
-.store-guide-page .eyebrow { margin: 0; color: var(--color-accent-strong); font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.store-guide-page .eyebrow { margin: 0;      font: var(--type-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-strong);}
 .store-guide-page .guide-hero { max-width: 76ch; padding-block: 2.5rem 1.5rem; border-bottom: 1px solid var(--color-border); }
-.store-guide-page .guide-hero h1 { max-width: 25ch; margin: .65rem 0 1rem; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.1; letter-spacing: -.035em; }
+.store-guide-page .guide-hero h1 { max-width: 25ch; margin: .65rem 0 1rem;    font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .store-guide-page .guide-hero > p:last-child { margin: 0; color: var(--color-text-muted); font-size: 1.08rem; line-height: 1.7; }
 .store-guide-page .guide-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, .42fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; padding-block: 1.75rem 2rem; }
 .store-guide-page .guide-copy { max-width: 72ch; font-size: 1.05rem; line-height: 1.85; }

@@ -27,6 +27,24 @@
   --grid-pattern: linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
 
+  /* Shared roles: use the same role for the same function in every theme. */
+  --type-eyebrow: 600 .73rem/1.5 var(--font-code);
+  --tracking-eyebrow: .1em;
+  --size-title-page: clamp(2rem, 4vw, 3.3rem);
+  --size-title-media: clamp(2rem, 3.8vw, 3.5rem);
+  --size-title-reading: clamp(1.8rem, 3vw, 2.8rem);
+  --size-title-section: clamp(1.5rem, 2.5vw, 2rem);
+  --leading-title: 1.15;
+  --leading-section: 1.25;
+  --tracking-title: -.035em;
+  --tracking-section: -.025em;
+  --size-card-title: 1.05rem;
+  --size-card-title-featured: clamp(1.45rem, 2.4vw, 2.15rem);
+  --size-card-title-trail: 1.35rem;
+  --size-meta: .82rem;
+  --space-control: 2.75rem;
+  --space-brand-protection: .5rem;
+
   --container: 73.75rem;
   --space-page: clamp(1rem, 4vw, 2rem);
   --radius-sm: 0.5rem;

@@ -4,7 +4,7 @@
 .not-found__copy { min-width: 0; max-width: 52rem; }
 .not-found__status { display: flex; align-items: center; gap: 1rem; margin: 0 0 1.5rem; color: var(--color-text-subtle); font: 600 .9rem/1.4 var(--font-code); }
 .not-found__status svg { flex-shrink: 0; color: var(--color-accent-strong); }
-.not-found h1 { margin: 0 0 1rem; font-size: clamp(2rem,3vw,2.8rem); line-height: 1.16; letter-spacing: -.035em; }
+.not-found h1 { margin: 0 0 1rem;    font-size: var(--size-title-reading); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .not-found__lead { max-width: 48rem; margin: 0; color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; }
 .not-found__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
 .not-found__find { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; margin-top: 1.25rem; color: var(--color-accent-strong); font-weight: 650; text-decoration: none; }

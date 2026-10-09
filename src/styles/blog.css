@@ -4,19 +4,18 @@
   width: min(calc(100% - (2 * var(--space-page))), var(--container));
   justify-items: start; text-align: left; gap: .85rem;
 }
-.blog-page .editorial-hero > .eyebrow { margin: 0; color: var(--color-accent-strong); font: 600 .73rem/1.4 var(--font-code); letter-spacing: .18em; text-transform: uppercase; }
+.blog-page .editorial-hero > .eyebrow { margin: 0;     font: var(--type-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-strong);}
 .blog-page .editorial-hero h1 {
-  max-width: 28ch; font-size: clamp(2rem, 4vw, 3.3rem);
-  line-height: 1.15; letter-spacing: -.045em;
-}
+  max-width: 28ch;
+    font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .editorial-page.blog-page > .editorial-hero.container .editorial-hero__lead { max-width: 55rem; margin-inline: 0; font-size: clamp(1rem, 1.5vw, 1.15rem); }
 .editorial-page.blog-page > .editorial-hero.container .category-list { justify-content: flex-start; margin-top: .65rem; gap: .65rem; }
 .blog-page .category-list a { border-radius: .65rem; padding: .7rem .85rem; color: var(--color-text-muted); font-size: .9rem; }
 .blog-page .category-list svg { color: var(--color-accent-strong); flex-shrink: 0; }
 .blog-page .editorial-section { margin-top: 2rem; }
 .blog-page .section-heading { margin-bottom: 1.25rem; gap: 1rem; }
-.blog-page .section-heading h2 { font-size: clamp(1.6rem, 2.8vw, 2.25rem); }
-.blog-page .section-heading .eyebrow { display: none; }
+.blog-page .section-heading h2 { font-size: var(--size-title-section); line-height: var(--leading-section); letter-spacing: var(--tracking-section);}
+.blog-page .section-heading .eyebrow { display: none; font: var(--type-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-strong);}
 .blog-page .section-heading > p { margin: 0; font-size: .9rem; }
 .blog-page .post-card { min-width: 0; min-height: 0; border-radius: .7rem; }
 .blog-page .post-card--featured { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); padding: .85rem; gap: 1.75rem; }

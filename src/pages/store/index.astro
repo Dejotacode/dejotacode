@@ -4,8 +4,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getStoreMerchants } from "../../lib/storeOffers";
 import StoreCard from "../../components/store/StoreCard.astro";
 import StoreCategoryNav from "../../components/store/StoreCategoryNav.astro";
-import CategoryIcon from "../../components/CategoryIcon.astro";
-import Pagination from "../../components/Pagination.astro";
+import CategoryIcon from "../../components/ui/CategoryIcon.astro";
+import Pagination from "../../components/ui/Pagination.astro";
 import "../../styles/store-catalog.css";
 const PAGE_SIZE = 12;
 const products = (await getCollection("storeProducts", ({ data }) => !data.draft && data.catalogStage !== "avaliacao"))

@@ -3,14 +3,14 @@
 .newsletter-page *, .beginner-guide-page * { min-width: 0; }
 .newsletter-page .newsletter-hero { padding-block: 2.5rem; }
 .newsletter-page .newsletter-hero__grid { grid-template-columns: minmax(0,1fr) minmax(0,.9fr); gap: clamp(1.5rem,4vw,3rem); }
-.newsletter-page .newsletter-intro h1 { max-width: 19ch; font-size: clamp(2rem,4vw,3.25rem); line-height: 1.12; }
+.newsletter-page .newsletter-intro h1 { max-width: 19ch;   font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .newsletter-page .newsletter-intro > p:not(.eyebrow) { font-size: 1rem; }
 .newsletter-page .newsletter-signup { padding: 1.5rem; border-radius: var(--radius-lg); }
 .newsletter-page .newsletter-signup h2 { font-size: 1.5rem; }
 .newsletter-page .newsletter-signup form { margin-top: 1rem; gap: 1rem; }
 .newsletter-page .newsletter-benefits-section { margin-top: 2rem; padding-bottom: 2rem; }
 .newsletter-page .institutional-heading { margin-bottom: 1.25rem; }
-.newsletter-page .institutional-heading h2 { max-width: 28ch; font-size: clamp(1.5rem,2.5vw,2rem); }
+.newsletter-page .institutional-heading h2 { max-width: 28ch; font-size: var(--size-title-section); line-height: var(--leading-section); letter-spacing: var(--tracking-section);}
 .newsletter-page .newsletter-benefits .institutional-card { min-height: 0; padding: 1.25rem; }
 .newsletter-page .newsletter-benefits .institutional-card svg { display: block; margin-bottom: .75rem; color: var(--color-accent-strong); }
 .newsletter-page .newsletter-benefits .institutional-card h3 { margin-top: .65rem; font-size: 1.2rem; }
@@ -18,7 +18,7 @@
 .newsletter-page .newsletter-promise { gap: 1.5rem; }
 .newsletter-page .newsletter-promise h2 { max-width: 28ch; font-size: clamp(1.5rem,2.5vw,2rem); }
 .beginner-guide-page .institutional-hero { padding-block: 2.5rem 1.5rem; grid-template-columns: minmax(0,1.3fr) minmax(0,.7fr); gap: 2rem; }
-.beginner-guide-page .institutional-hero h1 { max-width: 22ch; font-size: clamp(2rem,4vw,3.25rem); line-height: 1.12; }
+.beginner-guide-page .institutional-hero h1 { max-width: 22ch;   font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .beginner-guide-page .institutional-hero__copy > p:last-of-type { font-size: 1rem; }
 .beginner-guide-page .guide-overview { display: grid; gap: .9rem; padding: 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
 .beginner-guide-page .guide-overview svg { color: var(--color-accent-strong); }
@@ -32,12 +32,12 @@
 .beginner-guide-page section[id] { scroll-margin-top: 6rem; }
 .beginner-guide-page .institutional-section { margin-top: 2rem; }
 .beginner-guide-page .institutional-heading { margin-bottom: 1.25rem; gap: 1.5rem; }
-.beginner-guide-page .institutional-heading h2 { max-width: 30ch; font-size: clamp(1.5rem,2.5vw,2rem); line-height: 1.2; }
+.beginner-guide-page .institutional-heading h2 { max-width: 30ch;   font-size: var(--size-title-section); line-height: var(--leading-section); letter-spacing: var(--tracking-section);}
 .beginner-guide-page .institutional-card { padding: 1.25rem; }
 .beginner-guide-page .institutional-card h3 { margin: .75rem 0 .5rem; font-size: 1.15rem; }
 .beginner-guide-page .statement { margin-top: 2rem; padding-block: 2rem; }
 .beginner-guide-page .statement h2 { max-width: 32ch; font-size: clamp(1.5rem,2.5vw,2rem); line-height: 1.2; }
-.beginner-guide-page .statement p { font-size: 1rem; }
+.beginner-guide-page .statement p:not(.eyebrow) { font-size: 1rem; }
 .beginner-guide-page .wide-card { grid-column: auto; }
 .beginner-guide-page .wide-card ul { columns: 2; column-gap: 2rem; }
 .beginner-guide-page .wide-card li { break-inside: avoid; margin-bottom: .65rem; }

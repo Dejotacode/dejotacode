@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import type { RecommendedResource } from "../data/recommendedResources";
-import { resolveStoreVisual } from "../data/storeVisuals";
-import VisualMedia from "./visual/VisualMedia.astro";
-import StoreBadge from "./store/StoreBadge.astro";
+import type { RecommendedResource } from "../../data/recommendedResources";
+import { resolveStoreVisual } from "../../data/storeVisuals";
+import VisualMedia from "../visual/VisualMedia.astro";
+import StoreBadge from "../store/StoreBadge.astro";
 interface Props { productIds: string[]; resources: RecommendedResource[]; }
 const { productIds, resources } = Astro.props;
 const products = (await getCollection("storeProducts", ({ data }) => !data.draft)).filter(p => productIds.includes(p.id));

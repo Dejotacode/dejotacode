@@ -1,14 +1,14 @@
 ---
-import type { Post } from "../lib/content";
-import VisualMedia from "./visual/VisualMedia.astro";
-import CategoryIcon from "./CategoryIcon.astro";
-import { resolvePostVisual } from "../data/editorialVisuals";
+import type { Post } from "../../lib/content";
+import VisualMedia from "../visual/VisualMedia.astro";
+import CategoryIcon from "../ui/CategoryIcon.astro";
+import { resolvePostVisual } from "../../data/editorialVisuals";
 import {
   categories,
   categoryHref,
   formatPostDate,
   postHref,
-} from "../lib/content";
+} from "../../lib/content";
 
 interface Props {
   post: Post;

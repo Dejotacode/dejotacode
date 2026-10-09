@@ -2,8 +2,8 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import "../styles/global.css";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import Header from "../components/layout/Header.astro";
 
 const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
 

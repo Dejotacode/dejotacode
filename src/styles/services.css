@@ -1,8 +1,8 @@
 .services-page { padding-bottom:3rem; }
-.services-page .eyebrow { color:var(--color-accent-strong);font-size:.75rem; }
+.services-page .eyebrow {  font: var(--type-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-strong);}
 .services-page p { color:var(--color-text-muted);line-height:1.65; }
 .services-hero__grid { display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:2.5rem;padding-block:2.5rem; }
-.services-hero h1 { max-width:25ch;font-size:clamp(2rem,3.5vw,3rem);line-height:1.18;letter-spacing:-.035em;margin:.75rem 0 1rem; }
+.services-hero h1 { max-width:25ch;margin:.75rem 0 1rem; font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}
 .services-hero__copy > p:not(.eyebrow) { font-size:1.15rem;max-width:42rem; }
 .services-actions { display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem; }
 .services-actions .button { white-space:normal; }

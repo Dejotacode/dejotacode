@@ -127,7 +127,7 @@ p {
 }
 
 .button {
-  min-height: 2.75rem;
+  min-height: var(--space-control);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -179,3 +179,13 @@ p {
     transition: none;
   }
 }
+
+
+/* Shared semantic label; layout-specific selectors only control placement. */
+.eyebrow {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-accent-strong);
+  text-transform: uppercase;
+}
+.button { gap: .5rem; }
