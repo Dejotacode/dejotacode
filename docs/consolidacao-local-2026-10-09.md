@@ -89,3 +89,8 @@ Evidência resumida: docs/brand/signature-integration-validation.json. Galeria h
 Portfólio: Home, Blog e Trilhas recapturadas do preview 4321, 1280 × 960, escuro; notebook Serviços: Home 1440 × 900, escuro. Mantidos os caminhos estáveis, proporções, moldura CSS e links. Fontes/imagens aguardadas, toolbar oculta por regra persistente durante captura; WebP qualidade 85. Nenhuma assinatura adicionada às capturas reais. Inventário atualizado.
 Check 78 arquivos sem erros/avisos/hints; build 115 páginas; QA de links/HTML aprovado. Portfólio e Serviços em 320/390/768/1440 e claro/escuro: 16 combinações sem overflow, com capturas carregadas. Blog e tela do notebook inspecionados visualmente. Apenas quatro rasters de captura e registros alterados; nada publicado. Frontend continua 4321.
 Padrão de assinaturas e atualização das capturas concluídos localmente. Setup e Termos continuam pendências de confirmação/conteúdo conforme revisão dos esboços; esta atualização não os resolve por inferência.
+
+
+## Armazenamento confirmado — 09/10/2026
+Dejota confirmou que o disco anteriormente informado como 500 GB é o Western Digital WD6400BPVT de 640 GB detectado localmente. Foto confirma SSD Rapidin SATA de 128 GB e Samsung HM160HI de 160 GB em case USB. Finalidades mantidas conforme declaração do usuário; a foto não certifica conexão atual nem disco de inicialização. Página /store/setup-do-dejota/ atualizada, sem números de série. Pendências de modelos da TV, teclado, mouse e hub permanecem. Sem publicação.
+Validação desta alteração: check sem erros/avisos; build de 115 páginas; QA de links/HTML aprovado. Setup conferido em 320/390/768/1440 px nos dois temas (8 combinações), sem overflow, com conteúdo confirmado e foco inicial por teclado.

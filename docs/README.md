@@ -17,7 +17,7 @@ Revisão: 09/10/2026. Responsável: @control. Escopo: índice das referências a
 Publicação não é autorizada pela existência de um runbook.
 
 ## Estado atual
-Aplicação técnica local do Documento Mestre concluída nas famílias públicas; revisão visual final ainda pendente. Andamento e limites atuais em [Revisão por página](frontend-review.md). Recebimento dos formulários validado apenas na API local; entrega por e-mail e produção são etapas separadas. Setup depende de confirmação de modelos/discos. Nenhuma publicação autorizada.
+Aplicação técnica local do Documento Mestre concluída nas famílias públicas; revisão visual final ainda pendente. Andamento e limites atuais em [Revisão por página](frontend-review.md). Recebimento dos formulários validado apenas na API local; entrega por e-mail e produção são etapas separadas. Armazenamento do Setup confirmado; modelos de TV e periféricos ainda pendentes. Nenhuma publicação autorizada.
 
 ## Histórico e pendências
 [Revisão pública anterior](revisao-final-publica-2026-10-09.md) é o retrato anterior à aplicação do Documento Mestre; pendências atuais em frontend-review.md prevalecem.
