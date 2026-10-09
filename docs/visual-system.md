@@ -111,3 +111,5 @@ Versões -assinatura-v2.webp mantêm SVG oficial no canto superior esquerdo. Vis
 
 ## Ilustração do Setup — aproximação do esboço, 09/10/2026
 SetupIllustration.astro substitui a moldura CSS simples por SVG decorativo responsivo: monitor com editor, gabinete, teclado, mouse, planta e porta-lápis. Traços usam currentColor e tokens dos temas; brilho discreto usa color-glow. É ilustração editorial, não fotografia nem representação exata do hardware. Conteúdo e rotas preservados.
+
+Setup: em desktop acima de 1000 px, ilustração ampliada em 7rem e avançada sob a coluna de descrição, com texto em camada superior e fade na borda esquerda. Tablet/celular preservam o tamanho anterior.

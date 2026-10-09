@@ -366,3 +366,5 @@ Validação desta alteração: check sem erros/avisos; build de 115 páginas; QA
 ## Ilustração do Setup — aproximação do esboço, 09/10/2026
 SetupIllustration.astro substitui a moldura CSS simples por SVG decorativo responsivo: monitor com editor, gabinete, teclado, mouse, planta e porta-lápis. Traços usam currentColor e tokens dos temas; brilho discreto usa color-glow. É ilustração editorial, não fotografia nem representação exata do hardware. Conteúdo e rotas preservados.
 Validação: check/build/QA aprovados; 8 combinações de largura e tema sem overflow; captura desktop escura inspecionada. Ajuste local, sem publicação.
+
+Setup: ilustração ampliada e deslocada 7rem à esquerda no desktop, com fade e texto em camada superior. Check/build/QA aprovados e 8 combinações responsivas/temas sem overflow; captura desktop inspecionada. Sem publicação.
