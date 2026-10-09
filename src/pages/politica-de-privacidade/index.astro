@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/institutional.css";
+import "../../styles/auxiliary.css";
 
 const sections = [
   { id: "sobre", title: "Sobre esta política" },
@@ -32,6 +33,13 @@ const sections = [
     </header>
 
     <div class="legal-layout container privacy-layout">
+      <details class="privacy-mobile-nav">
+        <summary>Nesta página</summary>
+        <nav aria-label="Seções da política de privacidade">
+          {sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
+        </nav>
+      </details>
+
       <aside class="privacy-aside">
         <nav class="legal-nav" aria-label="Nesta página">
           <strong>NESTA PÁGINA</strong>

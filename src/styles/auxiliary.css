@@ -1,0 +1,49 @@
+/* Apresentação das páginas auxiliares; estilos restritos a Privacidade e 404. */
+.privacy-page { padding-bottom: 2.5rem; }
+.privacy-page .privacy-hero { max-width: var(--container-width, 74rem); padding-block: 2.5rem 1.5rem; text-align: left; }
+.privacy-page .privacy-hero h1 { margin: .65rem 0 .75rem; font-size: clamp(2rem,4vw,3.25rem); line-height: 1.12; letter-spacing: -.04em; }
+.privacy-page .privacy-hero__lead { max-width: 46rem; margin: 0; font-size: 1rem; line-height: 1.65; }
+.privacy-page .privacy-hero__updated { margin: .85rem 0 0; }
+.privacy-page .privacy-layout { grid-template-columns: minmax(12rem,15rem) minmax(0,46rem); justify-content: start; gap: 2.5rem; padding-top: 1.5rem; }
+.privacy-page .legal-nav { top: 6rem; gap: .65rem; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+.privacy-page .legal-nav a { color: var(--color-text-muted); font-size: .85rem; }
+.privacy-page .legal-nav a:hover { color: var(--color-accent-strong); }
+.privacy-page a:focus-visible, .privacy-mobile-nav summary:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+.privacy-page .privacy-content { font-size: 1rem; line-height: 1.75; }
+.privacy-page .privacy-content section { margin-top: 2rem; scroll-margin-top: 6rem; }
+.privacy-page .privacy-content section:first-child { margin-top: 0; }
+.privacy-page .privacy-content section + section { padding-top: 2rem; }
+.privacy-page .privacy-content section > .eyebrow { margin-bottom: .65rem; }
+.privacy-page .privacy-content h2 { max-width: none; margin-bottom: .8rem; font-size: clamp(1.4rem,2.5vw,1.8rem); line-height: 1.2; }
+.privacy-page .privacy-content ul { gap: .5rem; margin-block: .9rem; }
+.privacy-page .privacy-note { margin-top: 2rem; padding: 1.25rem; }
+.privacy-mobile-nav { display: none; }
+.not-found-page { padding-block: 2.5rem; }
+.not-found { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: 2.5rem; align-items: center; min-height: 22rem; }
+.not-found h1 { max-width: 16ch; margin: .75rem 0 1rem; font-size: clamp(2rem,4vw,3.25rem); line-height: 1.12; letter-spacing: -.04em; }
+.not-found__lead { max-width: 38rem; margin: 0; color: var(--color-text-muted); font-size: 1rem; line-height: 1.65; }
+.not-found__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.not-found__search { min-width: 0; padding: 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+.not-found__search > svg { color: var(--color-accent-strong); }
+.not-found__search h2 { margin: .9rem 0 1.25rem; font-size: 1.4rem; line-height: 1.2; }
+.not-found__search form { display: grid; gap: .75rem; }
+.not-found__search label { font-size: .85rem; font-weight: 650; }
+.not-found__search input { min-width: 0; width: 100%; min-height: 3rem; padding: .75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); color: var(--color-text); font: inherit; }
+.not-found__search input:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+.not-found__search button { justify-self: start; }
+@media(max-width:1100px) {
+  .privacy-page .privacy-layout { grid-template-columns: minmax(0,1fr); gap: 1.5rem; }
+  .privacy-page .privacy-aside { display: none; }
+  .privacy-mobile-nav { display: block; padding: 1rem 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+  .privacy-mobile-nav summary { cursor: pointer; font-weight: 700; }
+  .privacy-mobile-nav nav { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem 1rem; margin-top: 1rem; }
+  .privacy-mobile-nav a { color: var(--color-text-muted); font-size: .9rem; text-decoration: none; }
+}
+@media(max-width:850px) { .not-found { grid-template-columns: minmax(0,1fr); min-height: 0; gap: 1.5rem; } }
+@media(max-width:580px) {
+  .privacy-page .privacy-hero { padding-top: 1.5rem; }
+  .privacy-mobile-nav nav { grid-template-columns: minmax(0,1fr); }
+  .not-found-page { padding-block: 1.5rem 2rem; }
+  .not-found__search { padding: 1.25rem; }
+  .not-found__actions { flex-direction: column; align-items: stretch; }
+}
