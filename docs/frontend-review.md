@@ -269,3 +269,8 @@ Pendência da captura resolvida; revisão visual final do usuário, confirmaçã
 Autorização do usuário: aplicar setas mais visíveis, 18px em links e 20px em botões principais, usando a família oficial. Setas direitas de navegação das páginas públicas e componentes compartilhados convertidas para CategoryIcon arrow-right; variante externa do ArticleGuideResources usa arrow-up-right. Conteúdo editorial e Admin preservados; rotas, destinos, SEO e afiliados não alterados.
 Tokens compartilhados e regra CSS documentados. Botão inicial da trilha atualiza o texto em nó próprio para preservar o SVG. Teste de Começar trilha → Continuar trilha → Rever etapas confirmou ícone mantido nos três estados.
 22 representantes × 320/390/768/1440 × claro/escuro = 176 combinações sem overflow; SVGs com tamanho calculado de 18/20px e aria-hidden conforme papel. Capturas Home nos dois temas inspecionadas. Check 78 arquivos sem erros/avisos/hints; build 115 páginas; QA links/HTML passou. Sem envio real, push ou publicação. Preview http://localhost:4321/.
+
+## Revisão dos esboços — correções P1, 09/10/2026
+- Guia /store/guias/como-escolher-pendrive-linux/: SSD retirado dos cartões principais de pendrive; referência preservada em seção complementar de backup, com finalidade explícita.
+- Modelo /blog/[slug]/: chamada distingue trilha associada de listagem geral; não promete uma próxima etapa que o link não abre.
+- Escopo local, sem publicação. Check: 78 arquivos, zero erros/avisos; build: 115 páginas; QA de links e HTML aprovado. Verificação no preview: guia, artigo sem trilha e artigo com trilha, em 320/390/768/1440px nos dois temas (24 combinações), sem overflow; destinos dos CTA e separação do SSD conferidos.

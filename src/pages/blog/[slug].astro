@@ -231,10 +231,10 @@ const articleSchema = {
 
           <ConversionCTA compact
             eyebrow="CONTINUE APRENDENDO"
-            title="Veja a próxima etapa da sua trilha"
+            title={currentTrail ? "Continue aprendendo na sua trilha" : "Escolha uma trilha para continuar aprendendo"}
             description="Aprofunde seus conhecimentos e avance no seu aprendizado."
             href={currentTrail ? `/trilhas/${currentTrail.slug}/` : "/trilhas/"}
-            label="Ver trilha"
+            label={currentTrail ? "Ver trilha" : "Explorar trilhas"}
             campaign={currentTrail ? `article-trail-${currentSlug}` : "article-trails"}
           />
 
