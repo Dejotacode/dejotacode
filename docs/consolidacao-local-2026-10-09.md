@@ -114,3 +114,7 @@ Revisão de layout das dez páginas principais (80 combinações) e navegação 
 
 ## Auditoria da entrega dos formulários — 09/10/2026
 Código local da API conferido: contatos/leads são persistidos e consultáveis na rota administrativa protegida; não há envio por e-mail nas rotas atuais. Diagnóstico e sequência em formularios-entrega-revisao-2026-10-09.md. Integração depende de escolha do serviço, remetente e destinatário; nenhum secret lido, nenhum envio real ou publicação. Apenas documentação alterada.
+
+
+## Integração local preparada — 09/10/2026
+API agora possui adaptador Cloudflare e chamada em segundo plano após persistência do contato. Desativada por padrão; binding/remetente/destino/flag não ativados. Sete cenários de rota com transporte/banco simulados aprovados; TypeScript check passou. Falha de envio não altera resposta de recebimento nem remove o contato; log genérico sem dados pessoais. Sem fila persistente/reenvio automático nesta etapa. Aceitação de envio não comprova entrega final. Newsletter preservada. Próxima etapa é conferir configuração real da conta e preparar ativação/teste de destinatário definido, com autorização de envio específica. Nenhum e-mail enviado, DNS alterado ou deploy feito. Detalhes e teste no README/scripts da API.

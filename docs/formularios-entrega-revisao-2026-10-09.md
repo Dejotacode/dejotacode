@@ -20,3 +20,7 @@ Documentação oficial consultada em 09/10/2026 permite envio por binding send_e
 Enviar newsletters a assinantes é um requisito separado; a permissão para destinos verificados não certifica envio arbitrário para a lista de leads.
 Fontes: https://developers.cloudflare.com/email-service/configuration/email-routing-addresses/ ; https://developers.cloudflare.com/email-service/configuration/send-bindings/ ; https://developers.cloudflare.com/email-service/api/send-emails/workers-api/ .
 Próxima implementação local: adaptador Cloudflare com transporte simulado nos testes e envio desabilitado até ativação explícita; preservar gravação das mensagens e registrar falhas de notificação. Sem alterar DNS, cadastrar serviço ou enviar e-mails nesta pesquisa.
+
+
+## Integração local preparada — 09/10/2026
+API agora possui adaptador Cloudflare e chamada em segundo plano após persistência do contato. Desativada por padrão; binding/remetente/destino/flag não ativados. Sete cenários de rota com transporte/banco simulados aprovados; TypeScript check passou. Falha de envio não altera resposta de recebimento nem remove o contato; log genérico sem dados pessoais. Sem fila persistente/reenvio automático nesta etapa. Aceitação de envio não comprova entrega final. Newsletter preservada. Próxima etapa é conferir configuração real da conta e preparar ativação/teste de destinatário definido, com autorização de envio específica. Nenhum e-mail enviado, DNS alterado ou deploy feito. Detalhes e teste no README/scripts da API.
