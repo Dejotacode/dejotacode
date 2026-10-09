@@ -62,3 +62,12 @@ Aplica-se a artes editoriais próprias que receberem assinatura. Símbolo único
 Exemplo 1600 × 900: caixa 80 × 80; posição x=48, y=27. Modelos vetoriais transparentes em docs/brand/assinatura-editorial-dark.svg e assinatura-editorial-light.svg; contêm geometria copiada dos símbolos oficiais, sem recriação. São referências de produção, não assets carregados pelas páginas.
 
 Migração do acervo: consultar revisao-esbocos-fechamento-2026-10-09.md. Remover assinatura antiga antes de aplicar a nova, sem cobrir com placa nem empilhar símbolos. Se a marca estiver fundida ao raster, tratar a imagem individualmente e conferir assunto/produto após edição. Aprovação do padrão não certifica que os rasters atuais já foram migrados.
+
+
+## Lote de assinaturas preparado — 09/10/2026
+61 rasters únicos nos mapas Store/editorial: 49 artes próprias com assinatura tratadas; 12 imagens sem assinatura mantidas fora do lote. Quatro atlas de recortes limpos com imagegen; somente regiões mascaradas reincorporadas aos originais, depois composição determinística do SVG oficial. Originais preservados por SHA-256; pixels fora do canto 20% × 25% idênticos em 49/49 comparações; dimensões preservadas. A limpeza gera fundo local aproximado dentro da máscara, portanto exige revisão visual individual na galeria.
+49 versões irmãs -assinatura-v2.webp, em WebP lossless (38,6 MiB no total) para comparação; otimização para entrega deve ocorrer após aprovação visual. Nenhum resolver ou página pública foi alterado para usar estas versões. Não confundir preparação com migração concluída.
+Galeria conjunta: http://localhost:4323/, servidor restrito a 127.0.0.1; frontend canônico continua 4321. Fonte da galeria: docs/brand/preview-assinaturas.html, com assets servidos pelo diretório temporário /tmp/dejota-assinaturas-preview. Não integra o build do site.
+Registro: docs/brand/signature-batch-20261009.json. Recortes preparados persistidos em docs/brand/signature-batch-sources; receita em scripts/compose-signature-batch.py, sem sobrescrever originais ou versões divergentes.
+Validação: check 78 arquivos, zero erros/avisos/hints; build 115 páginas; QA de links e HTML passou. Galeria em 320/390/768/1440 e claro/escuro: oito combinações, 98 imagens carregadas, sem overflow; capturas desktop/mobile inspecionadas. Assinatura regular conferida na imagem de pendrive e montagem das 49 versões. Sem publicação, push ou deploy. Ottocast preexistente preservado fora do commit.
+Próximo passo: revisão conjunta do lote, ajustes pontuais se necessários e integração local das versões aprovadas.
