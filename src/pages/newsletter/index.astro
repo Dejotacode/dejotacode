@@ -46,7 +46,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
           </h2>
 
           <p data-signup-description>
-            Informe seu nome e e-mail. Você poderá cancelar quando quiser.
+            Informe seu e-mail e confirme a inscrição pelo link que receber. O nome é opcional. Você poderá cancelar quando quiser.
           </p>
 
           <form
@@ -54,7 +54,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
             data-api-base={apiBase}
             data-endpoint="/api/leads"
             data-conversion="lead_submit"
-            data-success="Inscrição realizada com sucesso."
+            data-success="Confira seu e-mail para confirmar a inscrição. Se já estiver inscrito, não é necessário confirmar novamente."
           >
             <div class="field">
               <label for="newsletter-name">Seu nome</label>
@@ -109,7 +109,7 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
               />
 
               <span data-consent-copy>
-                Concordo em receber conteúdos e li a
+                Concordo em receber conteúdos do DejotaCode e li a
                 <a href="/politica-de-privacidade/">
                   Política de Privacidade
                 </a>.
@@ -242,13 +242,11 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
         document.querySelector<HTMLElement>("[data-consent-copy]");
       const submit =
         document.querySelector<HTMLButtonElement>("[data-submit-label]");
-      const form =
-        document.querySelector<HTMLFormElement>("[data-newsletter-form]");
 
       if (eyebrow) eyebrow.textContent = "GUIA GRATUITO";
       if (title) {
         title.textContent =
-          "Receba o Guia do Iniciante em Tecnologia.";
+          "Acesse o Guia do Iniciante em Tecnologia.";
       }
 
       if (description) {
@@ -257,34 +255,30 @@ const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
       }
 
       if (signupEyebrow) {
-        signupEyebrow.textContent = "RECEBA O GUIA";
+        signupEyebrow.textContent = "ACESSE O GUIA";
       }
 
       if (signupTitle) {
-        signupTitle.textContent = "Envio gratuito";
+        signupTitle.textContent = "Inscrição gratuita";
       }
 
       if (signupDescription) {
         signupDescription.textContent =
-          "Informe seu nome e e-mail para acessar o guia e continuar recebendo conteúdos do DejotaCode.";
+          "Confirme sua inscrição pelo link enviado ao seu e-mail. Depois da confirmação, você será direcionado ao guia gratuito.";
       }
 
       if (resource) {
         resource.value = GUIDE_RESOURCE;
       }
 
-      if (form) {
-        form.dataset.successRedirect =
-          "/guia/iniciante-em-tecnologia/";
-      }
 
       if (consent) {
         consent.childNodes[0].textContent =
-          "Concordo em receber o guia e conteúdos do DejotaCode e li a ";
+          "Concordo em receber conteúdos do DejotaCode e li a ";
       }
 
       if (submit) {
-        submit.textContent = "Quero receber o guia";
+        submit.textContent = "Quero acessar o guia";
       }
     }
 
