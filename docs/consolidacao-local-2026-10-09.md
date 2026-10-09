@@ -110,3 +110,7 @@ Home, Store, Blog, Trilhas, Contato, Serviços, Portfólio, Setup, Recursos e So
 
 ## Encerramento desta rodada de revisão — 09/10/2026
 Revisão de layout das dez páginas principais (80 combinações) e navegação principal (9 verificações) concluídas, sem novos defeitos identificados nos cenários testados. Correções visuais autorizadas, assinaturas, capturas e Setup concluídos localmente. Preview 4321 disponível para revisão do usuário. Pendências: modelo do hub USB, decisão de conteúdo de Termos, entrega real de e-mails/notificações, leitor de tela e navegadores alternativos. Não iniciar implementação dessas frentes por simples repetição desta revisão; definir a próxima frente pelo objetivo do usuário. Sem push/deploy/publicação.
+
+
+## Auditoria da entrega dos formulários — 09/10/2026
+Código local da API conferido: contatos/leads são persistidos e consultáveis na rota administrativa protegida; não há envio por e-mail nas rotas atuais. Diagnóstico e sequência em formularios-entrega-revisao-2026-10-09.md. Integração depende de escolha do serviço, remetente e destinatário; nenhum secret lido, nenhum envio real ou publicação. Apenas documentação alterada.

@@ -385,3 +385,7 @@ Home, Store, Blog, Trilhas, Contato, Serviços, Portfólio, Setup, Recursos e So
 
 ## Navegação principal — fechamento funcional, 09/10/2026
 Nove verificações no Chromium local: troca de tema e persistência após recarga em 390/1440 px; menu mobile abre e fecha com Escape; busca desktop abre com foco no campo, Escape fecha e devolve foco ao botão; envio de consulta linux navega para /busca/?q=linux e apresenta conteúdo relacionado. Solicitações externas bloqueadas, sem formulários de contato/newsletter enviados. Nenhum defeito encontrado nos cenários testados. Não equivale a teste completo por leitor de tela ou outros navegadores. Nenhuma interface alterada; validações de build/QA da última alteração permanecem como evidências anteriores.
+
+
+## Auditoria da entrega dos formulários — 09/10/2026
+Código local da API conferido: contatos/leads são persistidos e consultáveis na rota administrativa protegida; não há envio por e-mail nas rotas atuais. Diagnóstico e sequência em formularios-entrega-revisao-2026-10-09.md. Integração depende de escolha do serviço, remetente e destinatário; nenhum secret lido, nenhum envio real ou publicação. Apenas documentação alterada.
