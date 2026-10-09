@@ -103,3 +103,7 @@ contact-destinations--attendance reutiliza os cartões de Serviços/Parcerias em
 
 ## Case de Serviços — notebook ilustrativo
 services-notebook apresenta captura real dentro de tela com borda escura, câmera decorativa e base metálica CSS. Moldura mantém cor de hardware nos dois temas, tela 8:5, largura 86% da base. Elementos de hardware são decorativos; texto e ação do case permanecem HTML fora da captura.
+
+
+## Recortes das imagens assinadas — 09/10/2026
+Versões -assinatura-v2.webp mantêm SVG oficial no canto superior esquerdo. VisualMedia e StoreCard ancoram essas versões em left top; hero Home e recomendação de artigos fazem o mesmo. Não depender do sufixo antigo -capa-v1.webp para preservar a marca. Molduras e degradês aprovados permanecem; a assinatura integrada ao raster não troca de cor com o tema da página. Variantes dark/light são escolhidas conforme o fundo da própria imagem, pelo registro de mídia.

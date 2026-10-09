@@ -46,7 +46,8 @@ def main():
             run(source, cut, "-geometry", "+0+0", "-compose", "Over", "-composite", clean)
             size, sx, sy = round(w * .05), round(w * .03), round(h * .03)
             run("-background", "none", SYMBOL, "-resize", f"{size}x{size}", symbol)
-            run(clean, symbol, "-geometry", f"+{sx}+{sy}", "-compose", "Over", "-composite", "-define", "webp:lossless=true", target)
+            run(clean, symbol, "-geometry", f"+{sx}+{sy}", "-compose", "Over", "-composite", "-define", "webp:lossless=true", work / "master.webp")
+            run(work / "master.webp", "-quality", str(item.get("delivery_quality", 90)), target)
             if digest(target) != item["target_sha256"]:
                 raise RuntimeError(f"Composition differs from recorded version: {target}")
             print(f"{number}: version composed and verified")

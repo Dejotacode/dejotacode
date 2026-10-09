@@ -584,3 +584,5 @@
  .article-page .article-guide-card { grid-template-columns: 4.5rem minmax(0, 1fr); gap: .8rem; padding: .85rem; }
  .article-page .article-guide-card__link { grid-column: 2; justify-self: end; min-width: 2.75rem; }
 }
+
+.article-page .article-guide-card__image img[src$="-assinatura-v2.webp"] { object-position: left top; }

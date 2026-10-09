@@ -6,7 +6,7 @@
       "source": "/assets/store/nordpass-sem-texto-v1.webp",
       "sha256": "d100842d5be1f974749255177ba0b0ab03ddff5d5145732680cdb536a659fa80",
       "target": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -25,13 +25,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "28073e520bf7e1d6c43eb4789390f369f4f8241a4fcf42608b4726115edf83c0"
+      "target_sha256": "a93ac23b3c6a8226ae27b558f2f72cac3e6fee7dc9a882d5a4ded2730977e333",
+      "master_path": "docs/brand/signature-masters/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "master_sha256": "28073e520bf7e1d6c43eb4789390f369f4f8241a4fcf42608b4726115edf83c0",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/sandisk-ultra-flair-32gb.webp",
       "sha256": "b5f06a701f74bfca8250c7a850dbe185ca24215a4d348f2e561301b9d10b8a0f",
       "target": "/assets/store/sandisk-ultra-flair-32gb-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -50,13 +53,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "bc832089bb31d9661c7b2d1bc1b2f1f9e466e6d552640f420d6abd800fd06f14"
+      "target_sha256": "36a5e5e0387832e08a4285edaf84ac97bca8c6c0b41f585447f508da93e08a55",
+      "master_path": "docs/brand/signature-masters/sandisk-ultra-flair-32gb-assinatura-v2.webp",
+      "master_sha256": "bc832089bb31d9661c7b2d1bc1b2f1f9e466e6d552640f420d6abd800fd06f14",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/leadlovers-hotmart.webp",
       "sha256": "ca6f9620bc0f9d69bce7a7c7dfffe984dc629befe77f454c1f033989009e82fa",
       "target": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -75,13 +81,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "9a01a876a1bc0e1004964f944e39a0043be1cc6829a527da2e30e47eeaaadfaa"
+      "target_sha256": "5e23fe9d6453f9cbdc438012d4abeb5ba4dcea7f83229062c8fdd5190d495584",
+      "master_path": "docs/brand/signature-masters/leadlovers-hotmart-assinatura-v2.webp",
+      "master_sha256": "9a01a876a1bc0e1004964f944e39a0043be1cc6829a527da2e30e47eeaaadfaa",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/programacao-iniciante-avancado-hotmart.webp",
       "sha256": "d23d483a1834b0bc2eb262af218d1a3dc40168d4c8717cf6fb1cda3996f82ad7",
       "target": "/assets/store/programacao-iniciante-avancado-hotmart-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -100,13 +109,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "c232ca1bb282b1ba4c4014bf74b918fc88bb91d23761f605065a5c2c7bbcd988"
+      "target_sha256": "58c6238e21d3550fb8273adbfcf70037bda8c72d67cecd72cecfe4f682bd1133",
+      "master_path": "docs/brand/signature-masters/programacao-iniciante-avancado-hotmart-assinatura-v2.webp",
+      "master_sha256": "c232ca1bb282b1ba4c4014bf74b918fc88bb91d23761f605065a5c2c7bbcd988",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/seguranca-digital-essencial-hotmart.webp",
       "sha256": "646edcd4f191e8870c489fab78ca382bb60ef2cd042d33b24d60650b8ac74c5d",
       "target": "/assets/store/seguranca-digital-essencial-hotmart-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -125,13 +137,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "adee1b5d5b1ecc4934c187b4c1c63754200d1ebd12d66102f8b7329c460a7652"
+      "target_sha256": "aa4782bc13feac94129b2f9d9b7b6c2925323431852f256a8f607c1a4688bb65",
+      "master_path": "docs/brand/signature-masters/seguranca-digital-essencial-hotmart-assinatura-v2.webp",
+      "master_sha256": "adee1b5d5b1ecc4934c187b4c1c63754200d1ebd12d66102f8b7329c460a7652",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/hospedagem-primeiro-site.webp",
       "sha256": "99b18b9d9355fa9696405f60791ed29a2489d7702db9c0544d24a7c07c928903",
       "target": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -150,13 +165,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "0313a42bb375aa2c359cc91c5f6ba143386e00bbdcae2bf2cf5efe32350dbdea"
+      "target_sha256": "7c93d3787678abdcffc491bd33cd3e66b54b688706b1834b89979bf4f42e3d79",
+      "master_path": "docs/brand/signature-masters/hospedagem-primeiro-site-assinatura-v2.webp",
+      "master_sha256": "0313a42bb375aa2c359cc91c5f6ba143386e00bbdcae2bf2cf5efe32350dbdea",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/hotmart-extensoes.webp",
       "sha256": "c3376f4894766edd2b92b46df43e600fd451fcb714e5b02a3d58a583494dae25",
       "target": "/assets/store/hotmart-extensoes-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -175,13 +193,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "d765fe2e5a53dfa5c753ba9712e58116f3872cc979c81b3cfac3822a4098d2f0"
+      "target_sha256": "8566d754149e2b9da833d503b67ce6a48ebc41add5c1e3c5ae762518c892479c",
+      "master_path": "docs/brand/signature-masters/hotmart-extensoes-assinatura-v2.webp",
+      "master_sha256": "d765fe2e5a53dfa5c753ba9712e58116f3872cc979c81b3cfac3822a4098d2f0",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/metricool-sem-texto-v2.webp",
       "sha256": "489ea86f03ed619997188fecdfbed983d017715e3d013296bd0a619aeb567636",
       "target": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -200,13 +221,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "34383b9081a4b9e6bafaceeb8830d6a10edc0be76a33a1964889fe98b6eadcd7"
+      "target_sha256": "72a34ba055fa13908250e7329166c8e8c14264b066eaf36d6530330e8c7adc42",
+      "master_path": "docs/brand/signature-masters/metricool-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "34383b9081a4b9e6bafaceeb8830d6a10edc0be76a33a1964889fe98b6eadcd7",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/nordvpn-sem-texto-v2.webp",
       "sha256": "13bd4cd6c8f931c337d4d16c3055b89a8288f5102dffc1077a2444edd8465022",
       "target": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -225,13 +249,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "e0eff1c89d6e3057d38c7f72140e4a46dddfad7689590b5808d4321e4cab1c70"
+      "target_sha256": "1a8c280b20f40beec407e1c5aa597d2d80c449775de7b618ed2ac8e1e9c99f27",
+      "master_path": "docs/brand/signature-masters/nordvpn-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "e0eff1c89d6e3057d38c7f72140e4a46dddfad7689590b5808d4321e4cab1c70",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/baseus-fm11-10000mah-sem-texto-v2.webp",
       "sha256": "e525f8765ab83125ed6dd83bdcb17e85a89b5debb2b3a031c4d79cb44194286c",
       "target": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -250,13 +277,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "dcc597869627038cada744e098aaf59943d0f73d3c4fba147de35c3add5229ff"
+      "target_sha256": "4d44ba843e54c4f3862d0f1398215cf75660047b928b2f460de04750209f2dfb",
+      "master_path": "docs/brand/signature-masters/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "dcc597869627038cada744e098aaf59943d0f73d3c4fba147de35c3add5229ff",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2.webp",
       "sha256": "3ca270c5393d4c42a87536a780137d18b9ad4ee9836508808ce953a48ada99bb",
       "target": "/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -275,13 +305,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "f835c6233a476b621aa131f9d8b808d5ec1f41a7f0d2800277157e3496fb8769"
+      "target_sha256": "a4e38068aad5a91e86a9194d1eae113aa72eaa95e8f142f26ae5c01faa9f8431",
+      "master_path": "docs/brand/signature-masters/ugreen-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "f835c6233a476b621aa131f9d8b808d5ec1f41a7f0d2800277157e3496fb8769",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/baseus-fc11-power-bank-sem-texto-v2.webp",
       "sha256": "2172bd2d3e112580383749ccdb08b8078d0c093fe487dc2703515feeb828e5e1",
       "target": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -300,13 +333,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "fdedfd24080323ecf35d8e7ecfe4b1abf2759ac11e5bf229b85b6635c129d084"
+      "target_sha256": "5f7f9e4710bc4d5e9c6021c3aa4252cacc0cc5ee73a53303029771ba241eeaed",
+      "master_path": "docs/brand/signature-masters/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "fdedfd24080323ecf35d8e7ecfe4b1abf2759ac11e5bf229b85b6635c129d084",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2.webp",
       "sha256": "1665a25271efaba048cc4034350d63e357b0df2f15ec5340250aa9b80260c960",
       "target": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -325,13 +361,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "baa540df887214d5fbc18cf335a2d7d595bf28e14785a6181c6756815f4b4694"
+      "target_sha256": "d07c37ee499476fefc54bab4e64522090291eeb8414b40be594d3d236a120d91",
+      "master_path": "docs/brand/signature-masters/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "baa540df887214d5fbc18cf335a2d7d595bf28e14785a6181c6756815f4b4694",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2.webp",
       "sha256": "9615ebb38984a8dd456d4db305276ea8aafa098645ddf66037f87187abdb638d",
       "target": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -350,13 +389,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "595c2dea694539ce9b48d77593cfc65748cd076267d3e5a0e0716623fcd3a967"
+      "target_sha256": "59a15da0b3648d2f1b228f1ae18fc09b54109acb3951c4b17eee763370c35750",
+      "master_path": "docs/brand/signature-masters/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+      "master_sha256": "595c2dea694539ce9b48d77593cfc65748cd076267d3e5a0e0716623fcd3a967",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1.webp",
       "sha256": "ef11afb96b276024da0302cfd144e1c52ad883f4d0d90fccd44e992a6b6eaa9e",
       "target": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -375,13 +417,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "cdcfd38c2ef9efd69e30aacd2fc13cd9b318458c2a9993406625a3d67e11fdc4"
+      "target_sha256": "b01028834eba16452efa16cc0e6830ae7df8fbee6f9cd7fc09d32365a1468ad2",
+      "master_path": "docs/brand/signature-masters/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",
+      "master_sha256": "cdcfd38c2ef9efd69e30aacd2fc13cd9b318458c2a9993406625a3d67e11fdc4",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1.webp",
       "sha256": "ff5e0d5504849ffcd50d9818db9586890e6b413bbf0721e680a6a25ad597ccbb",
       "target": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -400,13 +445,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "422d9e1d948d3e43e2a11054d14d00b9ef078e7a19ed431a55a66d9681a70b4e"
+      "target_sha256": "0601c22247c27df14cd497cf1d91b29e5c759c497f2c3a7ef387adef42d5562c",
+      "master_path": "docs/brand/signature-masters/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1-assinatura-v2.webp",
+      "master_sha256": "422d9e1d948d3e43e2a11054d14d00b9ef078e7a19ed431a55a66d9681a70b4e",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1.webp",
       "sha256": "4739a4a70f649e2bde22035fc5f073b777c463e397018346a4c4c5c19ac73ee8",
       "target": "/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -425,13 +473,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "52973661981fbc168703bc455d5135ac32583569a2fa813ba3a045239ae3de13"
+      "target_sha256": "4e38831e2591e07079e5b4210c1d3af8922f0643a1cd71f2029fe3c91c9293f7",
+      "master_path": "docs/brand/signature-masters/portfolio-para-freelancer-sem-clientes-capa-v1-assinatura-v2.webp",
+      "master_sha256": "52973661981fbc168703bc455d5135ac32583569a2fa813ba3a045239ae3de13",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1.webp",
       "sha256": "41cd13c7ba8847419df320c584b428c50c85d20fb1df1ef0d047dc991e036d57",
       "target": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -450,13 +501,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "c679a258120f94b10dcc410cae671c43dc7d04c97a6ea661bccc1c2bf9b00ec9"
+      "target_sha256": "f9b25fcb3afdbbea3c317523bca3cde5888280dfa62bcf24e5d76db00b5eebb3",
+      "master_path": "docs/brand/signature-masters/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1-assinatura-v2.webp",
+      "master_sha256": "c679a258120f94b10dcc410cae671c43dc7d04c97a6ea661bccc1c2bf9b00ec9",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1.webp",
       "sha256": "05c0c28001ae491cfd463b7c718328e6c236f83aca8c326b5f9126d757b14e8e",
       "target": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -475,13 +529,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "f8bd84514d0057a3a639eda1ecc0232debf135691f9819b3bacff5daa9345044"
+      "target_sha256": "7ebfc24b39a7764bf46a7a8f17970e6b0b4a93b5636050e02e3e2ec1a5f348b3",
+      "master_path": "docs/brand/signature-masters/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1-assinatura-v2.webp",
+      "master_sha256": "f8bd84514d0057a3a639eda1ecc0232debf135691f9819b3bacff5daa9345044",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1.webp",
       "sha256": "72c6b2016396aacf9167b0c8a553c1841907f9e40dd7bda498efd59b5eef5916",
       "target": "/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -500,13 +557,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "f566bc792b9857d1b9ac801dd3ac05385b348d958433f001620d3d4e5cd5103c"
+      "target_sha256": "b70fdf5e64e1dca5fc4d9b5e641d166476b4682a81a1dbdbb9765ebdba5e71dc",
+      "master_path": "docs/brand/signature-masters/erros-iniciantes-desistem-renda-digital-capa-v1-assinatura-v2.webp",
+      "master_sha256": "f566bc792b9857d1b9ac801dd3ac05385b348d958433f001620d3d4e5cd5103c",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1.webp",
       "sha256": "fc0e95f64d3deeafd5ef7e169ee027b3ca6d758848741275672d813f4a132b7e",
       "target": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -525,13 +585,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "1407d3ddddecbee618c91f7278314038e3a330cb0f71e49fdaea9083a7cbf20a"
+      "target_sha256": "a82c9312b34825fb88c8a338fa7b52d8c5f9c7721037c50e6174124ad608981e",
+      "master_path": "docs/brand/signature-masters/como-montar-oferta-simples-pequenos-negocios-capa-v1-assinatura-v2.webp",
+      "master_sha256": "1407d3ddddecbee618c91f7278314038e3a330cb0f71e49fdaea9083a7cbf20a",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1.webp",
       "sha256": "7232b108333912a6818e26d0c83c0a603041bc8aa588fe37257f95bec3bc57f3",
       "target": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -550,13 +613,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "80800318820d20bf2021cf0b0a030adaa6ac1c24d1fd2443ece5c3b05bb5a6cf"
+      "target_sha256": "837b046be4f721cc97c963bfca315e9ce12c5314ce1af7988f41a3cbb55c5ca7",
+      "master_path": "docs/brand/signature-masters/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1-assinatura-v2.webp",
+      "master_sha256": "80800318820d20bf2021cf0b0a030adaa6ac1c24d1fd2443ece5c3b05bb5a6cf",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-conseguir-primeira-renda-online-capa-v1.webp",
       "sha256": "0d2d7f41d7a18ef13b8feb9de19bc68546cf3dfa0c8ffae37bcfb3375709975a",
       "target": "/assets/posts/como-conseguir-primeira-renda-online-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -575,13 +641,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "4309cc72700c8a445f20ed05dc1dc8ea760629f1c56c89f8202df7c75f09edc8"
+      "target_sha256": "0757f6bd83b8b272557d51097627db7df7d49cd794522bf2946b76170eec6062",
+      "master_path": "docs/brand/signature-masters/como-conseguir-primeira-renda-online-capa-v1-assinatura-v2.webp",
+      "master_sha256": "4309cc72700c8a445f20ed05dc1dc8ea760629f1c56c89f8202df7c75f09edc8",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1.webp",
       "sha256": "2224d6938ecc5db7ab3a41c7e590e316bff2be5c0979e15ee51c8c2ac3dfcfc8",
       "target": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -600,13 +669,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "6ebcf98af913c8c104d2862051729e29688cc36a741d782c09b4d89e3e3bc4b9"
+      "target_sha256": "7bf5a73a0de09b5afc118e5a2bc79a571ce2ff99d68aefa746467e790a46d346",
+      "master_path": "docs/brand/signature-masters/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+      "master_sha256": "6ebcf98af913c8c104d2862051729e29688cc36a741d782c09b4d89e3e3bc4b9",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1.webp",
       "sha256": "5478cfd4cde506ddf6377eff72d3869b6cc2b433dcc009684d882a80ea790d68",
       "target": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -625,13 +697,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "7ea90d7203dffe4ecdb032293075d402c33362b4ea741de3943c1ff3b6e8b427"
+      "target_sha256": "7e31656d15010d501a2bd6ed297bc2d2ec44c4f207ec55fc3484681e8f6fbe4d",
+      "master_path": "docs/brand/signature-masters/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1-assinatura-v2.webp",
+      "master_sha256": "7ea90d7203dffe4ecdb032293075d402c33362b4ea741de3943c1ff3b6e8b427",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1.webp",
       "sha256": "1bf32a72c82d8417bbe34665c7c9b2f24c1173b0571b4f74d6eda14f70b0609e",
       "target": "/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -650,13 +725,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "ae831a44894b72decb7e78f650a620a32ebdd7effd6621e86ea14fe15c70cae0"
+      "target_sha256": "859378d969cdd8285695ffa5a158bd98158cd570c272b829519c6443410f6655",
+      "master_path": "docs/brand/signature-masters/organizar-ambiente-estudos-tecnologia-capa-v1-assinatura-v2.webp",
+      "master_sha256": "ae831a44894b72decb7e78f650a620a32ebdd7effd6621e86ea14fe15c70cae0",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1.webp",
       "sha256": "5363aac352714af4aec19f0d3dbf88c6f6b7c81efd7c7b584b4734e56cb7fae1",
       "target": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -675,13 +753,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "1f14cbfb5586fbc03c6cd68ba0abc00035ba219f5439911d98bf58e9d8e511a8"
+      "target_sha256": "ec985d98737fc10545b173df3de3c59f0721197b70916db819f1a0e3dcfcf85e",
+      "master_path": "docs/brand/signature-masters/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+      "master_sha256": "1f14cbfb5586fbc03c6cd68ba0abc00035ba219f5439911d98bf58e9d8e511a8",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1.webp",
       "sha256": "49e7abbeecc4cbe5b93a8dbc43a7a67f0bddd5c206e1a25118c8539ef9efa896",
       "target": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -700,13 +781,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "714e1fe0ce3d3ff1e824a28d23d0f6c023ba5294f8753f0968e007f31b31fdd3"
+      "target_sha256": "67724c57131a602bfbff3b3add873ec2fedac59d3010724b584657ef410b6fc5",
+      "master_path": "docs/brand/signature-masters/como-estudar-tecnologia-sem-se-perder-capa-v1-assinatura-v2.webp",
+      "master_sha256": "714e1fe0ce3d3ff1e824a28d23d0f6c023ba5294f8753f0968e007f31b31fdd3",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/phishing-como-identificar-capa-v1.webp",
       "sha256": "dcf480dec834d40e7d429721f39ad463701feaa3632bb8ab97e76b07581b76a8",
       "target": "/assets/posts/phishing-como-identificar-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -725,13 +809,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "4942147bd6fd8b95f15adab0ed668a1565a77ceb0b6e9f34b112c16004fba3c3"
+      "target_sha256": "888fa0c0d403ff1ef17c6eae83aa432c71fef1f884940feabc3535315a2e5d56",
+      "master_path": "docs/brand/signature-masters/phishing-como-identificar-capa-v1-assinatura-v2.webp",
+      "master_sha256": "4942147bd6fd8b95f15adab0ed668a1565a77ceb0b6e9f34b112c16004fba3c3",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1.webp",
       "sha256": "8e71fd05ce17a3e0bc9cda71da1f08ebc47335cb38068ee4c3149060c5c58fde",
       "target": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -750,13 +837,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "5a796a9bd7f86b5238684e5a295a41a639bd66f2fdf715efb0a27d125ad751c9"
+      "target_sha256": "f5f19a55ff58b6f18361a2daa6ef0174c90fe6506fbca4452d8d2c5cb17c44a1",
+      "master_path": "docs/brand/signature-masters/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+      "master_sha256": "5a796a9bd7f86b5238684e5a295a41a639bd66f2fdf715efb0a27d125ad751c9",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/autenticacao-dois-fatores-capa-v1.webp",
       "sha256": "25f05555db9aa869a6e161e493a249e6662a1bcc5ee46a441d9c5acfdaea1c20",
       "target": "/assets/posts/autenticacao-dois-fatores-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -775,13 +865,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "7c157df3f2b375d4160e962494e3429c7d9bf9c05627eaf21c1a6d7f96ac0255"
+      "target_sha256": "af3794dbb3f646af4d679060e452dddd5d4e690ef9aef8737395cd9dd5d7d1c0",
+      "master_path": "docs/brand/signature-masters/autenticacao-dois-fatores-capa-v1-assinatura-v2.webp",
+      "master_sha256": "7c157df3f2b375d4160e962494e3429c7d9bf9c05627eaf21c1a6d7f96ac0255",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-a-web-funciona-capa-v1.webp",
       "sha256": "e9585638f6513b593ca2b4588e7abf10fdc1190e713bfc7500f17a2c487cce8d",
       "target": "/assets/posts/como-a-web-funciona-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -800,13 +893,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "a01dcb88d153ffce05efc2401a359e876ba84e3a3d626332e48693a754115bf0"
+      "target_sha256": "829fa646222723a3809b725824e1af7ecf342f9b2a55a6f2a16da4d995a7f9ab",
+      "master_path": "docs/brand/signature-masters/como-a-web-funciona-capa-v1-assinatura-v2.webp",
+      "master_sha256": "a01dcb88d153ffce05efc2401a359e876ba84e3a3d626332e48693a754115bf0",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1.webp",
       "sha256": "38be2e92d90df67adb43b453077d8c8d364f6ab9eedbcbcb1e2d1ecadc25aa9e",
       "target": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -825,13 +921,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "78c5c90ca4e53fed1fa3ffcabc42b62686d1cf8e426a0d9bd071057737b975f6"
+      "target_sha256": "95d5742bdf9dc9e6df8d5678e270bfe24bad12f696f99962dadd97d870c176c4",
+      "master_path": "docs/brand/signature-masters/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+      "master_sha256": "78c5c90ca4e53fed1fa3ffcabc42b62686d1cf8e426a0d9bd071057737b975f6",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/o-que-e-ia-generativa-capa-v1.webp",
       "sha256": "094bf13142dfa1417aa2d8db377b8b566d8da3e64b45afac0dfae72b88027d19",
       "target": "/assets/posts/o-que-e-ia-generativa-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -850,13 +949,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "5b7ea78a2c610ae5baf3b7c8c695d228954531424d63001ca83150f822ccbe8c"
+      "target_sha256": "d20bd0836bda5626235674465072cb2801c8e1fc13d2d5ebc5875bb1c3753184",
+      "master_path": "docs/brand/signature-masters/o-que-e-ia-generativa-capa-v1-assinatura-v2.webp",
+      "master_sha256": "5b7ea78a2c610ae5baf3b7c8c695d228954531424d63001ca83150f822ccbe8c",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1.webp",
       "sha256": "19bc14d9bfa03af62b203a1c6b77c1548aeb9ccd7e4b1ea0f6c5d689880c1aad",
       "target": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -875,13 +977,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "d45ee5ffbb1e758378500e1f6532d34d1551908db97826bfe4b0d065cfba1c1a"
+      "target_sha256": "276e99dace6c1374498132a839f90374743a59ca33621c3c6cf1284c56844eb5",
+      "master_path": "docs/brand/signature-masters/prompts-melhores-estudar-trabalhar-capa-v1-assinatura-v2.webp",
+      "master_sha256": "d45ee5ffbb1e758378500e1f6532d34d1551908db97826bfe4b0d065cfba1c1a",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1.webp",
       "sha256": "d7b424ebf6dd1b6ba9961556091d21f38d4e34807553c3bc67a1366706942312",
       "target": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -900,13 +1005,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "1722ed6840aafeec9b2a68088de2094da0b81387721427d7a8df9b3a939e74ad"
+      "target_sha256": "7929cf5a9dea4cc84447ee624ff15832b6e634df2b5403a15b4c6184bde682b6",
+      "master_path": "docs/brand/signature-masters/usar-ia-estudar-sem-dependencia-capa-v1-assinatura-v2.webp",
+      "master_sha256": "1722ed6840aafeec9b2a68088de2094da0b81387721427d7a8df9b3a939e74ad",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-verificar-respostas-de-ia-capa-v1.webp",
       "sha256": "c566faef6b03e36e2cda025567a583183a570e3837c83dab0c056dd832a14ca2",
       "target": "/assets/posts/como-verificar-respostas-de-ia-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -925,13 +1033,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "145da8d6c6251541206747db0edadb77fcb05b3c61691e131b00253d2be4102a"
+      "target_sha256": "76aa19b3b944f138c906c4fbcfdaddf133f0c0f510af1de1024e59b33197ff1e",
+      "master_path": "docs/brand/signature-masters/como-verificar-respostas-de-ia-capa-v1-assinatura-v2.webp",
+      "master_sha256": "145da8d6c6251541206747db0edadb77fcb05b3c61691e131b00253d2be4102a",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/elementor-para-iniciantes-v1.webp",
       "sha256": "d4d245af3e49e9eb3cafcd555b43b7eb64f03bf0c7a05a93caf102f0bdc4f289",
       "target": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -950,13 +1061,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "2c6dba1952246b0951672be9dd31bb5e3d41859495fce98565047367c5da5584"
+      "target_sha256": "0b2f2e2dcbd5311d79a1e59fed20994e8970347f9e54e98ba5968b88f52717db",
+      "master_path": "docs/brand/signature-masters/elementor-para-iniciantes-v1-assinatura-v2.webp",
+      "master_sha256": "2c6dba1952246b0951672be9dd31bb5e3d41859495fce98565047367c5da5584",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/comandos-linux-para-iniciantes-capa-v1.webp",
       "sha256": "7f80902f6018e2fecc4abe4b1dd00f00a0738642e3065e428812d6fad3422ea6",
       "target": "/assets/posts/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -975,13 +1089,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "9ea7ffe33f789e00f5e54121d69cc8e4188d837152c60a51ca8ce5b8d465d94c"
+      "target_sha256": "500d182a2720552e6a3525206e39a16d2232c19706a8474d3855b57e11e938a8",
+      "master_path": "docs/brand/signature-masters/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "master_sha256": "9ea7ffe33f789e00f5e54121d69cc8e4188d837152c60a51ca8ce5b8d465d94c",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1.webp",
       "sha256": "d0166257e37d0432f72dbe7e75db3c84a502b241e02bdfa8c6e337245779f6a5",
       "target": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1000,13 +1117,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "9bfe9a1cbb19880b93813e6bae3282cf720e0884750d37a8130f4633b6cb2d58"
+      "target_sha256": "10f527200e9a30fef7a5105e2f1d425871e3532a3f2b7a2b0d01e2f00117a187",
+      "master_path": "docs/brand/signature-masters/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
+      "master_sha256": "9bfe9a1cbb19880b93813e6bae3282cf720e0884750d37a8130f4633b6cb2d58",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-escolher-distribuicao-linux-capa-v1.webp",
       "sha256": "d51bf956916445df8f9e3042777e0857e2eb4848e217573b9bdb9658163ec55e",
       "target": "/assets/posts/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1025,13 +1145,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "2fc25b40899914d0ea309b833962f6be15e926b5f75b950ab445f7d8058a8d2e"
+      "target_sha256": "ff80bcfe93bd7da1062af0bc54a5f43eb9d7280a75b93750ebce80506f91750b",
+      "master_path": "docs/brand/signature-masters/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
+      "master_sha256": "2fc25b40899914d0ea309b833962f6be15e926b5f75b950ab445f7d8058a8d2e",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/como-testar-linux-sem-instalar-capa-v1.webp",
       "sha256": "5880dfde68403e19368c2d9f98dcfb4c6405ac663f3030c0520ea8b6cc776d62",
       "target": "/assets/posts/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1050,13 +1173,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "a964cf66242cb1bd13fff3e34721a95387733defcbce2fce7af3a56836889708"
+      "target_sha256": "5d80e4b3cdc93c76eaea8fdc8a36b5df81476c07d240365b0550cc88cc61b794",
+      "master_path": "docs/brand/signature-masters/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
+      "master_sha256": "a964cf66242cb1bd13fff3e34721a95387733defcbce2fce7af3a56836889708",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/o-que-e-linux-capa-v1.webp",
       "sha256": "f0004f30e092920128bd9309da936383f9befdd3bdc854f5edf42f48c1a3dad2",
       "target": "/assets/posts/o-que-e-linux-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1075,13 +1201,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "5f51c3038252d1dae21ade1f2f38b646ab132e41ef71f1cc1bcba7d6e7323d91"
+      "target_sha256": "c91d90fa46252ad6583e4c7840af72745abf6fbdb7535694ea960e7aba4edde3",
+      "master_path": "docs/brand/signature-masters/o-que-e-linux-capa-v1-assinatura-v2.webp",
+      "master_sha256": "5f51c3038252d1dae21ade1f2f38b646ab132e41ef71f1cc1bcba7d6e7323d91",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1.webp",
       "sha256": "a8e107dc767e23accf20871d917ce58b2cf4db77247b3d9f706c2146ff23ff1e",
       "target": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1100,13 +1229,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "4b6ae61636314efc9a51bbee28f27e21f94d2032a6194d60669748babf7b730e"
+      "target_sha256": "516965a7ec93ce3297a248f40ce44da9e5badfb60a6712944ddda10f54f55aa8",
+      "master_path": "docs/brand/signature-masters/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "master_sha256": "4b6ae61636314efc9a51bbee28f27e21f94d2032a6194d60669748babf7b730e",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/pipe-redirecionamento-linux-capa-v1.webp",
       "sha256": "c02168093458de3cc9ce57da20672f812feccd95d4ed172dc2e0064a80e6fcca",
       "target": "/assets/posts/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1125,13 +1257,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "bcb6dd88872d6a531373ea188a18061dbe1491c60ad0a9dd8029205a8c7164c1"
+      "target_sha256": "033a6e2828a919138ffb8eb982f6e3ff37f792ebc64bf5c11ee34a847db2542f",
+      "master_path": "docs/brand/signature-masters/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
+      "master_sha256": "bcb6dd88872d6a531373ea188a18061dbe1491c60ad0a9dd8029205a8c7164c1",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/html-css-javascript-entenda-diferenca-capa-v1.webp",
       "sha256": "97aff373828e617f5b3bed9abb12fbca986d585a4bea12797ce9d1b84ac49111",
       "target": "/assets/posts/html-css-javascript-entenda-diferenca-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1150,13 +1285,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "6c48b169c1e7d13cae6964c696cea310143091bc752f6b784925f519fce1ca83"
+      "target_sha256": "8a8b17f6cd69253c11705f55257d2ed5cc28df3ba8bff926aaaf27c79adb5359",
+      "master_path": "docs/brand/signature-masters/html-css-javascript-entenda-diferenca-capa-v1-assinatura-v2.webp",
+      "master_sha256": "6c48b169c1e7d13cae6964c696cea310143091bc752f6b784925f519fce1ca83",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/javascript-variaveis-funcoes-capa-v1.webp",
       "sha256": "717819d14316f721c1608062cb493db7067667bf4aba3d3223eda18a407d0466",
       "target": "/assets/posts/javascript-variaveis-funcoes-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1175,13 +1313,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "0c5af5b63e760d266c7bb087dae711b91d6adf8491692ce2d08718181e745087"
+      "target_sha256": "e8b8149943b36e2f9ade1de6bd58120f9bcc886e7de6bf8f3295e7b8a571eaa8",
+      "master_path": "docs/brand/signature-masters/javascript-variaveis-funcoes-capa-v1-assinatura-v2.webp",
+      "master_sha256": "0c5af5b63e760d266c7bb087dae711b91d6adf8491692ce2d08718181e745087",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/primeiro-site-html-css-capa-v1.webp",
       "sha256": "532dd8ac225771b0af9174590e5ca36c67b82e67b4fd3866dfe476c113fa1215",
       "target": "/assets/posts/primeiro-site-html-css-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1200,13 +1341,16 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "39bbab7df071b815418bda30673df5abcd6a6fe9f59aedc59621531f12068a4e"
+      "target_sha256": "012166e650a25ead554bbeccacbd0e9b3934ff9886c46cb8c3e14b57d23fdd83",
+      "master_path": "docs/brand/signature-masters/primeiro-site-html-css-capa-v1-assinatura-v2.webp",
+      "master_sha256": "39bbab7df071b815418bda30673df5abcd6a6fe9f59aedc59621531f12068a4e",
+      "delivery_quality": 90
     },
     {
       "source": "/assets/posts/devtools-navegador-iniciantes-capa-v1.webp",
       "sha256": "d4a467d918545d133645e604a488c2f0e803ffe60b0db78b88ea93ea9d2e64a4",
       "target": "/assets/posts/devtools-navegador-iniciantes-capa-v1-assinatura-v2.webp",
-      "status": "prepared_for_review",
+      "status": "integrated_locally",
       "width": 1448,
       "height": 1086,
       "crop_width": 290,
@@ -1225,7 +1369,10 @@
         "x": 43,
         "y": 33
       },
-      "target_sha256": "10125cf508241f9936378128739a0fc215389a614209a9149ea5ff41430d5763"
+      "target_sha256": "6b3b42913bb2889a3bc3f751e8a3a35bf049097e52d4a26f966722f71e887e99",
+      "master_path": "docs/brand/signature-masters/devtools-navegador-iniciantes-capa-v1-assinatura-v2.webp",
+      "master_sha256": "10125cf508241f9936378128739a0fc215389a614209a9149ea5ff41430d5763",
+      "delivery_quality": 90
     }
   ],
   "excluded": [
@@ -1248,7 +1395,19 @@
     "prompt": "Remove all white/black D+J logos and cyan dots in all cells; preserve grid and underlying photographic background; do not add any logo.",
     "originals": "Todos os arquivos originais preservados por SHA-256",
     "review_url": "http://localhost:4323/",
-    "integration": "Não integrada aos resolvers; aguarda revisão conjunta",
-    "format": "WebP lossless para comparação; otimização de entrega posterior à revisão"
+    "integration": "Aprovado pelo usuário e integrado localmente em 09/10/2026; sem publicação",
+    "format": "WebP qualidade 90 para entrega; mestres lossless preservados em docs/brand/signature-masters",
+    "bytes_before": 40507854,
+    "bytes_after": 6458564
+  },
+  "approval": {
+    "date": "2026-10-09",
+    "visual": "Usuário: muito bom gostei muito",
+    "integration": "Usuário: pode continua, após proposta de integrar e otimizar localmente"
+  },
+  "validation": {
+    "pages": 648,
+    "images": 2088,
+    "failures": []
   }
 }

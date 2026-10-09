@@ -125,3 +125,5 @@
   }
   .home-editorial .hero-visual::after { background: none; }
 }
+
+.hero-visual img[src$="-assinatura-v2.webp"] { object-position: left top; }
