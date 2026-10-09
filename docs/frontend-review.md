@@ -227,3 +227,12 @@ Contato, Newsletter e Busca: Tab e foco visual dos controles principais verifica
 Inspeção visual de 320px com texto ampliado em Home, Categoria, Contato e Trilha; contorno da Busca inspecionado. Check/build/QA passaram. Alterações somente em CSS e estilos do cabeçalho; conteúdo, mídia, links e lógica comercial preservados.
 Limites: leitor de tela, zoom nativo e outros navegadores não certificados. Pendências anteriores de mídia/Setup/API permanecem explícitas.
 Preview: http://localhost:4321/ e http://localhost:4321/busca/. Sem publicação.
+
+
+## Sexta etapa — retomada e zoom nativo (09/10/2026, manhã)
+Preview 4321 reativado via astro dev --background na pasta canônica, após constatar servidor desligado. Código sem alterações pendentes na retomada; 4322 não iniciado.
+Teste com Chromium completo e perfil temporário isolado; zoom aplicado pela API chrome.tabs.setZoom, sem modificar fonte/CSS para simular ampliação. Janela externa 1280px: 200% produziu innerWidth 640px/devicePixelRatio 2; 400% produziu 320px/devicePixelRatio 4. Fonte raiz permaneceu 16px. Os dois temas foram confirmados no DOM.
+26 representantes × zoom 200/400% × claro/escuro = 104 combinações, sem overflow horizontal e com um main/um H1. Árvore de acessibilidade: nenhum controle exposto dos papéis button/link/textbox/searchbox/checkbox/combobox sem nome. Menu em 400% abriu com Espaço, Tab chegou ao campo mobile e Escape devolveu foco ao botão.
+Todos os POST foram bloqueados no navegador de teste. Sem envio real, publicação ou alteração do navegador pessoal. QA de links/HTML passou novamente sobre o build existente.
+Esta etapa não alterou layout nem conteúdo. A verificação da árvore não substitui uso com leitor de tela; outros navegadores e leitores de tela reais continuam pendentes. Pendências de arte da trilha de programação, Setup e entrega da API permanecem.
+Preview: http://localhost:4321/.
