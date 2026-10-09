@@ -13,3 +13,10 @@ Data: 09/10/2026. Escopo: código local do frontend e ../dejotacode-api. Sem pub
 
 ## Limites
 Esta leitura não certifica o estado remoto da produção. Não foi escolhido provedor nem criado cadastro, DNS, secret ou envio. A escolha do serviço e o endereço de destino são informações necessárias para implementar a integração concreta.
+
+## Caminho recomendado após recuperar histórico e consultar documentação
+Histórico: contato@dejotacode.com.br recebe via Cloudflare Email Routing, encaminhado ao Gmail já configurado. Isso não significa que as rotas da API atualmente enviem notificações.
+Documentação oficial consultada em 09/10/2026 permite envio por binding send_email a destinos verificados do Email Routing, gratuitamente. Portanto, a primeira integração recomendada é notificação interna de contato via Cloudflare ao destino já verificado, com remetente do domínio e Reply-To do visitante; não escolher serviço externo apenas para esse caso. Disponibilidade e verificação atuais da conta ainda não foram conferidas remotamente.
+Enviar newsletters a assinantes é um requisito separado; a permissão para destinos verificados não certifica envio arbitrário para a lista de leads.
+Fontes: https://developers.cloudflare.com/email-service/configuration/email-routing-addresses/ ; https://developers.cloudflare.com/email-service/configuration/send-bindings/ ; https://developers.cloudflare.com/email-service/api/send-emails/workers-api/ .
+Próxima implementação local: adaptador Cloudflare com transporte simulado nos testes e envio desabilitado até ativação explícita; preservar gravação das mensagens e registrar falhas de notificação. Sem alterar DNS, cadastrar serviço ou enviar e-mails nesta pesquisa.
