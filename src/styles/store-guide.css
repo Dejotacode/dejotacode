@@ -1,0 +1,48 @@
+.store-guide-page { padding-bottom: 2.5rem; }
+.store-guide-page .container { width: min(calc(100% - (2 * var(--space-page))), var(--container)); margin-inline: auto; }
+.store-guide-page .breadcrumbs { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: 1.5rem; color: var(--color-text-subtle); font-size: .82rem; }
+.store-guide-page .breadcrumbs a { color: inherit; }
+.store-guide-page .eyebrow { margin: 0; color: var(--color-accent-strong); font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.store-guide-page .guide-hero { max-width: 76ch; padding-block: 2.5rem 1.5rem; border-bottom: 1px solid var(--color-border); }
+.store-guide-page .guide-hero h1 { max-width: 25ch; margin: .65rem 0 1rem; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.1; letter-spacing: -.035em; }
+.store-guide-page .guide-hero > p:last-child { margin: 0; color: var(--color-text-muted); font-size: 1.08rem; line-height: 1.7; }
+.store-guide-page .guide-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, .42fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; padding-block: 1.75rem 2rem; }
+.store-guide-page .guide-copy { max-width: 72ch; font-size: 1.05rem; line-height: 1.85; }
+.store-guide-page .guide-copy p { margin: 0 0 1.2rem; color: var(--color-text); }
+.store-guide-page .guide-copy p:last-child { margin-bottom: 0; }
+.store-guide-page .guide-principle { padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.store-guide-page .guide-principle > svg { color: var(--color-accent-strong); margin-bottom: .65rem; }
+.store-guide-page .guide-principle h2 { margin: .4rem 0 .65rem; font-size: 1.1rem; line-height: 1.35; }
+.store-guide-page .guide-principle > p:last-child { margin: 0; color: var(--color-text-muted); font-size: .95rem; line-height: 1.7; }
+.store-guide-page .guide-recommendations { padding-block: .5rem 2rem; }
+.store-guide-page .guide-recommendations h2 { margin: .4rem 0 1rem; font-size: clamp(1.45rem, 2.5vw, 1.9rem); letter-spacing: -.025em; }
+.store-guide-page .guide-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.store-guide-page .guide-product { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: 1rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.store-guide-page .guide-product > .visual-media { width: 100%; align-self: start; aspect-ratio: 1; min-width: 0; }
+.store-guide-page .guide-product .visual-media img { width: 100%; height: 100%; object-fit: cover; }
+.store-guide-page .guide-product__body { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; }
+.store-guide-page .guide-product h3 { margin: 0; font-size: 1.05rem; line-height: 1.4; }
+.store-guide-page .guide-product a { display: inline-flex; align-items: center; gap: .5rem; min-height: 1.5rem; color: var(--color-accent-strong); font-size: .9rem; font-weight: 700; text-decoration: none; }
+.store-guide-page .guide-product a:hover { text-decoration: underline; }
+.store-guide-page .guide-product__article { font-weight: 500; }
+.store-guide-page .guide-endlinks { display: flex; flex-wrap: wrap; gap: 1rem 2rem; padding-block: 1.25rem; border-block: 1px solid var(--color-border); }
+.store-guide-page .guide-endlinks a { display: inline-flex; align-items: center; gap: .5rem; color: var(--color-accent-strong); font-size: .9rem; }
+.store-guide-page a:focus-visible { outline: 2px solid var(--color-accent-strong); outline-offset: 4px; }
+@media (max-width: 55rem) {
+  .store-guide-page .guide-layout, .store-guide-page .guide-products { grid-template-columns: minmax(0, 1fr); }
+  .store-guide-page .guide-principle { max-width: 72ch; }
+}
+@media (max-width: 30rem) {
+  .store-guide-page .guide-hero { padding-top: 2rem; }
+  .store-guide-page .guide-product { grid-template-columns: 5rem minmax(0, 1fr); gap: .85rem; padding: .85rem; }
+  .store-guide-page .guide-product h3 { font-size: .95rem; }
+}
+
+@media (min-width: 55.01rem) {
+  .store-guide-page .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, .42fr); column-gap: clamp(1.5rem, 4vw, 3rem); }
+  .store-guide-page .breadcrumbs, .store-guide-page .guide-recommendations, .store-guide-page .guide-endlinks { grid-column: 1 / -1; }
+  .store-guide-page .guide-hero { grid-column: 1; grid-row: 2; }
+  .store-guide-page .guide-layout { display: contents; }
+  .store-guide-page .guide-copy { grid-column: 1; grid-row: 3; padding-block: 1.75rem 2rem; }
+  .store-guide-page .guide-principle { grid-column: 2; grid-row: 2 / 4; align-self: start; margin-top: 2.5rem; }
+}
