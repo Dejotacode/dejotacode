@@ -118,3 +118,7 @@ Código local da API conferido: contatos/leads são persistidos e consultáveis 
 
 ## Integração local preparada — 09/10/2026
 API agora possui adaptador Cloudflare e chamada em segundo plano após persistência do contato. Desativada por padrão; binding/remetente/destino/flag não ativados. Sete cenários de rota com transporte/banco simulados aprovados; TypeScript check passou. Falha de envio não altera resposta de recebimento nem remove o contato; log genérico sem dados pessoais. Sem fila persistente/reenvio automático nesta etapa. Aceitação de envio não comprova entrega final. Newsletter preservada. Próxima etapa é conferir configuração real da conta e preparar ativação/teste de destinatário definido, com autorização de envio específica. Nenhum e-mail enviado, DNS alterado ou deploy feito. Detalhes e teste no README/scripts da API.
+
+
+## Transporte de e-mail testado — 09/10/2026
+Um e-mail de teste autorizado foi enviado via REST Cloudflare; serviço confirmou entrega a um destinatário, sem fila ou bounce. Detalhes em formularios-entrega-revisao-2026-10-09.md. Notificações da rota permanecem desativadas; implantação/ativação não autorizadas. Próximo passo: usuário confirmar recebimento e validar binding em ambiente controlado antes de publicação.
