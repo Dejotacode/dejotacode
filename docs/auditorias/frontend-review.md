@@ -430,3 +430,8 @@ Frontend publicado por PR #268, merge 652e864d949668bc417edfd7dc2b0b47a6ba722f; 
 Edições futuras continuam manuais e precisam de autorização própria; nenhuma automação de campanha semanal ou boas-vindas foi criada. Nenhum segredo, backup SQL, contato ou link individual de descadastro versionado.
 
 Conferência pública final: 16 combinações (320/390/768/1440 × claro/escuro × newsletter/Guia), HTTP 200, formulário habilitado com API de produção, h1 único e sem overflow. Nenhum POST do formulário nessa conferência. Evidência: NEWSLETTER_PRODUCTION_UI_2026-10-09.json.
+
+
+## MX Anywhere 3S — correção da assinatura — 10/10/2026
+A preparação anterior conferiu layout, mas não o símbolo. Esse resultado não certificava identidade visual. Marca antiga no caderno removida via imagegen, somente região local reincorporada; diferença fora da máscara zero antes de enquadramento/exportação. Original preservado. Novo asset 1440 × 810 com SVG oficial dark único, 72 × 72 em x43/y24. Resolver editorial, Store e destaque principal agora usam -assinatura-v2.webp. Catálogo e destaque ancorados left top. Conferência obrigatória de identidade acrescentada ao registro de mídia e referenciada no Documento Mestre.
+32 combinações de artigo/ficha/catálogo/destaque × quatro larguras × dois temas: mídia carregada, sem overflow e alinhamento correto. Capturas de artigo mobile e Store desktop inspecionadas. Degradê existente do destaque atenua a assinatura; comportamento aprovado preservado, sem marca duplicada. Check/build:production/QA aprovados (121 páginas locais). [Evidência](../brand/mx-anywhere-signature-validation-20261010.json). Sem publicação.

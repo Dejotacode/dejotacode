@@ -21,7 +21,7 @@ const storePhotorealVisuals: Record<string, string> = {
   "elementor-site-builder": "/assets/store/elementor-site-builder.webp",
   "hostinger-hospedagem": "/assets/store/hostinger-hospedagem.webp",
   "logitech-mx-keys-mini": "/assets/store/logitech-mx-keys-mini.webp",
-  "logitech-mx-anywhere-3s": "/assets/store/logitech-mx-anywhere-3s.webp",
+  "logitech-mx-anywhere-3s": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
   "fifine-am8-usb-xlr": "/assets/store/fifine-am8-usb-xlr.webp",
   "sandisk-portable-ssd-1tb": "/assets/store/sandisk-portable-ssd-1tb.webp",
   "baseus-fm11-10000mah": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",

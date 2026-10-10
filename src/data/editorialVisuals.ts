@@ -8,7 +8,7 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
-  "logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar": "/assets/store/logitech-mx-anywhere-3s.webp",
+  "logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
   "ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
   "quanto-cobrar-primeiro-site": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",
   "produto-digital-como-transformar-conhecimento-em-ebook": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1-assinatura-v2.webp",

@@ -11,3 +11,5 @@ Status: vigente como índice. Revisão: 10/10/2026. Escopo: localização; o sta
 - [signature-integration-validation.json](signature-integration-validation.json).
 - [signature-batch-sources/](signature-batch-sources).
 - [signature-masters/](signature-masters).
+
+- [mx-anywhere-signature-validation-20261010.json](mx-anywhere-signature-validation-20261010.json).

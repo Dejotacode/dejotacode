@@ -93,3 +93,18 @@ Asset: /assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp, 1672 × 941, Web
 Símbolo único, caixa 5% da largura e margens 3%; recortes 16:9, 16:10 e 4:3 validados em 320/390/768/1440px, claro/escuro. Override center top do catálogo cortava a assinatura: corrigido em store-catalog.css com regra específica para este asset. Nenhuma mídia dos demais produtos alterada.
 Artigo e ficha liberados para entrega conjunta por instrução do usuário em 10/10; ficha draft false e catalogStage catalogo-geral. Mantida classificação Pesquisado. Artigo informa natureza ilustrativa da capa. Condições Awin registradas em 09/10 não revalidadas nesta etapa.
 Check/build/QA aprovados na etapa visual; release em validação para publicação pelo fluxo oficial. Comissão/cookie não apresentados como condição atual; licença da referência sem certificação documental, registrada como lacuna.
+
+
+## Conferência obrigatória antes de integrar mídia — 10/10/2026
+Regra vigente, responsável @studio/@dev. Em cada nova entrega, conferir o arquivo efetivamente resolvido pela página, mesmo quando reutilizado de um produto já publicado. Imagem carregada, build aprovado e nome de arquivo não comprovam identidade visual correta.
+1. Identificar origem: arte editorial própria, fornecedor ou captura; aplicar a regra correspondente e registrar exceção quando houver.
+2. Em arte própria assinada, conferir visualmente símbolo oficial, quantidade única, versão adequada ao fundo, topo esquerdo, caixa 5% e margens 3%. Conferir também marcas antigas incorporadas em outros pontos do raster; não empilhar assinatura nova.
+3. Registrar original, derivado, SHA-256 e consumidores; preservar o original. Arquivo excluído de migração anterior não é automaticamente aprovado para nova entrega.
+4. Conferir o arquivo nos resolvers e usos reais: capa do artigo, recomendação, ficha e catálogo, em claro/escuro e recortes 16:9/16:10/4:3 conforme uso. Confirmar símbolo inteiro e produto sem corte indevido.
+5. Registrar separadamente identidade visual, carregamento/layout e aprovação editorial. Se a assinatura ainda não foi conferida, declarar revisão visual pendente e não apresentar o pacote como pronto para publicação.
+Motivo: a imagem MX Anywhere 3S ficou excluída do lote anterior e continha uma marca antiga no caderno; a preparação de 10/10 conferiu layout, mas não a identidade. Esta regra explicita a revisão exigida pelo padrão existente, sem certificar licenças ou detalhes de produto.
+
+
+## MX Anywhere 3S — assinatura corrigida em 10/10/2026
+Arte editorial existente, excluída do lote de 49 e com símbolo antigo no caderno, corrigida individualmente. Imagegen removeu a marca; somente recorte 190 × 140 em x1245/y590 reincorporado ao original com máscara suavizada. Pixels fora dessa região preservados antes do enquadramento/exportação. Original 1448 × 1086 preservado; capa central 16:9 exportada 1440 × 810 e SVG oficial dark aplicado separadamente: 72 × 72, x43/y24. Não é foto de teste físico.
+Novo /assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp, qualidade 90, reutilizado por resolver editorial e Store. Catálogo tem regra específica left top. Original público não sobrescrito. Mestre PNG e fonte da limpeza preservados separadamente. Identidade conferida visualmente: símbolo oficial único e marca antiga removida. Artigo/ficha/catálogo/destaque Store em 32 combinações passaram; símbolo dentro dos recortes. Degradê aprovado atenua a assinatura no destaque Store, sem duplicação de marca. Check/build:production/QA passaram. Registro anterior de pacote pronto sem conferir símbolo foi superado. Nenhuma publicação nesta correção.
