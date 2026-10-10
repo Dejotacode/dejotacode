@@ -195,16 +195,16 @@ src/styles/          estilos e tokens visuais
 
 ## Documentação técnica
 
-- [`docs/architecture.md`](docs/architecture.md) — arquitetura e limites entre frontend e API;
-- [`docs/operations.md`](docs/operations.md) — ambientes, QA, CI e regras operacionais;
-- [`docs/runbook-deploy-rollback.md`](docs/runbook-deploy-rollback.md) — deploy, homologação e rollback;
-- [`docs/backup-recovery.md`](docs/backup-recovery.md) — backup, recuperação e próximos controles operacionais.
-- [`docs/admin-scope-v1.9.0.md`](docs/admin-scope-v1.9.0.md) — decisão histórica do Admin e atualização pós-v1.10.0.
-- [`docs/editorial-workflow.md`](docs/editorial-workflow.md) — fluxo atual Admin → GitHub → CI → Pages e mídia R2.
-- [`docs/v1.11.0-operational-reconciliation.md`](docs/v1.11.0-operational-reconciliation.md) — reconciliação operacional após v1.10.0.
-- [`docs/r2-inventory-v1.11.0.md`](docs/r2-inventory-v1.11.0.md) — inventário read-only e estratégia de proteção da mídia R2.
-- [`docs/api-source-reconciliation-v1.9.0.md`](docs/api-source-reconciliation-v1.9.0.md) — reconciliação da fonte canônica da API e direção operacional.
-- [`docs/PAUSE-POINT-V1.21.0.md`](docs/PAUSE-POINT-V1.21.0.md) — ponto seguro de retomada após v1.21.0 / API v1.11.0.
+- [`docs/arquitetura/architecture.md`](docs/arquitetura/architecture.md) — arquitetura e limites entre frontend e API;
+- [`docs/operacao/operations.md`](docs/operacao/operations.md) — ambientes, QA, CI e regras operacionais;
+- [`docs/operacao/runbook-deploy-rollback.md`](docs/operacao/runbook-deploy-rollback.md) — deploy, homologação e rollback;
+- [`docs/operacao/backup-recovery.md`](docs/operacao/backup-recovery.md) — backup, recuperação e próximos controles operacionais.
+- [`docs/decisoes/admin-scope-v1.9.0.md`](docs/decisoes/admin-scope-v1.9.0.md) — decisão histórica do Admin e atualização pós-v1.10.0.
+- [`docs/operacao/editorial-workflow.md`](docs/operacao/editorial-workflow.md) — fluxo atual Admin → GitHub → CI → Pages e mídia R2.
+- [`docs/auditorias/v1.11.0-operational-reconciliation.md`](docs/auditorias/v1.11.0-operational-reconciliation.md) — reconciliação operacional após v1.10.0.
+- [`docs/auditorias/r2-inventory-v1.11.0.md`](docs/auditorias/r2-inventory-v1.11.0.md) — inventário read-only e estratégia de proteção da mídia R2.
+- [`docs/arquitetura/api-source-reconciliation-v1.9.0.md`](docs/arquitetura/api-source-reconciliation-v1.9.0.md) — reconciliação da fonte canônica da API e direção operacional.
+- [`docs/historico/PAUSE-POINT-V1.21.0.md`](docs/historico/PAUSE-POINT-V1.21.0.md) — ponto seguro de retomada após v1.21.0 / API v1.11.0.
 
 ## Segurança operacional
 
@@ -217,4 +217,7 @@ Deploy, tag e release são tratados como etapas separadas do desenvolvimento e n
 Nenhuma licença de distribuição foi definida neste repositório até o momento.
 
 ## Padrões de frontend
-Consultar [índice da documentação](docs/README.md) e [Documento Mestre](docs/frontend-master.md) antes de evoluir páginas ou conteúdo.
+Consultar [índice da documentação](docs/README.md) e [Documento Mestre](docs/padroes/frontend-master.md) antes de evoluir páginas ou conteúdo.
+
+## Organização e versões
+[Comece pela documentação](docs/README.md), consulte a [regra de destinos](docs/organizacao-documental.md) e o [histórico de versões](CHANGELOG.md). Notas completas em [docs/releases](docs/releases/README.md).
