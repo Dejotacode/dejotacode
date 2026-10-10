@@ -171,3 +171,12 @@ Acervo anteriormente em clientes agora está em /home/dejota/Workspace/arquivo/d
 
 ## Ottocast — entrega de produção concluída em 10/10/2026
 Usuário autorizou toda a execução até produção às 03:18 BRT. PR #270 integrado, commit cc1d3ba635d5bd3b712387a5e6d5f36e6f580e86; workflow 38030741660 aprovado, deployment https://a0ca317c.dejota-code.pages.dev. Artigo e ficha publicados juntos; 16 combinações responsivas, canonicals, vínculo recíproco e mídia pública homologados. Registros anteriores de Ottocast em rascunho são históricos. Release isolada dejotacode-ottocast-release, oito arquivos; outras frentes locais preservadas. Sem novo deploy de API/migrations ou backup externo. [Resultado](../auditorias/ottocast-publication-result-2026-10-10.json).
+
+
+## Publicação integral concluída — 10/10/2026
+
+Status: publicado e homologado. Usuário autorizou a entrega integral às 19:54 BRT. PR #275 integrado na main, commit 7d531d8e2142f894476ee6db68c91c6ed0fe71e4; workflow 38093497180 aprovado. Deploy https://568b4647.dejota-code.pages.dev e domínio https://dejotacode.com.br atualizados. Configuração pública da API e GA4 preservada. Não houve alteração de Worker, D1, DNS ou secrets.
+
+Publicados seleção e reuso das imagens por conteúdo, símbolos oficiais, correções de recorte, quatro capas físicas e três editoriais, correções de parceiros e documentação pendente. Build 123 páginas e QA/documentação aprovados; dez smoke checks passaram. Conferência do domínio: 119 páginas com title/canonical corretos, 90 imagens locais idênticas por SHA-256, 121 URLs e 968 combinações de largura/tema sem problemas. 76 assets assinados visíveis; símbolo protegido. Originais e backups locais preservados.
+
+As menções anteriores a publicação pendente descrevem etapas históricas. Permanecem duas lacunas: autorização documental das fotos de fornecedor e nove alertas existentes das ferramentas de build. Não foram resolvidas nem certificadas pela publicação. Resultado e evidências em docs/auditorias/publicacao-integral-{result,integridade,validation}-2026-10-10.json. Registros posteriores de homologação guardados localmente, sem segundo deploy apenas documental.

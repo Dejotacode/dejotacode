@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-10T20:06:35.733775-03:00",
+  "status": "publicado-homologado",
+  "responsible": "@control/@dev",
+  "domain": "https://dejotacode.com.br",
+  "deployment_url": "https://568b4647.dejota-code.pages.dev",
+  "pr": 275,
+  "pr_url": "https://github.com/Dejotacode/dejotacode/pull/275",
+  "release_head": "327d070c9e0251a57b4ade63c4a37db0703fb359",
+  "production_commit": "7d531d8e2142f894476ee6db68c91c6ed0fe71e4",
+  "previous_commit": "f10aaa2eb0d410ffd8bfe4764fa09ce1e6d685fc",
+  "ci_run": 38093497180,
+  "ci_url": "https://github.com/Dejotacode/dejotacode/actions/runs/38093497180",
+  "ci_success": true,
+  "smoke_checks_passed": 10,
+  "pages_integrity": 119,
+  "image_hashes_equal": 90,
+  "responsive_routes": 121,
+  "responsive_combinations": 968,
+  "responsive_issues": 0,
+  "visible_signed_assets": 76,
+  "ga4_preserved": true,
+  "production_api_preserved": true,
+  "api_d1_dns_secrets_changed": false,
+  "external_backups_created": false,
+  "originals_preserved": true,
+  "limits": [
+    "Direitos de uso das quatro fotos de fornecedor ainda sem confirmação documental; publicação autorizada pelo usuário não certifica direitos do fornecedor.",
+    "Nove alertas de auditoria npm nas dependências existentes das ferramentas; dependências não atualizadas nesta release.",
+    "Verificação por teclado e amostra visual não substituem auditoria assistiva completa."
+  ]
+}

@@ -1,0 +1,1833 @@
+{
+  "date": "2026-10-10",
+  "status": "publicado-validado",
+  "commit": "7d531d8e2142f894476ee6db68c91c6ed0fe71e4",
+  "domain": "https://dejotacode.com.br",
+  "pages": 119,
+  "unique_images": 90,
+  "ga4_preserved": true,
+  "production_api_preserved": true,
+  "results": [
+    {
+      "kind": "page",
+      "path": "/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Linux, programação e tecnologia para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/2/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 2 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/2/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/3/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 3 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/3/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/4/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 4 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/4/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/5/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 5 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/5/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/6/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 6 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/6/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/7/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 7 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/7/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/8/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Blog de tecnologia para iniciantes — Página 8 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/8/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Afiliados para iniciantes: como recomendar com transparência | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/autenticacao-dois-fatores/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Autenticação em dois fatores: por que usar e como começar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/autenticacao-dois-fatores/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/bilibili-para-iniciantes-monetizacao-brasil/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Bilibili para iniciantes: publicação e monetização no Brasil | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/bilibili-para-iniciantes-monetizacao-brasil/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/comandos-linux-para-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Comandos Linux para quem está começando | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/comandos-linux-para-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-a-web-funciona/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como a web funciona: navegador, servidor, DNS e HTTP | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-a-web-funciona/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-conseguir-primeira-renda-online/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Primeira renda online: como começar com uma habilidade simples | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-conseguir-primeira-renda-online/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-conseguir-primeiro-cliente-sem-anuncios/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como conseguir o primeiro cliente sem investir em anúncios | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-conseguir-primeiro-cliente-sem-anuncios/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-criar-pendrive-bootavel-linux/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como criar um pendrive bootável Linux sem apagar o disco errado | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-criar-pendrive-bootavel-linux/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-escolher-distribuicao-linux/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como escolher uma distribuição Linux | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-escolher-distribuicao-linux/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como estudar tecnologia sem se perder em cursos e ferramentas | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-estudar-tecnologia-sem-se-perder/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-montar-oferta-simples-pequenos-negocios/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como montar uma oferta simples para pequenos negócios | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-montar-oferta-simples-pequenos-negocios/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-testar-linux-sem-instalar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como testar Linux sem instalar no computador | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-testar-linux-sem-instalar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/como-verificar-respostas-de-ia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como verificar respostas de IA antes de confiar nelas | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/como-verificar-respostas-de-ia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/devtools-navegador-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "DevTools do navegador para iniciantes: inspecione e corrija sua página | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/devtools-navegador-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/documentar-aprendizado-tecnologia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como documentar o que você aprende em tecnologia | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/documentar-aprendizado-tecnologia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/elementor-para-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Elementor para iniciantes: o que você precisa antes de criar um site | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/elementor-para-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/elevenlabs-para-iniciantes-criar-narracoes-com-ia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "ElevenLabs para iniciantes: como criar narrações com IA | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/elevenlabs-para-iniciantes-criar-narracoes-com-ia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/erros-iniciantes-desistem-renda-digital/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "10 erros que fazem iniciantes desistirem da renda digital | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/erros-iniciantes-desistem-renda-digital/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/escolher-primeiro-projeto-portfolio/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como escolher seu primeiro projeto de portfólio | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/escolher-primeiro-projeto-portfolio/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/febspot-para-iniciantes-monetizacao-indicacao/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Febspot para iniciantes: vídeos, monetização e indicação | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/febspot-para-iniciantes-monetizacao-indicacao/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/freelancer-para-iniciantes-como-escolher-um-servico/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Freelancer para iniciantes: como escolher seu primeiro serviço | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/freelancer-para-iniciantes-como-escolher-um-servico/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/gerenciador-de-senhas-para-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Gerenciador de senhas para iniciantes: como escolher e começar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/gerenciador-de-senhas-para-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/git-e-github-entenda-a-diferenca/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Git e GitHub: entenda a diferença sem complicação | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/git-e-github-entenda-a-diferenca/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/habitos-seguranca-digital-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "5 hábitos de segurança digital para começar hoje | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/habitos-seguranca-digital-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/html-css-javascript-entenda-diferenca/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "HTML, CSS e JavaScript: entenda a diferença | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/html-css-javascript-entenda-diferenca/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Hub Data: como funciona e o que estamos testando | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/hub-data-como-funciona-e-o-que-estamos-testando/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/javascript-variaveis-funcoes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "JavaScript para iniciantes: variáveis, condições e funções | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/javascript-variaveis-funcoes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Jornada Python: o que avaliar antes de começar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/landing-page-para-pequenos-negocios-o-que-entregar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Landing page para pequenos negócios: o que entregar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/landing-page-para-pequenos-negocios-o-que-entregar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Méliuz Jogue e Ganhe: testamos o Pocket Sort | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/meliuz-jogue-e-ganhe-pocket-sort/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/metricool-para-iniciantes-organizar-agendar-conteudo/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Metricool para iniciantes: como organizar e agendar conteúdo | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/metricool-para-iniciantes-organizar-agendar-conteudo/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/o-que-e-ia-generativa/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "O que é IA generativa e como usar com responsabilidade | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/o-que-e-ia-generativa/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/o-que-e-linux/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "O que é Linux? Uma explicação para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/o-que-e-linux/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/organizar-ambiente-estudos-tecnologia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como organizar seu ambiente de estudos em tecnologia | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/organizar-ambiente-estudos-tecnologia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/permissoes-linux-para-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Permissões no Linux sem mistério | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/permissoes-linux-para-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/phishing-como-identificar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Phishing: como identificar mensagens suspeitas antes de clicar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/phishing-como-identificar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/pipe-redirecionamento-linux/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Pipe e redirecionamento no Linux: entenda |, > e >> | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/pipe-redirecionamento-linux/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/portfolio-para-freelancer-sem-clientes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Portfólio para freelancer: o que mostrar mesmo sem clientes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/portfolio-para-freelancer-sem-clientes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/primeiro-site-html-css/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como criar seu primeiro site com HTML e CSS | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/primeiro-site-html-css/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/produto-digital-como-transformar-conhecimento-em-ebook/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Produto digital: como criar seu primeiro e-book | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/produto-digital-como-transformar-conhecimento-em-ebook/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Programação do Iniciante ao Avançado: o que o eBook cobre | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/prompts-melhores-estudar-trabalhar/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como escrever prompts melhores para estudar e trabalhar | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/prompts-melhores-estudar-trabalhar/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/quanto-cobrar-primeiro-site/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Quanto cobrar pelo seu primeiro site | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/quanto-cobrar-primeiro-site/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/usar-ia-estudar-sem-dependencia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como usar IA para estudar sem terceirizar o raciocínio | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/usar-ia-estudar-sem-dependencia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/blog/vpn-para-iniciantes/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "VPN para iniciantes: quando faz sentido usar e quais são os limites | DejotaCode",
+        "canonical": "https://dejotacode.com.br/blog/vpn-para-iniciantes/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/busca/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Buscar conteúdos | DejotaCode",
+        "canonical": "https://dejotacode.com.br/busca/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/inteligencia-artificial/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Inteligência artificial para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/inteligencia-artificial/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/linux-seguranca/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Linux e segurança digital para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/linux-seguranca/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/linux-seguranca/2/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Linux e segurança digital para iniciantes — Página 2 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/linux-seguranca/2/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/programacao/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Programação para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/programacao/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/programacao/2/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Programação para iniciantes — Página 2 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/programacao/2/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/renda-digital/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Renda Digital para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/renda-digital/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/renda-digital/2/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Renda Digital para iniciantes — Página 2 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/renda-digital/2/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/renda-digital/3/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Renda Digital para iniciantes — Página 3 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/renda-digital/3/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/categoria/tecnologia-pratica/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Tecnologia prática para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/categoria/tecnologia-pratica/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/contato/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Contato | DejotaCode",
+        "canonical": "https://dejotacode.com.br/contato/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/guia/iniciante-em-tecnologia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Guia do Iniciante em Tecnologia | DejotaCode",
+        "canonical": "https://dejotacode.com.br/guia/iniciante-em-tecnologia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/newsletter/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Newsletter de tecnologia prática | DejotaCode",
+        "canonical": "https://dejotacode.com.br/newsletter/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/parcerias/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Parcerias e anúncios | DejotaCode",
+        "canonical": "https://dejotacode.com.br/parcerias/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/politica-de-privacidade/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Política de Privacidade | DejotaCode",
+        "canonical": "https://dejotacode.com.br/politica-de-privacidade/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/portfolio/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Case DejotaCode: produto, conteúdo e engenharia | DejotaCode",
+        "canonical": "https://dejotacode.com.br/portfolio/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/produtos/linux-do-zero/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Linux do Zero — e-book para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/produtos/linux-do-zero/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Ferramentas e recursos para tecnologia | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/aprendizado/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Aprendizado: recursos recomendados | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/aprendizado/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/desenvolvimento/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Desenvolvimento: recursos recomendados | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/desenvolvimento/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/digitais/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Ferramentas digitais: recursos recomendados | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/digitais/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/infraestrutura/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Infraestrutura: recursos recomendados | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/infraestrutura/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/renda-digital/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Renda digital: recursos recomendados | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/renda-digital/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/recursos/seguranca/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Segurança: recursos recomendados | DejotaCode",
+        "canonical": "https://dejotacode.com.br/recursos/seguranca/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/servicos/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Criação de landing pages e sites | DejotaCode",
+        "canonical": "https://dejotacode.com.br/servicos/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/sobre/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Sobre o DejotaCode para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/sobre/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/baseus-fc11-power-bank/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Baseus FC11 Power Bank 10.000/20.000 mAh | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/baseus-fc11-power-bank/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/baseus-fm11-10000mah/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Baseus FM11 Power Bank 10.000 mAh | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/baseus-fm11-10000mah/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/como-avaliamos/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como avaliamos na DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/como-avaliamos/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/criadores/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Criadores na DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/criadores/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/elementor-site-builder/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Elementor — criação de sites e landing pages no WordPress | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/elementor-site-builder/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/elevenlabs/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "ElevenLabs — voz e narração com inteligência artificial | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/elevenlabs/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/ferramentas-digitais/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Ferramentas digitais na DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/ferramentas-digitais/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/fifine-am8-usb-xlr/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Fifine AM8 USB/XLR | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/fifine-am8-usb-xlr/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/gshield-hub-usb-c-6-em-1/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Gshield Hub USB-C 6 em 1 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/gshield-hub-usb-c-6-em-1/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/guias/como-escolher-pendrive-linux/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Como escolher um pendrive para Linux | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/guias/como-escolher-pendrive-linux/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/hospedagem-primeiro-site/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Hospedagem para o primeiro site | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/hospedagem-primeiro-site/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/jornada-python-hotmart/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Jornada Python — Python Academy | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/jornada-python-hotmart/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/leadlovers-hotmart/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Leadlovers — automação, páginas e relacionamento com leads | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/leadlovers-hotmart/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/linux/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Linux na DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/linux/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/logitech-mx-anywhere-3s/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Logitech MX Anywhere 3S | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/logitech-mx-anywhere-3s/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/logitech-mx-keys-mini/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Logitech MX Keys Mini | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/logitech-mx-keys-mini/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/logitech-pebble-2-m350s/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Logitech Pebble 2 M350s | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/logitech-pebble-2-m350s/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/metricool/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Metricool — planejamento, publicação e análise de redes sociais | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/metricool/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/nordpass/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "NordPass — gerenciador de senhas | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/nordpass/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/nordvpn/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "NordVPN | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/nordvpn/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/ottocast-mini-cube-3-0/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Ottocast Mini Cube 3.0 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/ottocast-mini-cube-3-0/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/pagina/2/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "DejotaStore — Página 2 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/pagina/2/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/programacao-iniciante-avancado-hotmart/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Programação do Iniciante ao Avançado | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/programacao-iniciante-avancado-hotmart/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/programacao/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Programação na DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/programacao/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/sandisk-portable-ssd-1tb/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "SanDisk Portable SSD 1 TB | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/sandisk-portable-ssd-1tb/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/sandisk-ultra-flair-32gb/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "SanDisk Ultra Flair 32 GB USB 3.0 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/sandisk-ultra-flair-32gb/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/seguranca-digital-essencial-hotmart/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Segurança Digital {Essencial} — curso introdutório | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/seguranca-digital-essencial-hotmart/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/setup-do-dejota/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Setup do Dejota | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/setup-do-dejota/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/setup/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Setup na DejotaStore | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/setup/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/store/ugreen-hub-usb-c-6-em-1/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "UGREEN Uno Hub USB-C 6 em 1 | DejotaCode",
+        "canonical": "https://dejotacode.com.br/store/ugreen-hub-usb-c-6-em-1/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/trilhas/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Trilhas de tecnologia para iniciantes | DejotaCode",
+        "canonical": "https://dejotacode.com.br/trilhas/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/trilhas/ia-no-dia-a-dia/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "IA no dia a dia | DejotaCode",
+        "canonical": "https://dejotacode.com.br/trilhas/ia-no-dia-a-dia/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/trilhas/linux-do-zero/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Linux do zero | DejotaCode",
+        "canonical": "https://dejotacode.com.br/trilhas/linux-do-zero/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/trilhas/primeira-renda-online/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Primeira Renda Online | DejotaCode",
+        "canonical": "https://dejotacode.com.br/trilhas/primeira-renda-online/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/trilhas/primeiros-passos-programacao/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Primeiros passos na programação | DejotaCode",
+        "canonical": "https://dejotacode.com.br/trilhas/primeiros-passos-programacao/"
+      }
+    },
+    {
+      "kind": "page",
+      "path": "/trilhas/seguranca-digital-essencial/",
+      "status": 200,
+      "matches": true,
+      "actual": {
+        "title": "Segurança digital essencial | DejotaCode",
+        "canonical": "https://dejotacode.com.br/trilhas/seguranca-digital-essencial/"
+      }
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/brand/dejota-author.webp",
+      "status": 200,
+      "sha256": "bc3b9b102f98d1a0690139aa8e4eb5ac5ef4f04d769df7dec925d5989db3ef55",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/portfolio/blog.webp",
+      "status": 200,
+      "sha256": "036b25c7273e4bad387f299d6a4f7f5d72c3dc40387b73ab18a62e4890005099",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/portfolio/home.webp",
+      "status": 200,
+      "sha256": "f69fc19a1aacd5251e6e3ae48bd3babc6dd1b78f58c80b39a71097922784863c",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/portfolio/trilhas.webp",
+      "status": 200,
+      "sha256": "7a8ec4fc4362bb207d64577b26f7b801722bf2afce8ca753f8f2cf1dd21803d9",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "a8a5180d0205267e72de2a7fbf0e43aa04cdef3a62981f3d35d77422fc35714a",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/autenticacao-dois-fatores-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "05b878a32010d1c82fa3f1958866f0c19c8314588a507f477843bb231ffdb301",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "7bf5a73a0de09b5afc118e5a2bc79a571ce2ff99d68aefa746467e790a46d346",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/comandos-linux-para-iniciantes-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "1474175d44947c9de034deaefb836b6e8517b01471db583dbc334da01065ebe2",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-a-web-funciona-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "d4caad705e1bcf5786fecd5093d8fa864f86d54ade2e2ef60bb41eb22d224b66",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-conseguir-primeira-renda-online-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "64f8e01936d2a31db4bedd6506fa955d8fe06011051408b649739304619bb3a1",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "0512aae485d42c81477fa05839b18152a9524777d378ad1a3a72a5be7ca6b7b5",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-criar-pendrive-bootavel-linux-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "7ee94577a20ef5b0041e31c7ca09f4b758fe8135a3b731e031640a9e2ac4f007",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-escolher-distribuicao-linux-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "ef3bef70bf423d3a0991fc901fe6f80edd134f51a103c634d9986e97419738b7",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "a3a0c3c7f1dcab3b2580c03640ca64daddc4e78f0d535a025a03598b442652eb",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "3bb2aa093ecaae33f8664dd1634de20ca63c2f617e1052343b9900310e75cdd5",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-testar-linux-sem-instalar-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "bf01dafc3a994f1c3068e26c6f7fff8e2cf6207825580e76635551e9d0d52955",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/como-verificar-respostas-de-ia-ia-explicita-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "a13096e4e932bddf552bf4cc3f978708f02b67008a6ea95b344e0e7ac3e29cc0",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/devtools-navegador-iniciantes-capa-v1-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "6b3b42913bb2889a3bc3f751e8a3a35bf049097e52d4a26f966722f71e887e99",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "ec985d98737fc10545b173df3de3c59f0721197b70916db819f1a0e3dcfcf85e",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "0b2f2e2dcbd5311d79a1e59fed20994e8970347f9e54e98ba5968b88f52717db",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/erros-iniciantes-desistem-renda-digital-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "8681db8f25d5d88dec48e7aac662409c5533714fe36eeea99d484916e9ed71e5",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "e0acc0ef7e04dfa5adea15a7ec58881455416b971a316dc2326f1db8e6de7aa4",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "385d8caa6882d45a3fc623a4d5da2539e4fcfda76b1942512c415de1d8740329",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/gerenciador-de-senhas-para-iniciantes-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "e385ff72b3477ba6ea8ed235da6d1e886f120f303d3c82b00d94c3f6705cc4d4",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "71797259adb6cfeface66a7bb83792d7b778bb0015556e368ab84379a317b07b",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/html-css-javascript-entenda-diferenca-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "404964df7b1b5f6d9e084b6de1df347dd28dae3b48876b956fa4819a82d029ca",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "367bc19495bfacb43bbd2c1ae58e45ac477f0f9798352893420329800724401c",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/javascript-variaveis-funcoes-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "da6b2416789151d9544c1d4bfa7b090e04a790e253c3a533112f7033bc6db3e7",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "8d9374da939dac046c421adc0a2d5a53a347ba47c1ae79fc2bd95036901564b5",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "98a66955333896f528e3932df7e5cd66ad45a7c73ad55b628e25074f01f7f597",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+      "status": 200,
+      "sha256": "09656c274851e59e20c9ee0c1dc968c4098e8b878850e335d4a88dd95f646fe6",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+      "status": 200,
+      "sha256": "038b80a1ea372ec1cf6721dc3a615abcbd3552153c02cf92fcaffa07b826f6b8",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+      "status": 200,
+      "sha256": "bdfa9362d2ca3d2e0842c7fe2b10af5765d0d87852650e842abcf4f930d94afc",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+      "status": 200,
+      "sha256": "4664c49a951c921567d1cce1ce56ff77c6821fcb79aae04476fe8bf15f8acdcd",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+      "status": 200,
+      "sha256": "1d7452d73d4139d47c6b5024a022405e27d126650532a31c329d44a8e8e816b4",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/metricool-para-iniciantes-organizar-agendar-conteudo-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "ed76858019dac7a86bf136e7a304f5aac96f89a846a3695246cbe3955cf115e2",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/o-que-e-ia-generativa-ia-explicita-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "9588afebb00f09a810b7fff3d16a797b36dd7263623c1d6cbcfe530e071e5e6f",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/o-que-e-linux-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "acdf00290b10be93a6c9566284e75bc76b6cb0975e5fdb111d1a6e3f1926f3ed",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/organizar-ambiente-estudos-tecnologia-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "d1578c6c6cb9cbd0433eeeb3d186b4fe4e9017c6294f7497a031fb8339299611",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/permissoes-linux-para-iniciantes-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "fc808864b2475fdcfd0ac3092085d9727582b600cdb2cae5d920c8f3abfe5157",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/phishing-como-identificar-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "c9b5582fae85963884a2bd0da156e3b1a031e2fca9e38973a0397aa9a53a5b77",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/pipe-redirecionamento-linux-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "7452df6559742b73ba3447ba329ab23398695a0e35b40f36f4966aeb6d6a786e",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/portfolio-para-freelancer-sem-clientes-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "cc021cf25ce67022ea0faf1b1e755382efb98548352a961828b9f36c833c5f0d",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/primeiro-site-html-css-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "f55e912c3fc6be231c2a11a038cae2a0a46f3f5b9ea24701f6026c6c3d71132c",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "c35958b7275262a4c9307df9e4afa57864fb195c9ecd5802a534e14cef26ec81",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "baa7d0049e3cdc5514e192eae726f21a7cdd4c620ccb12b0d6a21c0763a0e8ad",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/prompts-melhores-estudar-trabalhar-ia-explicita-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "2a8c4f7389e6045fdd0713a446ed3b26c21db5ccae832739ca317444c535c5e2",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/quanto-cobrar-primeiro-site-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "f53ad1c2e1de2e5ab1040ba1495c03cc28947f1f927384188dc23c21def7e104",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/usar-ia-estudar-sem-dependencia-ia-explicita-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "0d91ab34ab547b9fa29920fde75ce8c0dd42e1e694e7bd6ee5b03f25a6d3ce48",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/posts/vpn-para-iniciantes-humano-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "d66edeb4ed2950d64c281447a52705bd88c30d2a0a18b598f03dc6aa10768190",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/products/linux-do-zero/cover.png",
+      "status": 200,
+      "sha256": "749274999e63f9f18eb51978bd28e9743aaf1b938460f87fbea85e440cd3223e",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/products/linux-do-zero/preview-01.webp",
+      "status": 200,
+      "sha256": "0ff0ce67dcdfbb86acbbe86ed5821497dcc5c816331160013e109a2bb6b7470d",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/products/linux-do-zero/preview-install.webp",
+      "status": 200,
+      "sha256": "e56dcdab1f1da3b9846b2674064470706bbf8b9c5f6fd27dc60e148779bb5eda",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/products/linux-do-zero/preview-terminal.webp",
+      "status": 200,
+      "sha256": "93a0802e09e4f62b28b45ceef93db2b3ae55ae439c150cae4fa4aa0b3a1b1dba",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "20a8f99390ea2f0aa45699be5d165073afd7f0968bfe374bb6f2535b324856fd",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "e3bedf627b00ab7be265263b2199cad58f3c99760e6fd2b6676a07d0a7241312",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "bad5b08238dea521ea94f53103dde862ace927b63b430e98e0fc61bc271abacd",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "8231c477f7a46e027b00c3c383efe6f24514bc8ada69b867bca21aa87bf4ed7a",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "5a48ea75fbedabd37c9dcedb850c1aea6876b873d085199eb75e69ee6b1afdd2",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/git-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "357b59d95bd682427aba7eb254d681a227aaedec34070c8645ab170aea02073b",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/github-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "1ddc4a824bcd275dca3000ecd3abf178821aad2dffd676f7123e27690b101608",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "86f0bd03538c0eca67f91804a7df16c8a2e04e7c528ad4dd89fdfd344174de51",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "3cb041d58580d3d4150ae1c127f5424d5ed49e13cdc79ab373f5251bcbd9abbd",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "692be1949126c46aa9e8374d79d0b2864e2cb2a45751148f44069bf8bcff874d",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "1b865732ef34ffc0e88722f292f192f627189640e49d4a5bebb59fea3d46114e",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "6d5495a3e87ca22bfab9f145856b73ca43bae97051ab5190ac401196e11e4f90",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/services-dejotacode-case.webp",
+      "status": 200,
+      "sha256": "0b2c55048d3a8e7436f91e962867fab9f8c62340f441d1de35e2c70c1b65f79e",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/baseus-fc11-power-bank-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "79b3335b459919c562796d0ff3aa49b64bb30ee3b30eaaba56a4e1fa361ff490",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/baseus-fm11-10000mah-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "4493c0a873fb06a4029a6a9dff7395534c6e5f4c7c9e522a091d0d7f315198e8",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/elementor-site-builder.webp",
+      "status": 200,
+      "sha256": "291005e4e438d0ae943bcfe1193cb715511cd1ee1bc5462028c7f36ad8c860ec",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/fifine-am8-usb-xlr-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "b3dce2ed2c96c247a1bb50ba544dab54d7890b7d5a7f9a9ec47b419ec4ba19e8",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "d07c37ee499476fefc54bab4e64522090291eeb8414b40be594d3d236a120d91",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "7c93d3787678abdcffc491bd33cd3e66b54b688706b1834b89979bf4f42e3d79",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "5e23fe9d6453f9cbdc438012d4abeb5ba4dcea7f83229062c8fdd5190d495584",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "aaf8e79387cca627990b2c52d2c7e4d1a1d736354f62c47e6b40ede52451a3ef",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/logitech-mx-keys-mini-assinatura-v2.svg",
+      "status": 200,
+      "sha256": "4b6b461bf354dd9b4655c19a62a9d9d1e55692e926f711b7e9d3681c3930c83e",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "59a15da0b3648d2f1b228f1ae18fc09b54109acb3951c4b17eee763370c35750",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "72a34ba055fa13908250e7329166c8e8c14264b066eaf36d6530330e8c7adc42",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "a93ac23b3c6a8226ae27b558f2f72cac3e6fee7dc9a882d5a4ded2730977e333",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "1a8c280b20f40beec407e1c5aa597d2d80c449775de7b618ed2ac8e1e9c99f27",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "cc4888f5fb302fed87d5d35495a7dc4589ab6f739ad654e72a46049da00f1150",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/sandisk-portable-ssd-1tb-assinatura-v2.svg",
+      "status": 200,
+      "sha256": "59422464d89806d3fc0165707dcb7fdd3bb8a9884c48d68cec359da63f1529e9",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/sandisk-ultra-flair-32gb-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "36a5e5e0387832e08a4285edaf84ac97bca8c6c0b41f585447f508da93e08a55",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/seguranca-digital-essencial-hotmart-assinatura-v2.webp",
+      "status": 200,
+      "sha256": "aa4782bc13feac94129b2f9d9b7b6c2925323431852f256a8f607c1a4688bb65",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/store/ugreen-hub-usb-c-6-em-1-referencia-assinatura-v3.svg",
+      "status": 200,
+      "sha256": "db636ef349a690ebc5fbf385f015959bb65291ace02abb23fc807a1bec206d60",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "cf29ba4a2ab61807c7bfc401697949a233d1d44cce0c901af64a0c1b4ee03293",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "05d15e77b48b623bb9330452c16590c2d0424bab59123ad894190938919c8f5f",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "2d3843622493490527ac9b6d6a71e1bbb855b4fda9373abf75947763a06c04e3",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "9916207234800da2666fcf411e83529bb68f9149b626aa54041271c806ea23dd",
+      "matches": true
+    },
+    {
+      "kind": "asset",
+      "path": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "08d0a5a9293cd422446bd8d4be95b32dafe15ad66c102a80c73fcc910a5a9a45",
+      "matches": true
+    }
+  ],
+  "issues": []
+}
