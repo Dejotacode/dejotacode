@@ -42,3 +42,6 @@
 .store-catalog-page.store-catalog-page .store-card--editorial .visual-media img[src$="logitech-mx-anywhere-3s-assinatura-v2.webp"]{object-position:left top}
 
 .catalog-hero img[src$="logitech-mx-anywhere-3s-assinatura-v2.webp"]{object-position:left top}
+
+/* Assinaturas editoriais v1: preservar topo esquerdo nos cards do catálogo. */
+.store-catalog-page.store-catalog-page .store-card--editorial .visual-media img[src$="-assinatura-v1.webp"]{object-fit:cover;object-position:left top}

@@ -7,6 +7,7 @@ export const storeCategoryLabels: Record<string, string> = {
 };
 
 const storePhotorealVisuals: Record<string, string> = {
+  "jornada-python-hotmart": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
   "ottocast-mini-cube-3-0": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
   nordpass: "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
   "sandisk-ultra-flair-32gb": "/assets/store/sandisk-ultra-flair-32gb-assinatura-v2.webp",

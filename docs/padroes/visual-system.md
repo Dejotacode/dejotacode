@@ -113,3 +113,7 @@ Versões -assinatura-v2.webp mantêm SVG oficial no canto superior esquerdo. Vis
 SetupIllustration.astro substitui a moldura CSS simples por SVG decorativo responsivo: monitor com editor, gabinete, teclado, mouse, planta e porta-lápis. Traços usam currentColor e tokens dos temas; brilho discreto usa color-glow. É ilustração editorial, não fotografia nem representação exata do hardware. Conteúdo e rotas preservados.
 
 Setup: em desktop acima de 1000 px, ilustração ampliada em 7rem e avançada sob a coluna de descrição, com texto em camada superior e fade na borda esquerda. Tablet/celular preservam o tamanho anterior.
+
+
+## Capas assinadas v1 — recorte
+VisualMedia card e StoreCard 4:3 usam contain/center para imagens com sufixo -assinatura-v1.webp, preservando quadro e símbolo. Capas 16:9 e catálogo editorial 16:10 usam cover/left top. Faixas usam a superfície existente. Variante validada no preview, pacote local pendente de publicação.
