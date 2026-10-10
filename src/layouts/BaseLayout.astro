@@ -6,6 +6,8 @@ import Footer from "../components/layout/Footer.astro";
 import Header from "../components/layout/Header.astro";
 
 const apiBase = import.meta.env.PUBLIC_API_URL?.trim() ?? "";
+const ga4MeasurementId = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() ?? "";
+const ga4Enabled = /^G-[A-Z0-9]+$/.test(ga4MeasurementId);
 
 interface Props {
   title: string;
@@ -92,6 +94,21 @@ const socialImageAlt = imageAlt ?? pageTitle;
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>{pageTitle}</title>
+    {ga4Enabled && (
+      <>
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`}
+        ></script>
+        <script is:inline define:vars={{ ga4MeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ga4MeasurementId, { anonymize_ip: true });
+        </script>
+      </>
+    )}
     <script
       is:inline
       async
