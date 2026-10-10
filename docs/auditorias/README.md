@@ -79,3 +79,9 @@ Registros de validação e revisão; data e evidência não comprovam estado atu
 - [Assinaturas em todo o projeto](project-signatures-validation-20261010.json): 121 URLs públicas, 968 combinações responsivas e 75 imagens assinadas visíveis.
 
 - [Correções criteriosas de sete capas](correcoes-criteriosas-imagens-2026-10-10.json): fontes, hashes, variantes, assinatura e validação local.
+
+- [publicacao-integral-integridade-2026-10-10.json](publicacao-integral-integridade-2026-10-10.json).
+
+- [publicacao-integral-validation-2026-10-10.json](publicacao-integral-validation-2026-10-10.json).
+
+- [publicacao-integral-result-2026-10-10.json](publicacao-integral-result-2026-10-10.json).

@@ -649,3 +649,8 @@ Status: validado localmente, publicação pendente. Responsável: @control/@dev.
 Quatro fotografias de fornecedor preservadas dentro de composições próprias; três SVGs técnicos/editoriais precisos. Símbolo oficial único fora das fotografias. Modelo FC11 identificado como referência da variante 10.000 mAh. Ajuste restrito dos relacionados evita alongar/cortar as novas capas pela altura do texto. Originais e links comerciais preservados.
 
 Check 79 arquivos sem erros/avisos/hints, build 123 páginas, links/HTML aprovados. 37 rotas em 320/390/768/1440 e claro/escuro: 296 combinações, zero problemas. Sete composições completas e três páginas representativas inspecionadas visualmente. Recuperação isolada de 26 arquivos por hash aprovada. Fonte: [registro de correções](correcoes-criteriosas-imagens-2026-10-10.json). Direitos de uso das fotos ainda sem confirmação documental antes de publicar; não são fotos de teste próprio. Sem geração, custo monetário, cópia externa ou publicação.
+
+
+## Publicação integral concluída — 10/10/2026
+
+Status: publicado e homologado. PR #275, commit 7d531d8e2142f894476ee6db68c91c6ed0fe71e4, workflow 38093497180 aprovado. Símbolos e imagens aprovados estão no domínio oficial: 121 URLs/968 combinações sem problemas, 90 imagens idênticas ao pacote por SHA-256. Originais preservados. Estado e limites em ../estado-atual.md; resultado em docs/auditorias/publicacao-integral-result-2026-10-10.json. Pendências de direitos de fotos e dependências permanecem registradas.

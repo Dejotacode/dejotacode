@@ -282,3 +282,8 @@ Validação final: sete assinaturas com geometria idêntica ao SVG oficial; sete
 
 
 Aprovação visual do usuário registrada em 10/10/2026 às 19:53 (America/Sao_Paulo): sete capas corrigidas aprovadas no resultado local. Publicação permanece pendente; autorização de uso das quatro fotografias de fornecedor ainda sem confirmação documental. Esta aprovação visual não altera essa lacuna.
+
+
+## Publicação integral concluída — 10/10/2026
+
+Status: publicado e homologado. PR #275, commit 7d531d8e2142f894476ee6db68c91c6ed0fe71e4, workflow 38093497180 aprovado. Símbolos e imagens aprovados estão no domínio oficial: 121 URLs/968 combinações sem problemas, 90 imagens idênticas ao pacote por SHA-256. Originais preservados. Estado e limites em ../estado-atual.md; resultado em docs/auditorias/publicacao-integral-result-2026-10-10.json. Pendências de direitos de fotos e dependências permanecem registradas.
