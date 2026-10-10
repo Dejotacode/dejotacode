@@ -34,3 +34,6 @@
     -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 85%, transparent 100%);
   }
 }
+
+/* Preserva a assinatura da capa Ottocast nos cards editoriais. */
+.store-catalog-page.store-catalog-page .store-card--editorial .visual-media img[src$="ottocast-mini-cube-3-0-assinatura-v2.webp"]{object-position:left top}
