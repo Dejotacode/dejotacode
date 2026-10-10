@@ -2,7 +2,90 @@
 
 Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
+## Não publicado
+
+- Organização documental local: classificação por assunto, índices e notas completas em docs/releases. Esta entrada não cria uma versão nem registra deploy.
+
+## [1.23.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- lança a **DejotaStore** em `/store/` como camada editorial de recomendações do DejotaCode;
+- adiciona categorias Linux, Setup, Programação, Criadores e Ferramentas digitais;
+- adiciona páginas de produto, guia de compra, metodologia e Setup do Dejota;
+- conecta artigos do Blog a recomendações contextuais sem transformar os conteúdos em vitrines;
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.23.0.md).
+
+## [1.22.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- lança o e-book **Linux do Zero** como primeiro produto digital próprio do DejotaCode;
+- publica a página comercial em `/produtos/linux-do-zero/` com preço de R$ 19,90, FAQ, garantia e checkout Kiwify;
+- adiciona CTAs contextuais nos conteúdos e na trilha Linux do Zero;
+- adiciona métricas do funil Linux do Zero ao painel administrativo;
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.22.0.md).
+
+## [1.21.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- adiciona etapa explícita de snapshot final na Zona de risco;
+- exige dry-run válido antes de permitir gerar o snapshot;
+- registra e exibe `snapshotId` e horário de captura para a mídia selecionada;
+- associa o snapshot à mesma janela de validade do dry-run;
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.21.0.md).
+
+## [1.20.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- adiciona Histórico de auditoria dentro da Zona de risco;
+- carrega o histórico somente sob demanda para a mídia selecionada;
+- exibe marcos de upload, revisão humana, gate final e último dry-run;
+- exibe responsável e data/hora de cada marco disponível;
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.20.0.md).
+
+## [1.19.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- Move dry-run e exclusão definitiva para uma Zona de risco separada da biblioteca editorial.
+- Mantém os cards focados em inserção, cópia e revisão de mídia.
+- Exibe candidata aprovada, estado das revisões e checks de segurança em uma área dedicada.
+- Mantém `Excluir definitivamente` oculto até existir dry-run válido em memória.
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.19.0.md).
+
+## [1.18.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- dry-run obrigatório antes da exclusão;
+- revalidação de referências no GitHub `main`, D1 e R2;
+- token temporário de dry-run, mantido apenas em memória no navegador;
+- botão destrutivo só aparece após dry-run aprovado e ainda válido;
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.18.0.md).
+
+## [1.17.0]
+
+Resumo das notas locais preservadas; data de publicação não inferida nesta organização.
+
+- Gate final separado da revisão inicial.
+- Aprovação explícita apenas para mídias já marcadas como `candidate`.
+- Estado persistente `cleanup_status` com nota, responsável e data.
+- Ação reversível `Reabrir gate`.
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.17.0.md).
+
 ## [1.16.0] - 2026-09-16
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.16.0.md).
 
 ### Adicionado
 
@@ -26,6 +109,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 - Smoke de produção: 10/10 verificações aprovadas.
 
 ## [1.15.0] - 2026-09-16
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.15.0.md).
 
 ### Adicionado
 
@@ -52,6 +137,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.14.0] - 2026-09-16
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.14.0.md).
+
 ### Adicionado
 
 - Detecção de imagens referenciadas no Markdown canônico carregado pelo Admin.
@@ -74,6 +161,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 - Teste manual confirmou 1 imagem canônica detectada entre 23 mídias da biblioteca.
 
 ## [1.13.0] - 2026-09-16
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.13.0.md).
 
 ### Melhorias no Admin
 
@@ -99,6 +188,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.12.0] - 2026-09-16
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.12.0.md).
+
 ### Adicionado
 
 - Biblioteca editorial de imagens no Admin Editor, reutilizando mídias já existentes no Cloudflare R2.
@@ -122,6 +213,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.11.0] - 2026-09-16
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.11.0.md).
+
 ### Operação e recuperação
 
 - Documentação e runbooks reconciliados com o Admin Editorial da v1.10.0 e API v1.6.0.
@@ -138,6 +231,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 - Nenhuma alteração de CTA, funil, campanhas ou taxonomia de analytics.
 
 ## [1.10.0] - 2026-09-16
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.10.0.md).
 
 ### Adicionado
 
@@ -172,6 +267,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.7.2] - 2026-09-16
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.7.2.md).
+
 ### Corrigido
 
 - Contraste do CTA de próximo passo nos artigos em temas claro e escuro.
@@ -194,6 +291,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.7.1] - 2026-09-16
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.7.1.md).
+
 ### Adicionado
 
 - Tutorial "Como organizar seu ambiente de estudos em tecnologia", publicado na categoria Tecnologia prática.
@@ -212,6 +311,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 - Nenhuma migration D1, alteração de Worker, DNS, R2 ou secrets de produção.
 
 ## [1.7.0] - 2026-09-16
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.7.0.md).
 
 ### Adicionado
 
@@ -242,6 +343,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.6.0] - 2026-09-16
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.6.0.md).
+
 ### Adicionado
 
 - Área administrativa dedicada no frontend atual, separada do layout público.
@@ -271,6 +374,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 - Nenhuma migration, alteração de API, D1, DNS ou secrets de produção.
 
 ## [1.5.0] - 2026-09-15
+
+[Notas completas](docs/releases/RELEASE_NOTES_V1.5.0.md).
 
 ### Adicionado
 
@@ -303,6 +408,8 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.4.0] - 2026-09-15
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.4.0.md).
+
 ### Adicionado
 
 - Validação automática de links internos após o build, cobrindo destinos gerados no `dist`.
@@ -334,10 +441,12 @@ Todas as mudanças relevantes do DejotaCode serão registradas neste arquivo.
 
 ## [1.3.0] - 2026-09-15
 
+[Notas completas](docs/releases/RELEASE_NOTES_V1.3.0.md).
+
 ### Adicionado
 
 - Pipeline de CI no GitHub Actions com `npm ci`, `npm run check` e `npm run build:production`.
-- Documentação técnica e operacional em `README.md`, `docs/architecture.md` e `docs/operations.md`.
+- Documentação técnica e operacional em `README.md`, `docs/arquitetura/architecture.md` e `docs/operacao/operations.md`.
 - Analytics first-party para `page_view` e `cta_click` no frontend.
 - 10 novos conteúdos editoriais para iniciantes.
 - Novas trilhas de Programação, IA no dia a dia e Segurança Digital Essencial, além da trilha Linux do Zero já existente.

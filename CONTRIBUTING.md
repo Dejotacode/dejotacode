@@ -20,3 +20,6 @@ npm run qa
 ```
 
 Não versione secrets, `.env.*.local`, tokens ou credenciais. Mudanças visuais devem preservar os tokens e a identidade DejotaCode. Mudanças operacionais devem atualizar a documentação relevante em `docs/`.
+
+## Organização documental vigente
+Antes de criar ou mover documentação, consultar docs/README.md e docs/organizacao-documental.md; atualizar fonte existente antes de duplicar, classificar finalidade/status e seguir destino do manual. Validar com python3 scripts/check-documentation.py.
