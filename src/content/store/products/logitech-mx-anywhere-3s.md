@@ -15,11 +15,12 @@ cons:
   - "Preço acima de mouses básicos"
   - "Formato compacto pode não agradar mãos maiores"
 relatedPosts:
+  - "logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar"
   - "organizar-ambiente-estudos-tecnologia"
   - "devtools-navegador-iniciantes"
 featured: true
 draft: false
-updatedAt: 2026-10-07
+updatedAt: 2026-10-09
 brand: "Logitech"
 productKind: fisico
 offers:

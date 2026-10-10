@@ -304,3 +304,5 @@ Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-ar
 
 ### Assinatura editorial aprovada em 09/10/2026
 Regra vigente detalhada em media-registry.md: símbolo oficial único, sem fundo adicional, canto superior esquerdo, largura de 5%, margens horizontais/verticais de 3% das respectivas dimensões. Capturas e artes de terceiros mantêm exceções descritas. Modelos vetoriais de produção em docs/brand/. Acervo existente exige migração individual, sem assinatura dupla.
+
+A revisão de uma entrega deve conferir a identidade da mídia efetivamente resolvida, inclusive em imagens reutilizadas. Seguir a conferência obrigatória em media-registry.md; carregamento e ausência de overflow não substituem inspeção do símbolo e dos recortes.
