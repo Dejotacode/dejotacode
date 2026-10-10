@@ -166,4 +166,8 @@ As worktrees dejotacode-blog-release e dejotacode-frontend-release foram encerra
 
 Preservação: /home/dejota/Workspace/fullstack/backups/worktrees-preservacao-20261009. Bundle, TARs, patches e manifesto; hashes e restauração Git temporária verificados. Cópia na mesma máquina, sem preservação externa confirmada. Não recuperar sobre o principal por inferência.
 
-Acervo anteriormente em clientes agora está em /home/dejota/Workspace/arquivo/dejotacode/prototipos-iniciais, incluindo Git e pacotes, com manifesto de integridade. Mapa operacional do Workspace (consulta local: `/home/dejota/Workspace/products/dejotacode-control/docs/WORKSPACE_MAP.md`). Site permanece nesta pasta canônica e preview 4321. Esta organização não integra código nem publica.
+Acervo anteriormente em clientes agora está em /home/dejota/Workspace/arquivo/dejotacode/prototipos-iniciais, incluindo Git e pacotes, com manifesto de integridade. [Mapa operacional do Workspace](../../../../arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_MAP.md). Site permanece nesta pasta canônica e preview 4321. Esta organização não integra código nem publica.
+
+
+## Ottocast — entrega de produção concluída em 10/10/2026
+Usuário autorizou toda a execução até produção às 03:18 BRT. PR #270 integrado, commit cc1d3ba635d5bd3b712387a5e6d5f36e6f580e86; workflow 38030741660 aprovado, deployment https://a0ca317c.dejota-code.pages.dev. Artigo e ficha publicados juntos; 16 combinações responsivas, canonicals, vínculo recíproco e mídia pública homologados. Registros anteriores de Ottocast em rascunho são históricos. Release isolada dejotacode-ottocast-release, oito arquivos; outras frentes locais preservadas. Sem novo deploy de API/migrations ou backup externo. [Resultado](../auditorias/ottocast-publication-result-2026-10-10.json).

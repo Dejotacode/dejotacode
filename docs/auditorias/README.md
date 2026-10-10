@@ -63,3 +63,19 @@ Status: vigente como índice. Revisão: 10/10/2026. Escopo: localização; o sta
 
 ## Interpretação
 Registros de validação e revisão; data e evidência não comprovam estado atual de produção.
+
+- [selecao-imagens-lote-20261010.md](selecao-imagens-lote-20261010.md).
+
+- [selecao-imagens-lote-20261010.json](selecao-imagens-lote-20261010.json).
+
+- [selecao-imagens-lote-validation-20261010.json](selecao-imagens-lote-validation-20261010.json).
+
+- [Validação das dez assinaturas de Recursos](resource-signatures-validation-20261010.json): integridade, recuperação isolada e 72 combinações responsivas.
+
+- [Validação da assinatura Méliuz](meliuz-signature-validation-20261010.json): 32 combinações, SVG válido e capturas preservadas.
+
+- [Revisão das assinaturas do acervo](acervo-assinaturas-validation-20261010.json): 140 originais preservados, versões preferidas e exceções de referência.
+
+- [Assinaturas em todo o projeto](project-signatures-validation-20261010.json): 121 URLs públicas, 968 combinações responsivas e 75 imagens assinadas visíveis.
+
+- [Correções criteriosas de sete capas](correcoes-criteriosas-imagens-2026-10-10.json): fontes, hashes, variantes, assinatura e validação local.

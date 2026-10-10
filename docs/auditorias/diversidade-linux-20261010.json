@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-10",
+  "status": "validated-local-publication-pending",
+  "published": false,
+  "items": [
+    {
+      "slug": "como-criar-pendrive-bootavel-linux",
+      "subject": "Identificar o dispositivo USB antes de gravar Linux",
+      "objective": "Explicar visualmente o cuidado central do artigo",
+      "protagonist": "Homem adulto conferindo pendrive com gesto natural",
+      "environment": "Casa simples com computador secundário",
+      "framing": "Retrato próximo em três quartos, rosto e mãos dominantes",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação do artigo; janela conceitual de seleção sem alegar captura real",
+      "avoid": [
+        "hologramas",
+        "painéis flutuantes",
+        "formatação em andamento",
+        "logos inventados",
+        "mesa com caderno e planta",
+        "garantia de segurança"
+      ],
+      "previous_asset": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
+      "asset": "/assets/posts/como-criar-pendrive-bootavel-linux-humano-assinatura-v1.webp",
+      "bytes": 135540,
+      "sha256": "7ee94577a20ef5b0041e31c7ca09f4b758fe8135a3b731e031640a9e2ac4f007",
+      "generation": "built-in image_gen, símbolo oficial SVG separado e nome LINUX tipografado, não é logo"
+    },
+    {
+      "slug": "comandos-linux-para-iniciantes",
+      "subject": "Aprender navegação no terminal",
+      "protagonist": "Jovem aprendiz e mentora observam terminal",
+      "environment": "Biblioteca comunitária",
+      "framing": "Plano lateral de duas pessoas",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+      "avoid": [
+        "painel flutuante",
+        "robô",
+        "marca inventada",
+        "caderno/planta/caneca como fórmula",
+        "comando gerado ilegível",
+        "alegar teste real"
+      ],
+      "asset": "/assets/posts/comandos-linux-para-iniciantes-humano-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "bytes": 142858,
+      "sha256": "1474175d44947c9de034deaefb836b6e8517b01471db583dbc334da01065ebe2",
+      "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+    },
+    {
+      "slug": "como-escolher-distribuicao-linux",
+      "subject": "Escolher conforme hardware, facilidade e suporte",
+      "protagonist": "Mulher madura compara opções impressas",
+      "environment": "Mesa de cozinha",
+      "framing": "Enquadramento superior oblíquo",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+      "avoid": [
+        "painel flutuante",
+        "robô",
+        "marca inventada",
+        "caderno/planta/caneca como fórmula",
+        "comando gerado ilegível",
+        "alegar teste real"
+      ],
+      "asset": "/assets/posts/como-escolher-distribuicao-linux-humano-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 136652,
+      "sha256": "ef3bef70bf423d3a0991fc901fe6f80edd134f51a103c634d9986e97419738b7",
+      "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+    },
+    {
+      "slug": "como-testar-linux-sem-instalar",
+      "subject": "Testar áudio em sessão live usando USB",
+      "protagonist": "Mulher negra com fones verifica áudio",
+      "environment": "Sala doméstica",
+      "framing": "Retrato frontal natural",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+      "avoid": [
+        "painel flutuante",
+        "robô",
+        "marca inventada",
+        "caderno/planta/caneca como fórmula",
+        "comando gerado ilegível",
+        "alegar teste real"
+      ],
+      "asset": "/assets/posts/como-testar-linux-sem-instalar-humano-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
+      "bytes": 121152,
+      "sha256": "bf01dafc3a994f1c3068e26c6f7fff8e2cf6207825580e76635551e9d0d52955",
+      "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+    },
+    {
+      "slug": "o-que-e-linux",
+      "subject": "Linux além do desktop, infraestrutura e trabalho",
+      "protagonist": "Técnico verifica rack",
+      "environment": "Sala de servidores",
+      "framing": "Plano aberto com pessoa",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+      "avoid": [
+        "painel flutuante",
+        "robô",
+        "marca inventada",
+        "caderno/planta/caneca como fórmula",
+        "comando gerado ilegível",
+        "alegar teste real"
+      ],
+      "asset": "/assets/posts/o-que-e-linux-humano-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/o-que-e-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 177124,
+      "sha256": "acdf00290b10be93a6c9566284e75bc76b6cb0975e5fdb111d1a6e3f1926f3ed",
+      "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+    },
+    {
+      "slug": "permissoes-linux-para-iniciantes",
+      "subject": "Quem pode ler, escrever e executar",
+      "protagonist": "Equipe pequena confere acesso compartilhado",
+      "environment": "Sala de trabalho",
+      "framing": "Plano médio documental",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+      "avoid": [
+        "painel flutuante",
+        "robô",
+        "marca inventada",
+        "caderno/planta/caneca como fórmula",
+        "comando gerado ilegível",
+        "alegar teste real"
+      ],
+      "asset": "/assets/posts/permissoes-linux-para-iniciantes-humano-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "bytes": 141730,
+      "sha256": "fc808864b2475fdcfd0ac3092085d9727582b600cdb2cae5d920c8f3abfe5157",
+      "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+    },
+    {
+      "slug": "pipe-redirecionamento-linux",
+      "subject": "Combinar etapas de listar, ordenar e salvar",
+      "protagonist": "Pessoa organiza cartões em sequência",
+      "environment": "Bancada de atividade prática",
+      "framing": "Close oblíquo de mãos e rosto",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+      "avoid": [
+        "painel flutuante",
+        "robô",
+        "marca inventada",
+        "caderno/planta/caneca como fórmula",
+        "comando gerado ilegível",
+        "alegar teste real"
+      ],
+      "asset": "/assets/posts/pipe-redirecionamento-linux-humano-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 140608,
+      "sha256": "7452df6559742b73ba3447ba329ab23398695a0e35b40f36f4966aeb6d6a786e",
+      "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+    }
+  ],
+  "next_batch": {
+    "status": "validated-local-publication-pending",
+    "items": [
+      {
+        "slug": "comandos-linux-para-iniciantes",
+        "subject": "Aprender navegação no terminal",
+        "protagonist": "Jovem aprendiz e mentora observam terminal",
+        "environment": "Biblioteca comunitária",
+        "framing": "Plano lateral de duas pessoas",
+        "style": "Fotografia editorial ilustrativa",
+        "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+        "avoid": [
+          "painel flutuante",
+          "robô",
+          "marca inventada",
+          "caderno/planta/caneca como fórmula",
+          "comando gerado ilegível",
+          "alegar teste real"
+        ],
+        "asset": "/assets/posts/comandos-linux-para-iniciantes-humano-assinatura-v1.webp",
+        "previous_asset": "/assets/posts/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+        "bytes": 142858,
+        "sha256": "1474175d44947c9de034deaefb836b6e8517b01471db583dbc334da01065ebe2",
+        "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+      },
+      {
+        "slug": "como-escolher-distribuicao-linux",
+        "subject": "Escolher conforme hardware, facilidade e suporte",
+        "protagonist": "Mulher madura compara opções impressas",
+        "environment": "Mesa de cozinha",
+        "framing": "Enquadramento superior oblíquo",
+        "style": "Fotografia editorial ilustrativa",
+        "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+        "avoid": [
+          "painel flutuante",
+          "robô",
+          "marca inventada",
+          "caderno/planta/caneca como fórmula",
+          "comando gerado ilegível",
+          "alegar teste real"
+        ],
+        "asset": "/assets/posts/como-escolher-distribuicao-linux-humano-assinatura-v1.webp",
+        "previous_asset": "/assets/posts/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
+        "bytes": 136652,
+        "sha256": "ef3bef70bf423d3a0991fc901fe6f80edd134f51a103c634d9986e97419738b7",
+        "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+      },
+      {
+        "slug": "como-testar-linux-sem-instalar",
+        "subject": "Testar áudio em sessão live usando USB",
+        "protagonist": "Mulher negra com fones verifica áudio",
+        "environment": "Sala doméstica",
+        "framing": "Retrato frontal natural",
+        "style": "Fotografia editorial ilustrativa",
+        "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+        "avoid": [
+          "painel flutuante",
+          "robô",
+          "marca inventada",
+          "caderno/planta/caneca como fórmula",
+          "comando gerado ilegível",
+          "alegar teste real"
+        ],
+        "asset": "/assets/posts/como-testar-linux-sem-instalar-humano-assinatura-v1.webp",
+        "previous_asset": "/assets/posts/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
+        "bytes": 121152,
+        "sha256": "bf01dafc3a994f1c3068e26c6f7fff8e2cf6207825580e76635551e9d0d52955",
+        "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+      },
+      {
+        "slug": "o-que-e-linux",
+        "subject": "Linux além do desktop, infraestrutura e trabalho",
+        "protagonist": "Técnico verifica rack",
+        "environment": "Sala de servidores",
+        "framing": "Plano aberto com pessoa",
+        "style": "Fotografia editorial ilustrativa",
+        "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+        "avoid": [
+          "painel flutuante",
+          "robô",
+          "marca inventada",
+          "caderno/planta/caneca como fórmula",
+          "comando gerado ilegível",
+          "alegar teste real"
+        ],
+        "asset": "/assets/posts/o-que-e-linux-humano-assinatura-v1.webp",
+        "previous_asset": "/assets/posts/o-que-e-linux-capa-v1-assinatura-v2.webp",
+        "bytes": 177124,
+        "sha256": "acdf00290b10be93a6c9566284e75bc76b6cb0975e5fdb111d1a6e3f1926f3ed",
+        "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+      },
+      {
+        "slug": "permissoes-linux-para-iniciantes",
+        "subject": "Quem pode ler, escrever e executar",
+        "protagonist": "Equipe pequena confere acesso compartilhado",
+        "environment": "Sala de trabalho",
+        "framing": "Plano médio documental",
+        "style": "Fotografia editorial ilustrativa",
+        "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+        "avoid": [
+          "painel flutuante",
+          "robô",
+          "marca inventada",
+          "caderno/planta/caneca como fórmula",
+          "comando gerado ilegível",
+          "alegar teste real"
+        ],
+        "asset": "/assets/posts/permissoes-linux-para-iniciantes-humano-assinatura-v1.webp",
+        "previous_asset": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+        "bytes": 141730,
+        "sha256": "fc808864b2475fdcfd0ac3092085d9727582b600cdb2cae5d920c8f3abfe5157",
+        "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+      },
+      {
+        "slug": "pipe-redirecionamento-linux",
+        "subject": "Combinar etapas de listar, ordenar e salvar",
+        "protagonist": "Pessoa organiza cartões em sequência",
+        "environment": "Bancada de atividade prática",
+        "framing": "Close oblíquo de mãos e rosto",
+        "style": "Fotografia editorial ilustrativa",
+        "reference": "Ação humana do artigo, Linux identificado por texto composto separadamente; interfaces conceituais não são capturas",
+        "avoid": [
+          "painel flutuante",
+          "robô",
+          "marca inventada",
+          "caderno/planta/caneca como fórmula",
+          "comando gerado ilegível",
+          "alegar teste real"
+        ],
+        "asset": "/assets/posts/pipe-redirecionamento-linux-humano-assinatura-v1.webp",
+        "previous_asset": "/assets/posts/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
+        "bytes": 140608,
+        "sha256": "7452df6559742b73ba3447ba329ab23398695a0e35b40f36f4966aeb6d6a786e",
+        "generation": "built-in image_gen; SVG oficial e textos compostos separadamente"
+      }
+    ]
+  },
+  "previous_validation": {
+    "check": "passed",
+    "build": "passed",
+    "qa": "passed",
+    "width_theme_combinations": 8,
+    "issues": 0,
+    "visual_review": "Raster final e artigo mobile inspecionados; símbolo único visível e ação humana coerente",
+    "backup": "183 arquivos restaurados idênticos; 122 imagens arquivadas"
+  },
+  "validation": {
+    "check": "passed",
+    "build": "passed",
+    "qa": "passed",
+    "width_theme_combinations": 72,
+    "issues": 0,
+    "visual_review": "Montagem das sete capas finais e categoria inspecionadas; símbolo oficial único, ações humanas variadas",
+    "backup": "201 arquivos restaurados idênticos, incluindo 128 imagens arquivadas",
+    "historical_recovery": "49 fontes/entregas e reconstrução isolada conferidas"
+  }
+}

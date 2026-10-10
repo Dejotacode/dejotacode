@@ -1,6 +1,6 @@
 ---
 title: "NordPass — gerenciador de senhas"
-description: "Gerenciador de senhas pesquisado como opção para organizar credenciais e reduzir a reutilização de senhas."
+description: "Gerenciador de senhas e passkeys pesquisado como opção para organizar credenciais e reduzir a reutilização de senhas."
 category: ferramentas-digitais
 brand: NordPass
 productKind: servico
@@ -9,8 +9,9 @@ recommendedFor:
   - "Quem quer organizar senhas de diferentes contas"
   - "Quem busca reduzir a reutilização de senhas"
 pros:
-  - "Reúne credenciais em um gerenciador dedicado"
-  - "Oferece geração de senhas e preenchimento automático"
+  - "Reúne senhas, passkeys e outras credenciais em um cofre dedicado"
+  - "Oferece geração de senhas, salvamento e preenchimento automático"
+  - "Possui suporte oficial a Windows, macOS, Linux, Android e iOS"
 cons:
   - "Recursos e limites variam conforme o plano"
   - "Exige cuidado com o acesso ao cofre e a recuperação da conta"
@@ -20,7 +21,7 @@ relatedPosts:
   - "autenticacao-dois-fatores"
 featured: false
 draft: false
-updatedAt: 2026-10-08
+updatedAt: 2026-10-09
 offers:
   - provider: other
     href: "https://go.nordpass.io/aff_c?offer_id=488&aff_id=157815&url_id=9356"
@@ -32,7 +33,7 @@ O **NordPass** é uma opção de gerenciador de senhas para quem deseja organiza
 
 ## Quando faz sentido
 
-Um gerenciador pode ajudar a criar e guardar senhas diferentes para cada conta. A documentação do NordPass apresenta armazenamento de credenciais, geração de senhas e preenchimento automático. Confira a disponibilidade de cada recurso no plano e nos dispositivos que você utiliza.
+Um gerenciador pode ajudar a criar e guardar senhas diferentes para cada conta. A documentação do NordPass apresenta armazenamento de senhas e passkeys, geração de senhas, salvamento e preenchimento automático. O serviço possui aplicativos para Windows, macOS, Linux, Android e iOS e extensões para navegadores populares. Confira a disponibilidade de cada recurso no plano, sistema e navegador que você utiliza.
 
 Proteja o acesso ao cofre, confira os procedimentos de recuperação e mantenha a autenticação em dois fatores nas contas que oferecem esse recurso. Um gerenciador não dispensa cuidado com páginas falsas e mensagens suspeitas.
 
@@ -47,3 +48,5 @@ A classificação editorial é **Pesquisado**. A parceria comercial não equival
 - [O que é NordPass](https://support.nordpass.com/hc/en-us/articles/360002376437-What-is-NordPass)
 - [Como funciona](https://nordpass.com/how-it-works/)
 - [Planos e recursos](https://nordpass.com/plans/)
+- [Preenchimento automático](https://support.nordpass.com/hc/en-us/articles/360003613497-What-is-autofill-and-how-does-it-work)
+- [Recuperação da senha mestra](https://support.nordpass.com/hc/en-us/articles/360002376657-What-if-I-forgot-my-NordPass-Master-Password)

@@ -115,5 +115,24 @@ SetupIllustration.astro substitui a moldura CSS simples por SVG decorativo respo
 Setup: em desktop acima de 1000 px, ilustração ampliada em 7rem e avançada sob a coluna de descrição, com texto em camada superior e fade na borda esquerda. Tablet/celular preservam o tamanho anterior.
 
 
-## Capas assinadas v1 — recorte
-VisualMedia card e StoreCard 4:3 usam contain/center para imagens com sufixo -assinatura-v1.webp, preservando quadro e símbolo. Capas 16:9 e catálogo editorial 16:10 usam cover/left top. Faixas usam a superfície existente. Variante validada no preview, pacote local pendente de publicação.
+## Capas assinadas v1 em moldura 4:3 — 10/10/2026
+Artes editoriais próprias -assinatura-v1.webp mantêm quadro integral em VisualMedia card e StoreCard regular: object-fit contain e posição central. Superfície da moldura preenche faixas excedentes; proporção 4:3 do componente preservada. Catálogo editorial 16:10 mantém cover/left top; capas wide 16:9 mantêm cover/left top. Motivo: a capa Jornada Python cortava o notebook em 4:3. Não aplicar esta variante a fornecedor/captura nem mudar automaticamente rasters v2 aprovados. Conferir sujeito e símbolo em cada nova arte.
+
+
+## Crédito de referência na capa de trilha
+trail-media-credit fica abaixo da mídia, usa --size-meta, --color-text-muted e fonte herdada. Identifica autores de referência incorporada sem alterar o card/capa. Aplicado ao Tux na trilha Linux; ilustração não é captura real.
+
+
+## Ficha Store — moldura editorial sem faixas (10/10/2026)
+
+Status: correção local, publicação pendente. A abertura de /store/jornada-python-hotmart/ usa a variante product-visual--editorial-wide para capas -diversidade-assinatura-v1.webp: moldura 16:9 igual ao raster 1440×810, mantendo contain e imagem integral. Elimina as faixas da antiga moldura 16:10 sem cortar Python ou o símbolo DejotaCode. Cards e demais fotos de produtos mantêm suas variantes.
+
+
+## Diversidade dos destaques Home/Blog — 10/10/2026
+
+Status: integrado localmente, publicação pendente. Três ilustrações distintas substituem mesas genéricas: escolher pequeno projeto (modelos 3D), hábitos de segurança (cena cotidiana ilustrativa) e estudo com objetivo (percurso arquitetônico). [Briefs e hashes](../auditorias/diversidade-destaques-20261010.json). Capas 1440×810, SVG oficial dark único 72×72 em x43/y24, composto separadamente. Hero Home reconhece também assinatura-v1 e mantém ancoragem left top, máscara e demais variantes. Rotas: /, /blog/, /blog/escolher-primeiro-projeto-portfolio/, /blog/habitos-seguranca-digital-iniciantes/, /blog/como-estudar-tecnologia-sem-se-perder/. Ilustrações não são capturas nem evidências de teste. Capas anteriores preservadas.
+
+
+### Capas de referência em relacionados — 10/10/2026
+
+Vigente para SVGs `-referencia-assinatura-v3.svg`: no card compacto de conteúdos relacionados, mídia alinhada ao início e proporção 16:9, sem esticar para a altura do texto. Preserva código, calendário e pastas completos, sem modificar os demais cards. Regra em article.css; composição e origem em media-registry.md.

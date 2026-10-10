@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-10",
+  "pr": "https://github.com/Dejotacode/dejotacode/pull/273",
+  "mergeCommit": "a715a31c7f52e0cf8471237d88019c7ae218f2a2",
+  "workflow": 38062444534,
+  "assets": [
+    {
+      "url": "https://dejotacode.com.br/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+      "status": 200,
+      "bytes": 67236,
+      "expectedSha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
+      "publicSha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
+      "matches": true
+    },
+    {
+      "url": "https://dejotacode.com.br/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+      "status": 200,
+      "bytes": 53670,
+      "expectedSha256": "6a7038e7996f2e0b639b2f54a3576409cf467b4dd7f1545106f56d9c2b2223c9",
+      "publicSha256": "6a7038e7996f2e0b639b2f54a3576409cf467b4dd7f1545106f56d9c2b2223c9",
+      "matches": true
+    },
+    {
+      "url": "https://dejotacode.com.br/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+      "status": 200,
+      "bytes": 63342,
+      "expectedSha256": "b06e869e000c184f928c5d201922c999cd36a3bfb130c6ec9d88e0beb5f80470",
+      "publicSha256": "b06e869e000c184f928c5d201922c999cd36a3bfb130c6ec9d88e0beb5f80470",
+      "matches": true
+    },
+    {
+      "url": "https://dejotacode.com.br/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+      "status": 200,
+      "bytes": 69996,
+      "expectedSha256": "0a9e6c83bdac09dbd8b92e1d778b8bb3699ce41f93a0383f4ea8db406814bbdc",
+      "publicSha256": "0a9e6c83bdac09dbd8b92e1d778b8bb3699ce41f93a0383f4ea8db406814bbdc",
+      "matches": true
+    },
+    {
+      "url": "https://dejotacode.com.br/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+      "status": 200,
+      "bytes": 53832,
+      "expectedSha256": "47f6e859b2bdf99f0b7f5a1df26c0179d2d99af18b198f01745e5879e03dea7b",
+      "publicSha256": "47f6e859b2bdf99f0b7f5a1df26c0179d2d99af18b198f01745e5879e03dea7b",
+      "matches": true
+    }
+  ],
+  "status": "PUBLICADO_HOMOLOGADO",
+  "deployment": "https://ffbb2a29.dejota-code.pages.dev",
+  "productionSmokeChecks": 10,
+  "responsiveEvidence": "trilhas-publication-validation-20261010.json",
+  "responsiveCombinations": 48,
+  "responsiveIssues": 0,
+  "visualReview": "Capturas públicas desktop/mobile inspecionadas: cinco capas, símbolo inteiro, assuntos visíveis."
+}

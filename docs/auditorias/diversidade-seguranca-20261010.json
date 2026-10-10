@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-10",
+  "status": "validated-local-publication-pending",
+  "published": false,
+  "items": [
+    {
+      "slug": "phishing-como-identificar",
+      "subject": "Conferir remetente e mensagem antes de clicar",
+      "protagonist": "Homem adulto examina mensagem no celular junto à janela",
+      "environment": "celular junto à janela",
+      "framing": "Retrato próximo lateral",
+      "label": "PHISHING",
+      "previous_asset": "/assets/posts/phishing-como-identificar-capa-v1-assinatura-v2.webp",
+      "reference": "Ação do artigo; interface conceitual não é captura real nem reprodução de fornecedor",
+      "style": "Fotografia editorial ilustrativa",
+      "avoid": [
+        "hologramas",
+        "cadeado gigante",
+        "fórmula de caderno/planta/café",
+        "logo inventado",
+        "credenciais visíveis",
+        "garantia de proteção"
+      ],
+      "asset": "/assets/posts/phishing-como-identificar-humano-assinatura-v1.webp",
+      "bytes": 135904,
+      "sha256": "c9b5582fae85963884a2bd0da156e3b1a031e2fca9e38973a0397aa9a53a5b77",
+      "generation": "built-in image_gen, SVG oficial e rótulo tipografado separadamente",
+      "previous_disposition": "Preservado no acervo local por SHA-256."
+    },
+    {
+      "slug": "autenticacao-dois-fatores",
+      "subject": "Usar segunda verificação de login",
+      "protagonist": "Jovem mulher compara autenticador no telefone com login no computador",
+      "environment": "computador",
+      "framing": "Plano por cima do ombro",
+      "label": "2FA",
+      "previous_asset": "/assets/posts/autenticacao-dois-fatores-capa-v1-assinatura-v2.webp",
+      "reference": "Ação do artigo; interface conceitual não é captura real nem reprodução de fornecedor",
+      "style": "Fotografia editorial ilustrativa",
+      "avoid": [
+        "hologramas",
+        "cadeado gigante",
+        "fórmula de caderno/planta/café",
+        "logo inventado",
+        "credenciais visíveis",
+        "garantia de proteção"
+      ],
+      "asset": "/assets/posts/autenticacao-dois-fatores-humano-assinatura-v1.webp",
+      "bytes": 108824,
+      "sha256": "05b878a32010d1c82fa3f1958866f0c19c8314588a507f477843bb231ffdb301",
+      "generation": "built-in image_gen, SVG oficial e rótulo tipografado separadamente",
+      "previous_disposition": "Preservado no acervo local por SHA-256."
+    },
+    {
+      "slug": "gerenciador-de-senhas-para-iniciantes",
+      "subject": "Organizar credenciais e cuidar da recuperação",
+      "protagonist": "Mulher madura configura cofre digital e guarda envelope de recuperação sem dados visíveis",
+      "environment": "Mulher madura configura cofre digital e guarda envelope de recuperação sem dados visíveis",
+      "framing": "Plano médio natural",
+      "label": "SENHAS",
+      "previous_asset": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "reference": "Ação do artigo; interface conceitual não é captura real nem reprodução de fornecedor",
+      "style": "Fotografia editorial ilustrativa",
+      "avoid": [
+        "hologramas",
+        "cadeado gigante",
+        "fórmula de caderno/planta/café",
+        "logo inventado",
+        "credenciais visíveis",
+        "garantia de proteção"
+      ],
+      "asset": "/assets/posts/gerenciador-de-senhas-para-iniciantes-humano-assinatura-v1.webp",
+      "bytes": 174694,
+      "sha256": "e385ff72b3477ba6ea8ed235da6d1e886f120f303d3c82b00d94c3f6705cc4d4",
+      "generation": "built-in image_gen, SVG oficial e rótulo tipografado separadamente",
+      "previous_disposition": "Mantido no projeto: compartilhado com ficha e catálogo Store."
+    },
+    {
+      "slug": "vpn-para-iniciantes",
+      "subject": "Acesso remoto de trabalho com configuração de VPN",
+      "protagonist": "Profissional em viagem verifica conexão no notebook em sala de espera",
+      "environment": "notebook em sala de espera",
+      "framing": "Plano ambiental aberto",
+      "label": "VPN",
+      "previous_asset": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+      "reference": "Ação do artigo; interface conceitual não é captura real nem reprodução de fornecedor",
+      "style": "Fotografia editorial ilustrativa",
+      "avoid": [
+        "hologramas",
+        "cadeado gigante",
+        "fórmula de caderno/planta/café",
+        "logo inventado",
+        "credenciais visíveis",
+        "garantia de proteção"
+      ],
+      "asset": "/assets/posts/vpn-para-iniciantes-humano-assinatura-v1.webp",
+      "bytes": 161668,
+      "sha256": "d66edeb4ed2950d64c281447a52705bd88c30d2a0a18b598f03dc6aa10768190",
+      "generation": "built-in image_gen, SVG oficial e rótulo tipografado separadamente",
+      "previous_disposition": "Mantido no projeto: compartilhado com ficha e catálogo Store."
+    }
+  ],
+  "validation": {
+    "check": "passed",
+    "build": "passed",
+    "qa": "passed",
+    "width_theme_combinations": 48,
+    "issues": 0,
+    "visual_review": "Montagem das quatro capas, artigo mobile e categoria inspecionados. VPN corrigida: tampa do notebook sem interface impossível. Símbolo oficial único visível.",
+    "backup": "212 arquivos restaurados idênticos, incluindo 130 imagens arquivadas",
+    "historical_recovery": "49 fontes/entregas e reconstrução isolada conferidas"
+  }
+}

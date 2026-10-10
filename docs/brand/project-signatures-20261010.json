@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-10",
+  "selected": [
+    {
+      "source": "/assets/store/logitech-mx-keys-mini.webp",
+      "target": "/assets/store/logitech-mx-keys-mini-assinatura-v2.svg",
+      "source_sha256": "2f5dd94bf520f61cac78d644cf6f3339ce9ecc48e66733ea6acc6158b1bf05d8",
+      "target_sha256": "4b6b461bf354dd9b4655c19a62a9d9d1e55692e926f711b7e9d3681c3930c83e",
+      "variant": "dark",
+      "symbol_size": 40,
+      "symbol_x": 24,
+      "symbol_y": 18,
+      "original_embedded_unchanged": true
+    },
+    {
+      "source": "/assets/store/fifine-am8-usb-xlr.webp",
+      "target": "/assets/store/fifine-am8-usb-xlr-assinatura-v2.svg",
+      "source_sha256": "5a3367e91a6a684d4679f6d1b996c2620b056d5755d55d9f330fdfc308ff4d26",
+      "target_sha256": "e37c632db4836398c8eecd5c7b604509c4a7a77ee7e875339df5c0adf102980e",
+      "variant": "dark",
+      "symbol_size": 36,
+      "symbol_x": 22,
+      "symbol_y": 12,
+      "original_embedded_unchanged": true
+    },
+    {
+      "source": "/assets/store/sandisk-portable-ssd-1tb.webp",
+      "target": "/assets/store/sandisk-portable-ssd-1tb-assinatura-v2.svg",
+      "source_sha256": "1a1626894993d6d6785e07a52dd8215cb724895aeb9661fd18fa4a31a8005914",
+      "target_sha256": "59422464d89806d3fc0165707dcb7fdd3bb8a9884c48d68cec359da63f1529e9",
+      "variant": "dark",
+      "symbol_size": 36,
+      "symbol_x": 22,
+      "symbol_y": 12,
+      "original_embedded_unchanged": true
+    }
+  ],
+  "method": "Native SVG composition preserving original bitmap payload; no new scene generation",
+  "publication": false
+}

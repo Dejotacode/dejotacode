@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-10",
+  "status": "validated-local-publication-pending",
+  "items": [
+    {
+      "slug": "html-css-javascript-entenda-diferenca",
+      "subject": "Estrutura, apresentação e comportamento",
+      "protagonist": "Três camadas materiais de uma página",
+      "environment": "Espaço abstrato navy",
+      "framing": "Vista oblíqua explodida",
+      "style": "Ilustração 3D editorial",
+      "reference": "HTML, CSS e JavaScript: MDN; nomes aplicados separadamente como texto, sem inventar logos",
+      "avoid": [
+        "computador",
+        "mesa",
+        "caderno",
+        "código ilegível"
+      ],
+      "asset": "/assets/posts/html-css-javascript-entenda-diferenca-diversidade-assinatura-v1.webp",
+      "bytes": 106152,
+      "sha256": "404964df7b1b5f6d9e084b6de1df347dd28dae3b48876b956fa4819a82d029ca",
+      "technology_label": "HTML · CSS · JavaScript",
+      "previous_asset": "/assets/posts/html-css-javascript-entenda-diferenca-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "javascript-variaveis-funcoes",
+      "subject": "Valores e transformação por função",
+      "protagonist": "Blocos translúcidos e escultura de transformação",
+      "environment": "Estúdio claro com contraste navy",
+      "framing": "Macro lateral",
+      "style": "Natureza-morta conceitual 3D",
+      "reference": "JavaScript: variáveis e funções, MDN; nome aplicado separadamente",
+      "avoid": [
+        "computador",
+        "mesa de escritório",
+        "diagrama preciso",
+        "código inventado"
+      ],
+      "asset": "/assets/posts/javascript-variaveis-funcoes-diversidade-assinatura-v1.webp",
+      "bytes": 102742,
+      "sha256": "f62af0e7b6501b03b9ddf0b854283e73e5673f7ca9d2488490f61af1948dd568",
+      "technology_label": "JavaScript",
+      "previous_asset": "/assets/posts/javascript-variaveis-funcoes-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "primeiro-site-html-css",
+      "subject": "Construção de página pessoal pequena",
+      "protagonist": "Duas mãos encaixando uma página de papel",
+      "environment": "Oficina abstrata sem mesa",
+      "framing": "Frontal próximo",
+      "style": "Ilustração artesanal de papel",
+      "reference": "Arquivos index.html e style.css citados no artigo; nomes aplicados separadamente",
+      "avoid": [
+        "laptop",
+        "caderno",
+        "miniatura semelhante ao destaque de portfólio",
+        "logotipos inventados"
+      ],
+      "asset": "/assets/posts/primeiro-site-html-css-diversidade-assinatura-v1.webp",
+      "bytes": 128686,
+      "sha256": "f55e912c3fc6be231c2a11a038cae2a0a46f3f5b9ea24701f6026c6c3d71132c",
+      "technology_label": "HTML + CSS",
+      "previous_asset": "/assets/posts/primeiro-site-html-css-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "como-a-web-funciona",
+      "subject": "Pedido do navegador e resposta do servidor",
+      "protagonist": "Mensageiro com envelope entre dois espaços arquitetônicos",
+      "environment": "Bairro abstrato claro",
+      "framing": "Vista panorâmica lateral",
+      "style": "Ilustração editorial narrativa",
+      "reference": "MDN funcionamento da web; metáfora simplificada, não diagrama de rede",
+      "avoid": [
+        "computador em mesa",
+        "globo holográfico",
+        "infográfico factual",
+        "texto incorporado"
+      ],
+      "asset": "/assets/posts/como-a-web-funciona-diversidade-assinatura-v1.webp",
+      "bytes": 340056,
+      "sha256": "d4caad705e1bcf5786fecd5093d8fa864f86d54ade2e2ef60bb41eb22d224b66",
+      "technology_label": null,
+      "previous_asset": "/assets/posts/como-a-web-funciona-capa-v1-assinatura-v2.webp"
+    }
+  ],
+  "published": false,
+  "generation": "built-in image_gen; official SVG and technology names composed separately",
+  "references": [
+    "https://developer.mozilla.org/pt-BR/docs/Web",
+    "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Variables",
+    "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Functions"
+  ],
+  "validation": {
+    "width_theme_combinations": 32,
+    "issues": 0,
+    "check": "zero errors warnings hints",
+    "build": "passed",
+    "qa": "passed",
+    "visual_review": "4 artes finais e capturas de artigos inspecionadas; HTML/CSS/JavaScript tipografados em coluna para evitar baixo contraste",
+    "historical_recovery": "49 fontes/destinos verificados; um destino antigo recomposto isoladamente com hash idêntico",
+    "old_assets": "Arquivados localmente com hashes conferidos"
+  }
+}

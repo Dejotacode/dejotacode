@@ -75,3 +75,27 @@ O ensaio de restauração da v1.9.0 foi concluído com sucesso em D1 local isola
 - definir destino seguro e implementar cópia/espelhamento do R2;
 - repetir periodicamente o teste de restauração em ambiente não produtivo;
 - registrar RTO/RPO quando o volume e a criticidade justificarem.
+
+
+## Acervo de imagens — backup local validado (10/10/2026)
+
+Status: registro. Snapshot de Workspace/media-dejotacode, incluindo catálogo, 106 imagens arquivadas e intermediários das capas. Restauração temporária isolada conferiu todos os arquivos por SHA-256; 49 fontes da receita verificadas e uma reconstrução reproduziu o hash aprovado. [Evidência e lacunas](../auditorias/acervo-backup-validation-20261010.json). Originais e backups anteriores preservados, sem publicação ou cópia externa. Cópia na mesma máquina/sistema de arquivos não protege contra perda física do disco. Mestres gerados no ChatGPT não estão incluídos nesse snapshot.
+
+Atualização após os lotes de destaques/programação: snapshot novo preserva as 113 imagens do catálogo e os novos intermediários, com restauração integral validada; backup anterior mantido. A evidência vinculada acima identifica o snapshot mais recente.
+
+Após o lote de IA, snapshot atualizado com 117 imagens do catálogo e 167 arquivos totais; restauração integral sem divergências. Backups anteriores preservados.
+
+
+Revisão das capas de IA em 10/10/2026: snapshot local atualizado, 179 arquivos restaurados e comparados por SHA-256, incluindo 121 imagens no acervo. Todos idênticos; 49 fontes/entregas históricas e reconstrução isolada conferidas. Evidência em ../auditorias/acervo-backup-validation-20261010.json. Cópia na mesma máquina não protege contra perda do disco; sem cópia externa.
+
+Atualização da primeira capa humana Linux: 183 arquivos restaurados com hashes idênticos, 122 imagens no acervo. Evidência em ../auditorias/acervo-backup-validation-20261010.json. Preservados snapshots anteriores, sem cópia externa.
+
+Lote Linux humano concluído localmente: snapshot de 201 arquivos restaurados idênticos por SHA-256, incluindo 128 imagens arquivadas. Receita histórica: 49 fontes/entregas e reconstrução isolada conferidas. Evidência em ../auditorias/acervo-backup-validation-20261010.json; sem cópia externa, sem publicação.
+
+Lote segurança digital: snapshot de 212 arquivos restaurados idênticos por SHA-256, incluindo 130 imagens arquivadas. Receita histórica: 49 fontes/entregas e reconstrução isolada conferidas. Evidência em ../auditorias/acervo-backup-validation-20261010.json; sem cópia externa ou publicação. Capas Store NordPass/NordVPN preservadas em uso.
+
+Primeiro lote renda digital: snapshot de 225 arquivos restaurados idênticos por SHA-256, incluindo 134 imagens arquivadas. Receita histórica: 49 fontes/entregas e reconstrução isolada conferidas. Evidência em ../auditorias/acervo-backup-validation-20261010.json; sem cópia externa ou publicação.
+
+Segundo lote renda digital: snapshot de 237 arquivos restaurados idênticos por SHA-256, incluindo 138 imagens arquivadas. Receita histórica: 49 fontes/entregas e reconstrução isolada conferidas. Evidência em ../auditorias/acervo-backup-validation-20261010.json; sem cópia externa ou publicação.
+
+Terceiro lote renda digital: snapshot de 243 arquivos restaurados idênticos por SHA-256, incluindo 140 imagens arquivadas. Receita histórica: 49 fontes/entregas e reconstrução isolada conferidas. Evidência em ../auditorias/acervo-backup-validation-20261010.json; sem cópia externa ou publicação.

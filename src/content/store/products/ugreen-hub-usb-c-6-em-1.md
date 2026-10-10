@@ -46,3 +46,5 @@ O **UGREEN Uno Hub USB-C 6 em 1** entra na DejotaStore como solução para noteb
 A oferta validada no Mercado Livre confirma HDMI 4K/60 Hz e PD100W, com até 85W repassados ao notebook. Na Shopee, encontramos uma oferta afiliada do UGREEN Uno com bom histórico de vendas.
 
 Esta recomendação é **pesquisada pelo DejotaCode**. Os links comerciais levam diretamente aos marketplaces parceiros.
+
+A capa usa uma fotografia de referência do fornecedor em composição editorial do DejotaCode; não é registro de teste físico. Confira a cor, capacidade e variante da oferta antes de comprar.

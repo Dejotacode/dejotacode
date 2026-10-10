@@ -1,0 +1,3567 @@
+{
+  "date": "2026-10-10",
+  "routes": [
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "title": "Méliuz Jogue e Ganhe: testamos o Pocket Sort | DejotaCode",
+      "url": "http://localhost:4321/blog/meliuz-jogue-e-ganhe-pocket-sort/"
+    },
+    {
+      "route": "/blog/",
+      "title": "Blog de tecnologia para iniciantes | DejotaCode",
+      "url": "http://localhost:4321/blog/"
+    },
+    {
+      "route": "/recursos/?page=2",
+      "title": "Ferramentas e recursos para tecnologia | DejotaCode",
+      "url": "http://localhost:4321/recursos/?page=2"
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "title": "Renda digital: recursos recomendados | DejotaCode",
+      "url": "http://localhost:4321/recursos/renda-digital/"
+    }
+  ],
+  "combinations": 32,
+  "results": [
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 100.796875,
+          "height": 241.671875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 100.796875,
+          "height": 262.46875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 287.984375,
+          "height": 637.734375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 100.796875,
+          "height": 241.671875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 100.796875,
+          "height": 262.46875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 120.046875,
+          "height": 192.03125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 120.046875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 342.984375,
+          "height": 759.984375,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 120.046875,
+          "height": 192.03125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 120.046875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 691.53125,
+          "height": 1534.765625,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 572,
+          "height": 320.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true,
+          "naturalWidth": 900,
+          "naturalHeight": 1197,
+          "width": 32,
+          "height": 32,
+          "fit": "cover",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 572,
+          "height": 320.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+          "loaded": true,
+          "naturalWidth": 691,
+          "naturalHeight": 1536,
+          "width": 693,
+          "height": 1538,
+          "fit": "fill",
+          "position": "50% 50%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 265.21875,
+          "height": 149.171875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 265.21875,
+          "height": 149.171875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 320.21875,
+          "height": 180.109375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 320.21875,
+          "height": 180.109375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 307.015625,
+          "height": 309.234375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 307.015625,
+          "height": 309.234375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 533.328125,
+          "height": 333.328125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/blog/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 533.328125,
+          "height": 333.328125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1672,
+          "naturalHeight": 941,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 176,
+          "height": 240,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 176,
+          "height": 240,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 192,
+          "height": 240,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 192,
+          "height": 240,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 185.40625,
+          "height": 262.03125,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 185.40625,
+          "height": 262.03125,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.28125,
+          "height": 190.140625,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.28125,
+          "height": 190.140625,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.28125,
+          "height": 190.140625,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 208,
+          "height": 288,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/?page=2",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 720,
+          "naturalHeight": 405,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/git-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.28125,
+          "height": 190.140625,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.28125,
+          "height": 190.140625,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.28125,
+          "height": 190.140625,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 810,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 0,
+          "height": 0,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true,
+          "naturalWidth": 1159,
+          "naturalHeight": 1638,
+          "width": 208,
+          "height": 288,
+          "fit": "contain",
+          "position": "50% 50%"
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 286,
+          "height": 142,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 341,
+          "height": 169.5,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 336.96875,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 336.984375,
+          "height": 167.484375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+          "loaded": true,
+          "naturalWidth": 1448,
+          "naturalHeight": 1086,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%"
+        },
+        {
+          "src": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/evidencias-capa-assinatura-v2.svg",
+          "loaded": true,
+          "naturalWidth": 1440,
+          "naturalHeight": 1080,
+          "width": 382.265625,
+          "height": 190.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    }
+  ],
+  "issues": [],
+  "keyboard": [
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "activeTag": "A",
+      "focusVisible": true,
+      "outline": "solid",
+      "detailsOpen": true
+    }
+  ],
+  "external_image_gaps": [],
+  "screenshots": [
+    "/tmp/lote-selecao-_blog_meliuz-jogue-e-ganhe-pocket-sort_-390.png",
+    "/tmp/lote-selecao-_blog_meliuz-jogue-e-ganhe-pocket-sort_-1440.png"
+  ],
+  "limits": [
+    "Geometry/loading do not certify semantic fit, product accuracy or legacy symbols. Screenshots are unchanged; symbol placed on composition background."
+  ],
+  "svg_xml_valid": true,
+  "screenshot_payloads_identical": true,
+  "symbol_geometry": {
+    "x": 43,
+    "y": 32,
+    "width": 72,
+    "height": 72
+  },
+  "published": false
+}

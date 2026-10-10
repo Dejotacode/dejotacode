@@ -17,3 +17,14 @@ Formulário /newsletter/: orientação de confirmação por e-mail; nome opciona
 Validação: check sem erros, avisos ou hints; build 115 páginas; QA 6382 referências sem destinos quebrados, 470 imagens, 259 controles sem problemas básicos. Testes API: 14 cenários com SQLite e Brevo simulada. Estados UI simulados em 320/390/768/1440px, claro/escuro, ambas variantes; evidência final NEWSLETTER_UI_CHECK_2026-10-09.json no worktree API. Nenhum POST a serviço real nos testes.
 
 Faltam ativação do modelo, acesso da Cloudflare à Brevo com política de IP compatível, migração e segredo no Worker, revisão/publicação conjunta e teste real autorizado de confirmação/descadastro. Histórico de leads não importado. Contatos bloqueados não reativados. Descadastro das futuras campanhas permanece nativo Brevo, ainda sem teste real.
+
+
+## Newsletter publicada — 09/10/2026, após autorização às 18:13 BRT
+
+Teste isolado concluído: confirmação DOI, entrega e descadastro nativo verificados. Publicação explicitamente autorizada, sem novos envios de teste. API versão f19338f7-aa51-41de-bee6-3288c21be126, base f2c92ab; contato ativo e bindings preservados. Backup D1 privado anterior à migração, SHA256 e tamanho em NEWSLETTER_PRODUCTION_DEPLOY_2026-10-09.json. Aplicada e registrada somente 0014_newsletter_requests.sql; 0012/0013 não aplicadas. BREVO_API_KEY armazenada como segredo, lista 3/template DOI ativo 1, NEWSLETTER_ENABLED=true. Configuração efetiva privada: .local/newsletter-production.json. prepare-newsletter-release.py continua gerando newsletter false como padrão seguro; não substitui a configuração efetiva publicada.
+
+Verificação pública da API: health 200; consentimento ausente rejeitado 400; pedido do contato já bloqueado retornou 201 genérico e ledger suppressed. Isso verificou Worker→Brevo sem envio e sem reativação; registro local de consentimento é histórico de solicitação, não inscrição ativa. Contato de teste permanece suprimido. Não houve importação de leads antigos nem campanhas novas. Lista 4 permanece somente teste.
+
+Frontend publicado por PR #268, merge 652e864d949668bc417edfd7dc2b0b47a6ba722f; workflow 37992473939 concluiu check, build, QA, deploy e smoke. Release isolada baseada em main preservou checkout Hotmart e excluiu mudanças locais pendentes de outras frentes. Formulário orienta confirmação e variante Guia retorna após confirmação nativa, sem envio automático de PDF. Produção: https://dejotacode.com.br/newsletter/.
+
+Edições futuras continuam manuais e precisam de autorização própria; nenhuma automação de campanha semanal ou boas-vindas foi criada. Nenhum segredo, backup SQL, contato ou link individual de descadastro versionado.

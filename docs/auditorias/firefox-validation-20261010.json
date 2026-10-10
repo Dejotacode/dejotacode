@@ -1,0 +1,1825 @@
+{
+  "browser": {
+    "acceptInsecureCerts": false,
+    "browserName": "firefox",
+    "browserVersion": "157.0.1",
+    "platformName": "linux",
+    "setWindowRect": true,
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:157.0) Gecko/20100101 Firefox/157.0",
+    "moz:buildID": "20261006025005",
+    "moz:headless": true,
+    "moz:platformVersion": "7.2.7-1-cachyos",
+    "moz:processID": 131198,
+    "moz:profile": "/tmp/dejotacode-firefox-qa-20261010",
+    "moz:shutdownTimeout": 60000
+  },
+  "results": [
+    {
+      "route": "/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/products/linux-do-zero/cover.png",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Linux, programação e tecnologia para iniciantes | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/newsletter/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Newsletter de tecnologia prática | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/contato/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": false,
+      "title": "Contato | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [],
+      "model": true,
+      "title": "Setup do Dejota | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/store/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/elementor-site-builder.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/resources/items/elevenlabs.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/fifine-am8-usb-xlr.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-keys-mini.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "DejotaStore | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Logitech MX Anywhere 3S | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/brand/dejota-author.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+          "loaded": true
+        },
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "h1": 1,
+      "main": 1,
+      "images": [
+        {
+          "src": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+          "loaded": true
+        }
+      ],
+      "model": false,
+      "title": "Ottocast Mini Cube 3.0 | DejotaCode"
+    }
+  ],
+  "status": "VALIDADO_NO_ESCOPO",
+  "date": "2026-10-10",
+  "keyboard": [
+    {
+      "route": "/",
+      "text": "Ir para o conteúdo",
+      "href": "#conteudo"
+    },
+    {
+      "route": "/newsletter/",
+      "text": "Ir para o conteúdo",
+      "href": "#conteudo"
+    },
+    {
+      "route": "/contato/",
+      "text": "Ir para o conteúdo",
+      "href": "#conteudo"
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "text": "Ir para o conteúdo",
+      "href": "#conteudo"
+    }
+  ],
+  "limitations": [
+    "No screen reader test",
+    "No Safari or WebKit test",
+    "No form submission",
+    "Sample does not certify full accessibility compliance"
+  ],
+  "visual_inspection": [
+    "Store desktop dark: existing gradient and official symbol preserved",
+    "MX article mobile light: official symbol visible, old mark absent"
+  ],
+  "method": "Firefox isolated headless profile; native WebDriver BiDi",
+  "screenshots": [
+    "firefox-store-1440-dark-20261010.png",
+    "firefox-mx-390-light-20261010.png"
+  ]
+}

@@ -1,5 +1,7 @@
 # Pendências para uma rodada conjunta — 09/10/2026
 
+> Registro histórico da auditoria anterior à integração Brevo. As pendências de confirmação/descadastro e publicação de newsletter foram superadas pelo [registro final](../operacao/newsletter-brevo-integracao-2026-10-09.md). Não executar a sequência antiga como fila vigente. Para retomada, usar [estado atual](../estado-atual.md); Termos, acessibilidade, navegadores e produtos separados exigem conferência própria. Conciliação: @control, 10/10/2026.
+
 Situação: revisão, sem correções ou publicação nesta rodada. Responsável: @control/@dev. Código local e release efetivamente publicada conferidos. Não reabrir correções visuais já aprovadas por simples repetição.
 
 | Prioridade | Área | Evidência | Trabalho para a rodada conjunta |

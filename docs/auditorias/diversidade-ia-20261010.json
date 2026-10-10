@@ -1,0 +1,208 @@
+{
+  "date": "2026-10-10",
+  "status": "corrected-validated-local-publication-pending",
+  "items": [
+    {
+      "slug": "o-que-e-ia-generativa",
+      "scene": "Pedido em chat produz cartões de texto, imagem e áudio",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente",
+      "asset": "/assets/posts/o-que-e-ia-generativa-ia-explicita-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/o-que-e-ia-generativa-diversidade-assinatura-v1.webp",
+      "bytes": 130496,
+      "sha256": "9588afebb00f09a810b7fff3d16a797b36dd7263623c1d6cbcfe530e071e5e6f"
+    },
+    {
+      "slug": "prompts-melhores-estudar-trabalhar",
+      "scene": "Pessoa organiza contexto, objetivo e formato para assistente",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente",
+      "asset": "/assets/posts/prompts-melhores-estudar-trabalhar-ia-explicita-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/prompts-melhores-estudar-trabalhar-diversidade-assinatura-v1.webp",
+      "bytes": 118604,
+      "sha256": "2a8c4f7389e6045fdd0713a446ed3b26c21db5ccae832739ca317444c535c5e2"
+    },
+    {
+      "slug": "usar-ia-estudar-sem-dependencia",
+      "scene": "Aprendiz resolve no quadro, assistente sugere explicar",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente",
+      "asset": "/assets/posts/usar-ia-estudar-sem-dependencia-ia-explicita-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/usar-ia-estudar-sem-dependencia-diversidade-assinatura-v1.webp",
+      "bytes": 163654,
+      "sha256": "0d91ab34ab547b9fa29920fde75ce8c0dd42e1e694e7bd6ee5b03f25a6d3ce48"
+    },
+    {
+      "slug": "como-verificar-respostas-de-ia",
+      "scene": "Pessoa compara resposta identificada como IA com fontes",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente",
+      "asset": "/assets/posts/como-verificar-respostas-de-ia-ia-explicita-assinatura-v1.webp",
+      "previous_asset": "/assets/posts/como-verificar-respostas-de-ia-diversidade-assinatura-v1.webp",
+      "bytes": 209982,
+      "sha256": "a13096e4e932bddf552bf4cc3f978708f02b67008a6ea95b344e0e7ac3e29cc0"
+    }
+  ],
+  "published": false,
+  "generation": "built-in image_gen, SVG oficial separado 72×72 em x43/y24",
+  "old_assets": "arquivados com hashes conferidos",
+  "validation": {
+    "visual_review": "Referência explícita de IA e ação ligada ao artigo; cenas e textos inspecionados antes da integração.",
+    "check": "passed",
+    "build": "passed",
+    "qa": "passed",
+    "width_theme_combinations": 40,
+    "issues": 0,
+    "backup": "179 arquivos e 121 imagens arquivadas restaurados com hashes idênticos"
+  },
+  "revision_reason": "Usuário apontou que as metáforas não identificam IA; quatro cenas em revisão com diálogo explícito de assistente.",
+  "revision_briefs": [
+    {
+      "slug": "o-que-e-ia-generativa",
+      "scene": "Pedido em chat produz cartões de texto, imagem e áudio",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente"
+    },
+    {
+      "slug": "prompts-melhores-estudar-trabalhar",
+      "scene": "Pessoa organiza contexto, objetivo e formato para assistente",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente"
+    },
+    {
+      "slug": "usar-ia-estudar-sem-dependencia",
+      "scene": "Aprendiz resolve no quadro, assistente sugere explicar",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente"
+    },
+    {
+      "slug": "como-verificar-respostas-de-ia",
+      "scene": "Pessoa compara resposta identificada como IA com fontes",
+      "reference": "Diálogo conceitual identificado como IA, sem marca de ferramenta ou alegação de captura real",
+      "avoid": [
+        "mesa genérica",
+        "robô",
+        "logo inventado"
+      ],
+      "signature": "SVG oficial aplicado separadamente"
+    }
+  ],
+  "previous_revision": [
+    {
+      "slug": "o-que-e-ia-generativa",
+      "subject": "Transformação de um pedido em conteúdo novo",
+      "protagonist": "Escultura multiforme: imagem, áudio e escrita emergem de um prisma",
+      "environment": "Fundo coral e navy",
+      "framing": "Macro oblíquo",
+      "style": "Ilustração editorial 3D",
+      "reference": "Conceitos do próprio artigo; não simular interface de IA, logo ou evidência de uso",
+      "avoid": [
+        "mesa com notebook",
+        "caderno",
+        "robô humanoide",
+        "texto ilegível",
+        "garantia de resultado"
+      ],
+      "asset": "/assets/posts/o-que-e-ia-generativa-diversidade-assinatura-v1.webp",
+      "bytes": 133496,
+      "sha256": "1153fdc0be1721d2902b41afda77f271739e1337c8cf25fab4f1faa2cc5e5320",
+      "previous_asset": "/assets/posts/o-que-e-ia-generativa-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "prompts-melhores-estudar-trabalhar",
+      "subject": "Pedido com contexto, objetivo e formato",
+      "protagonist": "Pessoa dirigindo uma cena teatral com três elementos visuais",
+      "environment": "Pequeno palco de comunicação",
+      "framing": "Plano médio",
+      "style": "Ilustração narrativa",
+      "reference": "Conceitos do próprio artigo; não simular interface de IA, logo ou evidência de uso",
+      "avoid": [
+        "mesa com notebook",
+        "caderno",
+        "robô humanoide",
+        "texto ilegível",
+        "garantia de resultado"
+      ],
+      "asset": "/assets/posts/prompts-melhores-estudar-trabalhar-diversidade-assinatura-v1.webp",
+      "bytes": 157472,
+      "sha256": "58aba4330a74282639ef6326e039c11cffe55ff292b8de6205e901028f029ea8",
+      "previous_asset": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "usar-ia-estudar-sem-dependencia",
+      "subject": "Aprendizagem ativa e revisão própria",
+      "protagonist": "Aprendiz completando peça de quebra-cabeça com ajuda secundária",
+      "environment": "Ambiente aberto de aprendizagem",
+      "framing": "Plano próximo de mãos e pessoa",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Conceitos do próprio artigo; não simular interface de IA, logo ou evidência de uso",
+      "avoid": [
+        "mesa com notebook",
+        "caderno",
+        "robô humanoide",
+        "texto ilegível",
+        "garantia de resultado"
+      ],
+      "asset": "/assets/posts/usar-ia-estudar-sem-dependencia-diversidade-assinatura-v1.webp",
+      "bytes": 108330,
+      "sha256": "612512eb64375b4468f1cb98ea729f0cfce85d9db1bf027732949a92614f9623",
+      "previous_asset": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "como-verificar-respostas-de-ia",
+      "subject": "Conferir afirmação contra fontes",
+      "protagonist": "Pessoa comparando duas folhas de evidência e destacando divergência",
+      "environment": "Biblioteca com luz natural",
+      "framing": "Plano médio lateral",
+      "style": "Ilustração editorial pintada",
+      "reference": "Conceitos do próprio artigo; não simular interface de IA, logo ou evidência de uso",
+      "avoid": [
+        "mesa com notebook",
+        "caderno",
+        "robô humanoide",
+        "texto ilegível",
+        "garantia de resultado"
+      ],
+      "asset": "/assets/posts/como-verificar-respostas-de-ia-diversidade-assinatura-v1.webp",
+      "bytes": 214464,
+      "sha256": "8955d48ebd7f97c5842f808811693c781093be4ae3dc4cc9f1892c1d0e4dcc18",
+      "previous_asset": "/assets/posts/como-verificar-respostas-de-ia-capa-v1-assinatura-v2.webp"
+    }
+  ],
+  "user_review": "Capas atuais aprovadas para estes conteúdos; versões anteriores preservadas. Mais humanidade e naturalidade nas próximas, sem refazer este lote."
+}

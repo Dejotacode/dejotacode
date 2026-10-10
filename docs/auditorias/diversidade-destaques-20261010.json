@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-10",
+  "status": "validated-local-publication-pending",
+  "items": [
+    {
+      "slug": "escolher-primeiro-projeto-portfolio",
+      "subject": "Escolher um problema pequeno e construir projeto concluível",
+      "protagonist": "Mão escolhendo uma pequena página pessoal entre três modelos visuais",
+      "environment": "Espaço abstrato de construção, sem mesa",
+      "framing": "Close diagonal",
+      "style": "Ilustração tridimensional editorial",
+      "reference": "Conceitos de página pessoal, lista de tarefas e catálogo; sem logo de linguagem porque artigo não ensina linguagem específica",
+      "avoid": [
+        "computador",
+        "caderno",
+        "plantas",
+        "texto incorporado"
+      ],
+      "asset": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+      "bytes": 98154,
+      "sha256": "e0acc0ef7e04dfa5adea15a7ec58881455416b971a316dc2326f1db8e6de7aa4",
+      "previous_asset": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "habitos-seguranca-digital-iniciantes",
+      "subject": "Hábitos de proteção no cotidiano",
+      "protagonist": "Pessoa verificando confirmação de acesso no celular",
+      "environment": "Entrada de casa com luz natural",
+      "framing": "Plano médio lateral",
+      "style": "Fotografia editorial ilustrativa",
+      "reference": "Confirmação de acesso conceitual, sem interface real nem dados",
+      "avoid": [
+        "mesa de trabalho",
+        "cadeado holográfico",
+        "escudo gigante",
+        "garantia de segurança"
+      ],
+      "asset": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+      "bytes": 96716,
+      "sha256": "71797259adb6cfeface66a7bb83792d7b778bb0015556e368ab84379a317b07b",
+      "previous_asset": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp"
+    },
+    {
+      "slug": "como-estudar-tecnologia-sem-se-perder",
+      "subject": "Escolher um objetivo de estudo e avançar sem acumular opções",
+      "protagonist": "Pessoa em percurso de aprendizagem entre caminhos abstratos",
+      "environment": "Paisagem arquitetônica clara e minimalista",
+      "framing": "Plano aberto",
+      "style": "Ilustração narrativa",
+      "reference": "Metáfora de objetivo, prática e revisão; não diagrama factual",
+      "avoid": [
+        "notebook",
+        "caderno",
+        "mesa",
+        "paisagem de montanha semelhante a Python",
+        "texto"
+      ],
+      "asset": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+      "bytes": 161254,
+      "sha256": "a3a0c3c7f1dcab3b2580c03640ca64daddc4e78f0d535a025a03598b442652eb",
+      "previous_asset": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1-assinatura-v2.webp"
+    }
+  ],
+  "signature": "SVG oficial aplicado separadamente; nunca gerado pela IA",
+  "published": false,
+  "generation": "built-in image_gen; SVG official composed separately",
+  "validation": {
+    "width_theme_combinations": 40,
+    "issues": 0,
+    "check": "79 files zero errors warnings hints",
+    "build_pages": 123,
+    "qa_images_checked": 515,
+    "visual_review": "Home desktop/mobile e Blog desktop inspecionados; três cenas distintas, símbolos presentes; máscara aprovada da Home atenua a marca no hero.",
+    "previous_assets": "Três capas antigas arquivadas; receita técnica agora consulta destinos históricos no acervo."
+  }
+}

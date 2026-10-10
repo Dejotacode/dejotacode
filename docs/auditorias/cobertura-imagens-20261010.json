@@ -1,0 +1,1599 @@
+{
+  "status": "AUDITORIA_LOCAL_CONCLUIDA",
+  "date": "2026-10-10",
+  "scope": "Todo conteúdo local, incluindo rascunhos; build atual. Não comprova publicação nem identidade de cada raster.",
+  "summary": {
+    "artigo": {
+      "especifica": 47
+    },
+    "guia_store": {
+      "modelo_sem_capa": 1
+    },
+    "produto": {
+      "especifica": 23
+    },
+    "recurso": {
+      "especifica": 22
+    },
+    "trilha": {
+      "especifica": 5
+    }
+  },
+  "items": [
+    {
+      "kind": "artigo",
+      "id": "afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade",
+      "title": "Afiliados para iniciantes: como recomendar com transparência",
+      "image": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "autenticacao-dois-fatores",
+      "title": "Autenticação em dois fatores: por que usar e como começar",
+      "image": "/assets/posts/autenticacao-dois-fatores-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/autenticacao-dois-fatores/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "bilibili-para-iniciantes-monetizacao-brasil",
+      "title": "Bilibili para iniciantes: publicação e monetização no Brasil",
+      "image": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/bilibili-para-iniciantes-monetizacao-brasil/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "comandos-linux-para-iniciantes",
+      "title": "Comandos Linux para quem está começando",
+      "image": "/assets/posts/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/comandos-linux-para-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-a-web-funciona",
+      "title": "Como a web funciona: navegador, servidor, DNS e HTTP",
+      "image": "/assets/posts/como-a-web-funciona-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-a-web-funciona/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-conseguir-primeira-renda-online",
+      "title": "Primeira renda online: como começar com uma habilidade simples",
+      "image": "/assets/posts/como-conseguir-primeira-renda-online-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-conseguir-primeira-renda-online/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-conseguir-primeiro-cliente-sem-anuncios",
+      "title": "Como conseguir o primeiro cliente sem investir em anúncios",
+      "image": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-conseguir-primeiro-cliente-sem-anuncios/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-criar-pendrive-bootavel-linux",
+      "title": "Como criar um pendrive bootável Linux sem apagar o disco errado",
+      "image": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-criar-pendrive-bootavel-linux/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-escolher-distribuicao-linux",
+      "title": "Como escolher uma distribuição Linux",
+      "image": "/assets/posts/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-escolher-distribuicao-linux/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-estudar-tecnologia-sem-se-perder",
+      "title": "Como estudar tecnologia sem se perder em cursos e ferramentas",
+      "image": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-montar-oferta-simples-pequenos-negocios",
+      "title": "Como montar uma oferta simples para pequenos negócios",
+      "image": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-montar-oferta-simples-pequenos-negocios/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-testar-linux-sem-instalar",
+      "title": "Como testar Linux sem instalar no computador",
+      "image": "/assets/posts/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-testar-linux-sem-instalar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "como-verificar-respostas-de-ia",
+      "title": "Como verificar respostas de IA antes de confiar nelas",
+      "image": "/assets/posts/como-verificar-respostas-de-ia-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/como-verificar-respostas-de-ia/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "devtools-navegador-iniciantes",
+      "title": "DevTools do navegador para iniciantes: inspecione e corrija sua página",
+      "image": "/assets/posts/devtools-navegador-iniciantes-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/devtools-navegador-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "documentar-aprendizado-tecnologia",
+      "title": "Como documentar o que você aprende em tecnologia",
+      "image": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "elementor-para-iniciantes",
+      "title": "Elementor para iniciantes: o que você precisa antes de criar um site",
+      "image": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/elementor-para-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "elevenlabs-para-iniciantes-criar-narracoes-com-ia",
+      "title": "ElevenLabs para iniciantes: como criar narrações com IA",
+      "image": "/assets/resources/items/elevenlabs.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/elevenlabs-para-iniciantes-criar-narracoes-com-ia/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "erros-iniciantes-desistem-renda-digital",
+      "title": "10 erros que fazem iniciantes desistirem da renda digital",
+      "image": "/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/erros-iniciantes-desistem-renda-digital/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "escolher-primeiro-projeto-portfolio",
+      "title": "Como escolher seu primeiro projeto de portfólio",
+      "image": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "febspot-para-iniciantes-monetizacao-indicacao",
+      "title": "Febspot para iniciantes: vídeos, monetização e indicação",
+      "image": "/assets/resources/items/febspot.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/febspot-para-iniciantes-monetizacao-indicacao/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "freelancer-para-iniciantes-como-escolher-um-servico",
+      "title": "Freelancer para iniciantes: como escolher seu primeiro serviço",
+      "image": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/freelancer-para-iniciantes-como-escolher-um-servico/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "gerenciador-de-senhas-para-iniciantes",
+      "title": "Gerenciador de senhas para iniciantes: como escolher e começar",
+      "image": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/gerenciador-de-senhas-para-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "git-e-github-entenda-a-diferenca",
+      "title": "Git e GitHub: entenda a diferença sem complicação",
+      "image": "/assets/resources/items/github.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "habitos-seguranca-digital-iniciantes",
+      "title": "5 hábitos de segurança digital para começar hoje",
+      "image": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "html-css-javascript-entenda-diferenca",
+      "title": "HTML, CSS e JavaScript: entenda a diferença",
+      "image": "/assets/posts/html-css-javascript-entenda-diferenca-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/html-css-javascript-entenda-diferenca/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "hub-data-como-funciona-e-o-que-estamos-testando",
+      "title": "Hub Data: como funciona e o que estamos testando",
+      "image": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "javascript-variaveis-funcoes",
+      "title": "JavaScript para iniciantes: variáveis, condições e funções",
+      "image": "/assets/posts/javascript-variaveis-funcoes-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/javascript-variaveis-funcoes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar",
+      "title": "Jornada Python: o que avaliar antes de começar",
+      "image": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": true,
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "landing-page-para-pequenos-negocios-o-que-entregar",
+      "title": "Landing page para pequenos negócios: o que entregar",
+      "image": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/landing-page-para-pequenos-negocios-o-que-entregar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar",
+      "title": "Logitech MX Anywhere 3S para produtividade: o que avaliar antes de comprar",
+      "image": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "meliuz-jogue-e-ganhe-pocket-sort",
+      "title": "Méliuz Jogue e Ganhe: testamos o Pocket Sort",
+      "image": "/assets/resources/items/meliuz-jogue-e-ganhe.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "metricool-para-iniciantes-organizar-agendar-conteudo",
+      "title": "Metricool para iniciantes: como organizar e agendar conteúdo",
+      "image": "/assets/resources/items/metricool.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/metricool-para-iniciantes-organizar-agendar-conteudo/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "o-que-e-ia-generativa",
+      "title": "O que é IA generativa e como usar com responsabilidade",
+      "image": "/assets/posts/o-que-e-ia-generativa-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/o-que-e-ia-generativa/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "o-que-e-linux",
+      "title": "O que é Linux? Uma explicação para iniciantes",
+      "image": "/assets/posts/o-que-e-linux-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/o-que-e-linux/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "organizar-ambiente-estudos-tecnologia",
+      "title": "Como organizar seu ambiente de estudos em tecnologia",
+      "image": "/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/organizar-ambiente-estudos-tecnologia/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar",
+      "title": "Ottocast Mini Cube 3.0: o que saber antes de comprar",
+      "image": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "permissoes-linux-para-iniciantes",
+      "title": "Permissões no Linux sem mistério",
+      "image": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/permissoes-linux-para-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "phishing-como-identificar",
+      "title": "Phishing: como identificar mensagens suspeitas antes de clicar",
+      "image": "/assets/posts/phishing-como-identificar-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/phishing-como-identificar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "pipe-redirecionamento-linux",
+      "title": "Pipe e redirecionamento no Linux: entenda |, > e >>",
+      "image": "/assets/posts/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/pipe-redirecionamento-linux/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "portfolio-para-freelancer-sem-clientes",
+      "title": "Portfólio para freelancer: o que mostrar mesmo sem clientes",
+      "image": "/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/portfolio-para-freelancer-sem-clientes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "primeiro-site-html-css",
+      "title": "Como criar seu primeiro site com HTML e CSS",
+      "image": "/assets/posts/primeiro-site-html-css-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/primeiro-site-html-css/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "produto-digital-como-transformar-conhecimento-em-ebook",
+      "title": "Produto digital: como criar seu primeiro e-book",
+      "image": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/produto-digital-como-transformar-conhecimento-em-ebook/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre",
+      "title": "Programação do Iniciante ao Avançado: o que o eBook cobre",
+      "image": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "prompts-melhores-estudar-trabalhar",
+      "title": "Como escrever prompts melhores para estudar e trabalhar",
+      "image": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/prompts-melhores-estudar-trabalhar/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "quanto-cobrar-primeiro-site",
+      "title": "Quanto cobrar pelo seu primeiro site",
+      "image": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/quanto-cobrar-primeiro-site/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "usar-ia-estudar-sem-dependencia",
+      "title": "Como usar IA para estudar sem terceirizar o raciocínio",
+      "image": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/usar-ia-estudar-sem-dependencia/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "artigo",
+      "id": "vpn-para-iniciantes",
+      "title": "VPN para iniciantes: quando faz sentido usar e quais são os limites",
+      "image": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/blog/vpn-para-iniciantes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "baseus-fc11-power-bank",
+      "title": "Baseus FC11 Power Bank 10.000/20.000 mAh",
+      "image": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/baseus-fc11-power-bank/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "baseus-fm11-10000mah",
+      "title": "Baseus FM11 Power Bank 10.000 mAh",
+      "image": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/baseus-fm11-10000mah/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "elementor-site-builder",
+      "title": "Elementor — criação de sites e landing pages no WordPress",
+      "image": "/assets/store/elementor-site-builder.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/elementor-site-builder/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "elevenlabs",
+      "title": "ElevenLabs — voz e narração com inteligência artificial",
+      "image": "/assets/resources/items/elevenlabs.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/elevenlabs/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "fifine-am8-usb-xlr",
+      "title": "Fifine AM8 USB/XLR",
+      "image": "/assets/store/fifine-am8-usb-xlr.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/fifine-am8-usb-xlr/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "gshield-hub-usb-c-6-em-1",
+      "title": "Gshield Hub USB-C 6 em 1",
+      "image": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/gshield-hub-usb-c-6-em-1/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "hospedagem-primeiro-site",
+      "title": "Hospedagem para o primeiro site",
+      "image": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/hospedagem-primeiro-site/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "hostinger-hospedagem",
+      "title": "Hostinger — hospedagem para primeiros projetos",
+      "image": "/assets/store/hostinger-hospedagem.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": true,
+      "route": "/store/hostinger-hospedagem/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "hotmart-extensoes",
+      "title": "Extensões da Hotmart — páginas, e-mail e webinários",
+      "image": "/assets/store/hotmart-extensoes-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": true,
+      "route": "/store/hotmart-extensoes/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "jornada-python-hotmart",
+      "title": "Jornada Python — Python Academy",
+      "image": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": true,
+      "route": "/store/jornada-python-hotmart/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "leadlovers-hotmart",
+      "title": "Leadlovers — automação, páginas e relacionamento com leads",
+      "image": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/leadlovers-hotmart/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "logitech-mx-anywhere-3s",
+      "title": "Logitech MX Anywhere 3S",
+      "image": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "logitech-mx-keys-mini",
+      "title": "Logitech MX Keys Mini",
+      "image": "/assets/store/logitech-mx-keys-mini.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/logitech-mx-keys-mini/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "logitech-pebble-2-m350s",
+      "title": "Logitech Pebble 2 M350s",
+      "image": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/logitech-pebble-2-m350s/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "metricool",
+      "title": "Metricool — planejamento, publicação e análise de redes sociais",
+      "image": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/metricool/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "nordpass",
+      "title": "NordPass — gerenciador de senhas",
+      "image": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/nordpass/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "nordvpn",
+      "title": "NordVPN",
+      "image": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/nordvpn/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "ottocast-mini-cube-3-0",
+      "title": "Ottocast Mini Cube 3.0",
+      "image": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "programacao-iniciante-avancado-hotmart",
+      "title": "Programação do Iniciante ao Avançado",
+      "image": "/assets/store/programacao-iniciante-avancado-hotmart-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/programacao-iniciante-avancado-hotmart/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "sandisk-portable-ssd-1tb",
+      "title": "SanDisk Portable SSD 1 TB",
+      "image": "/assets/store/sandisk-portable-ssd-1tb.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/sandisk-portable-ssd-1tb/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "sandisk-ultra-flair-32gb",
+      "title": "SanDisk Ultra Flair 32 GB USB 3.0",
+      "image": "/assets/store/sandisk-ultra-flair-32gb-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/sandisk-ultra-flair-32gb/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "seguranca-digital-essencial-hotmart",
+      "title": "Segurança Digital {Essencial} — curso introdutório",
+      "image": "/assets/store/seguranca-digital-essencial-hotmart-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/seguranca-digital-essencial-hotmart/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "produto",
+      "id": "ugreen-hub-usb-c-6-em-1",
+      "title": "UGREEN Uno Hub USB-C 6 em 1",
+      "image": "/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/store/ugreen-hub-usb-c-6-em-1/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "guia_store",
+      "id": "como-escolher-pendrive-linux",
+      "title": "Como escolher um pendrive para Linux",
+      "image": null,
+      "coverage": "modelo_sem_capa",
+      "exists": false,
+      "draft": false,
+      "route": "/store/guias/como-escolher-pendrive-linux/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "trilha",
+      "id": "linux-do-zero",
+      "title": "Linux do zero",
+      "image": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/trilhas/linux-do-zero/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "trilha",
+      "id": "primeiros-passos-programacao",
+      "title": "Primeiros passos na programação",
+      "image": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "trilha",
+      "id": "ia-no-dia-a-dia",
+      "title": "IA no dia a dia",
+      "image": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "trilha",
+      "id": "seguranca-digital-essencial",
+      "title": "Segurança digital essencial",
+      "image": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "trilha",
+      "id": "primeira-renda-online",
+      "title": "Primeira Renda Online",
+      "image": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/trilhas/primeira-renda-online/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "filmora",
+      "title": "Filmora",
+      "image": "/assets/resources/items/filmora-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "pdfelement",
+      "title": "PDFelement",
+      "image": "/assets/resources/items/pdfelement-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "uniconverter",
+      "title": "UniConverter",
+      "image": "/assets/resources/items/uniconverter-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "recoverit",
+      "title": "Recoverit",
+      "image": "/assets/resources/items/recoverit-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "dr-fone",
+      "title": "Dr.Fone",
+      "image": "/assets/resources/items/dr-fone-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "nordpass",
+      "title": "NordPass",
+      "image": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "elevenlabs",
+      "title": "ElevenLabs",
+      "image": "/assets/resources/items/elevenlabs-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "elementor",
+      "title": "Elementor",
+      "image": "/assets/resources/items/elementor-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "hostinger",
+      "title": "Hostinger",
+      "image": "/assets/resources/items/hostinger-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "leadlovers",
+      "title": "Leadlovers",
+      "image": "/assets/resources/items/leadlovers-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "nordvpn",
+      "title": "NordVPN",
+      "image": "/assets/resources/items/nordvpn-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "hospedagem-primeiro-site",
+      "title": "Hospedagem para o primeiro site",
+      "image": "/assets/resources/items/hospedagem-primeiro-site-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "febspot",
+      "title": "Febspot",
+      "image": "/assets/resources/items/febspot-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "meliuz-jogue-e-ganhe",
+      "title": "Méliuz — Jogue e Ganhe",
+      "image": "/assets/resources/items/meliuz-jogue-e-ganhe-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "metricool",
+      "title": "Metricool",
+      "image": "/assets/resources/items/metricool-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "astro",
+      "title": "Astro",
+      "image": "/assets/resources/items/astro-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "vscode",
+      "title": "Visual Studio Code",
+      "image": "/assets/resources/items/vscode-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "git",
+      "title": "Git",
+      "image": "/assets/resources/items/git-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "github",
+      "title": "GitHub",
+      "image": "/assets/resources/items/github-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "cloudflare",
+      "title": "Cloudflare",
+      "image": "/assets/resources/items/cloudflare-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "linux",
+      "title": "Linux Foundation",
+      "image": "/assets/resources/items/linux-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    },
+    {
+      "kind": "recurso",
+      "id": "ebook-programacao-hotmart",
+      "title": "Programação do Iniciante ao Avançado",
+      "image": "/assets/resources/items/ebook-programacao-hotmart-resource-v1.webp",
+      "coverage": "especifica",
+      "exists": true,
+      "draft": false,
+      "route": "/recursos/",
+      "identity": "não inspecionada individualmente nesta auditoria"
+    }
+  ],
+  "built_pages": 121,
+  "rendered_images": 504,
+  "broken_image_references": [],
+  "missing_assets": [],
+  "pages": [
+    {
+      "route": "/404.html",
+      "images": 0
+    },
+    {
+      "route": "/admin/editor/",
+      "images": 0
+    },
+    {
+      "route": "/admin/",
+      "images": 0
+    },
+    {
+      "route": "/admin/metricas/",
+      "images": 0
+    },
+    {
+      "route": "/blog/2/",
+      "images": 6
+    },
+    {
+      "route": "/blog/3/",
+      "images": 6
+    },
+    {
+      "route": "/blog/4/",
+      "images": 6
+    },
+    {
+      "route": "/blog/5/",
+      "images": 6
+    },
+    {
+      "route": "/blog/6/",
+      "images": 6
+    },
+    {
+      "route": "/blog/7/",
+      "images": 6
+    },
+    {
+      "route": "/blog/8/",
+      "images": 3
+    },
+    {
+      "route": "/blog/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade/",
+      "images": 4
+    },
+    {
+      "route": "/blog/autenticacao-dois-fatores/",
+      "images": 5
+    },
+    {
+      "route": "/blog/bilibili-para-iniciantes-monetizacao-brasil/",
+      "images": 5
+    },
+    {
+      "route": "/blog/comandos-linux-para-iniciantes/",
+      "images": 7
+    },
+    {
+      "route": "/blog/como-a-web-funciona/",
+      "images": 4
+    },
+    {
+      "route": "/blog/como-conseguir-primeira-renda-online/",
+      "images": 4
+    },
+    {
+      "route": "/blog/como-conseguir-primeiro-cliente-sem-anuncios/",
+      "images": 4
+    },
+    {
+      "route": "/blog/como-criar-pendrive-bootavel-linux/",
+      "images": 7
+    },
+    {
+      "route": "/blog/como-escolher-distribuicao-linux/",
+      "images": 5
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "images": 4
+    },
+    {
+      "route": "/blog/como-montar-oferta-simples-pequenos-negocios/",
+      "images": 4
+    },
+    {
+      "route": "/blog/como-testar-linux-sem-instalar/",
+      "images": 6
+    },
+    {
+      "route": "/blog/como-verificar-respostas-de-ia/",
+      "images": 4
+    },
+    {
+      "route": "/blog/devtools-navegador-iniciantes/",
+      "images": 6
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "images": 4
+    },
+    {
+      "route": "/blog/elementor-para-iniciantes/",
+      "images": 5
+    },
+    {
+      "route": "/blog/elevenlabs-para-iniciantes-criar-narracoes-com-ia/",
+      "images": 5
+    },
+    {
+      "route": "/blog/erros-iniciantes-desistem-renda-digital/",
+      "images": 4
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "images": 4
+    },
+    {
+      "route": "/blog/febspot-para-iniciantes-monetizacao-indicacao/",
+      "images": 4
+    },
+    {
+      "route": "/blog/freelancer-para-iniciantes-como-escolher-um-servico/",
+      "images": 4
+    },
+    {
+      "route": "/blog/gerenciador-de-senhas-para-iniciantes/",
+      "images": 5
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "images": 4
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "images": 7
+    },
+    {
+      "route": "/blog/html-css-javascript-entenda-diferenca/",
+      "images": 6
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "images": 4
+    },
+    {
+      "route": "/blog/",
+      "images": 7
+    },
+    {
+      "route": "/blog/javascript-variaveis-funcoes/",
+      "images": 6
+    },
+    {
+      "route": "/blog/landing-page-para-pequenos-negocios-o-que-entregar/",
+      "images": 6
+    },
+    {
+      "route": "/blog/logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar/",
+      "images": 5
+    },
+    {
+      "route": "/blog/meliuz-jogue-e-ganhe-pocket-sort/",
+      "images": 8
+    },
+    {
+      "route": "/blog/metricool-para-iniciantes-organizar-agendar-conteudo/",
+      "images": 5
+    },
+    {
+      "route": "/blog/o-que-e-ia-generativa/",
+      "images": 4
+    },
+    {
+      "route": "/blog/o-que-e-linux/",
+      "images": 5
+    },
+    {
+      "route": "/blog/organizar-ambiente-estudos-tecnologia/",
+      "images": 7
+    },
+    {
+      "route": "/blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/",
+      "images": 5
+    },
+    {
+      "route": "/blog/permissoes-linux-para-iniciantes/",
+      "images": 4
+    },
+    {
+      "route": "/blog/phishing-como-identificar/",
+      "images": 4
+    },
+    {
+      "route": "/blog/pipe-redirecionamento-linux/",
+      "images": 4
+    },
+    {
+      "route": "/blog/portfolio-para-freelancer-sem-clientes/",
+      "images": 4
+    },
+    {
+      "route": "/blog/primeiro-site-html-css/",
+      "images": 9
+    },
+    {
+      "route": "/blog/produto-digital-como-transformar-conhecimento-em-ebook/",
+      "images": 4
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "images": 5
+    },
+    {
+      "route": "/blog/prompts-melhores-estudar-trabalhar/",
+      "images": 4
+    },
+    {
+      "route": "/blog/quanto-cobrar-primeiro-site/",
+      "images": 4
+    },
+    {
+      "route": "/blog/usar-ia-estudar-sem-dependencia/",
+      "images": 4
+    },
+    {
+      "route": "/blog/vpn-para-iniciantes/",
+      "images": 5
+    },
+    {
+      "route": "/busca/",
+      "images": 51
+    },
+    {
+      "route": "/categoria/inteligencia-artificial/",
+      "images": 5
+    },
+    {
+      "route": "/categoria/linux-seguranca/2/",
+      "images": 6
+    },
+    {
+      "route": "/categoria/linux-seguranca/",
+      "images": 6
+    },
+    {
+      "route": "/categoria/programacao/2/",
+      "images": 3
+    },
+    {
+      "route": "/categoria/programacao/",
+      "images": 6
+    },
+    {
+      "route": "/categoria/renda-digital/2/",
+      "images": 6
+    },
+    {
+      "route": "/categoria/renda-digital/3/",
+      "images": 3
+    },
+    {
+      "route": "/categoria/renda-digital/",
+      "images": 6
+    },
+    {
+      "route": "/categoria/tecnologia-pratica/",
+      "images": 5
+    },
+    {
+      "route": "/contato/",
+      "images": 0
+    },
+    {
+      "route": "/guia/iniciante-em-tecnologia/",
+      "images": 0
+    },
+    {
+      "route": "/",
+      "images": 4
+    },
+    {
+      "route": "/newsletter/",
+      "images": 0
+    },
+    {
+      "route": "/parcerias/",
+      "images": 0
+    },
+    {
+      "route": "/politica-de-privacidade/",
+      "images": 0
+    },
+    {
+      "route": "/portfolio/",
+      "images": 4
+    },
+    {
+      "route": "/produtos/linux-do-zero/",
+      "images": 6
+    },
+    {
+      "route": "/recursos/aprendizado/",
+      "images": 2
+    },
+    {
+      "route": "/recursos/desenvolvimento/",
+      "images": 4
+    },
+    {
+      "route": "/recursos/digitais/",
+      "images": 6
+    },
+    {
+      "route": "/recursos/",
+      "images": 23
+    },
+    {
+      "route": "/recursos/infraestrutura/",
+      "images": 4
+    },
+    {
+      "route": "/recursos/renda-digital/",
+      "images": 2
+    },
+    {
+      "route": "/recursos/seguranca/",
+      "images": 4
+    },
+    {
+      "route": "/servicos/",
+      "images": 1
+    },
+    {
+      "route": "/sobre/",
+      "images": 1
+    },
+    {
+      "route": "/store/baseus-fc11-power-bank/",
+      "images": 1
+    },
+    {
+      "route": "/store/baseus-fm11-10000mah/",
+      "images": 1
+    },
+    {
+      "route": "/store/como-avaliamos/",
+      "images": 0
+    },
+    {
+      "route": "/store/criadores/",
+      "images": 3
+    },
+    {
+      "route": "/store/elementor-site-builder/",
+      "images": 1
+    },
+    {
+      "route": "/store/elevenlabs/",
+      "images": 1
+    },
+    {
+      "route": "/store/ferramentas-digitais/",
+      "images": 8
+    },
+    {
+      "route": "/store/fifine-am8-usb-xlr/",
+      "images": 1
+    },
+    {
+      "route": "/store/gshield-hub-usb-c-6-em-1/",
+      "images": 1
+    },
+    {
+      "route": "/store/guias/como-escolher-pendrive-linux/",
+      "images": 1
+    },
+    {
+      "route": "/store/hospedagem-primeiro-site/",
+      "images": 1
+    },
+    {
+      "route": "/store/",
+      "images": 13
+    },
+    {
+      "route": "/store/leadlovers-hotmart/",
+      "images": 1
+    },
+    {
+      "route": "/store/linux/",
+      "images": 2
+    },
+    {
+      "route": "/store/logitech-mx-anywhere-3s/",
+      "images": 1
+    },
+    {
+      "route": "/store/logitech-mx-keys-mini/",
+      "images": 1
+    },
+    {
+      "route": "/store/logitech-pebble-2-m350s/",
+      "images": 1
+    },
+    {
+      "route": "/store/metricool/",
+      "images": 1
+    },
+    {
+      "route": "/store/nordpass/",
+      "images": 1
+    },
+    {
+      "route": "/store/nordvpn/",
+      "images": 1
+    },
+    {
+      "route": "/store/ottocast-mini-cube-3-0/",
+      "images": 1
+    },
+    {
+      "route": "/store/pagina/2/",
+      "images": 8
+    },
+    {
+      "route": "/store/programacao/",
+      "images": 2
+    },
+    {
+      "route": "/store/programacao-iniciante-avancado-hotmart/",
+      "images": 1
+    },
+    {
+      "route": "/store/sandisk-portable-ssd-1tb/",
+      "images": 1
+    },
+    {
+      "route": "/store/sandisk-ultra-flair-32gb/",
+      "images": 1
+    },
+    {
+      "route": "/store/seguranca-digital-essencial-hotmart/",
+      "images": 1
+    },
+    {
+      "route": "/store/setup/",
+      "images": 5
+    },
+    {
+      "route": "/store/setup-do-dejota/",
+      "images": 0
+    },
+    {
+      "route": "/store/ugreen-hub-usb-c-6-em-1/",
+      "images": 1
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "images": 1
+    },
+    {
+      "route": "/trilhas/",
+      "images": 5
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "images": 2
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "images": 1
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "images": 1
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "images": 1
+    }
+  ],
+  "limits": [
+    "Imagem genérica não equivale a capa específica",
+    "Nome assinatura-v2 não certifica símbolo oficial",
+    "Guia Store usa modelo sem capa e imagens dos produtos relacionados",
+    "Páginas institucionais sem imagem não são automaticamente defeito",
+    "Sem alteração de conteúdo, mapas ou mídia"
+  ]
+}

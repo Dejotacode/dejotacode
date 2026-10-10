@@ -16,3 +16,5 @@
 @media(max-width:600px){.store-product-page .offer-grid{grid-template-columns:1fr}.store-product-page .product-commercial-summary{gap:.6rem}.store-product-page .product-commercial-summary strong{font-size:.75rem}.store-product-page .product-panel{padding:1rem}.store-product-page .product-hero{padding-block:1.3rem}}
 
 .store-product-page .product-actions .button{gap:.5rem}
+
+.store-product-page .product-visual--editorial-wide .visual-media{aspect-ratio:16/9}

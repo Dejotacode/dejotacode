@@ -40,3 +40,5 @@ O **Baseus FM11 10.000 mAh** foi selecionado para quem produz conteúdo ou traba
 No Mercado Livre, a oferta validada é da Loja Oficial Baseus, com modelo FM11, 10.000 mAh, USB-C e carregamento magnético sem fio.
 
 Esta recomendação é **pesquisada pelo DejotaCode** e possui link afiliado validado no Mercado Livre.
+
+A capa usa uma fotografia de referência do fornecedor em composição editorial do DejotaCode; não é registro de teste físico. Confira a cor, capacidade e variante da oferta antes de comprar.

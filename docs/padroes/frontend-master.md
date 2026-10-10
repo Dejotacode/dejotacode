@@ -104,6 +104,10 @@ As proporções e dimensões finais serão registradas por modelo após inventá
 
 Fotografia, ilustração e captura de tela podem coexistir com funções documentadas. O uso de azul/ciano e neutros deve unir a identidade sem obrigar fotos reais ou produtos a mudar de cor. Textos importantes devem preferir HTML, em vez de ficar presos à imagem.
 
+### Direção editorial e variedade das capas
+O assunto define a cena; cores, acabamento e símbolo mantêm a identidade. Mesa, computador, caderno, caneca, planta e luminária não são cenário obrigatório. Para linguagens e ferramentas, usar referência reconhecível pertinente ao conteúdo; logos vêm de fontes oficiais e são compostos separadamente, nunca inventados pela IA. Não fingir captura real, código funcional ou prova de uso.
+Antes da geração: registrar assunto, objetivo, referência, protagonista, ambiente, enquadramento, estilo e elementos a evitar. Comparar as propostas lado a lado com o acervo da seção e variar protagonista/ambiente/enquadramento. Arquivos distintos não comprovam diversidade visual. Reutilização entre artigo e ficha do mesmo produto é intencional. Conferir separadamente fidelidade, diversidade, identidade, recortes e acessibilidade; build/carregamento não aprovam diversidade.
+
 Imagens informativas recebem alt que descreve sua contribuição. Decorativas usam alt vazio. Vídeos com fala precisam de legenda e, quando útil, transcrição.
 
 ## 8. Ícones e categorias
@@ -306,3 +310,18 @@ Usar CategoryIcon arrow-right, traço oficial 1.8/currentColor, classe action-ar
 Regra vigente detalhada em media-registry.md: símbolo oficial único, sem fundo adicional, canto superior esquerdo, largura de 5%, margens horizontais/verticais de 3% das respectivas dimensões. Capturas e artes de terceiros mantêm exceções descritas. Modelos vetoriais de produção em docs/brand/. Acervo existente exige migração individual, sem assinatura dupla.
 
 A revisão de uma entrega deve conferir a identidade da mídia efetivamente resolvida, inclusive em imagens reutilizadas. Seguir a conferência obrigatória em media-registry.md; carregamento e ausência de overflow não substituem inspeção do símbolo e dos recortes.
+
+
+### Referência visual de IA
+Em capas de IA, a ação humana ou metáfora deve estar ligada a uma referência reconhecível de assistente, pedido ou resposta. Não depender apenas de quebra-cabeça, palco, prisma ou comparação de folhas. Interfaces conceituais devem ser identificadas como ilustração, sem alegação de captura real ou marca inventada. Conferir compreensão do assunto separadamente de diversidade e carregamento.
+
+
+### Cenas mais humanas — orientação aprovada em 10/10/2026
+Manter as quatro capas de IA com referência explícita nos conteúdos atuais. Preservar as versões anteriores no acervo para reutilização pertinente; não apagar nem forçar reaproveitamento em assunto incompatível. Nas próximas capas, priorizar pessoas em situações naturais, gestos e expressões plausíveis, com a tecnologia integrada à ação. Reduzir painéis flutuantes, cenários artificiais e repetições de pessoa, roupa, ambiente e composição. Computador pode aparecer quando a tarefa realmente exigir; não é cenário obrigatório. Referência do assunto e símbolo oficial continuam obrigatórios conforme a família.
+
+
+## Seleção por conteúdo — lote local de 10/10/2026
+
+A direção humana é uma opção conforme o assunto. Ler o conteúdo, identificar a mensagem central e consultar primeiro o acervo. Manter imagens adequadas; reutilizar somente quando a alternativa representar melhor o conteúdo. Programação pode pedir referência técnica, animação pode pedir ilustração e produtos pedem fidelidade. Diversidade não prevalece sobre pertinência. Símbolo oficial, origem, recorte e clareza precisam de conferência independente. Não considerar uma assinatura antiga aprovada só porque a imagem carrega.
+
+Aplicado o lote de 97 decisões em artigos, Store, Recursos e Trilhas. [Tabela e lacunas](../auditorias/selecao-imagens-lote-20261010.md). 17 usos alterados com imagens existentes, sem novas cenas; dez assinaturas com placa branca permanecem como lacunas que exigem limpeza individual. Originais preservados, custo monetário zero, sem publicação ou cópia externa. Capturas reais Méliuz não recebem assinatura adicional. Reuso entre artigo, recurso e ficha do mesmo produto é intencional.

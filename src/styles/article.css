@@ -585,4 +585,8 @@
  .article-page .article-guide-card__link { grid-column: 2; justify-self: end; min-width: 2.75rem; }
 }
 
-.article-page .article-guide-card__image img[src$="-assinatura-v2.webp"] { object-position: left top; }
+.article-page .article-guide-card__image img[src*="-assinatura-"] { object-position: left top; }
+
+/* Preserve the whole precise cover in compact related-content cards. */
+.article-page .related-section .post-card__visual:has(img[src$="-referencia-assinatura-v3.svg"]) { align-self: start; }
+.article-page .related-section .post-card__visual:has(img[src$="-referencia-assinatura-v3.svg"]) > .visual-media { height: auto; min-height: 0; aspect-ratio: 16 / 9; }

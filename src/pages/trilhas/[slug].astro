@@ -106,6 +106,7 @@ const trailListSchema = {
           <VisualMedia src={trailVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial da trilha ${trail.title}`} label={trail.title} loading="eager" />
           <span><CategoryIcon icon={trail.iconId} size={24} /></span>
         </div>
+        {trail.slug === "linux-do-zero" && <p class="trail-media-credit">Tux: Larry Ewing; versão vetorial por Garrett LeSage e IFo Hancroft. <a href="https://github.com/torvalds/linux/blob/master/Documentation/images/COPYING-logo" target="_blank" rel="noopener noreferrer">Referência e créditos</a>.</p>}
 
       </div>
     </header>

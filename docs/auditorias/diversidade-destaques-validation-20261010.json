@@ -1,0 +1,1270 @@
+{
+  "date": "2026-10-10",
+  "results": [
+    {
+      "route": "/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 270,
+          "height": 168.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 254,
+          "height": 142.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 254,
+          "height": 142.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 270,
+          "height": 168.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 254,
+          "height": 142.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 254,
+          "height": 142.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 325,
+          "height": 203.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 309,
+          "height": 173.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 309,
+          "height": 173.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 325,
+          "height": 203.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 309,
+          "height": 173.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 309,
+          "height": 173.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 420.890625,
+          "height": 404.953125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 303.96875,
+          "height": 207.46875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 303.96875,
+          "height": 184.25,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 420.890625,
+          "height": 404.953125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 303.96875,
+          "height": 207.46875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 303.96875,
+          "height": 184.25,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 671.0625,
+          "height": 420.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 251.9375,
+          "height": 207.46875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 251.9375,
+          "height": 207.46875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 671.0625,
+          "height": 420.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 251.9375,
+          "height": 207.46875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 251.9375,
+          "height": 207.46875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 265.21875,
+          "height": 149.171875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 265.21875,
+          "height": 149.171875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 320.21875,
+          "height": 180.109375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 320.21875,
+          "height": 180.109375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 191.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 307.015625,
+          "height": 309.234375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 307.015625,
+          "height": 309.234375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 334.578125,
+          "height": 188.1875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 533.328125,
+          "height": 333.328125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 533.328125,
+          "height": 333.328125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 379.0625,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 379.078125,
+          "height": 213.21875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 192.03125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 192.03125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/escolher-primeiro-projeto-portfolio/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/escolher-primeiro-projeto-portfolio-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/habitos-seguranca-digital-iniciantes/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/habitos-seguranca-digital-iniciantes-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/como-estudar-tecnologia-sem-se-perder/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    }
+  ],
+  "issues": []
+}

@@ -1,0 +1,148 @@
+{
+  "status": "PUBLICADO_HOMOLOGADO",
+  "date": "2026-10-10",
+  "route": "/store/setup-do-dejota/",
+  "branch": "release/setup-ka6051-20261010",
+  "commit": "a790b867926f2f7ea1d6485d97e28f7bf6e32265",
+  "files": [
+    "src/pages/store/setup-do-dejota.astro"
+  ],
+  "check": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "build_pages": 119,
+  "html_qa_issues": 0,
+  "responsive": [
+    {
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "model": true,
+      "image": []
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "model": true,
+      "image": []
+    }
+  ],
+  "public_model_present": false,
+  "official_symbol": "Existing header preserved; mobile capture inspected",
+  "limits": [
+    "No new brand or specifications inferred",
+    "No publication"
+  ],
+  "publication": {
+    "pr": 272,
+    "commit": "24a5b5819b7e1c527bd9eb391ba539ed9030e89c",
+    "workflow": 38033357389,
+    "deployment": "https://aab95e4c.dejota-code.pages.dev",
+    "smoke_checks": 10,
+    "model_present": true,
+    "responsive": [
+      {
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "model": true,
+        "image": []
+      },
+      {
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "model": true,
+        "image": []
+      }
+    ],
+    "mobile_capture_inspected": true
+  }
+}

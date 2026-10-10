@@ -126,4 +126,4 @@
   .home-editorial .hero-visual::after { background: none; }
 }
 
-.hero-visual img[src$="-assinatura-v2.webp"] { object-position: left top; }
+.hero-visual img[src*="-assinatura-"], .hero-visual img[src$="-assinatura-v1.webp"] { object-position: left top; }
