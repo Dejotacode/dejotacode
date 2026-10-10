@@ -112,3 +112,7 @@ Novo /assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp, qualidade 90, reu
 
 ## Família de capas das Trilhas — 10/10/2026
 Cinco artes editoriais ilustrativas geradas com imagegen, linguagem fotográfica consistente: mesa grafite, fundo azul escuro, luz ciano e iluminação quente discreta. Assuntos Linux, programação, IA cotidiana, segurança digital e primeiro serviço digital. Interfaces ilustrativas, sem alegação de captura real ou resultado financeiro. Exportações public/assets/trails/{slug}-capa-assinatura-v1.webp, 1440 × 810, qualidade 90. Símbolo oficial dark aplicado separadamente, único, caixa 72 × 72, posição x43/y24. Originais anteriores preservados. Resolver compartilhado atualiza cards e detalhes; ícones de categoria mantidos. Sem publicação. Evidência de layout e recortes em ../auditorias/trilhas-capas-validation-20261010.json.
+
+
+## Capas editoriais Hub Data/programação/Jornada Python — pacote candidato
+Três ilustrações próprias, não capas oficiais: public/assets/posts/{hub-data,programacao-ebook,jornada-python}-capa-assinatura-v1.webp, 1440x810. Símbolo oficial dark aplicado separadamente: 72x72 em x43/y24, único. Artigo e ficha Python compartilham imagem. Originais preservados. Status: candidato local, publicação pendente.

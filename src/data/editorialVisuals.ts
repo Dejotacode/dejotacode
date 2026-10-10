@@ -8,6 +8,10 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "hub-data-como-funciona-e-o-que-estamos-testando": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+  "programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+  "jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+
   "logitech-mx-anywhere-3s-para-produtividade-o-que-avaliar": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
   "ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
   "quanto-cobrar-primeiro-site": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",

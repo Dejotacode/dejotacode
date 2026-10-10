@@ -15,6 +15,7 @@ cons:
 relatedPosts:
   - "html-css-javascript-entenda-diferenca"
   - "primeiro-site-html-css"
+  - "programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre"
 featured: true
 draft: false
 updatedAt: 2026-10-01
