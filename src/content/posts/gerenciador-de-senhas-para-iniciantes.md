@@ -2,6 +2,7 @@
 title: "Gerenciador de senhas para iniciantes: como escolher e começar"
 description: "Entenda como funciona um gerenciador de senhas, o que comparar antes de escolher e como proteger o cofre e a recuperação das suas contas."
 publishedAt: 2026-10-08
+updatedAt: 2026-10-09
 category: linux-seguranca
 type: tutorial
 readingTime: 7
@@ -60,9 +61,9 @@ As ferramentas abaixo são exemplos de abordagens diferentes. Esta seleção nã
 
 ### NordPass
 
-A NordPass oferece um gerenciador de credenciais com recursos como geração de senhas e preenchimento automático. Consulte os planos e a compatibilidade antes de escolher.
+A NordPass oferece um gerenciador de credenciais com armazenamento de senhas e passkeys, geração de senhas, salvamento automático e preenchimento automático. A documentação oficial lista suporte a Windows, macOS, Linux, Android e iOS, além de extensões para navegadores populares. Confira os recursos disponíveis no seu plano e no dispositivo que você usa.
 
-Na recuperação, a documentação distingue a senha mestra e o código de recuperação. Se perder esses meios de acesso, não presuma que uma redefinição da conta preserve o conteúdo do cofre.
+Na recuperação, a documentação distingue a senha da conta Nord, a senha mestra que desbloqueia o cofre e um código de recuperação de 24 caracteres. Se a senha mestra for perdida, esse código pode ser usado para redefini-la. Em alguns dispositivos, quem já configurou biometria pode conseguir redefinir o código de recuperação; sem a senha mestra, sem o código e sem esse acesso biométrico, o procedimento de redefinição completa da conta apaga os itens do cofre. Por isso, prepare a recuperação antes de depender da ferramenta.
 
 Você pode consultar a [ficha da NordPass na DejotaStore](/store/nordpass/), com contexto e limitações.
 
@@ -145,10 +146,13 @@ Comece com poucas contas. Avance quando conseguir explicar como acessar o cofre,
 
 ## Fontes oficiais
 
-Consultadas em 08/10/2026. Recursos, planos e procedimentos podem mudar.
+Consultadas e revisadas em 09/10/2026. Recursos, planos e procedimentos podem mudar.
 
 - [CISA: usar um gerenciador para criar e guardar senhas fortes](https://www.cisa.gov/resources-tools/training/cyb3rsmrt-use-password-manager-create-and-remember-strong-passwords)
 - [NordPass: gerenciador de senhas](https://nordpass.com/password-manager/)
+- [NordPass: como funciona o preenchimento automático](https://support.nordpass.com/hc/en-us/articles/360003613497-What-is-autofill-and-how-does-it-work)
+- [NordPass: passkeys](https://support.nordpass.com/hc/en-us/articles/12984678202641-Passkeys-FAQs)
 - [NordPass: perda da senha mestra](https://support.nordpass.com/hc/en-us/articles/360002376657-What-if-I-forgot-my-NordPass-Master-Password)
+- [NordPass: redefinição completa da conta](https://support.nordpass.com/hc/en-us/articles/5388857973905-How-to-reset-NordPass-account)
 - [Bitwarden: perda da senha mestra](https://bitwarden.com/help/forgot-master-password/)
 - [KeePassXC: guia inicial](https://keepassxc.org/docs/KeePassXC_GettingStarted)

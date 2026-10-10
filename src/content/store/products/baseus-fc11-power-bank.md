@@ -40,3 +40,5 @@ O **Baseus FC11** entra na DejotaStore como opção de bateria externa para quem
 A oferta validada na Shopee reúne variações de 10.000 e 20.000 mAh. Por isso, a capacidade e a quantidade de saídas devem ser conferidas na variação escolhida antes da compra.
 
 Esta recomendação é **pesquisada pelo DejotaCode** e possui link afiliado validado na Shopee.
+
+A capa usa uma fotografia de referência do fornecedor em composição editorial do DejotaCode; não é registro de teste físico. Confira a cor, capacidade e variante da oferta antes de comprar.

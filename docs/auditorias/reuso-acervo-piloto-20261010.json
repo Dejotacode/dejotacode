@@ -1,0 +1,32 @@
+{
+  "status": "second-test-local-awaiting-user-review",
+  "slug": "documentar-aprendizado-tecnologia",
+  "route": "/blog/documentar-aprendizado-tecnologia/",
+  "source_archive": null,
+  "source_sha256": "ec985d98737fc10545b173df3de3c59f0721197b70916db819f1a0e3dcfcf85e",
+  "asset": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+  "previous_asset": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+  "selection": "Retomada a capa original após leitura integral: tela com registros estruturados e anotações representam guardar contexto, comandos, erros e decisões; revisão semanal é secundária.",
+  "limits": "Cena ilustrativa, não captura real de README ou terminal. Câmera e objetos de mesa são acessórios dispensáveis; adequação temática superior ao primeiro piloto, sem alegar correspondência perfeita.",
+  "generation": "Nenhuma geração ou edição; seleção da imagem existente.",
+  "previous_disposition": "Primeira opção preservada para eventual uso adequado; nenhum arquivo apagado.",
+  "first_test": {
+    "asset": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+    "decision": "Rejeitada como capa após revisão semântica: comunica comparação de informações, apenas uma seção secundária do artigo.",
+    "validation": {
+      "candidate_build": "passed",
+      "candidate_links_html_qa": "passed",
+      "responsive_combinations": 8,
+      "issues": 0,
+      "official_symbol": "preserved",
+      "review": "Desktop screenshot and archived source inspected"
+    }
+  },
+  "content_sha256": "391d74dbe3568541fe1cfd4b50caecd40b2c0f463dc1f290c22eadb20c3c13e6",
+  "validation": {
+    "preview_article": "passed",
+    "asset_http_and_exact_bytes": "passed",
+    "generation": "none",
+    "scope": "Seleção de capa existente, sem alteração no layout."
+  }
+}

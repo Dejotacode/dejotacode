@@ -432,19 +432,220 @@ Edições futuras continuam manuais e precisam de autorização própria; nenhum
 Conferência pública final: 16 combinações (320/390/768/1440 × claro/escuro × newsletter/Guia), HTTP 200, formulário habilitado com API de produção, h1 único e sem overflow. Nenhum POST do formulário nessa conferência. Evidência: NEWSLETTER_PRODUCTION_UI_2026-10-09.json.
 
 
+## Ottocast publicado — 10/10/2026
+Artigo /blog/ottocast-mini-cube-3-0-o-que-saber-antes-de-comprar/ e ficha /store/ottocast-mini-cube-3-0/ liberados juntos, Pesquisado, catálogo geral. Usuário autorizou execução até produção. PR #270, commit cc1d3ba, workflow 38030741660, deployment a0ca317c.dejota-code.pages.dev. Check/build/QA/CI e smoke 10 verificações aprovados. Duas rotas × quatro larguras × dois temas: 16 combinações sem overflow e imagens carregadas; captures do produto desktop e mobile inspecionadas. Canonicals, vínculos e hash da mídia pública conferidos. QA intermediário foi ajustado para aguardar imagens lazy fora da viewport; rodada final passou. Sem alterações de API, D1, R2, DNS ou secrets. Outras alterações editoriais locais não incluídas. Limites e [evidência](ottocast-publication-result-2026-10-10.json).
+
+
+## Artigo MX Anywhere 3S — preparação local de 10/10/2026
+Ficha pública existente; artigo local preexistente ainda HTTP 404 em produção. Resolver editorial passou a usar a mesma mídia já utilizada na ficha (/assets/store/logitech-mx-anywhere-3s.webp), sem alterar raster ou links comerciais. Conteúdo mantém Pesquisado, vínculo recíproco e transparência de afiliação. Especificações principais reconferidas na página oficial Logitech; fontes registradas no artigo preservadas. Check zero diagnósticos, build local 121 páginas, QA aprovado; 320/390/768/1440px nos dois temas sem overflow e mídia carregada, captura mobile inspecionada. Três arquivos separados em release/mx-anywhere-article-20261010; build de produção em validação. Esta preparação não publica e não altera imagens existentes. Ottocast continua concluído; autorização específica daquela publicação não reutilizada para novos produtos.
+
+
 ## MX Anywhere 3S — correção da assinatura — 10/10/2026
 A preparação anterior conferiu layout, mas não o símbolo. Esse resultado não certificava identidade visual. Marca antiga no caderno removida via imagegen, somente região local reincorporada; diferença fora da máscara zero antes de enquadramento/exportação. Original preservado. Novo asset 1440 × 810 com SVG oficial dark único, 72 × 72 em x43/y24. Resolver editorial, Store e destaque principal agora usam -assinatura-v2.webp. Catálogo e destaque ancorados left top. Conferência obrigatória de identidade acrescentada ao registro de mídia e referenciada no Documento Mestre.
 32 combinações de artigo/ficha/catálogo/destaque × quatro larguras × dois temas: mídia carregada, sem overflow e alinhamento correto. Capturas de artigo mobile e Store desktop inspecionadas. Degradê existente do destaque atenua a assinatura; comportamento aprovado preservado, sem marca duplicada. Check/build:production/QA aprovados (121 páginas locais). [Evidência](../brand/mx-anywhere-signature-validation-20261010.json). Sem publicação.
+
+
+## MX Anywhere 3S publicado e homologado — 10/10/2026
+Registro final supera estados históricos de preparação acima. PR #271, merge e8cf6f45, workflow 38032519089 aprovado, deployment a03d1162.dejota-code.pages.dev. Smoke: 10 verificações aprovadas. Quatro páginas públicas × quatro larguras × dois temas: 32 combinações sem overflow, imagens carregadas e alinhamento left top. Artigo mobile e destaque Store desktop inspecionados; símbolo oficial único presente. Hash da mídia pública idêntico à release. Canonicals, vínculos recíprocos e ofertas preservadas conferidos. Original preservado, demais alterações locais fora do pacote. [Evidência final](../brand/mx-anywhere-signature-validation-20261010.json).
+
+
+## Setup KA-6051 — pacote local validado — 10/10/2026
+Pendência reconfirmada na rota pública /store/setup-do-dejota/: modelo ausente. Correção local existente isolada em um arquivo sobre main e8cf6f4; branch release/setup-ka6051-20261010, commit a790b867926f2f7ea1d6485d97e28f7bf6e32265. Check zero diagnósticos, build 119 páginas, HTML QA sem problemas. Oito combinações de largura/tema sem overflow, modelo presente e imagens carregadas; captura mobile inspecionada. Símbolo oficial existente preservado; nenhuma mídia nova. Marca e especificações não inferidas. Sem push/PR/deploy. [Evidência](setup-ka6051-validation-20261010.json).
+
+
+## Setup KA-6051 publicado — 10/10/2026
+Registro final supera preparação acima. PR #272, merge 24a5b581, workflow 38033357389 e deployment aab95e4c.dejota-code.pages.dev aprovados. Dez smoke checks; rota pública com modelo presente e oito combinações de largura/tema sem overflow e imagens carregadas. Captura mobile inspecionada, símbolo oficial existente preservado. [Evidência final](setup-ka6051-validation-20261010.json). Nenhuma marca ou especificação adicional inferida.
+
+
+## Firefox — homologação pública de 10/10/2026
+Firefox 157.0.1 nativo, perfil headless isolado, WebDriver BiDi, sem usar sessão pessoal. Nove rotas públicas (Home, Newsletter, Contato, Setup, Store e artigos/fichas MX e Ottocast) × quatro larguras × dois temas: 72 combinações, zero overflow, h1/main únicos e imagens carregadas. Primeiro Tab e Enter no link de salto moveram foco para conteudo nas quatro páginas Home/Newsletter/Contato/Setup. Capturas de Store desktop escuro e MX mobile claro inspecionadas; símbolo oficial e degradê aprovado preservados. Sem envio de formulário ou publicação. Lacunas: leitor de tela, Safari/WebKit e demais fluxos interativos não cobertos. [Evidência](firefox-validation-20261010.json), [Store](firefox-store-1440-dark-20261010.png), [MX](firefox-mx-390-light-20261010.png).
+
+## Leitor de tela — preparação e bloqueio técnico — 10/10/2026
+Status: registro; execução assistiva pendente. Responsável: @control/@dev.
+Diagnóstico somente leitura: Orca, speech-dispatcher e espeak-ng ausentes; at-spi2-core 2.62.0.1-1 presente. Pacotes disponíveis no repositório extra. sudo não interativo exige autenticação do usuário; nenhuma instalação ou alteração de configuração realizada.
+Roteiro para Firefox com Orca, em perfil separado e sem envios reais:
+
+| Área | Ação | Evidência exigida |
+| --- | --- | --- |
+| Home | Navegar por títulos e regiões; Tab e Enter no link de salto | Leitura ordenada, nomes claros e foco no conteúdo |
+| Cabeçalho | Abrir busca/menu com teclado e fechar com Escape | Estado expandido anunciado e foco devolvido |
+| Tema | Acionar alternador | Nome e estado correspondem ao tema atual |
+| Newsletter | Percorrer nome, e-mail, consentimento e botão | Rótulos, obrigatoriedade e instruções anunciados |
+| Contato | Percorrer assunto, mensagem e consentimento | Rótulos e textos de ajuda anunciados |
+| Erros | Usar formulário vazio/inválido, sem envio válido | Erro anunciado e campo identificado |
+| Store/artigo | Percorrer imagem, títulos, classificação e links | Texto alternativo e destino compreensíveis; decoração não repetida |
+
+Newsletter e Contato têm rótulos e regiões aria-live no código; isso não comprova anúncio pelo leitor. Não fazer POST válido, inscrição, contato ou disparo de e-mail. Estados de sucesso/falha de rede devem ser ensaiados localmente com resposta simulada, sem certificar entrega real.
+Conclusão futura precisa registrar navegador, versão Orca, voz/idioma, sequência executada, anúncios observados e defeitos. Até lá, status LEITOR_DE_TELA_NAO_VALIDADO. Safari/WebKit permanece pendente.
+
+
+## Orca instalado — validação assistiva parcial — 10/10/2026
+Registro supera ausência de pacotes acima: Orca 51.0-2, speech-dispatcher 0.12.1-3 e espeak-ng 1.52.0-1 instalados. Firefox gráfico e Orca reais em perfil/configuração/barramento isolados. Falha inicial de autoativação AT-SPI contornada somente no processo de teste, sem configuração permanente. Log Orca comprova anúncios em português de títulos de Home/Newsletter/Contato/Setup, regiões, contagens e link de salto. Áudio não ouvido pelo assistente. Automação de foco de campos não produziu evidência suficiente de anúncio; não classificar como defeito do site nem aprovação desses campos. Busca/menu/tema, rótulos/erros/aria-live e leitura completa permanecem pendentes de ensaio assistido na sessão gráfica. Nenhum envio, cadastro ou publicação. [Evidência parcial](orca-validation-20261010.json). Próximo passo: execução assistida com Orca/Firefox dos campos e estados; Safari/WebKit continua lacuna.
+
+
+## Cobertura de imagens de todo o conteúdo local — 10/10/2026
+Auditoria de 98 itens: 47 artigos (44 capas específicas, 3 genéricas), 23 produtos (22 específicas, 1 genérica), 22 recursos e 5 trilhas com imagem específica, 1 guia Store cujo modelo não tem capa própria. Build atual: 121 páginas/504 imagens, sem referência de img quebrada e sem asset resolvido ausente. Mídia de artigo/produto presente no HTML quando rota incluída no build.
+Capas específicas pendentes: artigos Hub Data e Programação do Iniciante ao Avançado (não rascunhos locais); artigo Jornada Python e produto Jornada Python (rascunhos). Todos recebem imagem de categoria existente. Guia Como escolher pendrive Linux não tem capa própria por estrutura do modelo; usa imagens de produtos relacionados. Não classificar ausência de capa prevista como arquivo quebrado.
+Esta conferência verifica cobertura e existência local, não publicação, carregamento em todos os navegadores, fidelidade visual ou assinatura oficial de cada raster. Nome de arquivo não comprova símbolo. Sem alteração de conteúdo, mapas ou mídia. [Inventário completo](cobertura-imagens-20261010.json).
+
+
+## Quatro lacunas de capas preenchidas localmente — 10/10/2026
+Três artes editoriais próprias geradas via imagegen e assinadas por composição determinística do SVG oficial dark: Hub Data, e-book programação e Jornada Python. 1440x810, símbolo único 72x72 em x43/y24. Mestres PNG preservados; WebP qualidade 90, originais mantidos. Jornada Python compartilhada no artigo/produto, flags preservadas. Imagens finais inspecionadas individualmente. Build 121 páginas e HTML QA 504 imagens/271 controles sem problemas. Hub Data e artigo programação em 16 combinações de largura/tema sem overflow e mídia carregada; Jornada Python sem rota por rascunho, sem afirmar homologação de página. Inventário atualizado. Auditoria de cobertura refeita: 97 itens com mídia específica, guia Store mantém modelo sem capa própria. Sem publicação. [Cobertura atualizada](cobertura-imagens-20261010.json).
 
 
 ## Trilhas — padronização das cinco capas — 10/10/2026
 Registro local, responsável @studio/@dev. Conferência pública encontrou 1 cena fotográfica e 4 SVGs; havia cobertura, mas não unidade visual. Cinco artes ilustrativas próprias geradas em família fotográfica azul/grafite/ciano; símbolo oficial dark aplicado separadamente, único, caixa 5%, margens 3%. Novos assets versionados, originais anteriores preservados. Resolver comum atualiza catálogo e cinco detalhes, sem alterar conteúdo, etapas, links ou ícones.
 Validação: check 79 arquivos sem diagnósticos; build 119 páginas; QA 6.623 referências, 489 imagens e 267 controles, sem problema. [Evidência responsiva](trilhas-capas-validation-20261010.json): 6 rotas × 4 larguras × 2 temas, 48 combinações sem overflow e imagens carregadas. Capturas desktop/mobile inspecionadas: assinatura inteira e assuntos visíveis na moldura 16:9. Sem publicação. Revisão visual do usuário pendente. Outros ajustes editoriais preservados. Diferença no total de páginas em relação à etapa anterior corresponde ao estado editorial atual do workspace; conteúdo não alterado nesta entrega.
 
-Release isolada em release/trilhas-capas-20261010 sobre official/main 24a5b58. Somente cinco assets, mapa trailVisuals e documentação desta entrega. npm ci/check/build:production/QA aprovados, 119 páginas, zero diagnósticos ou destinos quebrados. Cinco arquivos binariamente idênticos aos revisados no preview; referências conferidas no HTML de produção do catálogo e cinco detalhes. Nenhum push/PR/merge/deploy executado; publicação depende de instrução explícita.
+
+## Trilhas — publicação homologada — 10/10/2026
+Usuário autorizou publicação às 12:07 BRT após apresentação do pacote. PR [273](https://github.com/Dejotacode/dejotacode/pull/273), HEAD 3f3c9217b540c82aec40091c2cda19fa6376d259, CI 38062380350 aprovado e merge com HEAD conferido. Commit publicado a715a31c7f52e0cf8471237d88019c7ae218f2a2, workflow oficial 38062444534 aprovado, deployment https://ffbb2a29.dejota-code.pages.dev. Dez smoke checks aprovados.
+Catálogo e cinco detalhes públicos em quatro larguras/dois temas: 48 combinações, sem overflow ou imagens ausentes. Capturas públicas desktop/mobile inspecionadas: símbolo oficial único inteiro e assuntos visíveis. Cinco assets HTTP 200 e SHA-256 idênticos à release. [Resultado da publicação](trilhas-publication-result-20261010.json) e [validação pública](trilhas-publication-validation-20261010.json). Originais e demais conteúdos locais preservados. Registros pós-deploy locais; sem novo push documental. Estados anteriores de publicação pendente são históricos. Nenhuma compra, mensagem, alteração API/dados ou cópia externa de backup.
+
+
+## Capas Hub Data/programação/Python — revisão local concluída — 10/10/2026
+Estado atual conferido: três artigos draft true; produto Jornada Python draft true/catalogStage avaliacao. Flags do principal preservadas. Preview isolado 4324 usa cópias liberadas somente para teste; página qa-capas existe apenas nessa cópia. Nenhuma publicação ou mudança de oferta.
+Corrigido reconhecimento de assinatura v1 em VisualMedia, StoreCard e catálogo. Recorte real 4:3 cortava notebook Jornada Python; contain/center agora mostra quadro integral, com faixas da superfície existente. 16:10 e 16:9 mantêm cover/left top. Símbolo oficial único, arquivos originais e novos rasters preservados.
+[Evidência responsiva](capas-rascunhos-validation-20261010.json): três artigos, ficha Python, categoria programação e componentes isolados, quatro larguras e dois temas; 48 combinações sem overflow ou mídia ausente, geometria da assinatura dentro de todos os recortes. Capturas desktop/mobile inspecionadas. Primeira rodada iniciou antes da sincronização dos novos conteúdos: 40 verificações sem mídia em rotas ausentes. Reinício apenas do preview isolado e rodada final estável superam essa tentativa; não representa defeito público. Check 79 arquivos sem diagnósticos; build:production principal 119 páginas; QA 6.623 referências, 489 imagens e 267 controles sem problemas. Conteúdos em rascunho não entram nesse build.
+Próximo passo: aprovação editorial dos conteúdos pela frente responsável antes de pacote de publicação; imagens tecnicamente prontas. Preview http://localhost:4324/qa-capas/, frontend canônico continua 4321. Sem push/deploy.
+
+
+## Hub Data/programação/Jornada Python — revisão editorial — 10/10/2026
+Três artigos e ficha Jornada Python revisados; rascunhos e catalogStage avaliacao preservados no principal. Conteúdo preexistente do produto programação e alterações de outras frentes não incluídos nesta entrega.
+Hub Data: removidas afirmações divergentes de pagamentos semanais, prazo de 72 horas e valor residencial de R$30; referências oficiais https://ai.hub.xyz/facts e https://ai.hub.xyz/data-use consultadas em 10/10/2026 (última verificação declarada pela fonte: 12/09/2026). Valores aplicáveis remetidos ao aplicativo, distinção entre gravação e hora aprovada mantida. Cadastro/aplicativo/tarefas tratados como registro inicial, não como comprovação atual. Conta, envio, aprovação e pagamento não acessados nem comprovados nesta revisão.
+Ebook: escopo confrontado com página do produtor e ficha pública Hotmart; referências adicionadas. Jornada Python: ementa oficial confrontada e referenciada no artigo e ficha. Status Pesquisado mantido; nenhuma leitura integral ou conclusão de curso alegada. Registro comercial de 09/10 permanece separado: atribuição de comissão e situação atual da afiliação não revalidadas.
+Cópias sincronizadas no preview isolado 4324, liberadas apenas para teste. Check: 80 arquivos, zero diagnósticos. Build:preview: 124 páginas, incluindo rascunhos e qa-capas exclusivos do preview. QA: 6.902 referências internas sem destino quebrado; 517 imagens e 277 controles, zero páginas com problemas. Documentação: 158 Markdown/311 referências válidas. Símbolo e recortes homologados na etapa anterior preservados, sem mudança visual nesta revisão.
+Próximo passo: revisão editorial final do pacote e decisão explícita de publicação. Hub permanece relato preliminar enquanto não houver ciclo real comprovado. Sem push, deploy, compra, mensagens, API/dados ou cópia externa.
 
 
 ## Pacote editorial candidato — 10/10/2026
 Status: preparado localmente; publicação pendente de autorização explícita. Base official/main 0277555 (inclui Analytics da outra frente). Branch local/candidato-editorial-20261010; worktree /home/dejota/Workspace/fullstack/dejotacode-editorial-candidato. Escopo funcional: três artigos, ficha Jornada Python, três capas assinadas, dois resolvers, três ajustes de recorte e somente vínculo relatedPosts do ebook existente. Sem qa-capas, alterações de outras frentes ou configuração de ambiente. Principal permanece com rascunhos; apenas candidato usa draft false e Jornada catalogo-geral para validar resultado de publicação.
 Hub é relato preliminar, não teste concluído; lacuna de tarefa/envio/aprovação/pagamento mantida. Programação/Jornada classificados Pesquisado, sem promessa de resultado. Fontes e transparência comercial presentes. Símbolo oficial único e recortes preservados conforme validação de 48 combinações anterior.
 Check candidato: 79 arquivos sem diagnósticos. Build:production 123 páginas; QA 6.859 referências internas, 515 imagens, 275 controles sem problemas. Ambiente de produção restaurado da base atual para preservar Analytics, seguido de rebuild/QA final. Não houve push/deploy. A etapa seguinte é autorizar explicitamente publicação deste pacote, então PR/CI/workflow oficial e verificação pública.
+
+
+## Pacote editorial — publicação homologada — 10/10/2026
+Autorização do usuário às 12:53 BRT em resposta ao pedido concreto de publicação. PR 274 (https://github.com/Dejotacode/dejotacode/pull/274), HEAD 2cba50adcc11858b73f20b8fd34636d974d30624; CI 38065453759 aprovado e merge com HEAD conferido. Commit publicado f10aaa2eb0d410ffd8bfe4764fa09ce1e6d685fc; workflow oficial 38065511478 aprovado, deployment https://deae47b1.dejota-code.pages.dev, dez smoke checks aprovados. Analytics da base 0277555 preservado.
+Três artigos e ficha Python publicados. Hub explicitamente preliminar; tarefa/envio/aprovação/pagamento continuam pendentes de comprovação. Ebook/Jornada Pesquisado, sem alegar leitura integral ou conclusão. Cinco rotas públicas × quatro larguras × dois temas: 40 combinações sem overflow, mídia ausente ou H1 incorreto. Assinatura dentro de todos os recortes; capturas mobile/desktop inspecionadas. Três assets HTTP 200 e SHA-256 idênticos à release. [Resultado](editorial-publication-result-20261010.json) e [validação pública](editorial-publication-validation-20261010.json).
+Flags do principal conciliadas com publicação (artigos/ficha draft false, Python catalogo-geral). Conteúdo preexistente do ebook e demais alterações de outras frentes preservados. Registros de etapas anteriores em rascunho ou publicação pendente são históricos. Fechamento local, sem novo push documental. Nenhuma compra, mensagem, alteração API/dados ou cópia externa de backup.
+
+
+## Diversidade de capas — oito imagens atuais — 10/10/2026
+Usuário autorizou substituir capas atuais, não apenas definir padrão futuro. Oito cenas novas geradas e integradas localmente, três artigos/ficha Python/cinco trilhas. Símbolo oficial composto separadamente; Python/Tux de fontes verificadas. Originais preservados por SHA-256; outros conteúdos/flags/ofertas e alterações preexistentes preservados. [Direções e proveniência](diversidade-capas-20261010.json). Regras em frontend-master/media-registry, crédito Linux em visual-system. Validação de páginas em execução; sem publicação nesta etapa.
+
+Validação final: check 79 arquivos sem diagnósticos; build:production 123 páginas; QA 6.859 referências internas, 515 imagens e 275 controles sem problemas. [Onze rotas em quatro larguras/dois temas](diversidade-capas-validation-20261010.json): 88 combinações sem overflow ou mídia ausente, um H1 principal, símbolo dentro dos recortes e crédito Tux presente no Linux. Montagem de oito capas e páginas Trilhas/Python desktop inspecionadas. Oito originais reconferidos por hash. Publicação pendente de autorização específica; preview 4321.
+
+
+## Ficha Store — moldura editorial sem faixas (10/10/2026)
+
+Status: correção local, publicação pendente. A abertura de /store/jornada-python-hotmart/ usa a variante product-visual--editorial-wide para capas -diversidade-assinatura-v1.webp: moldura 16:9 igual ao raster 1440×810, mantendo contain e imagem integral. Elimina as faixas da antiga moldura 16:10 sem cortar Python ou o símbolo DejotaCode. Cards e demais fotos de produtos mantêm suas variantes.
+
+Validação: [8 combinações de largura e tema](store-hero-faixas-validation-20261010.json), zero faixas geométricas, overflow ou cortes do símbolo; captura desktop inspecionada. Check, build de produção, QA e documentação do candidato aprovados.
+
+
+## Diversidade dos destaques Home/Blog — 10/10/2026
+
+Status: integrado localmente, publicação pendente. Três ilustrações distintas substituem mesas genéricas: escolher pequeno projeto (modelos 3D), hábitos de segurança (cena cotidiana ilustrativa) e estudo com objetivo (percurso arquitetônico). [Briefs e hashes](../auditorias/diversidade-destaques-20261010.json). Capas 1440×810, SVG oficial dark único 72×72 em x43/y24, composto separadamente. Hero Home reconhece também assinatura-v1 e mantém ancoragem left top, máscara e demais variantes. Rotas: /, /blog/, /blog/escolher-primeiro-projeto-portfolio/, /blog/habitos-seguranca-digital-iniciantes/, /blog/como-estudar-tecnologia-sem-se-perder/. Ilustrações não são capturas nem evidências de teste. Capas anteriores preservadas.
+
+Validação dos destaques: [40 combinações, zero problemas](diversidade-destaques-validation-20261010.json). Capturas da Home desktop/mobile e Blog desktop inspecionadas; máscara original da Home preservada. Check/build/QA aprovados; nenhuma publicação.
+
+
+## Diversidade das capas de programação — 10/10/2026
+
+Status: integração local, publicação pendente. Quatro ilustrações distintas: camadas HTML/CSS/JavaScript, transformação de valores, montagem artesanal de primeira página e metáfora de pedido/resposta na web. [Briefs, referências e hashes](../auditorias/diversidade-programacao-20261010.json). SVG oficial separado 72×72 em x43/y24; nomes das tecnologias tipografados separadamente, sem simular logos. Rasters 1440×810. Metáforas não substituem diagramas exatos, exemplos de código ou capturas reais. Rotas /blog/html-css-javascript-entenda-diferenca/, /blog/javascript-variaveis-funcoes/, /blog/primeiro-site-html-css/, /blog/como-a-web-funciona/ e recomendações relacionadas. Capas anteriores preservadas para a receita técnica.
+
+Validação: [32 combinações sem problemas](diversidade-programacao-validation-20261010.json), artes finais e capturas inspecionadas; nenhuma publicação.
+
+
+## Diversidade das capas de IA — 10/10/2026
+
+Status: integração local, publicação pendente. Quatro cenas ligadas aos artigos: criação de modalidades, direção clara de pedido, prática independente e comparação de evidências. [Briefs e hashes](../auditorias/diversidade-ia-20261010.json). SVG oficial aplicado separadamente; rasters 1440×810. Ilustrações editoriais, sem simular interfaces reais, provas de teste, funcionamento exato de modelos ou garantias. Rotas /blog/o-que-e-ia-generativa/, /blog/prompts-melhores-estudar-trabalhar/, /blog/usar-ia-estudar-sem-dependencia/, /blog/como-verificar-respostas-de-ia/ e /categoria/inteligencia-artificial/. Quatro capas antigas arquivadas; catálogo agora com 117 imagens.
+
+Validação: [40 combinações sem problemas](diversidade-ia-validation-20261010.json), artes finais e categoria inspecionadas; nenhuma publicação.
+
+
+## Capas de IA — referência explícita corrigida em 10/10/2026
+
+Status: integração local, publicação pendente. A revisão do usuário mostrou que as quatro metáforas anteriores comunicavam ações, mas não identificavam IA. Substituídas por chat conceitual gerando conteúdo; contexto/objetivo/formato para um assistente; estudo ativo com dica; e resposta da IA comparada com fontes. Interfaces são ilustrativas e não reproduzem ferramenta real. SVG oficial único composto separadamente. Versões anteriores preservadas no acervo local, agora com 121 imagens. [Briefs e hashes](../auditorias/diversidade-ia-20261010.json). Rotas dos quatro artigos e /categoria/inteligencia-artificial/: 40 combinações em 320/390/768/1440, claro/escuro, sem problemas. Check/build/QA aprovados; categoria e artigo mobile inspecionados. Backup local restaurou 179 arquivos idênticos, incluindo 121 imagens arquivadas.
+
+
+## Próximo lote Linux — direção humana, 10/10/2026
+
+Status: preparação local. Sete artigos conferidos pelo conteúdo: comandos, pendrive bootável, escolha de distribuição, teste live, introdução ao Linux, permissões e pipe/redirecionamento. Começar pela ação concreta de identificar o pendrive correto; não mostrar formatação em andamento nem alegar teste real. Pessoas/gestos naturais, tecnologia pertinente e símbolo oficial separado. Preservar todas as capas substituídas.
+
+
+## Linux — primeira capa com direção humana, 10/10/2026
+
+Status: integração local, publicação pendente. /blog/como-criar-pendrive-bootavel-linux/: pessoa conferindo um dispositivo USB antes da gravação, computador secundário e luz natural. Janela conceitual, sem alegação de captura ou teste real. Sem gravação em andamento. Referência Linux tipografada separadamente; símbolo oficial único 72x72 em x43/y24. [Brief e hash](../auditorias/diversidade-linux-20261010.json). Capa anterior preservada por SHA-256 no acervo, agora com 122 imagens. Demais seis artigos Linux aguardam a revisão individual.
+
+Validação desta capa: 8 combinações 320/390/768/1440, claro/escuro, sem problemas. Check/build/QA aprovados; raster final e artigo mobile inspecionados. Backup restaurou 183 arquivos idênticos, incluindo 122 imagens arquivadas.
+
+
+## Linux — seis capas restantes com cenas humanas, 10/10/2026
+
+Status: integração local, publicação pendente. Comandos: aula com mentora; distribuição: comparação de opções; sessão live: conferência de áudio com USB; introdução: técnico em infraestrutura; permissões: revisão colaborativa de acesso; pipe: organização de etapas. [Briefs e hashes](../auditorias/diversidade-linux-20261010.json). Pessoas, ambientes e enquadramentos variados. Linux tipografado, sem simular logo; símbolo oficial separado. Interfaces e analogias são ilustrativas, sem alegação de captura ou teste. Seis capas anteriores preservadas no acervo, agora com 128 imagens. Os sete artigos Linux têm novas capas locais. Artigos e categoria /categoria/linux-seguranca/: 72 combinações 320/390/768/1440 e claro/escuro sem problemas; check/build/QA aprovados. Montagem e categoria inspecionadas. Backup restaurou 201 arquivos idênticos, incluindo 128 imagens arquivadas.
+
+
+## Segurança digital — quatro capas humanas, 10/10/2026
+
+Status: integração local, publicação pendente. Phishing: pausa para conferir mensagem; 2FA: segunda verificação em dispositivo; senhas: cuidado com recuperação do cofre; VPN: acesso remoto de trabalho em viagem. [Briefs e hashes](../auditorias/diversidade-seguranca-20261010.json). Interfaces conceituais e cenas ilustrativas, não capturas, testes de fornecedor ou garantia de proteção. SVG oficial único e rótulos compostos separadamente. NordPass/NordVPN permanecem no projeto para a Store; capas antigas phishing/2FA arquivadas por hash, total 130 imagens no acervo. Conteúdo e ofertas preservados. Quatro artigos e duas páginas da categoria Linux & Segurança: 48 combinações 320/390/768/1440, claro/escuro, sem problemas. Check/build/QA aprovados. Montagem, artigo mobile e categoria inspecionados. Arte VPN corrigida antes da integração: removida interface impossível na tampa do notebook. Backup local restaurou 212 arquivos idênticos, incluindo 130 imagens arquivadas.
+
+
+## Renda digital — primeiro lote de quatro capas humanas, 10/10/2026
+
+Status: integração local, publicação pendente. Escolha do serviço: amostras de tarefas; primeiro cliente: conversa específica em comércio; preço do site: escopo, cronograma e cálculo; e-book: organização e revisão de páginas. [Briefs e hashes](../auditorias/diversidade-renda-20261010.json). Cenas e materiais ilustrativos; não alegam cliente real, prova de receita, taxa recomendada ou garantia de venda. SVG oficial único e rótulos compostos separadamente. Quatro capas anteriores preservadas por hash, total 134 imagens no acervo. Demais conteúdos renda digital aguardam revisão individual. Quatro artigos e três páginas da categoria renda digital: 56 combinações 320/390/768/1440, claro/escuro, sem problemas. Check/build/QA aprovados. Montagem, artigo mobile e categoria inspecionados. Backup local restaurou 225 arquivos idênticos, incluindo 134 imagens arquivadas.
+
+
+## Renda digital — segundo lote de quatro capas humanas, 10/10/2026
+
+Status: integração local, publicação pendente. Portfólio: apresentação de projetos de estudo; oferta: definição de escopo com pequeno negócio; landing page: teste de contato no celular; primeira renda: tarefa pequena de imagem para comerciante. [Briefs e hashes](../auditorias/diversidade-renda-20261010.json). Gestos ativos e ambientes distintos; interfaces ilustrativas, sem alegar cliente real, pagamento ou garantia de receita. SVG oficial único aplicado separadamente. Quatro capas anteriores preservadas por SHA-256; acervo agora com 138 imagens. Oito artigos de renda digital renovados localmente, demais conteúdos aguardam revisão. Quatro artigos e três páginas da categoria renda digital: 56 combinações 320/390/768/1440, claro/escuro, sem problemas. Check/build/QA aprovados. Montagem, artigo mobile e categoria inspecionados. Backup local restaurou 237 arquivos idênticos, incluindo 138 imagens arquivadas.
+
+
+## Renda digital — terceiro lote de duas capas humanas, 10/10/2026
+
+Status: integração local, publicação pendente. Foco: reduzir planos a um projeto pequeno; afiliados: avaliar vantagens e limitações com transparência. [Briefs e hashes](../auditorias/diversidade-renda-20261010.json). Gestos ativos e ambientes distintos; interfaces ilustrativas, sem alegar cliente real, pagamento ou garantia de receita. SVG oficial único aplicado separadamente. Duas capas anteriores preservadas por SHA-256; acervo agora com 140 imagens. Dez artigos de renda digital renovados localmente, demais conteúdos aguardam revisão. Dois artigos e três páginas da categoria renda digital: 40 combinações 320/390/768/1440, claro/escuro, sem problemas. Check/build/QA aprovados. Capas finais, artigo mobile e categoria inspecionados. Backup local restaurou 243 arquivos idênticos, incluindo 140 imagens arquivadas.
+
+
+## Lote de seleção por conteúdo — 10/10/2026
+
+Status: aplicado localmente; validação pendente. Famílias: VisualMedia editorial/card, ResourceCard normal/compact, StoreCard/ficha e trilhas. Rotas: quatro artigos ElevenLabs/Metricool/Méliuz/Febspot, duas fichas ElevenLabs/eBook, catálogos /blog/, /recursos/, /store/, /trilhas/ e categorias de Recursos. Sem novos modelos de interface. A composição de capturas Méliuz é SVG 4:3, documentos inteiros centrados em área também segura para 16:9. As páginas de evidência mantêm valores e explicações em HTML. [Decisões e lacunas](selecao-imagens-lote-20261010.md).
+
+Ficha ElevenLabs: variante product-visual--editorial-wide já existente também aplicada ao raster 720x405, mantendo proporção 16:9 sem faixas na abertura. Cards 4:3 e Store 16:10 mantêm a variante de catálogo.
+
+Catálogo Store: artes -assinatura-v2 ancoradas em left top, com especificidade da família, para impedir o corte do símbolo de ElevenLabs pelo center top anterior. Validação responsiva posterior cobre catálogo e categorias.
+
+Fechamento do lote: 752 combinações em 94 rotas, zero falhas técnicas finais; recorte do símbolo ElevenLabs corrigido. Check/build/QA aprovados; recuperação isolada idêntica. Dez assinaturas de Recursos permanecem registradas para limpeza individual. [Resultado](selecao-imagens-lote-validation-20261010.json).
+
+
+## Recursos — dez assinaturas corrigidas, 10/10/2026
+
+Status: aplicado localmente, validação pendente. As dez placas antigas registradas no lote foram removidas; versões irmãs -resource-assinatura-v2.webp têm SVG oficial único, 72x72 em x43/y33. Cena preservada fora do pequeno canto, originais mantidos. Recursos normal/compact e seis categorias usam as versões corrigidas. Registro: docs/brand/resource-signatures-20261010.json. Sem publicação ou cópia externa.
+
+### Assinaturas corrigidas e validadas — 10/10/2026
+
+As dez pendências foram resolvidas localmente: um símbolo oficial por imagem, sem placa branca, largura de 5% e margens de 3%. Originais intactos; somente a pequena região da antiga placa foi reconstruída. Fora do canto de 362 × 326 px, os pixels são idênticos aos originais. A recuperação isolada reproduziu os dez SHA-256 finais. Nove URLs de Recursos e 72 combinações de largura/tema passaram sem falhas de carregamento, transbordamento ou corte do símbolo. Registro: `docs/auditorias/resource-signatures-validation-20261010.json`. As referências anteriores a dez pendências ficam superadas por este fechamento. Sem publicação ou cópia externa.
+
+### Méliuz Pocket Sort — assinatura da capa corrigida
+
+A capa composta de capturas reais também recebe a assinatura oficial no fundo, fora das telas e sem alterar evidências. Original `evidencias-capa-v1.svg` preservado; uso atualizado para `evidencias-capa-assinatura-v2.svg` em Blog e Recursos. Símbolo 72 × 72 px em x43/y32, sem placa, na composição 1440 × 1080. Correção local, sem publicação.
+
+Méliuz: validação final passou em 32 combinações (320/390/768/1440 px, claro/escuro). Recorte em Recursos alinhado ao topo para preservar assinatura. XML SVG válido; dados das capturas embutidas idênticos ao original.
+
+### Acervo local — revisão de assinaturas, 10/10/2026
+
+140 originais conferidos por SHA-256 e preservados. 88 entradas receberam ou passaram a apontar para versões corrigidas: 50 aproveitam correções oficiais já aprovadas, 38 receberam o vetor oficial sobre a composição original. 42 já tinham assinatura oficial. Cinco referências de fornecedor e cinco prévias documentais ficam identificadas sem marca adicional. MX Anywhere usa a correção aprovada, evitando duplicação da assinatura inferior antiga. Catálogo local mostra versão preferida e link ao original. Nenhuma imagem foi aplicada automaticamente ao site. Evidência: `docs/auditorias/acervo-assinaturas-validation-20261010.json`.
+
+### Assinatura aplicada nos modelos do projeto — 10/10/2026
+
+As imagens escolhidas por conteúdo permanecem. Capas de Logitech MX Keys Mini, Fifine AM8 e SSD SanDisk recebem assinatura editorial oficial em SVG sobre o bitmap original integralmente embutido; não alegam fotografia própria nem endosso do fabricante. Originais preservados. Seletores compartilhados de VisualMedia, StoreCard, Store, Home e guias de artigo passam a proteger o canto de imagens `-assinatura-` também em SVG. Não adicionar outro símbolo a uma versão assinada. Capturas documentais, retratos, identidade institucional e anúncios do fornecedor são exceções identificadas e não devem receber assinatura indiscriminada. O acervo não deve substituir automaticamente uma capa escolhida por conteúdo.
+
+Fechamento: 121 URLs públicas, incluindo paginação, em 320/390/768/1440 px e claro/escuro (968 combinações), sem problemas. 75 assets assinados encontrados visíveis; nenhum asset assinado esperado foi substituído silenciosamente pelo fallback. Tab com foco visível e detalhes expansíveis conferidos. Check/build/QA aprovados. Três bitmaps originais e hashes preservados; SVGs válidos, uma assinatura por composição. Evidência: `docs/auditorias/project-signatures-validation-20261010.json`. Regra aplicada localmente, sem publicação.
+
+
+### Correções criteriosas de capas — 10/10/2026
+
+Status: validado localmente, publicação pendente. Responsável: @control/@dev. Escopo: /store/fifine-am8-usb-xlr/, /store/ugreen-hub-usb-c-6-em-1/, /store/baseus-fm11-10000mah/, /store/baseus-fc11-power-bank/, /blog/organizar-ambiente-estudos-tecnologia/, /blog/javascript-variaveis-funcoes/, /blog/metricool-para-iniciantes-organizar-agendar-conteudo/ e reutilizações em catálogo, busca, categorias e relacionados.
+
+Quatro fotografias de fornecedor preservadas dentro de composições próprias; três SVGs técnicos/editoriais precisos. Símbolo oficial único fora das fotografias. Modelo FC11 identificado como referência da variante 10.000 mAh. Ajuste restrito dos relacionados evita alongar/cortar as novas capas pela altura do texto. Originais e links comerciais preservados.
+
+Check 79 arquivos sem erros/avisos/hints, build 123 páginas, links/HTML aprovados. 37 rotas em 320/390/768/1440 e claro/escuro: 296 combinações, zero problemas. Sete composições completas e três páginas representativas inspecionadas visualmente. Recuperação isolada de 26 arquivos por hash aprovada. Fonte: [registro de correções](correcoes-criteriosas-imagens-2026-10-10.json). Direitos de uso das fotos ainda sem confirmação documental antes de publicar; não são fotos de teste próprio. Sem geração, custo monetário, cópia externa ou publicação.

@@ -45,3 +45,6 @@
 
 /* Assinaturas editoriais v1: preservar topo esquerdo nos cards do catálogo. */
 .store-catalog-page.store-catalog-page .store-card--editorial .visual-media img[src$="-assinatura-v1.webp"]{object-fit:cover;object-position:left top}
+
+/* Assinaturas oficiais: preservar o canto também nas artes 16:9 do catálogo. */
+.store-catalog-page.store-catalog-page .store-card--editorial .visual-media img[src*="-assinatura-"]{object-position:left top}

@@ -18,3 +18,5 @@ Status: vigente como índice. Revisão: 10/10/2026. Escopo: localização; o sta
 
 ## Interpretação
 Procedimentos e registros operacionais são distintos. Runbooks orientam; registros datados descrevem etapas.
+
+- [monetizacao-parceiros.md](monetizacao-parceiros.md).

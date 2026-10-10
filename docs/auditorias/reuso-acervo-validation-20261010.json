@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-10",
+  "results": [
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/documentar-aprendizado-tecnologia/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/documentar-aprendizado-tecnologia-acervo-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ]
+    }
+  ],
+  "issues": []
+}

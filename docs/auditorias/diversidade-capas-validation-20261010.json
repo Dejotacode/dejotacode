@@ -1,0 +1,2182 @@
+{
+  "date": "2026-10-10",
+  "results": [
+    {
+      "route": "/trilhas/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": true
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 192.03125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 192.03125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 72,
+          "height": 54,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 72,
+          "height": 54,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 100.796875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 72,
+          "height": 54,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 72,
+          "height": 54,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 120.046875,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 112,
+          "height": 84,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 112,
+          "height": 84,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 116.8125,
+          "height": 212.828125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 112,
+          "height": 84,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 112,
+          "height": 84,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 202.296875,
+          "height": 164.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 178.75,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 178.75,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 213.125,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 213.125,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 574,
+          "height": 358.75,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 574,
+          "height": 358.75,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 505.59375,
+          "height": 315.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 505.59375,
+          "height": 315.984375,
+          "fit": "contain",
+          "position": "50% 50%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 177.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 177.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 212.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 212.125,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 342.5,
+          "height": 213.0625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 342.5,
+          "height": 213.0625,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 374,
+          "height": 232.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+          "loaded": true,
+          "width": 374,
+          "height": 232.75,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ],
+      "linuxCredit": false
+    }
+  ],
+  "issues": []
+}

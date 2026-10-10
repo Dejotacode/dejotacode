@@ -192,3 +192,5 @@
 
 .lesson__read { min-width: 0; white-space: normal; }
 .lesson__read > span { flex: none; }
+
+.trail-media-credit { font-size:var(--size-meta); color:var(--color-text-muted); margin:.75rem 0 0; }

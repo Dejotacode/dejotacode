@@ -1,0 +1,1210 @@
+{
+  "date": "2026-10-10",
+  "results": [
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 160,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 160,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 190.9375,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 190.9375,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 689.546875,
+          "height": 386.984375,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 689.546875,
+          "height": 386.984375,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 572,
+          "height": 320.875,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/hub-data-como-funciona-e-o-que-estamos-testando/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 572,
+          "height": 320.875,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 160,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 100.796875,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 160,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 100.796875,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 190.9375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 120.046875,
+          "height": 192.03125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 190.9375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 120.046875,
+          "height": 192.03125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 689.546875,
+          "height": 386.984375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 116.8125,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 689.546875,
+          "height": 386.984375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 116.8125,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 572,
+          "height": 320.875,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 202.296875,
+          "height": 164.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 572,
+          "height": 320.875,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 202.296875,
+          "height": 164.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 160,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 72,
+          "height": 54,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 100.796875,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 160,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 72,
+          "height": 54,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 100.796875,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 190.9375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 72,
+          "height": 54,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 120.046875,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 190.9375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 72,
+          "height": 54,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 120.046875,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 689.546875,
+          "height": 386.984375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 112,
+          "height": 84,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 116.8125,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 689.546875,
+          "height": 386.984375,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 112,
+          "height": 84,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 116.8125,
+          "height": 212.828125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 572,
+          "height": 320.875,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 112,
+          "height": 84,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 202.296875,
+          "height": 164.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/blog/jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 572,
+          "height": 320.875,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 112,
+          "height": 84,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 202.296875,
+          "height": 164.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 178.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 178.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 213.125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 213.125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 574,
+          "height": 358.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 574,
+          "height": 358.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 505.59375,
+          "height": 315.984375,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/jornada-python-hotmart/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 505.59375,
+          "height": 315.984375,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 286,
+          "height": 177.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 286,
+          "height": 177.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 341,
+          "height": 212.125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 341,
+          "height": 212.125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 342.5,
+          "height": 213.0625,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 342.5,
+          "height": 213.0625,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 374,
+          "height": 232.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/store/programacao/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 374,
+          "height": 232.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 213.5,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 286,
+          "height": 177.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 286,
+          "height": 213.5,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 286,
+          "height": 177.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 254.75,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 341,
+          "height": 212.125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 341,
+          "height": 254.75,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 341,
+          "height": 212.125,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 358,
+          "height": 267.5,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 358,
+          "height": 222.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 358,
+          "height": 267.5,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 358,
+          "height": 222.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 358,
+          "height": 267.5,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 358,
+          "height": 222.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/qa-capas/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "50% 50%",
+          "fit": "contain",
+          "width": 358,
+          "height": 267.5,
+          "symbolInside": true
+        },
+        {
+          "src": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+          "loaded": true,
+          "position": "0% 0%",
+          "fit": "cover",
+          "width": 358,
+          "height": 222.75,
+          "symbolInside": true
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    }
+  ],
+  "issues": [],
+  "scope": "Preview isolado 4324 com cópias de três artigos e um produto; flags canônicas preservadas. Não comprova liberação editorial ou publicação.",
+  "status": "MIDIA_VALIDADA_LOCALMENTE",
+  "symbolGeometry": "Caixa SVG 72x72 em x43/y24, origem 1440x810, dentro de todos os recortes medidos.",
+  "initialAttempt": "Servidor de preview iniciado antes da entrada dos rascunhos; 40 verificações sem mídia por rotas não disponíveis. Coleções sincronizadas após reiniciar somente preview 4324; rodada final estável de 48 combinações aprovada."
+}

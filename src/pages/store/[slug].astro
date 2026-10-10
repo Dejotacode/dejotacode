@@ -53,7 +53,7 @@ const compatibilityItems = Object.entries(product.data.compatibility ?? {})
       </nav>
 
       <section class="product-hero">
-        <div class="product-visual">
+        <div class:list={["product-visual", { "product-visual--editorial-wide": productVisual.endsWith("-diversidade-assinatura-v1.webp") || productVisual === "/assets/resources/items/elevenlabs-assinatura-v2.webp" }]}>
           <VisualMedia
             src={productVisual}
             fallbackSrc={productFallback}

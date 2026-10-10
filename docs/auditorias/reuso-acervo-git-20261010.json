@@ -1,0 +1,28 @@
+{
+  "status": "pilot-local-awaiting-user-review",
+  "slug": "git-e-github-entenda-a-diferenca",
+  "asset": "/assets/resources/items/github-resource-assinatura-v2.webp",
+  "previous_asset": "/assets/resources/items/github.webp",
+  "article_sha256": "dc27d352804c8dbbed9146e77d1febbb4ce9d3e5ac290af73371a882bd356b4c",
+  "selection": "Imagem existente com referências visuais a histórico de versões, arquivos e colaboração entre computadores e repositório compartilhado. Mais aderente ao versionamento que a imagem anterior de editor e nome GitHub.",
+  "limits": "Metáfora de colaboração e hospedagem; não demonstra separadamente Git local, staging, commit ou push. Não é diagrama nem captura da plataforma. Texto esclarece que Git funciona sem GitHub. Símbolos de ramificação ilustrativos, sem afirmar reprodução de logo oficial Git.",
+  "generation": "Edição pontual da assinatura incorporada; cena existente preservada.",
+  "originals": "Ambas as imagens mantidas; nenhuma exclusão.",
+  "asset_sha256": "1ddc4a824bcd275dca3000ecd3abf178821aad2dffd676f7123e27690b101608",
+  "validation": {
+    "preview_article_and_asset": "passed",
+    "candidate_build": "passed",
+    "candidate_qa": "passed",
+    "candidate_documentation": "passed",
+    "responsive_combinations": 8,
+    "issues": 0
+  },
+  "signature_review": {
+    "status": "corrected-validated-local",
+    "issue": "Placa branca e escala grande removidas.",
+    "method": "Imagegen limpou marca; somente canto 300x280 reincorporado. Pixels fora do canto idênticos. SVG oficial dark aplicado separadamente 72x72 em x43/y33, proporcional a 1448x1086.",
+    "original_preserved": "/home/dejota/Workspace/fullstack/dejotacode/public/assets/resources/items/github-resource-v1.webp",
+    "symbol_count": 1,
+    "visual_review": "Raster final e artigo desktop inspecionados: SVG oficial único sem placa, região antiga limpa."
+  }
+}

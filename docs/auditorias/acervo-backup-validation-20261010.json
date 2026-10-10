@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-10T19:17:34.353029-03:00",
+  "backup_path": "/home/dejota/Workspace/fullstack/backups/acervo-imagens-20261010-191734/media-dejotacode.tar.gz",
+  "sha256": "b24f42ea6b1e73d8dbe25953c938565ce8c22560523e669bde73c1b9c6d11107",
+  "archive_bytes": 33952938,
+  "files": 306,
+  "source_bytes": 37011329,
+  "restored_all_files_equal": true,
+  "catalog_originals_verified": 140,
+  "signature_sources_verified": 49,
+  "isolated_reconstruction_same_sha256": true,
+  "temporary_restore_removed": true,
+  "source_unchanged": true,
+  "published": false,
+  "external_copy": false,
+  "limitations": [
+    "Cópia na mesma máquina/sistema de arquivos, sem proteção contra perda física.",
+    "Mestres imagegen do ChatGPT não estão incluídos no snapshot local; intermediários do projeto estão.",
+    "docs/brand mantido no Git."
+  ]
+}

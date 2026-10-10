@@ -46,3 +46,5 @@ O **Fifine AM8** é uma opção de microfone para quem cria vídeos, aulas, podc
 As ofertas validadas confirmam conexão USB-C e XLR. No Mercado Livre, a oferta inclui base e cabo USB, mas não o cabo XLR.
 
 Esta recomendação é **pesquisada pelo DejotaCode** e possui links afiliados no Mercado Livre e na Shopee.
+
+A capa usa uma fotografia de referência do fornecedor em composição editorial do DejotaCode; não é registro de teste físico. Confira a cor, capacidade e variante da oferta antes de comprar.

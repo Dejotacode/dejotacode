@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-10",
+  "authorization": "12:53 BRT",
+  "pr": 274,
+  "prHead": "2cba50adcc11858b73f20b8fd34636d974d30624",
+  "merge": "f10aaa2eb0d410ffd8bfe4764fa09ce1e6d685fc",
+  "run": {
+    "conclusion": "success",
+    "headSha": "f10aaa2eb0d410ffd8bfe4764fa09ce1e6d685fc",
+    "status": "completed",
+    "url": "https://github.com/Dejotacode/dejotacode/actions/runs/38065511478"
+  },
+  "assets": [
+    {
+      "path": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "40404c1c3f89d7396ae4847b8888b52df298d4a24cc1b16cf35e7eb5756c6da0",
+      "matches": true
+    },
+    {
+      "path": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "efa32534c4678615cc1f7802e73f0274993e9db500a86347d9e9fd5738c676bf",
+      "matches": true
+    },
+    {
+      "path": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+      "status": 200,
+      "sha256": "f1843ec702cb2e7e83a07d3b520e091f301ed078ecc813ccf21f49f1d8f78ecd",
+      "matches": true
+    }
+  ],
+  "deployment": "https://deae47b1.dejota-code.pages.dev",
+  "smokeChecks": 10
+}

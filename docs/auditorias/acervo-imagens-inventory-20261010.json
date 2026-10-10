@@ -1,0 +1,3407 @@
+{
+  "date": "2026-10-10",
+  "scope": "Imagens em public; rascunhos, resolvers, fallbacks, scripts e documentos incluídos. Referências dinâmicas exigem revisão adicional.",
+  "records": [
+    {
+      "path": "/favicon.svg",
+      "bytes": 749,
+      "sha256": "2d7a310283d6f9cc753210d83224cd6db6348cb82a5536348884e5831d46203f",
+      "status": "identidade-preservar",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/favicon.ico",
+      "bytes": 655,
+      "sha256": "09d2ac08d8cca9b6e1f90221f345a8c4dd0371c64a0dc52b6f96fc589b1e3d67",
+      "status": "identidade-preservar",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/services-dejotacode-case.webp",
+      "bytes": 79426,
+      "sha256": "0b2c55048d3a8e7436f91e962867fab9f8c62340f441d1de35e2c70c1b65f79e",
+      "status": "em-uso",
+      "references": [
+        "src/pages/servicos/index.astro",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/ugreen-hub-usb-c-6-em-1.webp",
+      "bytes": 20706,
+      "sha256": "61eb16bfdba74c212474e6b245234a58d8e102bf0e550aeb6829162e2557397f",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/ugreen-hub-usb-c-6-em-1.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/logitech-pebble-2-m350s.svg",
+      "bytes": 856,
+      "sha256": "ab6569748f41d533a28b71d06260c27628f5ac928e4453afdc65d5cd884deef2",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/fifine-am8-usb-xlr.webp",
+      "bytes": 18398,
+      "sha256": "5a3367e91a6a684d4679f6d1b996c2620b056d5755d55d9f330fdfc308ff4d26",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/sandisk-portable-ssd-1tb.svg",
+      "bytes": 849,
+      "sha256": "92ff46450d502bf0b166bdb718baa242a208e9a2ea580e552511fe1a4ed1387d",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/fifine-am8-usb-xlr.svg",
+      "bytes": 858,
+      "sha256": "08c9f956dd8f422745eacba79fb70792bc8bb20cc979c45f556c316b0906d56f",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/gshield-hub-usb-c-6-em-1.webp",
+      "bytes": 31548,
+      "sha256": "140f5e6ee3c1272ff22a58e97ee220cbfc6402e44a24fa691ce7f2ae470cb1c7",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/gshield-hub-usb-c-6-em-1.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/gshield-hub-usb-c-6-em-1.svg",
+      "bytes": 867,
+      "sha256": "ee1ab4d8195d8592e546c92fd1b82cee1050dbdf718cc16fd2f18f60ce8b7619",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/fifine-am8-usb-xlr.jpg",
+      "bytes": 20915,
+      "sha256": "fd380b5690e255bc3c512c40e47f6e2498b0313e8e2d00b5bc1311a5396291ff",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/fifine-am8-usb-xlr.jpg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/ugreen-hub-usb-c-6-em-1.svg",
+      "bytes": 872,
+      "sha256": "84acc9dedbc397f7058093a2d15252b047e7d625698a44859c49832d8d6d3c4e",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/baseus-fm11-10000mah.svg",
+      "bytes": 843,
+      "sha256": "4ea77848cd28f9f8fb7966930f7801eadc6c1ff6a21a043c67e1c89c99a754db",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/logitech-pebble-2-m350s.webp",
+      "bytes": 25762,
+      "sha256": "6d7cb553dc731df0acd721b951ad054cd5779684f8be807cec74a56a97696eb1",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/logitech-pebble-2-m350s.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/sandisk-portable-ssd-1tb.jpg",
+      "bytes": 19687,
+      "sha256": "37823744c8e7606f14be240d037c11a0ca4cba86c2068e4908ecfffd9b216e4c",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/sandisk-portable-ssd-1tb.jpg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/sandisk-portable-ssd-1tb.webp",
+      "bytes": 30434,
+      "sha256": "1a1626894993d6d6785e07a52dd8215cb724895aeb9661fd18fa4a31a8005914",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/baseus-fc11-power-bank.webp",
+      "bytes": 26968,
+      "sha256": "a276e5d4892487fe154d35c8e51d003105893975872b732d70f1f20c7cd04624",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/baseus-fc11-power-bank.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/baseus-fc11-power-bank.svg",
+      "bytes": 883,
+      "sha256": "6b8431f95ecf21f93643727455a5807b6ddd7e08bdea3e1ed92bdaeb72f6b951",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/store/baseus-fm11-10000mah.webp",
+      "bytes": 21130,
+      "sha256": "afab59c95235acbe48bbcc3840562b8ef21ff01ed6a9ab068b25fc67f2a1c33a",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/baseus-fm11-10000mah.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/baseus-fc11-power-bank-sem-texto-v2.webp",
+      "bytes": 111156,
+      "sha256": "2172bd2d3e112580383749ccdb08b8078d0c093fe487dc2703515feeb828e5e1",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/baseus-fc11-power-bank-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/baseus-fm11-10000mah-sem-texto-v2.webp",
+      "bytes": 109172,
+      "sha256": "e525f8765ab83125ed6dd83bdcb17e85a89b5debb2b3a031c4d79cb44194286c",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/baseus-fm11-10000mah-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/dejotastore-hero.webp",
+      "bytes": 34670,
+      "sha256": "59065607ddf1c51a1c25b249e10f7aeb2c8dc2824e3e0c89b570d9d24f189817",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/dejotastore-hero.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/store/elementor-site-builder.webp",
+      "bytes": 12908,
+      "sha256": "291005e4e438d0ae943bcfe1193cb715511cd1ee1bc5462028c7f36ad8c860ec",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2.webp",
+      "bytes": 131190,
+      "sha256": "1665a25271efaba048cc4034350d63e357b0df2f15ec5340250aa9b80260c960",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/hospedagem-primeiro-site.webp",
+      "bytes": 91912,
+      "sha256": "99b18b9d9355fa9696405f60791ed29a2489d7702db9c0544d24a7c07c928903",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/hospedagem-primeiro-site.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/hostinger-hospedagem.webp",
+      "bytes": 14918,
+      "sha256": "17e76a3f3eb1a6475dbeed288d55312032ded2e40e07f05ae1ef0a1690cd30e9",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/hotmart-extensoes.webp",
+      "bytes": 95662,
+      "sha256": "c3376f4894766edd2b92b46df43e600fd451fcb714e5b02a3d58a583494dae25",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/hotmart-extensoes.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/leadlovers-hotmart.webp",
+      "bytes": 86028,
+      "sha256": "ca6f9620bc0f9d69bce7a7c7dfffe984dc629befe77f454c1f033989009e82fa",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/leadlovers-hotmart.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/logitech-mx-anywhere-3s.webp",
+      "bytes": 103100,
+      "sha256": "79f3f91379fb2cf2066e7a9cc2626ea1289edc79d6ec1bb11958bdcc5fb69356",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/mx-anywhere-signature-validation-20261010.json",
+        "docs/editorial/dejotastore-catalog-v1.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/frontend-review.md",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/logitech-mx-anywhere-3s.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/logitech-mx-keys-mini.webp",
+      "bytes": 14196,
+      "sha256": "2f5dd94bf520f61cac78d644cf6f3339ce9ecc48e66733ea6acc6158b1bf05d8",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2.webp",
+      "bytes": 113844,
+      "sha256": "9615ebb38984a8dd456d4db305276ea8aafa098645ddf66037f87187abdb638d",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/logitech-pebble-2-m350s-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/metricool-sem-texto-v2.webp",
+      "bytes": 138850,
+      "sha256": "489ea86f03ed619997188fecdfbed983d017715e3d013296bd0a619aeb567636",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/metricool-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/nordpass-sem-texto-v1.webp",
+      "bytes": 91560,
+      "sha256": "d100842d5be1f974749255177ba0b0ab03ddff5d5145732680cdb536a659fa80",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/editorial/dejotastore-catalog-v1.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/nordpass-sem-texto-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/nordvpn-sem-texto-v2.webp",
+      "bytes": 132756,
+      "sha256": "13bd4cd6c8f931c337d4d16c3055b89a8288f5102dffc1077a2444edd8465022",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/nordvpn-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/programacao-iniciante-avancado-hotmart.webp",
+      "bytes": 88498,
+      "sha256": "d23d483a1834b0bc2eb262af218d1a3dc40168d4c8717cf6fb1cda3996f82ad7",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/programacao-iniciante-avancado-hotmart.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/sandisk-ultra-flair-32gb.webp",
+      "bytes": 98170,
+      "sha256": "b5f06a701f74bfca8250c7a850dbe185ca24215a4d348f2e561301b9d10b8a0f",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/sandisk-ultra-flair-32gb.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/seguranca-digital-essencial-hotmart.webp",
+      "bytes": 102350,
+      "sha256": "646edcd4f191e8870c489fab78ca382bb60ef2cd042d33b24d60650b8ac74c5d",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/seguranca-digital-essencial-hotmart.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2.webp",
+      "bytes": 121384,
+      "sha256": "3ca270c5393d4c42a87536a780137d18b9ad4ee9836508808ce953a48ada99bb",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",
+      "bytes": 104590,
+      "sha256": "a93ac23b3c6a8226ae27b558f2f72cac3e6fee7dc9a882d5a4ded2730977e333",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/sandisk-ultra-flair-32gb-assinatura-v2.webp",
+      "bytes": 113744,
+      "sha256": "36a5e5e0387832e08a4285edaf84ac97bca8c6c0b41f585447f508da93e08a55",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/leadlovers-hotmart-assinatura-v2.webp",
+      "bytes": 98084,
+      "sha256": "5e23fe9d6453f9cbdc438012d4abeb5ba4dcea7f83229062c8fdd5190d495584",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/programacao-iniciante-avancado-hotmart-assinatura-v2.webp",
+      "bytes": 99358,
+      "sha256": "58c6238e21d3550fb8273adbfcf70037bda8c72d67cecd72cecfe4f682bd1133",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/seguranca-digital-essencial-hotmart-assinatura-v2.webp",
+      "bytes": 117042,
+      "sha256": "aa4782bc13feac94129b2f9d9b7b6c2925323431852f256a8f607c1a4688bb65",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/hospedagem-primeiro-site-assinatura-v2.webp",
+      "bytes": 104966,
+      "sha256": "7c93d3787678abdcffc491bd33cd3e66b54b688706b1834b89979bf4f42e3d79",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/hotmart-extensoes-assinatura-v2.webp",
+      "bytes": 110044,
+      "sha256": "8566d754149e2b9da833d503b67ce6a48ebc41add5c1e3c5ae762518c892479c",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/metricool-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 131616,
+      "sha256": "72a34ba055fa13908250e7329166c8e8c14264b066eaf36d6530330e8c7adc42",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/nordvpn-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 124124,
+      "sha256": "1a8c280b20f40beec407e1c5aa597d2d80c449775de7b618ed2ac8e1e9c99f27",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/baseus-fm11-10000mah-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 101470,
+      "sha256": "4d44ba843e54c4f3862d0f1398215cf75660047b928b2f460de04750209f2dfb",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/ugreen-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 114786,
+      "sha256": "a4e38068aad5a91e86a9194d1eae113aa72eaa95e8f142f26ae5c01faa9f8431",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/baseus-fc11-power-bank-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 102864,
+      "sha256": "5f7f9e4710bc4d5e9c6021c3aa4252cacc0cc5ee73a53303029771ba241eeaed",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/gshield-hub-usb-c-6-em-1-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 122938,
+      "sha256": "d07c37ee499476fefc54bab4e64522090291eeb8414b40be594d3d236a120d91",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/logitech-pebble-2-m350s-sem-texto-v2-assinatura-v2.webp",
+      "bytes": 108212,
+      "sha256": "59a15da0b3648d2f1b228f1ae18fc09b54109acb3951c4b17eee763370c35750",
+      "status": "em-uso",
+      "references": [
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
+      "bytes": 48138,
+      "sha256": "cc4888f5fb302fed87d5d35495a7dc4589ab6f739ad654e72a46049da00f1150",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "src/styles/store-catalog.css",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp",
+      "bytes": 48814,
+      "sha256": "aaf8e79387cca627990b2c52d2c7e4d1a1d736354f62c47e6b40ede52451a3ef",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "src/styles/store-catalog.css",
+        "src/pages/store/index.astro",
+        "docs/brand/mx-anywhere-signature-validation-20261010.json",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/brand/opengraph-dark.png",
+      "bytes": 33118,
+      "sha256": "c343c38a03a2c14b2fe466b392b49aa2a9cbd817931c39cf0ee52631e780c0a6",
+      "status": "identidade-preservar",
+      "references": [
+        "src/layouts/BaseLayout.astro",
+        "src/pages/blog/[slug].astro",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "README.md"
+      ]
+    },
+    {
+      "path": "/assets/brand/icon-192.png",
+      "bytes": 10322,
+      "sha256": "6f9ef1e9ca7cdc5e6259b301a9f1ca77c6a5db407baa963c816b6876949bc2a1",
+      "status": "identidade-preservar",
+      "references": [
+        "src/layouts/BaseLayout.astro",
+        "public/site.webmanifest",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/brand/icon-512.png",
+      "bytes": 19668,
+      "sha256": "5c2ce31ba8368d166f27310be63e865f4cb63e81f72e99542c8913efc4329d95",
+      "status": "identidade-preservar",
+      "references": [
+        "src/pages/index.astro",
+        "src/pages/blog/[slug].astro",
+        "public/site.webmanifest",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/brand/dejotacode-symbol-light.svg",
+      "bytes": 622,
+      "sha256": "5c4fb3257a9ce25b3620808aaebf510548b0bdc96ea30f66f0d6138da0d2e756",
+      "status": "identidade-preservar",
+      "references": [
+        "src/styles/tokens.css",
+        "scripts/build-linux-ebook.py",
+        "docs/padroes/visual-system.md",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/editorial/linux-do-zero/linux-do-zero-diagramacao-v0.6.md",
+        "docs/prototypes/linux-do-zero-full-v0.6/index.html"
+      ]
+    },
+    {
+      "path": "/assets/brand/dejotacode-symbol-dark.svg",
+      "bytes": 623,
+      "sha256": "7df2052f8a9fdae3ba5e17215c35bf600c19abde6478868aee0342212219a37d",
+      "status": "identidade-preservar",
+      "references": [
+        "src/styles/tokens.css",
+        "scripts/build-linux-ebook.py",
+        "scripts/compose-signature-batch.py",
+        "docs/brand/mx-anywhere-signature-validation-20261010.json",
+        "docs/padroes/visual-system.md",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/editorial/linux-do-zero/linux-do-zero-diagramacao-v0.6.md",
+        "docs/prototypes/linux-do-zero-full-v0.6/index.html",
+        "docs/prototypes/linux-do-zero-layout-v0.3/index.html",
+        "docs/prototypes/linux-do-zero-full-v0.4/index.html",
+        "docs/prototypes/linux-do-zero-full-v0.5/index.html"
+      ]
+    },
+    {
+      "path": "/assets/brand/dejotacode-symbol-monochrome.svg",
+      "bytes": 631,
+      "sha256": "ea294bbb1f7a84d65f92e688ea9271ffdcf5b1c1a3fca30f90e59ed02c96de4a",
+      "status": "identidade-preservar",
+      "references": [
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/brand/dejotacode-app-icon.svg",
+      "bytes": 799,
+      "sha256": "24bc31e4812efdb8bc2992f9708138433e85527ad2d64ad9a7cb0c936a17d97e",
+      "status": "identidade-preservar",
+      "references": [
+        "src/layouts/BaseLayout.astro",
+        "src/layouts/AdminLayout.astro",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "README.md"
+      ]
+    },
+    {
+      "path": "/assets/brand/apple-touch-icon.png",
+      "bytes": 9636,
+      "sha256": "4097432b16cfaf48ba4cd15cf860d1e9d8da6abf05259ffee16da634fd464206",
+      "status": "identidade-preservar",
+      "references": [
+        "src/layouts/BaseLayout.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/brand/dejotacode-app-icon.png",
+      "bytes": 26207,
+      "sha256": "3d3cf5deefbb706d3fe670f49ee1329829b2e3b3c04d76d3ead6577d0fb2494d",
+      "status": "identidade-preservar",
+      "references": [
+        "scripts/generate-guide-markdown.mjs",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/brand/dejota-author.webp",
+      "bytes": 71958,
+      "sha256": "bc3b9b102f98d1a0690139aa8e4eb5ac5ef4f04d769df7dec925d5989db3ef55",
+      "status": "identidade-preservar",
+      "references": [
+        "src/pages/sobre/index.astro",
+        "src/pages/blog/[slug].astro",
+        "src/pages/produtos/linux-do-zero/index.astro",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/sobre-repaginacao-2026-10-08.md",
+        "docs/auditorias/firefox-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/hero-recursos.svg",
+      "bytes": 1541,
+      "sha256": "efa3762176e360493ed6d4007498d8af600fd29082b57658a2df38fe3266f4f5",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/hero-recursos.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/category-infraestrutura.svg",
+      "bytes": 790,
+      "sha256": "4abed9dced22376dbf37e178fb4179e993f82c26c436bdc405d4a43b572d876f",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/category-desenvolvimento.svg",
+      "bytes": 703,
+      "sha256": "98160651a42fb25102097f2507bb5acd4107f3b03126a5527967609bf1c787b3",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/category-seguranca.svg",
+      "bytes": 730,
+      "sha256": "b11694ae82e43367a2c213a1244a9dda13eeac5c5cf989dd7829db15725c26ba",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/category-digitais.svg",
+      "bytes": 726,
+      "sha256": "fbd724ad5445d6f7bd94dec13574b0eba0773ebaedda4fb580f6b1bcd24b1991",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/category-renda-digital.svg",
+      "bytes": 732,
+      "sha256": "846b07f74367c43bbd20cec66365d948a0c2888ac611c9549de1a515c1e6aba7",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/category-aprendizado.svg",
+      "bytes": 712,
+      "sha256": "1fb9263027d7a151439f96d4f842fe2a3990be63803d42598310eaeaa88af274",
+      "status": "em-uso",
+      "references": [
+        "src/pages/index.astro",
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "src/pages/blog/[slug].astro",
+        "src/pages/trilhas/[slug].astro",
+        "src/components/content/ArticleGuideResources.astro",
+        "src/components/content/PostCard.astro",
+        "src/components/content/TrailCard.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/og/categoria--programacao.png",
+      "bytes": 24454,
+      "sha256": "b087bca95e9c9e948637c9df395cd7bde4d711d2bcd64c0c24a8fc0c57429187",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "categoria/programacao/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--escolher-primeiro-projeto-portfolio.png",
+      "bytes": 32286,
+      "sha256": "fdd0d876d19767d350822b6c6ce04fc6521c1c2b97e58385ad3ce340998e97b8",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/escolher-primeiro-projeto-portfolio/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--git-e-github-entenda-a-diferenca.png",
+      "bytes": 33465,
+      "sha256": "efb01be0dbfec5ad3e635849b5f5e07da212549244630b7b44b2cea2da821f44",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/git-e-github-entenda-a-diferenca/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/trilhas--linux-do-zero.png",
+      "bytes": 24295,
+      "sha256": "6502c324681d90b60d9fcd1228275e848b9f0f85c98c3d0aef87a9ee024c397d",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "trilhas/linux-do-zero/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/parcerias.png",
+      "bytes": 24740,
+      "sha256": "236352b9000f78b1081e12e592299bc9cf5d13587c74c1315be73dfcd39da544",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "parcerias/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--comandos-linux-para-iniciantes.png",
+      "bytes": 36130,
+      "sha256": "0627d58db88bc6f4f305828c6d17b62288033df7f47e5960e050136952e293a8",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/comandos-linux-para-iniciantes/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/contato.png",
+      "bytes": 21362,
+      "sha256": "097103a0cfd8e79822f45598b01a27b5f2974f8f701a40a5bcb4f796fe204bf9",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "contato/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/home.png",
+      "bytes": 28741,
+      "sha256": "ffeaef40317105d1d757cb65bad822a33b7ef19c16beb170cdf0a12674772419",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--habitos-seguranca-digital-iniciantes.png",
+      "bytes": 35916,
+      "sha256": "6874a154e662e8d76b9069809bc09c50489c1d6bb80a3a4cb61260fe4169f969",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/habitos-seguranca-digital-iniciantes/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--o-que-e-linux.png",
+      "bytes": 34852,
+      "sha256": "acbfd7b7bffc7da22dfb3f6dc9a02e687f7dfc46c0d98c6f0ce945fdb511d336",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/o-que-e-linux/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/404.png",
+      "bytes": 25730,
+      "sha256": "ca0a264bd9873297236f733d909d4bf927e9dac7f1350de91adad8952c4a4701",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "404.html"
+      ]
+    },
+    {
+      "path": "/assets/og/recursos.png",
+      "bytes": 31038,
+      "sha256": "ef9846269bfc88b0d796d823f32f0bd0b2590c8c9936fd3df11ac33f63cf558b",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "recursos/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/sobre.png",
+      "bytes": 30601,
+      "sha256": "8718c065ed8c44402cb51c36d767c96d01ae2bfcf70ad4ca0a827b69863366de",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "sobre/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--permissoes-linux-para-iniciantes.png",
+      "bytes": 31041,
+      "sha256": "e880f310b4642c19509d4d1f30ce3c4497f25ff6c74384a606f8e50ca405f94a",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/permissoes-linux-para-iniciantes/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog.png",
+      "bytes": 29986,
+      "sha256": "8ccb361687bd7b43e06e89376c45e4d6eef05ede2723ca07623fca626011ccbe",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/categoria--linux-seguranca.png",
+      "bytes": 28036,
+      "sha256": "a4f955b44430b9daae6c3388c6d0b224bb0c8e1cc69185fe68c40bd450f582f3",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "categoria/linux-seguranca/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/categoria--inteligencia-artificial.png",
+      "bytes": 25275,
+      "sha256": "8646015d256e89d34057fa0a8d13767ad0f4b67423debbc4b2d24fc949db6a21",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "categoria/inteligencia-artificial/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/blog--como-escolher-distribuicao-linux.png",
+      "bytes": 34682,
+      "sha256": "025099fa41d87d3383c8797fc0e51d81c88c3ab77091fdbb463b1b0efdc03d65",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "blog/como-escolher-distribuicao-linux/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/guia--iniciante-em-tecnologia.png",
+      "bytes": 31025,
+      "sha256": "01f64b36e5539e2f1d8911aba15719f0876d317220c040acd4647b82f38056d9",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "guia/iniciante-em-tecnologia/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/portfolio.png",
+      "bytes": 23656,
+      "sha256": "28056dde48cbd73ecfb7e4a00618c14734d6852a2d445b23fd48d9be4d406066",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "portfolio/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/categoria--tecnologia-pratica.png",
+      "bytes": 25578,
+      "sha256": "b91ac345fb62f670ba95db405ceae96f9c7e0cbbf336ae0def7c15dd29dd7691",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "categoria/tecnologia-pratica/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/politica-de-privacidade.png",
+      "bytes": 25056,
+      "sha256": "daef4de6ba939d61f30d2cd414fd7158eed8e3e60b402a159f125f119eb49785",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "politica-de-privacidade/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/newsletter.png",
+      "bytes": 30832,
+      "sha256": "9223cbc22e4ddc72aa562e41621fa00110c1e47b593f8af362f088141680ccbd",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "newsletter/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/trilhas.png",
+      "bytes": 25646,
+      "sha256": "996e8183007eea1a8eada20b93cb80d397d1b7b7a3e41f946709b98a0953e33f",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "trilhas/index.html"
+      ]
+    },
+    {
+      "path": "/assets/og/busca.png",
+      "bytes": 25743,
+      "sha256": "67a676e9b7b212b13770acd6ee367cdfe70b2313715a3a7f7c5b4c15b6e10ba5",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "busca/index.html"
+      ]
+    },
+    {
+      "path": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1.webp",
+      "bytes": 118556,
+      "sha256": "5478cfd4cde506ddf6377eff72d3869b6cc2b433dcc009684d882a80ea790d68",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/autenticacao-dois-fatores-capa-v1.webp",
+      "bytes": 128298,
+      "sha256": "25f05555db9aa869a6e161e493a249e6662a1bcc5ee46a441d9c5acfdaea1c20",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/autenticacao-dois-fatores-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1.webp",
+      "bytes": 145222,
+      "sha256": "2224d6938ecc5db7ab3a41c7e590e316bff2be5c0979e15ee51c8c2ac3dfcfc8",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/comandos-linux-para-iniciantes-capa-v1.webp",
+      "bytes": 102170,
+      "sha256": "7f80902f6018e2fecc4abe4b1dd00f00a0738642e3065e428812d6fad3422ea6",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/comandos-linux-para-iniciantes-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-a-web-funciona-capa-v1.webp",
+      "bytes": 137942,
+      "sha256": "e9585638f6513b593ca2b4588e7abf10fdc1190e713bfc7500f17a2c487cce8d",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-a-web-funciona-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-conseguir-primeira-renda-online-capa-v1.webp",
+      "bytes": 102246,
+      "sha256": "0d2d7f41d7a18ef13b8feb9de19bc68546cf3dfa0c8ffae37bcfb3375709975a",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-conseguir-primeira-renda-online-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1.webp",
+      "bytes": 109446,
+      "sha256": "7232b108333912a6818e26d0c83c0a603041bc8aa588fe37257f95bec3bc57f3",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1.webp",
+      "bytes": 125486,
+      "sha256": "d0166257e37d0432f72dbe7e75db3c84a502b241e02bdfa8c6e337245779f6a5",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-escolher-distribuicao-linux-capa-v1.webp",
+      "bytes": 102966,
+      "sha256": "d51bf956916445df8f9e3042777e0857e2eb4848e217573b9bdb9658163ec55e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-escolher-distribuicao-linux-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1.webp",
+      "bytes": 129812,
+      "sha256": "49e7abbeecc4cbe5b93a8dbc43a7a67f0bddd5c206e1a25118c8539ef9efa896",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1.webp",
+      "bytes": 74512,
+      "sha256": "fc0e95f64d3deeafd5ef7e169ee027b3ca6d758848741275672d813f4a132b7e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-testar-linux-sem-instalar-capa-v1.webp",
+      "bytes": 131612,
+      "sha256": "5880dfde68403e19368c2d9f98dcfb4c6405ac663f3030c0520ea8b6cc776d62",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-testar-linux-sem-instalar-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/como-verificar-respostas-de-ia-capa-v1.webp",
+      "bytes": 117816,
+      "sha256": "c566faef6b03e36e2cda025567a583183a570e3837c83dab0c056dd832a14ca2",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-verificar-respostas-de-ia-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/devtools-navegador-iniciantes-capa-v1.webp",
+      "bytes": 106936,
+      "sha256": "d4a467d918545d133645e604a488c2f0e803ffe60b0db78b88ea93ea9d2e64a4",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/devtools-navegador-iniciantes-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1.webp",
+      "bytes": 193912,
+      "sha256": "5363aac352714af4aec19f0d3dbf88c6f6b7c81efd7c7b584b4734e56cb7fae1",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/documentar-aprendizado-tecnologia-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/elementor-para-iniciantes-v1.webp",
+      "bytes": 107530,
+      "sha256": "d4d245af3e49e9eb3cafcd555b43b7eb64f03bf0c7a05a93caf102f0bdc4f289",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/elementor-para-iniciantes-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1.webp",
+      "bytes": 185948,
+      "sha256": "72c6b2016396aacf9167b0c8a553c1841907f9e40dd7bda498efd59b5eef5916",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1.webp",
+      "bytes": 125332,
+      "sha256": "38be2e92d90df67adb43b453077d8c8d364f6ab9eedbcbcb1e2d1ecadc25aa9e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1.webp",
+      "bytes": 108776,
+      "sha256": "05c0c28001ae491cfd463b7c718328e6c236f83aca8c326b5f9126d757b14e8e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1.webp",
+      "bytes": 138942,
+      "sha256": "8e71fd05ce17a3e0bc9cda71da1f08ebc47335cb38068ee4c3149060c5c58fde",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/html-css-javascript-entenda-diferenca-capa-v1.webp",
+      "bytes": 135694,
+      "sha256": "97aff373828e617f5b3bed9abb12fbca986d585a4bea12797ce9d1b84ac49111",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/html-css-javascript-entenda-diferenca-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/javascript-variaveis-funcoes-capa-v1.webp",
+      "bytes": 114460,
+      "sha256": "717819d14316f721c1608062cb493db7067667bf4aba3d3223eda18a407d0466",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/javascript-variaveis-funcoes-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1.webp",
+      "bytes": 112960,
+      "sha256": "41cd13c7ba8847419df320c584b428c50c85d20fb1df1ef0d047dc991e036d57",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/o-que-e-ia-generativa-capa-v1.webp",
+      "bytes": 128494,
+      "sha256": "094bf13142dfa1417aa2d8db377b8b566d8da3e64b45afac0dfae72b88027d19",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/o-que-e-ia-generativa-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/o-que-e-linux-capa-v1.webp",
+      "bytes": 96856,
+      "sha256": "f0004f30e092920128bd9309da936383f9befdd3bdc854f5edf42f48c1a3dad2",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/o-que-e-linux-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1.webp",
+      "bytes": 139348,
+      "sha256": "1bf32a72c82d8417bbe34665c7c9b2f24c1173b0571b4f74d6eda14f70b0609e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1.webp",
+      "bytes": 126416,
+      "sha256": "a8e107dc767e23accf20871d917ce58b2cf4db77247b3d9f706c2146ff23ff1e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/permissoes-linux-para-iniciantes-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/phishing-como-identificar-capa-v1.webp",
+      "bytes": 103226,
+      "sha256": "dcf480dec834d40e7d429721f39ad463701feaa3632bb8ab97e76b07581b76a8",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/phishing-como-identificar-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/pipe-redirecionamento-linux-capa-v1.webp",
+      "bytes": 104784,
+      "sha256": "c02168093458de3cc9ce57da20672f812feccd95d4ed172dc2e0064a80e6fcca",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/pipe-redirecionamento-linux-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1.webp",
+      "bytes": 144512,
+      "sha256": "4739a4a70f649e2bde22035fc5f073b777c463e397018346a4c4c5c19ac73ee8",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/primeiro-site-html-css-capa-v1.webp",
+      "bytes": 104390,
+      "sha256": "532dd8ac225771b0af9174590e5ca36c67b82e67b4fd3866dfe476c113fa1215",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/primeiro-site-html-css-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1.webp",
+      "bytes": 99962,
+      "sha256": "ff5e0d5504849ffcd50d9818db9586890e6b413bbf0721e680a6a25ad597ccbb",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1.webp",
+      "bytes": 122430,
+      "sha256": "19bc14d9bfa03af62b203a1c6b77c1548aeb9ccd7e4b1ea0f6c5d689880c1aad",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1.webp",
+      "bytes": 146810,
+      "sha256": "ef11afb96b276024da0302cfd144e1c52ad883f4d0d90fccd44e992a6b6eaa9e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/quanto-cobrar-primeiro-site-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1.webp",
+      "bytes": 161308,
+      "sha256": "d7b424ebf6dd1b6ba9961556091d21f38d4e34807553c3bc67a1366706942312",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/posts/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",
+      "bytes": 162482,
+      "sha256": "b01028834eba16452efa16cc0e6830ae7df8fbee6f9cd7fc09d32365a1468ad2",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/quanto-cobrar-primeiro-site-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1-assinatura-v2.webp",
+      "bytes": 112516,
+      "sha256": "0601c22247c27df14cd497cf1d91b29e5c759c497f2c3a7ef387adef42d5562c",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/produto-digital-como-transformar-conhecimento-em-ebook-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1-assinatura-v2.webp",
+      "bytes": 160642,
+      "sha256": "4e38831e2591e07079e5b4210c1d3af8922f0643a1cd71f2029fe3c91c9293f7",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/portfolio-para-freelancer-sem-clientes-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1-assinatura-v2.webp",
+      "bytes": 127570,
+      "sha256": "f9b25fcb3afdbbea3c317523bca3cde5888280dfa62bcf24e5d76db00b5eebb3",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/landing-page-para-pequenos-negocios-o-que-entregar-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1-assinatura-v2.webp",
+      "bytes": 122068,
+      "sha256": "7ebfc24b39a7764bf46a7a8f17970e6b0b4a93b5636050e02e3e2ec1a5f348b3",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/freelancer-para-iniciantes-como-escolher-um-servico-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1-assinatura-v2.webp",
+      "bytes": 210456,
+      "sha256": "b70fdf5e64e1dca5fc4d9b5e641d166476b4682a81a1dbdbb9765ebdba5e71dc",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/erros-iniciantes-desistem-renda-digital-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1-assinatura-v2.webp",
+      "bytes": 83344,
+      "sha256": "a82c9312b34825fb88c8a338fa7b52d8c5f9c7721037c50e6174124ad608981e",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-montar-oferta-simples-pequenos-negocios-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1-assinatura-v2.webp",
+      "bytes": 125740,
+      "sha256": "837b046be4f721cc97c963bfca315e9ce12c5314ce1af7988f41a3cbb55c5ca7",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-conseguir-primeiro-cliente-sem-anuncios-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/como-conseguir-primeira-renda-online-capa-v1-assinatura-v2.webp",
+      "bytes": 116064,
+      "sha256": "0757f6bd83b8b272557d51097627db7df7d49cd794522bf2946b76170eec6062",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-conseguir-primeira-renda-online-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/bilibili-para-iniciantes-monetizacao-brasil-capa-v1-assinatura-v2.webp",
+      "bytes": 166460,
+      "sha256": "7bf5a73a0de09b5afc118e5a2bc79a571ce2ff99d68aefa746467e790a46d346",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1-assinatura-v2.webp",
+      "bytes": 132442,
+      "sha256": "7e31656d15010d501a2bd6ed297bc2d2ec44c4f207ec55fc3484681e8f6fbe4d",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/afiliados-para-iniciantes-como-recomendar-sem-perder-credibilidade-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de renda digital substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/organizar-ambiente-estudos-tecnologia-capa-v1-assinatura-v2.webp",
+      "bytes": 155562,
+      "sha256": "859378d969cdd8285695ffa5a158bd98158cd570c272b829519c6443410f6655",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+      "bytes": 216326,
+      "sha256": "ec985d98737fc10545b173df3de3c59f0721197b70916db819f1a0e3dcfcf85e",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1-assinatura-v2.webp",
+      "bytes": 146324,
+      "sha256": "67724c57131a602bfbff3b3add873ec2fedac59d3010724b584657ef410b6fc5",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-estudar-tecnologia-sem-se-perder-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/phishing-como-identificar-capa-v1-assinatura-v2.webp",
+      "bytes": 119702,
+      "sha256": "888fa0c0d403ff1ef17c6eae83aa432c71fef1f884940feabc3535315a2e5d56",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/phishing-como-identificar-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de segurança substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+      "bytes": 161302,
+      "sha256": "f5f19a55ff58b6f18361a2daa6ef0174c90fe6506fbca4452d8d2c5cb17c44a1",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/autenticacao-dois-fatores-capa-v1-assinatura-v2.webp",
+      "bytes": 143856,
+      "sha256": "af3794dbb3f646af4d679060e452dddd5d4e690ef9aef8737395cd9dd5d7d1c0",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/autenticacao-dois-fatores-capa-v1-assinatura-v2.webp",
+      "reason": "Capa de segurança substituída por cena humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/como-a-web-funciona-capa-v1-assinatura-v2.webp",
+      "bytes": 156660,
+      "sha256": "829fa646222723a3809b725824e1af7ecf342f9b2a55a6f2a16da4d995a7f9ab",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-a-web-funciona-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+      "bytes": 139158,
+      "sha256": "95d5742bdf9dc9e6df8d5678e270bfe24bad12f696f99962dadd97d870c176c4",
+      "status": "arquivado-local",
+      "references": [
+        "src/pages/index.astro",
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/escolher-primeiro-projeto-portfolio-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/o-que-e-ia-generativa-capa-v1-assinatura-v2.webp",
+      "bytes": 147464,
+      "sha256": "d20bd0836bda5626235674465072cb2801c8e1fc13d2d5ebc5875bb1c3753184",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/o-que-e-ia-generativa-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de IA; destino histórico disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1-assinatura-v2.webp",
+      "bytes": 140044,
+      "sha256": "276e99dace6c1374498132a839f90374743a59ca33621c3c6cf1284c56844eb5",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/prompts-melhores-estudar-trabalhar-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de IA; destino histórico disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1-assinatura-v2.webp",
+      "bytes": 186716,
+      "sha256": "7929cf5a9dea4cc84447ee624ff15832b6e634df2b5403a15b4c6184bde682b6",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/usar-ia-estudar-sem-dependencia-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de IA; destino histórico disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/como-verificar-respostas-de-ia-capa-v1-assinatura-v2.webp",
+      "bytes": 137126,
+      "sha256": "76aa19b3b944f138c906c4fbcfdaddf133f0c0f510af1de1024e59b33197ff1e",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-verificar-respostas-de-ia-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de IA; destino histórico disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/elementor-para-iniciantes-v1-assinatura-v2.webp",
+      "bytes": 123022,
+      "sha256": "0b2f2e2dcbd5311d79a1e59fed20994e8970347f9e54e98ba5968b88f52717db",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "bytes": 112166,
+      "sha256": "500d182a2720552e6a3525206e39a16d2232c19706a8474d3855b57e11e938a8",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/comandos-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "reason": "Capa Linux genérica substituída por ação humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 140174,
+      "sha256": "10f527200e9a30fef7a5105e2f1d425871e3532a3f2b7a2b0d01e2f00117a187",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 118680,
+      "sha256": "ff80bcfe93bd7da1062af0bc54a5f43eb9d7280a75b93750ebce80506f91750b",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-escolher-distribuicao-linux-capa-v1-assinatura-v2.webp",
+      "reason": "Capa Linux genérica substituída por ação humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
+      "bytes": 149936,
+      "sha256": "5d80e4b3cdc93c76eaea8fdc8a36b5df81476c07d240365b0550cc88cc61b794",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-testar-linux-sem-instalar-capa-v1-assinatura-v2.webp",
+      "reason": "Capa Linux genérica substituída por ação humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/o-que-e-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 110318,
+      "sha256": "c91d90fa46252ad6583e4c7840af72745abf6fbdb7535694ea960e7aba4edde3",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/o-que-e-linux-capa-v1-assinatura-v2.webp",
+      "reason": "Capa Linux genérica substituída por ação humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "bytes": 143548,
+      "sha256": "516965a7ec93ce3297a248f40ce44da9e5badfb60a6712944ddda10f54f55aa8",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/permissoes-linux-para-iniciantes-capa-v1-assinatura-v2.webp",
+      "reason": "Capa Linux genérica substituída por ação humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 119322,
+      "sha256": "033a6e2828a919138ffb8eb982f6e3ff37f792ebc64bf5c11ee34a847db2542f",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/pipe-redirecionamento-linux-capa-v1-assinatura-v2.webp",
+      "reason": "Capa Linux genérica substituída por ação humana pertinente ao artigo."
+    },
+    {
+      "path": "/assets/posts/html-css-javascript-entenda-diferenca-capa-v1-assinatura-v2.webp",
+      "bytes": 152032,
+      "sha256": "8a8b17f6cd69253c11705f55257d2ed5cc28df3ba8bff926aaaf27c79adb5359",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/html-css-javascript-entenda-diferenca-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/javascript-variaveis-funcoes-capa-v1-assinatura-v2.webp",
+      "bytes": 128012,
+      "sha256": "e8b8149943b36e2f9ade1de6bd58120f9bcc886e7de6bf8f3295e7b8a571eaa8",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/javascript-variaveis-funcoes-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/primeiro-site-html-css-capa-v1-assinatura-v2.webp",
+      "bytes": 117362,
+      "sha256": "012166e650a25ead554bbeccacbd0e9b3934ff9886c46cb8c3e14b57d23fdd83",
+      "status": "arquivado-local",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/primeiro-site-html-css-capa-v1-assinatura-v2.webp",
+      "reason": "Capa substituída no lote de destaques/programação; destino histórico da receita disponível no acervo."
+    },
+    {
+      "path": "/assets/posts/devtools-navegador-iniciantes-capa-v1-assinatura-v2.webp",
+      "bytes": 120130,
+      "sha256": "6b3b42913bb2889a3bc3f751e8a3a35bf049097e52d4a26f966722f71e887e99",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/hub-data-capa-assinatura-v1.webp",
+      "bytes": 68162,
+      "sha256": "40404c1c3f89d7396ae4847b8888b52df298d4a24cc1b16cf35e7eb5756c6da0",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/capas-rascunhos-validation-20261010.json",
+        "docs/auditorias/editorial-publication-result-20261010.json",
+        "docs/auditorias/editorial-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/hub-data-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+      "bytes": 61648,
+      "sha256": "efa32534c4678615cc1f7802e73f0274993e9db500a86347d9e9fd5738c676bf",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/capas-rascunhos-validation-20261010.json",
+        "docs/auditorias/editorial-publication-result-20261010.json",
+        "docs/auditorias/editorial-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/posts/jornada-python-capa-assinatura-v1.webp",
+      "bytes": 57410,
+      "sha256": "f1843ec702cb2e7e83a07d3b520e091f301ed078ecc813ccf21f49f1d8f78ecd",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/capas-rascunhos-validation-20261010.json",
+        "docs/auditorias/editorial-publication-result-20261010.json",
+        "docs/auditorias/editorial-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/jornada-python-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+      "bytes": 165558,
+      "sha256": "367bc19495bfacb43bbd2c1ae58e45ac477f0f9798352893420329800724401c",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+      "bytes": 103904,
+      "sha256": "baa7d0049e3cdc5514e192eae726f21a7cdd4c620ccb12b0d6a21c0763a0e8ad",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+      "bytes": 183412,
+      "sha256": "8d9374da939dac046c421adc0a2d5a53a347ba47c1ae79fc2bd95036901564b5",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json",
+        "docs/auditorias/store-hero-faixas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/trails/ia-no-dia-a-dia.svg",
+      "bytes": 1376,
+      "sha256": "98d605a621028d3d029b84269546bed15991ae9a97d3d258bd589bc12b3a2afe",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/ia-no-dia-a-dia.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/trails/seguranca-digital-essencial.svg",
+      "bytes": 1355,
+      "sha256": "782ea2f7a1f6cfa2c1c52bd571b448ce71dd6a5eb2e121acd1b3dac935b9cf22",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/seguranca-digital-essencial.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/trails/primeira-renda-online.svg",
+      "bytes": 1240,
+      "sha256": "da66b6074ddbb2c26207e93a6df64fdaeb14db63268353505315cac984f8d1c8",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/primeira-renda-online.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/trails/primeiros-passos-programacao.svg",
+      "bytes": 863,
+      "sha256": "322bf4078b60630c8176e2e36269a86609544a4c092dd2e2980654e4b8a399f7",
+      "status": "arquivado-local",
+      "references": [
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/frontend-review.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/primeiros-passos-programacao.svg",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+      "bytes": 53670,
+      "sha256": "6a7038e7996f2e0b639b2f54a3576409cf467b4dd7f1545106f56d9c2b2223c9",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/trilhas-capas-validation-20261010.json",
+        "docs/auditorias/trilhas-publication-result-20261010.json",
+        "docs/auditorias/trilhas-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+      "bytes": 69996,
+      "sha256": "0a9e6c83bdac09dbd8b92e1d778b8bb3699ce41f93a0383f4ea8db406814bbdc",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/trilhas-capas-validation-20261010.json",
+        "docs/auditorias/trilhas-publication-result-20261010.json",
+        "docs/auditorias/trilhas-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+      "bytes": 67236,
+      "sha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/trilhas-capas-validation-20261010.json",
+        "docs/auditorias/trilhas-publication-result-20261010.json",
+        "docs/auditorias/trilhas-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+      "bytes": 53832,
+      "sha256": "47f6e859b2bdf99f0b7f5a1df26c0179d2d99af18b198f01745e5879e03dea7b",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/trilhas-capas-validation-20261010.json",
+        "docs/auditorias/trilhas-publication-result-20261010.json",
+        "docs/auditorias/trilhas-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+      "bytes": 63342,
+      "sha256": "b06e869e000c184f928c5d201922c999cd36a3bfb130c6ec9d88e0beb5f80470",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/cobertura-imagens-20261010.json",
+        "docs/auditorias/trilhas-capas-validation-20261010.json",
+        "docs/auditorias/trilhas-publication-result-20261010.json",
+        "docs/auditorias/trilhas-publication-validation-20261010.json",
+        "docs/auditorias/diversidade-capas-20261010.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+      "reason": "Capa substituída por diversidade-assinatura-v1; referências remanescentes são evidências históricas."
+    },
+    {
+      "path": "/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+      "bytes": 104672,
+      "sha256": "05d15e77b48b623bb9330452c16590c2d0424bab59123ad894190938919c8f5f",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+      "bytes": 69274,
+      "sha256": "9916207234800da2666fcf411e83529bb68f9149b626aa54041271c806ea23dd",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+      "bytes": 166998,
+      "sha256": "cf29ba4a2ab61807c7bfc401697949a233d1d44cce0c901af64a0c1b4ee03293",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+      "bytes": 131784,
+      "sha256": "08d0a5a9293cd422446bd8d4be95b32dafe15ad66c102a80c73fcc910a5a9a45",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+      "bytes": 157344,
+      "sha256": "2d3843622493490527ac9b6d6a71e1bbb855b4fda9373abf75947763a06c04e3",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/auditorias/diversidade-capas-20261010.json",
+        "docs/auditorias/diversidade-capas-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/portfolio/blog.webp",
+      "bytes": 86264,
+      "sha256": "036b25c7273e4bad387f299d6a4f7f5d72c3dc40387b73ab18a62e4890005099",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "built_references": [
+        "portfolio/index.html"
+      ]
+    },
+    {
+      "path": "/assets/portfolio/home.webp",
+      "bytes": 83138,
+      "sha256": "f69fc19a1aacd5251e6e3ae48bd3babc6dd1b78f58c80b39a71097922784863c",
+      "status": "em-uso",
+      "references": [
+        "src/pages/portfolio/index.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/portfolio/trilhas.webp",
+      "bytes": 68298,
+      "sha256": "7a8ec4fc4362bb207d64577b26f7b801722bf2afce8ca753f8f2cf1dd21803d9",
+      "status": "em-uso-dinamico",
+      "references": [
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/frontend-review.md"
+      ],
+      "built_references": [
+        "portfolio/index.html"
+      ]
+    },
+    {
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/indique-e-ganhe.webp",
+      "bytes": 38930,
+      "sha256": "bdfa9362d2ca3d2e0842c7fe2b10af5765d0d87852650e842abcf4f930d94afc",
+      "status": "em-uso",
+      "references": [
+        "src/content/posts/meliuz-jogue-e-ganhe-pocket-sort.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/tarefas-nivel-20.webp",
+      "bytes": 28826,
+      "sha256": "1d7452d73d4139d47c6b5024a022405e27d126650532a31c329d44a8e8e816b4",
+      "status": "em-uso",
+      "references": [
+        "src/content/posts/meliuz-jogue-e-ganhe-pocket-sort.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/extrato-jogue-e-ganhe.webp",
+      "bytes": 31550,
+      "sha256": "038b80a1ea372ec1cf6721dc3a615abcbd3552153c02cf92fcaffa07b826f6b8",
+      "status": "em-uso",
+      "references": [
+        "src/content/posts/meliuz-jogue-e-ganhe-pocket-sort.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/meliuz-jogue-e-ganhe-pocket-sort/oferta-pocket-sort.webp",
+      "bytes": 51404,
+      "sha256": "4664c49a951c921567d1cce1ce56ff77c6821fcb79aae04476fe8bf15f8acdcd",
+      "status": "em-uso",
+      "references": [
+        "src/content/posts/meliuz-jogue-e-ganhe-pocket-sort.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/nordvpn.webp",
+      "bytes": 29072,
+      "sha256": "bf30e96818fbfc9c8238027e14e4cc52afa4e3fac2e6300675614808d933ef8e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/nordvpn.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/meliuz-jogue-e-ganhe.svg",
+      "bytes": 822,
+      "sha256": "164fae7de7d7462ed2ba99e06765271caafff96c8df711a09741ef40e13f8522",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/meliuz-jogue-e-ganhe.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/leadlovers.svg",
+      "bytes": 797,
+      "sha256": "7d27030dd08895dfb62371cd0e5b3096bd3ed2368004081b411657f46f95fea3",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/leadlovers.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/elevenlabs.svg",
+      "bytes": 803,
+      "sha256": "3fde98d30f8ae54540eb7f9f14977dceae4d45c719a4aba5afe92e7ad4dedc55",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/elevenlabs.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/nordvpn.svg",
+      "bytes": 820,
+      "sha256": "155076fcbdce0aad02ea4358e33b6c4e2560b74fe35c93f9f473ffb4dfd838a5",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/nordvpn.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/github.svg",
+      "bytes": 1011,
+      "sha256": "52350fa4b8bebd41ff47b6cab20e8d1b7c2ceebc29624a766416f0b732218937",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/github.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/git.webp",
+      "bytes": 10566,
+      "sha256": "1e52b392918702ebf4f85e3fcbf0db7805e45ac1138256ede036de21dd08c6f6",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/git.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/ebook-programacao-hotmart.webp",
+      "bytes": 13050,
+      "sha256": "6f54d98b034024920a21607881cc3e5a2a6af009a0c9122a6cedbf72ace4a83a",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/ebook-programacao-hotmart.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/febspot.webp",
+      "bytes": 9316,
+      "sha256": "419bd0a53a5717aa36f0fb0a219667497eb3d248b8459faf7aa3c4372a900dd6",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/git.svg",
+      "bytes": 892,
+      "sha256": "ca1790ae08b7e2c7e3a49bcfc417d370a4fa0ae8f42d0d26fd499c1a94286f60",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/git.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/elevenlabs.webp",
+      "bytes": 27864,
+      "sha256": "df2a6d0e046b456718ac9643edfce22a4b5d211eab06b085e863365679aa00e6",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "src/data/storeVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/firefox-validation-20261010.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/cloudflare.webp",
+      "bytes": 39146,
+      "sha256": "c0537f076c8874a91b57e9b0b3a540c1c694e8e8d6b0b4621b1fc1deb6076b5b",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/cloudflare.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/hospedagem-primeiro-site.webp",
+      "bytes": 12036,
+      "sha256": "c103065f2a9ceede23ac7d8a4eb0bb1a19d3babb311a6bb0a665840d819a62d3",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/brand/preview-assinaturas.html",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/hospedagem-primeiro-site.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/resources/items/linux.jpg",
+      "bytes": 22074,
+      "sha256": "8c23006d86f1fe30b0de117d67fde9b0e683a517817669da577d383f5c5407f7",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/linux.jpg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/ebook-programacao-hotmart.svg",
+      "bytes": 824,
+      "sha256": "5ab3728ad1fb3bf833a9569d15f847674de7385cd94a575dbfa618fafab9de61",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/ebook-programacao-hotmart.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/astro.webp",
+      "bytes": 10120,
+      "sha256": "0e63387938c59096941153a1fa4ca2b7604fc96d2114ff9ecadadc8aa2354a47",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/astro.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/linux.svg",
+      "bytes": 932,
+      "sha256": "875a3140820ff3f6b9d3e5bcb77eaa2866d6850d6c3cf88c943281ae3e6925e3",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/linux.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/metricool.webp",
+      "bytes": 38486,
+      "sha256": "555c8c59720cfe8cb00d2064587dd99f32024c05b204866ef1cb025754f7d019",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/elementor.webp",
+      "bytes": 8406,
+      "sha256": "4d5b47cab54c3d88046083460a2564f327e0d767e992df5fd0015dd25c3c40f3",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/elementor.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/vscode.svg",
+      "bytes": 765,
+      "sha256": "4fed5ea45b91981d705a6e6433d282170be9a46e2a21103b32c0d1698bbff067",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/vscode.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/linux.webp",
+      "bytes": 33342,
+      "sha256": "74f68360d3daae38e246a8439593c9297d6dc9390357efc8acbb23021a746c5a",
+      "status": "arquivado-local",
+      "references": [
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/linux.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/resources/items/elementor.svg",
+      "bytes": 811,
+      "sha256": "24d3a902bf7ccc1be40669baaaa9509fb2466956894af2df2bddb80fe1d9717e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/elementor.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/elevenlabs.jpg",
+      "bytes": 19118,
+      "sha256": "92dac73d9702fb8b18ceb63460ce7d1979200a23810741b4abdb2d88d48a3c81",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/elevenlabs.jpg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/github.webp",
+      "bytes": 21246,
+      "sha256": "c4a85012436e87d40044291868559855f7db7d3ba0ce795c45b38bf6debfecef",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/cloudflare.svg",
+      "bytes": 811,
+      "sha256": "2e73191f6ad43968d5037322c01474ae73738fcff4fe96ba4893910d65c2c302",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/cloudflare.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/hospedagem-primeiro-site.svg",
+      "bytes": 868,
+      "sha256": "9b421193cc20d6e4e4fafc96bde397930f3fa7e1ed2eb7e09d61a7b8905b0ea6",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/hospedagem-primeiro-site.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/astro.svg",
+      "bytes": 770,
+      "sha256": "d6e51f50be7466297c60e53af6187129a48c4bc71446e990edbf6c7e444562aa",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/astro.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/hostinger.svg",
+      "bytes": 776,
+      "sha256": "fcf907a864c318874c77337ecb5c90d6c0296702bdb8f2b72e875f3922cde5a3",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/hostinger.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/hostinger.webp",
+      "bytes": 8008,
+      "sha256": "75dffec02ad5a62768321777f9223578fdbe0a1b22a09ab188a4fe47becfba69",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/hostinger.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/leadlovers.webp",
+      "bytes": 9204,
+      "sha256": "576469a5806ea1b2669313ecf9681a1e2012669472708789873d506e2169eec1",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/leadlovers.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/febspot.svg",
+      "bytes": 796,
+      "sha256": "8856a7e55059437b8e778f5e00a896b461ac5086bd468bf8dab1e92ce1895223",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/febspot.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/meliuz-jogue-e-ganhe.webp",
+      "bytes": 35560,
+      "sha256": "5d4bb405623f503516766c92c5624d02a3d7e5402240793560e406ae2a75a3e7",
+      "status": "em-uso",
+      "references": [
+        "src/data/editorialVisuals.ts",
+        "docs/brand/signature-batch-20261009.json",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-esbocos-fechamento-2026-10-09.md",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/cloudflare.jpg",
+      "bytes": 24598,
+      "sha256": "e35fee184fad2c00543cdbc38234f6dc1a09199f5daa1c3f6a7336f0594df563",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/cloudflare.jpg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/metricool.svg",
+      "bytes": 779,
+      "sha256": "448ae7d24469397e1340e6b2d5b6620421f79e2f57184cd75cfb0a80c68bfbf2",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/metricool.svg",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/resources/items/vscode.webp",
+      "bytes": 21388,
+      "sha256": "1c3ed4f90aab41b46676d36d2d0bb0d484ca88d110ad744fe83c2804de2c1af7",
+      "status": "arquivado-local",
+      "references": [
+        "docs/padroes/media-registry.md",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/frontend-review.md"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/resources/items/vscode.webp",
+      "reason": "Original técnico ou registro histórico; recuperação passa a consultar acervo, sem uso na aplicação."
+    },
+    {
+      "path": "/assets/resources/items/astro-resource-v1.webp",
+      "bytes": 106462,
+      "sha256": "102edbef79ee605d06b43e898c40953ef2e0b36704ceb07ccb22547d6ab7ca3f",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/cloudflare-resource-v1.webp",
+      "bytes": 128970,
+      "sha256": "abec7260474d0a57ae94cb3bfb77652c03eabc0af9b491b1c2491d56e53aa2e5",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/dr-fone-resource-v1.webp",
+      "bytes": 122902,
+      "sha256": "3cdf785c8c1cfca059e80b35f14203ddf7e20bbdfb6c65c6287478ea78b775fc",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/ebook-programacao-hotmart-resource-v1.webp",
+      "bytes": 118220,
+      "sha256": "557f81699fb9770c4d0b9d7fe6c039d757333562d9f03a13f28a31d96d7df1bc",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/elementor-resource-v1.webp",
+      "bytes": 107530,
+      "sha256": "d4d245af3e49e9eb3cafcd555b43b7eb64f03bf0c7a05a93caf102f0bdc4f289",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/elevenlabs-resource-v1.webp",
+      "bytes": 122794,
+      "sha256": "8ec33f40b5eed4beabccf2d96706ab51a03dd311534d8ff377a433504c5217ad",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/febspot-resource-v1.webp",
+      "bytes": 114144,
+      "sha256": "fff5825648c7a42a691ef8dbf522a5c3f26f1d0e663b7a9e7b305ad8e4f4d237",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/filmora-resource-v1.webp",
+      "bytes": 134574,
+      "sha256": "b531bd10ae6bea9541a941839028c65834138d830d17b4d3dc68d9f3dbac0d70",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/git-resource-v1.webp",
+      "bytes": 86372,
+      "sha256": "ea4a11725d6a8a14db7fd36e9d6da6d7b5a48d229767d4d4ba808a40f5656469",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/github-resource-v1.webp",
+      "bytes": 82232,
+      "sha256": "d7bd3ef16789ba74674e2cc7b2d8e2ec636fc7f9d45fcf586f6546c206317c76",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/hospedagem-primeiro-site-resource-v1.webp",
+      "bytes": 81268,
+      "sha256": "a628d7864912ccda69fd619af59c49fae21607afadbf6cc26ae4bfbf27ce1559",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/hostinger-resource-v1.webp",
+      "bytes": 80578,
+      "sha256": "28e628967167cd92b2d841fcbcf7df83a951b68d5ce5e5e9352b868145e8d04c",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/leadlovers-resource-v1.webp",
+      "bytes": 87146,
+      "sha256": "ca55c15274542db7be7f3b111a7b900fa4714d888a52a9fc9002a4ac13f45975",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/linux-resource-v1.webp",
+      "bytes": 108026,
+      "sha256": "64fe1ed0a8e5d7dfcbda6e9fffd07d7013d1825220368575c4c1db094bbe266d",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/meliuz-jogue-e-ganhe-resource-v1.webp",
+      "bytes": 114400,
+      "sha256": "f1ac10f374cd7c3d08f9887d2c1542424ce9757ba685f3de95b2e8a300532ab4",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/metricool-resource-v1.webp",
+      "bytes": 138850,
+      "sha256": "489ea86f03ed619997188fecdfbed983d017715e3d013296bd0a619aeb567636",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/nordvpn-resource-v1.webp",
+      "bytes": 132756,
+      "sha256": "13bd4cd6c8f931c337d4d16c3055b89a8288f5102dffc1077a2444edd8465022",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/pdfelement-resource-v1.webp",
+      "bytes": 78286,
+      "sha256": "db51cfa1d1fd16009f32fa541ef7719c20a1ac4874e7fb073ebce17426cb6c45",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/recoverit-resource-v1.webp",
+      "bytes": 114148,
+      "sha256": "bfb59724db19fcbf1fc92be9bddb6a56be80c3495ba30c312c61c0e431076d68",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/uniconverter-resource-v1.webp",
+      "bytes": 142218,
+      "sha256": "f02b8c2ffe8694793895feacd5553a91f3bd4012a6dd4a2277700135b5d0f73f",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/resources/items/vscode-resource-v1.webp",
+      "bytes": 91728,
+      "sha256": "46d41e031d0f6fc844b3e98999b4a0fd72c82006169ad923cb26eaaa56889262",
+      "status": "em-uso",
+      "references": [
+        "src/data/recommendedResources.ts",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/cobertura-imagens-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/products/linux-do-zero/cover.png",
+      "bytes": 61987,
+      "sha256": "749274999e63f9f18eb51978bd28e9743aaf1b938460f87fbea85e440cd3223e",
+      "status": "em-uso",
+      "references": [
+        "src/pages/index.astro",
+        "src/pages/recursos/index.astro",
+        "src/pages/trilhas/[slug].astro",
+        "src/pages/produtos/linux-do-zero/index.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/firefox-validation-20261010.json"
+      ]
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-01.webp",
+      "bytes": 44536,
+      "sha256": "0ff0ce67dcdfbb86acbbe86ed5821497dcc5c816331160013e109a2bb6b7470d",
+      "status": "em-uso",
+      "references": [
+        "src/pages/produtos/linux-do-zero/index.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json",
+        "docs/auditorias/revisao-final-publica-2026-10-09.md"
+      ]
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-01.png",
+      "bytes": 174594,
+      "sha256": "e6b452db8582bfa5670ce63764328832ec0b28baf8825dbaa13406bfca40056e",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/products/linux-do-zero/preview-01.png",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-02.webp",
+      "bytes": 6564,
+      "sha256": "5e31b75162b56c34fa5bd3faa429043bb0e6c254876ffa668fb22b2ad510bb34",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/products/linux-do-zero/preview-02.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-02.png",
+      "bytes": 23676,
+      "sha256": "99383df63a32f1108a4d512d0db0eca1ddfc3250a282c070f645a021acad6371",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/products/linux-do-zero/preview-02.png",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-author.png",
+      "bytes": 282392,
+      "sha256": "f6ee80fc05df206605e56377cc78ae81eacddd940b643175291fc47272d62a80",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/products/linux-do-zero/preview-author.png",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-author.webp",
+      "bytes": 159156,
+      "sha256": "4c8661f79546ca29d5c6280f2ead5f09bd6f439f9d43db325e0658b6a109cf7c",
+      "status": "arquivado-local",
+      "references": [
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ],
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/products/linux-do-zero/preview-author.webp",
+      "reason": "Sem referência em fonte, rascunhos, fallbacks ou build; apenas auditoria histórica."
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-install.webp",
+      "bytes": 79184,
+      "sha256": "e56dcdab1f1da3b9846b2674064470706bbf8b9c5f6fd27dc60e148779bb5eda",
+      "status": "em-uso",
+      "references": [
+        "src/pages/produtos/linux-do-zero/index.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/products/linux-do-zero/preview-terminal.webp",
+      "bytes": 80098,
+      "sha256": "93a0802e09e4f62b28b45ceef93db2b3ae55ae439c150cae4fa4aa0b3a1b1dba",
+      "status": "em-uso",
+      "references": [
+        "src/pages/produtos/linux-do-zero/index.astro",
+        "docs/auditorias/frontend-publication-package-2026-10-09.json"
+      ]
+    },
+    {
+      "path": "/assets/posts/o-que-e-ia-generativa-diversidade-assinatura-v1.webp",
+      "bytes": 133496,
+      "sha256": "1153fdc0be1721d2902b41afda77f271739e1337c8cf25fab4f1faa2cc5e5320",
+      "status": "arquivado-local",
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/o-que-e-ia-generativa-diversidade-assinatura-v1.webp",
+      "reason": "Metáfora sem relação explícita com IA substituída após revisão do usuário."
+    },
+    {
+      "path": "/assets/posts/prompts-melhores-estudar-trabalhar-diversidade-assinatura-v1.webp",
+      "bytes": 157472,
+      "sha256": "58aba4330a74282639ef6326e039c11cffe55ff292b8de6205e901028f029ea8",
+      "status": "arquivado-local",
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/prompts-melhores-estudar-trabalhar-diversidade-assinatura-v1.webp",
+      "reason": "Metáfora sem relação explícita com IA substituída após revisão do usuário."
+    },
+    {
+      "path": "/assets/posts/usar-ia-estudar-sem-dependencia-diversidade-assinatura-v1.webp",
+      "bytes": 108330,
+      "sha256": "612512eb64375b4468f1cb98ea729f0cfce85d9db1bf027732949a92614f9623",
+      "status": "arquivado-local",
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/usar-ia-estudar-sem-dependencia-diversidade-assinatura-v1.webp",
+      "reason": "Metáfora sem relação explícita com IA substituída após revisão do usuário."
+    },
+    {
+      "path": "/assets/posts/como-verificar-respostas-de-ia-diversidade-assinatura-v1.webp",
+      "bytes": 214464,
+      "sha256": "8955d48ebd7f97c5842f808811693c781093be4ae3dc4cc9f1892c1d0e4dcc18",
+      "status": "arquivado-local",
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-verificar-respostas-de-ia-diversidade-assinatura-v1.webp",
+      "reason": "Metáfora sem relação explícita com IA substituída após revisão do usuário."
+    },
+    {
+      "path": "/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
+      "bytes": 140174,
+      "sha256": "10f527200e9a30fef7a5105e2f1d425871e3532a3f2b7a2b0d01e2f00117a187",
+      "status": "arquivado-local",
+      "archive_path": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/posts/como-criar-pendrive-bootavel-linux-capa-v1-assinatura-v2.webp",
+      "reason": "Capa genérica substituída por cena humana de identificação do pendrive."
+    }
+  ],
+  "limitations": [
+    "A ausência de referência literal não prova desuso: OG, recursos e fallbacks dinâmicos permanecem.",
+    "Originais usados na composição de assinatura permanecem até adaptar o procedimento de recuperação.",
+    "Retirar arquivos nesta versão não elimina objetos dos commits anteriores nem reduz imediatamente o histórico Git.",
+    "Nenhum arquivo externo enviado e nenhuma publicação executada."
+  ],
+  "validation": {
+    "production_build_pages": 123,
+    "html_images_checked": 515,
+    "qa": "passed",
+    "documentation": "passed",
+    "external_copy": false,
+    "published": false
+  },
+  "round2": {
+    "archived": 44,
+    "bytes": 1059919,
+    "dynamic_scan": "HTML, CSS, JS, JSON e XML do build; OG e capturas protegidos.",
+    "validation": {
+      "build": "passed:123 pages",
+      "qa": "passed:515 images",
+      "main_documentation": "blocked by unindexed docs/operacao/monetizacao-parceiros.md created by another workstream; left unchanged",
+      "candidate_documentation": "passed",
+      "candidate_build_qa": "passed"
+    }
+  },
+  "round3": {
+    "archived": 54,
+    "bytes": 6018371,
+    "recovery": {
+      "sources_verified": 49,
+      "isolated_reconstruction": "NordPass reconstructed with SHA-256 identical to current delivery",
+      "build_pages": 123,
+      "html_images_checked": 515,
+      "qa": "passed",
+      "candidate_documentation": "passed",
+      "candidate_build_qa": "passed"
+    }
+  },
+  "round4": {
+    "archived": 7,
+    "total_archived": 113,
+    "reason": "Capas substituídas; receita resolve também os destinos históricos no acervo."
+  },
+  "round5": {
+    "archived": 4,
+    "total_archived": 117,
+    "reason": "Capas antigas dos quatro artigos de IA substituídas."
+  },
+  "round6": {
+    "archived": 4,
+    "total_archived": 121,
+    "reason": "Capas de IA abstratas substituídas por referência explícita de assistente."
+  },
+  "round7": {
+    "archived": 1,
+    "total_archived": 122,
+    "reason": "Capa genérica substituída por cena humana de identificação do pendrive."
+  },
+  "round8": {
+    "archived": 6,
+    "total_archived": 128,
+    "reason": "Seis capas Linux renovadas com cenas humanas distintas."
+  },
+  "round9": {
+    "archived": 2,
+    "total_archived": 130,
+    "reason": "Phishing e 2FA substituídos; NordPass/NordVPN preservados em uso Store."
+  },
+  "round10": {
+    "archived": 4,
+    "total_archived": 134,
+    "reason": "Quatro capas do primeiro lote renda digital substituídas."
+  },
+  "round11": {
+    "archived": 4,
+    "total_archived": 138,
+    "reason": "Quatro capas do primeiro lote renda digital substituídas."
+  },
+  "round12": {
+    "archived": 2,
+    "total_archived": 140,
+    "reason": "Duas capas de foco e afiliados substituídas."
+  }
+}

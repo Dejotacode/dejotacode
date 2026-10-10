@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-10",
+  "status": "local-validado-pendente-publicacao",
+  "generationMode": "built-in image_gen",
+  "sharedPrompt": "Landscape 16:9; navy/cyan e acentos naturais. Assunto legível em miniatura, topo esquerdo livre para assinatura oficial. Sem notebook/mesa de trabalho/caderno/caneca/luminária como cenário. Sem marcas/textos críticos gerados. Variar ambiente, protagonista e enquadramento.",
+  "items": [
+    {
+      "slug": "hub-data",
+      "path": "public/assets/posts/hub-data-diversidade-assinatura-v1.webp",
+      "original": "public/assets/posts/hub-data-capa-assinatura-v1.webp",
+      "originalSha256": "40404c1c3f89d7396ae4847b8888b52df298d4a24cc1b16cf35e7eb5756c6da0",
+      "sha256": "367bc19495bfacb43bbd2c1ae58e45ac477f0f9798352893420329800724401c",
+      "sizeBytes": 165558,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Mãos dobrando camisa azul em primeira pessoa, ambiente doméstico; não prova de teste."
+    },
+    {
+      "slug": "programacao-ebook",
+      "path": "public/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
+      "original": "public/assets/posts/programacao-ebook-capa-assinatura-v1.webp",
+      "originalSha256": "efa32534c4678615cc1f7802e73f0274993e9db500a86347d9e9fd5738c676bf",
+      "sha256": "baa7d0049e3cdc5514e192eae726f21a7cdd4c620ccb12b0d6a21c0763a0e8ad",
+      "sizeBytes": 103904,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Blocos translúcidos como construção de sistemas; metáfora, não diagrama."
+    },
+    {
+      "slug": "jornada-python",
+      "path": "public/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
+      "original": "public/assets/posts/jornada-python-capa-assinatura-v1.webp",
+      "originalSha256": "f1843ec702cb2e7e83a07d3b520e091f301ed078ecc813ccf21f49f1d8f78ecd",
+      "sha256": "8d9374da939dac046c421adc0a2d5a53a347ba47c1ae79fc2bd95036901564b5",
+      "sizeBytes": 183412,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Percurso de aprendizagem com logo Python oficial separado."
+    },
+    {
+      "slug": "linux-do-zero",
+      "path": "public/assets/trails/linux-do-zero-diversidade-assinatura-v1.webp",
+      "original": "public/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+      "originalSha256": "6a7038e7996f2e0b639b2f54a3576409cf467b4dd7f1545106f56d9c2b2223c9",
+      "sha256": "05d15e77b48b623bb9330452c16590c2d0424bab59123ad894190938919c8f5f",
+      "sizeBytes": 104672,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Ambiente aberto de arquivos/terminal com Tux separado, autores creditados."
+    },
+    {
+      "slug": "primeiros-passos-programacao",
+      "path": "public/assets/trails/primeiros-passos-programacao-diversidade-assinatura-v1.webp",
+      "original": "public/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+      "originalSha256": "0a9e6c83bdac09dbd8b92e1d778b8bb3699ce41f93a0383f4ea8db406814bbdc",
+      "sha256": "9916207234800da2666fcf411e83529bb68f9149b626aa54041271c806ea23dd",
+      "sizeBytes": 69274,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Construção ilustrativa de página web: estrutura HTML, composição CSS e interação JavaScript."
+    },
+    {
+      "slug": "ia-no-dia-a-dia",
+      "path": "public/assets/trails/ia-no-dia-a-dia-diversidade-assinatura-v1.webp",
+      "original": "public/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+      "originalSha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
+      "sha256": "cf29ba4a2ab61807c7bfc401697949a233d1d44cce0c901af64a0c1b4ee03293",
+      "sizeBytes": 166998,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Pessoa com assistência conceitual e tarefas cotidianas, sem serviço específico."
+    },
+    {
+      "slug": "seguranca-digital-essencial",
+      "path": "public/assets/trails/seguranca-digital-essencial-diversidade-assinatura-v1.webp",
+      "original": "public/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+      "originalSha256": "47f6e859b2bdf99f0b7f5a1df26c0179d2d99af18b198f01745e5879e03dea7b",
+      "sha256": "08d0a5a9293cd422446bd8d4be95b32dafe15ad66c102a80c73fcc910a5a9a45",
+      "sizeBytes": 131784,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Chave e fechadura em macro como proteção de acesso, sem garantia absoluta."
+    },
+    {
+      "slug": "primeira-renda-online",
+      "path": "public/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
+      "original": "public/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+      "originalSha256": "b06e869e000c184f928c5d201922c999cd36a3bfb130c6ec9d88e0beb5f80470",
+      "sha256": "2d3843622493490527ac9b6d6a71e1bbb855b4fda9373abf75947763a06c04e3",
+      "sizeBytes": 157344,
+      "brand": {
+        "size": [
+          72,
+          72
+        ],
+        "position": [
+          43,
+          24
+        ]
+      },
+      "promptBrief": "Prestador entregando serviço a comerciante, sem valores ou promessa financeira."
+    }
+  ],
+  "references": {
+    "python": "https://www.python.org/community/logos/",
+    "pythonAsset": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg",
+    "tux": "https://github.com/torvalds/linux/blob/master/Documentation/images/logo.svg",
+    "tuxCredits": "Larry Ewing, Garrett LeSage, IFo Hancroft",
+    "tuxTerms": "https://github.com/torvalds/linux/blob/master/Documentation/images/COPYING-logo"
+  },
+  "originalsPreserved": true,
+  "validation": {
+    "combinations": 88,
+    "issues": 0,
+    "buildPages": 123,
+    "internalLinks": 6859,
+    "images": 515,
+    "controls": 275,
+    "visualInspection": [
+      "montagem das oito capas",
+      "Trilhas desktop",
+      "Jornada Python desktop"
+    ],
+    "scope": "11 rotas, 320/390/768/1440, claro/escuro"
+  }
+}

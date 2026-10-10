@@ -115,3 +115,6 @@
 @media(max-width:600px){.resources-discovery .resource-pagination{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:1rem;row-gap:.75rem}.resources-discovery .resource-pagination__pages{grid-column:1/-1;grid-row:1}.resources-discovery .resource-pagination__direction:first-child{grid-column:1;grid-row:2;justify-self:start}.resources-discovery .resource-pagination__direction:last-child{grid-column:2;grid-row:2;justify-self:end}}
 @media(max-width:44rem){.resource-results-header .button{margin-left:0}.resource-status-legend{flex-direction:column}.resources-discovery .resource-own-material{grid-template-columns:1fr;justify-items:center;gap:1rem;text-align:center}.resources-discovery .resource-own-material>img{width:min(55vw,12rem);max-height:15rem}.resources-discovery .resource-own-material ul{display:inline-grid;text-align:left}.resources-discovery .resource-own-material__content .button{width:100%}.resources-intro h1{max-width:100%; font-size: var(--size-title-page); line-height: var(--leading-title); letter-spacing: var(--tracking-title);}}
 @media(prefers-reduced-motion:reduce){.resources-discovery .resource-pagination__page,.resources-discovery .resource-pagination__direction{transition:none}}
+
+/* Preserve the official signature on the Méliuz evidence composition. */
+img[src$="/evidencias-capa-assinatura-v2.svg"]{object-position:left top}

@@ -14,10 +14,11 @@ cons:
   - "Recursos e limites variam conforme o plano"
   - "Nem todo projeto precisa de um page builder"
 relatedPosts:
+  - "elementor-para-iniciantes"
   - "landing-page-para-pequenos-negocios-o-que-entregar"
 featured: false
 draft: false
-updatedAt: 2026-10-08
+updatedAt: 2026-10-10
 offers:
   - provider: other
     href: "https://be.elementor.com/visit/?bta=232681&brand=elementor"

@@ -142,9 +142,9 @@ Além disso, áudio convincente aumenta a responsabilidade do criador. Não use 
 
 O DejotaCode utiliza ElevenLabs na própria produção e participa do programa de afiliados da empresa.
 
-Nosso link é **https://try.elevenlabs.io/dejotacode**. Se uma pessoa acessar por ele e posteriormente contratar uma assinatura paga elegível atribuída ao DejotaCode, podemos receber comissão.
+Nosso link é **https://try.elevenlabs.io/0n7wipqp6rsp**. Se uma pessoa acessar por ele e posteriormente contratar uma assinatura paga elegível atribuída ao DejotaCode, podemos receber comissão.
 
-Em 1º de outubro de 2026, a ElevenLabs informa comissão de 22% nos planos Starter, Creator, Pro e Scale durante os primeiros 12 meses e 11% no Business. As regras podem mudar, então confira sempre as condições atuais antes da contratação.
+A página pública do programa, conferida em 10 de outubro de 2026, informa comissão de até 22% durante 12 meses para assinaturas elegíveis. As condições podem mudar; confira os termos atuais do programa antes de contratar ou divulgar.
 
 A comissão não aumenta o preço por nossa decisão editorial e não transforma a ferramenta em recomendação automática. O objetivo deste conteúdo continua sendo mostrar quando ela ajuda e onde exige cuidado.
 

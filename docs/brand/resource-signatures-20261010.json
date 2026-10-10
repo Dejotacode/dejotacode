@@ -1,0 +1,236 @@
+{
+  "date": "2026-10-10",
+  "status": "applied-local-validated",
+  "method": "Built-in imagegen removed plates in one technical atlas. Only feathered plate regions reintegrated; official SVG separately composed.",
+  "prompt": "Remove only ten white rounded D+J logo plates from fixed 5x2 corner atlas; reconstruct each local background; preserve grid and scene; no new objects, writing, logos or transparency.",
+  "atlas": "docs/brand/resource-signature-sources/clean-atlas-20261010.webp",
+  "atlas_sha256": "87a95ef7e7716ba605dccc731a4e209f6046c9f1e2e058132b257856e739a166",
+  "symbol": "/assets/brand/dejotacode-symbol-dark.svg",
+  "symbol_sha256": "7df2052f8a9fdae3ba5e17215c35bf600c19abde6478868aee0342212219a37d",
+  "selected": [
+    {
+      "id": "filmora",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 0,
+      "source": "/assets/resources/items/filmora-resource-v1.webp",
+      "target": "/assets/resources/items/filmora-resource-assinatura-v2.webp",
+      "source_sha256": "b531bd10ae6bea9541a941839028c65834138d830d17b4d3dc68d9f3dbac0d70",
+      "target_sha256": "5a48ea75fbedabd37c9dcedb850c1aea6876b873d085199eb75e69ee6b1afdd2",
+      "removal_box_tile": [
+        50,
+        40,
+        202,
+        157
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "pdfelement",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 1,
+      "source": "/assets/resources/items/pdfelement-resource-v1.webp",
+      "target": "/assets/resources/items/pdfelement-resource-assinatura-v2.webp",
+      "source_sha256": "db51cfa1d1fd16009f32fa541ef7719c20a1ac4874e7fb073ebce17426cb6c45",
+      "target_sha256": "3cb041d58580d3d4150ae1c127f5424d5ed49e13cdc79ab373f5251bcbd9abbd",
+      "removal_box_tile": [
+        48,
+        39,
+        182,
+        151
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "uniconverter",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 2,
+      "source": "/assets/resources/items/uniconverter-resource-v1.webp",
+      "target": "/assets/resources/items/uniconverter-resource-assinatura-v2.webp",
+      "source_sha256": "f02b8c2ffe8694793895feacd5553a91f3bd4012a6dd4a2277700135b5d0f73f",
+      "target_sha256": "1b865732ef34ffc0e88722f292f192f627189640e49d4a5bebb59fea3d46114e",
+      "removal_box_tile": [
+        49,
+        36,
+        179,
+        144
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "recoverit",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 3,
+      "source": "/assets/resources/items/recoverit-resource-v1.webp",
+      "target": "/assets/resources/items/recoverit-resource-assinatura-v2.webp",
+      "source_sha256": "bfb59724db19fcbf1fc92be9bddb6a56be80c3495ba30c312c61c0e431076d68",
+      "target_sha256": "692be1949126c46aa9e8374d79d0b2864e2cb2a45751148f44069bf8bcff874d",
+      "removal_box_tile": [
+        45,
+        32,
+        204,
+        159
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "dr-fone",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 4,
+      "source": "/assets/resources/items/dr-fone-resource-v1.webp",
+      "target": "/assets/resources/items/dr-fone-resource-assinatura-v2.webp",
+      "source_sha256": "3cdf785c8c1cfca059e80b35f14203ddf7e20bbdfb6c65c6287478ea78b775fc",
+      "target_sha256": "bad5b08238dea521ea94f53103dde862ace927b63b430e98e0fc61bc271abacd",
+      "removal_box_tile": [
+        63,
+        45,
+        210,
+        160
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "hostinger",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 5,
+      "source": "/assets/resources/items/hostinger-resource-v1.webp",
+      "target": "/assets/resources/items/hostinger-resource-assinatura-v2.webp",
+      "source_sha256": "28e628967167cd92b2d841fcbcf7df83a951b68d5ce5e5e9352b868145e8d04c",
+      "target_sha256": "86f0bd03538c0eca67f91804a7df16c8a2e04e7c528ad4dd89fdfd344174de51",
+      "removal_box_tile": [
+        55,
+        42,
+        222,
+        178
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "astro",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 6,
+      "source": "/assets/resources/items/astro-resource-v1.webp",
+      "target": "/assets/resources/items/astro-resource-assinatura-v2.webp",
+      "source_sha256": "102edbef79ee605d06b43e898c40953ef2e0b36704ceb07ccb22547d6ab7ca3f",
+      "target_sha256": "20a8f99390ea2f0aa45699be5d165073afd7f0968bfe374bb6f2535b324856fd",
+      "removal_box_tile": [
+        49,
+        37,
+        219,
+        176
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "vscode",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 7,
+      "source": "/assets/resources/items/vscode-resource-v1.webp",
+      "target": "/assets/resources/items/vscode-resource-assinatura-v2.webp",
+      "source_sha256": "46d41e031d0f6fc844b3e98999b4a0fd72c82006169ad923cb26eaaa56889262",
+      "target_sha256": "6d5495a3e87ca22bfab9f145856b73ca43bae97051ab5190ac401196e11e4f90",
+      "removal_box_tile": [
+        60,
+        47,
+        215,
+        178
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "git",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 8,
+      "source": "/assets/resources/items/git-resource-v1.webp",
+      "target": "/assets/resources/items/git-resource-assinatura-v2.webp",
+      "source_sha256": "ea4a11725d6a8a14db7fd36e9d6da6d7b5a48d229767d4d4ba808a40f5656469",
+      "target_sha256": "357b59d95bd682427aba7eb254d681a227aaedec34070c8645ab170aea02073b",
+      "removal_box_tile": [
+        65,
+        45,
+        219,
+        178
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    },
+    {
+      "id": "cloudflare",
+      "width": 1448,
+      "height": 1086,
+      "crop_width": 362,
+      "crop_height": 326,
+      "tile": 9,
+      "source": "/assets/resources/items/cloudflare-resource-v1.webp",
+      "target": "/assets/resources/items/cloudflare-resource-assinatura-v2.webp",
+      "source_sha256": "abec7260474d0a57ae94cb3bfb77652c03eabc0af9b491b1c2491d56e53aa2e5",
+      "target_sha256": "e3bedf627b00ab7be265263b2199cad58f3c99760e6fd2b6676a07d0a7241312",
+      "removal_box_tile": [
+        62,
+        46,
+        231,
+        178
+      ],
+      "symbol_size": 72,
+      "symbol_x": 43,
+      "symbol_y": 33,
+      "pixels_outside_crop_identical": true
+    }
+  ],
+  "refinements": [
+    "Recoverit and VS Code corners individually cleaned with built-in imagegen to match original tones."
+  ],
+  "validation_report": "docs/auditorias/resource-signatures-validation-20261010.json"
+}

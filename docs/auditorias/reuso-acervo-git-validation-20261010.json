@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-10",
+  "results": [
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 320,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 320,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 390,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 390,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 768,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 768,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 689.546875,
+          "height": 386.984375,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 1440,
+      "theme": "light",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    },
+    {
+      "route": "/blog/git-e-github-entenda-a-diferenca/",
+      "width": 1440,
+      "theme": "dark",
+      "h1": 1,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "loaded": true,
+          "width": 572,
+          "height": 320.875,
+          "fit": "cover",
+          "position": "0% 0%",
+          "symbolInside": true
+        }
+      ]
+    }
+  ],
+  "issues": []
+}

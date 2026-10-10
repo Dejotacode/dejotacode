@@ -1,0 +1,35 @@
+{
+  "files.exclude": {
+    "**/.astro": true,
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/.astro": true,
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/.astro/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "git.openRepositoryInParentFolders": "never",
+  "npm.packageManager": "npm"
+}
