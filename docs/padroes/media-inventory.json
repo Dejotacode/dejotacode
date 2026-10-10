@@ -1203,5 +1203,30 @@
     "path": "/assets/trails/seguranca-digital-essencial.svg",
     "bytes": 1355,
     "sha256": "782ea2f7a1f6cfa2c1c52bd571b448ce71dd6a5eb2e121acd1b3dac935b9cf22"
+  },
+  {
+    "path": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+    "bytes": 67236,
+    "sha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e"
+  },
+  {
+    "path": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+    "bytes": 53670,
+    "sha256": "6a7038e7996f2e0b639b2f54a3576409cf467b4dd7f1545106f56d9c2b2223c9"
+  },
+  {
+    "path": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+    "bytes": 63342,
+    "sha256": "b06e869e000c184f928c5d201922c999cd36a3bfb130c6ec9d88e0beb5f80470"
+  },
+  {
+    "path": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+    "bytes": 69996,
+    "sha256": "0a9e6c83bdac09dbd8b92e1d778b8bb3699ce41f93a0383f4ea8db406814bbdc"
+  },
+  {
+    "path": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+    "bytes": 53832,
+    "sha256": "47f6e859b2bdf99f0b7f5a1df26c0179d2d99af18b198f01745e5879e03dea7b"
   }
 ]

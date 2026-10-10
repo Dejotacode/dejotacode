@@ -55,11 +55,11 @@ const postSpecificVisuals: Record<string, string> = {
 };
 
 export const trailVisuals: Record<string, string> = {
-  "linux-do-zero": "/assets/resources/items/linux.webp",
-  "primeiros-passos-programacao": "/assets/trails/primeiros-passos-programacao.svg",
-  "ia-no-dia-a-dia": "/assets/trails/ia-no-dia-a-dia.svg",
-  "seguranca-digital-essencial": "/assets/trails/seguranca-digital-essencial.svg",
-  "primeira-renda-online": "/assets/trails/primeira-renda-online.svg",
+  "linux-do-zero": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+  "primeiros-passos-programacao": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+  "ia-no-dia-a-dia": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+  "seguranca-digital-essencial": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+  "primeira-renda-online": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
 };
 
 export function resolvePostVisual(category: string, slug?: string) {

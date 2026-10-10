@@ -1,0 +1,966 @@
+{
+  "date": "2026-10-10",
+  "results": [
+    {
+      "route": "/trilhas/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 159.875
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.8125
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.78125,
+          "height": 186.75
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 333.765625,
+          "height": 186.734375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        },
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 378,
+          "height": 211.625
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/linux-do-zero/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/linux-do-zero-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeiros-passos-programacao/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeiros-passos-programacao-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/ia-no-dia-a-dia/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/seguranca-digital-essencial/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/seguranca-digital-essencial-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 320,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 320,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 286,
+          "height": 160
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 341,
+          "height": 190.9375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 768,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 768,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 670,
+          "height": 376
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 1440,
+      "theme": "light",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(247, 249, 252)"
+    },
+    {
+      "route": "/trilhas/primeira-renda-online/",
+      "width": 1440,
+      "theme": "dark",
+      "overflow": false,
+      "images": [
+        {
+          "src": "/assets/trails/primeira-renda-online-capa-assinatura-v1.webp",
+          "loaded": true,
+          "width": 531.96875,
+          "height": 298.34375
+        }
+      ],
+      "h1": 1,
+      "background": "rgb(10, 13, 18)"
+    }
+  ],
+  "issues": []
+}
