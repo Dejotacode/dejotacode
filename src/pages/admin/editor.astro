@@ -280,6 +280,8 @@ const editablePosts = posts
   <script is:inline id="editor-posts" type="application/json" set:html={JSON.stringify(editablePosts).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")} />
 
   <script>
+    import { logoutAdmin, requireAdminSession } from "../../scripts/admin-session";
+
     type MediaItem = {
       id: number;
       objectKey: string;
@@ -1475,13 +1477,9 @@ const editablePosts = posts
 
     const start = async () => {
       if (!api) return;
-      const session = await fetch(`${api}/api/auth/session`, { credentials: "include" });
-      if (!session.ok) {
-        location.href = "/admin/";
-        return;
-      }
-      const payload = await session.json();
-      csrf = String(payload.data?.csrf ?? "");
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
       resetForm();
       await Promise.all([configureGithub(), loadMediaLibrary()]);
       if (currentPrNumber) {
@@ -1547,11 +1545,7 @@ const editablePosts = posts
     });
     document.querySelector("[data-logout]")?.addEventListener("click", async () => {
       if (!api) return;
-      await fetch(`${api}/api/auth/logout`, {
-        method: "POST",
-        credentials: "include",
-        headers: csrf ? { "X-CSRF-Token": csrf } : {},
-      });
+      await logoutAdmin(api, csrf);
       location.href = "/admin/";
     });
 
