@@ -4,7 +4,6 @@ const currentPath = Astro.url.pathname;
 const items = [
   { href: "/admin/", label: "Dashboard", match: (path: string) => path === "/admin/" },
   { href: "/admin/editor/", label: "Conteúdo", match: (path: string) => path.startsWith("/admin/editor") },
-  { href: "/admin/editor/#biblioteca-de-imagens", label: "Mídia", match: () => false },
   { href: "/admin/metricas/", label: "Métricas", match: (path: string) => path.startsWith("/admin/metricas") },
 ];
 ---
