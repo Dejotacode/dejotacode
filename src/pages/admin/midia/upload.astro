@@ -33,9 +33,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
             <input data-media-alt type="text" maxlength="220" placeholder="Descreva o que a imagem mostra" required />
           </label>
           <label>
-            <span>Contexto do conteúdo (opcional)</span>
-            <input data-media-post-slug type="text" maxlength="140" placeholder="slug-do-conteudo" autocomplete="off" />
-            <small>Use o slug quando a imagem já tiver um conteúdo de destino definido.</small>
+            <span>Slug do conteúdo</span>
+            <input data-media-post-slug type="text" maxlength="140" placeholder="slug-do-conteudo" autocomplete="off" required />
+            <small>Mantém o mesmo vínculo editorial usado pelo upload atual do Editor.</small>
           </label>
 
           <div class="media-upload-actions">
@@ -51,7 +51,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
           <img data-media-upload-preview alt="" />
           <div>
             <strong data-media-upload-alt></strong>
-            <code data-media-upload-key></code>
+            <code data-media-upload-path></code>
             <div class="media-upload-actions">
               <a class="button" data-media-upload-open href="#" target="_blank" rel="noreferrer">Abrir imagem</a>
               <button class="button" type="button" data-media-upload-copy>Copiar URL</button>
@@ -89,17 +89,13 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     const result = document.querySelector<HTMLElement>("[data-media-upload-result]");
     const preview = document.querySelector<HTMLImageElement>("[data-media-upload-preview]");
     const resultAlt = document.querySelector<HTMLElement>("[data-media-upload-alt]");
-    const resultKey = document.querySelector<HTMLElement>("[data-media-upload-key]");
+    const resultPath = document.querySelector<HTMLElement>("[data-media-upload-path]");
     const openLink = document.querySelector<HTMLAnchorElement>("[data-media-upload-open]");
     const copyButton = document.querySelector<HTMLButtonElement>("[data-media-upload-copy]");
     const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
 
     let csrf = "";
     let uploadedUrl = "";
-
-    const publicUrl = (objectKey: string) => api
-      ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
-      : "";
 
     const start = async () => {
       if (!api) return;
@@ -110,14 +106,15 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
     const uploadImage = async (event: SubmitEvent) => {
       event.preventDefault();
-      if (!api || !fileInput || !altInput || !uploadButton || !status) return;
+      if (!api || !fileInput || !altInput || !slugInput || !uploadButton || !status) return;
 
       const file = fileInput.files?.[0];
       const alt = altInput.value.trim();
-      const postSlug = slugInput?.value.trim() ?? "";
+      const postSlug = slugInput.value.trim();
       const allowedImageTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
       const maxImageSize = 10 * 1024 * 1024;
 
+      if (!postSlug) { status.textContent = "Defina o slug do conteúdo antes de enviar a imagem."; return; }
       if (!file) { status.textContent = "Selecione uma imagem."; return; }
       if (!allowedImageTypes.has(file.type)) { status.textContent = "Formato não permitido. Use JPG, PNG, WebP ou AVIF."; return; }
       if (file.size > maxImageSize) { status.textContent = "A imagem deve ter no máximo 10 MB."; return; }
@@ -140,19 +137,19 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível enviar a imagem.");
 
-        const objectKey = String(payload.data?.objectKey ?? payload.data?.item?.objectKey ?? "");
-        if (!objectKey) throw new Error("O upload foi concluído, mas a API não retornou o caminho da imagem.");
+        const publicPath = String(payload.data?.publicPath ?? "");
+        if (!publicPath) throw new Error("A API não retornou o caminho público da imagem.");
 
-        uploadedUrl = publicUrl(objectKey);
+        uploadedUrl = new URL(publicPath, `${api}/`).toString();
         if (preview) { preview.src = uploadedUrl; preview.alt = alt; }
         if (resultAlt) resultAlt.textContent = alt;
-        if (resultKey) resultKey.textContent = objectKey;
+        if (resultPath) resultPath.textContent = publicPath;
         if (openLink) openLink.href = uploadedUrl;
         if (result) result.hidden = false;
         status.textContent = "Imagem enviada para a biblioteca.";
         fileInput.value = "";
         altInput.value = "";
-        if (slugInput) slugInput.value = "";
+        slugInput.value = "";
       } catch (error) {
         status.textContent = error instanceof Error ? error.message : "Não foi possível enviar a imagem.";
       } finally {
