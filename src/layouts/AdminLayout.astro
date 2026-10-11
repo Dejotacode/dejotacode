@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Brand from "../components/layout/Brand.astro";
+import AdminNav from "../components/admin/AdminNav.astro";
 
 interface Props {
   title: string;
@@ -49,6 +50,8 @@ const pageTitle = `${title} | DejotaCode`;
         </button>
       </div>
     </header>
+
+    <AdminNav />
 
     <slot />
 
