@@ -1,17 +1,22 @@
 ---
+import { getCollection } from "astro:content";
 import AdminLayout from "../../layouts/AdminLayout.astro";
 import "../../styles/admin-metrics.css";
 
 const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+const posts = await getCollection("posts");
+const totalPosts = posts.length;
+const draftPosts = posts.filter((post) => post.data.draft).length;
+const publishedPosts = totalPosts - draftPosts;
 ---
 
-<AdminLayout title="Painel administrativo" description="Acesso privado às métricas agregadas do DejotaCode.">
+<AdminLayout title="Dashboard" description="Centro operacional privado do DejotaCode.">
   <main id="conteudo" class="admin-page" data-api={api}>
     <div class="admin-panel">
-      <p class="admin-kicker">Área privada</p>
-      <h1>Painel administrativo</h1>
+      <p class="admin-kicker">Centro operacional</p>
+      <h1>Dashboard DejotaCode</h1>
       <p class="admin-intro">
-        Acesse as métricas agregadas do DejotaCode. Esta área não identifica visitantes nem exibe dados pessoais de leads.
+        Acompanhe o estado editorial do projeto e acesse as ferramentas administrativas sem criar uma segunda fonte de verdade para o conteúdo.
       </p>
 
       <section class="admin-login-card" data-login>
@@ -29,13 +34,70 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         </form>
       </section>
 
-      <section class="admin-status" data-session-status hidden>
-        <p>Você já está autenticado.</p>
-        <div class="admin-actions">
-          <a class="button button-primary" href="/admin/metricas/">Abrir métricas</a>
-          <a class="button" href="/admin/editor/">Editor de conteúdo</a>
+      <section class="admin-dashboard" data-session-status hidden aria-label="Visão geral administrativa">
+        <div class="admin-dashboard__header">
+          <div>
+            <p class="admin-dashboard__eyebrow">Sessão ativa</p>
+            <h2>Visão geral</h2>
+            <p>Git e Markdown continuam sendo a fonte canônica do conteúdo público.</p>
+          </div>
           <button class="button" type="button" data-logout>Sair</button>
         </div>
+
+        <div class="admin-dashboard__cards">
+          <article class="admin-dashboard-card">
+            <span>Conteúdos publicados</span>
+            <strong>{publishedPosts}</strong>
+            <small>Arquivos editoriais fora de rascunho.</small>
+          </article>
+          <article class="admin-dashboard-card">
+            <span>Rascunhos</span>
+            <strong>{draftPosts}</strong>
+            <small>Conteúdos ainda marcados como draft.</small>
+          </article>
+          <article class="admin-dashboard-card">
+            <span>Total editorial</span>
+            <strong>{totalPosts}</strong>
+            <small>Conteúdos encontrados em src/content/posts.</small>
+          </article>
+        </div>
+
+        <section class="admin-dashboard__section" aria-labelledby="admin-quick-actions-title">
+          <div class="admin-dashboard__section-heading">
+            <div>
+              <p class="admin-dashboard__eyebrow">Atalhos</p>
+              <h2 id="admin-quick-actions-title">Ações rápidas</h2>
+            </div>
+          </div>
+          <div class="admin-dashboard__actions">
+            <a class="admin-dashboard-action" href="/admin/editor/">
+              <strong>Novo conteúdo</strong>
+              <span>Criar ou revisar Markdown com preview e Pull Request.</span>
+            </a>
+            <a class="admin-dashboard-action" href="/admin/editor/">
+              <strong>Editor editorial</strong>
+              <span>Acessar conteúdo, mídia, revisão e publicação assistida.</span>
+            </a>
+            <a class="admin-dashboard-action" href="/admin/metricas/">
+              <strong>Ver métricas</strong>
+              <span>Acompanhar tráfego, conversão, Store e campanhas.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="admin-dashboard__section" aria-labelledby="admin-flow-title">
+          <div class="admin-dashboard__section-heading">
+            <div>
+              <p class="admin-dashboard__eyebrow">Fluxo protegido</p>
+              <h2 id="admin-flow-title">Publicação</h2>
+            </div>
+          </div>
+          <ol class="admin-dashboard__flow">
+            <li><strong>1. Editar</strong><span>Conteúdo preparado no editor Git/Markdown.</span></li>
+            <li><strong>2. Revisar</strong><span>Pull Request e CI validam a alteração.</span></li>
+            <li><strong>3. Publicar</strong><span>Merge na main dispara deploy e smoke test.</span></li>
+          </ol>
+        </section>
       </section>
     </div>
   </main>
@@ -99,7 +161,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
           return;
         }
 
-        location.href = "/admin/metricas/";
+        showAuthenticated();
       } catch {
         if (output) {
           output.textContent = "Não foi possível conectar ao serviço de autenticação. Tente novamente.";
