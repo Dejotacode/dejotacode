@@ -11,10 +11,10 @@ const publishedPosts = totalPosts - draftPosts;
 ---
 
 <AdminLayout title="Dashboard" description="Centro operacional privado do DejotaCode.">
-  <main id="conteudo" class="admin-page" data-api={api}>
+  <main id="conteudo" class="admin-page admin-page--dashboard" data-api={api}>
     <div class="admin-panel">
       <p class="admin-kicker">Centro operacional</p>
-      <h1>Dashboard DejotaCode</h1>
+      <h1>Dashboard</h1>
       <p class="admin-intro">
         Acompanhe o estado editorial do projeto e acesse as ferramentas administrativas sem criar uma segunda fonte de verdade para o conteúdo.
       </p>
@@ -109,6 +109,7 @@ const publishedPosts = totalPosts - draftPosts;
     const sessionStatus = document.querySelector<HTMLElement>("[data-session-status]");
     const loginForm = document.querySelector<HTMLFormElement>("[data-login-form]");
     const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+    const adminNav = document.querySelector<HTMLElement>("[data-admin-nav]");
 
     const parseError = async (response: Response) => {
       try {
@@ -122,6 +123,7 @@ const publishedPosts = totalPosts - draftPosts;
     const showAuthenticated = () => {
       if (login) login.hidden = true;
       if (sessionStatus) sessionStatus.hidden = false;
+      if (adminNav) adminNav.hidden = false;
     };
 
     const checkSession = async () => {
