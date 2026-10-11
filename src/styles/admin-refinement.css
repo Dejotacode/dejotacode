@@ -1,0 +1,19 @@
+.admin-page--dashboard {
+  padding-top: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.admin-page--dashboard .admin-panel h1 {
+  max-width: none;
+  font-size: clamp(2.3rem, 5vw, 3.7rem);
+}
+
+.admin-editor-heading .admin-actions a,
+.admin-panel > .admin-actions a {
+  display: none;
+}
+
+@media (max-width: 42rem) {
+  .admin-page--dashboard {
+    padding-top: 1.25rem;
+  }
+}
