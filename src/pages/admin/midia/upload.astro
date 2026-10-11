@@ -1,0 +1,266 @@
+---
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import "../../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+
+<AdminLayout title="Upload de mídia" description="Envio de imagens para a biblioteca do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Biblioteca operacional</p>
+      <h1>Enviar imagem</h1>
+      <p class="admin-intro">
+        Adicione uma imagem à biblioteca do DejotaCode sem inserir Markdown automaticamente. O Editor continua com o fluxo atual até a migração ser concluída.
+      </p>
+
+      <section class="metrics-section" aria-labelledby="media-upload-title">
+        <div class="media-upload-heading">
+          <div>
+            <h2 id="media-upload-title">Novo arquivo</h2>
+            <p class="metrics-section__note">JPG, PNG, WebP ou AVIF · até 10 MB.</p>
+          </div>
+          <a class="button" href="/admin/midia/">Voltar para Mídia</a>
+        </div>
+
+        <form class="media-upload-form" data-media-upload-form>
+          <label>
+            <span>Arquivo</span>
+            <input data-media-file type="file" accept="image/jpeg,image/png,image/webp,image/avif" required />
+          </label>
+          <label>
+            <span>Texto alternativo</span>
+            <input data-media-alt type="text" maxlength="220" placeholder="Descreva o que a imagem mostra" required />
+          </label>
+          <label>
+            <span>Contexto do conteúdo (opcional)</span>
+            <input data-media-post-slug type="text" maxlength="140" placeholder="slug-do-conteudo" autocomplete="off" />
+            <small>Use o slug quando a imagem já tiver um conteúdo de destino definido.</small>
+          </label>
+
+          <div class="media-upload-actions">
+            <button class="button button-primary" type="submit" data-upload-image>Enviar para biblioteca</button>
+            <output data-media-upload-status aria-live="polite">Nenhum arquivo enviado.</output>
+          </div>
+        </form>
+      </section>
+
+      <section class="metrics-section" data-media-upload-result hidden aria-labelledby="media-upload-result-title">
+        <h2 id="media-upload-result-title">Upload concluído</h2>
+        <div class="media-upload-result">
+          <img data-media-upload-preview alt="" />
+          <div>
+            <strong data-media-upload-alt></strong>
+            <code data-media-upload-key></code>
+            <div class="media-upload-actions">
+              <a class="button" data-media-upload-open href="#" target="_blank" rel="noreferrer">Abrir imagem</a>
+              <button class="button" type="button" data-media-upload-copy>Copiar URL</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="media-upload-limit-title">
+        <h2 id="media-upload-limit-title">Limite desta etapa</h2>
+        <p class="metrics-section__note">
+          Esta tela apenas envia imagens para a biblioteca. Revisão humana, cleanup, dry-run, snapshot e exclusão continuam fora deste fluxo.
+        </p>
+      </section>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/midia/">Biblioteca de Mídia</a>
+        <a class="button" href="/admin/editor/">Abrir Editor</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const form = document.querySelector<HTMLFormElement>("[data-media-upload-form]");
+    const fileInput = document.querySelector<HTMLInputElement>("[data-media-file]");
+    const altInput = document.querySelector<HTMLInputElement>("[data-media-alt]");
+    const slugInput = document.querySelector<HTMLInputElement>("[data-media-post-slug]");
+    const uploadButton = document.querySelector<HTMLButtonElement>("[data-upload-image]");
+    const status = document.querySelector<HTMLOutputElement>("[data-media-upload-status]");
+    const result = document.querySelector<HTMLElement>("[data-media-upload-result]");
+    const preview = document.querySelector<HTMLImageElement>("[data-media-upload-preview]");
+    const resultAlt = document.querySelector<HTMLElement>("[data-media-upload-alt]");
+    const resultKey = document.querySelector<HTMLElement>("[data-media-upload-key]");
+    const openLink = document.querySelector<HTMLAnchorElement>("[data-media-upload-open]");
+    const copyButton = document.querySelector<HTMLButtonElement>("[data-media-upload-copy]");
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+
+    let csrf = "";
+    let uploadedUrl = "";
+
+    const publicUrl = (objectKey: string) => api
+      ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
+      : "";
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+    };
+
+    const uploadImage = async (event: SubmitEvent) => {
+      event.preventDefault();
+      if (!api || !fileInput || !altInput || !uploadButton || !status) return;
+
+      const file = fileInput.files?.[0];
+      const alt = altInput.value.trim();
+      const postSlug = slugInput?.value.trim() ?? "";
+      const allowedImageTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
+      const maxImageSize = 10 * 1024 * 1024;
+
+      if (!file) { status.textContent = "Selecione uma imagem."; return; }
+      if (!allowedImageTypes.has(file.type)) { status.textContent = "Formato não permitido. Use JPG, PNG, WebP ou AVIF."; return; }
+      if (file.size > maxImageSize) { status.textContent = "A imagem deve ter no máximo 10 MB."; return; }
+      if (alt.length < 3) { status.textContent = "Escreva um texto alternativo descritivo."; return; }
+
+      uploadButton.disabled = true;
+      status.textContent = "Enviando imagem ao R2…";
+      try {
+        const body = new FormData();
+        body.append("file", file);
+        body.append("alt", alt);
+        body.append("postSlug", postSlug);
+
+        const response = await fetch(`${api}/api/media/cms`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "X-CSRF-Token": csrf },
+          body,
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível enviar a imagem.");
+
+        const objectKey = String(payload.data?.objectKey ?? payload.data?.item?.objectKey ?? "");
+        if (!objectKey) throw new Error("O upload foi concluído, mas a API não retornou o caminho da imagem.");
+
+        uploadedUrl = publicUrl(objectKey);
+        if (preview) { preview.src = uploadedUrl; preview.alt = alt; }
+        if (resultAlt) resultAlt.textContent = alt;
+        if (resultKey) resultKey.textContent = objectKey;
+        if (openLink) openLink.href = uploadedUrl;
+        if (result) result.hidden = false;
+        status.textContent = "Imagem enviada para a biblioteca.";
+        fileInput.value = "";
+        altInput.value = "";
+        if (slugInput) slugInput.value = "";
+      } catch (error) {
+        status.textContent = error instanceof Error ? error.message : "Não foi possível enviar a imagem.";
+      } finally {
+        uploadButton.disabled = false;
+      }
+    };
+
+    form?.addEventListener("submit", uploadImage);
+    copyButton?.addEventListener("click", async () => {
+      if (!uploadedUrl || !status) return;
+      try {
+        await navigator.clipboard.writeText(uploadedUrl);
+        status.textContent = "URL pública da imagem copiada.";
+      } catch {
+        status.textContent = "O navegador bloqueou a cópia automática da URL.";
+      }
+    });
+
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      if (status) status.textContent = "Não foi possível iniciar o upload de mídia.";
+    });
+  </script>
+
+  <style>
+    .media-upload-heading,
+    .media-upload-actions,
+    .media-upload-result {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .media-upload-form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .media-upload-form label {
+      display: grid;
+      gap: 0.4rem;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    .media-upload-form input {
+      width: 100%;
+      min-height: 2.85rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+    }
+
+    .media-upload-form small,
+    [data-media-upload-status] {
+      color: var(--color-text-muted);
+    }
+
+    .media-upload-actions {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .media-upload-result {
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 1rem;
+    }
+
+    .media-upload-result img {
+      width: min(18rem, 42vw);
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-soft);
+    }
+
+    .media-upload-result > div {
+      display: grid;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .media-upload-result code {
+      overflow-wrap: anywhere;
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 38rem) {
+      .media-upload-heading,
+      .media-upload-result {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .media-upload-result img {
+        width: 100%;
+      }
+    }
+  </style>
+</AdminLayout>
