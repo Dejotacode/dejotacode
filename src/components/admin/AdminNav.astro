@@ -5,7 +5,8 @@ const waitsForSession = currentPath === "/admin/";
 const items = [
   { href: "/admin/", label: "Dashboard", match: (path: string) => path === "/admin/" },
   { href: "/admin/editor/", label: "Conteúdo", match: (path: string) => path.startsWith("/admin/editor") },
-  { href: "/admin/midia/", label: "Mídia", match: (path: string) => path.startsWith("/admin/midia") },
+  { href: "/admin/midia/", label: "Mídia", match: (path: string) => path === "/admin/midia/" },
+  { href: "/admin/midia/upload/", label: "Enviar mídia", match: (path: string) => path.startsWith("/admin/midia/upload") },
   { href: "/admin/metricas/", label: "Métricas", match: (path: string) => path.startsWith("/admin/metricas") },
 ];
 ---
