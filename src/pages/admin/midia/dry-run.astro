@@ -1,0 +1,416 @@
+---
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import "../../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+
+<AdminLayout title="Dry-run de mídia" description="Revalidação segura de mídias aprovadas no gate de cleanup.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Validação antes de qualquer risco</p>
+      <h1>Dry-run de mídia</h1>
+      <p class="admin-intro">
+        Revalide GitHub, D1 e R2 para mídias que já passaram pela revisão humana e pelo Gate cleanup. Esta tela não remove arquivos e não oferece snapshot nem exclusão.
+      </p>
+
+      <section class="metrics-section" aria-labelledby="media-dry-run-title">
+        <div class="media-dry-run-heading">
+          <div>
+            <h2 id="media-dry-run-title">Itens aptos ao dry-run</h2>
+            <p class="metrics-section__note">Somente mídias com revisão candidata e Gate cleanup aprovado aparecem aqui.</p>
+          </div>
+          <div class="media-dry-run-actions">
+            <button class="button" type="button" data-refresh-media>Atualizar</button>
+            <a class="button" href="/admin/midia/cleanup/">Voltar ao Gate cleanup</a>
+          </div>
+        </div>
+
+        <output data-media-status aria-live="polite">Carregando mídias aprovadas…</output>
+        <div class="media-dry-run-grid" data-media-grid></div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="media-dry-run-limit-title">
+        <h2 id="media-dry-run-limit-title">Limite desta etapa</h2>
+        <p class="metrics-section__note">
+          O dry-run apenas consulta e registra uma revalidação temporária no servidor. Mesmo quando o resultado é elegível, não existe botão de snapshot ou exclusão nesta rota.
+        </p>
+      </section>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/midia/">Biblioteca de Mídia</a>
+        <a class="button" href="/admin/midia/revisao/">Revisar mídia</a>
+        <a class="button" href="/admin/midia/cleanup/">Gate cleanup</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
+
+    type MediaItem = {
+      id: number;
+      objectKey: string;
+      contentType: string;
+      sizeBytes: number;
+      altText: string;
+      createdAt: string;
+      reviewStatus?: "pending" | "keep" | "candidate";
+      cleanupStatus?: "pending" | "approved";
+      cleanupNote?: string | null;
+    };
+
+    type DryRunResult = {
+      eligible: boolean;
+      blockers: string[];
+      expiresAt?: string;
+      r2Exists?: boolean;
+      coverUsage?: number;
+      markdownReferences?: string[];
+    };
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const grid = document.querySelector<HTMLElement>("[data-media-grid]");
+    const status = document.querySelector<HTMLOutputElement>("[data-media-status]");
+    const refreshButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+
+    let csrf = "";
+    let items: MediaItem[] = [];
+    const results = new Map<number, DryRunResult>();
+
+    const publicUrl = (objectKey: string) => `${api}/api/media/public/${objectKey}`;
+    const formatDate = (value?: string) => value ? new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(new Date(value)) : "—";
+    const formatBytes = (value: number) => {
+      if (!Number.isFinite(value) || value <= 0) return "0 B";
+      const units = ["B", "KB", "MB", "GB"];
+      let size = value;
+      let unit = 0;
+      while (size >= 1024 && unit < units.length - 1) { size /= 1024; unit += 1; }
+      return `${size.toFixed(unit === 0 ? 0 : 1)} ${units[unit]}`;
+    };
+
+    const renderResult = (container: HTMLElement, result?: DryRunResult) => {
+      container.replaceChildren();
+      if (!result) {
+        const p = document.createElement("p");
+        p.textContent = "Dry-run ainda não executado para esta mídia.";
+        container.append(p);
+        return;
+      }
+
+      const badge = document.createElement("strong");
+      badge.className = "media-dry-run-result__badge";
+      badge.dataset.state = result.eligible ? "eligible" : "blocked";
+      badge.textContent = result.eligible ? "Elegível no dry-run" : "Bloqueada no dry-run";
+      container.append(badge);
+
+      const rows: Array<[string, string]> = [
+        ["R2", result.r2Exists ? "Disponível" : "Não encontrado"],
+        ["Capas D1", String(result.coverUsage ?? 0)],
+        ["Referências Markdown", String(result.markdownReferences?.length ?? 0)],
+        ["Validade", result.expiresAt ? formatDate(result.expiresAt) : "—"],
+      ];
+
+      const list = document.createElement("div");
+      list.className = "media-dry-run-result__checks";
+      for (const [label, value] of rows) {
+        const row = document.createElement("span");
+        const strong = document.createElement("strong");
+        const small = document.createElement("small");
+        strong.textContent = label;
+        small.textContent = value;
+        row.append(strong, small);
+        list.append(row);
+      }
+      container.append(list);
+
+      if (result.blockers.length) {
+        const blockers = document.createElement("div");
+        blockers.className = "media-dry-run-result__blockers";
+        const title = document.createElement("strong");
+        title.textContent = "Bloqueios";
+        const ul = document.createElement("ul");
+        for (const blocker of result.blockers) {
+          const li = document.createElement("li");
+          li.textContent = blocker;
+          ul.append(li);
+        }
+        blockers.append(title, ul);
+        container.append(blockers);
+      }
+
+      if (result.markdownReferences?.length) {
+        const refs = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "Ver referências Markdown";
+        const ul = document.createElement("ul");
+        for (const ref of result.markdownReferences) {
+          const li = document.createElement("li");
+          li.textContent = ref;
+          ul.append(li);
+        }
+        refs.append(summary, ul);
+        container.append(refs);
+      }
+    };
+
+    const runDryRun = async (item: MediaItem, button: HTMLButtonElement, resultBox: HTMLElement) => {
+      if (!api || !csrf) return;
+      if (item.reviewStatus !== "candidate" || item.cleanupStatus !== "approved") {
+        if (status) status.textContent = "A mídia precisa estar como candidata e com Gate cleanup aprovado.";
+        return;
+      }
+      if (!window.confirm("Executar dry-run? O servidor revalidará GitHub, D1 e R2. Nenhum arquivo será removido.")) return;
+
+      button.disabled = true;
+      button.textContent = "Executando…";
+      if (status) status.textContent = `Executando dry-run para #${item.id}…`;
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/delete-dry-run`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ objectKey: item.objectKey }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível executar o dry-run.");
+
+        const data = payload.data ?? {};
+        const result: DryRunResult = {
+          eligible: Boolean(data.eligible),
+          blockers: Array.isArray(data.blockers) ? data.blockers.map(String) : [],
+          expiresAt: typeof data.expiresAt === "string" ? data.expiresAt : undefined,
+          r2Exists: Boolean(data.r2Exists),
+          coverUsage: Number(data.coverUsage ?? 0),
+          markdownReferences: Array.isArray(data.markdownReferences) ? data.markdownReferences.map(String) : [],
+        };
+        results.set(item.id, result);
+        renderResult(resultBox, result);
+        if (status) status.textContent = result.eligible
+          ? `Dry-run aprovado para #${item.id}. Nenhuma exclusão foi executada.`
+          : `Dry-run bloqueado para #${item.id}. Nenhuma exclusão foi executada.`;
+      } catch (error) {
+        if (status) status.textContent = error instanceof Error ? error.message : "Não foi possível executar o dry-run.";
+      } finally {
+        button.disabled = false;
+        button.textContent = "Executar dry-run";
+      }
+    };
+
+    const render = () => {
+      if (!grid) return;
+      grid.replaceChildren();
+      if (!items.length) {
+        const empty = document.createElement("p");
+        empty.className = "metrics-section__note";
+        empty.textContent = "Nenhuma mídia possui revisão candidata e Gate cleanup aprovado.";
+        grid.append(empty);
+        return;
+      }
+
+      for (const item of items) {
+        const card = document.createElement("article");
+        card.className = "media-dry-run-card";
+
+        const img = document.createElement("img");
+        img.src = publicUrl(item.objectKey);
+        img.alt = item.altText || "Imagem da biblioteca";
+        img.loading = "lazy";
+
+        const body = document.createElement("div");
+        body.className = "media-dry-run-card__body";
+        const title = document.createElement("strong");
+        title.textContent = item.altText || `Mídia #${item.id}`;
+        const meta = document.createElement("p");
+        meta.textContent = `${formatBytes(item.sizeBytes)} · ${formatDate(item.createdAt)}`;
+        const path = document.createElement("code");
+        path.textContent = item.objectKey;
+        const gate = document.createElement("span");
+        gate.className = "media-dry-run-card__gate";
+        gate.textContent = "Revisão: candidata · Gate cleanup: aprovado";
+        body.append(title, meta, path, gate);
+
+        if (item.cleanupNote) {
+          const note = document.createElement("small");
+          note.textContent = `Segunda revisão: ${item.cleanupNote}`;
+          body.append(note);
+        }
+
+        const actions = document.createElement("div");
+        actions.className = "media-dry-run-actions";
+        const runButton = document.createElement("button");
+        runButton.className = "button button-primary";
+        runButton.type = "button";
+        runButton.textContent = "Executar dry-run";
+        const open = document.createElement("a");
+        open.className = "button";
+        open.href = publicUrl(item.objectKey);
+        open.target = "_blank";
+        open.rel = "noreferrer";
+        open.textContent = "Abrir imagem";
+        actions.append(runButton, open);
+
+        const resultBox = document.createElement("div");
+        resultBox.className = "media-dry-run-result";
+        renderResult(resultBox, results.get(item.id));
+        runButton.addEventListener("click", () => runDryRun(item, runButton, resultBox));
+
+        card.append(img, body, actions, resultBox);
+        grid.append(card);
+      }
+    };
+
+    const load = async () => {
+      if (!api || !status) return;
+      status.textContent = "Carregando mídias aprovadas…";
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca.");
+        const all = Array.isArray(payload.data) ? payload.data : [];
+        items = all.filter((item: MediaItem) => item.reviewStatus === "candidate" && item.cleanupStatus === "approved");
+        render();
+        status.textContent = `${items.length} mídia(s) apta(s) ao dry-run. Nenhum arquivo foi alterado.`;
+      } catch (error) {
+        status.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca.";
+      }
+    };
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+      await load();
+    };
+
+    refreshButton?.addEventListener("click", () => load());
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      if (status) status.textContent = "Não foi possível iniciar o dry-run de mídia.";
+    });
+  </script>
+
+  <style>
+    .media-dry-run-heading,
+    .media-dry-run-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .media-dry-run-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-dry-run-card {
+      display: grid;
+      grid-template-columns: minmax(10rem, 14rem) 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+    }
+
+    .media-dry-run-card > img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+    }
+
+    .media-dry-run-card__body {
+      display: grid;
+      gap: 0.45rem;
+      align-content: start;
+      min-width: 0;
+    }
+
+    .media-dry-run-card__body p,
+    .media-dry-run-card__body small,
+    [data-media-status] {
+      color: var(--color-text-muted);
+    }
+
+    .media-dry-run-card__body code {
+      overflow-wrap: anywhere;
+    }
+
+    .media-dry-run-card__gate,
+    .media-dry-run-result__badge {
+      width: fit-content;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .media-dry-run-result {
+      grid-column: 1 / -1;
+      display: grid;
+      gap: 0.75rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .media-dry-run-result__badge[data-state="eligible"] {
+      color: var(--color-accent-strong);
+      background: var(--color-surface-soft);
+    }
+
+    .media-dry-run-result__badge[data-state="blocked"] {
+      color: var(--color-text);
+      background: var(--color-surface-soft);
+    }
+
+    .media-dry-run-result__checks {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .media-dry-run-result__checks span {
+      display: grid;
+      gap: 0.2rem;
+      padding: 0.7rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+    }
+
+    .media-dry-run-result__checks small,
+    .media-dry-run-result__blockers {
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 48rem) {
+      .media-dry-run-card {
+        grid-template-columns: 1fr;
+      }
+      .media-dry-run-result__checks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 32rem) {
+      .media-dry-run-result__checks {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</AdminLayout>
