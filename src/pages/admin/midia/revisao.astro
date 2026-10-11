@@ -1,0 +1,475 @@
+---
+import { getCollection } from "astro:content";
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import "../../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+const posts = await getCollection("posts");
+const mediaPattern = /https:\/\/api\.dejotacode\.com\.br\/api\/media\/public\/([^\s)]+)/g;
+const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
+  const keys: string[] = [];
+  for (const match of (post.body ?? "").matchAll(mediaPattern)) {
+    if (match[1]) keys.push(match[1]);
+  }
+  return keys;
+}))];
+---
+
+<AdminLayout title="Revisão de mídia" description="Revisão humana da biblioteca de mídia do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Biblioteca operacional</p>
+      <h1>Revisão de mídia</h1>
+      <p class="admin-intro">
+        Registre decisões humanas de manter, marcar como candidata ou reabrir revisão. Esta etapa não aprova cleanup e não exclui arquivos.
+      </p>
+
+      <section class="metrics-section" aria-labelledby="media-review-title">
+        <div class="media-review-heading">
+          <div>
+            <h2 id="media-review-title">Imagens para revisão</h2>
+            <p class="metrics-section__note">
+              A classificação de segurança cruza Markdown canônico, capas do CMS e disponibilidade pública. Imagens em uso não podem ser marcadas como candidatas nesta tela.
+            </p>
+          </div>
+          <strong data-media-count>0 imagens</strong>
+        </div>
+
+        <div class="media-review-toolbar">
+          <label>
+            <span>Buscar</span>
+            <input data-media-search type="search" placeholder="Alt text ou caminho" autocomplete="off" />
+          </label>
+          <label>
+            <span>Revisão</span>
+            <select data-media-review-filter>
+              <option value="all">Todas</option>
+              <option value="pending">Pendentes</option>
+              <option value="keep">Manter</option>
+              <option value="candidate">Candidatas</option>
+            </select>
+          </label>
+          <button class="button" type="button" data-refresh-media>Atualizar</button>
+        </div>
+
+        <output class="media-review-status" data-media-status aria-live="polite">Carregando biblioteca…</output>
+        <div class="media-review-grid" data-media-grid aria-live="polite"></div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="media-review-limit-title">
+        <h2 id="media-review-limit-title">Limite desta etapa</h2>
+        <p class="metrics-section__note">
+          Marcar como candidata não remove a imagem. Gate de cleanup, plano de remoção, dry-run, snapshot e exclusão continuam fora desta tela.
+        </p>
+      </section>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/midia/">Biblioteca de Mídia</a>
+        <a class="button" href="/admin/midia/upload/">Enviar mídia</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline id="canonical-media-keys" type="application/json" set:html={JSON.stringify(canonicalMediaKeys).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")} />
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
+
+    type ReviewStatus = "pending" | "keep" | "candidate";
+    type SafetyState = "used" | "orphan" | "review";
+    type MediaItem = {
+      id: number;
+      objectKey: string;
+      contentType: string;
+      sizeBytes: number;
+      altText: string;
+      createdAt: string;
+      reviewStatus?: ReviewStatus;
+      reviewNote?: string | null;
+    };
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const grid = document.querySelector<HTMLElement>("[data-media-grid]");
+    const status = document.querySelector<HTMLOutputElement>("[data-media-status]");
+    const count = document.querySelector<HTMLElement>("[data-media-count]");
+    const searchInput = document.querySelector<HTMLInputElement>("[data-media-search]");
+    const reviewFilter = document.querySelector<HTMLSelectElement>("[data-media-review-filter]");
+    const refreshButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+    const keysNode = document.querySelector<HTMLScriptElement>("#canonical-media-keys");
+    const canonicalMediaKeys = new Set<string>(keysNode?.textContent ? JSON.parse(keysNode.textContent) : []);
+
+    let csrf = "";
+    let mediaItems: MediaItem[] = [];
+    let safetyStates = new Map<string, SafetyState>();
+
+    const mediaPublicUrl = (objectKey: string) => api
+      ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
+      : "";
+
+    const normalizedSearch = (input: string) => input
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+    const reviewLabel = (value: ReviewStatus) => value === "keep"
+      ? "Revisão: manter"
+      : value === "candidate"
+        ? "Revisão: candidata"
+        : "Revisão: pendente";
+
+    const safetyLabel = (value: SafetyState) => value === "used"
+      ? "Segurança: em uso"
+      : value === "orphan"
+        ? "Segurança: possivelmente órfã"
+        : "Segurança: requer revisão";
+
+    const filteredItems = () => {
+      const query = normalizedSearch(searchInput?.value ?? "");
+      const review = reviewFilter?.value ?? "all";
+      return mediaItems
+        .filter((item) => item.contentType.startsWith("image/"))
+        .filter((item) => review === "all" || (item.reviewStatus ?? "pending") === review)
+        .filter((item) => !query || normalizedSearch(`${item.altText} ${item.objectKey}`).includes(query))
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    };
+
+    const updateReview = async (item: MediaItem, reviewStatus: ReviewStatus) => {
+      if (!api || !status) return;
+      if (reviewStatus === "candidate" && safetyStates.get(item.objectKey) === "used") {
+        status.textContent = "Imagem em uso não pode ser marcada como candidata nesta tela.";
+        return;
+      }
+
+      let note = item.reviewNote ?? "";
+      if (reviewStatus !== "pending") {
+        const entered = window.prompt(
+          reviewStatus === "keep"
+            ? "Nota da revisão (opcional): por que esta mídia deve ser mantida?"
+            : "Nota da revisão (opcional): por que esta mídia é candidata à limpeza?",
+          note,
+        );
+        if (entered === null) return;
+        note = entered.trim();
+      } else {
+        note = "";
+      }
+
+      if (reviewStatus === "candidate" && !window.confirm("Marcar esta mídia como candidata à limpeza? Isso NÃO exclui o arquivo.")) return;
+
+      status.textContent = "Registrando revisão humana…";
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/review`, {
+          method: "PATCH",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ status: reviewStatus, note }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível registrar a revisão.");
+        await loadLibrary();
+        status.textContent = reviewStatus === "pending"
+          ? "Revisão reaberta. Nenhum arquivo foi alterado no R2."
+          : reviewStatus === "keep"
+            ? "Decisão registrada: manter. Nenhum arquivo foi alterado no R2."
+            : "Decisão registrada: candidata à limpeza. Nenhum arquivo foi alterado no R2.";
+      } catch (error) {
+        status.textContent = error instanceof Error ? error.message : "Não foi possível registrar a revisão.";
+      }
+    };
+
+    const render = () => {
+      if (!grid || !status || !count) return;
+      grid.replaceChildren();
+      const images = filteredItems();
+      const total = mediaItems.filter((item) => item.contentType.startsWith("image/")).length;
+      count.textContent = `${total} ${total === 1 ? "imagem" : "imagens"}`;
+
+      if (!images.length) {
+        const empty = document.createElement("p");
+        empty.className = "media-review-empty";
+        empty.textContent = total ? "Nenhuma imagem corresponde aos filtros atuais." : "Nenhuma imagem disponível.";
+        grid.append(empty);
+        return;
+      }
+
+      for (const item of images) {
+        const reviewStatus = item.reviewStatus ?? "pending";
+        const safetyState = safetyStates.get(item.objectKey) ?? "review";
+        const card = document.createElement("article");
+        card.className = "media-review-card";
+
+        const image = document.createElement("img");
+        image.src = mediaPublicUrl(item.objectKey);
+        image.alt = item.altText || "Imagem editorial sem texto alternativo";
+        image.loading = "lazy";
+
+        const body = document.createElement("div");
+        body.className = "media-review-card__body";
+
+        const title = document.createElement("strong");
+        title.textContent = item.altText || "Sem texto alternativo";
+        const key = document.createElement("code");
+        key.textContent = item.objectKey;
+
+        const badges = document.createElement("div");
+        badges.className = "media-review-badges";
+        const safety = document.createElement("span");
+        safety.dataset.state = safetyState;
+        safety.textContent = safetyLabel(safetyState);
+        const review = document.createElement("span");
+        review.dataset.state = reviewStatus;
+        review.textContent = reviewLabel(reviewStatus);
+        badges.append(safety, review);
+
+        body.append(title, key, badges);
+        if (item.reviewNote) {
+          const note = document.createElement("small");
+          note.textContent = `Nota: ${item.reviewNote}`;
+          body.append(note);
+        }
+
+        const actions = document.createElement("div");
+        actions.className = "media-review-actions";
+
+        const open = document.createElement("a");
+        open.className = "button";
+        open.href = mediaPublicUrl(item.objectKey);
+        open.target = "_blank";
+        open.rel = "noreferrer";
+        open.textContent = "Abrir imagem";
+        actions.append(open);
+
+        if (reviewStatus !== "keep") {
+          const keep = document.createElement("button");
+          keep.className = "button";
+          keep.type = "button";
+          keep.textContent = "Manter";
+          keep.addEventListener("click", () => updateReview(item, "keep"));
+          actions.append(keep);
+        }
+
+        if (reviewStatus !== "candidate" && safetyState !== "used") {
+          const candidate = document.createElement("button");
+          candidate.className = "button";
+          candidate.type = "button";
+          candidate.textContent = "Marcar candidata";
+          candidate.addEventListener("click", () => updateReview(item, "candidate"));
+          actions.append(candidate);
+        }
+
+        if (reviewStatus !== "pending") {
+          const reopen = document.createElement("button");
+          reopen.className = "button";
+          reopen.type = "button";
+          reopen.textContent = "Reabrir revisão";
+          reopen.addEventListener("click", () => updateReview(item, "pending"));
+          actions.append(reopen);
+        }
+
+        body.append(actions);
+        card.append(image, body);
+        grid.append(card);
+      }
+    };
+
+    const classifySafety = async () => {
+      if (!api) return;
+      const cmsResponse = await fetch(`${api}/api/cms/posts`, { credentials: "include" });
+      const cmsPayload = await cmsResponse.json();
+      if (!cmsResponse.ok) throw new Error(cmsPayload.error?.message ?? "Não foi possível consultar as capas do CMS.");
+      const cmsPosts = Array.isArray(cmsPayload.data?.items) ? cmsPayload.data.items : [];
+      const coverKeys = new Set<string>(cmsPosts.map((post: { coverKey?: string | null }) => post.coverKey).filter(Boolean));
+      const states = new Map<string, SafetyState>();
+
+      for (const item of mediaItems) {
+        if (!item.contentType.startsWith("image/")) continue;
+        if (canonicalMediaKeys.has(item.objectKey) || coverKeys.has(item.objectKey)) {
+          states.set(item.objectKey, "used");
+          continue;
+        }
+        try {
+          const response = await fetch(mediaPublicUrl(item.objectKey), { method: "HEAD", credentials: "omit" });
+          states.set(item.objectKey, response.ok && item.objectKey.startsWith("posts/") ? "orphan" : "review");
+        } catch {
+          states.set(item.objectKey, "review");
+        }
+      }
+
+      safetyStates = states;
+    };
+
+    const loadLibrary = async () => {
+      if (!api || !status || !grid) return;
+      if (refreshButton) refreshButton.disabled = true;
+      status.textContent = "Atualizando biblioteca e classificação de segurança…";
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca.");
+        mediaItems = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        await classifySafety();
+        render();
+        status.textContent = "Biblioteca pronta para revisão humana.";
+      } catch (error) {
+        grid.replaceChildren();
+        status.textContent = error instanceof Error ? error.message : "Não foi possível carregar a revisão de mídia.";
+      } finally {
+        if (refreshButton) refreshButton.disabled = false;
+      }
+    };
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+      await loadLibrary();
+    };
+
+    searchInput?.addEventListener("input", render);
+    reviewFilter?.addEventListener("change", render);
+    refreshButton?.addEventListener("click", loadLibrary);
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      if (status) status.textContent = "Não foi possível iniciar a revisão de mídia.";
+    });
+  </script>
+
+  <style>
+    .media-review-heading,
+    .media-review-toolbar,
+    .media-review-actions,
+    .media-review-badges {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .media-review-heading {
+      justify-content: space-between;
+    }
+
+    .media-review-toolbar {
+      margin-top: 1.25rem;
+      align-items: flex-end;
+    }
+
+    .media-review-toolbar label {
+      display: grid;
+      flex: 1;
+      gap: 0.4rem;
+      font-weight: 700;
+    }
+
+    .media-review-toolbar input,
+    .media-review-toolbar select {
+      width: 100%;
+      min-height: 2.85rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+    }
+
+    .media-review-status {
+      display: block;
+      min-height: 1.5rem;
+      margin-top: 1rem;
+      color: var(--color-text-muted);
+      font-weight: 700;
+    }
+
+    .media-review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-review-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    .media-review-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--color-surface-soft);
+    }
+
+    .media-review-card__body {
+      display: grid;
+      gap: 0.7rem;
+      padding: 1rem;
+    }
+
+    .media-review-card code,
+    .media-review-card small {
+      overflow-wrap: anywhere;
+      color: var(--color-text-muted);
+    }
+
+    .media-review-badges,
+    .media-review-actions {
+      flex-wrap: wrap;
+    }
+
+    .media-review-badges span {
+      padding: 0.35rem 0.55rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-surface-soft);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .media-review-badges span[data-state="used"],
+    .media-review-badges span[data-state="keep"] {
+      color: var(--color-accent-strong);
+    }
+
+    .media-review-empty {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 1.25rem;
+      border: 1px dashed var(--color-border-strong);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-soft);
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 56rem) {
+      .media-review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 38rem) {
+      .media-review-heading,
+      .media-review-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .media-review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</AdminLayout>
