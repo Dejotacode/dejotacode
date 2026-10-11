@@ -270,8 +270,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca.");
-        const all = Array.isArray(payload.data) ? payload.data : [];
-        items = all.filter((item: MediaItem) => item.reviewStatus === "candidate" && item.cleanupStatus === "approved");
+        const all = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        items = all.filter((item: MediaItem) => item.contentType.startsWith("image/") && item.reviewStatus === "candidate" && item.cleanupStatus === "approved");
         render();
         status.textContent = `${items.length} mídia(s) apta(s) ao dry-run. Nenhum arquivo foi alterado.`;
       } catch (error) {
