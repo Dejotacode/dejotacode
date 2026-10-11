@@ -8,9 +8,11 @@ Usar o GitHub Actions para validações mecânicas e repetitivas, preservando a 
 
 ## Pipeline vigente
 
-Em Pull Requests, o workflow `.github/workflows/ci.yml` executa `npm ci`, `npm run check`, `npm run build:production` e `npm run qa`.
+Em Pull Requests, o workflow `.github/workflows/ci.yml` executa uma validação completa com `npm ci`, `npm run check`, `npm run build:production` e `npm run qa`. O job de produção fica ignorado em Pull Requests e não acessa credenciais nem executa deploy.
 
-Em `main`, após a validação de qualidade, o workflow mantém o deploy existente no Cloudflare Pages e executa `npm run smoke:production`.
+Em `main`, o workflow executa uma única passagem completa no job `Validate and deploy Cloudflare Pages`: `npm ci`, `npm run check`, verificação da credencial Cloudflare, `npm run build:production`, `npm run qa`, deploy no Cloudflare Pages e `npm run smoke:production`.
+
+A `main` não repete instalação, build ou QA em um segundo job. A validação acontece antes do deploy dentro da mesma execução, reduzindo trabalho duplicado sem introduzir artifacts ou dependências intermediárias entre build e produção.
 
 O runner fica fixado em `ubuntu-24.04` para reduzir variação de ambiente. Execuções antigas da mesma Pull Request podem ser canceladas automaticamente; execuções de `main` não são canceladas pelo mecanismo de concorrência para preservar a entrega de produção.
 
@@ -27,8 +29,14 @@ O runner fica fixado em `ubuntu-24.04` para reduzir variação de ambiente. Exec
 
 Localmente: edição, `npm run dev`, preview visual, Git e verificações pontuais.
 
-No GitHub Actions: instalação limpa, Astro check, build de produção, QA e validação da Pull Request. Em `main`, também deploy e smoke test de produção.
+No GitHub Actions: instalação limpa, Astro check, build de produção, QA e validação da Pull Request. Em `main`, a mesma passagem validada segue para deploy e smoke test de produção.
+
+## Estado homologado
+
+A primeira etapa de otimização estabilizou o pipeline em `ubuntu-24.04` e adicionou controle de concorrência para Pull Requests.
+
+A segunda etapa eliminou a duplicação da `main`, consolidando validação e deploy em uma única passagem. O fluxo foi homologado em produção com sucesso de instalação, Astro check, build, QA, deploy Cloudflare e smoke test.
 
 ## Evolução segura
 
-O pipeline deve evoluir incrementalmente. Primeiro estabilizar runner e concorrência; depois medir se cache, separação de jobs ou reaproveitamento de artefatos trazem benefício real antes de introduzir mais complexidade.
+O pipeline deve continuar evoluindo incrementalmente. Não adicionar cache extra, separação adicional de jobs, reaproveitamento de artifacts ou outra camada de infraestrutura sem medir benefício real e preservar a simplicidade atual.
