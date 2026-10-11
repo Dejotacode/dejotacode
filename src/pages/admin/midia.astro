@@ -1,8 +1,18 @@
 ---
+import { getCollection } from "astro:content";
 import AdminLayout from "../../layouts/AdminLayout.astro";
 import "../../styles/admin-metrics.css";
 
 const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+const posts = await getCollection("posts");
+const mediaPattern = /https:\/\/api\.dejotacode\.com\.br\/api\/media\/public\/([^\s)]+)/g;
+const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
+  const keys: string[] = [];
+  for (const match of (post.body ?? "").matchAll(mediaPattern)) {
+    if (match[1]) keys.push(match[1]);
+  }
+  return keys;
+}))];
 ---
 
 <AdminLayout title="Mídia" description="Biblioteca de mídia do DejotaCode.">
@@ -11,7 +21,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Biblioteca operacional</p>
       <h1>Mídia</h1>
       <p class="admin-intro">
-        Consulte a biblioteca real de imagens do DejotaCode em modo leitura. Ações sensíveis continuam isoladas no Editor até as próximas etapas de migração.
+        Consulte a biblioteca real de imagens do DejotaCode e gere um relatório de uso e segurança em modo leitura. Nenhuma ação desta tela altera ou remove arquivos.
       </p>
 
       <section class="metrics-section" aria-labelledby="media-library-title">
@@ -19,7 +29,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
           <div>
             <h2 id="media-library-title">Biblioteca de imagens</h2>
             <p class="metrics-section__note">
-              Busca, consulta e cópia de URL. Nenhuma ação desta tela altera ou remove arquivos.
+              Busca, consulta, cópia de URL e classificação de segurança. Nenhuma ação desta tela grava decisões ou remove arquivos.
             </p>
           </div>
           <strong class="media-count" data-media-count>0 imagens</strong>
@@ -30,6 +40,15 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
             <span>Buscar na biblioteca</span>
             <input type="search" placeholder="Alt text ou caminho do arquivo" data-media-search />
           </label>
+          <label class="media-filter">
+            <span>Segurança</span>
+            <select data-media-safety-filter>
+              <option value="all">Todas</option>
+              <option value="used">Em uso</option>
+              <option value="orphan">Possivelmente órfãs</option>
+              <option value="review">Requer revisão</option>
+            </select>
+          </label>
           <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
         </div>
 
@@ -37,10 +56,24 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         <div class="media-library-grid" data-media-grid aria-live="polite"></div>
       </section>
 
+      <section class="metrics-section" aria-labelledby="media-safety-title">
+        <div class="media-toolbar__heading">
+          <div>
+            <h2 id="media-safety-title">Relatório de uso e segurança</h2>
+            <p class="metrics-section__note">
+              Cruza referências Markdown, capas do CMS e disponibilidade pública da mídia. “Possivelmente órfã” nunca autoriza exclusão automática.
+            </p>
+          </div>
+          <button class="button" type="button" data-media-safety-run>Gerar relatório</button>
+        </div>
+        <output class="media-library-status" data-media-safety-status>Relatório ainda não executado.</output>
+        <div class="media-safety-summary" data-media-safety-summary hidden></div>
+      </section>
+
       <section class="metrics-section" aria-labelledby="media-safety-note-title">
         <h2 id="media-safety-note-title">Limite desta etapa</h2>
         <p class="metrics-section__note">
-          Upload, revisão humana, relatório de segurança, cleanup, dry-run, snapshot e exclusão continuam no Editor. Esta etapa é somente leitura.
+          Upload, revisão humana, cleanup, dry-run, snapshot e exclusão continuam no Editor. O relatório desta tela é somente leitura e exige revisão humana antes de qualquer etapa futura.
         </p>
       </section>
 
@@ -50,6 +83,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       </div>
     </div>
   </main>
+
+  <script is:inline id="canonical-media-keys" type="application/json" set:html={JSON.stringify(canonicalMediaKeys).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")} />
 
   <script>
     import { logoutAdmin, requireAdminSession } from "../../scripts/admin-session";
@@ -63,17 +98,26 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       createdAt: string;
     };
 
+    type SafetyState = "used" | "orphan" | "review";
+
     const root = document.querySelector<HTMLElement>("[data-api]");
     const api = root?.dataset.api;
     const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
     const refreshButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
     const searchInput = document.querySelector<HTMLInputElement>("[data-media-search]");
+    const safetyFilter = document.querySelector<HTMLSelectElement>("[data-media-safety-filter]");
+    const safetyButton = document.querySelector<HTMLButtonElement>("[data-media-safety-run]");
+    const safetyStatus = document.querySelector<HTMLOutputElement>("[data-media-safety-status]");
+    const safetySummary = document.querySelector<HTMLElement>("[data-media-safety-summary]");
     const status = document.querySelector<HTMLOutputElement>("[data-media-status]");
     const grid = document.querySelector<HTMLElement>("[data-media-grid]");
     const count = document.querySelector<HTMLElement>("[data-media-count]");
+    const keysNode = document.querySelector<HTMLScriptElement>("#canonical-media-keys");
+    const canonicalMediaKeys = new Set<string>(keysNode?.textContent ? JSON.parse(keysNode.textContent) : []);
 
     let csrf = "";
     let mediaItems: MediaItem[] = [];
+    let safetyStates = new Map<string, SafetyState>();
 
     const mediaPublicUrl = (objectKey: string) => api
       ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
@@ -102,11 +146,19 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
     const filteredMedia = () => {
       const query = normalizedSearch(searchInput?.value ?? "");
+      const safety = safetyFilter?.value ?? "all";
       return mediaItems
         .filter((item) => item.contentType.startsWith("image/"))
+        .filter((item) => safety === "all" || safetyStates.get(item.objectKey) === safety)
         .filter((item) => !query || normalizedSearch(`${item.altText} ${item.objectKey}`).includes(query))
         .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     };
+
+    const safetyLabel = (state: SafetyState) => state === "used"
+      ? "Segurança: em uso"
+      : state === "orphan"
+        ? "Segurança: possivelmente órfã"
+        : "Segurança: requer revisão";
 
     const renderLibrary = () => {
       if (!grid || !status || !count) return;
@@ -120,7 +172,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         const empty = document.createElement("p");
         empty.className = "media-empty";
         empty.textContent = totalImages
-          ? "Nenhuma imagem corresponde à busca atual."
+          ? "Nenhuma imagem corresponde aos filtros atuais."
           : "A biblioteca ainda não possui imagens disponíveis.";
         grid.append(empty);
         status.textContent = totalImages
@@ -151,6 +203,17 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         const key = document.createElement("code");
         key.textContent = item.objectKey;
 
+        const safetyState = safetyStates.get(item.objectKey);
+        if (safetyState) {
+          const badge = document.createElement("span");
+          badge.className = "media-card__safety";
+          badge.dataset.state = safetyState;
+          badge.textContent = safetyLabel(safetyState);
+          body.append(title, meta, key, badge);
+        } else {
+          body.append(title, meta, key);
+        }
+
         const actions = document.createElement("div");
         actions.className = "media-card__actions";
 
@@ -175,12 +238,79 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         });
 
         actions.append(openLink, copyButton);
-        body.append(title, meta, key, actions);
+        body.append(actions);
         card.append(image, body);
         grid.append(card);
       }
 
       status.textContent = `${images.length} de ${totalImages} imagem(ns) exibida(s), mais recentes primeiro.`;
+    };
+
+    const renderSafetySummary = (counts: { used: number; orphan: number; review: number; checked: number }) => {
+      if (!safetySummary) return;
+      safetySummary.replaceChildren();
+      const items: Array<[string, number]> = [
+        ["Em uso", counts.used],
+        ["Possivelmente órfãs", counts.orphan],
+        ["Requer revisão", counts.review],
+        ["R2 verificado", counts.checked],
+      ];
+      for (const [label, value] of items) {
+        const card = document.createElement("span");
+        const strong = document.createElement("strong");
+        const small = document.createElement("small");
+        strong.textContent = String(value);
+        small.textContent = label;
+        card.append(strong, small);
+        safetySummary.append(card);
+      }
+      safetySummary.hidden = false;
+    };
+
+    const runSafetyReport = async () => {
+      if (!api || !safetyButton || !safetyStatus) return;
+      safetyButton.disabled = true;
+      safetyStatus.textContent = "Cruzando referências e verificando objetos no R2…";
+      try {
+        if (!mediaItems.length) await loadMediaLibrary();
+        const cmsResponse = await fetch(`${api}/api/cms/posts`, { credentials: "include" });
+        const cmsPayload = await cmsResponse.json();
+        if (!cmsResponse.ok) throw new Error(cmsPayload.error?.message ?? "Não foi possível consultar as capas do CMS.");
+        const cmsPosts = Array.isArray(cmsPayload.data?.items) ? cmsPayload.data.items : [];
+        const coverKeys = new Set<string>(cmsPosts.map((post: { coverKey?: string | null }) => post.coverKey).filter(Boolean));
+        const states = new Map<string, SafetyState>();
+        let checked = 0;
+
+        for (const item of mediaItems) {
+          if (!item.contentType.startsWith("image/")) continue;
+          const used = canonicalMediaKeys.has(item.objectKey) || coverKeys.has(item.objectKey);
+          let reachable = false;
+          try {
+            const response = await fetch(mediaPublicUrl(item.objectKey), { method: "HEAD", credentials: "omit" });
+            reachable = response.ok;
+            checked += 1;
+          } catch {
+            reachable = false;
+          }
+          const state: SafetyState = used
+            ? "used"
+            : reachable && item.objectKey.startsWith("posts/")
+              ? "orphan"
+              : "review";
+          states.set(item.objectKey, state);
+        }
+
+        safetyStates = states;
+        const counts = { used: 0, orphan: 0, review: 0, checked };
+        for (const state of states.values()) counts[state] += 1;
+        renderSafetySummary(counts);
+        renderLibrary();
+        safetyStatus.textContent = `Relatório concluído para ${states.size} imagem(ns). “Possivelmente órfã” exige revisão humana antes de qualquer ação.`;
+      } catch (error) {
+        safetyStatus.textContent = error instanceof Error ? error.message : "Não foi possível gerar o relatório de segurança.";
+      } finally {
+        safetyButton.disabled = false;
+      }
     };
 
     const loadMediaLibrary = async () => {
@@ -210,7 +340,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     };
 
     searchInput?.addEventListener("input", renderLibrary);
+    safetyFilter?.addEventListener("change", renderLibrary);
     refreshButton?.addEventListener("click", loadMediaLibrary);
+    safetyButton?.addEventListener("click", runSafetyReport);
 
     logoutButton?.addEventListener("click", async () => {
       if (!api) return;
@@ -238,15 +370,20 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       align-items: flex-end;
     }
 
-    .media-search {
+    .media-search,
+    .media-filter {
       display: grid;
-      flex: 1;
       gap: 0.4rem;
       color: var(--color-text);
       font-weight: 700;
     }
 
-    .media-search input {
+    .media-search {
+      flex: 1;
+    }
+
+    .media-search input,
+    .media-filter select {
       width: 100%;
       min-height: 2.85rem;
       padding: 0.7rem 0.8rem;
@@ -308,10 +445,61 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       overflow-wrap: anywhere;
     }
 
+    .media-card__safety {
+      width: fit-content;
+      padding: 0.35rem 0.55rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-surface-soft);
+      font-weight: 800;
+    }
+
+    .media-card__safety[data-state="used"] {
+      color: var(--color-accent-strong);
+    }
+
+    .media-card__safety[data-state="orphan"],
+    .media-card__safety[data-state="review"] {
+      color: var(--color-text);
+    }
+
     .media-card__actions {
       justify-content: flex-start;
       flex-wrap: wrap;
       margin-top: 0.25rem;
+    }
+
+    .media-safety-summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .media-safety-summary[hidden] {
+      display: none;
+    }
+
+    .media-safety-summary > span {
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+    }
+
+    .media-safety-summary strong,
+    .media-safety-summary small {
+      display: block;
+    }
+
+    .media-safety-summary strong {
+      color: var(--color-accent-strong);
+      font: 800 1.7rem/1 var(--font-heading);
+    }
+
+    .media-safety-summary small {
+      margin-top: 0.45rem;
+      color: var(--color-text-muted);
     }
 
     .media-empty {
@@ -325,7 +513,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     }
 
     @media (max-width: 56rem) {
-      .media-library-grid {
+      .media-library-grid,
+      .media-safety-summary {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -337,7 +526,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         flex-direction: column;
       }
 
-      .media-library-grid {
+      .media-library-grid,
+      .media-safety-summary {
         grid-template-columns: 1fr;
       }
     }
