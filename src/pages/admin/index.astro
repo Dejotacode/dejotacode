@@ -103,6 +103,8 @@ const publishedPosts = totalPosts - draftPosts;
   </main>
 
   <script>
+    import { fetchAdminSession, logoutAdmin } from "../../scripts/admin-session";
+
     const root = document.querySelector<HTMLElement>("[data-api]");
     const api = root?.dataset.api;
     const login = document.querySelector<HTMLElement>("[data-login]");
@@ -128,12 +130,8 @@ const publishedPosts = totalPosts - draftPosts;
 
     const checkSession = async () => {
       if (!api) return;
-
-      const response = await fetch(`${api}/api/auth/session`, {
-        credentials: "include",
-      });
-
-      if (response.ok) showAuthenticated();
+      const session = await fetchAdminSession(api);
+      if (session) showAuthenticated();
     };
 
     loginForm?.addEventListener("submit", async (event) => {
@@ -175,25 +173,13 @@ const publishedPosts = totalPosts - draftPosts;
 
     logoutButton?.addEventListener("click", async () => {
       if (!api) return;
-
-      const sessionResponse = await fetch(`${api}/api/auth/session`, {
-        credentials: "include",
-      });
-
-      if (!sessionResponse.ok) {
+      const session = await fetchAdminSession(api);
+      if (!session) {
         location.reload();
         return;
       }
 
-      const payload = await sessionResponse.json();
-      const csrf = payload.data?.csrf;
-
-      await fetch(`${api}/api/auth/logout`, {
-        method: "POST",
-        credentials: "include",
-        headers: csrf ? { "X-CSRF-Token": String(csrf) } : {},
-      });
-
+      await logoutAdmin(api, session.csrf);
       location.reload();
     });
 
