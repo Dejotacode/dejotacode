@@ -5,19 +5,42 @@ import "../../styles/admin-metrics.css";
 const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 ---
 
-<AdminLayout title="Mídia" description="Gestão de mídia do DejotaCode.">
+<AdminLayout title="Mídia" description="Biblioteca de mídia do DejotaCode.">
   <main id="conteudo" class="admin-page" data-api={api}>
     <div class="admin-panel">
       <p class="admin-kicker">Biblioteca operacional</p>
       <h1>Mídia</h1>
       <p class="admin-intro">
-        Espaço dedicado para biblioteca, uso e segurança de mídia. Nesta primeira etapa, a rota é protegida e prepara a separação gradual da lógica que ainda permanece no Editor.
+        Consulte a biblioteca real de imagens do DejotaCode em modo leitura. Ações sensíveis continuam isoladas no Editor até as próximas etapas de migração.
       </p>
 
-      <section class="metrics-section" aria-labelledby="media-scope-title">
-        <h2 id="media-scope-title">Escopo desta etapa</h2>
+      <section class="metrics-section" aria-labelledby="media-library-title">
+        <div class="media-toolbar__heading">
+          <div>
+            <h2 id="media-library-title">Biblioteca de imagens</h2>
+            <p class="metrics-section__note">
+              Busca, consulta e cópia de URL. Nenhuma ação desta tela altera ou remove arquivos.
+            </p>
+          </div>
+          <strong class="media-count" data-media-count>0 imagens</strong>
+        </div>
+
+        <div class="media-toolbar">
+          <label class="media-search">
+            <span>Buscar na biblioteca</span>
+            <input type="search" placeholder="Alt text ou caminho do arquivo" data-media-search />
+          </label>
+          <button class="button" type="button" data-refresh-media>Atualizar biblioteca</button>
+        </div>
+
+        <output class="media-library-status" data-media-status>Carregando biblioteca…</output>
+        <div class="media-library-grid" data-media-grid aria-live="polite"></div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="media-safety-note-title">
+        <h2 id="media-safety-note-title">Limite desta etapa</h2>
         <p class="metrics-section__note">
-          Nenhuma ação de upload, limpeza, dry-run, snapshot ou exclusão foi movida ainda. Essas funções continuam no Editor até serem extraídas e validadas em etapas próprias.
+          Upload, revisão humana, relatório de segurança, cleanup, dry-run, snapshot e exclusão continuam no Editor. Esta etapa é somente leitura.
         </p>
       </section>
 
@@ -31,17 +54,163 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
   <script>
     import { logoutAdmin, requireAdminSession } from "../../scripts/admin-session";
 
+    type MediaItem = {
+      id: number;
+      objectKey: string;
+      contentType: string;
+      sizeBytes: number;
+      altText: string;
+      createdAt: string;
+    };
+
     const root = document.querySelector<HTMLElement>("[data-api]");
     const api = root?.dataset.api;
     const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+    const refreshButton = document.querySelector<HTMLButtonElement>("[data-refresh-media]");
+    const searchInput = document.querySelector<HTMLInputElement>("[data-media-search]");
+    const status = document.querySelector<HTMLOutputElement>("[data-media-status]");
+    const grid = document.querySelector<HTMLElement>("[data-media-grid]");
+    const count = document.querySelector<HTMLElement>("[data-media-count]");
+
     let csrf = "";
+    let mediaItems: MediaItem[] = [];
+
+    const mediaPublicUrl = (objectKey: string) => api
+      ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
+      : "";
+
+    const normalizedSearch = (input: string) => input
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+    const formatBytes = (bytes: number) => {
+      if (!Number.isFinite(bytes) || bytes < 0) return "—";
+      if (bytes < 1024) return `${bytes} B`;
+      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    };
+
+    const formatMediaDate = (input: string) => {
+      const normalized = input.includes("T") ? input : `${input.replace(" ", "T")}Z`;
+      const date = new Date(normalized);
+      return Number.isNaN(date.getTime())
+        ? input
+        : new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(date);
+    };
+
+    const filteredMedia = () => {
+      const query = normalizedSearch(searchInput?.value ?? "");
+      return mediaItems
+        .filter((item) => item.contentType.startsWith("image/"))
+        .filter((item) => !query || normalizedSearch(`${item.altText} ${item.objectKey}`).includes(query))
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    };
+
+    const renderLibrary = () => {
+      if (!grid || !status || !count) return;
+      grid.replaceChildren();
+      const images = filteredMedia();
+      const totalImages = mediaItems.filter((item) => item.contentType.startsWith("image/")).length;
+
+      count.textContent = `${totalImages} ${totalImages === 1 ? "imagem" : "imagens"}`;
+
+      if (!images.length) {
+        const empty = document.createElement("p");
+        empty.className = "media-empty";
+        empty.textContent = totalImages
+          ? "Nenhuma imagem corresponde à busca atual."
+          : "A biblioteca ainda não possui imagens disponíveis.";
+        grid.append(empty);
+        status.textContent = totalImages
+          ? `0 de ${totalImages} imagem(ns) exibida(s).`
+          : "Nenhuma imagem disponível na biblioteca.";
+        return;
+      }
+
+      for (const item of images) {
+        const card = document.createElement("article");
+        card.className = "media-card";
+
+        const image = document.createElement("img");
+        image.src = mediaPublicUrl(item.objectKey);
+        image.alt = item.altText || "Imagem editorial sem texto alternativo";
+        image.loading = "lazy";
+        image.decoding = "async";
+
+        const body = document.createElement("div");
+        body.className = "media-card__body";
+
+        const title = document.createElement("strong");
+        title.textContent = item.altText || "Sem texto alternativo";
+
+        const meta = document.createElement("span");
+        meta.textContent = `${formatBytes(Number(item.sizeBytes))} · ${formatMediaDate(item.createdAt)}`;
+
+        const key = document.createElement("code");
+        key.textContent = item.objectKey;
+
+        const actions = document.createElement("div");
+        actions.className = "media-card__actions";
+
+        const openLink = document.createElement("a");
+        openLink.className = "button";
+        openLink.href = mediaPublicUrl(item.objectKey);
+        openLink.target = "_blank";
+        openLink.rel = "noreferrer";
+        openLink.textContent = "Abrir imagem";
+
+        const copyButton = document.createElement("button");
+        copyButton.className = "button";
+        copyButton.type = "button";
+        copyButton.textContent = "Copiar URL";
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(mediaPublicUrl(item.objectKey));
+            status.textContent = "URL pública da imagem copiada.";
+          } catch {
+            status.textContent = "O navegador bloqueou a cópia automática da URL.";
+          }
+        });
+
+        actions.append(openLink, copyButton);
+        body.append(title, meta, key, actions);
+        card.append(image, body);
+        grid.append(card);
+      }
+
+      status.textContent = `${images.length} de ${totalImages} imagem(ns) exibida(s), mais recentes primeiro.`;
+    };
+
+    const loadMediaLibrary = async () => {
+      if (!api || !grid || !status) return;
+      if (refreshButton) refreshButton.disabled = true;
+      status.textContent = "Atualizando biblioteca…";
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca de imagens.");
+        mediaItems = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        renderLibrary();
+      } catch (error) {
+        grid.replaceChildren();
+        status.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca de imagens.";
+      } finally {
+        if (refreshButton) refreshButton.disabled = false;
+      }
+    };
 
     const start = async () => {
       if (!api) return;
       const session = await requireAdminSession(api);
       if (!session) return;
       csrf = session.csrf;
+      await loadMediaLibrary();
     };
+
+    searchInput?.addEventListener("input", renderLibrary);
+    refreshButton?.addEventListener("click", loadMediaLibrary);
 
     logoutButton?.addEventListener("click", async () => {
       if (!api) return;
@@ -50,7 +219,127 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     });
 
     start().catch(() => {
-      location.href = "/admin/";
+      if (status) status.textContent = "Não foi possível iniciar a biblioteca de mídia.";
     });
   </script>
+
+  <style>
+    .media-toolbar__heading,
+    .media-toolbar,
+    .media-card__actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .media-toolbar {
+      margin-top: 1.25rem;
+      align-items: flex-end;
+    }
+
+    .media-search {
+      display: grid;
+      flex: 1;
+      gap: 0.4rem;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    .media-search input {
+      width: 100%;
+      min-height: 2.85rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+    }
+
+    .media-count,
+    .media-library-status {
+      color: var(--color-text-muted);
+    }
+
+    .media-library-status {
+      display: block;
+      min-height: 1.5rem;
+      margin-top: 1rem;
+      font-weight: 700;
+    }
+
+    .media-library-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    .media-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--color-surface-soft);
+    }
+
+    .media-card__body {
+      display: grid;
+      gap: 0.65rem;
+      padding: 1rem;
+    }
+
+    .media-card__body > span,
+    .media-card__body > code {
+      color: var(--color-text-muted);
+      font-size: 0.82rem;
+    }
+
+    .media-card__body > code {
+      overflow-wrap: anywhere;
+    }
+
+    .media-card__actions {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .media-empty {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 1.25rem;
+      border: 1px dashed var(--color-border-strong);
+      border-radius: var(--radius-lg);
+      color: var(--color-text-muted);
+      background: var(--color-surface-soft);
+    }
+
+    @media (max-width: 56rem) {
+      .media-library-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 38rem) {
+      .media-toolbar__heading,
+      .media-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .media-library-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </AdminLayout>
