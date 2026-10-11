@@ -1,0 +1,56 @@
+---
+import AdminLayout from "../../layouts/AdminLayout.astro";
+import "../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+
+<AdminLayout title="Mídia" description="Gestão de mídia do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Biblioteca operacional</p>
+      <h1>Mídia</h1>
+      <p class="admin-intro">
+        Espaço dedicado para biblioteca, uso e segurança de mídia. Nesta primeira etapa, a rota é protegida e prepara a separação gradual da lógica que ainda permanece no Editor.
+      </p>
+
+      <section class="metrics-section" aria-labelledby="media-scope-title">
+        <h2 id="media-scope-title">Escopo desta etapa</h2>
+        <p class="metrics-section__note">
+          Nenhuma ação de upload, limpeza, dry-run, snapshot ou exclusão foi movida ainda. Essas funções continuam no Editor até serem extraídas e validadas em etapas próprias.
+        </p>
+      </section>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/editor/">Abrir Editor</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../scripts/admin-session";
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+    let csrf = "";
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+    };
+
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      location.href = "/admin/";
+    });
+  </script>
+</AdminLayout>
