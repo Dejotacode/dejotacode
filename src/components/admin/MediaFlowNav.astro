@@ -1,0 +1,102 @@
+---
+const currentPath = Astro.url.pathname;
+
+const steps = [
+  { href: "/admin/midia/", label: "Biblioteca", match: (path: string) => path === "/admin/midia/" },
+  { href: "/admin/midia/upload/", label: "Upload", match: (path: string) => path.startsWith("/admin/midia/upload") },
+  { href: "/admin/midia/revisao/", label: "Revisão", match: (path: string) => path.startsWith("/admin/midia/revisao") },
+  { href: "/admin/midia/cleanup/", label: "Cleanup", match: (path: string) => path.startsWith("/admin/midia/cleanup") },
+  { href: "/admin/midia/dry-run/", label: "Dry-run", match: (path: string) => path.startsWith("/admin/midia/dry-run") },
+  { href: "/admin/midia/snapshot/", label: "Snapshot", match: (path: string) => path.startsWith("/admin/midia/snapshot") },
+];
+---
+
+<nav class="media-flow-nav" aria-label="Fluxo de mídia">
+  <div class="media-flow-nav__inner">
+    <span class="media-flow-nav__label">Fluxo de mídia</span>
+    <div class="media-flow-nav__steps">
+      {steps.map((step, index) => {
+        const active = step.match(currentPath);
+        return (
+          <a
+            class:list={["media-flow-nav__step", { "media-flow-nav__step--active": active }]}
+            href={step.href}
+            aria-current={active ? "step" : undefined}
+          >
+            <span class="media-flow-nav__index" aria-hidden="true">{index + 1}</span>
+            <span>{step.label}</span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .media-flow-nav {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface-soft);
+  }
+
+  .media-flow-nav__inner {
+    width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
+    margin-inline: auto;
+    display: grid;
+    gap: 0.55rem;
+    padding-block: 0.7rem 0.8rem;
+  }
+
+  .media-flow-nav__label {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .media-flow-nav__steps {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding-bottom: 0.1rem;
+    scrollbar-width: thin;
+  }
+
+  .media-flow-nav__step {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.5rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .media-flow-nav__step:hover,
+  .media-flow-nav__step:focus-visible {
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+  }
+
+  .media-flow-nav__step--active {
+    color: var(--color-accent-strong);
+    border-color: var(--color-border-strong);
+    background: var(--color-surface);
+  }
+
+  .media-flow-nav__index {
+    display: inline-grid;
+    place-items: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 999px;
+    background: var(--color-surface-soft);
+    font-size: 0.72rem;
+  }
+</style>
