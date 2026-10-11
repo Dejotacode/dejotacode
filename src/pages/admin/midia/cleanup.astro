@@ -1,0 +1,459 @@
+---
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import "../../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+
+<AdminLayout title="Gate de cleanup" description="Segunda revisão das mídias candidatas do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Segunda revisão</p>
+      <h1>Gate de cleanup</h1>
+      <p class="admin-intro">
+        Revise somente imagens já marcadas como candidatas. Aprovar aqui permite incluí-las em um plano de remoção futuro, mas não remove nenhum arquivo.
+      </p>
+
+      <section class="metrics-section" aria-labelledby="cleanup-list-title">
+        <div class="cleanup-heading">
+          <div>
+            <h2 id="cleanup-list-title">Candidatas à limpeza</h2>
+            <p class="metrics-section__note">A segunda aprovação exige justificativa e pode ser reaberta a qualquer momento.</p>
+          </div>
+          <strong class="cleanup-count" data-cleanup-count>0 candidatas</strong>
+        </div>
+
+        <div class="cleanup-toolbar">
+          <label>
+            <span>Buscar</span>
+            <input type="search" placeholder="Alt text ou caminho" data-cleanup-search />
+          </label>
+          <label>
+            <span>Gate</span>
+            <select data-cleanup-filter>
+              <option value="all">Todas</option>
+              <option value="pending">Aguardando segunda revisão</option>
+              <option value="approved">Aprovadas para plano</option>
+            </select>
+          </label>
+          <button class="button" type="button" data-cleanup-refresh>Atualizar</button>
+        </div>
+
+        <output class="cleanup-status" data-cleanup-status aria-live="polite">Carregando candidatas…</output>
+        <div class="cleanup-grid" data-cleanup-grid></div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="cleanup-plan-title">
+        <div class="cleanup-heading">
+          <div>
+            <h2 id="cleanup-plan-title">Plano de remoção</h2>
+            <p class="metrics-section__note">Documento local de conferência. Não executa DELETE e não autoriza remoção automática.</p>
+          </div>
+          <button class="button" type="button" data-cleanup-plan>Gerar plano</button>
+        </div>
+        <output class="cleanup-status" data-cleanup-plan-status>Nenhum plano gerado.</output>
+        <pre class="cleanup-plan" data-cleanup-plan-output hidden></pre>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="cleanup-limit-title">
+        <h2 id="cleanup-limit-title">Limite desta etapa</h2>
+        <p class="metrics-section__note">
+          Este gate registra apenas a segunda revisão. Dry-run, snapshot e exclusão continuam fora desta tela.
+        </p>
+      </section>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/midia/revisao/">Revisão humana</a>
+        <a class="button" href="/admin/midia/">Biblioteca de Mídia</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
+
+    type MediaItem = {
+      id: number;
+      objectKey: string;
+      contentType: string;
+      sizeBytes: number;
+      altText: string;
+      createdAt: string;
+      reviewStatus?: "pending" | "keep" | "candidate";
+      reviewNote?: string | null;
+      cleanupStatus?: "pending" | "approved";
+      cleanupNote?: string | null;
+      cleanupApprovedAt?: string | null;
+    };
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const grid = document.querySelector<HTMLElement>("[data-cleanup-grid]");
+    const status = document.querySelector<HTMLOutputElement>("[data-cleanup-status]");
+    const count = document.querySelector<HTMLElement>("[data-cleanup-count]");
+    const search = document.querySelector<HTMLInputElement>("[data-cleanup-search]");
+    const filter = document.querySelector<HTMLSelectElement>("[data-cleanup-filter]");
+    const refresh = document.querySelector<HTMLButtonElement>("[data-cleanup-refresh]");
+    const planButton = document.querySelector<HTMLButtonElement>("[data-cleanup-plan]");
+    const planStatus = document.querySelector<HTMLOutputElement>("[data-cleanup-plan-status]");
+    const planOutput = document.querySelector<HTMLElement>("[data-cleanup-plan-output]");
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+
+    let csrf = "";
+    let mediaItems: MediaItem[] = [];
+
+    const mediaPublicUrl = (objectKey: string) => api
+      ? new URL(`/api/media/public/${objectKey}`, `${api}/`).toString()
+      : "";
+
+    const normalizedSearch = (input: string) => input
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+    const formatDate = (input?: string | null) => {
+      if (!input) return "—";
+      const normalized = input.includes("T") ? input : `${input.replace(" ", "T")}Z`;
+      const date = new Date(normalized);
+      return Number.isNaN(date.getTime())
+        ? input
+        : new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(date);
+    };
+
+    const candidates = () => mediaItems.filter((item) => item.contentType.startsWith("image/") && item.reviewStatus === "candidate");
+
+    const visibleCandidates = () => {
+      const query = normalizedSearch(search?.value ?? "");
+      const state = filter?.value ?? "all";
+      return candidates()
+        .filter((item) => state === "all" || (item.cleanupStatus ?? "pending") === state)
+        .filter((item) => !query || normalizedSearch(`${item.altText} ${item.objectKey} ${item.reviewNote ?? ""} ${item.cleanupNote ?? ""}`).includes(query))
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    };
+
+    const updateCleanupGate = async (item: MediaItem, cleanupStatus: "pending" | "approved") => {
+      if (!api || !status) return;
+      if (item.reviewStatus !== "candidate") {
+        status.textContent = "Somente mídias marcadas como candidatas podem avançar no gate.";
+        return;
+      }
+
+      let note = item.cleanupNote ?? "";
+      if (cleanupStatus === "approved") {
+        const entered = window.prompt(
+          "Nota da segunda revisão (obrigatória): confirme por que esta mídia pode entrar no plano de remoção.",
+          note,
+        );
+        if (entered === null) return;
+        note = entered.trim();
+        if (note.length < 10) {
+          status.textContent = "Informe uma nota de pelo menos 10 caracteres para a segunda aprovação.";
+          return;
+        }
+        if (!window.confirm("Aprovar esta candidata para o plano de remoção? Isso NÃO exclui o arquivo.")) return;
+      } else {
+        note = "";
+        if (!window.confirm("Reabrir o gate desta mídia? Ela deixará de constar como aprovada para o plano.")) return;
+      }
+
+      status.textContent = "Registrando segunda revisão…";
+      try {
+        const response = await fetch(`${api}/api/media/cms/${item.id}/cleanup`, {
+          method: "PATCH",
+          credentials: "include",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+          body: JSON.stringify({ status: cleanupStatus, note }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível atualizar o gate de limpeza.");
+        await loadCandidates();
+        status.textContent = cleanupStatus === "approved"
+          ? "Segunda aprovação registrada. Nenhum arquivo foi removido."
+          : "Gate reaberto. Nenhum arquivo foi removido.";
+      } catch (error) {
+        status.textContent = error instanceof Error ? error.message : "Não foi possível atualizar o gate de limpeza.";
+      }
+    };
+
+    const renderCandidates = () => {
+      if (!grid || !status || !count) return;
+      grid.replaceChildren();
+      const all = candidates();
+      const items = visibleCandidates();
+      count.textContent = `${all.length} ${all.length === 1 ? "candidata" : "candidatas"}`;
+
+      if (!items.length) {
+        const empty = document.createElement("p");
+        empty.className = "cleanup-empty";
+        empty.textContent = all.length ? "Nenhuma candidata corresponde aos filtros atuais." : "Nenhuma mídia está marcada como candidata à limpeza.";
+        grid.append(empty);
+        status.textContent = empty.textContent;
+        return;
+      }
+
+      for (const item of items) {
+        const card = document.createElement("article");
+        card.className = "cleanup-card";
+
+        const image = document.createElement("img");
+        image.src = mediaPublicUrl(item.objectKey);
+        image.alt = item.altText || "Imagem editorial sem texto alternativo";
+        image.loading = "lazy";
+
+        const body = document.createElement("div");
+        body.className = "cleanup-card__body";
+
+        const title = document.createElement("strong");
+        title.textContent = item.altText || "Sem texto alternativo";
+
+        const key = document.createElement("code");
+        key.textContent = item.objectKey;
+
+        const review = document.createElement("p");
+        review.textContent = `Primeira revisão: ${item.reviewNote || "sem nota"}`;
+
+        const gate = document.createElement("span");
+        const cleanupStatus = item.cleanupStatus ?? "pending";
+        gate.className = "cleanup-badge";
+        gate.dataset.state = cleanupStatus;
+        gate.textContent = cleanupStatus === "approved" ? "Gate: aprovado para plano" : "Gate: aguardando segunda revisão";
+
+        body.append(title, key, review, gate);
+
+        if (cleanupStatus === "approved") {
+          const second = document.createElement("p");
+          second.textContent = `Segunda revisão: ${item.cleanupNote || "—"} · ${formatDate(item.cleanupApprovedAt)}`;
+          body.append(second);
+        }
+
+        const actions = document.createElement("div");
+        actions.className = "cleanup-actions";
+
+        const open = document.createElement("a");
+        open.className = "button";
+        open.href = mediaPublicUrl(item.objectKey);
+        open.target = "_blank";
+        open.rel = "noreferrer";
+        open.textContent = "Abrir imagem";
+        actions.append(open);
+
+        const gateButton = document.createElement("button");
+        gateButton.className = "button";
+        gateButton.type = "button";
+        gateButton.textContent = cleanupStatus === "approved" ? "Reabrir gate" : "Aprovar para plano";
+        gateButton.addEventListener("click", () => updateCleanupGate(item, cleanupStatus === "approved" ? "pending" : "approved"));
+        actions.append(gateButton);
+
+        body.append(actions);
+        card.append(image, body);
+        grid.append(card);
+      }
+
+      status.textContent = `${items.length} de ${all.length} candidata(s) exibida(s). Nenhuma exclusão disponível nesta tela.`;
+    };
+
+    const generatePlan = () => {
+      if (!planOutput || !planStatus) return;
+      const approved = candidates().filter((item) => item.cleanupStatus === "approved");
+      const lines = [
+        "# DejotaCode — Plano de remoção de mídia (somente leitura)",
+        "",
+        `Gerado em: ${new Date().toISOString()}`,
+        `Itens aprovados: ${approved.length}`,
+        "",
+        "Este plano NÃO executa DELETE e não autoriza remoção automática.",
+        "",
+      ];
+      for (const item of approved) {
+        lines.push(`- ID ${item.id}: ${item.objectKey}`);
+        lines.push(`  Alt: ${item.altText || "—"}`);
+        lines.push(`  Revisão: ${item.reviewNote || "—"}`);
+        lines.push(`  Segunda aprovação: ${item.cleanupNote || "—"}`);
+        lines.push(`  URL: ${mediaPublicUrl(item.objectKey)}`);
+      }
+      planOutput.textContent = lines.join("\n");
+      planOutput.hidden = false;
+      planStatus.textContent = approved.length
+        ? `Plano gerado com ${approved.length} item(ns) aprovado(s). Nenhuma exclusão foi executada.`
+        : "Nenhuma candidata possui segunda aprovação. Plano vazio; nenhuma exclusão foi executada.";
+    };
+
+    const loadCandidates = async () => {
+      if (!api || !status || !grid) return;
+      if (refresh) refresh.disabled = true;
+      status.textContent = "Atualizando candidatas…";
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca de mídia.");
+        mediaItems = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        renderCandidates();
+      } catch (error) {
+        grid.replaceChildren();
+        status.textContent = error instanceof Error ? error.message : "Não foi possível carregar as candidatas.";
+      } finally {
+        if (refresh) refresh.disabled = false;
+      }
+    };
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+      await loadCandidates();
+    };
+
+    search?.addEventListener("input", renderCandidates);
+    filter?.addEventListener("change", renderCandidates);
+    refresh?.addEventListener("click", loadCandidates);
+    planButton?.addEventListener("click", generatePlan);
+
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      if (status) status.textContent = "Não foi possível iniciar o gate de cleanup.";
+    });
+  </script>
+
+  <style>
+    .cleanup-heading,
+    .cleanup-toolbar,
+    .cleanup-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .cleanup-toolbar {
+      align-items: flex-end;
+      margin-top: 1.25rem;
+    }
+
+    .cleanup-toolbar label {
+      display: grid;
+      gap: 0.4rem;
+      flex: 1;
+      font-weight: 700;
+    }
+
+    .cleanup-toolbar input,
+    .cleanup-toolbar select {
+      width: 100%;
+      min-height: 2.85rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+    }
+
+    .cleanup-count,
+    .cleanup-status {
+      color: var(--color-text-muted);
+    }
+
+    .cleanup-status {
+      display: block;
+      min-height: 1.5rem;
+      margin-top: 1rem;
+      font-weight: 700;
+    }
+
+    .cleanup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cleanup-card {
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    .cleanup-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--color-surface-soft);
+    }
+
+    .cleanup-card__body {
+      display: grid;
+      gap: 0.7rem;
+      padding: 1rem;
+    }
+
+    .cleanup-card code,
+    .cleanup-card p {
+      margin: 0;
+      overflow-wrap: anywhere;
+      color: var(--color-text-muted);
+      font-size: 0.86rem;
+    }
+
+    .cleanup-badge {
+      width: fit-content;
+      padding: 0.35rem 0.55rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-surface-soft);
+      font-weight: 800;
+    }
+
+    .cleanup-badge[data-state="approved"] {
+      color: var(--color-accent-strong);
+    }
+
+    .cleanup-actions {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .cleanup-plan {
+      max-height: 30rem;
+      overflow: auto;
+      margin: 1rem 0 0;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+      white-space: pre-wrap;
+    }
+
+    .cleanup-empty {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 1.25rem;
+      border: 1px dashed var(--color-border-strong);
+      border-radius: var(--radius-lg);
+      color: var(--color-text-muted);
+      background: var(--color-surface-soft);
+    }
+
+    @media (max-width: 46rem) {
+      .cleanup-heading,
+      .cleanup-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .cleanup-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</AdminLayout>
