@@ -71,14 +71,15 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
       </section>
 
       <section class="metrics-section" aria-labelledby="media-safety-note-title">
-        <h2 id="media-safety-note-title">Limite desta etapa</h2>
+        <h2 id="media-safety-note-title">Papel da Biblioteca</h2>
         <p class="metrics-section__note">
-          Upload, revisão humana, cleanup, dry-run, snapshot e exclusão continuam no Editor. O relatório desta tela é somente leitura e exige revisão humana antes de qualquer etapa futura.
+          Upload, Revisão, Cleanup, Dry-run e Snapshot agora fazem parte do fluxo de Mídia. Esta Biblioteca continua somente leitura e serve como ponto de consulta e segurança; a exclusão definitiva ainda não está disponível neste fluxo.
         </p>
       </section>
 
       <div class="admin-actions">
-        <a class="button" href="/admin/editor/">Abrir Editor</a>
+        <a class="button" href="/admin/midia/upload/">Enviar mídia</a>
+        <a class="button" href="/admin/midia/revisao/">Revisar mídia</a>
         <button class="button" type="button" data-logout>Sair</button>
       </div>
     </div>
