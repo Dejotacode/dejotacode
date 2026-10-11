@@ -16,6 +16,7 @@ concurrency:
 jobs:
   quality:
     name: Check and build
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
 
@@ -42,9 +43,8 @@ jobs:
         run: npm run qa
 
   deploy-production:
-    name: Deploy Cloudflare Pages
+    name: Validate and deploy Cloudflare Pages
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: quality
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
@@ -63,6 +63,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Astro check
+        run: npm run check
 
       - name: Verify Cloudflare credential
         shell: bash
