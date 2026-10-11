@@ -11,7 +11,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Biblioteca operacional</p>
       <h1>Enviar imagem</h1>
       <p class="admin-intro">
-        Adicione uma imagem à biblioteca do DejotaCode sem inserir Markdown automaticamente. O Editor continua com o fluxo atual até a migração ser concluída.
+        Adicione uma imagem à biblioteca do DejotaCode sem inserir Markdown automaticamente. O envio entra no fluxo de Mídia e pode seguir depois para Revisão, Cleanup, Dry-run e Snapshot.
       </p>
 
       <section class="metrics-section" aria-labelledby="media-upload-title">
@@ -35,7 +35,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
           <label>
             <span>Slug do conteúdo</span>
             <input data-media-post-slug type="text" maxlength="140" placeholder="slug-do-conteudo" autocomplete="off" required />
-            <small>Mantém o mesmo vínculo editorial usado pelo upload atual do Editor.</small>
+            <small>Mantém o vínculo editorial da imagem com o conteúdo por meio do slug.</small>
           </label>
 
           <div class="media-upload-actions">
@@ -63,13 +63,13 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <section class="metrics-section" aria-labelledby="media-upload-limit-title">
         <h2 id="media-upload-limit-title">Limite desta etapa</h2>
         <p class="metrics-section__note">
-          Esta tela apenas envia imagens para a biblioteca. Revisão humana, cleanup, dry-run, snapshot e exclusão continuam fora deste fluxo.
+          Esta tela apenas envia imagens para a biblioteca. As decisões editoriais e validações de segurança continuam nas próximas etapas do fluxo de Mídia; a exclusão definitiva ainda não faz parte deste fluxo.
         </p>
       </section>
 
       <div class="admin-actions">
         <a class="button" href="/admin/midia/">Biblioteca de Mídia</a>
-        <a class="button" href="/admin/editor/">Abrir Editor</a>
+        <a class="button" href="/admin/midia/revisao/">Revisar mídia</a>
         <button class="button" type="button" data-logout>Sair</button>
       </div>
     </div>
