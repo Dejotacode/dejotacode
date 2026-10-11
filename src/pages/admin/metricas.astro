@@ -57,6 +57,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
   </main>
 
   <script>
+    import { logoutAdmin, requireAdminSession } from "../../scripts/admin-session";
+
     type MetricItem = {
       event: string;
       total: number;
@@ -267,17 +269,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     const start = async () => {
       if (!api) return;
 
-      const session = await fetch(`${api}/api/auth/session`, {
-        credentials: "include",
-      });
-
-      if (!session.ok) {
-        location.href = "/admin/";
-        return;
-      }
-
-      const sessionPayload = await session.json();
-      csrf = String(sessionPayload.data?.csrf ?? "");
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
 
       const response = await fetch(`${api}/api/analytics/summary`, {
         credentials: "include",
@@ -295,13 +289,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
     logoutButton?.addEventListener("click", async () => {
       if (!api) return;
-
-      await fetch(`${api}/api/auth/logout`, {
-        method: "POST",
-        credentials: "include",
-        headers: csrf ? { "X-CSRF-Token": csrf } : {},
-      });
-
+      await logoutAdmin(api, csrf);
       location.href = "/admin/";
     });
 
