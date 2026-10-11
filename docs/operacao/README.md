@@ -5,6 +5,7 @@ Status: vigente como índice. Revisão: 10/10/2026. Escopo: localização; o sta
 [Índice geral](../README.md) · [Regra de organização](../organizacao-documental.md)
 
 - [backup-recovery.md](backup-recovery.md).
+- [ci-cd.md](ci-cd.md).
 - [consolidacao-local-2026-10-09.md](consolidacao-local-2026-10-09.md).
 - [editorial-workflow.md](editorial-workflow.md).
 - [formularios-entrega-revisao-2026-10-09.md](formularios-entrega-revisao-2026-10-09.md).
