@@ -1,0 +1,68 @@
+---
+const currentPath = Astro.url.pathname;
+
+const items = [
+  { href: "/admin/", label: "Dashboard", match: (path: string) => path === "/admin/" },
+  { href: "/admin/editor/", label: "Conteúdo", match: (path: string) => path.startsWith("/admin/editor") },
+  { href: "/admin/editor/#biblioteca-de-imagens", label: "Mídia", match: () => false },
+  { href: "/admin/metricas/", label: "Métricas", match: (path: string) => path.startsWith("/admin/metricas") },
+];
+---
+
+<nav class="admin-nav" aria-label="Navegação administrativa">
+  <div class="admin-nav__inner">
+    {items.map((item) => {
+      const active = item.match(currentPath);
+      return (
+        <a
+          class:list={["admin-nav__link", { "admin-nav__link--active": active }]}
+          href={item.href}
+          aria-current={active ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      );
+    })}
+  </div>
+</nav>
+
+<style>
+  .admin-nav {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .admin-nav__inner {
+    width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
+    margin-inline: auto;
+    display: flex;
+    gap: 0.35rem;
+    overflow-x: auto;
+    padding-block: 0.65rem;
+    scrollbar-width: thin;
+  }
+
+  .admin-nav__link {
+    flex: 0 0 auto;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .admin-nav__link:hover,
+  .admin-nav__link:focus-visible {
+    color: var(--color-text);
+    border-color: var(--color-border);
+    background: var(--color-surface-soft);
+  }
+
+  .admin-nav__link--active {
+    color: var(--color-accent-strong);
+    border-color: var(--color-border-strong);
+    background: var(--color-surface-soft);
+  }
+</style>
