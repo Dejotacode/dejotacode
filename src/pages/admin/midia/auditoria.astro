@@ -1,0 +1,491 @@
+---
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import "../../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+
+<AdminLayout title="Auditoria de mídia" description="Histórico editorial e trilha técnica da biblioteca de mídia do DejotaCode.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel">
+      <p class="admin-kicker">Rastreabilidade operacional</p>
+      <h1>Auditoria de mídia</h1>
+      <p class="admin-intro">
+        Consulte o histórico editorial e a trilha técnica de qualquer mídia da biblioteca. Esta tela é somente leitura e não altera revisão, cleanup, dry-run, snapshot ou arquivos no R2.
+      </p>
+
+      <section class="metrics-section" aria-labelledby="audit-library-title">
+        <div class="audit-heading">
+          <div>
+            <h2 id="audit-library-title">Selecionar mídia</h2>
+            <p class="metrics-section__note">Busque por texto alternativo ou caminho e carregue a auditoria do item desejado.</p>
+          </div>
+          <button class="button" type="button" data-refresh>Atualizar biblioteca</button>
+        </div>
+
+        <label class="audit-search">
+          <span>Buscar</span>
+          <input type="search" placeholder="Alt text ou caminho do arquivo" data-search autocomplete="off" />
+        </label>
+
+        <output class="audit-status" data-library-status aria-live="polite">Carregando biblioteca…</output>
+        <div class="audit-media-grid" data-media-grid></div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="audit-history-title" data-history-section hidden>
+        <div class="audit-heading">
+          <div>
+            <h2 id="audit-history-title">Histórico completo</h2>
+            <p class="metrics-section__note" data-selected-media>Selecione uma mídia para consultar.</p>
+          </div>
+          <button class="button" type="button" data-reload-history>Recarregar histórico</button>
+        </div>
+
+        <output class="audit-status" data-history-status aria-live="polite">Histórico ainda não carregado.</output>
+
+        <div class="audit-summary" data-summary hidden></div>
+
+        <div class="audit-timeline" data-timeline hidden>
+          <div>
+            <h3>Marcos editoriais</h3>
+            <div class="audit-events" data-milestones></div>
+          </div>
+          <div>
+            <h3>Trilha técnica</h3>
+            <div class="audit-events" data-technical></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-section" aria-labelledby="audit-limit-title">
+        <h2 id="audit-limit-title">Limite desta etapa</h2>
+        <p class="metrics-section__note">
+          Auditoria apenas consulta dados já registrados. Nenhum botão desta rota executa PATCH, POST de risco, snapshot ou DELETE.
+        </p>
+      </section>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/midia/">Biblioteca de Mídia</a>
+        <a class="button" href="/admin/midia/snapshot/">Snapshot</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
+
+    type MediaItem = {
+      id: number;
+      objectKey: string;
+      contentType: string;
+      sizeBytes: number;
+      altText: string;
+      createdAt: string;
+      reviewStatus?: "pending" | "keep" | "candidate";
+      cleanupStatus?: "pending" | "approved";
+    };
+
+    type HistoryPayload = {
+      media?: Record<string, unknown>;
+      audit?: Array<Record<string, unknown>>;
+    };
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const searchInput = document.querySelector<HTMLInputElement>("[data-search]");
+    const refreshButton = document.querySelector<HTMLButtonElement>("[data-refresh]");
+    const mediaGrid = document.querySelector<HTMLElement>("[data-media-grid]");
+    const libraryStatus = document.querySelector<HTMLOutputElement>("[data-library-status]");
+    const historySection = document.querySelector<HTMLElement>("[data-history-section]");
+    const selectedMedia = document.querySelector<HTMLElement>("[data-selected-media]");
+    const reloadHistoryButton = document.querySelector<HTMLButtonElement>("[data-reload-history]");
+    const historyStatus = document.querySelector<HTMLOutputElement>("[data-history-status]");
+    const summary = document.querySelector<HTMLElement>("[data-summary]");
+    const timeline = document.querySelector<HTMLElement>("[data-timeline]");
+    const milestonesNode = document.querySelector<HTMLElement>("[data-milestones]");
+    const technicalNode = document.querySelector<HTMLElement>("[data-technical]");
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+
+    let csrf = "";
+    let items: MediaItem[] = [];
+    let activeItem: MediaItem | null = null;
+
+    const normalize = (value: string) => value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+    const formatDate = (value: unknown) => {
+      if (typeof value !== "string" || !value) return "—";
+      const normalized = value.includes("T") ? value : `${value.replace(" ", "T")}Z`;
+      const date = new Date(normalized);
+      return Number.isNaN(date.getTime())
+        ? value
+        : new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(date);
+    };
+
+    const formatBytes = (value: number) => {
+      if (!Number.isFinite(value) || value < 0) return "—";
+      if (value < 1024) return `${value} B`;
+      if (value < 1024 * 1024) return `${(value / 1024).toFixed(1)} KB`;
+      return `${(value / (1024 * 1024)).toFixed(1)} MB`;
+    };
+
+    const actor = (value: unknown) => typeof value === "string" && value.trim() ? value : "Usuário não identificado";
+
+    const publicUrl = (objectKey: string) => api ? `${api}/api/media/public/${objectKey}` : "";
+
+    const visibleItems = () => {
+      const query = normalize(searchInput?.value ?? "");
+      return items
+        .filter((item) => item.contentType.startsWith("image/"))
+        .filter((item) => !query || normalize(`${item.altText} ${item.objectKey}`).includes(query))
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    };
+
+    const renderLibrary = () => {
+      if (!mediaGrid || !libraryStatus) return;
+      mediaGrid.replaceChildren();
+      const visible = visibleItems();
+      if (!visible.length) {
+        const empty = document.createElement("p");
+        empty.className = "metrics-section__note";
+        empty.textContent = items.length ? "Nenhuma mídia corresponde à busca." : "Nenhuma mídia disponível na biblioteca.";
+        mediaGrid.append(empty);
+        libraryStatus.textContent = empty.textContent;
+        return;
+      }
+
+      for (const item of visible) {
+        const card = document.createElement("article");
+        card.className = "audit-media-card";
+
+        const image = document.createElement("img");
+        image.src = publicUrl(item.objectKey);
+        image.alt = item.altText || "Imagem da biblioteca";
+        image.loading = "lazy";
+
+        const body = document.createElement("div");
+        body.className = "audit-media-card__body";
+        const title = document.createElement("strong");
+        title.textContent = item.altText || `Mídia #${item.id}`;
+        const meta = document.createElement("span");
+        meta.textContent = `${formatBytes(Number(item.sizeBytes))} · ${formatDate(item.createdAt)}`;
+        const key = document.createElement("code");
+        key.textContent = item.objectKey;
+        const states = document.createElement("small");
+        states.textContent = `Revisão: ${item.reviewStatus ?? "pending"} · Cleanup: ${item.cleanupStatus ?? "pending"}`;
+        const button = document.createElement("button");
+        button.className = "button";
+        button.type = "button";
+        button.textContent = "Ver auditoria";
+        button.addEventListener("click", () => {
+          activeItem = item;
+          loadHistory().catch(() => undefined);
+        });
+        body.append(title, meta, key, states, button);
+        card.append(image, body);
+        mediaGrid.append(card);
+      }
+      libraryStatus.textContent = `${visible.length} mídia(s) exibida(s).`;
+    };
+
+    const appendEvent = (container: HTMLElement, titleText: string, detailText: string, atText: string, requestId?: string) => {
+      const row = document.createElement("article");
+      row.className = "audit-event";
+      const title = document.createElement("strong");
+      title.textContent = titleText;
+      const detail = document.createElement("span");
+      detail.textContent = detailText;
+      const date = document.createElement("time");
+      date.textContent = atText;
+      row.append(title, detail, date);
+      if (requestId) {
+        const request = document.createElement("code");
+        request.textContent = `request ${requestId}`;
+        row.append(request);
+      }
+      container.append(row);
+    };
+
+    const renderHistory = (payload: HistoryPayload) => {
+      if (!activeItem || !historySection || !selectedMedia || !historyStatus || !summary || !timeline || !milestonesNode || !technicalNode) return;
+      const media = payload.media ?? {};
+      const audit = Array.isArray(payload.audit) ? payload.audit : [];
+      milestonesNode.replaceChildren();
+      technicalNode.replaceChildren();
+      summary.replaceChildren();
+
+      const milestoneRows: Array<[string, string, string]> = [];
+      if (media.createdAt) milestoneRows.push(["Upload", `Enviado por ${actor(media.uploadedByName)}`, formatDate(media.createdAt)]);
+      if (media.reviewedAt) milestoneRows.push(["Revisão humana", `${String(media.reviewStatus ?? "—")} · ${actor(media.reviewedByName)}`, formatDate(media.reviewedAt)]);
+      if (media.cleanupApprovedAt) milestoneRows.push(["Gate final", `${String(media.cleanupStatus ?? "—")} · ${actor(media.cleanupApprovedByName)}`, formatDate(media.cleanupApprovedAt)]);
+      if (media.deleteCheckedAt) milestoneRows.push(["Último dry-run", `${String(media.dryRunStatus ?? "—")} · ${actor(media.deleteCheckedByName)}`, formatDate(media.deleteCheckedAt)]);
+
+      for (const [title, detail, at] of milestoneRows) appendEvent(milestonesNode, title, detail, at);
+      if (!milestoneRows.length) {
+        const empty = document.createElement("p");
+        empty.className = "metrics-section__note";
+        empty.textContent = "Nenhum marco editorial registrado ainda.";
+        milestonesNode.append(empty);
+      }
+
+      for (const entry of audit) {
+        appendEvent(
+          technicalNode,
+          `${String(entry.action ?? "—")} ${String(entry.path ?? "")}`.trim(),
+          actor(entry.userName),
+          formatDate(entry.createdAt),
+          String(entry.requestId ?? "—")
+        );
+      }
+      if (!audit.length) {
+        const empty = document.createElement("p");
+        empty.className = "metrics-section__note";
+        empty.textContent = "Nenhum evento técnico registrado ainda.";
+        technicalNode.append(empty);
+      }
+
+      const summaryItems: Array<[string, string]> = [
+        ["ID", String(activeItem.id)],
+        ["Revisão", String(media.reviewStatus ?? activeItem.reviewStatus ?? "pending")],
+        ["Cleanup", String(media.cleanupStatus ?? activeItem.cleanupStatus ?? "pending")],
+        ["Marcos", String(milestoneRows.length)],
+        ["Eventos técnicos", String(audit.length)],
+      ];
+      for (const [label, value] of summaryItems) {
+        const cell = document.createElement("span");
+        const strong = document.createElement("strong");
+        strong.textContent = value;
+        const small = document.createElement("small");
+        small.textContent = label;
+        cell.append(strong, small);
+        summary.append(cell);
+      }
+
+      selectedMedia.textContent = activeItem.altText || activeItem.objectKey;
+      summary.hidden = false;
+      timeline.hidden = false;
+      historySection.hidden = false;
+      historyStatus.textContent = `${milestoneRows.length} marco(s) e ${audit.length} evento(s) técnico(s) carregado(s).`;
+      historySection.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    const loadHistory = async () => {
+      if (!api || !activeItem || !historyStatus) return;
+      historySection?.removeAttribute("hidden");
+      if (selectedMedia) selectedMedia.textContent = activeItem.altText || activeItem.objectKey;
+      historyStatus.textContent = "Carregando histórico…";
+      if (reloadHistoryButton) reloadHistoryButton.disabled = true;
+      try {
+        const response = await fetch(`${api}/api/media/cms/${activeItem.id}/history`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar o histórico.");
+        renderHistory(payload.data ?? {});
+      } catch (error) {
+        historyStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar o histórico.";
+      } finally {
+        if (reloadHistoryButton) reloadHistoryButton.disabled = false;
+      }
+    };
+
+    const loadLibrary = async () => {
+      if (!api || !libraryStatus) return;
+      if (refreshButton) refreshButton.disabled = true;
+      libraryStatus.textContent = "Atualizando biblioteca…";
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca.");
+        items = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        renderLibrary();
+      } catch (error) {
+        if (mediaGrid) mediaGrid.replaceChildren();
+        libraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca.";
+      } finally {
+        if (refreshButton) refreshButton.disabled = false;
+      }
+    };
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+      await loadLibrary();
+    };
+
+    searchInput?.addEventListener("input", renderLibrary);
+    refreshButton?.addEventListener("click", loadLibrary);
+    reloadHistoryButton?.addEventListener("click", () => loadHistory().catch(() => undefined));
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      if (libraryStatus) libraryStatus.textContent = "Não foi possível iniciar a auditoria de mídia.";
+    });
+  </script>
+
+  <style>
+    .audit-heading,
+    .audit-media-card__body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .audit-search {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    .audit-search input {
+      min-height: 2.85rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+    }
+
+    .audit-status {
+      display: block;
+      min-height: 1.5rem;
+      margin-top: 1rem;
+      color: var(--color-text-muted);
+      font-weight: 700;
+    }
+
+    .audit-media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .audit-media-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    .audit-media-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--color-surface-soft);
+    }
+
+    .audit-media-card__body {
+      display: grid;
+      justify-content: stretch;
+      padding: 1rem;
+    }
+
+    .audit-media-card__body span,
+    .audit-media-card__body small,
+    .audit-media-card__body code,
+    .audit-event span,
+    .audit-event time,
+    .audit-event code {
+      color: var(--color-text-muted);
+      font-size: 0.84rem;
+      overflow-wrap: anywhere;
+    }
+
+    .audit-summary {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .audit-summary[hidden],
+    .audit-timeline[hidden] {
+      display: none;
+    }
+
+    .audit-summary > span {
+      padding: 0.9rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+    }
+
+    .audit-summary strong,
+    .audit-summary small {
+      display: block;
+    }
+
+    .audit-summary strong {
+      color: var(--color-accent-strong);
+      font: 800 1.25rem/1.2 var(--font-heading);
+    }
+
+    .audit-summary small {
+      margin-top: 0.3rem;
+      color: var(--color-text-muted);
+    }
+
+    .audit-timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .audit-timeline h3 {
+      margin: 0 0 0.7rem;
+    }
+
+    .audit-events {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .audit-event {
+      display: grid;
+      gap: 0.3rem;
+      padding: 0.85rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+    }
+
+    @media (max-width: 56rem) {
+      .audit-media-grid,
+      .audit-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .audit-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 38rem) {
+      .audit-heading {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .audit-media-grid,
+      .audit-summary {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</AdminLayout>
