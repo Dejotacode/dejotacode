@@ -1,0 +1,89 @@
+---
+---
+
+<aside class="editor-media-migration" role="note" aria-label="Fluxo administrativo de mídia migrado">
+  <div>
+    <strong>Administração de mídia agora fica em Mídia</strong>
+    <p>
+      O Editor continua focado em enviar, reutilizar e inserir imagens no conteúdo. Revisão humana, cleanup, dry-run,
+      snapshot, auditoria e qualquer etapa de exclusão devem ser feitas na área Mídia.
+    </p>
+  </div>
+  <a class="button" href="/admin/midia/">Abrir Mídia</a>
+</aside>
+
+<script>
+  const administrativeLabels = new Set([
+    "Manter",
+    "Marcar candidata",
+    "Reabrir revisão",
+    "Aprovar para plano",
+    "Reabrir gate",
+  ]);
+
+  const isAdministrativeMediaButton = (element: Element) => {
+    if (!(element instanceof HTMLButtonElement)) return false;
+    if (!element.closest(".editor-media-card__actions")) return false;
+    return administrativeLabels.has(element.textContent?.trim() ?? "");
+  };
+
+  const stripAdministrativeMediaActions = () => {
+    document.querySelectorAll<HTMLButtonElement>(".editor-media-card__actions button").forEach((button) => {
+      if (isAdministrativeMediaButton(button)) button.remove();
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const button = target.closest("button");
+    if (!button || !isAdministrativeMediaButton(button)) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
+
+  const observer = new MutationObserver(stripAdministrativeMediaActions);
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  stripAdministrativeMediaActions();
+</script>
+
+<style>
+  :global(.editor-media-cleanup) {
+    display: none !important;
+  }
+
+  .editor-media-migration {
+    width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
+    margin: 1rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
+  }
+
+  .editor-media-migration div {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .editor-media-migration strong {
+    color: var(--color-text);
+  }
+
+  .editor-media-migration p {
+    margin: 0;
+    max-width: 56rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 44rem) {
+    .editor-media-migration {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+</style>
