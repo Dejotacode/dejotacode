@@ -11,16 +11,16 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Rastreabilidade operacional</p>
       <h1>Auditoria de mídia</h1>
       <p class="admin-intro">
-        Consulte o histórico editorial e a trilha técnica de qualquer mídia da biblioteca. Esta tela é somente leitura e não altera revisão, cleanup, dry-run, snapshot ou arquivos no R2.
+        Consulte a trilha completa de mídias ativas e já excluídas. Registros removidos do R2 continuam disponíveis aqui por meio do snapshot final e dos logs de auditoria.
       </p>
 
       <section class="metrics-section" aria-labelledby="audit-library-title">
         <div class="audit-heading">
           <div>
-            <h2 id="audit-library-title">Selecionar mídia</h2>
-            <p class="metrics-section__note">Busque por texto alternativo ou caminho e carregue a auditoria do item desejado.</p>
+            <h2 id="audit-library-title">Selecionar registro</h2>
+            <p class="metrics-section__note">Busque por texto alternativo ou caminho. Itens excluídos permanecem identificados para auditoria.</p>
           </div>
-          <button class="button" type="button" data-refresh>Atualizar biblioteca</button>
+          <button class="button" type="button" data-refresh>Atualizar auditoria</button>
         </div>
 
         <label class="audit-search">
@@ -28,7 +28,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
           <input type="search" placeholder="Alt text ou caminho do arquivo" data-search autocomplete="off" />
         </label>
 
-        <output class="audit-status" data-library-status aria-live="polite">Carregando biblioteca…</output>
+        <output class="audit-status" data-library-status aria-live="polite">Carregando registros…</output>
         <div class="audit-media-grid" data-media-grid></div>
       </section>
 
@@ -42,7 +42,6 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         </div>
 
         <output class="audit-status" data-history-status aria-live="polite">Histórico ainda não carregado.</output>
-
         <div class="audit-summary" data-summary hidden></div>
 
         <div class="audit-timeline" data-timeline hidden>
@@ -58,9 +57,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       </section>
 
       <section class="metrics-section" aria-labelledby="audit-limit-title">
-        <h2 id="audit-limit-title">Limite desta etapa</h2>
+        <h2 id="audit-limit-title">Somente leitura</h2>
         <p class="metrics-section__note">
-          Auditoria apenas consulta dados já registrados. Nenhum botão desta rota executa PATCH, POST de risco, snapshot ou DELETE.
+          Esta rota consulta registros preservados. Nenhum botão executa revisão, cleanup, dry-run, snapshot ou exclusão.
         </p>
       </section>
 
@@ -84,6 +83,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       createdAt: string;
       reviewStatus?: "pending" | "keep" | "candidate";
       cleanupStatus?: "pending" | "approved";
+      deleted?: boolean;
+      snapshotId?: number;
+      snapshotCreatedAt?: string;
     };
 
     type HistoryPayload = {
@@ -134,7 +136,6 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     };
 
     const actor = (value: unknown) => typeof value === "string" && value.trim() ? value : "Usuário não identificado";
-
     const publicUrl = (objectKey: string) => api ? `${api}/api/media/public/${objectKey}` : "";
 
     const visibleItems = () => {
@@ -149,10 +150,11 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       if (!mediaGrid || !libraryStatus) return;
       mediaGrid.replaceChildren();
       const visible = visibleItems();
+
       if (!visible.length) {
         const empty = document.createElement("p");
         empty.className = "metrics-section__note";
-        empty.textContent = items.length ? "Nenhuma mídia corresponde à busca." : "Nenhuma mídia disponível na biblioteca.";
+        empty.textContent = items.length ? "Nenhum registro corresponde à busca." : "Nenhum registro de mídia disponível.";
         mediaGrid.append(empty);
         libraryStatus.textContent = empty.textContent;
         return;
@@ -160,17 +162,33 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
       for (const item of visible) {
         const card = document.createElement("article");
-        card.className = "audit-media-card";
+        card.className = `audit-media-card${item.deleted ? " audit-media-card--deleted" : ""}`;
 
-        const image = document.createElement("img");
-        image.src = publicUrl(item.objectKey);
-        image.alt = item.altText || "Imagem da biblioteca";
-        image.loading = "lazy";
+        if (item.deleted) {
+          const placeholder = document.createElement("div");
+          placeholder.className = "audit-media-card__placeholder";
+          placeholder.textContent = "Arquivo excluído";
+          card.append(placeholder);
+        } else {
+          const image = document.createElement("img");
+          image.src = publicUrl(item.objectKey);
+          image.alt = item.altText || "Imagem da biblioteca";
+          image.loading = "lazy";
+          card.append(image);
+        }
 
         const body = document.createElement("div");
         body.className = "audit-media-card__body";
+
+        const top = document.createElement("div");
+        top.className = "audit-media-card__top";
         const title = document.createElement("strong");
         title.textContent = item.altText || `Mídia #${item.id}`;
+        const badge = document.createElement("span");
+        badge.className = `audit-badge${item.deleted ? " audit-badge--deleted" : ""}`;
+        badge.textContent = item.deleted ? "Excluída" : "Ativa";
+        top.append(title, badge);
+
         const meta = document.createElement("span");
         meta.textContent = `${formatBytes(Number(item.sizeBytes))} · ${formatDate(item.createdAt)}`;
         const key = document.createElement("code");
@@ -185,11 +203,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
           activeItem = item;
           loadHistory().catch(() => undefined);
         });
-        body.append(title, meta, key, states, button);
-        card.append(image, body);
+
+        body.append(top, meta, key, states, button);
+        card.append(body);
         mediaGrid.append(card);
       }
-      libraryStatus.textContent = `${visible.length} mídia(s) exibida(s).`;
+
+      const deletedCount = visible.filter((item) => item.deleted).length;
+      libraryStatus.textContent = `${visible.length} registro(s) exibido(s) · ${deletedCount} excluído(s) preservado(s).`;
     };
 
     const appendEvent = (container: HTMLElement, titleText: string, detailText: string, atText: string, requestId?: string) => {
@@ -214,6 +235,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       if (!activeItem || !historySection || !selectedMedia || !historyStatus || !summary || !timeline || !milestonesNode || !technicalNode) return;
       const media = payload.media ?? {};
       const audit = Array.isArray(payload.audit) ? payload.audit : [];
+      const deleted = media.deleted === true || activeItem.deleted === true;
+
       milestonesNode.replaceChildren();
       technicalNode.replaceChildren();
       summary.replaceChildren();
@@ -223,6 +246,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       if (media.reviewedAt) milestoneRows.push(["Revisão humana", `${String(media.reviewStatus ?? "—")} · ${actor(media.reviewedByName)}`, formatDate(media.reviewedAt)]);
       if (media.cleanupApprovedAt) milestoneRows.push(["Gate final", `${String(media.cleanupStatus ?? "—")} · ${actor(media.cleanupApprovedByName)}`, formatDate(media.cleanupApprovedAt)]);
       if (media.deleteCheckedAt) milestoneRows.push(["Último dry-run", `${String(media.dryRunStatus ?? "—")} · ${actor(media.deleteCheckedByName)}`, formatDate(media.deleteCheckedAt)]);
+      if (media.snapshotCreatedAt) milestoneRows.push(["Snapshot preservado", `Snapshot #${String(media.snapshotId ?? "—")}`, formatDate(media.snapshotCreatedAt)]);
+      if (media.deletedAt) milestoneRows.push(["Exclusão definitiva", "Arquivo removido do R2 e registro ativo encerrado", formatDate(media.deletedAt)]);
 
       for (const [title, detail, at] of milestoneRows) appendEvent(milestonesNode, title, detail, at);
       if (!milestoneRows.length) {
@@ -250,11 +275,12 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
       const summaryItems: Array<[string, string]> = [
         ["ID", String(activeItem.id)],
+        ["Estado", deleted ? "Excluída" : "Ativa"],
         ["Revisão", String(media.reviewStatus ?? activeItem.reviewStatus ?? "pending")],
         ["Cleanup", String(media.cleanupStatus ?? activeItem.cleanupStatus ?? "pending")],
-        ["Marcos", String(milestoneRows.length)],
-        ["Eventos técnicos", String(audit.length)],
+        ["Eventos", String(audit.length)],
       ];
+
       for (const [label, value] of summaryItems) {
         const cell = document.createElement("span");
         const strong = document.createElement("strong");
@@ -265,7 +291,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         summary.append(cell);
       }
 
-      selectedMedia.textContent = activeItem.altText || activeItem.objectKey;
+      selectedMedia.textContent = `${activeItem.altText || activeItem.objectKey}${deleted ? " · registro excluído preservado" : ""}`;
       summary.hidden = false;
       timeline.hidden = false;
       historySection.hidden = false;
@@ -280,7 +306,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       historyStatus.textContent = "Carregando histórico…";
       if (reloadHistoryButton) reloadHistoryButton.disabled = true;
       try {
-        const response = await fetch(`${api}/api/media/cms/${activeItem.id}/history`, { credentials: "include" });
+        const response = await fetch(`${api}/api/media-audit/${activeItem.id}`, { credentials: "include" });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar o histórico.");
         renderHistory(payload.data ?? {});
@@ -294,16 +320,16 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     const loadLibrary = async () => {
       if (!api || !libraryStatus) return;
       if (refreshButton) refreshButton.disabled = true;
-      libraryStatus.textContent = "Atualizando biblioteca…";
+      libraryStatus.textContent = "Atualizando auditoria…";
       try {
-        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        const response = await fetch(`${api}/api/media-audit/items`, { credentials: "include" });
         const payload = await response.json();
-        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca.");
+        if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a auditoria.");
         items = Array.isArray(payload.data?.items) ? payload.data.items : [];
         renderLibrary();
       } catch (error) {
         if (mediaGrid) mediaGrid.replaceChildren();
-        libraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar a biblioteca.";
+        libraryStatus.textContent = error instanceof Error ? error.message : "Não foi possível carregar a auditoria.";
       } finally {
         if (refreshButton) refreshButton.disabled = false;
       }
@@ -333,7 +359,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 
   <style>
     .audit-heading,
-    .audit-media-card__body {
+    .audit-media-card__top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -381,18 +407,46 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       box-shadow: var(--shadow-card);
     }
 
-    .audit-media-card img {
-      display: block;
+    .audit-media-card--deleted {
+      border-style: dashed;
+    }
+
+    .audit-media-card img,
+    .audit-media-card__placeholder {
+      display: grid;
       width: 100%;
       aspect-ratio: 16 / 10;
+      place-items: center;
       object-fit: cover;
       background: var(--color-surface-soft);
     }
 
+    .audit-media-card__placeholder {
+      color: var(--color-text-muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
     .audit-media-card__body {
       display: grid;
-      justify-content: stretch;
+      gap: 0.65rem;
       padding: 1rem;
+    }
+
+    .audit-badge {
+      flex: 0 0 auto;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      color: var(--color-accent-strong);
+      background: var(--color-surface-soft);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .audit-badge--deleted {
+      color: var(--color-text-muted);
     }
 
     .audit-media-card__body span,
@@ -477,7 +531,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     }
 
     @media (max-width: 38rem) {
-      .audit-heading {
+      .audit-heading,
+      .audit-media-card__top {
         flex-direction: column;
         align-items: stretch;
       }
