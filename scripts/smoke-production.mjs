@@ -16,6 +16,7 @@ const checks = [
   ["site-admin-midia-snapshot", `${site}/admin/midia/snapshot/`, 200],
   ["site-admin-midia-auditoria", `${site}/admin/midia/auditoria/`, 200],
   ["site-admin-midia-pronto-exclusao", `${site}/admin/midia/pronto-exclusao/`, 200],
+  ["site-admin-midia-exclusao", `${site}/admin/midia/exclusao/`, 200],
   ["site-sitemap", `${site}/sitemap-index.xml`, 200],
   ["site-rss", `${site}/rss.xml`, 200],
   ["api-health", `${api}/api/health`, 200],
