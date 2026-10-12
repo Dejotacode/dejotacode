@@ -21,6 +21,8 @@ const checks = [
   ["site-rss", `${site}/rss.xml`, 200],
   ["api-health", `${api}/api/health`, 200],
   ["api-session-anon", `${api}/api/auth/session`, 401],
+  ["api-media-audit-anon", `${api}/api/media-audit/items`, 401],
+  ["api-media-delete-pending-anon", `${api}/api/media/cms/delete-pending`, 401],
 ];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
