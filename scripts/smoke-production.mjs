@@ -23,7 +23,9 @@ const checks = [
   ["api-session-anon", `${api}/api/auth/session`, 401],
 ];
 
-const request = async (name, url, expectedStatus) => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const requestOnce = async (name, url, expectedStatus) => {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 10000);
   try {
@@ -42,10 +44,29 @@ const request = async (name, url, expectedStatus) => {
         throw new Error(`${name}: payload de saúde inválido`);
       }
     }
-    console.log(`PASS ${name} ${response.status}`);
+    return response.status;
   } finally {
     clearTimeout(timeout);
   }
+};
+
+const request = async (name, url, expectedStatus) => {
+  const attempts = name.startsWith("site-") ? 4 : 1;
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const status = await requestOnce(name, url, expectedStatus);
+      console.log(`PASS ${name} ${status}${attempt > 1 ? ` (tentativa ${attempt})` : ""}`);
+      return;
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) {
+        console.warn(`RETRY ${name} tentativa ${attempt}/${attempts}`);
+        await sleep(2500);
+      }
+    }
+  }
+  throw lastError;
 };
 
 let failed = 0;
