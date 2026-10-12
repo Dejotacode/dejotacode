@@ -11,14 +11,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Zona irreversível</p>
       <h1>Exclusão de mídia</h1>
       <p class="admin-intro">
-        Esta é a única etapa que pode remover um arquivo. Antes de liberar a ação final, o sistema refaz o dry-run, gera um snapshot novo e exige confirmação manual da chave exata e da palavra EXCLUIR.
+        Esta é a única etapa que pode remover um arquivo. Antes de liberar a ação final, o sistema refaz o dry-run, gera um snapshot novo e exige confirmação manual da chave exata e da palavra EXCLUIR. Se uma falha ocorrer entre R2 e D1, a operação fica marcada para recuperação segura em vez de desaparecer como erro comum.
       </p>
 
       <section class="metrics-section" aria-labelledby="delete-title">
         <div class="delete-heading">
           <div>
             <h2 id="delete-title">Mídias elegíveis</h2>
-            <p class="metrics-section__note">Somente candidatas com Gate cleanup aprovado aparecem aqui.</p>
+            <p class="metrics-section__note">Somente candidatas com Gate cleanup aprovado aparecem aqui. Exclusões interrompidas ficam destacadas até a finalização.</p>
           </div>
           <div class="delete-actions">
             <button class="button" type="button" data-refresh>Atualizar</button>
@@ -32,7 +32,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <section class="metrics-section" aria-labelledby="delete-rules-title">
         <h2 id="delete-rules-title">Regras obrigatórias</h2>
         <p class="metrics-section__note">
-          Nenhum item é removido sem dry-run válido, snapshot final pertencente ao mesmo dry-run, objectKey exato, confirmação EXCLUIR e revalidação final do servidor. Não existe exclusão em lote.
+          Nenhum item inicia remoção sem dry-run válido, snapshot final pertencente ao mesmo dry-run, objectKey exato, confirmação EXCLUIR e revalidação final do servidor. O checkpoint durável é gravado antes do R2. Não existe exclusão em lote.
         </p>
       </section>
 
@@ -54,6 +54,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       altText: string;
       reviewStatus?: "pending" | "keep" | "candidate";
       cleanupStatus?: "pending" | "approved";
+      deleteStartedAt?: string | null;
+      deleteStartedSnapshotId?: number | null;
     };
 
     type DryRunCheck = { token: string; expiresAt: string };
@@ -71,6 +73,8 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     const snapshots = new Map<number, SnapshotResult>();
 
     const publicUrl = (objectKey: string) => `${api}/api/media/public/${objectKey}`;
+    const isRecovery = (item: MediaItem) => Boolean(item.deleteStartedAt && item.deleteStartedSnapshotId);
+
     const validCheck = (id: number) => {
       const check = checks.get(id);
       if (!check) return null;
@@ -80,6 +84,17 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         return null;
       }
       return check;
+    };
+
+    const confirmDestructiveAction = (item: MediaItem, recovery = false) => {
+      const typedKey = window.prompt(`Confirme a chave exata da mídia:\n\n${item.objectKey}`);
+      if (typedKey !== item.objectKey) throw new Error("Exclusão cancelada: a chave informada não confere.");
+      const confirmation = window.prompt("Digite EXCLUIR para confirmar a remoção definitiva.");
+      if (confirmation !== "EXCLUIR") throw new Error("Exclusão cancelada: confirmação final inválida.");
+      const message = recovery
+        ? "Finalizar a exclusão interrompida? O sistema vai concluir apenas o estado já iniciado e revalidar o que ainda for necessário."
+        : "Última confirmação: remover definitivamente este arquivo? Esta ação não pode ser desfeita.";
+      if (!window.confirm(message)) throw new Error("Exclusão cancelada.");
     };
 
     const runDryRun = async (item: MediaItem) => {
@@ -128,14 +143,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       const check = validCheck(item.id);
       const snap = snapshots.get(item.id);
       if (!check || !snap || snap.expiresAt !== check.expiresAt) throw new Error("Refaça o dry-run e o snapshot antes da exclusão.");
-
-      const typedKey = window.prompt(`Confirme a chave exata da mídia:\n\n${item.objectKey}`);
-      if (typedKey !== item.objectKey) throw new Error("Exclusão cancelada: a chave informada não confere.");
-      const confirmation = window.prompt('Digite EXCLUIR para confirmar a remoção definitiva.');
-      if (confirmation !== "EXCLUIR") throw new Error("Exclusão cancelada: confirmação final inválida.");
-      if (!window.confirm("Última confirmação: remover definitivamente este arquivo? Esta ação não pode ser desfeita.")) {
-        throw new Error("Exclusão cancelada.");
-      }
+      confirmDestructiveAction(item);
 
       const response = await fetch(`${api}/api/media/cms/${item.id}`, {
         method: "DELETE",
@@ -155,6 +163,26 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       items = items.filter((entry) => entry.id !== item.id);
     };
 
+    const recoverMedia = async (item: MediaItem) => {
+      if (!api || !csrf || !item.deleteStartedSnapshotId) return;
+      confirmDestructiveAction(item, true);
+      const response = await fetch(`${api}/api/media/cms/${item.id}`, {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf },
+        body: JSON.stringify({
+          confirmation: "EXCLUIR",
+          objectKey: item.objectKey,
+          snapshotId: item.deleteStartedSnapshotId,
+        }),
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível concluir a recuperação.");
+      checks.delete(item.id);
+      snapshots.delete(item.id);
+      items = items.filter((entry) => entry.id !== item.id);
+    };
+
     const render = () => {
       if (!grid || !status) return;
       grid.replaceChildren();
@@ -164,11 +192,19 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       }
 
       for (const item of items) {
+        const recovering = isRecovery(item);
         const card = document.createElement("article");
-        card.className = "delete-card";
-        const image = document.createElement("img");
-        image.src = publicUrl(item.objectKey);
-        image.alt = item.altText || "Imagem da biblioteca";
+        card.className = recovering ? "delete-card delete-card--recovery" : "delete-card";
+
+        const visual = recovering ? document.createElement("div") : document.createElement("img");
+        if (visual instanceof HTMLImageElement) {
+          visual.src = publicUrl(item.objectKey);
+          visual.alt = item.altText || "Imagem da biblioteca";
+        } else {
+          visual.className = "delete-recovery-placeholder";
+          visual.textContent = "Arquivo em estado de recuperação";
+        }
+
         const body = document.createElement("div");
         body.className = "delete-body";
         const title = document.createElement("strong");
@@ -179,89 +215,125 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         const actions = document.createElement("div");
         actions.className = "delete-actions";
 
-        const dry = document.createElement("button");
-        dry.className = "button";
-        dry.type = "button";
-        dry.textContent = "1. Refazer dry-run";
-        const snapshot = document.createElement("button");
-        snapshot.className = "button button-primary";
-        snapshot.type = "button";
-        snapshot.textContent = "2. Gerar snapshot";
-        const remove = document.createElement("button");
-        remove.className = "button delete-danger";
-        remove.type = "button";
-        remove.textContent = "3. Excluir definitivamente";
-        actions.append(dry, snapshot, remove);
+        if (recovering) {
+          state.textContent = `EXCLUSÃO INTERROMPIDA · snapshot #${item.deleteStartedSnapshotId}`;
+          state.dataset.recovery = "true";
+          const recover = document.createElement("button");
+          recover.className = "button delete-danger";
+          recover.type = "button";
+          recover.textContent = "Finalizar recuperação";
+          recover.addEventListener("click", async () => {
+            try {
+              recover.disabled = true;
+              await recoverMedia(item);
+              status.textContent = `Recuperação concluída: ${item.objectKey}`;
+              render();
+            } catch (error) {
+              status.textContent = error instanceof Error ? error.message : "A recuperação foi cancelada ou bloqueada.";
+              recover.disabled = false;
+            }
+          });
+          actions.append(recover);
+        } else {
+          const dry = document.createElement("button");
+          dry.className = "button";
+          dry.type = "button";
+          dry.textContent = "1. Refazer dry-run";
+          const snapshot = document.createElement("button");
+          snapshot.className = "button button-primary";
+          snapshot.type = "button";
+          snapshot.textContent = "2. Gerar snapshot";
+          const remove = document.createElement("button");
+          remove.className = "button delete-danger";
+          remove.type = "button";
+          remove.textContent = "3. Excluir definitivamente";
+          actions.append(dry, snapshot, remove);
 
-        const sync = () => {
-          const check = validCheck(item.id);
-          const snap = snapshots.get(item.id);
-          const ready = Boolean(snap && check && snap.expiresAt === check.expiresAt);
-          state.textContent = ready
-            ? `APTO PARA EXCLUSÃO · snapshot #${snap?.snapshotId}`
-            : check
-              ? "Dry-run válido · snapshot pendente"
-              : "Verificação pendente";
-          snapshot.disabled = !check || Boolean(snap);
-          remove.disabled = !ready;
-          state.dataset.ready = String(ready);
-        };
+          const sync = () => {
+            const check = validCheck(item.id);
+            const snap = snapshots.get(item.id);
+            const ready = Boolean(snap && check && snap.expiresAt === check.expiresAt);
+            state.textContent = ready
+              ? `APTO PARA EXCLUSÃO · snapshot #${snap?.snapshotId}`
+              : check
+                ? "Dry-run válido · snapshot pendente"
+                : "Verificação pendente";
+            snapshot.disabled = !check || Boolean(snap);
+            remove.disabled = !ready;
+            state.dataset.ready = String(ready);
+          };
 
-        dry.addEventListener("click", async () => {
-          if (!window.confirm("Refazer dry-run? Nenhum arquivo será removido.")) return;
-          try {
-            dry.disabled = true;
-            await runDryRun(item);
-            status.textContent = "Dry-run aprovado. Gere o snapshot final.";
-          } catch (error) {
-            status.textContent = error instanceof Error ? error.message : "Não foi possível executar o dry-run.";
-          } finally {
-            dry.disabled = false;
-            sync();
-          }
-        });
+          dry.addEventListener("click", async () => {
+            if (!window.confirm("Refazer dry-run? Nenhum arquivo será removido.")) return;
+            try {
+              dry.disabled = true;
+              await runDryRun(item);
+              status.textContent = "Dry-run aprovado. Gere o snapshot final.";
+            } catch (error) {
+              status.textContent = error instanceof Error ? error.message : "Não foi possível executar o dry-run.";
+            } finally {
+              dry.disabled = false;
+              sync();
+            }
+          });
 
-        snapshot.addEventListener("click", async () => {
-          if (!window.confirm("Gerar snapshot final? Nenhum arquivo será removido.")) return;
-          try {
-            snapshot.disabled = true;
-            await createSnapshot(item);
-            status.textContent = "Snapshot final registrado. A exclusão pode ser confirmada manualmente.";
-          } catch (error) {
-            snapshots.delete(item.id);
-            status.textContent = error instanceof Error ? error.message : "Não foi possível gerar o snapshot.";
-          } finally {
-            sync();
-          }
-        });
+          snapshot.addEventListener("click", async () => {
+            if (!window.confirm("Gerar snapshot final? Nenhum arquivo será removido.")) return;
+            try {
+              snapshot.disabled = true;
+              await createSnapshot(item);
+              status.textContent = "Snapshot final registrado. A exclusão pode ser confirmada manualmente.";
+            } catch (error) {
+              snapshots.delete(item.id);
+              status.textContent = error instanceof Error ? error.message : "Não foi possível gerar o snapshot.";
+            } finally {
+              sync();
+            }
+          });
 
-        remove.addEventListener("click", async () => {
-          try {
-            remove.disabled = true;
-            await removeMedia(item);
-            status.textContent = `Mídia removida: ${item.objectKey}`;
-            render();
-          } catch (error) {
-            status.textContent = error instanceof Error ? error.message : "A exclusão foi cancelada ou bloqueada.";
-            sync();
-          }
-        });
+          remove.addEventListener("click", async () => {
+            try {
+              remove.disabled = true;
+              await removeMedia(item);
+              status.textContent = `Mídia removida: ${item.objectKey}`;
+              render();
+            } catch (error) {
+              status.textContent = error instanceof Error ? error.message : "A exclusão foi cancelada ou bloqueada.";
+              await load().catch(() => undefined);
+            }
+          });
+
+          sync();
+        }
 
         body.append(title, key, state);
-        sync();
-        card.append(image, body, actions);
+        card.append(visual, body, actions);
         grid.append(card);
       }
-      status.textContent = `${items.length} mídia(s) elegível(is) para validação final.`;
+
+      const recoveryCount = items.filter(isRecovery).length;
+      status.textContent = recoveryCount
+        ? `${items.length} mídia(s) na etapa final · ${recoveryCount} exclusão(ões) interrompida(s) aguardando recuperação.`
+        : `${items.length} mídia(s) elegível(is) para validação final.`;
     };
 
     const load = async () => {
       if (!api || !status) return;
-      const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
-      const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error?.message ?? "Não foi possível carregar a biblioteca.");
-      const all = Array.isArray(payload.data?.items) ? payload.data.items : [];
-      items = all.filter((item: MediaItem) => item.contentType.startsWith("image/") && item.reviewStatus === "candidate" && item.cleanupStatus === "approved");
+      const [libraryResponse, pendingResponse] = await Promise.all([
+        fetch(`${api}/api/media/cms`, { credentials: "include" }),
+        fetch(`${api}/api/media/cms/delete-pending`, { credentials: "include" }),
+      ]);
+      const libraryPayload = await libraryResponse.json();
+      const pendingPayload = await pendingResponse.json();
+      if (!libraryResponse.ok) throw new Error(libraryPayload.error?.message ?? "Não foi possível carregar a biblioteca.");
+      if (!pendingResponse.ok) throw new Error(pendingPayload.error?.message ?? "Não foi possível verificar exclusões interrompidas.");
+
+      const all = Array.isArray(libraryPayload.data?.items) ? libraryPayload.data.items : [];
+      const pending = Array.isArray(pendingPayload.data?.items) ? pendingPayload.data.items : [];
+      const pendingById = new Map<number, MediaItem>(pending.map((item: MediaItem) => [Number(item.id), item]));
+      items = all
+        .filter((item: MediaItem) => item.contentType.startsWith("image/") && item.reviewStatus === "candidate" && item.cleanupStatus === "approved")
+        .map((item: MediaItem) => ({ ...item, ...(pendingById.get(Number(item.id)) ?? {}) }));
       checks.clear();
       snapshots.clear();
       render();
@@ -292,10 +364,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
     .delete-heading, .delete-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .delete-grid { display: grid; gap: 1rem; margin-top: 1rem; }
     .delete-card { display: grid; grid-template-columns: minmax(10rem, 14rem) 1fr; gap: 1rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
-    .delete-card > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius-md); background: var(--color-surface-soft); }
+    .delete-card--recovery { border-color: #b42318; }
+    .delete-card > img, .delete-recovery-placeholder { width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-md); background: var(--color-surface-soft); }
+    .delete-card > img { object-fit: cover; }
+    .delete-recovery-placeholder { display: grid; place-items: center; padding: 1rem; color: var(--color-text-muted); font-weight: 800; text-align: center; }
     .delete-body { display: grid; gap: 0.55rem; align-content: start; min-width: 0; }
     .delete-body code { overflow-wrap: anywhere; }
     .delete-body strong[data-ready="true"] { color: var(--color-accent-strong); }
+    .delete-body strong[data-recovery="true"] { color: #b42318; }
     .delete-card > .delete-actions { grid-column: 1 / -1; justify-content: flex-start; }
     .delete-danger { border-color: #b42318; color: #b42318; }
     .delete-danger:disabled { opacity: 0.45; cursor: not-allowed; }
