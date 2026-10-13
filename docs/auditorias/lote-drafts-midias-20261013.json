@@ -1,0 +1,2187 @@
+{
+  "date": "2026-10-13",
+  "status": "local-sem-publicacao",
+  "catalog": "/home/dejota/Workspace/media-dejotacode/acervo/catalogo.json",
+  "records": [
+    {
+      "slug": "minha-senha-vazou-o-que-fazer-agora",
+      "draft": false,
+      "media": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/minha-senha-vazou-o-que-fazer-agora-editorial-v2.png",
+      "candidates": [
+        "seguranca-digital-essencial-capa-assinatura-v1",
+        "nordpass-sem-texto-v1-assinatura-v2",
+        "seguranca-digital-essencial-hotmart-assinatura-v2",
+        "autenticacao-dois-fatores-capa-v1-assinatura-v2",
+        "habitos-seguranca-digital-iniciantes-capa-v1-assinatura-v2",
+        "phishing-como-identificar-capa-v1-assinatura-v2",
+        "gerenciador-de-senhas-para-iniciantes-humano-assinatura-v1",
+        "phishing-como-identificar-humano-assinatura-v1",
+        "autenticacao-dois-fatores-humano-assinatura-v1"
+      ],
+      "reason": "Usuário pediu revisão da capa. O diagrama anterior atendia à assinatura e paleta, mas era uma interpretação editorial insuficiente. Acervo de segurança reavaliado visualmente: proteção geral, gerenciador, phishing e 2FA não representam a ação central de resposta a credencial exposta. Nova cena: alerta de senha + revisão de contas; sem fornecedor ou alegação de teste.",
+      "sha256": "4b096ffd2863e33dcc513e29c12f52b32c9cf412dfdb56180c3e03a1f032c32a",
+      "rights": "Gerada pelo imagegen integrado; origem sintética declarada. Não usa fotos ou marcas de fornecedor. Símbolo oficial copiado do SVG do projeto.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto aprovado explicitamente pelo usuário em 13/10/2026 após preview e resumo; capa já aprovada. Conteúdo completo adicionado à fila. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Cena e mãos conferidas visualmente; alerta e contas distinguem resposta a credencial exposta. Símbolo oficial único no canto superior esquerdo; imagem ilustrativa, não teste. Textos e telas conceituais sem dados reais. Aprovação do usuário permanece pendente.",
+      "previous_media": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-conceito-assinatura-v1.svg",
+      "source_sha256": "2b941394d26797537ffb816bf520ef253c7e734882bb7808e0ce8c3dc1b5b719",
+      "qa_revision": {
+        "version": "editorial-v2",
+        "combinations": 8,
+        "check": "zero erros/avisos/hints",
+        "build": "132 páginas, drafts excluídos",
+        "qa": "aprovado",
+        "browser": "sem overflow, falha de imagem ou capa incorreta"
+      },
+      "prompt_summary": "Cena fotográfica editorial natural: adulto revisando várias contas no notebook e smartphone após alerta de senha exposta; interfaces conceituais sem dados, fornecedor ou texto legível, luz natural e paleta grafite/ciano; sem logos gerados, escudos flutuantes ou alegação de teste; símbolo oficial composto após geração."
+    },
+    {
+      "slug": "elevenlabs-vale-a-pena",
+      "draft": false,
+      "media": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+      "kind": "reuso",
+      "source": "/home/dejota/Workspace/fullstack/dejotacode/public/assets/resources/items/elevenlabs-assinatura-v2.webp",
+      "candidates": [
+        "/home/dejota/Workspace/fullstack/dejotacode/public/assets/resources/items/elevenlabs-assinatura-v2.webp"
+      ],
+      "reason": "Acervo reavaliado: onda de áudio, microfone e fones representam produção e revisão de narração. Reuso da capa de áudio já existente; não é interface ElevenLabs nem gravação real do DejotaCode.",
+      "sha256": "8231c477f7a46e027b00c3c383efe6f24514bc8ada69b867bca21aa87bf4ed7a",
+      "rights": "Arte editorial própria existente; revisar registro de origem antes da publicação.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026; fila de produção, sem publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "qa_revision": {
+        "round": "rodada3-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas; drafts excluídos",
+        "qa": "links/HTML/analytics estático aprovado"
+      },
+      "visual_note": "Cena de áudio do acervo mantida; não apresenta a interface ElevenLabs nem comprova voz sintética. Símbolo e recortes conferidos nesta rodada.",
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+      "draft": false,
+      "media": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/iprovpn-o-que-avaliar-antes-de-contratar-editorial-v2.png",
+      "candidates": [
+        "Catálogo local de 140 entradas, busca por ElevenLabs, VPN e scanner/3D, montagem /tmp/dejotacode-rodada3-acervo.jpg"
+      ],
+      "reason": "Imagens NordVPN identificam outra marca; cena de viagem é adequada a VPN geral, mas não à decisão pré-contratação. Nova cena de avaliação de critérios, sem uso/teste alegado.",
+      "sha256": "441b083d0bafe13ad09032f4367319bfadf810988697109ec9d4286b3241382b",
+      "rights": "Imagem sintética original gerada com imagegen integrado, com natureza ilustrativa declarada. Símbolo oficial do projeto composto separadamente; sem logos ou fotografia de fornecedor.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026; fila de produção, sem publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Pessoa avaliando critérios, papel de checklist e tela conceitual; referência VPN tipografada separadamente, sem logo iProVPN/NordVPN ou promessa de proteção. Símbolo oficial único conferido.",
+      "previous_media": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-conceito-assinatura-v1.svg",
+      "source_sha256": "0f7204f5406a1c0bfa443794d9486926248a8af23477a867724fbaff080c7d80",
+      "prompt": "Use case: photorealistic-natural. ONE horizontal 16:9 editorial illustration for DejotaCode article 'iProVPN: o que avaliar antes de contratar'. Show choosing and checking a VPN before paying, NOT a tested VPN in use. Natural adult Brazilian woman around 30-40 wearing muted gray-blue blouse, at a modest bright workspace, three-quarter medium shot, thoughtfully reviewing a laptop and marking a simple checklist held in her left hand, normal anatomy and believable device orientation. Laptop screen shows a generic conceptual comparison/terms page: three clean neutral sections about privacy, compatibility, cancellation suggested only by small simple document, device, calendar line icons with gray placeholder lines. No actual vendor UI or logos, no readable text, no numbers or prices, no purchase confirmation. The paper checklist has a few short gray placeholder lines and empty checkboxes, with one marked, no readable writing. Her attention is the policy page, decision still in progress, no triumphant safe shield. Controlled graphite/blue-gray palette with subtle cyan accent, natural daylight, realistic human skin and quiet background, purposeful desk objects only. Main woman profile, checklist, and laptop screen occupy center-left safe area for mobile 4:3 crops. Top-left 12% width by 15% height quiet dark background for exact brand to be composed separately later. No text, title, watermark, generated brand signature, NordVPN or any third-party identity. Avoid floating shields, hacker hoodies, glowing maps, generic travel stock imagery, fictional performance results or guaranteed security. Editorial fictional scene, not actual test, customer, or DejotaCode user.",
+      "qa_revision": {
+        "round": "rodada3-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas; drafts excluídos",
+        "qa": "links/HTML/analytics estático aprovado"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "scanner-3d-o-que-e-e-para-que-serve",
+      "draft": false,
+      "media": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/scanner-3d-o-que-e-e-para-que-serve-editorial-v2.png",
+      "candidates": [
+        "Catálogo local de 140 entradas, busca por ElevenLabs, VPN e scanner/3D, montagem /tmp/dejotacode-rodada3-acervo.jpg"
+      ],
+      "reason": "Nenhum arquivo de scanner/3D no catálogo. Capa específica sobre passagem do objeto físico para pontos/malha, sem inventar equipamento comercial.",
+      "sha256": "bca9852c80dc6147d06226ea5d3c5262d78cca616bc465f17305f76506fb3d78",
+      "rights": "Imagem sintética original gerada com imagegen integrado, com natureza ilustrativa declarada. Símbolo oficial do projeto composto separadamente; sem logos ou fotografia de fornecedor.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026; fila de produção, sem publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Objeto de coruja e geometria digital correspondentes, interfaces ilustrativas e malha incompleta; não representa scanner comercial ou medição. Símbolo oficial único conferido no uso real.",
+      "previous_media": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-conceito-assinatura-v1.svg",
+      "source_sha256": "55e0ba16efee34f84fd348cfe675a8c46997cb6918cdf788fde4c06a19d64834",
+      "prompt": "Use case: photorealistic-natural. ONE premium horizontal 16:9 editorial illustration for DejotaCode educational article 'Scanner 3D: o que é e para que serve?'. Communicate physical surface being digitized and the need to process geometry. Meaningful close-up on a small matte light-gray clay sculpture of a simple owl on a work surface, beside an angled monitor showing TWO clearly matching conceptual digital representations of that same owl: sparse captured point cloud and triangulated wireframe mesh, with modest missing patches near the underside to suggest unfinished processing. No color photograph on screen, no printer, no plastic 3D print. The same owl silhouette, eye circles, ears, wings and base must match physical object and digital geometry. Digital representations stay completely inside the monitor screen; no floating holograms. Scanning hardware is deliberately outside frame: do not invent or depict a real commercial scanner, ports, connectors or a vendor model. No SHINING 3D brand or endorsement. No fake readings, dimensions, perfect-result claims, pricing, text or UI labels. Natural tactile materials, believable ceramic/plaster texture and thin geometric wireframe lines, soft workshop daylight, restrained graphite, dark blue and cyan accents. Object and the readable monitor screen share center-left safe composition; background softly blurred; no decorative notebooks, mugs, plants, giant locks, neon sci-fi room. Quiet dark top-left 12% width by 15% height for separately composed official DejotaCode symbol. No logo, watermark, signature or title. Fictional educational editorial illustration, not a photograph of tested hardware or a technical diagram establishing measured accuracy.",
+      "commercial_evidence": "E-mail de boas-vindas Awin/SHINING 3D de 12/10/2026 lido na revisão de 13/10; confirma ingresso no programa. Não certifica uso do hardware, comissões atuais ou conta ativa no painel.",
+      "qa_revision": {
+        "round": "rodada3-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas; drafts excluídos",
+        "qa": "links/HTML/analytics estático aprovado"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "como-escolher-um-scanner-3d",
+      "draft": false,
+      "media": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/como-escolher-um-scanner-3d-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Acervo reavaliado visualmente em /tmp/dejotacode-rodada5-acervo.jpg; não havia opção adequada ao foco específico, sem misturar tema ou marca.",
+      "sha256": "38d7ccb2df544a268299190b934618f580b9b5d58c0a24bc5fd4d91dc3d3fdd4",
+      "rights": "Imagem sintética criada com imagegen integrado, natureza ilustrativa identificada. Marca oficial do projeto composta separadamente. Não usa fotografias/logos de fornecedor.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
+      "previous_media": "/assets/posts/como-escolher-um-scanner-3d-conceito-assinatura-v1.svg",
+      "source_sha256": "d1ba9c40ef74b5d1393e9610b6764311264d5ecfa22039a6598f7da9f555920a",
+      "prompt": "Use case: photorealistic-natural. ONE editorial landscape 16:9 cover for DejotaCode 'Como escolher um scanner 3D'. Show assessing requirements BEFORE choosing hardware. Close still-life on a practical workshop bench, three purposeful sample objects grouped left/center: small matte gray sculptural figurine, a polished stainless metal part, and a dark glossy rounded object, genuinely different material and size. A person's hands with natural anatomy use a caliper next to the small object to determine approximate object dimensions, never imply caliper measures scanner accuracy. Beside samples, a restrained angled monitor shows three conceptual sample silhouettes and a small generic mesh preview, no actual vendor UI, no readable values or text. No scanner hardware in frame, no brand, no ports, no price. Objects dominate, human face not necessary, daylight and tactile realistic materials, blue-gray/graphite background with understated cyan accents, minimal unrelated props. Object size, surface difficulty and software compatibility must be the story, NOT the physical-to-digital introduction or perfect-result guarantee. Main objects and hands comfortably in center-left safe region for 4:3/mobile crops. Quiet dark top-left 12% width/15% height for separately composed official brand. No generated text, logo, watermark, floating panels, futuristic lasers, mug, plant, decorative notebook. Fictional educational editorial scene, not an actual measurement test or product review.",
+      "qa_revision": {
+        "round": "rodada5-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO",
+      "commercial_evidence": "Ingresso no programa SHINING 3D confirmado no e-mail de boas-vindas Awin de 12/10/2026, lido na rodada anterior; não comprova uso ou teste de equipamento."
+    },
+    {
+      "slug": "supabase-para-iniciantes",
+      "draft": false,
+      "media": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/supabase-para-iniciantes-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Acervo reavaliado visualmente em /tmp/dejotacode-rodada5-acervo.jpg; não havia opção adequada ao foco específico, sem misturar tema ou marca.",
+      "sha256": "6359329e50743bce4288db1a54b7d2b9a1989ba6eb419d1da5a098bbefe3a56d",
+      "rights": "Imagem sintética criada com imagegen integrado, natureza ilustrativa identificada. Marca oficial do projeto composta separadamente. Não usa fotografias/logos de fornecedor.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
+      "previous_media": "/assets/posts/supabase-para-iniciantes-conceito-assinatura-v1.svg",
+      "source_sha256": "a52afeb62721375081716e3dba243f7b416f3f5b667da768806209381751eeb0",
+      "prompt": "Use case: stylized-concept. ONE high-quality 16:9 editorial 3D illustration for DejotaCode introduction to Supabase. A polished cohesive isometric sculptural composition on a dark graphite background: an organized central stack of database-shaped circular volumes with visible orderly rows of small cyan cells, a small identity-card shaped module beside it, a folder-shaped storage module, and a compact code-bracket shaped functions module arranged as an integrated modular backend. A translucent access-filter gate with a few rows selectively passing visually suggests permission rules, without a shield or guarantee of automatic security. This is an artistic metaphor, NOT an exact architecture diagram, no arrows or numbered flow, no actual hardware, product UI or invented vendor logos. No Supabase logo, no database vendor mark, no text, no secret/API key, no values. Clear layered geometric volumes with matte graphite, restrained emerald/cyan glass accents and warm rim light, large forms readable at thumbnail, refined tech editorial aesthetic not neon sci-fi excess or flat outline icons. Main modular composition center-left safe area, quiet dark top-left for separately composed official DejotaCode mark. Fictional explanatory image, not deployment screenshot or tested backend. Avoid random computers, people staring at a laptop, generic giant padlock.",
+      "qa_revision": {
+        "round": "rodada5-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "ia-local-com-ollama",
+      "draft": false,
+      "media": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/ia-local-com-ollama-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Acervo reavaliado visualmente em /tmp/dejotacode-rodada5-acervo.jpg; não havia opção adequada ao foco específico, sem misturar tema ou marca.",
+      "sha256": "c038265653301145f570e0a4a5e4bf37805f3500da4e94e7f0b1fd8b8091473e",
+      "rights": "Imagem sintética criada com imagegen integrado, natureza ilustrativa identificada. Marca oficial do projeto composta separadamente. Não usa fotografias/logos de fornecedor.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
+      "previous_media": "/assets/posts/ia-local-com-ollama-conceito-assinatura-v1.svg",
+      "source_sha256": "b53d097a104c0ced9c4267d33be8f962211d5d89bacd87cac3acabd0f2c5b74b",
+      "prompt": "Use case: photorealistic-natural. ONE 16:9 editorial cover for DejotaCode article 'IA local com Ollama'. Meaningful close-up of a modest unbranded desktop computer and a single monitor on a compact clean home work surface. Side of computer has a normal vent with subtly visible internal cooling hardware, no invented specifications or product model, no liquid neon cables. Monitor shows a generic terminal/conversation window with a short local prompt and response represented solely by simple neutral placeholder lines, alongside a small abstract model-file icon, all completely inside physical screen. A neutral local-compute cue: small closed model-box graphic within the screen, not a cloud or Internet globe. CPU machine and screen both main subjects, no person needed, no data benchmark or performance chart, no actual Ollama interface or readable terminal commands. Natural late-afternoon lighting, realistic modest hardware and materials, dark blue/graphite with subtle cyan reflection, different framing from a microphone studio, no caneca, plant, caderno, decorative props. Main computer and monitor central-left and complete in a 4:3 crop; dark quiet top-left for exact brand composed separately. No text, logos, watermark, fake hardware connectors or guarantee of offline privacy. Illustrative scene of local model execution, not documentation of DejotaCode's real machine or an executed test.",
+      "qa_revision": {
+        "round": "rodada5-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "anythingllm-com-ollama",
+      "draft": false,
+      "media": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+      "kind": "reuso",
+      "source": "/home/dejota/Workspace/media-dejotacode/acervo/originais/assets/trails/ia-no-dia-a-dia-capa-assinatura-v1.webp",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Notebook com conversa e contexto representa a função de interface/workspace discutida no tutorial. Reuso preserva o raster e o símbolo oficial já existente; não comprova integração ou execução local.",
+      "sha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
+      "rights": "Composição vetorial original do projeto; geometria da marca copiada do SVG oficial, sem logos de terceiros.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Reuso aplicado aprovado pelo usuário em 13/10/2026; fila de produção sem publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
+      "previous_media": "/assets/posts/anythingllm-com-ollama-conceito-assinatura-v1.svg",
+      "source_sha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
+      "qa_revision": {
+        "round": "rodada5-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "agente-de-ia-vs-chatbot",
+      "draft": false,
+      "media": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/agente-de-ia-vs-chatbot-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Acervo reavaliado visualmente em /tmp/dejotacode-rodada5-acervo.jpg; não havia opção adequada ao foco específico, sem misturar tema ou marca.",
+      "sha256": "da4935678847f43ca8c577a12a2e4891624de8431a491940538670b3ea15e473",
+      "rights": "Imagem sintética criada com imagegen integrado, natureza ilustrativa identificada. Marca oficial do projeto composta separadamente. Não usa fotografias/logos de fornecedor.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
+      "previous_media": "/assets/posts/agente-de-ia-vs-chatbot-conceito-assinatura-v1.svg",
+      "source_sha256": "b674d0e3b08d13020ff0fae6a73d81f2dea558943e0045dcb4a37620cba67a36",
+      "prompt": "Use case: stylized-concept. ONE premium 16:9 editorial 3D conceptual illustration for DejotaCode comparison 'Agente de IA x chatbot'. Two distinct sculptural groups share one calm graphite stage: left group is two substantial rounded conversation bubbles facing each other, symbolizing question and response; right group is an active central assistant orb surrounded by three concrete tool metaphors arranged as a coordinated task set: a document tile, a file folder tile, and a calendar tile. A small human approval-hand figurine beside the right group suggests supervision and limited permissions, not limitless autonomy. Group separation must be obvious without text; this is an artistic comparison, not an exact flowchart, do not draw pipeline arrows or invented UI. Right group must look like tool use and observed task progress, not a magical brain doing everything; no robot face, no sent mail, no claimed achievement. Beautiful matte graphite forms with cyan edges and a restrained warm highlight, spatial depth and tactile materials, large readable shapes with visual balance, no tiny panels. No text, labels, logo, watermark, tools' official icons or vendor brands; labels will be composed separately outside generation. All important elements inside central-left safe area for 4:3/mobile crops, quiet dark top-left for separately applied official DejotaCode symbol. Do not depict actual software or tests.",
+      "qa_revision": {
+        "round": "rodada5-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "production_status": "APROVADO_PARA_FILA_DE_PRODUCAO"
+    },
+    {
+      "slug": "banco-de-dados-em-producao-cuidados",
+      "draft": false,
+      "media": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/banco-de-dados-em-producao-cuidados-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Alternativas do acervo inspecionadas em /tmp/dejotacode-restantes-acervo.jpg eram sobre web, DevTools, permissões de arquivos e redirecionamento de comandos; não representam adequadamente o foco deste artigo.",
+      "sha256": "bbcb7ccbf006da68f720e924acdcc4ce922d5c3b138719eb9f7ec0a6ba3e2316",
+      "rights": "Imagem sintética criada com imagegen integrado; natureza ilustrativa identificada, sem fotos/logos de fornecedor. Símbolo oficial do projeto composto separadamente.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
+      "previous_media": "/assets/posts/banco-de-dados-em-producao-cuidados-conceito-assinatura-v1.svg",
+      "source_sha256": "5ecc53974bdd96524e1b5c4fc35ca6663b88f240e4a8392d83db8b5b7d281416",
+      "prompt": "Use case: photorealistic-natural. One 16:9 editorial cover for DejotaCode 'Banco de dados em produção: cuidados antes de executar qualquer comando'. A careful software professional in a muted dark shirt, side profile at a small professional workstation, paused with hand off keyboard while checking a printed preparation checklist and a screen showing a conceptual read-only database table. On-screen rows are abstract neutral placeholder lines, a small amber caution indicator and a separate backup-file icon, no readable SQL, no real credentials, host names or personal data, no destructive query, no executed change or claim that backup is verified. Checklist purposeful, no decorative mug/plant/notebook. Main story is review environment, affected rows and restoration before making changes; calm deliberate action, not hacker and no magical safety shield. Physical display faces user coherently, normal human anatomy. Natural controlled light, graphite/blue-gray palette, subtle cyan details, warm side light, main subjects center-left safe for 4:3 crop. Dark quiet upper-left 12% width/15% height for separately composed official brand. No generated text, watermark, logo, prices, metrics, vendor UI or fictional performance result. Fictional editorial illustration, not documentation of actual production data.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      }
+    },
+    {
+      "slug": "posthog-vs-ga4",
+      "draft": false,
+      "media": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/posthog-vs-ga4-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Alternativas do acervo inspecionadas em /tmp/dejotacode-restantes-acervo.jpg eram sobre web, DevTools, permissões de arquivos e redirecionamento de comandos; não representam adequadamente o foco deste artigo.",
+      "sha256": "d52b61c4c4dbdfe91325289eb18471c1b89653afb03d88ef75faa648b405e6cd",
+      "rights": "Imagem sintética criada com imagegen integrado; natureza ilustrativa identificada, sem fotos/logos de fornecedor. Símbolo oficial do projeto composto separadamente.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
+      "previous_media": "/assets/posts/posthog-vs-ga4-conceito-assinatura-v1.svg",
+      "source_sha256": "f464eadf87d652170df5e2e35693ff3503c57158adac0c8802c1667428107626",
+      "prompt": "Use case: stylized-concept. One balanced premium 16:9 3D editorial illustration for DejotaCode 'PostHog x GA4'. Two equal tool-like sculptural analytics stations on a calm graphite stage, each includes BOTH a modest bar-chart-shaped panel and a small funnel-shaped object; neither appears larger, more advanced or victorious. A central tactile question-mark sculpture emphasizes choosing the question to answer rather than a universal winner. These are purely visual metaphors, NOT measured charts: no axes, labels, data points, numeric values, ranking, fake metrics or score. Distinguish stations subtly through restrained cyan/emerald versus muted amber edge highlights while preserving one coherent graphite palette. No vendor logos, hedgehog mascot, actual Google or PostHog UI. Matte materials, spatial depth, refined studio illumination and strong readable silhouettes at thumbnail size. Both stations and question mark within central-left safe area for 4:3/mobile crops, leave quiet dark top-left for separate official brand. No text, watermark, guarantee, floating endless panels. This is an artistic comparison of analytics tools with overlapping features, not an exact diagram.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      }
+    },
+    {
+      "slug": "search-console-dados-atrasados",
+      "draft": false,
+      "media": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/search-console-dados-atrasados-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Alternativas do acervo inspecionadas em /tmp/dejotacode-restantes-acervo.jpg eram sobre web, DevTools, permissões de arquivos e redirecionamento de comandos; não representam adequadamente o foco deste artigo.",
+      "sha256": "932cc2457fb7b9ed9a08e30f878b58d6e2f16a20cb586161c0b00abcc8dfcd2e",
+      "rights": "Imagem sintética criada com imagegen integrado; natureza ilustrativa identificada, sem fotos/logos de fornecedor. Símbolo oficial do projeto composto separadamente.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
+      "previous_media": "/assets/posts/search-console-dados-atrasados-conceito-assinatura-v1.svg",
+      "source_sha256": "94e09af28866cdd96536fb68a2509abcd043cdec80b7985b4e91f2511db0af6b",
+      "prompt": "Use case: stylized-concept. One 16:9 sophisticated 3D editorial illustration for DejotaCode 'Search Console atrasado?'. A carefully sculpted hourglass next to a dark report-document object with a few neutral gray placeholder lines and a small partial chart-shaped motif being assembled from a few subtle tiles. Hourglass communicates processing delay, report is still in preparation. No calendar dates, numeric delay, clocks with exact times, values, price, Google logo, actual Search Console interface, alarm or false emergency. Tactile matte graphite and subtle glass, cyan highlights and warm natural-looking rim light, thoughtful calm technical editorial aesthetic. Main hourglass and report center-left, readable in small thumbnails, quiet dark top-left for separately composed official brand. No scene clutter, person staring at laptop, mug/plant, magical guarantee that report will arrive on a deadline. No generated text, logo or watermark. Conceptual artistic image, not a measured processing diagram or actual report.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      }
+    },
+    {
+      "slug": "html-sitemap-ainda-vale-a-pena",
+      "draft": false,
+      "media": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/html-sitemap-ainda-vale-a-pena-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Alternativas do acervo inspecionadas em /tmp/dejotacode-restantes-acervo.jpg eram sobre web, DevTools, permissões de arquivos e redirecionamento de comandos; não representam adequadamente o foco deste artigo.",
+      "sha256": "e6279afdc36e0798f2fe721166b5502a355f5c3517cabcfbe4564aaee15f04cb",
+      "rights": "Imagem sintética criada com imagegen integrado; natureza ilustrativa identificada, sem fotos/logos de fornecedor. Símbolo oficial do projeto composto separadamente.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
+      "previous_media": "/assets/posts/html-sitemap-ainda-vale-a-pena-conceito-assinatura-v1.svg",
+      "source_sha256": "d5400102adfc5b0f5c55a5d35af38f6906675bf9878c1e6af526d240406d4496",
+      "prompt": "Use case: stylized-concept. One 16:9 premium 3D editorial illustration comparing HTML sitemap and XML sitemap for DejotaCode. Two meaningful objects share a restrained graphite stage: LEFT is an open page-like navigation directory with three generous clearly organized link-row shaped strips and small section-tab shapes, suggesting a page for people to explore; RIGHT is a structured code-document object with large angle-bracket and slash shaped sculptural relief and several tidy neutral URL-row shaped strips, suggesting a file for search engines. Left and right should feel different in function, equal in visual weight, not competing for a winner. No precise graph, no exact website hierarchy, no actual readable URLs or XML code, no Google logo, no claimed ranking improvement, no actual screenshots. Text labels will be composed separately: do not generate text. Matte dark material, subtle cyan edges, warm rim lighting, tasteful spatial depth, clear silhouettes, main objects grouped inside central-left safe area. Quiet dark top-left for exact brand composition afterward. No decorative laptop/person, text, logos or watermark. This is artistic conceptual illustration, not an exact technical diagram.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      }
+    },
+    {
+      "slug": "cicd-na-pratica",
+      "draft": false,
+      "media": "/assets/resources/items/github-resource-assinatura-v2.webp",
+      "kind": "reuso",
+      "source": "/home/dejota/Workspace/fullstack/dejotacode/public/assets/resources/items/github-resource-assinatura-v2.webp",
+      "candidates": [
+        "/home/dejota/Workspace/fullstack/dejotacode/public/assets/resources/items/github-resource-assinatura-v2.webp"
+      ],
+      "reason": "Repositórios, arquivos e versões representam a integração contínua configurada; não fingir captura de GitHub Actions ou workflow aprovado.",
+      "sha256": "1ddc4a824bcd275dca3000ecd3abf178821aad2dffd676f7123e27690b101608",
+      "rights": "Arte editorial própria existente; revisar registro de origem antes da publicação.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados."
+    },
+    {
+      "slug": "como-instalar-e-validar-google-tag",
+      "draft": false,
+      "media": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+      "kind": "ilustracao-editorial-ia-com-marca-svg",
+      "source": "/home/dejota/Workspace/media-dejotacode/drafts-20261013/como-instalar-e-validar-google-tag-editorial-v2.png",
+      "candidates": [
+        "Catálogo completo: 140 registros",
+        "Seleção visual: segurança, IA, rede, permissões, organização e pipeline; montagem /tmp/dejotacode-acervo-lote-20261013.jpg"
+      ],
+      "reason": "Alternativas do acervo inspecionadas em /tmp/dejotacode-restantes-acervo.jpg eram sobre web, DevTools, permissões de arquivos e redirecionamento de comandos; não representam adequadamente o foco deste artigo.",
+      "sha256": "4916852c674d085fd74315800cdf84d91c5888c892ef3ecd7ba07f98d108070c",
+      "rights": "Imagem sintética criada com imagegen integrado; natureza ilustrativa identificada, sem fotos/logos de fornecedor. Símbolo oficial do projeto composto separadamente.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
+      "previous_media": "/assets/posts/como-instalar-e-validar-google-tag-conceito-assinatura-v1.svg",
+      "source_sha256": "e75a29e8040d56c2bd72de7dede182294c311097d3fc796443f9107ee18f4804",
+      "prompt": "Use case: stylized-concept. One 16:9 polished 3D editorial illustration for DejotaCode 'Como instalar e validar a Google tag'. Two distinct purposeful groups on one calm graphite stage: a substantial code-document tile with large angle-bracket sculptural relief suggests installing a snippet; adjacent is a strong magnifying lens inspecting a separate event/document tile and a destination-target-shaped object, suggesting validation of sending and receiving. No completed green check, no success guarantee, no graph showing real measured events, no Tag Assistant interface, no Google logo, no ID, no code, numbers or prices. Meaning is installation plus independent verification, not just copied snippet equals functioning analytics. This is conceptual artwork, not precise workflow diagram. Matte graphite forms, cyan detail, gentle warm edge light, physical depth and clear shapes at thumbnail. Main content safe for 4:3/mobile crop and dark quiet top-left for exact official DejotaCode brand composed separately. No generated labels, watermark, person staring at laptop, floating clouds or vendor logos.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      }
+    },
+    {
+      "slug": "raindrop-io-para-desenvolvedores",
+      "draft": false,
+      "media": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+      "kind": "reuso",
+      "source": "/home/dejota/Workspace/fullstack/dejotacode/public/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+      "candidates": [
+        "/home/dejota/Workspace/fullstack/dejotacode/public/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp"
+      ],
+      "reason": "Referências organizadas e registros de contexto representam recuperação de pesquisa e fontes; imagem não simula Raindrop.io.",
+      "sha256": "ec985d98737fc10545b173df3de3c59f0721197b70916db819f1a0e3dcfcf85e",
+      "rights": "Arte editorial própria existente; revisar registro de origem antes da publicação.",
+      "text": "TEXTO_REVISADO",
+      "image": "IMAGEM_APROVADA",
+      "integration": "MIDIA_INTEGRADA",
+      "qa": "QA_APROVADO",
+      "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
+      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "qa_revision": {
+        "round": "restantes-10-a-16-editorial-v2",
+        "combinations": 8,
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "overflow": 0,
+        "broken_images": 0,
+        "wrong_cover": 0,
+        "check": "93 arquivos, zero erros/avisos/hints",
+        "production_build": "132 páginas, drafts excluídos",
+        "production_qa": "links/HTML e analytics estático aprovados"
+      },
+      "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados."
+    }
+  ],
+  "corrections": [
+    "Referência do artigo publicado gerenciador-de-senhas ao draft senha-vazada adiada para liberação conjunta, para evitar 404. Outras alterações preexistentes preservadas.",
+    "Alegações de uso próprio de ElevenLabs no novo artigo substituídas por linguagem de pesquisa por ausência de evidência reproduzível nesta revisão.",
+    "Fonte de agentes atualizada para referência oficial acessível da Anthropic.",
+    "Preview de drafts somente em desenvolvimento, com noindex/nofollow e aviso de rascunho. Build de produção continua excluindo drafts."
+  ],
+  "qa": {
+    "combinations": 128,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "overflow": 0,
+    "broken_images": 0,
+    "wrong_covers": 0,
+    "draft_noindex": true,
+    "check": "93 arquivos, zero erros/avisos/hints",
+    "production_build": "132 páginas, 16 drafts excluídos",
+    "production_qa": "links, HTML e 20 verificações estáticas de analytics aprovados; não comprova recebimento em serviços externos"
+  },
+  "review_flow": {
+    "mode": "lote-completo-aprovado-para-fila",
+    "current": null,
+    "production_queue": [
+      "minha-senha-vazou-o-que-fazer-agora",
+      "elevenlabs-vale-a-pena",
+      "iprovpn-o-que-avaliar-antes-de-contratar",
+      "scanner-3d-o-que-e-e-para-que-serve",
+      "como-escolher-um-scanner-3d",
+      "supabase-para-iniciantes",
+      "ia-local-com-ollama",
+      "agente-de-ia-vs-chatbot",
+      "anythingllm-com-ollama",
+      "banco-de-dados-em-producao-cuidados",
+      "posthog-vs-ga4",
+      "search-console-dados-atrasados",
+      "html-sitemap-ainda-vale-a-pena",
+      "cicd-na-pratica",
+      "como-instalar-e-validar-google-tag",
+      "raindrop-io-para-desenvolvedores"
+    ],
+    "rule": "Somente aprovação explícita do texto e capa do item adiciona à fila de produção. Entrar na fila não publica nem altera draft.",
+    "current_batch": [],
+    "next_batch": []
+  },
+  "final_qa": {
+    "articles": 16,
+    "browser_combinations": 128,
+    "overflow": 0,
+    "broken_images": 0,
+    "wrong_covers": 0,
+    "drafts": 16,
+    "production_routes_excluded": 16,
+    "status": "qa-aprovado-16-conteudos-na-fila-sem-publicacao",
+    "evidence": "lote-drafts-final-browser-20261013.json"
+  },
+  "publication": {
+    "authorization": "Usuário autorizou publicação dos 16 em 13/10/2026.",
+    "status": "AUTORIZADA_EM_VALIDACAO",
+    "method": "PR, CI, merge em main e workflow Cloudflare Pages",
+    "validation": {
+      "check": "97 arquivos, zero diagnósticos",
+      "build": "156 páginas",
+      "qa": "links/HTML/SEO/AdSense aprovados",
+      "documentation": "167 Markdown, 404 referências válidas",
+      "browser_combinations": 128,
+      "browser_failures": 0,
+      "routes_indexable_in_sitemap": 16
+    },
+    "browser_evidence": [
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 320,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 320,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 390,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 390,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 768,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 768,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 1440,
+        "theme": "light",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "width": 1440,
+        "theme": "dark",
+        "overflow": false,
+        "broken": [],
+        "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+        "robots": "index, follow",
+        "h1": 1,
+        "wrong_cover": false
+      }
+    ]
+  }
+}

@@ -35,3 +35,7 @@ Status: publicado e homologado. Usuário autorizou a entrega integral às 19:54 
 Publicados seleção e reuso das imagens por conteúdo, símbolos oficiais, correções de recorte, quatro capas físicas e três editoriais, correções de parceiros e documentação pendente. Build 123 páginas e QA/documentação aprovados; dez smoke checks passaram. Conferência do domínio: 119 páginas com title/canonical corretos, 90 imagens locais idênticas por SHA-256, 121 URLs e 968 combinações de largura/tema sem problemas. 76 assets assinados visíveis; símbolo protegido. Originais e backups locais preservados.
 
 As menções anteriores a publicação pendente descrevem etapas históricas. Permanecem duas lacunas: autorização documental das fotos de fornecedor e nove alertas existentes das ferramentas de build. Não foram resolvidas nem certificadas pela publicação. Resultado e evidências em docs/auditorias/publicacao-integral-{result,integridade,validation}-2026-10-10.json. Registros posteriores de homologação guardados localmente, sem segundo deploy apenas documental.
+
+## Lote editorial de 16 artigos — publicação autorizada em 13/10/2026
+
+Todos os textos e capas aprovados pelo usuário. Publicação autorizada; pacote em validação de CI/CD. Versão final: quatro reusos do acervo e doze ilustrações editoriais com símbolo oficial composto separadamente. Estado e evidências no [registro do lote](auditorias/lote-drafts-revisao-2026-10-13.md). Menções anteriores à aprovação pendente são histórico das rodadas.

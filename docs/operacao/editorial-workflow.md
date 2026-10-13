@@ -21,6 +21,24 @@ A rota `/admin/editor/` oferece criação/edição assistida, frontmatter estrut
 
 O Worker cria branch `content/admin-*`, grava `src/content/posts/<slug>.md`, cria commit e abre PR para `main`.
 
+## Checklist obrigatório de conteúdo e mídia
+
+Status: vigente. Revisão: 13/10/2026. Fonte visual canônica: [registro de mídia](../padroes/media-registry.md).
+
+Antes de criar, substituir ou enviar mídia, inclusive pelo Admin:
+
+- [ ] Ler o arquivo completo e comparar com conteúdos existentes; preservar texto correto e evitar duplicação.
+- [ ] Consultar o catálogo do acervo indicado no registro de mídia; registrar opções e justificar manutenção, reuso, adaptação ou lacuna real para nova criação.
+- [ ] Se o acervo não estiver disponível, registrar pendência e interromper a geração automática.
+- [ ] Conferir origem/licença ou natureza ilustrativa, produto e contexto; não inventar experiência, teste ou resultados.
+- [ ] Conferir versão preferida, símbolo oficial e exceções de fornecedor/captura; não empilhar assinaturas.
+- [ ] Integrar pelo mecanismo editorial existente e revisar alt, links, metadados, CTA e transparência comercial.
+- [ ] Conferir mídia resolvida e recortes em 320/390/768/1440 px, claro/escuro; registrar separadamente revisão visual e QA técnico.
+- [ ] Executar check/build/QA pertinentes após integração; manter novos conteúdos em `draft: true` até revisão final e autorização explícita de publicação.
+- [ ] Registrar por item texto, imagem, integração, QA e pendências. Aprovação antiga da imagem não aprova automaticamente o novo uso.
+
+Este checklist rege também trabalho local em Markdown; upload, PR, merge e deploy não são autorização automática. Sem aprovação visual comprovada, registrar revisão pendente.
+
 ## Mídia R2
 
 Imagens editoriais são armazenadas no R2 em `posts/<slug>/YYYY/MM/<uuid>.<ext>`. O D1 guarda metadados operacionais. O Markdown contém a URL pública da imagem, preservando Git/Markdown como registro do conteúdo publicado.

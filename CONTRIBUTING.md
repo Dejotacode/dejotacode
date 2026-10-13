@@ -23,3 +23,6 @@ Não versione secrets, `.env.*.local`, tokens ou credenciais. Mudanças visuais 
 
 ## Organização documental vigente
 Antes de criar ou mover documentação, consultar docs/README.md e docs/organizacao-documental.md; atualizar fonte existente antes de duplicar, classificar finalidade/status e seguir destino do manual. Validar com python3 scripts/check-documentation.py.
+
+## Conteúdo e imagens
+Antes de trabalhar em conteúdo ou mídia, seguir o [checklist editorial](docs/operacao/editorial-workflow.md) e o [registro de mídia](docs/padroes/media-registry.md). Consultar primeiro o acervo; criar nova imagem somente diante de lacuna documentada. Publicação depende de instrução explícita.

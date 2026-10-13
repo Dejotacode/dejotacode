@@ -24,3 +24,5 @@ Procedimentos e registros operacionais são distintos. Runbooks orientam; regist
 
 - [adsense-low-value-2026-10-13.md](adsense-low-value-2026-10-13.md).
 - [monetizacao-parceiros.md](monetizacao-parceiros.md).
+
+- [admin-fase2-preparacao.md](admin-fase2-preparacao.md).

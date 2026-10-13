@@ -8,6 +8,23 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "minha-senha-vazou-o-que-fazer-agora": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+  "elevenlabs-vale-a-pena": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+  "iprovpn-o-que-avaliar-antes-de-contratar": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+  "scanner-3d-o-que-e-e-para-que-serve": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+  "como-escolher-um-scanner-3d": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+  "supabase-para-iniciantes": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+  "ia-local-com-ollama": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+  "anythingllm-com-ollama": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+  "agente-de-ia-vs-chatbot": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+  "banco-de-dados-em-producao-cuidados": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+  "posthog-vs-ga4": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+  "search-console-dados-atrasados": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+  "html-sitemap-ainda-vale-a-pena": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+  "cicd-na-pratica": "/assets/resources/items/github-resource-assinatura-v2.webp",
+  "como-instalar-e-validar-google-tag": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+  "raindrop-io-para-desenvolvedores": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+
   "hub-data-como-funciona-e-o-que-estamos-testando": "/assets/posts/hub-data-diversidade-assinatura-v1.webp",
   "programacao-do-iniciante-ao-avancado-o-que-o-ebook-cobre": "/assets/posts/programacao-ebook-diversidade-assinatura-v1.webp",
   "jornada-python-vale-a-pena-o-que-avaliar-antes-de-comecar": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
@@ -74,3 +91,40 @@ export function resolvePostVisual(category: string, slug?: string) {
 export function resolveTrailVisual(slug: string) {
   return trailVisuals[slug] ?? "/assets/resources/category-aprendizado.svg";
 }
+
+export const draftPostVisualAlts: Record<string, string> = {
+  "minha-senha-vazou-o-que-fazer-agora": "Ilustração de uma pessoa revisando contas no computador e no celular após um alerta de senha exposta; interfaces conceituais, sem dados pessoais.",
+  "elevenlabs-vale-a-pena": "Narração: microfone e onda de áudio; não é captura da ElevenLabs.",
+  "iprovpn-o-que-avaliar-antes-de-contratar": "Pessoa revisando critérios de privacidade, compatibilidade e cancelamento antes de escolher uma VPN; cena e interfaces ilustrativas, não teste do iProVPN.",
+  "scanner-3d-o-que-e-e-para-que-serve": "Objeto físico em forma de coruja ao lado de nuvem de pontos e malha digital correspondentes; ilustração conceitual, sem representar scanner de fabricante.",
+  "como-escolher-um-scanner-3d": "Materiais e tamanhos diferentes avaliados antes de escolher um scanner; paquímetro indica dimensão do objeto, não exatidão de equipamento.",
+  "supabase-para-iniciantes": "Metáfora 3D de backend: banco, identidade, armazenamento, funções e filtro de acesso; não é arquitetura exata ou interface real.",
+  "ia-local-com-ollama": "Computador de mesa e conversa conceitual com um modelo local; não representa a máquina do DejotaCode nem um teste executado.",
+  "anythingllm-com-ollama": "Notebook com interface conceitual de conversa e organização do contexto; ilustração de assistente, não interface real AnythingLLM nem prova de integração.",
+  "agente-de-ia-vs-chatbot": "Metáfora 3D comparando pergunta/resposta e assistente com ferramentas e supervisão humana; não demonstra automação real.",
+  "banco-de-dados-em-producao-cuidados": "Pessoa revisando checklist e tabela conceitual antes de alterar dados; não é banco real nem backup validado.",
+  "posthog-vs-ga4": "Metáfora de duas ferramentas de analytics com gráficos e funis, orientada à escolha de perguntas; sem métricas, interface real ou vencedor universal.",
+  "search-console-dados-atrasados": "Ampulheta e relatório em preparação representam processamento dos dados; não indicam prazo garantido ou relatório real.",
+  "html-sitemap-ainda-vale-a-pena": "Diretório de navegação e documento estruturado representam HTML para pessoas e XML para descoberta de URLs; não é código ou hierarquia exata.",
+  "cicd-na-pratica": "Ilustração de versões, arquivos e repositórios conectados; metáfora de integração, não execução real de pipeline.",
+  "como-instalar-e-validar-google-tag": "Código de instalação, lupa e destino representam instalação e validação separadas; sem alegar recebimento real de eventos.",
+  "raindrop-io-para-desenvolvedores": "Referências e registros organizados em tela e anotações; ilustração de pesquisa, não interface real Raindrop.io."
+};
+export const draftPostVisualCaptions: Record<string, string> = {
+  "minha-senha-vazou-o-que-fazer-agora": "Ilustração editorial criada com IA. Cena e interfaces conceituais; não é captura real, teste de produto ou registro de uma pessoa do DejotaCode.",
+  "elevenlabs-vale-a-pena": "Ilustração editorial reutilizada; não é captura da ferramenta nem registro de teste.",
+  "iprovpn-o-que-avaliar-antes-de-contratar": "Ilustração editorial criada com IA; cena e telas conceituais, sem captura real, teste próprio ou endosso de fabricante.",
+  "scanner-3d-o-que-e-e-para-que-serve": "Ilustração editorial criada com IA; cena e telas conceituais, sem captura real, teste próprio ou endosso de fabricante.",
+  "como-escolher-um-scanner-3d": "Ilustração editorial criada com IA; composição conceitual, sem captura real, teste próprio ou endosso de fabricante.",
+  "supabase-para-iniciantes": "Ilustração editorial criada com IA; composição conceitual, sem captura real, teste próprio ou endosso de fabricante.",
+  "ia-local-com-ollama": "Ilustração editorial criada com IA; composição conceitual, sem captura real, teste próprio ou endosso de fabricante.",
+  "anythingllm-com-ollama": "Ilustração editorial reutilizada do acervo; a interface é conceitual, sem captura real ou teste da integração.",
+  "agente-de-ia-vs-chatbot": "Ilustração editorial criada com IA; composição conceitual, sem captura real, teste próprio ou endosso de fabricante.",
+  "banco-de-dados-em-producao-cuidados": "Ilustração editorial criada com IA; composição conceitual, sem captura real, métricas ou comprovação de teste.",
+  "posthog-vs-ga4": "Ilustração editorial criada com IA; composição conceitual, sem captura real, métricas ou comprovação de teste.",
+  "search-console-dados-atrasados": "Ilustração editorial criada com IA; composição conceitual, sem captura real, métricas ou comprovação de teste.",
+  "html-sitemap-ainda-vale-a-pena": "Ilustração editorial criada com IA; composição conceitual, sem captura real, métricas ou comprovação de teste.",
+  "cicd-na-pratica": "Ilustração editorial reutilizada; não é captura da ferramenta nem registro de teste.",
+  "como-instalar-e-validar-google-tag": "Ilustração editorial criada com IA; composição conceitual, sem captura real, métricas ou comprovação de teste.",
+  "raindrop-io-para-desenvolvedores": "Ilustração editorial reutilizada; não é captura da ferramenta nem registro de teste."
+};
