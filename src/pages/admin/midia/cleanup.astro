@@ -11,14 +11,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Segunda revisão</p>
       <h1>Gate de cleanup</h1>
       <p class="admin-intro">
-        Revise somente imagens já marcadas como candidatas. Aprovar aqui permite incluí-las em um plano de remoção futuro, mas não remove nenhum arquivo.
+        Confirme quais candidatas podem avançar no fluxo. Aprovar aqui não remove arquivos.
       </p>
 
       <section class="metrics-section" aria-labelledby="cleanup-list-title">
         <div class="cleanup-heading">
           <div>
             <h2 id="cleanup-list-title">Candidatas à limpeza</h2>
-            <p class="metrics-section__note">A segunda aprovação exige justificativa e pode ser reaberta a qualquer momento.</p>
+            <p class="metrics-section__note">A segunda aprovação exige justificativa e pode ser reaberta.</p>
           </div>
           <strong class="cleanup-count" data-cleanup-count>0 candidatas</strong>
         </div>
@@ -47,7 +47,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         <div class="cleanup-heading">
           <div>
             <h2 id="cleanup-plan-title">Plano de remoção</h2>
-            <p class="metrics-section__note">Documento local de conferência. Não executa DELETE e não autoriza remoção automática.</p>
+            <p class="metrics-section__note">Documento local de conferência. Não executa exclusão.</p>
           </div>
           <button class="button" type="button" data-cleanup-plan>Gerar plano</button>
         </div>
@@ -56,9 +56,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       </section>
 
       <section class="metrics-section" aria-labelledby="cleanup-limit-title">
-        <h2 id="cleanup-limit-title">Limite desta etapa</h2>
+        <h2 id="cleanup-limit-title">Resultado desta etapa</h2>
         <p class="metrics-section__note">
-          Este gate registra apenas a segunda revisão. Dry-run, snapshot e exclusão continuam fora desta tela.
+          O gate registra a segunda revisão. Dry-run, snapshot e exclusão continuam nas etapas seguintes.
         </p>
       </section>
 
