@@ -8,6 +8,8 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "senhas-mais-comuns": "/assets/posts/senhas-mais-comuns-editorial-assinatura-v1.svg",
+  "gemini-4-argon": "/assets/posts/gemini-4-argon-editorial-assinatura-v1.svg",
   "minha-senha-vazou-o-que-fazer-agora": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
   "elevenlabs-vale-a-pena": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
   "iprovpn-o-que-avaliar-antes-de-contratar": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
@@ -93,6 +95,8 @@ export function resolveTrailVisual(slug: string) {
 }
 
 export const draftPostVisualAlts: Record<string, string> = {
+  "senhas-mais-comuns": "Pessoa avaliando três exemplos idênticos de senha previsível em uma tela conceitual; exemplos fictícios, sem dados pessoais.",
+  "gemini-4-argon": "Desenvolvedora revisando código com um assistente de IA e etapas ilustrativas de leitura, edição e testes; não é captura do Gemini.",
   "minha-senha-vazou-o-que-fazer-agora": "Ilustração de uma pessoa revisando contas no computador e no celular após um alerta de senha exposta; interfaces conceituais, sem dados pessoais.",
   "elevenlabs-vale-a-pena": "Narração: microfone e onda de áudio; não é captura da ElevenLabs.",
   "iprovpn-o-que-avaliar-antes-de-contratar": "Pessoa revisando critérios de privacidade, compatibilidade e cancelamento antes de escolher uma VPN; cena e interfaces ilustrativas, não teste do iProVPN.",
@@ -111,6 +115,8 @@ export const draftPostVisualAlts: Record<string, string> = {
   "raindrop-io-para-desenvolvedores": "Referências e registros organizados em tela e anotações; ilustração de pesquisa, não interface real Raindrop.io."
 };
 export const draftPostVisualCaptions: Record<string, string> = {
+  "senhas-mais-comuns": "Ilustração editorial criada com IA; cena e interface conceituais, sem captura real ou teste próprio. Símbolo oficial composto separadamente.",
+  "gemini-4-argon": "Ilustração editorial criada com IA; cena e interface conceituais, sem captura real ou teste próprio. Símbolo oficial composto separadamente.",
   "minha-senha-vazou-o-que-fazer-agora": "Ilustração editorial criada com IA. Cena e interfaces conceituais; não é captura real, teste de produto ou registro de uma pessoa do DejotaCode.",
   "elevenlabs-vale-a-pena": "Ilustração editorial reutilizada; não é captura da ferramenta nem registro de teste.",
   "iprovpn-o-que-avaliar-antes-de-contratar": "Ilustração editorial criada com IA; cena e telas conceituais, sem captura real, teste próprio ou endosso de fabricante.",
