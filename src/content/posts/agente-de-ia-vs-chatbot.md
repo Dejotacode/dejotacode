@@ -2,6 +2,7 @@
 title: "Agente de IA x chatbot: qual é a diferença na prática?"
 description: "Entenda a diferença entre conversar com um modelo e usar um sistema que planeja etapas, usa ferramentas e executa tarefas."
 publishedAt: 2026-10-13
+updatedAt: 2026-10-13
 category: inteligencia-artificial
 type: artigo
 readingTime: 2
@@ -30,6 +31,22 @@ A capacidade de enviar e-mail, editar arquivos, consultar banco ou navegar em si
 ## Quando usar cada abordagem
 
 Para perguntas, redação e explicações, conversa costuma bastar. Para processos com várias etapas e sistemas externos, um agente pode economizar trabalho — desde que haja limites claros.
+
+## A mesma tarefa em três abordagens
+
+Considere organizar referências para um artigo técnico:
+
+| Abordagem | Como trabalha | Quem decide o próximo passo |
+|---|---|---|
+| Chatbot | Sugere fontes e uma estrutura durante a conversa | A pessoa conduz a tarefa |
+| Workflow | Executa etapas predefinidas: buscar, resumir e montar um rascunho | O fluxo foi definido no código |
+| Agente | Escolhe ações e ferramentas, observa resultados e ajusta o caminho | O modelo decide dentro de limites |
+
+Ter acesso a busca ou arquivos não transforma, sozinho, um sistema em agente. A distinção útil está em quem dirige o processo e quanto ele pode adaptar as etapas. Interfaces de conversa podem servir como entrada para qualquer uma dessas abordagens.
+
+No exemplo, autorizar leitura de fontes e criação de rascunho não precisa autorizar publicação. Separe as capacidades e defina como conferir o resultado. Um roteiro fixo pode ser suficiente quando a sequência é previsível; autonomia adicional exige avaliar custo, tempo e confiabilidade.
+
+Para entender o motor de linguagem sem confundir interface com autonomia, veja [IA local com Ollama](/blog/ia-local-com-ollama/).
 
 ## Antes de automatizar
 

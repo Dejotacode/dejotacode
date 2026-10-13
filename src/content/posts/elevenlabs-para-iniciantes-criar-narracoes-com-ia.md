@@ -2,6 +2,7 @@
 title: "ElevenLabs para iniciantes: como criar narrações com IA"
 description: "Entenda como transformar um roteiro em narração com inteligência artificial usando ElevenLabs, com um fluxo simples de geração, revisão e uso em vídeos."
 publishedAt: 2026-10-01
+updatedAt: 2026-10-13
 category: inteligencia-artificial
 type: tutorial
 readingTime: 11
@@ -153,3 +154,5 @@ A comissão não aumenta o preço por nossa decisão editorial e não transforma
 Se você quer experimentar esse fluxo, comece com um roteiro curto. Gere apenas alguns segundos, revise com calma e compare o resultado com o texto original.
 
 Depois que você dominar esse ciclo pequeno, produzir narrações maiores fica muito mais simples.
+
+Para decidir se precisa contratar um plano, veja [ElevenLabs vale a pena?](/blog/elevenlabs-vale-a-pena/).

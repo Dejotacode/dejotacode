@@ -2,6 +2,7 @@
 title: "Minha senha vazou: o que fazer agora?"
 description: "Veja o que fazer se sua senha apareceu em um vazamento: trocar credenciais reutilizadas, revisar acessos, ativar 2FA e reduzir o risco de novas invasões."
 publishedAt: 2026-10-13
+updatedAt: 2026-10-13
 category: linux-seguranca
 type: tutorial
 readingTime: 6
@@ -18,6 +19,14 @@ Descobrir que uma senha apareceu em um vazamento assusta, mas o pior caminho é 
 O mais importante é entender **qual conta foi afetada**, trocar as credenciais que ainda estão em uso e reduzir o risco de a mesma senha abrir outras contas.
 
 Este guia é educativo. Se houver movimentação financeira, invasão confirmada ou perda de acesso a uma conta importante, use também os canais oficiais de suporte do serviço envolvido.
+
+## Resposta rápida: por onde começar
+
+Abra o serviço pelo aplicativo ou endereço oficial. Se a senha exposta ainda está em uso, troque-a e troque também as contas que repetem essa credencial. Priorize o e-mail de recuperação e os serviços financeiros. Revise sessões, dispositivos e métodos de recuperação; depois configure um segundo fator.
+
+Se você já perdeu acesso, comece pela recuperação oficial da conta. Quando o e-mail principal também foi comprometido, recuperar apenas uma rede social pode não resolver: quem controla esse e-mail pode receber novas solicitações de redefinição. Havendo transações desconhecidas, contate imediatamente a instituição pelos canais oficiais.
+
+Não compartilhe a senha comprometida, códigos de recuperação ou códigos de autenticação com quem oferece ajuda por mensagem.
 
 ## Primeiro: confirme o que realmente vazou
 

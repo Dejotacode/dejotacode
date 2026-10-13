@@ -28,7 +28,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto aprovado explicitamente pelo usuário em 13/10/2026 após preview e resumo; capa já aprovada. Conteúdo completo adicionado à fila. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Cena e mãos conferidas visualmente; alerta e contas distinguem resposta a credencial exposta. Símbolo oficial único no canto superior esquerdo; imagem ilustrativa, não teste. Textos e telas conceituais sem dados reais. Aprovação do usuário permanece pendente.",
       "previous_media": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-conceito-assinatura-v1.svg",
       "source_sha256": "2b941394d26797537ffb816bf520ef253c7e734882bb7808e0ce8c3dc1b5b719",
@@ -59,7 +59,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026; fila de produção, sem publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "qa_revision": {
         "round": "rodada3-editorial-v2",
         "combinations": 8,
@@ -100,7 +100,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026; fila de produção, sem publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Pessoa avaliando critérios, papel de checklist e tela conceitual; referência VPN tipografada separadamente, sem logo iProVPN/NordVPN ou promessa de proteção. Símbolo oficial único conferido.",
       "previous_media": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-conceito-assinatura-v1.svg",
       "source_sha256": "0f7204f5406a1c0bfa443794d9486926248a8af23477a867724fbaff080c7d80",
@@ -144,7 +144,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026; fila de produção, sem publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Objeto de coruja e geometria digital correspondentes, interfaces ilustrativas e malha incompleta; não representa scanner comercial ou medição. Símbolo oficial único conferido no uso real.",
       "previous_media": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-conceito-assinatura-v1.svg",
       "source_sha256": "55e0ba16efee34f84fd348cfe675a8c46997cb6918cdf788fde4c06a19d64834",
@@ -190,7 +190,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
       "previous_media": "/assets/posts/como-escolher-um-scanner-3d-conceito-assinatura-v1.svg",
       "source_sha256": "d1ba9c40ef74b5d1393e9610b6764311264d5ecfa22039a6598f7da9f555920a",
@@ -236,7 +236,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
       "previous_media": "/assets/posts/supabase-para-iniciantes-conceito-assinatura-v1.svg",
       "source_sha256": "a52afeb62721375081716e3dba243f7b416f3f5b667da768806209381751eeb0",
@@ -281,7 +281,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
       "previous_media": "/assets/posts/ia-local-com-ollama-conceito-assinatura-v1.svg",
       "source_sha256": "b53d097a104c0ced9c4267d33be8f962211d5d89bacd87cac3acabd0f2c5b74b",
@@ -326,7 +326,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Reuso aplicado aprovado pelo usuário em 13/10/2026; fila de produção sem publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
       "previous_media": "/assets/posts/anythingllm-com-ollama-conceito-assinatura-v1.svg",
       "source_sha256": "bb471839aa567fc4d00b5c29fb8a9bdd79bd89cc4728d9fbd3f0577305ae577e",
@@ -370,7 +370,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Proposta visual aprovada pelo usuário durante a rodada de 13/10/2026; aplicação oficial e QA concluídos. Aprovação de publicação não concedida.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Composição conceitual com formas específicas ao assunto. Textos na arte são suplementares; explicação e alternativa textual permanecem em HTML.",
       "previous_media": "/assets/posts/agente-de-ia-vs-chatbot-conceito-assinatura-v1.svg",
       "source_sha256": "b674d0e3b08d13020ff0fae6a73d81f2dea558943e0045dcb4a37620cba67a36",
@@ -415,7 +415,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
       "previous_media": "/assets/posts/banco-de-dados-em-producao-cuidados-conceito-assinatura-v1.svg",
       "source_sha256": "5ecc53974bdd96524e1b5c4fc35ca6663b88f240e4a8392d83db8b5b7d281416",
@@ -459,7 +459,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
       "previous_media": "/assets/posts/posthog-vs-ga4-conceito-assinatura-v1.svg",
       "source_sha256": "f464eadf87d652170df5e2e35693ff3503c57158adac0c8802c1667428107626",
@@ -503,7 +503,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
       "previous_media": "/assets/posts/search-console-dados-atrasados-conceito-assinatura-v1.svg",
       "source_sha256": "94e09af28866cdd96536fb68a2509abcd043cdec80b7985b4e91f2511db0af6b",
@@ -547,7 +547,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
       "previous_media": "/assets/posts/html-sitemap-ainda-vale-a-pena-conceito-assinatura-v1.svg",
       "source_sha256": "d5400102adfc5b0f5c55a5d35af38f6906675bf9878c1e6af526d240406d4496",
@@ -590,7 +590,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "qa_revision": {
         "round": "restantes-10-a-16-editorial-v2",
         "combinations": 8,
@@ -631,7 +631,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "visual_note": "Assunto, natureza ilustrativa, assinatura oficial única e recortes conferidos no uso real; gráficos são metáforas sem valores e não certificam testes ou resultados.",
       "previous_media": "/assets/posts/como-instalar-e-validar-google-tag-conceito-assinatura-v1.svg",
       "source_sha256": "e75a29e8040d56c2bd72de7dede182294c311097d3fc796443f9107ee18f4804",
@@ -674,7 +674,7 @@
       "integration": "MIDIA_INTEGRADA",
       "qa": "QA_APROVADO",
       "approval": "Texto e capa aprovados pelo usuário em 13/10/2026 após os previews 10–16; adicionado à fila de produção. Não autoriza publicação.",
-      "pending": "Conclusão do CI/deploy e homologação pública.",
+      "pending": "Sem pendência de publicação deste lote.",
       "qa_revision": {
         "round": "restantes-10-a-16-editorial-v2",
         "combinations": 8,
@@ -757,12 +757,12 @@
     "wrong_covers": 0,
     "drafts": 16,
     "production_routes_excluded": 16,
-    "status": "qa-aprovado-16-conteudos-na-fila-sem-publicacao",
+    "status": "publicado-e-homologado",
     "evidence": "lote-drafts-final-browser-20261013.json"
   },
   "publication": {
     "authorization": "Usuário autorizou publicação dos 16 em 13/10/2026.",
-    "status": "AUTORIZADA_EM_VALIDACAO",
+    "status": "PUBLICADO_E_HOMOLOGADO",
     "method": "PR, CI, merge em main e workflow Cloudflare Pages",
     "validation": {
       "check": "97 arquivos, zero diagnósticos",
@@ -2182,6 +2182,1989 @@
         "h1": 1,
         "wrong_cover": false
       }
-    ]
+    ],
+    "result": {
+      "pr": 326,
+      "commit": "6c21ec4f3e2bc06c149fcb724a4b84c2b902a01f",
+      "workflow": 38437991749,
+      "workflow_status": "success",
+      "deployment_urls": [
+        "https://e7a95a01.dejota-code.pages.dev"
+      ],
+      "articles": [
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "http": 200,
+          "canonical": true,
+          "indexable": true,
+          "draft_notice_absent": true,
+          "expected_cover": true,
+          "image_http": 200,
+          "image_sha256_matches": true,
+          "sitemap": true,
+          "rss": true
+        }
+      ],
+      "failures": []
+    }
+  },
+  "post_publication_editorial_review": {
+    "date": "2026-10-13",
+    "status": "REVISADO_MELHORIAS_PROPOSTAS_NAO_APLICADAS",
+    "metrics": [
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "words": 1011,
+        "reading_minutes": 6,
+        "internal_links": [
+          "/blog/autenticacao-dois-fatores/",
+          "/blog/phishing-como-identificar/",
+          "/blog/gerenciador-de-senhas-para-iniciantes/",
+          "/store/nordpass/"
+        ],
+        "incoming_contextual": [
+          "gerenciador-de-senhas-para-iniciantes"
+        ],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "words": 473,
+        "reading_minutes": 3,
+        "internal_links": [
+          "/blog/elevenlabs-para-iniciantes-criar-narracoes-com-ia/",
+          "/blog/elevenlabs-para-iniciantes-criar-narracoes-com-ia/"
+        ],
+        "incoming_contextual": [],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "words": 327,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/vpn-para-iniciantes/"
+        ],
+        "incoming_contextual": [],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "words": 251,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/como-escolher-um-scanner-3d/"
+        ],
+        "incoming_contextual": [
+          "como-escolher-um-scanner-3d"
+        ],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "words": 341,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/scanner-3d-o-que-e-e-para-que-serve/"
+        ],
+        "incoming_contextual": [
+          "scanner-3d-o-que-e-e-para-que-serve"
+        ],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "words": 332,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/banco-de-dados-em-producao-cuidados/"
+        ],
+        "incoming_contextual": [],
+        "raw_external_urls": 4
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "words": 301,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/anythingllm-com-ollama/"
+        ],
+        "incoming_contextual": [
+          "anythingllm-com-ollama"
+        ],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "words": 223,
+        "reading_minutes": 2,
+        "internal_links": [],
+        "incoming_contextual": [],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "words": 385,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/ia-local-com-ollama/"
+        ],
+        "incoming_contextual": [
+          "ia-local-com-ollama"
+        ],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "words": 285,
+        "reading_minutes": 2,
+        "internal_links": [],
+        "incoming_contextual": [
+          "supabase-para-iniciantes"
+        ],
+        "raw_external_urls": 0
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "words": 297,
+        "reading_minutes": 2,
+        "internal_links": [],
+        "incoming_contextual": [],
+        "raw_external_urls": 3
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "words": 210,
+        "reading_minutes": 2,
+        "internal_links": [],
+        "incoming_contextual": [],
+        "raw_external_urls": 1
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "words": 186,
+        "reading_minutes": 1,
+        "internal_links": [],
+        "incoming_contextual": [],
+        "raw_external_urls": 1
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "words": 310,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/como-instalar-e-validar-google-tag/"
+        ],
+        "incoming_contextual": [],
+        "raw_external_urls": 1
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "words": 331,
+        "reading_minutes": 2,
+        "internal_links": [],
+        "incoming_contextual": [
+          "cicd-na-pratica"
+        ],
+        "raw_external_urls": 3
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "words": 237,
+        "reading_minutes": 2,
+        "internal_links": [
+          "/blog/documentar-aprendizado-tecnologia/"
+        ],
+        "incoming_contextual": [],
+        "raw_external_urls": 0
+      }
+    ],
+    "findings": [
+      {
+        "content": "Senha vazada",
+        "priority": "Baixa",
+        "improvement": "Acrescentar resposta rápida no início e orientar o caso de perda de acesso; manter o guia existente."
+      },
+      {
+        "content": "ElevenLabs",
+        "priority": "Alta",
+        "improvement": "Completar licença: atribuição no gratuito, exceção de Beta e conteúdo gratuito não se torna comercial ao assinar depois. Qualificar link afiliado com rel=sponsored."
+      },
+      {
+        "content": "iProVPN",
+        "priority": "Alta",
+        "improvement": "Remover frase de versão final para publicação e abrir pelo problema do leitor. Acrescentar critérios verificáveis de contratação sem fingir teste."
+      },
+      {
+        "content": "Scanner 3D: introdução",
+        "priority": "Média",
+        "improvement": "Mostrar sequência captura, pontos, malha e preparação do arquivo com um exemplo; esclarecer diferença entre malha e CAD."
+      },
+      {
+        "content": "Escolha de scanner 3D",
+        "priority": "Média",
+        "improvement": "Distinguir exatidão, repetibilidade e resolução em linguagem simples e adicionar matriz de decisão por objeto/uso."
+      },
+      {
+        "content": "Supabase",
+        "priority": "Média",
+        "improvement": "Expandir primeiro projeto com exemplo de usuários e políticas RLS, critérios de validação e limites de plano a conferir."
+      },
+      {
+        "content": "Ollama",
+        "priority": "Média",
+        "improvement": "Substituir observação episódica do servidor desligado por escopo datado; oferecer roteiro inicial e escolha de modelo sem benchmark inventado."
+      },
+      {
+        "content": "AnythingLLM",
+        "priority": "Alta",
+        "improvement": "Completar tutorial: pré-requisitos, sequência Desktop, modelo/workspace, embeddings, resultados esperados e diagnóstico de conexão."
+      },
+      {
+        "content": "Agente vs chatbot",
+        "priority": "Média",
+        "improvement": "Adicionar mesmo caso executado por chatbot, workflow e agente; esclarecer que ferramentas não bastam para definir autonomia."
+      },
+      {
+        "content": "Banco em produção",
+        "priority": "Alta",
+        "improvement": "Completar procedimento de revisão, concorrência, quantidade afetada e recuperação; exemplo em ambiente de teste com banco/dialeto definidos."
+      },
+      {
+        "content": "PostHog vs GA4",
+        "priority": "Média",
+        "improvement": "Adicionar tabela por pergunta, recursos sobrepostos, custos/governança a conferir e exemplo de eventos sem métricas inventadas."
+      },
+      {
+        "content": "Search Console",
+        "priority": "Média",
+        "improvement": "Transformar lista em sequência de diagnóstico: propriedade, período, filtros, atualização, inspeção de URL e incidentes; atraso e indexação separados."
+      },
+      {
+        "content": "HTML sitemap",
+        "priority": "Baixa",
+        "improvement": "Adicionar exemplo enxuto e critérios de decisão; relacionar com Search Console sem promessa de ranking."
+      },
+      {
+        "content": "CI/CD",
+        "priority": "Média",
+        "improvement": "Inserir link clicável para workflow público e roteiro de investigação com exemplo de log ilustrativo e recuperação após deploy."
+      },
+      {
+        "content": "Google tag",
+        "priority": "Alta",
+        "improvement": "Completar instalação e teste passo a passo com evidência esperada, modo debug/consentimento e diagnóstico de duplicidade."
+      },
+      {
+        "content": "Raindrop",
+        "priority": "Média",
+        "improvement": "Mostrar organização concreta de coleção, tags, nota e recuperação/exportação com capacidades verificadas sem afirmar teste próprio."
+      }
+    ],
+    "scope": "Leitura integral dos 16, revisão das promessas/editorial e fontes oficiais; não é nova prova de integração ou benchmark. Nenhuma alteração de artigos ou novo deploy.",
+    "shared_findings": {
+      "no_incoming_contextual_links_from_articles": 9,
+      "no_outgoing_contextual_links": 6,
+      "raw_reference_urls": 13,
+      "covers": "manter capas aprovadas; não identificada necessidade semântica de nova geração"
+    }
+  },
+  "editorial_improvements": {
+    "date": "2026-10-13",
+    "status": "APLICADAS_LOCALMENTE_QA_APROVADO_AGUARDANDO_REVISAO",
+    "articles": 16,
+    "contextual_links": [
+      {
+        "slug": "minha-senha-vazou-o-que-fazer-agora",
+        "incoming_contextual": 2,
+        "outgoing_contextual": 4
+      },
+      {
+        "slug": "elevenlabs-vale-a-pena",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 2
+      },
+      {
+        "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 3
+      },
+      {
+        "slug": "scanner-3d-o-que-e-e-para-que-serve",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "como-escolher-um-scanner-3d",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "supabase-para-iniciantes",
+        "incoming_contextual": 2,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "ia-local-com-ollama",
+        "incoming_contextual": 2,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "agente-de-ia-vs-chatbot",
+        "incoming_contextual": 2,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "anythingllm-com-ollama",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 3
+      },
+      {
+        "slug": "banco-de-dados-em-producao-cuidados",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "posthog-vs-ga4",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "search-console-dados-atrasados",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "html-sitemap-ainda-vale-a-pena",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "cicd-na-pratica",
+        "incoming_contextual": 1,
+        "outgoing_contextual": 2
+      },
+      {
+        "slug": "como-instalar-e-validar-google-tag",
+        "incoming_contextual": 2,
+        "outgoing_contextual": 1
+      },
+      {
+        "slug": "raindrop-io-para-desenvolvedores",
+        "incoming_contextual": 2,
+        "outgoing_contextual": 3
+      }
+    ],
+    "covers": "mantidas, sem troca ou geração",
+    "publication": "nenhum push, merge ou deploy desta melhoria; aprovação da versão anterior permanece distinta",
+    "runtime_examples": "comandos e SQL didáticos, não executados no ambiente do usuário; nenhuma operação de banco ou inferência",
+    "reading_time": "estimativa recalculada a 200 palavras/minuto",
+    "related_articles_updated": [
+      "elevenlabs-para-iniciantes-criar-narracoes-com-ia",
+      "vpn-para-iniciantes",
+      "git-e-github-entenda-a-diferenca",
+      "documentar-aprendizado-tecnologia"
+    ],
+    "validation": {
+      "check": "97 arquivos, zero diagnósticos",
+      "build": "156 páginas",
+      "qa": "links/HTML/SEO/AdSense aprovados",
+      "browser_combinations": 128,
+      "browser_failures": 0,
+      "sponsored": "confirmado no HTML gerado",
+      "raw_reference_urls_remaining": 0,
+      "articles_without_incoming_contextual_links": 0,
+      "articles_without_outgoing_contextual_links": 0,
+      "browser_evidence": [
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "minha-senha-vazou-o-que-fazer-agora",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "elevenlabs-vale-a-pena",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/elevenlabs-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "iprovpn-o-que-avaliar-antes-de-contratar",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "scanner-3d-o-que-e-e-para-que-serve",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/scanner-3d-o-que-e-e-para-que-serve-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-escolher-um-scanner-3d",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-escolher-um-scanner-3d-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "supabase-para-iniciantes",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/supabase-para-iniciantes-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "ia-local-com-ollama",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/ia-local-com-ollama-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "anythingllm-com-ollama",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/anythingllm-com-ollama-acervo-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "agente-de-ia-vs-chatbot",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/agente-de-ia-vs-chatbot-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "banco-de-dados-em-producao-cuidados",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/banco-de-dados-em-producao-cuidados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "posthog-vs-ga4",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/posthog-vs-ga4-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "search-console-dados-atrasados",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/search-console-dados-atrasados-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "html-sitemap-ainda-vale-a-pena",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/html-sitemap-ainda-vale-a-pena-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "cicd-na-pratica",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/resources/items/github-resource-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "como-instalar-e-validar-google-tag",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/como-instalar-e-validar-google-tag-editorial-assinatura-v2.svg",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 320,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 320,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 390,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 390,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 768,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 768,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 1440,
+          "theme": "light",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        },
+        {
+          "slug": "raindrop-io-para-desenvolvedores",
+          "width": 1440,
+          "theme": "dark",
+          "overflow": false,
+          "broken": [],
+          "cover": "/assets/posts/documentar-aprendizado-tecnologia-capa-v1-assinatura-v2.webp",
+          "robots": "index, follow",
+          "h1": 1,
+          "wrong_cover": false
+        }
+      ]
+    }
   }
 }
