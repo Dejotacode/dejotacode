@@ -26,7 +26,9 @@ O Admin usa a mesma identidade da DejotaCode sem copiar a composição das pági
 - `src/layouts/AdminLayout.astro`: topbar, marca, tema e montagem da navegação.
 - `src/components/admin/AdminNav.astro`: navegação global e estado ativo.
 - `src/components/admin/MediaFlowNav.astro`: navegação contextual da área de Mídia.
-- `src/styles/admin-metrics.css` e estilos específicos: composição das páginas, sem redefinir tokens de identidade.
+- `src/styles/admin-metrics.css`: base compartilhada de páginas, cards e seções.
+- `src/styles/admin-workspace.css`: refinamentos de workspaces densos, principalmente Editor e Métricas, sem redefinir tokens nem lógica de negócio.
+- estilos específicos permanecem permitidos quando a função exigir, mas não recriam identidade paralela.
 
 ## Direção visual aprovada
 
@@ -45,6 +47,14 @@ A mesma identidade se estende ao conteúdo das rotas administrativas sem transfo
 - Cards clicáveis precisam ter estado hover e foco perceptível, com movimento mínimo e borda reforçada; foco usa `--color-focus`.
 - Dashboard prioriza pendências e próxima ação. Quantidades relevantes podem usar ciano, mas o card inteiro não vira um bloco de destaque.
 - Seções de Mídia e Métricas reutilizam o mesmo padrão de superfície/título/nota; controles específicos podem manter CSS local quando a função exigir.
+- Editor usa superfície neutra para formulário e preview; glow fica restrito à seleção/abertura do workspace. Campos recebem foco oficial e conteúdo Markdown mantém `--font-code`.
+- Métricas usam números em heading, rótulos secundários discretos e cards sem sombra pesada; glow pode existir apenas como detalhe estrutural de baixa intensidade.
 - Ações primárias continuam usando `.button-primary`; ações secundárias preservam `.button`.
+
+## Regra de migração do Editor
+
+A identidade visual não deve consolidar funcionalidades administrativas de mídia dentro do Editor. Segurança, cleanup, dry-run, snapshot, auditoria e exclusão pertencem ao fluxo dedicado de Mídia. Enquanto o legado físico ainda existir no arquivo do Editor, ele é tratado como dívida técnica de migração e não como parte do padrão visual aprovado.
+
+A remoção desse legado deve acontecer em mudança própria, por blocos pequenos e validados, preservando somente upload editorial, biblioteca para reutilização, inserção em Markdown e cópia de URL.
 
 Objetivo dessa camada: fazer Dashboard, Conteúdo, Mídia e Métricas parecerem partes do mesmo produto, sem eliminar as diferenças funcionais entre elas.
