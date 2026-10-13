@@ -28,6 +28,18 @@ const items = [
     match: (path: string) => maintenancePaths.some((prefix) => path.startsWith(prefix)),
   },
 ];
+
+const maintenanceItems = [
+  { href: "/admin/midia/manutencao/", label: "Visão geral", path: "/admin/midia/manutencao" },
+  { href: "/admin/midia/cleanup/", label: "Cleanup", path: "/admin/midia/cleanup" },
+  { href: "/admin/midia/dry-run/", label: "Dry-run", path: "/admin/midia/dry-run" },
+  { href: "/admin/midia/snapshot/", label: "Snapshot", path: "/admin/midia/snapshot" },
+  { href: "/admin/midia/auditoria/", label: "Auditoria", path: "/admin/midia/auditoria" },
+  { href: "/admin/midia/pronto-exclusao/", label: "Prontas", path: "/admin/midia/pronto-exclusao" },
+  { href: "/admin/midia/exclusao/", label: "Exclusão", path: "/admin/midia/exclusao" },
+];
+
+const showsMaintenanceNav = maintenancePaths.some((prefix) => currentPath.startsWith(prefix));
 ---
 
 <nav class="media-flow-nav" aria-label="Navegação de mídia">
@@ -45,6 +57,25 @@ const items = [
       );
     })}
   </div>
+
+  {showsMaintenanceNav && (
+    <div class="media-flow-nav__maintenance-wrap">
+      <div class="media-flow-nav__maintenance" aria-label="Etapas de manutenção">
+        {maintenanceItems.map((item) => {
+          const active = currentPath.startsWith(item.path);
+          return (
+            <a
+              class:list={["media-flow-nav__maintenance-link", { "media-flow-nav__maintenance-link--active": active }]}
+              href={item.href}
+              aria-current={active ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  )}
 </nav>
 
 <style>
@@ -53,28 +84,36 @@ const items = [
     background: var(--color-surface-soft);
   }
 
-  .media-flow-nav__inner {
+  .media-flow-nav__inner,
+  .media-flow-nav__maintenance {
     width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
     margin-inline: auto;
     display: flex;
-    gap: 0.35rem;
     overflow-x: auto;
-    padding-block: 0.6rem;
     scrollbar-width: thin;
   }
 
-  .media-flow-nav__link {
+  .media-flow-nav__inner {
+    gap: 0.35rem;
+    padding-block: 0.6rem;
+  }
+
+  .media-flow-nav__link,
+  .media-flow-nav__maintenance-link {
     flex: 0 0 auto;
-    min-height: 2.45rem;
     display: inline-flex;
     align-items: center;
-    padding: 0.5rem 0.75rem;
     border: 1px solid transparent;
+    text-decoration: none;
+  }
+
+  .media-flow-nav__link {
+    min-height: 2.45rem;
+    padding: 0.5rem 0.75rem;
     border-radius: var(--radius-md);
     color: var(--color-text-muted);
     font-size: 0.88rem;
     font-weight: 800;
-    text-decoration: none;
   }
 
   .media-flow-nav__link:hover,
@@ -88,5 +127,38 @@ const items = [
     color: var(--color-accent-strong);
     border-color: var(--color-border-strong);
     background: var(--color-surface);
+  }
+
+  .media-flow-nav__maintenance-wrap {
+    border-top: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  }
+
+  .media-flow-nav__maintenance {
+    gap: 0.2rem;
+    padding-block: 0.45rem;
+  }
+
+  .media-flow-nav__maintenance-link {
+    min-height: 2.1rem;
+    padding: 0.38rem 0.62rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-subtle);
+    font-size: 0.78rem;
+    font-weight: 750;
+    white-space: nowrap;
+  }
+
+  .media-flow-nav__maintenance-link:hover,
+  .media-flow-nav__maintenance-link:focus-visible {
+    color: var(--color-text);
+    border-color: var(--color-border);
+    background: var(--color-surface-soft);
+  }
+
+  .media-flow-nav__maintenance-link--active {
+    color: var(--color-accent-strong);
+    border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+    background: color-mix(in srgb, var(--color-accent) 7%, var(--color-surface-soft));
   }
 </style>

@@ -1,7 +1,7 @@
 # Admin shell — identidade DejotaCode
 
 Situação: vigente após validação e publicação desta mudança.
-Revisão: 12/10/2026.
+Revisão: 13/10/2026.
 Escopo: estrutura visual compartilhada das rotas `/admin/*`.
 Referências: [Documento Mestre](frontend-master.md), [Sistema visual](visual-system.md) e valores executáveis em `src/styles/tokens.css`.
 
@@ -16,6 +16,7 @@ O Admin usa a mesma identidade da DejotaCode sem copiar a composição das pági
 - Ciano é sinal de marca, foco, seleção e ação. Não usar como preenchimento decorativo indiscriminado.
 - O grid técnico e o glow podem aparecer de forma discreta na topbar ou em superfícies de abertura, sem competir com o conteúdo.
 - Navegação global mantém quatro destinos: Dashboard, Conteúdo, Mídia e Métricas. Estado ativo precisa ser evidente por cor e forma, sem depender apenas da cor.
+- A navegação contextual de Mídia mantém apenas Biblioteca, Revisão e Manutenção no primeiro nível. Dentro de Manutenção, uma segunda linha progressiva expõe Visão geral, Cleanup, Dry-run, Snapshot, Auditoria, Prontas e Exclusão.
 - Rótulos técnicos curtos reutilizam `--type-eyebrow` e `--tracking-eyebrow`; títulos e texto continuam usando as famílias oficiais do sistema visual.
 - Temas claro e escuro preservam a mesma estrutura. Apenas tokens de cor e o arquivo de marca adequado ao tema mudam.
 - A topbar não deve concentrar ações de página. Ações específicas permanecem no conteúdo da rota correspondente.
@@ -25,7 +26,7 @@ O Admin usa a mesma identidade da DejotaCode sem copiar a composição das pági
 
 - `src/layouts/AdminLayout.astro`: topbar, marca, tema e montagem da navegação.
 - `src/components/admin/AdminNav.astro`: navegação global e estado ativo.
-- `src/components/admin/MediaFlowNav.astro`: navegação contextual da área de Mídia.
+- `src/components/admin/MediaFlowNav.astro`: navegação contextual da área de Mídia e disclosure progressivo das ferramentas de Manutenção.
 - `src/styles/admin-metrics.css`: base compartilhada de páginas, cards e seções.
 - `src/styles/admin-workspace.css`: refinamentos de workspaces densos, principalmente Editor e Métricas, sem redefinir tokens nem lógica de negócio.
 - estilos específicos permanecem permitidos quando a função exigir, mas não recriam identidade paralela.
