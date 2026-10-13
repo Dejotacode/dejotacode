@@ -2,7 +2,7 @@
 title: "Git e GitHub: entenda a diferença sem complicação"
 description: "Entenda a diferença entre Git e GitHub e pratique o fluxo básico de status, add, commit e push para versionar seu primeiro projeto."
 publishedAt: 2026-08-29
-updatedAt: 2026-09-25
+updatedAt: 2026-10-13
 category: programacao
 type: tutorial
 readingTime: 11
@@ -250,3 +250,5 @@ Agora você já percorreu uma sequência completa: entendeu a web, separou HTML/
 Volte à [trilha Primeiros passos na programação](/trilhas/primeiros-passos-programacao/) para marcar seu progresso.
 
 Quando quiser transformar esse aprendizado em algo apresentável, continue com [Como escolher seu primeiro projeto de portfólio](/blog/escolher-primeiro-projeto-portfolio/).
+
+Para acompanhar a validação de uma mudança, leia [CI/CD na prática](/blog/cicd-na-pratica/).

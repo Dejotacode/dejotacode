@@ -2,9 +2,10 @@
 title: "Supabase para iniciantes: banco, autenticação e backend em um só projeto"
 description: "Entenda como Supabase reúne Postgres, autenticação, storage, realtime e funções para acelerar o backend de aplicações."
 publishedAt: 2026-10-13
+updatedAt: 2026-10-13
 category: programacao
 type: artigo
-readingTime: 2
+readingTime: 3
 difficulty: iniciante
 featured: false
 draft: false
@@ -37,12 +38,37 @@ Antes de trabalhar com dados reais, veja [cuidados com banco de dados em produç
 
 Uma boa prática é começar com uma lista de tarefas com login. Isso permite aprender tabela, autenticação, políticas e leitura/escrita sem um domínio complexo.
 
+## Primeiro projeto: tarefas privadas por usuário
+
+Use um projeto de estudo com dados fictícios. O objetivo é que cada pessoa veja apenas suas próprias tarefas, em vez de criar uma lista compartilhada por acidente.
+
+1. Crie o projeto e configure o método de login escolhido no Auth.
+2. Modele uma tabela de tarefas com identificador, título e identificador do proprietário.
+3. Habilite RLS na tabela exposta e revise os privilégios dos papéis que acessam a API.
+4. Crie políticas para as operações necessárias, relacionando o proprietário à identidade autenticada. Uma política de leitura não libera automaticamente criação, atualização ou exclusão.
+5. Conecte o cliente usando uma chave publicável e a sessão do usuário.
+6. Teste pelo mesmo caminho que a aplicação usa, com duas contas distintas e uma sessão sem login.
+
+### Como saber se as permissões funcionam
+
+| Teste | Resultado esperado neste projeto |
+|---|---|
+| Conta A cria uma tarefa própria | Operação aceita conforme a política |
+| Conta B tenta ler a tarefa de A | Nenhum dado privado de A é exposto |
+| Conta B tenta alterar a tarefa de A | Alteração recusada ou sem linhas afetadas |
+| Sessão sem login tenta acessar tarefas | Dados privados indisponíveis |
+| Cliente tenta criar uma tarefa para outro usuário | Operação recusada pela política |
+
+Não use uma conexão administrativa ou chave privilegiada para provar que a política funciona: esse acesso pode contornar RLS. Revise também concessões de privilégios; autenticação, grants e políticas cumprem funções diferentes.
+
+Antes de levar o exemplo para produção, confira limites atuais de banco, armazenamento, tráfego, funções e recursos de backup do seu plano. A existência de um plano gratuito não garante capacidade ilimitada nem a estratégia de recuperação necessária ao seu sistema.
+
 ## Fontes oficiais
 
-- https://supabase.com/docs
-- https://supabase.com/docs/guides/database/overview
-- https://supabase.com/docs/guides/auth
-- https://supabase.com/docs/guides/functions
+- [Supabase: documentação](https://supabase.com/docs)
+- [Supabase: banco de dados](https://supabase.com/docs/guides/database/overview)
+- [Supabase: autenticação](https://supabase.com/docs/guides/auth)
+- [Supabase: Edge Functions](https://supabase.com/docs/guides/functions)
 
 
 ## Referências desta revisão

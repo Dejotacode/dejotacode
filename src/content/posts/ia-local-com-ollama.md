@@ -2,9 +2,10 @@
 title: "IA local com Ollama: por que rodar modelos no próprio computador"
 description: "Entenda o que muda ao usar modelos de linguagem localmente com Ollama, incluindo privacidade, recursos da máquina e limitações."
 publishedAt: 2026-10-13
+updatedAt: 2026-10-13
 category: inteligencia-artificial
 type: artigo
-readingTime: 2
+readingTime: 3
 difficulty: iniciante
 featured: false
 draft: false
@@ -37,9 +38,37 @@ Escolha um modelo executado localmente: o Ollama também oferece recursos de nuv
 
 "Local" não significa automaticamente seguro. Avalie quais aplicações têm acesso ao servidor local, onde históricos são salvos e se alguma integração externa envia dados para fora da máquina.
 
+## Um primeiro teste sem misturar modelos
+
+Com Ollama instalado pelo método apropriado ao seu sistema, confirme a versão e os modelos já disponíveis:
+
+```bash
+ollama --version
+ollama ls
+```
+
+Escolha um modelo local da biblioteca e confira tamanho do download, licença e requisitos antes de baixar. Para evitar baixar vários modelos sem necessidade, use primeiro um que já esteja instalado. Nos comandos abaixo, substitua `NOME_DO_MODELO` pelo identificador completo escolhido:
+
+```bash
+ollama run NOME_DO_MODELO "Explique o que é uma variável em três frases."
+ollama ps
+```
+
+O primeiro comando deve produzir uma resposta; o segundo mostra os modelos carregados. Responder não comprova que o conteúdo está correto. Confira a explicação e repita um pequeno conjunto de tarefas representativas antes de adotar o modelo.
+
+Se o cliente informar que não consegue conectar ao servidor, verifique como sua instalação inicia o serviço. `ollama serve` inicia o servidor quando ele ainda não está em execução; não é necessário abrir uma segunda instância quando o aplicativo ou serviço já o mantém ativo.
+
+Ao terminar um teste, você pode descarregar o modelo sem removê-lo da instalação:
+
+```bash
+ollama stop NOME_DO_MODELO
+```
+
+Comece com contexto curto. Anote tempo percebido, resposta e recursos usados, separando a primeira execução das seguintes. Não escolha apenas pelo número de parâmetros: memória disponível, quantização, tarefa e contexto interferem no resultado.
+
 ## No DejotaCode
 
-O Ollama está instalado no ambiente CachyOS do DejotaCode. Na conferência desta revisão, o servidor estava desligado; isso não comprova a execução de um modelo. Não publicamos aqui benchmarks, consumo de memória nem resultados de inferência sem registros reproduzíveis por modelo e hardware.
+O ambiente de estudo do DejotaCode usa CachyOS. Este artigo explica o fluxo local e os critérios de escolha; não apresenta benchmark do nosso computador. Resultados próprios exigem registro de modelo, versão, hardware, prompt e condições de execução.
 
 ## Próximo passo
 
@@ -49,5 +78,7 @@ Depois de executar um modelo, você pode conectá-lo a uma interface como Anythi
 ## Referências desta revisão
 
 Documentação consultada em 13/10/2026; recursos e condições podem mudar.
+
+- [Ollama: comandos de terminal](https://docs.ollama.com/cli)
 
 - [Ollama: FAQ e execução local/nuvem](https://docs.ollama.com/faq)

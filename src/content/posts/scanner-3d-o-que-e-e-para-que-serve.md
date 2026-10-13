@@ -2,6 +2,7 @@
 title: "Scanner 3D: o que é e para que serve?"
 description: "Entenda como um scanner 3D captura forma e superfície de objetos e em quais projetos essa tecnologia pode fazer sentido."
 publishedAt: 2026-10-13
+updatedAt: 2026-10-13
 category: tecnologia-pratica
 type: artigo
 readingTime: 2
@@ -29,6 +30,20 @@ Dependendo do equipamento, o scanner registra geometria e, em alguns casos, info
 ## O que um scanner 3D não faz sozinho
 
 Capturar o objeto não significa produzir automaticamente um modelo perfeito. Superfícies refletivas, transparentes, muito escuras, detalhes pequenos e movimento podem exigir preparação ou técnicas específicas.
+
+## Da captura ao arquivo utilizável
+
+Imagine digitalizar uma pequena escultura para criar uma réplica decorativa. O processo pode envolver:
+
+1. Capturar diferentes lados e regiões que o sensor consegue observar.
+2. Alinhar as capturas para representar o mesmo objeto.
+3. Gerar ou limpar a nuvem de pontos e a malha, conforme o software.
+4. Remover ruído e revisar regiões ausentes, escala e detalhes.
+5. Exportar para o programa de modelagem ou preparação da impressão.
+
+Buracos e regiões reconstruídas pelo software precisam de revisão: uma superfície completada digitalmente não prova que aquela região foi medida. A base apoiada na mesa, por exemplo, pode exigir outra posição de captura.
+
+Uma malha descreve a superfície com elementos como triângulos. Ela não é automaticamente um modelo CAD com dimensões, operações e parâmetros editáveis. Para engenharia reversa, reconstruir um CAD utilizável pode ser uma etapa adicional. Para impressão, ainda é necessário conferir a geometria e preparar o arquivo no fluxo da impressora.
 
 ## Scanner 3D x fotogrametria
 

@@ -2,9 +2,10 @@
 title: "CI/CD na prática: o que acontece quando o pipeline quebra"
 description: "Entenda CI/CD pelo workflow real do DejotaCode e saiba investigar falhas de check, build e QA antes de publicar."
 publishedAt: 2026-10-13
+updatedAt: 2026-10-13
 category: programacao
 type: artigo
-readingTime: 2
+readingTime: 3
 difficulty: intermediario
 featured: false
 draft: false
@@ -29,9 +30,28 @@ O caminho é identificar qual job falhou, ler a primeira causa útil, reproduzir
 
 O workflow atual do DejotaCode separa dois caminhos. Em pull requests, instala dependências com `npm ci`, executa `npm run check`, gera o build de produção e roda `npm run qa`. No push para a branch principal, repete as validações, publica no Cloudflare Pages e executa smoke test.
 
-Isso pode ser conferido no arquivo `.github/workflows/ci.yml` do projeto. É um exemplo do fluxo configurado, sem alegar aqui a investigação de um incidente específico. Se o check falhar, a execução normal não avança ao deploy. Se o smoke test falhar, o deploy já ocorreu: é necessário investigar e seguir o procedimento de recuperação.
+Isso pode ser conferido no [workflow público do DejotaCode](https://github.com/Dejotacode/dejotacode/blob/main/.github/workflows/ci.yml). O link aponta para a versão vigente, que pode evoluir depois desta revisão. É um exemplo do fluxo configurado, sem alegar aqui a investigação de um incidente específico. Se o check falhar, a execução normal não avança ao deploy. Se o smoke test falhar, o deploy já ocorreu: é necessário investigar e seguir o procedimento de recuperação.
 
 Um build aprovado não comprova que um evento chegou ao serviço de analytics. Essa distinção também aparece no tutorial de [instalação e validação da Google tag](/blog/como-instalar-e-validar-google-tag/).
+
+## Como investigar uma execução com falha
+
+Abra a execução correspondente ao commit ou PR e identifique o primeiro job que falhou. Expanda a etapa, encontre a causa original e confira quais passos realmente chegaram a executar. Uma mensagem final de “processo encerrado com erro” costuma ser consequência, não diagnóstico.
+
+| Etapa com falha | O que conferir primeiro |
+|---|---|
+| Instalação | Lockfile, versão de Node e acesso ao registro |
+| Check | Arquivo e diagnóstico de tipos reportados |
+| Build | Importações, conteúdo e variáveis exigidas pelo build |
+| QA | URL ou regra que o validador identificou |
+| Deploy | Projeto, branch e permissões da credencial, sem expor o token |
+| Smoke | URL pública, propagação e resposta da aplicação |
+
+Exemplo ilustrativo: se o QA identifica um link interno cujo destino não existe, corrija o caminho ou publique o destino junto quando autorizado. Não remova a validação para tornar o pipeline verde. Reproduza a etapa localmente usando o mesmo comando e confira o diff antes do novo envio.
+
+Após um deploy, uma falha de smoke exige verificar o domínio e a execução. Repetir o job não garante rollback. Se houver regressão, siga o procedimento de recuperação com um commit conhecido e valide a versão resultante.
+
+Para entender branches, commits e PRs, leia [Git e GitHub: a diferença](/blog/git-e-github-entenda-a-diferenca/).
 
 ## Um pipeline mínimo
 
@@ -45,6 +65,6 @@ Um build aprovado não comprova que um evento chegou ao serviço de analytics. E
 
 ## Fonte oficial
 
-- https://docs.github.com/pt/actions/get-started/quickstart
+- [GitHub Actions: guia inicial](https://docs.github.com/pt/actions/get-started/quickstart)
 
 Referência oficial conferida nesta revisão em 13/10/2026.

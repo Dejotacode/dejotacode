@@ -2,6 +2,7 @@
 title: "Como documentar o que você aprende em tecnologia"
 description: "Aprenda a registrar comandos, erros, decisões e aprendizados de forma simples para revisar melhor e transformar estudo em evidência prática."
 publishedAt: 2026-09-16
+updatedAt: 2026-10-13
 category: tecnologia-pratica
 type: tutorial
 readingTime: 8
@@ -97,3 +98,5 @@ Uma boa documentação é aquela que você realmente volta a usar.
 Se seus arquivos ainda estão espalhados, comece por [organizar seu ambiente de estudos](/blog/organizar-ambiente-estudos-tecnologia/). Quando seus projetos começarem a ganhar histórico, entenda também [a diferença entre Git e GitHub](/blog/git-e-github-entenda-a-diferenca/).
 
 Com organização, documentação e versionamento, seu estudo deixa de ser apenas consumo de conteúdo e começa a produzir evidências que você pode revisar, explicar e apresentar.
+
+Para organizar fontes e links de estudo, veja [Raindrop.io para desenvolvedores](/blog/raindrop-io-para-desenvolvedores/).

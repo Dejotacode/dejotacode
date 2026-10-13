@@ -1,8 +1,8 @@
 # Lote de 16 drafts — revisão local
 
-Status: publicação autorizada pelo usuário; pacote em validação para PR e CI/CD. Responsável: @control/@dev/@studio. Revisão: 2026-10-13.
+Status: QA concluído; todos os 16 conteúdos e capas aprovados para a fila, sem autorização de publicação. Responsável: @control/@dev/@studio. Revisão: 2026-10-13.
 
-Durante a revisão, todos os arquivos permaneceram com draft: true, sem push, deploy ou publicação. A autorização específica de 13/10, registrada ao final, libera este lote; a aprovação histórica de 10/10 não foi usada como autorização. Fonte principal: arquivos Markdown atuais. Acervo de 140 registros consultado; versão final com quatro reusos e doze ilustrações editoriais raster com símbolo oficial composto em SVG. Todas as capas foram aprovadas pelo usuário nas rodadas de revisão. Natureza ilustrativa em legenda HTML fora do recorte; alt por assunto.
+Todos os arquivos continuam com draft: true. Sem push, deploy ou publicação. A aprovação histórica de 10/10 não libera este lote. Fonte principal: arquivos Markdown atuais. Acervo de 140 registros consultado; versão final com quatro reusos e doze ilustrações editoriais raster com símbolo oficial composto em SVG. Todas as capas foram aprovadas pelo usuário nas rodadas de revisão. Natureza ilustrativa em legenda HTML fora do recorte; alt por assunto.
 
 Check: 93 arquivos, zero erros/avisos/hints. Build de produção: 132 páginas; os 16 drafts ausentes. QA de links, HTML e analytics estático aprovado. Navegador: 128 combinações, 320/390/768/1440 px, claro/escuro, nenhum overflow ou imagem quebrada, capas corretas, drafts noindex/nofollow. QA de analytics verifica código, não comprova envio/recebimento real. A primeira rodada acelerada classificou imagens lazy ainda não solicitadas como falhas; a rodada final tornou todas eager e aguardou decode, substituindo aquele diagnóstico.
 
@@ -16,22 +16,22 @@ Alterações pontuais: linguagem de pesquisa na avaliação ElevenLabs por falta
 
 | Conteúdo | Texto | Imagem | Integração | QA | Pendência | Pronto para publicação |
 |---|---|---|---|---|---|---|
-| minha-senha-vazou-o-que-fazer-agora | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| elevenlabs-vale-a-pena | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| iprovpn-o-que-avaliar-antes-de-contratar | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Confirmar afiliação antes de configurar links comerciais iProVPN; artigo atual não afirma aprovação. | Autorizado — em validação |
-| scanner-3d-o-que-e-e-para-que-serve | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| como-escolher-um-scanner-3d | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| supabase-para-iniciantes | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| ia-local-com-ollama | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| anythingllm-com-ollama | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| agente-de-ia-vs-chatbot | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| banco-de-dados-em-producao-cuidados | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| posthog-vs-ga4 | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| search-console-dados-atrasados | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| html-sitemap-ainda-vale-a-pena | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| cicd-na-pratica | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| como-instalar-e-validar-google-tag | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
-| raindrop-io-para-desenvolvedores | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | CI/deploy e homologação pública. | Autorizado — em validação |
+| minha-senha-vazou-o-que-fazer-agora | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| elevenlabs-vale-a-pena | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| iprovpn-o-que-avaliar-antes-de-contratar | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Confirmar afiliação antes de configurar links comerciais iProVPN; artigo atual não afirma aprovação. | Não — DRAFT |
+| scanner-3d-o-que-e-e-para-que-serve | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| como-escolher-um-scanner-3d | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| supabase-para-iniciantes | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| ia-local-com-ollama | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| anythingllm-com-ollama | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| agente-de-ia-vs-chatbot | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| banco-de-dados-em-producao-cuidados | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| posthog-vs-ga4 | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| search-console-dados-atrasados | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| html-sitemap-ainda-vale-a-pena | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| cicd-na-pratica | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| como-instalar-e-validar-google-tag | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
+| raindrop-io-para-desenvolvedores | TEXTO_REVISADO | IMAGEM_APROVADA | MÍDIA_INTEGRADA | QA_APROVADO | Autorização final de publicação. | Não — DRAFT |
 
 ## Liberação futura
 
@@ -79,6 +79,39 @@ Após apresentação dos sete previews individuais, o usuário respondeu “apro
 
 O usuário aprovou explicitamente o texto do primeiro conteúdo após o preview e resumo. A capa já estava aprovada. A fila agora contém todos os 16 conteúdos, com texto e capa aprovados. Este estado substitui as pendências de aprovação editorial registradas no histórico anterior. Todos permanecem com draft: true; aprovação editorial não autoriza push, deploy ou publicação. A confirmação de afiliação iProVPN continua necessária somente antes de configurar novos links comerciais; o artigo atual não afirma afiliação aprovada.
 
-## Publicação autorizada — 13/10/2026
+## Publicação concluída e homologada — 13/10/2026
 
-Após aprovação dos 16 textos e capas, o usuário respondeu “autorizado” à etapa de publicação. Pacote integrado em worktree isolada baseada na main atual para preservar alterações concorrentes. Os 16 frontmatters passam a draft: false; legendas da natureza das imagens continuam visíveis também nos artigos publicados. Validações e PR antecedem merge e deploy pelo workflow vigente. Registros anteriores de draft e ausência de autorização representam etapas históricas.
+Status atual: 16 artigos publicados. PR #326, commit 6c21ec4f3e2bc06c149fcb724a4b84c2b902a01f; CI do PR e workflow de produção 38437991749 aprovados, incluindo smoke. Deployment: https://e7a95a01.dejota-code.pages.dev. Domínio oficial: 16 artigos HTTP 200, canonical correto, indexáveis, aviso de draft ausente, todos presentes no sitemap e RSS. As 16 capas retornaram HTTP 200 e são idênticas ao pacote aprovado por SHA-256. QA pré-publicação: 128 combinações sem falhas. Nenhuma alteração em API, banco, DNS ou secrets. Evidência detalhada no campo publication.result do registro JSON. Estado publicado substitui menções históricas a draft/autorização pendente.
+
+## Revisão editorial após publicação — 13/10/2026
+
+Status: registro de melhorias propostas, sem alterações de artigos ou novo deploy. A homologação técnica não equivale a conteúdo editorial completo. Leitura integral encontrou oportunidades de aprofundar exemplos e procedimentos, corrigir frase de pré-publicação no iProVPN e completar condições da licença ElevenLabs. O link afiliado ElevenLabs no HTML do pacote não possui qualificação sponsored/nofollow. Nove artigos sem links contextuais de entrada de outros artigos; seis sem saída contextual; treze URLs cruas nas referências. Isso não significa páginas órfãs, pois há catálogo, categorias e sitemap. Manter capas aprovadas; nenhuma necessidade semântica de nova geração identificada.
+
+| Conteúdo | Prioridade | Melhoria proposta |
+|---|---|---|
+| Senha vazada | Baixa | Acrescentar resposta rápida no início e orientar o caso de perda de acesso; manter o guia existente. |
+| ElevenLabs | Alta | Completar licença: atribuição no gratuito, exceção de Beta e conteúdo gratuito não se torna comercial ao assinar depois. Qualificar link afiliado com rel=sponsored. |
+| iProVPN | Alta | Remover frase de versão final para publicação e abrir pelo problema do leitor. Acrescentar critérios verificáveis de contratação sem fingir teste. |
+| Scanner 3D: introdução | Média | Mostrar sequência captura, pontos, malha e preparação do arquivo com um exemplo; esclarecer diferença entre malha e CAD. |
+| Escolha de scanner 3D | Média | Distinguir exatidão, repetibilidade e resolução em linguagem simples e adicionar matriz de decisão por objeto/uso. |
+| Supabase | Média | Expandir primeiro projeto com exemplo de usuários e políticas RLS, critérios de validação e limites de plano a conferir. |
+| Ollama | Média | Substituir observação episódica do servidor desligado por escopo datado; oferecer roteiro inicial e escolha de modelo sem benchmark inventado. |
+| AnythingLLM | Alta | Completar tutorial: pré-requisitos, sequência Desktop, modelo/workspace, embeddings, resultados esperados e diagnóstico de conexão. |
+| Agente vs chatbot | Média | Adicionar mesmo caso executado por chatbot, workflow e agente; esclarecer que ferramentas não bastam para definir autonomia. |
+| Banco em produção | Alta | Completar procedimento de revisão, concorrência, quantidade afetada e recuperação; exemplo em ambiente de teste com banco/dialeto definidos. |
+| PostHog vs GA4 | Média | Adicionar tabela por pergunta, recursos sobrepostos, custos/governança a conferir e exemplo de eventos sem métricas inventadas. |
+| Search Console | Média | Transformar lista em sequência de diagnóstico: propriedade, período, filtros, atualização, inspeção de URL e incidentes; atraso e indexação separados. |
+| HTML sitemap | Baixa | Adicionar exemplo enxuto e critérios de decisão; relacionar com Search Console sem promessa de ranking. |
+| CI/CD | Média | Inserir link clicável para workflow público e roteiro de investigação com exemplo de log ilustrativo e recuperação após deploy. |
+| Google tag | Alta | Completar instalação e teste passo a passo com evidência esperada, modo debug/consentimento e diagnóstico de duplicidade. |
+| Raindrop | Média | Mostrar organização concreta de coleção, tags, nota e recuperação/exportação com capacidades verificadas sem afirmar teste próprio. |
+
+Fontes reconsultadas: licença oficial ElevenLabs; qualificação de links Google Search Central; Google Search Console; Supabase RLS; Ollama; AnythingLLM; SHINING 3D; Anthropic; PostgreSQL; GA4; Google tag; Raindrop. PostHog não pôde ser relido pelo mecanismo de busca por formato markdown, sem concluir que a URL está quebrada. Leitura da produção por cliente automatizado encontrou bloqueio 403 inicialmente; não tratar como 404 ou indisponibilidade do artigo.
+
+## Melhorias editoriais aplicadas localmente — 13/10/2026
+
+Status: versão ampliada em validação, sem nova publicação. Os 16 artigos recebem passos, exemplos ou critérios conforme a revisão. ElevenLabs: atribuição no gratuito, limites Beta e licença sem retroatividade; link afiliado com sponsored. iProVPN: abertura orientada ao leitor e frase de pré-publicação corrigida. Tutoriais: configuração, resultados esperados e diagnóstico; banco usa PostgreSQL em laboratório fictício, sem executar comandos no banco real. Todos os 16 passam a ter links contextuais de entrada e saída. Treze URLs cruas nas fontes recebem nomes úteis. Quatro artigos relacionados recebem pontes curtas, sem reescrever conteúdo correto. Datas de atualização e leitura estimada recalculadas. Capas aprovadas preservadas. Situações passageiras de servidor desligado, preparação de workspace e alerta antigo foram substituídas por escopo e critérios de validação.
+
+### Validação das melhorias
+
+Check: 97 arquivos, zero diagnósticos. Build: 156 páginas. QA de links, HTML, SEO e gate AdSense aprovado. Navegador: 128 combinações em 320/390/768/1440 px, claro/escuro, sem overflow, imagens quebradas ou capas incorretas. Referências cruas restantes: zero. Todos os 16 têm entrada e saída contextual entre artigos. Sponsored confirmado no HTML do ElevenLabs. Comandos/SQL são exemplos didáticos não executados; nenhum benchmark, teste de integração ou banco real foi certificado. Versão ampliada disponível no preview local; nenhuma nova publicação.

@@ -39,3 +39,7 @@ As menções anteriores a publicação pendente descrevem etapas históricas. Pe
 ## Lote editorial de 16 artigos — publicação autorizada em 13/10/2026
 
 Todos os textos e capas aprovados pelo usuário. Publicação autorizada; pacote em validação de CI/CD. Versão final: quatro reusos do acervo e doze ilustrações editoriais com símbolo oficial composto separadamente. Estado e evidências no [registro do lote](auditorias/lote-drafts-revisao-2026-10-13.md). Menções anteriores à aprovação pendente são histórico das rodadas.
+
+## Melhorias editoriais dos 16 — versão local, 13/10/2026
+
+Passos, exemplos, critérios e links contextuais ampliados nos 16 artigos. Correções de licença ElevenLabs, sponsored e linguagem de pré-publicação aplicadas. QA aprovado, incluindo 128 combinações de tela/tema. Capas aprovadas mantidas. Versão ampliada aguarda revisão e nova autorização de publicação; produção segue a versão do PR #326. Registro: docs/auditorias/lote-drafts-revisao-2026-10-13.md.
