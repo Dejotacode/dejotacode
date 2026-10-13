@@ -43,3 +43,7 @@ Todos os textos e capas aprovados pelo usuário. Publicação autorizada; pacote
 ## Melhorias editoriais dos 16 — versão local, 13/10/2026
 
 Passos, exemplos, critérios e links contextuais ampliados nos 16 artigos. Correções de licença ElevenLabs, sponsored e linguagem de pré-publicação aplicadas. QA aprovado, incluindo 128 combinações de tela/tema. Capas aprovadas mantidas. Versão ampliada aguarda revisão e nova autorização de publicação; produção segue a versão do PR #326. Registro: docs/auditorias/lote-drafts-revisao-2026-10-13.md.
+
+## Pacote de monetização autorizado — 13/10/2026
+
+Phishing/NordPass, oferta/Elementor, fichas iProVPN/EINSTAR 2 com capas específicas, vínculos dos artigos e link curto Ottocast aprovados para publicação em 13/10/2026, 19:16 BRT. Entrega isolada em validação; trabalho concorrente preservado. Fonte: docs/operacao/monetizacao-parceiros.md.

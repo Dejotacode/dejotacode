@@ -7,6 +7,8 @@ export const storeCategoryLabels: Record<string, string> = {
 };
 
 const storePhotorealVisuals: Record<string, string> = {
+  "iprovpn": "/assets/posts/iprovpn-o-que-avaliar-antes-de-contratar-editorial-assinatura-v2.svg",
+  "einstar-2": "/assets/store/einstar-2-referencia-assinatura-v1.svg",
   "jornada-python-hotmart": "/assets/posts/jornada-python-diversidade-assinatura-v1.webp",
   "ottocast-mini-cube-3-0": "/assets/store/ottocast-mini-cube-3-0-assinatura-v2.webp",
   nordpass: "/assets/store/nordpass-sem-texto-v1-assinatura-v2.webp",

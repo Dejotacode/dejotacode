@@ -654,3 +654,7 @@ Check 79 arquivos sem erros/avisos/hints, build 123 páginas, links/HTML aprovad
 ## Publicação integral concluída — 10/10/2026
 
 Status: publicado e homologado. PR #275, commit 7d531d8e2142f894476ee6db68c91c6ed0fe71e4, workflow 38093497180 aprovado. Símbolos e imagens aprovados estão no domínio oficial: 121 URLs/968 combinações sem problemas, 90 imagens idênticas ao pacote por SHA-256. Originais preservados. Estado e limites em ../estado-atual.md; resultado em docs/auditorias/publicacao-integral-result-2026-10-10.json. Pendências de direitos de fotos e dependências permanecem registradas.
+
+## Fichas iProVPN e EINSTAR 2 — 13/10/2026
+
+Modelo Store existente: /store/iprovpn/ e /store/einstar-2/. Capas específicas e cards relacionados nos artigos iProVPN/escolha de scanner validados em 32 combinações, sem problemas. Usuário aprovou texto, liberação dos drafts e capas, e autorizou publicação. Fonte de mídia e lacuna de direitos do fornecedor em docs/operacao/monetizacao-parceiros.md.

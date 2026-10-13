@@ -2,6 +2,7 @@
 title: "Como montar uma oferta simples para pequenos negócios"
 description: "Aprenda a transformar um serviço em uma oferta clara para pequenos negócios, definindo resultado, escopo, prazo, preço e limites sem complicação."
 publishedAt: 2026-09-28
+updatedAt: 2026-10-13
 category: renda-digital
 type: tutorial
 readingTime: 10
@@ -9,6 +10,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [oferta, pequenos negócios, freelancer, serviços]
+storeProducts:
+  - "elementor-site-builder"
 ---
 
 Saber fazer alguma coisa não é suficiente para vender um serviço.
@@ -86,6 +89,8 @@ O pacote poderia incluir:
 - configuração básica de título e descrição;
 - publicação em hospedagem definida;
 - uma rodada de revisão.
+
+Se o pacote for uma página em WordPress e você já tiver praticado esse fluxo, o Elementor é uma opção de editor visual para avaliar. Confira a [ficha pesquisada na DejotaStore](/store/elementor-site-builder/) e os limites do plano antes de incluir custos na proposta. Uma página em HTML e CSS ou um site estático pode atender ao escopo sem essa ferramenta.
 
 Não adicione extras apenas para parecer mais valioso.
 

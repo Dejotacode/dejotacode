@@ -319,3 +319,9 @@ Propostas locais aguardando aprovação. Cinco fontes imagegen para banco de pro
 ## Lote editorial de 16 artigos — publicação autorizada em 13/10/2026
 
 Todos os textos e capas aprovados pelo usuário. Publicação autorizada; pacote em validação de CI/CD. Versão final: quatro reusos do acervo e doze ilustrações editoriais com símbolo oficial composto separadamente. Estado e evidências no [registro do lote](../auditorias/lote-drafts-revisao-2026-10-13.md). Menções anteriores à aprovação pendente são histórico das rodadas.
+
+## iProVPN e EINSTAR 2 — capas locais de 13/10/2026
+
+Fichas recebem mídia específica pelo storeVisuals.ts: iProVPN reutiliza a capa editorial do artigo; EINSTAR 2 usa einstar-2-referencia-assinatura-v1.svg, composição com PNG oficial intacto e símbolo separado fora do produto (72×72 em x43,2/y27, canvas 1440×900). Acervo consultado antes da seleção; equipamento não redesenhado, marcas oficiais preservadas. Fontes, hashes, inspeção e pendências no registro canônico docs/operacao/monetizacao-parceiros.md, seção Capas das fichas. QA local 32 combinações aprovado; aprovação visual do novo uso e autorização documental de uso da foto EINSTAR para publicação permanecem pendentes. Sem publicação.
+
+Aprovação visual e publicação autorizadas pelo usuário em 13/10/2026, 19:16 BRT. Licença da foto do fornecedor permanece sem comprovação documental.
