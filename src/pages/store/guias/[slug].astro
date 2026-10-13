@@ -19,7 +19,7 @@ const allProducts = await getCollection("storeProducts", ({ data }) => !data.dra
 const products = allProducts.filter((product) => guide.data.productIds.includes(product.id));
 ---
 
-<BaseLayout title={guide.data.title} description={guide.data.description}>
+<BaseLayout robots="noindex, follow" title={guide.data.title} description={guide.data.description}>
   <main id="conteudo" tabindex="-1" class="store-guide-page">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span>Guias</span><span>›</span><span aria-current="page">{guide.data.title}</span></nav>
