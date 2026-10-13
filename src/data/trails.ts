@@ -124,6 +124,14 @@ export const trails: Trail[] = [
         description: "Registre a evolução do projeto e entenda o fluxo básico de versionamento.",
         duration: 11,
       },
+      {
+        order: 6,
+        slug: "devtools-navegador-iniciantes",
+        title: "DevTools do navegador",
+        description: "Inspecione HTML e CSS, leia erros no Console e acompanhe requisições para diagnosticar páginas com mais autonomia.",
+        duration: 9,
+        optional: true,
+      },
     ],
   },
   {

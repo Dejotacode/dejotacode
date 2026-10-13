@@ -2,7 +2,7 @@
 title: "Como criar seu primeiro site com HTML e CSS"
 description: "Crie seu primeiro site com HTML e CSS, organize os arquivos, abra a página no navegador e faça pequenas melhorias entendendo cada etapa."
 publishedAt: 2026-09-15
-updatedAt: 2026-09-25
+updatedAt: 2026-10-13
 category: programacao
 type: tutorial
 readingTime: 12
@@ -209,6 +209,8 @@ Ao terminar, responda:
 Se essas respostas estiverem claras, o projeto cumpriu seu papel.
 
 ## Próximo passo
+
+Antes de adicionar mais recursos, aprenda [como usar o DevTools do navegador](/blog/devtools-navegador-iniciantes/) para inspecionar o HTML e o CSS da página e entender melhor o que acontece quando algo não sai como esperado.
 
 Agora adicione lógica aprendendo [JavaScript para iniciantes: variáveis, condições e funções](/blog/javascript-variaveis-funcoes/).
 
