@@ -19,7 +19,7 @@ const products = (await getCollection("storeProducts", ({ data }) => !data.draft
 const guides = await getCollection("storeGuides", ({ data }) => !data.draft && data.category === slug);
 ---
 
-<BaseLayout title={`${label} na DejotaStore`} description={description}>
+<BaseLayout robots="noindex, follow" title={`${label} na DejotaStore`} description={description}>
   <main id="conteudo" tabindex="-1" class="store-catalog-page store-category-page">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><a href="/store/">Store</a><span>›</span><span aria-current="page">{label}</span></nav>

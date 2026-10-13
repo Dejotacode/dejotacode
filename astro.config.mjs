@@ -15,7 +15,8 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !sitemapExcludedPages.has(page) &&
-        !page.startsWith("https://dejotacode.com.br/admin/"),
+        !page.startsWith("https://dejotacode.com.br/admin/") &&
+        !page.startsWith("https://dejotacode.com.br/store/"),
     }),
   ],
 });

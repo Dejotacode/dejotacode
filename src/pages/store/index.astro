@@ -13,7 +13,7 @@ const products = (await getCollection("storeProducts", ({ data }) => !data.draft
 const totalPages = Math.max(1,Math.ceil(products.length/PAGE_SIZE));
 const visibleProducts = products.slice(0,PAGE_SIZE);
 ---
-<BaseLayout title="DejotaStore" description="Curadoria editorial do DejotaCode para produtos, ferramentas e serviços ligados a tecnologia, Linux, programação e criação de conteúdo.">
+<BaseLayout robots="noindex, follow" title="DejotaStore" description="Curadoria editorial do DejotaCode para produtos, ferramentas e serviços ligados a tecnologia, Linux, programação e criação de conteúdo.">
 <main id="conteudo" tabindex="-1" class="store-catalog-page">
   <header class="catalog-hero container"><div><p class="eyebrow">DEJOTASTORE</p><h1>Escolha melhor antes de comprar.</h1><p class="catalog-lead">Produtos e ferramentas com contexto para quem aprende, trabalha e constrói com tecnologia.</p><div class="catalog-actions"><a class="button button-primary" href="#recomendacoes">Explorar recomendações <span aria-hidden="true"><CategoryIcon icon="arrow-down" size={18} class="action-arrow" /></span></a><a class="button button-secondary" href="/store/setup-do-dejota/" data-store-setup="home-hero">Setup do Dejota <span aria-hidden="true"><CategoryIcon icon="arrow-right" size={18} class="action-arrow" /></span></a></div><p class="catalog-motto">Ensinar primeiro, recomendar depois.</p></div><figure><img src="/assets/store/logitech-mx-anywhere-3s-assinatura-v2.webp" alt="Imagem editorial de um mouse Logitech em um ambiente de trabalho tecnológico" width="1440" height="810" loading="eager" decoding="async" /></figure></header>
   <div class="container"><StoreCategoryNav compact />
