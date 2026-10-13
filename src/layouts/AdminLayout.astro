@@ -48,12 +48,17 @@ const showsEditorMediaMigration = currentPath.startsWith("/admin/editor");
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
     <header class="admin-topbar">
-      <Brand compact />
-      <div class="admin-topbar__actions">
-        <span class="admin-topbar__label">Área privada</span>
-        <button class="admin-theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-          Alternar tema
-        </button>
+      <div class="admin-topbar__inner">
+        <div class="admin-topbar__brand">
+          <Brand />
+          <span class="admin-topbar__badge">Admin</span>
+        </div>
+        <div class="admin-topbar__actions">
+          <span class="admin-topbar__label">Área privada</span>
+          <button class="admin-theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+            Tema
+          </button>
+        </div>
       </div>
     </header>
 
@@ -94,42 +99,97 @@ const showsEditorMediaMigration = currentPath.startsWith("/admin/editor");
 
     <style>
       .admin-topbar {
-        min-height: 4.5rem;
+        position: relative;
+        border-bottom: 1px solid var(--color-border);
+        background-color: var(--color-surface);
+        background-image: radial-gradient(circle at 14% 0%, var(--color-glow), transparent 34%), var(--grid-pattern);
+        background-size: auto, 2.25rem 2.25rem, 2.25rem 2.25rem;
+      }
+
+      .admin-topbar::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 -1px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        opacity: 0.28;
+        pointer-events: none;
+      }
+
+      .admin-topbar__inner {
+        width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
+        min-height: 4.75rem;
+        margin-inline: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        padding-inline: var(--space-page);
-        border-bottom: 1px solid var(--color-border);
-        background: color-mix(in srgb, var(--color-surface) 94%, transparent);
       }
 
+      .admin-topbar__brand,
       .admin-topbar__actions {
         display: flex;
         align-items: center;
+      }
+
+      .admin-topbar__brand {
+        gap: 0.8rem;
+      }
+
+      .admin-topbar__actions {
         gap: 0.75rem;
       }
 
+      .admin-topbar__badge {
+        padding: 0.28rem 0.48rem;
+        border: 1px solid var(--color-border-strong);
+        border-radius: var(--radius-sm);
+        background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface-soft));
+        color: var(--color-accent-strong);
+        font: var(--type-eyebrow);
+        letter-spacing: var(--tracking-eyebrow);
+        text-transform: uppercase;
+      }
+
       .admin-topbar__label {
-        color: var(--color-text-muted);
-        font-size: 0.85rem;
-        font-weight: 700;
+        color: var(--color-text-subtle);
+        font: var(--type-eyebrow);
+        letter-spacing: var(--tracking-eyebrow);
+        text-transform: uppercase;
       }
 
       .admin-theme-toggle {
-        min-height: 2.5rem;
-        padding: 0.55rem 0.8rem;
-        border: 1px solid var(--color-border-strong);
+        min-height: var(--space-control);
+        padding: 0.55rem 0.85rem;
+        border: 1px solid var(--color-border);
         border-radius: var(--radius-md);
-        background: var(--color-surface-soft);
+        background: color-mix(in srgb, var(--color-surface-soft) 92%, transparent);
         color: var(--color-text);
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 800;
+        transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
       }
 
-      @media (max-width: 34rem) {
+      .admin-theme-toggle:hover,
+      .admin-theme-toggle:focus-visible {
+        border-color: var(--color-accent-strong);
+        color: var(--color-accent-strong);
+        background: var(--color-surface);
+      }
+
+      @media (max-width: 38rem) {
         .admin-topbar__label {
           display: none;
+        }
+      }
+
+      @media (max-width: 30rem) {
+        :global(.admin-topbar .brand__name) {
+          display: none;
+        }
+
+        .admin-topbar__inner {
+          min-height: 4.25rem;
         }
       }
     </style>
