@@ -5,19 +5,15 @@ import "../../styles/admin-metrics.css";
 
 const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 const posts = await getCollection("posts");
-const totalPosts = posts.length;
 const draftPosts = posts.filter((post) => post.data.draft).length;
-const publishedPosts = totalPosts - draftPosts;
 ---
 
 <AdminLayout title="Dashboard" description="Centro operacional privado do DejotaCode.">
   <main id="conteudo" class="admin-page admin-page--dashboard" data-api={api}>
     <div class="admin-panel">
-      <p class="admin-kicker">Centro operacional</p>
+      <p class="admin-kicker">Admin</p>
       <h1>Dashboard</h1>
-      <p class="admin-intro">
-        Acompanhe o estado editorial do projeto e acesse as ferramentas administrativas sem criar uma segunda fonte de verdade para o conteúdo.
-      </p>
+      <p class="admin-intro">Veja o que precisa da sua atenção e siga direto para a próxima ação.</p>
 
       <section class="admin-login-card" data-login>
         <form class="admin-login-form" data-login-form>
@@ -37,66 +33,49 @@ const publishedPosts = totalPosts - draftPosts;
       <section class="admin-dashboard" data-session-status hidden aria-label="Visão geral administrativa">
         <div class="admin-dashboard__header">
           <div>
-            <p class="admin-dashboard__eyebrow">Sessão ativa</p>
-            <h2>Visão geral</h2>
-            <p>Git e Markdown continuam sendo a fonte canônica do conteúdo público.</p>
+            <p class="admin-dashboard__eyebrow">Hoje</p>
+            <h2>O que precisa de atenção</h2>
           </div>
-          <button class="button" type="button" data-logout>Sair</button>
+          <div class="admin-actions">
+            <a class="button button-primary" href="/admin/editor/">Novo conteúdo</a>
+            <button class="button" type="button" data-logout>Sair</button>
+          </div>
         </div>
 
         <div class="admin-dashboard__cards">
-          <article class="admin-dashboard-card">
-            <span>Conteúdos publicados</span>
-            <strong>{publishedPosts}</strong>
-            <small>Arquivos editoriais fora de rascunho.</small>
-          </article>
-          <article class="admin-dashboard-card">
+          <a class="admin-dashboard-card" href="/admin/editor/">
             <span>Rascunhos</span>
             <strong>{draftPosts}</strong>
-            <small>Conteúdos ainda marcados como draft.</small>
-          </article>
-          <article class="admin-dashboard-card">
-            <span>Total editorial</span>
-            <strong>{totalPosts}</strong>
-            <small>Conteúdos encontrados em src/content/posts.</small>
-          </article>
+            <small>{draftPosts === 1 ? "conteúdo aguardando continuidade" : "conteúdos aguardando continuidade"}</small>
+          </a>
+          <a class="admin-dashboard-card" href="/admin/midia/revisao/">
+            <span>Mídia para revisar</span>
+            <strong data-media-review-count>—</strong>
+            <small data-media-review-label>Verificando pendências…</small>
+          </a>
         </div>
 
-        <section class="admin-dashboard__section" aria-labelledby="admin-quick-actions-title">
+        <section class="admin-dashboard__section" aria-labelledby="admin-shortcuts-title">
           <div class="admin-dashboard__section-heading">
             <div>
-              <p class="admin-dashboard__eyebrow">Atalhos</p>
-              <h2 id="admin-quick-actions-title">Ações rápidas</h2>
+              <p class="admin-dashboard__eyebrow">Acesso rápido</p>
+              <h2 id="admin-shortcuts-title">Continuar trabalhando</h2>
             </div>
           </div>
           <div class="admin-dashboard__actions">
             <a class="admin-dashboard-action" href="/admin/editor/">
-              <strong>Novo conteúdo</strong>
-              <span>Criar ou revisar Markdown com preview e Pull Request.</span>
+              <strong>Conteúdo</strong>
+              <span>Criar, editar, revisar e publicar.</span>
             </a>
-            <a class="admin-dashboard-action" href="/admin/editor/">
-              <strong>Editor editorial</strong>
-              <span>Acessar conteúdo, mídia, revisão e publicação assistida.</span>
+            <a class="admin-dashboard-action" href="/admin/midia/">
+              <strong>Mídia</strong>
+              <span>Biblioteca, revisão e manutenção.</span>
             </a>
             <a class="admin-dashboard-action" href="/admin/metricas/">
-              <strong>Ver métricas</strong>
-              <span>Acompanhar tráfego, conversão, Store e campanhas.</span>
+              <strong>Métricas</strong>
+              <span>Acompanhar desempenho do projeto.</span>
             </a>
           </div>
-        </section>
-
-        <section class="admin-dashboard__section" aria-labelledby="admin-flow-title">
-          <div class="admin-dashboard__section-heading">
-            <div>
-              <p class="admin-dashboard__eyebrow">Fluxo protegido</p>
-              <h2 id="admin-flow-title">Publicação</h2>
-            </div>
-          </div>
-          <ol class="admin-dashboard__flow">
-            <li><strong>1. Editar</strong><span>Conteúdo preparado no editor Git/Markdown.</span></li>
-            <li><strong>2. Revisar</strong><span>Pull Request e CI validam a alteração.</span></li>
-            <li><strong>3. Publicar</strong><span>Merge na main dispara deploy e smoke test.</span></li>
-          </ol>
         </section>
       </section>
     </div>
@@ -112,6 +91,8 @@ const publishedPosts = totalPosts - draftPosts;
     const loginForm = document.querySelector<HTMLFormElement>("[data-login-form]");
     const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
     const adminNav = document.querySelector<HTMLElement>("[data-admin-nav]");
+    const mediaReviewCount = document.querySelector<HTMLElement>("[data-media-review-count]");
+    const mediaReviewLabel = document.querySelector<HTMLElement>("[data-media-review-label]");
 
     const parseError = async (response: Response) => {
       try {
@@ -122,10 +103,31 @@ const publishedPosts = totalPosts - draftPosts;
       }
     };
 
+    const loadMediaAttention = async () => {
+      if (!api || !mediaReviewCount || !mediaReviewLabel) return;
+      try {
+        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
+        if (!response.ok) throw new Error("media unavailable");
+        const payload = await response.json();
+        const items = Array.isArray(payload.data?.items) ? payload.data.items : [];
+        const pending = items.filter((item: { contentType?: string; reviewStatus?: string }) =>
+          item.contentType?.startsWith("image/") && (!item.reviewStatus || item.reviewStatus === "pending")
+        ).length;
+        mediaReviewCount.textContent = String(pending);
+        mediaReviewLabel.textContent = pending === 1
+          ? "imagem aguardando revisão"
+          : "imagens aguardando revisão";
+      } catch {
+        mediaReviewCount.textContent = "Ver";
+        mediaReviewLabel.textContent = "Abrir revisão de mídia";
+      }
+    };
+
     const showAuthenticated = () => {
       if (login) login.hidden = true;
       if (sessionStatus) sessionStatus.hidden = false;
       if (adminNav) adminNav.hidden = false;
+      loadMediaAttention().catch(() => {});
     };
 
     const checkSession = async () => {
@@ -140,7 +142,6 @@ const publishedPosts = totalPosts - draftPosts;
 
       const output = loginForm.querySelector<HTMLOutputElement>("output");
       const formData = new FormData(loginForm);
-
       const submitButton = loginForm.querySelector<HTMLButtonElement>('button[type="submit"]');
       if (output) output.textContent = "Entrando…";
       if (submitButton) submitButton.disabled = true;
@@ -163,9 +164,7 @@ const publishedPosts = totalPosts - draftPosts;
 
         showAuthenticated();
       } catch {
-        if (output) {
-          output.textContent = "Não foi possível conectar ao serviço de autenticação. Tente novamente.";
-        }
+        if (output) output.textContent = "Não foi possível conectar ao serviço de autenticação. Tente novamente.";
       } finally {
         if (submitButton) submitButton.disabled = false;
       }
