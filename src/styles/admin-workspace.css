@@ -1,0 +1,182 @@
+.admin-editor-shell .admin-editor-heading,
+.admin-panel > .metric-cards,
+.admin-panel > .funnel-cards,
+.admin-panel > .metrics-section {
+  position: relative;
+}
+
+.admin-editor-shell .admin-editor-heading {
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-editor-shell .admin-kicker,
+.admin-panel > .metric-cards + .funnel-cards::before {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.admin-editor-shell .editor-toolbar,
+.admin-editor-shell .editor-form,
+.admin-editor-shell .editor-preview,
+.admin-panel > .metrics-section {
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
+  box-shadow: none;
+}
+
+.admin-editor-shell .editor-toolbar,
+.admin-editor-shell .editor-form,
+.admin-editor-shell .editor-preview {
+  border-color: var(--color-border);
+}
+
+.admin-editor-shell .editor-toolbar {
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-editor-shell .editor-toolbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 92% 0%, var(--color-glow), transparent 34%);
+}
+
+.admin-editor-shell .editor-toolbar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-editor-shell .editor-form > label,
+.admin-editor-shell .editor-fields label,
+.admin-editor-shell .editor-toolbar label,
+.admin-editor-shell .editor-media-fields label,
+.admin-editor-shell .editor-media-library__toolbar label {
+  font-weight: 700;
+}
+
+.admin-editor-shell .editor-form input,
+.admin-editor-shell .editor-form select,
+.admin-editor-shell .editor-form textarea,
+.admin-editor-shell .editor-toolbar select,
+.admin-editor-shell .editor-media-library__toolbar input,
+.admin-editor-shell .editor-media-library__toolbar select {
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.admin-editor-shell .editor-form input:focus-visible,
+.admin-editor-shell .editor-form select:focus-visible,
+.admin-editor-shell .editor-form textarea:focus-visible,
+.admin-editor-shell .editor-toolbar select:focus-visible,
+.admin-editor-shell .editor-media-library__toolbar input:focus-visible,
+.admin-editor-shell .editor-media-library__toolbar select:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-accent-strong);
+  background: var(--color-surface);
+}
+
+.admin-editor-shell .editor-preview__bar,
+.admin-editor-shell .editor-github-state,
+.admin-editor-shell .editor-media-actions output,
+.admin-editor-shell .editor-media-library__content > output {
+  color: var(--color-text-subtle);
+  font-family: var(--font-code);
+}
+
+.admin-editor-shell .editor-preview h2 {
+  font-family: var(--font-heading);
+  font-size: var(--size-title-reading);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+}
+
+.admin-editor-shell .editor-media-panel,
+.admin-editor-shell .editor-publish-panel {
+  background: color-mix(in srgb, var(--color-surface) 92%, var(--color-accent) 8%);
+}
+
+.admin-editor-shell .editor-media-panel > div:first-child > strong,
+.admin-editor-shell .editor-media-library__summary strong,
+.admin-editor-shell .editor-publish-panel strong {
+  font-family: var(--font-heading);
+}
+
+.metric-cards,
+.funnel-cards {
+  gap: 0.85rem;
+}
+
+.metric-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 7.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
+  box-shadow: none;
+}
+
+.metric-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -2.5rem -3rem auto;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: var(--color-glow);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.metric-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.metric-card strong {
+  font-family: var(--font-heading);
+  letter-spacing: var(--tracking-section);
+}
+
+.metric-card span {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.metrics-ranking__row {
+  transition: background var(--transition-fast);
+}
+
+.metrics-ranking__row:hover {
+  background: color-mix(in srgb, var(--color-surface-soft) 70%, transparent);
+}
+
+.metrics-ranking__rank {
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.metrics-ranking__row > strong {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+}
+
+.metrics-loading {
+  color: var(--color-text-muted);
+  background: color-mix(in srgb, var(--color-surface-soft) 88%, transparent);
+}
+
+@media (max-width: 42rem) {
+  .admin-editor-shell .admin-editor-heading {
+    padding-bottom: 1rem;
+  }
+
+  .metric-card {
+    min-height: 0;
+  }
+}
