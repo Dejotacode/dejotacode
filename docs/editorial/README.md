@@ -18,3 +18,5 @@ Status: vigente como índice. Revisão: 10/10/2026. Escopo: localização; o sta
 
 ## Interpretação
 Planejamento e critérios; a presença de campanha ou oferta não comprova publicação/validade atual.
+
+- [senhas-comuns-gemini-argon-2026-10-13.md](senhas-comuns-gemini-argon-2026-10-13.md).
