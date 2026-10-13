@@ -161,4 +161,8 @@ const showsMaintenanceNav = maintenancePaths.some((prefix) => currentPath.starts
     border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
     background: color-mix(in srgb, var(--color-accent) 7%, var(--color-surface-soft));
   }
+
+  :global(body:has(.media-flow-nav__maintenance-wrap) .admin-actions > a[href^="/admin/midia/"]) {
+    display: none;
+  }
 </style>
