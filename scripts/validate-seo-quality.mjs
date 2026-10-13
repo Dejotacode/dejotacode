@@ -34,42 +34,61 @@ const routeFor = (filePath) => {
   return `/${rel}`;
 };
 
-const firstMatch = (html, pattern) => html.match(pattern)?.[1]?.trim() ?? "";
-const meta = (html, name, attribute = "name") => {
-  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const tags = html.match(/<meta\b[^>]*>/gi) ?? [];
-  const tag = tags.find((candidate) => {
-    const pattern = new RegExp(`\\b${attribute}\\s*=\\s*(?:"${escaped}"|'${escaped}')`, "i");
-    return pattern.test(candidate);
-  });
-  if (!tag) return "";
-  return firstMatch(tag, /\bcontent\s*=\s*(?:"([^"]*)"|'([^']*)')/i) || tag.match(/\bcontent\s*=\s*'([^']*)'/i)?.[1]?.trim() || "";
+const extractTags = (html, tagName) => {
+  const tags = [];
+  const lower = html.toLowerCase();
+  const needle = `<${tagName.toLowerCase()}`;
+  let cursor = 0;
+
+  while (cursor < html.length) {
+    const start = lower.indexOf(needle, cursor);
+    if (start === -1) break;
+
+    let quote = null;
+    let end = start + needle.length;
+    for (; end < html.length; end += 1) {
+      const char = html[end];
+      if (quote) {
+        if (char === quote) quote = null;
+        continue;
+      }
+      if (char === '"' || char === "'") {
+        quote = char;
+        continue;
+      }
+      if (char === ">") break;
+    }
+
+    if (end >= html.length) break;
+    tags.push(html.slice(start, end + 1));
+    cursor = end + 1;
+  }
+
+  return tags;
 };
 
-const contentAttribute = (tag) => {
-  const double = tag.match(/\bcontent\s*=\s*"([^"]*)"/i)?.[1];
+const getAttribute = (tag, name) => {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const double = tag.match(new RegExp(`\\b${escaped}\\s*=\\s*"([^"]*)"`, "i"))?.[1];
   if (double !== undefined) return double.trim();
-  return tag.match(/\bcontent\s*=\s*'([^']*)'/i)?.[1]?.trim() ?? "";
+  return tag.match(new RegExp(`\\b${escaped}\\s*=\\s*'([^']*)'`, "i"))?.[1]?.trim() ?? "";
 };
 
 const metaContent = (html, key, attr = "name") => {
-  const tags = html.match(/<meta\b[^>]*>/gi) ?? [];
-  const target = tags.find((tag) => {
-    const double = tag.match(new RegExp(`\\b${attr}\\s*=\\s*"([^"]*)"`, "i"))?.[1];
-    const single = tag.match(new RegExp(`\\b${attr}\\s*=\\s*'([^']*)'`, "i"))?.[1];
-    return (double ?? single ?? "").toLowerCase() === key.toLowerCase();
-  });
-  return target ? contentAttribute(target) : "";
+  const target = extractTags(html, "meta").find(
+    (tag) => getAttribute(tag, attr).toLowerCase() === key.toLowerCase(),
+  );
+  return target ? getAttribute(target, "content") : "";
 };
 
 const canonicalHref = (html) => {
-  const tags = html.match(/<link\b[^>]*>/gi) ?? [];
-  const tag = tags.find((candidate) => /\brel\s*=\s*(?:"canonical"|'canonical')/i.test(candidate));
-  if (!tag) return "";
-  return tag.match(/\bhref\s*=\s*"([^"]*)"/i)?.[1]?.trim()
-    ?? tag.match(/\bhref\s*=\s*'([^']*)'/i)?.[1]?.trim()
-    ?? "";
+  const tag = extractTags(html, "link").find(
+    (candidate) => getAttribute(candidate, "rel").toLowerCase() === "canonical",
+  );
+  return tag ? getAttribute(tag, "href") : "";
 };
+
+const firstMatch = (html, pattern) => html.match(pattern)?.[1]?.trim() ?? "";
 
 const sitemapUrls = new Set();
 for (const filePath of sitemapFiles) {
@@ -115,9 +134,8 @@ for (const filePath of htmlFiles.sort()) {
   const is404 = route === "/404.html" || route === "/404/";
 
   if (!title) pageFailures.push("<title> ausente ou vazio");
-  if (!description) pageFailures.push('meta description ausente ou vazia');
-  if (!robots) pageFailures.push('meta robots ausente ou vazia');
-  if (!canonical) pageFailures.push('canonical ausente');
+  if (!description) pageFailures.push("meta description ausente ou vazia");
+  if (!robots) pageFailures.push("meta robots ausente ou vazia");
 
   if (canonical) {
     try {
@@ -138,6 +156,7 @@ for (const filePath of htmlFiles.sort()) {
     }
   } else if (!is404) {
     indexableCount += 1;
+    if (!canonical) pageFailures.push("canonical ausente em página indexável");
     if (!robots.includes("index") || !robots.includes("follow")) {
       pageFailures.push(`robots indexável inesperado: "${robots}"`);
     }
@@ -157,7 +176,8 @@ for (const filePath of htmlFiles.sort()) {
     pageFailures.push("rota administrativa precisa ser noindex");
   }
 
-  if (/^\/blog\/[^/]+\/$/.test(route)) {
+  const isArticleRoute = /^\/blog\/(?!\d+\/$)[^/]+\/$/.test(route);
+  if (isArticleRoute) {
     articleCount += 1;
     const scripts = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi) ?? [];
     const joined = scripts.join("\n");
