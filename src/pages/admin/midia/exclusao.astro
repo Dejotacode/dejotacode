@@ -11,14 +11,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Zona irreversível</p>
       <h1>Exclusão de mídia</h1>
       <p class="admin-intro">
-        Esta é a única etapa que pode remover um arquivo. Antes de liberar a ação final, o sistema refaz o dry-run, gera um snapshot novo e exige confirmação manual da chave exata e da palavra EXCLUIR. Se uma falha ocorrer entre R2 e D1, a operação fica marcada para recuperação segura em vez de desaparecer como erro comum.
+        Esta é a única etapa que remove arquivos. O sistema refaz o dry-run, gera um snapshot novo e exige confirmação manual antes da exclusão definitiva.
       </p>
 
       <section class="metrics-section" aria-labelledby="delete-title">
         <div class="delete-heading">
           <div>
             <h2 id="delete-title">Mídias elegíveis</h2>
-            <p class="metrics-section__note">Somente candidatas com Gate cleanup aprovado aparecem aqui. Exclusões interrompidas ficam destacadas até a finalização.</p>
+            <p class="metrics-section__note">Aparecem somente candidatas com Gate cleanup aprovado. Exclusões interrompidas continuam destacadas até a recuperação.</p>
           </div>
           <div class="delete-actions">
             <button class="button" type="button" data-refresh>Atualizar</button>
@@ -32,7 +32,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <section class="metrics-section" aria-labelledby="delete-rules-title">
         <h2 id="delete-rules-title">Regras obrigatórias</h2>
         <p class="metrics-section__note">
-          Nenhum item inicia remoção sem dry-run válido, snapshot final pertencente ao mesmo dry-run, objectKey exato, confirmação EXCLUIR e revalidação final do servidor. O checkpoint durável é gravado antes do R2. Não existe exclusão em lote.
+          Exige dry-run válido, snapshot do mesmo dry-run, objectKey exato, confirmação EXCLUIR e revalidação final do servidor. O checkpoint é gravado antes do R2 e não existe exclusão em lote.
         </p>
       </section>
 
