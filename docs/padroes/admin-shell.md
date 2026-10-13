@@ -51,10 +51,10 @@ A mesma identidade se estende ao conteúdo das rotas administrativas sem transfo
 - Métricas usam números em heading, rótulos secundários discretos e cards sem sombra pesada; glow pode existir apenas como detalhe estrutural de baixa intensidade.
 - Ações primárias continuam usando `.button-primary`; ações secundárias preservam `.button`.
 
-## Regra de migração do Editor
+## Separação de responsabilidades do Editor
 
-A identidade visual não deve consolidar funcionalidades administrativas de mídia dentro do Editor. Segurança, cleanup, dry-run, snapshot, auditoria e exclusão pertencem ao fluxo dedicado de Mídia. Enquanto o legado físico ainda existir no arquivo do Editor, ele é tratado como dívida técnica de migração e não como parte do padrão visual aprovado.
+A migração foi concluída: o Editor não contém mais funcionalidades administrativas de mídia. Segurança, revisão humana, cleanup, dry-run, snapshot, auditoria e exclusão pertencem exclusivamente ao fluxo dedicado de Mídia.
 
-A remoção desse legado deve acontecer em mudança própria, por blocos pequenos e validados, preservando somente upload editorial, biblioteca para reutilização, inserção em Markdown e cópia de URL.
+O Editor preserva somente as funções editoriais necessárias ao conteúdo: upload de imagem, biblioteca para reutilização, busca e filtros editoriais, inserção no Markdown e cópia de URL. O workspace fica dividido em `EditorWorkspace.astro`, lógica em `admin-editor-workspace.ts` e estilos em `admin-editor.css`, mantendo a rota `/admin/editor/` fina.
 
 Objetivo dessa camada: fazer Dashboard, Conteúdo, Mídia e Métricas parecerem partes do mesmo produto, sem eliminar as diferenças funcionais entre elas.
