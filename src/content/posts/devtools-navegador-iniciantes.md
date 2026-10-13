@@ -1,7 +1,8 @@
 ---
-title: "DevTools do navegador para iniciantes: inspecione e corrija sua página"
-description: "Aprenda a usar as ferramentas de desenvolvedor do navegador para inspecionar HTML, testar CSS, ler erros no console e entender melhor uma página web."
+title: "Como usar o DevTools do navegador: guia para iniciantes"
+description: "Aprenda como usar o DevTools do navegador para inspecionar HTML, testar CSS, identificar erros no Console, analisar requisições e depurar páginas passo a passo."
 publishedAt: 2026-09-16
+updatedAt: 2026-10-13
 category: programacao
 type: tutorial
 readingTime: 9
@@ -17,7 +18,13 @@ Quando uma página não fica como você esperava, abrir o código e tentar alter
 
 As ferramentas de desenvolvedor — normalmente chamadas de **DevTools** — ajudam a inspecionar HTML, testar CSS, acompanhar requisições e entender erros de JavaScript sem modificar o arquivo original imediatamente.
 
-## Como abrir as DevTools
+Se a sua dúvida é **como usar o DevTools**, o fluxo mais simples é: abra a ferramenta, inspecione o elemento com problema, confira os estilos aplicados, verifique o Console e use a aba Network quando algum recurso não carregar.
+
+## Como usar o DevTools passo a passo
+
+O processo básico é observar primeiro e alterar depois. Use o DevTools para identificar o que o navegador realmente recebeu antes de mexer no código-fonte.
+
+### Como abrir o DevTools
 
 Na maioria dos navegadores de desktop, você pode:
 

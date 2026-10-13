@@ -1,8 +1,8 @@
 ---
-title: "Pipe e redirecionamento no Linux: entenda |, > e >>"
-description: "Aprenda pipe e redirecionamento no Linux com exemplos simples de |, > e >>, entendendo quando cada operador é usado e quais cuidados tomar."
+title: "Pipe no Linux: como usar |, > e >> no terminal"
+description: "Entenda como usar pipe no Linux e os operadores |, > e >> no terminal, com exemplos práticos de filtros, redirecionamento e cuidados ao sobrescrever arquivos."
 publishedAt: 2026-09-16
-updatedAt: 2026-09-25
+updatedAt: 2026-10-13
 category: linux-seguranca
 type: tutorial
 readingTime: 10
@@ -13,6 +13,8 @@ tags: ["linux", "terminal", "pipe", "redirecionamento"]
 ---
 
 Quando você começa a usar o terminal, é comum executar um comando por vez. Depois, descobre que pode conectar comandos e direcionar resultados sem precisar copiar e colar tudo manualmente.
+
+Neste guia você vai aprender **como usar pipe no Linux**, a diferença entre `|`, `>` e `>>` e como combinar esses operadores com segurança.
 
 Antes de continuar, vale conhecer os [comandos Linux básicos](/blog/comandos-linux-para-iniciantes/) e entender [permissões no Linux](/blog/permissoes-linux-para-iniciantes/). Neste tutorial, vamos usar exemplos simples e arquivos de teste.
 
