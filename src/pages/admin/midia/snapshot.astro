@@ -11,14 +11,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Evidência antes do risco</p>
       <h1>Snapshot final de mídia</h1>
       <p class="admin-intro">
-        Gere uma evidência append-only somente depois de um dry-run novo, elegível e ainda válido. Esta tela não possui ação de exclusão.
+        Registre a evidência final depois de um dry-run novo e válido. O snapshot não remove arquivos.
       </p>
 
       <section class="metrics-section" aria-labelledby="snapshot-title">
         <div class="snapshot-heading">
           <div>
             <h2 id="snapshot-title">Mídias aptas ao snapshot</h2>
-            <p class="metrics-section__note">Somente candidatas com Gate cleanup aprovado aparecem aqui. O dry-run precisa ser executado novamente nesta tela.</p>
+            <p class="metrics-section__note">Aparecem somente candidatas com Gate cleanup aprovado. Execute um dry-run novo nesta tela antes de gerar o snapshot.</p>
           </div>
           <div class="snapshot-actions">
             <button class="button" type="button" data-refresh>Atualizar</button>
@@ -31,9 +31,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       </section>
 
       <section class="metrics-section" aria-labelledby="snapshot-limit-title">
-        <h2 id="snapshot-limit-title">Limite desta etapa</h2>
+        <h2 id="snapshot-limit-title">Resultado desta etapa</h2>
         <p class="metrics-section__note">
-          O snapshot registra evidência final de pré-exclusão no servidor. Mesmo após um snapshot válido, esta rota não oferece DELETE nem confirmação de remoção.
+          O snapshot preserva a evidência de pré-exclusão no servidor. A remoção continua fora desta rota.
         </p>
       </section>
 
