@@ -5,53 +5,14 @@
   <div>
     <strong>Administração de mídia agora fica em Mídia</strong>
     <p>
-      O Editor continua focado em enviar, reutilizar e inserir imagens no conteúdo. Revisão humana, cleanup, dry-run,
-      snapshot, auditoria e qualquer etapa de exclusão devem ser feitas na área Mídia.
+      O Editor fica focado em enviar, reutilizar e inserir imagens no conteúdo. Revisão humana, cleanup, dry-run,
+      snapshot, auditoria e exclusão ficam na área Mídia.
     </p>
   </div>
   <a class="button" href="/admin/midia/">Abrir Mídia</a>
 </aside>
 
-<script>
-  const administrativeLabels = new Set([
-    "Manter",
-    "Marcar candidata",
-    "Reabrir revisão",
-    "Aprovar para plano",
-    "Reabrir gate",
-  ]);
-
-  const isAdministrativeMediaButton = (element: Element) => {
-    if (!(element instanceof HTMLButtonElement)) return false;
-    if (!element.closest(".editor-media-card__actions")) return false;
-    return administrativeLabels.has(element.textContent?.trim() ?? "");
-  };
-
-  const stripAdministrativeMediaActions = () => {
-    document.querySelectorAll<HTMLButtonElement>(".editor-media-card__actions button").forEach((button) => {
-      if (isAdministrativeMediaButton(button)) button.remove();
-    });
-  };
-
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof Element)) return;
-    const button = target.closest("button");
-    if (!button || !isAdministrativeMediaButton(button)) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-  }, true);
-
-  const observer = new MutationObserver(stripAdministrativeMediaActions);
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-  stripAdministrativeMediaActions();
-</script>
-
 <style>
-  :global(.editor-media-cleanup) {
-    display: none !important;
-  }
-
   .editor-media-migration {
     width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
     margin: 1rem auto 0;
