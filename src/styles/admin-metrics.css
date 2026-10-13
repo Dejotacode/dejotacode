@@ -14,21 +14,27 @@
 .admin-kicker {
   margin: 0 0 0.65rem;
   color: var(--color-accent-strong);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
 }
 
 .admin-panel h1 {
   max-width: 14ch;
   margin: 0;
-  font-size: clamp(2.35rem, 6vw, 4.4rem);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--size-title-page);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
 }
 
 .admin-intro {
   max-width: 44rem;
   margin: 1rem 0 0;
+  color: var(--color-text-muted);
   font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .admin-login-card {
@@ -37,7 +43,7 @@
   padding: clamp(1.25rem, 4vw, 2rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
   box-shadow: var(--shadow-card);
 }
 
@@ -61,6 +67,12 @@
   border-radius: var(--radius-md);
   background: var(--color-surface-soft);
   color: var(--color-text);
+}
+
+.admin-login-form input:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-accent-strong);
 }
 
 .admin-login-form output {
@@ -100,20 +112,40 @@
   padding: clamp(1rem, 3vw, 1.5rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
 }
 
 .admin-dashboard__header {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
 }
 
+.admin-dashboard__header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 92% 8%, var(--color-glow), transparent 32%);
+}
+
+.admin-dashboard__header > * {
+  position: relative;
+  z-index: 1;
+}
+
 .admin-dashboard__header h2,
-.admin-dashboard__section h2 {
+.admin-dashboard__section h2,
+.metrics-section h2 {
   margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--size-title-section);
+  line-height: var(--leading-section);
+  letter-spacing: var(--tracking-section);
 }
 
 .admin-dashboard__header p:last-child,
@@ -124,15 +156,14 @@
 .admin-dashboard__eyebrow {
   margin: 0 0 0.4rem;
   color: var(--color-accent-strong);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
 }
 
 .admin-dashboard__cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -142,7 +173,24 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  box-shadow: var(--shadow-card);
+  color: var(--color-text);
+  text-decoration: none;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.admin-dashboard-card:hover,
+.admin-dashboard-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--color-border-strong);
+  background: color-mix(in srgb, var(--color-surface) 88%, var(--color-accent) 12%);
+}
+
+.admin-dashboard-card:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
 .admin-dashboard-card span,
@@ -183,17 +231,31 @@
   background: var(--color-surface-soft);
   color: var(--color-text);
   text-decoration: none;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
 }
 
 .admin-dashboard-action:hover,
 .admin-dashboard-action:focus-visible {
   border-color: var(--color-border-strong);
+  background: var(--color-surface);
   transform: translateY(-1px);
+}
+
+.admin-dashboard-action:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
 .admin-dashboard-action strong,
 .admin-dashboard-action span {
   display: block;
+}
+
+.admin-dashboard-action strong {
+  font-family: var(--font-heading);
 }
 
 .admin-dashboard-action span {
@@ -247,7 +309,6 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  box-shadow: var(--shadow-card);
 }
 
 .metric-card strong {
@@ -267,17 +328,14 @@
   padding: clamp(1rem, 3vw, 1.5rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-}
-
-.metrics-section h2 {
-  margin-top: 0;
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
 }
 
 .metrics-section__note,
 .metrics-empty {
-  margin-top: -0.35rem;
+  margin-top: 0.45rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 .metrics-ranking {
