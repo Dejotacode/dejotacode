@@ -1,37 +1,49 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const steps = [
-  { href: "/admin/midia/", label: "Biblioteca", match: (path: string) => path === "/admin/midia/" },
-  { href: "/admin/midia/upload/", label: "Upload", match: (path: string) => path.startsWith("/admin/midia/upload") },
-  { href: "/admin/midia/revisao/", label: "Revisão", match: (path: string) => path.startsWith("/admin/midia/revisao") },
-  { href: "/admin/midia/cleanup/", label: "Cleanup", match: (path: string) => path.startsWith("/admin/midia/cleanup") },
-  { href: "/admin/midia/dry-run/", label: "Dry-run", match: (path: string) => path.startsWith("/admin/midia/dry-run") },
-  { href: "/admin/midia/snapshot/", label: "Snapshot", match: (path: string) => path.startsWith("/admin/midia/snapshot") },
-  { href: "/admin/midia/auditoria/", label: "Auditoria", match: (path: string) => path.startsWith("/admin/midia/auditoria") },
-  { href: "/admin/midia/pronto-exclusao/", label: "Pronto p/ excluir", match: (path: string) => path.startsWith("/admin/midia/pronto-exclusao") },
-  { href: "/admin/midia/exclusao/", label: "Exclusão", match: (path: string) => path.startsWith("/admin/midia/exclusao") },
+const maintenancePaths = [
+  "/admin/midia/manutencao",
+  "/admin/midia/cleanup",
+  "/admin/midia/dry-run",
+  "/admin/midia/snapshot",
+  "/admin/midia/auditoria",
+  "/admin/midia/pronto-exclusao",
+  "/admin/midia/exclusao",
+];
+
+const items = [
+  {
+    href: "/admin/midia/",
+    label: "Biblioteca",
+    match: (path: string) => path === "/admin/midia/" || path.startsWith("/admin/midia/upload"),
+  },
+  {
+    href: "/admin/midia/revisao/",
+    label: "Revisão",
+    match: (path: string) => path.startsWith("/admin/midia/revisao"),
+  },
+  {
+    href: "/admin/midia/manutencao/",
+    label: "Manutenção",
+    match: (path: string) => maintenancePaths.some((prefix) => path.startsWith(prefix)),
+  },
 ];
 ---
 
-<nav class="media-flow-nav" aria-label="Fluxo de mídia">
+<nav class="media-flow-nav" aria-label="Navegação de mídia">
   <div class="media-flow-nav__inner">
-    <span class="media-flow-nav__label">Fluxo de mídia</span>
-    <div class="media-flow-nav__steps">
-      {steps.map((step, index) => {
-        const active = step.match(currentPath);
-        return (
-          <a
-            class:list={["media-flow-nav__step", { "media-flow-nav__step--active": active }]}
-            href={step.href}
-            aria-current={active ? "step" : undefined}
-          >
-            <span class="media-flow-nav__index" aria-hidden="true">{index + 1}</span>
-            <span>{step.label}</span>
-          </a>
-        );
-      })}
-    </div>
+    {items.map((item) => {
+      const active = item.match(currentPath);
+      return (
+        <a
+          class:list={["media-flow-nav__link", { "media-flow-nav__link--active": active }]}
+          href={item.href}
+          aria-current={active ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      );
+    })}
   </div>
 </nav>
 
@@ -44,62 +56,37 @@ const steps = [
   .media-flow-nav__inner {
     width: min(calc(100% - var(--space-page) - var(--space-page)), 68rem);
     margin-inline: auto;
-    display: grid;
-    gap: 0.55rem;
-    padding-block: 0.7rem 0.8rem;
-  }
-
-  .media-flow-nav__label {
-    color: var(--color-text-muted);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .media-flow-nav__steps {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.35rem;
     overflow-x: auto;
-    padding-bottom: 0.1rem;
+    padding-block: 0.6rem;
     scrollbar-width: thin;
   }
 
-  .media-flow-nav__step {
+  .media-flow-nav__link {
     flex: 0 0 auto;
+    min-height: 2.45rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    min-height: 2.5rem;
-    padding: 0.45rem 0.65rem;
-    border: 1px solid var(--color-border);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
     border-radius: var(--radius-md);
-    background: var(--color-bg);
     color: var(--color-text-muted);
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     font-weight: 800;
     text-decoration: none;
   }
 
-  .media-flow-nav__step:hover,
-  .media-flow-nav__step:focus-visible {
+  .media-flow-nav__link:hover,
+  .media-flow-nav__link:focus-visible {
     color: var(--color-text);
-    border-color: var(--color-border-strong);
+    border-color: var(--color-border);
+    background: var(--color-bg);
   }
 
-  .media-flow-nav__step--active {
+  .media-flow-nav__link--active {
     color: var(--color-accent-strong);
     border-color: var(--color-border-strong);
     background: var(--color-surface);
-  }
-
-  .media-flow-nav__index {
-    display: inline-grid;
-    place-items: center;
-    width: 1.35rem;
-    height: 1.35rem;
-    border-radius: 999px;
-    background: var(--color-surface-soft);
-    font-size: 0.72rem;
   }
 </style>
