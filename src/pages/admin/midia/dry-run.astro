@@ -11,14 +11,14 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       <p class="admin-kicker">Validação antes de qualquer risco</p>
       <h1>Dry-run de mídia</h1>
       <p class="admin-intro">
-        Revalide GitHub, D1 e R2 para mídias que já passaram pela revisão humana e pelo Gate cleanup. Esta tela não remove arquivos e não oferece snapshot nem exclusão.
+        Revalide GitHub, D1 e R2 antes de avançar. O dry-run não remove arquivos.
       </p>
 
       <section class="metrics-section" aria-labelledby="media-dry-run-title">
         <div class="media-dry-run-heading">
           <div>
             <h2 id="media-dry-run-title">Itens aptos ao dry-run</h2>
-            <p class="metrics-section__note">Somente mídias com revisão candidata e Gate cleanup aprovado aparecem aqui.</p>
+            <p class="metrics-section__note">Aparecem somente candidatas com Gate cleanup aprovado.</p>
           </div>
           <div class="media-dry-run-actions">
             <button class="button" type="button" data-refresh-media>Atualizar</button>
@@ -31,9 +31,9 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       </section>
 
       <section class="metrics-section" aria-labelledby="media-dry-run-limit-title">
-        <h2 id="media-dry-run-limit-title">Limite desta etapa</h2>
+        <h2 id="media-dry-run-limit-title">Resultado desta etapa</h2>
         <p class="metrics-section__note">
-          O dry-run apenas consulta e registra uma revalidação temporária no servidor. Mesmo quando o resultado é elegível, não existe botão de snapshot ou exclusão nesta rota.
+          O resultado é temporário e informa se a mídia pode seguir para o snapshot. Nenhuma exclusão é executada aqui.
         </p>
       </section>
 
