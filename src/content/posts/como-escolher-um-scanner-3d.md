@@ -10,6 +10,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [scanner 3d, guia de compra, modelagem 3d, shining 3d]
+storeProducts:
+  - "einstar-2"
 ---
 
 O melhor scanner 3D não é necessariamente o mais caro. A escolha começa pelo tipo de objeto e pelo resultado que você precisa obter.

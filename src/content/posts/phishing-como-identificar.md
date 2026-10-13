@@ -2,7 +2,7 @@
 title: "Phishing: como identificar mensagens suspeitas antes de clicar"
 description: "Aprenda sinais práticos de phishing, como conferir remetentes e links e o que fazer se você já digitou uma senha ou aprovou um login suspeito."
 publishedAt: 2026-09-15
-updatedAt: 2026-09-25
+updatedAt: 2026-10-13
 category: linux-seguranca
 type: tutorial
 readingTime: 11
@@ -10,6 +10,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: ["seguranca", "phishing", "golpes", "contas"]
+storeProducts:
+  - "nordpass"
 ---
 
 Phishing é uma tentativa de enganar você para que entregue informações, abra um arquivo perigoso, aprove um acesso ou visite uma página falsa.

@@ -32,7 +32,7 @@ compatibility:
   ios: "Requer Apple CarPlay com fio compatível; verificar veículo e iPhone antes da compra."
 offers:
   - provider: other
-    href: "https://www.awin1.com/cread.php?awinmid=96499&awinaffid=3118001&ued=https%3A%2F%2Fwww.ottocast.com%2Fpt-br%2Fproducts%2Fottocast-mini-cube-3-0-wireless-carplay-android-auto-adapter"
+    href: "https://tidd.ly/4jSo7jF"
     active: true
     lastChecked: 2026-10-09
     label: "Ver oferta na Ottocast"

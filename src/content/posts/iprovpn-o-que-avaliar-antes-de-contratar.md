@@ -10,6 +10,8 @@ difficulty: iniciante
 featured: false
 draft: false
 tags: [iprovpn, vpn, privacidade, seguranca]
+storeProducts:
+  - "iprovpn"
 ---
 
 Antes de contratar o iProVPN, defina qual problema você quer resolver e confira se o serviço atende ao seu dispositivo e ao tipo de conexão que você usa.
