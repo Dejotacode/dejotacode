@@ -76,8 +76,29 @@ Se você ainda não conhece o processo, o tutorial [ElevenLabs para iniciantes: 
 
 Essa combinação é importante: a Store explica **quando a ferramenta pode valer a pena**; o tutorial explica **como usar o recurso de forma responsável**.
 
+## Free, Starter ou Creator
+
+Na consulta de 13 de outubro de 2026, os preços mensais padrão eram US$ 6 para Starter e US$ 22 para Creator, antes de impostos. Promoções de primeiro mês são temporárias; confira o checkout e a página oficial antes de contratar.
+
+O Free permite experimentar, mas não inclui licença comercial. O Starter acrescenta licença comercial para conteúdo elegível, clonagem instantânea de voz e Dubbing Studio. O Creator acrescenta clonagem profissional e maior franquia de créditos. Confira os direitos sobre textos e vozes, as restrições de recursos Beta e os termos do recurso utilizado. Assinar depois não concede licença comercial retroativa ao áudio gerado no gratuito.
+
+ElevenAgents atende aplicações de voz conversacional e deve ser avaliado separadamente do fluxo de narração.
+
 ## Transparência comercial
 
-O DejotaCode participa do programa de afiliados da ElevenLabs por meio do PartnerStack. O nosso link de indicação é **https://try.elevenlabs.io/0n7wipqp6rsp**. Uma assinatura paga atribuída corretamente a esse link pode gerar comissão para o DejotaCode.
+O DejotaCode participa do programa de afiliados da ElevenLabs no Creator Affiliate Program. O nosso link de indicação é **https://try.elevenlabs.io/0n7wipqp6rsp**. Uma assinatura paga atribuída corretamente a esse link pode gerar comissão para o DejotaCode.
 
 A existência de comissão não muda nosso critério editorial: a recomendação precisa continuar explicando benefícios, limitações, contexto de uso e situações em que a ferramenta talvez não seja necessária.
+
+
+O guia oficial do programa, conferido em 13 de outubro de 2026, informa 22% sobre pagamentos dos planos Starter, Creator, Pro e Scale e 11% no Business, durante os primeiros 12 meses de assinaturas elegíveis. Compras Enterprise não geram comissão. O guia também descreve um período de validação de 90 dias após o primeiro pagamento. Condições e elegibilidade podem mudar; confira os termos atuais do programa. O PartnerStack gerencia métricas e pagamentos.
+
+
+## Fontes desta atualização
+
+Consultadas em 13/10/2026; condições podem mudar.
+
+- [Planos oficiais](https://elevenlabs.io/pricing)
+- [Guia de afiliados](https://elevenlabs.io/pt/affiliate-partner-guide)
+- [Termos do programa](https://elevenlabs.io/affiliates-terms)
+- [Licença de publicação](https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform)

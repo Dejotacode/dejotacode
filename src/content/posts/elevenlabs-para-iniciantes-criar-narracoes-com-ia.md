@@ -133,6 +133,26 @@ Por outro lado, se você grava poucos vídeos e gosta de usar sua própria voz, 
 
 Uma ferramenta só melhora o processo quando elimina uma dificuldade concreta.
 
+## Free, Starter ou Creator: por onde começar?
+
+A escolha do plano depende mais do seu fluxo do que da quantidade de recursos disponíveis.
+
+Em 13 de outubro de 2026, a página oficial de preços mostrava:
+
+- **Free:** plano gratuito para experimentar recursos como texto para voz e outros recursos criativos, com uma cota mensal de créditos;
+- **Starter:** **US$ 6/mês** no preço mensal padrão, adicionando licença comercial, Instant Voice Cloning, Dubbing Studio e mais capacidade de uso;
+- **Creator:** **US$ 22/mês** no preço mensal padrão, adicionando Professional Voice Cloning e mais créditos para quem produz com maior frequência.
+
+A ElevenLabs pode oferecer descontos temporários no primeiro mês. Como essas promoções mudam, confira o valor exibido no momento da contratação em vez de tratar um desconto promocional como preço permanente.
+
+O plano gratuito permite avaliar o fluxo, mas não inclui licença comercial. Conteúdo gerado nele não ganha essa licença retroativamente após uma assinatura. Nos planos pagos, confira os termos aplicáveis ao recurso, ao texto e à voz utilizados antes de publicar. O Starter começa a fazer mais sentido quando existe necessidade de uso comercial e recursos adicionais. Já o Creator tende a encaixar melhor em rotinas mais intensas, como produção recorrente de podcasts, audiobooks ou narrações longas.
+
+## E o ElevenAgents?
+
+A ElevenLabs também oferece o **ElevenAgents**, voltado a agentes de voz conversacional para casos como atendimento, operações e chamadas.
+
+Esse produto é mais relevante para desenvolvedores, founders e equipes do que para quem só quer transformar um roteiro em narração. Por isso, ele merece ser avaliado separadamente em vez de misturado com o fluxo básico de texto para voz deste guia.
+
 ## Limitações que vale conhecer
 
 Planos e limites variam, e alguns recursos podem depender de assinatura. Voz gerada por IA também pode cometer erros de pronúncia ou soar pouco natural em determinados trechos.
@@ -145,7 +165,7 @@ O DejotaCode utiliza ElevenLabs na própria produção e participa do programa d
 
 Nosso link é **https://try.elevenlabs.io/0n7wipqp6rsp**. Se uma pessoa acessar por ele e posteriormente contratar uma assinatura paga elegível atribuída ao DejotaCode, podemos receber comissão.
 
-A página pública do programa, conferida em 10 de outubro de 2026, informa comissão de até 22% durante 12 meses para assinaturas elegíveis. As condições podem mudar; confira os termos atuais do programa antes de contratar ou divulgar.
+O guia oficial do programa, conferido em 13 de outubro de 2026, informa 22% sobre pagamentos dos planos Starter, Creator, Pro e Scale e 11% no Business, durante os primeiros 12 meses de assinaturas elegíveis. Compras Enterprise não geram comissão. O guia também descreve um período de validação de 90 dias após o primeiro pagamento. Condições e elegibilidade podem mudar; confira os termos atuais do programa. O PartnerStack gerencia métricas e pagamentos.
 
 A comissão não aumenta o preço por nossa decisão editorial e não transforma a ferramenta em recomendação automática. O objetivo deste conteúdo continua sendo mostrar quando ela ajuda e onde exige cuidado.
 
@@ -156,3 +176,13 @@ Se você quer experimentar esse fluxo, comece com um roteiro curto. Gere apenas 
 Depois que você dominar esse ciclo pequeno, produzir narrações maiores fica muito mais simples.
 
 Para decidir se precisa contratar um plano, veja [ElevenLabs vale a pena?](/blog/elevenlabs-vale-a-pena/).
+
+
+## Fontes desta atualização
+
+Consultadas em 13/10/2026; condições podem mudar.
+
+- [Planos oficiais](https://elevenlabs.io/pricing)
+- [Guia de afiliados](https://elevenlabs.io/pt/affiliate-partner-guide)
+- [Termos do programa](https://elevenlabs.io/affiliates-terms)
+- [Licença de publicação](https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform)
