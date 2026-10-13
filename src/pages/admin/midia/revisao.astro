@@ -21,7 +21,7 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
       <p class="admin-kicker">Biblioteca operacional</p>
       <h1>Revisão de mídia</h1>
       <p class="admin-intro">
-        Registre decisões humanas de manter, marcar como candidata ou reabrir revisão. Esta etapa não aprova cleanup e não exclui arquivos.
+        Registre a decisão humana: manter, marcar como candidata ou reabrir a revisão.
       </p>
 
       <section class="metrics-section" aria-labelledby="media-review-title">
@@ -29,7 +29,7 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
           <div>
             <h2 id="media-review-title">Imagens para revisão</h2>
             <p class="metrics-section__note">
-              A classificação de segurança cruza Markdown canônico, capas do CMS e disponibilidade pública. Imagens em uso não podem ser marcadas como candidatas nesta tela.
+              A segurança verifica uso no Markdown, capas do CMS e disponibilidade pública. Imagens em uso não podem virar candidatas.
             </p>
           </div>
           <strong data-media-count>0 imagens</strong>
@@ -59,7 +59,7 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
       <section class="metrics-section" aria-labelledby="media-review-limit-title">
         <h2 id="media-review-limit-title">Limite desta etapa</h2>
         <p class="metrics-section__note">
-          Marcar como candidata não remove a imagem. Gate de cleanup, plano de remoção, dry-run, snapshot e exclusão continuam fora desta tela.
+          Marcar como candidata apenas encaminha a mídia ao Gate de cleanup. Nenhum arquivo é removido nesta etapa.
         </p>
       </section>
 
