@@ -1,7 +1,15 @@
 # Registro de mídia e marca
-Situação: vigente; acervo atual preservado. Revisão: 09/10/2026. Responsável: @studio/@dev.
+Situação: vigente; acervo atual preservado. Revisão: 13/10/2026. Responsável: @studio/@dev.
 Escopo: arquivos oficiais, modelos e origem. Regras: [Documento Mestre](frontend-master.md).
 Inventário completo: [media-inventory.json](media-inventory.json). Hash identifica o arquivo, não comprova licença ou origem.
+
+## Regra de entrada para toda seleção de imagens
+
+Vigente, revisão 13/10/2026. Ler o conteúdo completo e identificar sua mensagem antes de propor imagens. Consultar primeiro `/home/dejota/Workspace/media-dejotacode/acervo/catalogo.html` e `catalogo.json`, além da mídia já usada no projeto. Manter imagens adequadas; reutilizar ou adaptar somente com pertinência ao assunto. Criar imagem nova apenas quando nenhuma opção servir, registrando as alternativas consultadas e a lacuna. Não assumir fotografia humana, vetor, notebook ou outro estilo como padrão universal.
+
+Se o acervo estiver inacessível, registrar `PENDENTE: acervo indisponível`; não substituir a consulta por geração automática. Usar a versão preferida do catálogo, preservando o original. Registro/hash ou aprovação anterior não comprovam licença, compatibilidade com novo conteúdo ou aprovação dos novos recortes. Conferir origem, direitos/natureza ilustrativa, fidelidade do produto, símbolo oficial, temas e recortes no consumidor real. Checklist em [Fluxo editorial](../operacao/editorial-workflow.md).
+
+Conferência documental e de integridade em 13/10/2026: catálogo HTML/JSON presentes; 140 versões preferidas do registro `../auditorias/acervo-assinaturas-validation-20261010.json` encontradas e com SHA-256 idêntico. Distribuição: 42 assinaturas oficiais existentes, 38 correções vetoriais, 50 correções por receita validada, 5 referências de fornecedor e 5 prévias documentais. Esta conferência não substitui inspeção visual por conteúdo nem certifica licenças. As dez pendências históricas de placa branca citadas no Documento Mestre foram resolvidas no registro resource-signatures-validation-20261010.json; não tratá-las como pendências atuais.
 
 ## Marca oficial verificada no código
 | Uso | Arquivo |
@@ -287,3 +295,27 @@ Aprovação visual do usuário registrada em 10/10/2026 às 19:53 (America/Sao_P
 ## Publicação integral concluída — 10/10/2026
 
 Status: publicado e homologado. PR #275, commit 7d531d8e2142f894476ee6db68c91c6ed0fe71e4, workflow 38093497180 aprovado. Símbolos e imagens aprovados estão no domínio oficial: 121 URLs/968 combinações sem problemas, 90 imagens idênticas ao pacote por SHA-256. Originais preservados. Estado e limites em ../estado-atual.md; resultado em docs/auditorias/publicacao-integral-result-2026-10-10.json. Pendências de direitos de fotos e dependências permanecem registradas.
+
+## Lote de drafts — propostas visuais de 13/10/2026
+
+Registro local, aprovação visual do usuário pendente. 16 arquivos continuam em draft. Três imagens existentes reutilizadas por pertinência (ElevenLabs, CI/CD e organização de referências); treze SVGs originais conceituais para assuntos sem opção específica adequada na seleção do acervo. Não representam interfaces reais, produtos físicos ou testes. Símbolo oficial dark composto separadamente: caixa 72 px, x43,2/y32,4 em 1440×1080, sem placa. Alt por assunto e natureza ilustrativa em legenda HTML. [Decisões, origem, hashes e pendências](../auditorias/lote-drafts-midias-20261013.json); [revisão do lote](../auditorias/lote-drafts-revisao-2026-10-13.md). Nenhuma destas propostas fica aprovada por passar no build.
+
+## Senha vazada — revisão individual da capa, 13/10/2026
+
+Proposta local, aprovação pendente. O diagrama inicial foi questionado pelo usuário e substituído após nova inspeção do acervo de segurança. Nenhuma opção avaliada comunicava suficientemente alerta de credencial exposta e revisão de várias contas; imagens de phishing/2FA/gerenciador não foram forçadas. Nova cena gerada com imagegen: pessoa revisando contas após alerta, interfaces conceituais, sem dados pessoais, fornecedor ou alegação de teste. Bitmap original em Workspace/media-dejotacode/drafts-20261013; capa editorial-assinatura-v2.svg embute WebP e compõe o SVG oficial dark único, 72px em x43,2/y24,3 para 1440×810. A primeira composição conceitual permanece preservada e sem uso neste artigo. Seleção e hashes em [registro do lote](../auditorias/lote-drafts-midias-20261013.json). Esta revisão não aprova nem altera automaticamente as outras 15 capas; avaliação continua individual.
+
+## Rodada individual 2–4 — 13/10/2026
+
+Propostas locais sem aprovação do usuário ou publicação. ElevenLabs mantém capa de narração do acervo após inspeção. iProVPN recebe cena de avaliação de critérios; referências NordVPN rejeitadas por marca incorreta e viagem por foco secundário. Scanner 3D não tinha entrada no catálogo: novo objeto físico acompanhado de pontos e malha correspondentes, sem inventar modelo comercial. Duas imagens geradas com imagegen, fontes em Workspace/media-dejotacode/drafts-20261013; wrappers editorial-assinatura-v2.svg embutem WebP e compõem o SVG dark oficial, caixa 72px em x43,2/y24,3 para 1440×810. Rótulo VPN é tipografia separada, sem logo de fornecedor. [Origem, prompts, hashes e pendências](../auditorias/lote-drafts-midias-20261013.json); [QA de 24 combinações](../auditorias/rodada3-editorial-browser-20261013.json). Propostas anteriores preservadas. Essa rodada não libera as demais capas nem transforma fotografia humana em regra universal.
+
+## Rodada 5–9 — 13/10/2026
+
+Aplicação local, sem publicação. Acervo reavaliado; reuso da conversa/contexto da antiga capa de IA cotidiana para AnythingLLM, sem alteração do raster ou símbolo; uso não representa interface real e aguarda aprovação individual. Quatro gerações imagegen para lacunas específicas de seleção de scanner, backend, inferência local e agente/chatbot, com fontes preservadas em Workspace/media-dejotacode/drafts-20261013. Wrappers editorial-assinatura-v2.svg embutem WebP e símbolo dark oficial único, 72px em x43,2/y24,3 para 1440×810. Rótulos Supabase e Ollama/IA local são tipografados separadamente; nenhum logo de fornecedor inventado. Bitmap 4:3 de Ollama enquadrado em 16:9 mantendo assuntos principais. [Prompts, origem e hashes](../auditorias/lote-drafts-midias-20261013.json); [QA de 40 combinações](../auditorias/rodada5-editorial-browser-20261013.json). Propostas anteriores permanecem preservadas; validação de layout não certifica testes, integração ou precisão de equipamentos.
+
+## Restantes 10–16 — 13/10/2026
+
+Propostas locais aguardando aprovação. Cinco fontes imagegen para banco de produção (revisão antes de alteração), analytics (perguntas e ferramentas com sobreposição), Search Console (processamento, sem prazo garantido), sitemap (navegação versus arquivo estruturado) e Google tag (instalação versus verificação independente). São metáforas/cenas ilustrativas; não representam dados, medições ou interfaces reais. Duas capas existentes pertinentes preservadas para CI/CD e Raindrop, sem assinatura dupla. Novas fontes em Workspace/media-dejotacode/drafts-20261013; wrappers editorial-assinatura-v2.svg embutem WebP e SVG dark oficial, 72px em x43,2/y24,3 para 1440×810. Rótulos compostos em tipografia, sem logos de fornecedor; Search Console em duas linhas para proteger o assunto. [Origem, prompts, hashes e pendências](../auditorias/lote-drafts-midias-20261013.json); [QA atual](../auditorias/restantes-editorial-browser-20261013.json). Nada publicado.
+
+## Lote editorial de 16 artigos — publicação autorizada em 13/10/2026
+
+Todos os textos e capas aprovados pelo usuário. Publicação autorizada; pacote em validação de CI/CD. Versão final: quatro reusos do acervo e doze ilustrações editoriais com símbolo oficial composto separadamente. Estado e evidências no [registro do lote](../auditorias/lote-drafts-revisao-2026-10-13.md). Menções anteriores à aprovação pendente são histórico das rodadas.

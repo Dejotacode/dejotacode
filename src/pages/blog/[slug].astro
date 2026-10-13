@@ -9,7 +9,7 @@ import ConversionCTA from "../../components/content/ConversionCTA.astro";
 import ArticleGuideResources from "../../components/content/ArticleGuideResources.astro";
 import CategoryIcon from "../../components/ui/CategoryIcon.astro";
 import VisualMedia from "../../components/visual/VisualMedia.astro";
-import { resolvePostVisual } from "../../data/editorialVisuals";
+import { resolvePostVisual, draftPostVisualAlts, draftPostVisualCaptions } from "../../data/editorialVisuals";
 import { getOfficialCategoryIcon } from "../../data/categoryIcons";
 import { availableTrails } from "../../data/trails";
 import { getArticleResources } from "../../data/recommendedResources";
@@ -26,7 +26,7 @@ import "../../styles/editorial.css";
 import "../../styles/resources.css";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const posts = await getCollection("posts", ({ data }) => !data.draft || import.meta.env.DEV);
 
   return posts.map((post) => ({
     params: { slug: postSlug(post) },
@@ -145,12 +145,14 @@ const articleSchema = {
   description={post.data.description}
   image={articleImagePath}
   ogType="article"
+  robots={post.data.draft ? "noindex, nofollow" : "index, follow"}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <main id="conteudo" tabindex="-1" class="article-page">
     <article>
+      {post.data.draft && <p class="container" role="status">RASCUNHO — revisão local, publicação não autorizada.</p>}
       <header class="article-hero container">
         <nav class="breadcrumbs" aria-label="Navegação estrutural">
           <a href="/">Início</a>
@@ -189,9 +191,10 @@ const articleSchema = {
         </div>
 
         <div class="article-cover">
-          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} aspect="card" loading="eager" />
+          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={draftPostVisualAlts[currentSlug] ?? `Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} aspect="card" loading="eager" />
         </div>
       </header>
+      {draftPostVisualCaptions[currentSlug] && <p class="container">{draftPostVisualCaptions[currentSlug]}</p>}
 
       <div class:list={["article-layout", "container", { "article-layout--no-toc": tocHeadings.length === 0 }]}>
         {tocHeadings.length > 0 && (

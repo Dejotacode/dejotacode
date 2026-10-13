@@ -25,6 +25,7 @@ Consult these guides before working on related tasks:
 ## DejotaCode — regras vigentes
 Antes de editar ou criar página, conteúdo, produto, imagem ou componente, ler docs/README.md, docs/padroes/frontend-master.md e a família relevante em docs/padroes/visual-system.md.
 Ícones: docs/padroes/icon-system.md e src/data/categoryIcons.ts. Marca/mídia: docs/padroes/media-registry.md.
+Imagens: antes de propor, gerar ou substituir qualquer capa, ler o conteúdo completo e consultar primeiro o acervo local em /home/dejota/Workspace/media-dejotacode/acervo/catalogo.html e catalogo.json. Manter mídia adequada; reutilizar/adaptar quando pertinente. Nova imagem somente quando nenhuma opção servir, com justificativa registrada. Não presumir um estilo obrigatório. Se o acervo estiver inacessível, registrar PENDENTE e não gerar automaticamente. Conferir origem/licença, versão preferida, símbolo oficial e recortes independentemente do build. Checklist obrigatório: docs/operacao/editorial-workflow.md.
 Reutilizar tokens de src/styles/tokens.css, componentes layout/ui/content e variantes documentadas. Não escolher estilo pela tag isolada.
 Registrar cada modelo e rota em docs/auditorias/frontend-review.md; documentar novas variantes antes de usá-las em várias páginas.
 Preservar conteúdo, rotas, SEO, links comerciais, analytics e funcionalidades.

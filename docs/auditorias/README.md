@@ -5,6 +5,7 @@ Status: vigente como índice. Revisão: 10/10/2026. Escopo: localização; o sta
 [Índice geral](../README.md) · [Regra de organização](../organizacao-documental.md)
 
 - [a11y-visual-audit-v1.9.0.md](a11y-visual-audit-v1.9.0.md).
+- [lote-drafts-revisao-2026-10-13.md](lote-drafts-revisao-2026-10-13.md).
 - [auditoria-paginas-2026-10-09.md](auditoria-paginas-2026-10-09.md).
 - [blog-repaginacao-2026-10-08.md](blog-repaginacao-2026-10-08.md).
 - [categorias-busca-revisao-2026-10-09.md](categorias-busca-revisao-2026-10-09.md).

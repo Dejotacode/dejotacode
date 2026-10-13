@@ -156,3 +156,5 @@ Consultadas e revisadas em 09/10/2026. Recursos, planos e procedimentos podem mu
 - [NordPass: redefinição completa da conta](https://support.nordpass.com/hc/en-us/articles/5388857973905-How-to-reset-NordPass-account)
 - [Bitwarden: perda da senha mestra](https://bitwarden.com/help/forgot-master-password/)
 - [KeePassXC: guia inicial](https://keepassxc.org/docs/KeePassXC_GettingStarted)
+
+Se você recebeu um alerta de credencial exposta, veja [o que fazer quando uma senha vaza](/blog/minha-senha-vazou-o-que-fazer-agora/).
