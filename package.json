@@ -17,7 +17,8 @@
     "build:production": "npm run env:check:production && astro build --mode production",
     "qa:links": "node scripts/validate-internal-links.mjs",
     "qa:html": "node scripts/validate-html-quality.mjs",
-    "qa": "npm run qa:links && npm run qa:html && npm run qa:adsense",
+    "qa:seo": "node scripts/validate-seo-quality.mjs",
+    "qa": "npm run qa:links && npm run qa:html && npm run qa:seo && npm run qa:adsense",
     "smoke:production": "node scripts/smoke-production.mjs",
     "qa:adsense": "node scripts/validate-adsense-indexing.mjs"
   },
