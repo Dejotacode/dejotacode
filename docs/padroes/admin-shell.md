@@ -18,6 +18,7 @@ O Admin usa a mesma identidade da DejotaCode sem copiar a composição das pági
 - Navegação global mantém quatro destinos: Dashboard, Conteúdo, Mídia e Métricas. Estado ativo precisa ser evidente por cor e forma, sem depender apenas da cor.
 - A navegação contextual de Mídia mantém apenas Biblioteca, Revisão e Manutenção no primeiro nível. Dentro de Manutenção, uma segunda linha progressiva expõe Visão geral, Cleanup, Dry-run, Snapshot, Auditoria, Prontas e Exclusão.
 - Nas rotas de Manutenção, a subnavegação contextual é a fonte única de deslocamento entre etapas; links equivalentes nos rodapés deixam de competir visualmente com as ações locais. `Sair` e controles próprios da etapa permanecem disponíveis.
+- Textos operacionais de Manutenção priorizam três respostas: o que a etapa faz, qual condição precisa estar satisfeita e o que não acontece automaticamente. Evitar repetir a mesma advertência em introdução, nota e rodapé.
 - Rótulos técnicos curtos reutilizam `--type-eyebrow` e `--tracking-eyebrow`; títulos e texto continuam usando as famílias oficiais do sistema visual.
 - Temas claro e escuro preservam a mesma estrutura. Apenas tokens de cor e o arquivo de marca adequado ao tema mudam.
 - A topbar não deve concentrar ações de página. Ações específicas permanecem no conteúdo da rota correspondente.
