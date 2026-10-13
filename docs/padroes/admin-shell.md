@@ -17,6 +17,7 @@ O Admin usa a mesma identidade da DejotaCode sem copiar a composição das pági
 - O grid técnico e o glow podem aparecer de forma discreta na topbar ou em superfícies de abertura, sem competir com o conteúdo.
 - Navegação global mantém quatro destinos: Dashboard, Conteúdo, Mídia e Métricas. Estado ativo precisa ser evidente por cor e forma, sem depender apenas da cor.
 - A navegação contextual de Mídia mantém apenas Biblioteca, Revisão e Manutenção no primeiro nível. Dentro de Manutenção, uma segunda linha progressiva expõe Visão geral, Cleanup, Dry-run, Snapshot, Auditoria, Prontas e Exclusão.
+- Nas rotas de Manutenção, a subnavegação contextual é a fonte única de deslocamento entre etapas; links equivalentes nos rodapés deixam de competir visualmente com as ações locais. `Sair` e controles próprios da etapa permanecem disponíveis.
 - Rótulos técnicos curtos reutilizam `--type-eyebrow` e `--tracking-eyebrow`; títulos e texto continuam usando as famílias oficiais do sistema visual.
 - Temas claro e escuro preservam a mesma estrutura. Apenas tokens de cor e o arquivo de marca adequado ao tema mudam.
 - A topbar não deve concentrar ações de página. Ações específicas permanecem no conteúdo da rota correspondente.
@@ -26,7 +27,7 @@ O Admin usa a mesma identidade da DejotaCode sem copiar a composição das pági
 
 - `src/layouts/AdminLayout.astro`: topbar, marca, tema e montagem da navegação.
 - `src/components/admin/AdminNav.astro`: navegação global e estado ativo.
-- `src/components/admin/MediaFlowNav.astro`: navegação contextual da área de Mídia e disclosure progressivo das ferramentas de Manutenção.
+- `src/components/admin/MediaFlowNav.astro`: navegação contextual da área de Mídia, disclosure progressivo das ferramentas de Manutenção e supressão de atalhos redundantes no rodapé dessas rotas.
 - `src/styles/admin-metrics.css`: base compartilhada de páginas, cards e seções.
 - `src/styles/admin-workspace.css`: refinamentos de workspaces densos, principalmente Editor e Métricas, sem redefinir tokens nem lógica de negócio.
 - estilos específicos permanecem permitidos quando a função exigir, mas não recriam identidade paralela.
