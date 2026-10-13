@@ -1,0 +1,161 @@
+---
+import AdminLayout from "../../../layouts/AdminLayout.astro";
+import "../../../styles/admin-metrics.css";
+
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+
+const groups = [
+  {
+    title: "Preparar",
+    description: "Revise candidatas e confirme quais podem avançar no fluxo.",
+    links: [
+      { href: "/admin/midia/cleanup/", label: "Cleanup", note: "Segunda revisão antes de qualquer remoção." },
+    ],
+  },
+  {
+    title: "Verificar",
+    description: "Valide referências e preserve evidências antes da exclusão.",
+    links: [
+      { href: "/admin/midia/dry-run/", label: "Dry-run", note: "Confere GitHub, D1 e R2 sem excluir." },
+      { href: "/admin/midia/snapshot/", label: "Snapshot", note: "Registra a evidência final de pré-exclusão." },
+      { href: "/admin/midia/auditoria/", label: "Auditoria", note: "Consulta o histórico da mídia." },
+    ],
+  },
+  {
+    title: "Excluir",
+    description: "Use somente quando a mídia já passou por todas as verificações.",
+    links: [
+      { href: "/admin/midia/pronto-exclusao/", label: "Prontas para excluir", note: "Veja somente itens que concluíram os gates." },
+      { href: "/admin/midia/exclusao/", label: "Exclusão", note: "Etapa final, individual e com confirmação explícita." },
+    ],
+  },
+];
+---
+
+<AdminLayout title="Manutenção de mídia" description="Ferramentas avançadas de manutenção da biblioteca de mídia.">
+  <main id="conteudo" class="admin-page" data-api={api}>
+    <div class="admin-panel maintenance-shell">
+      <div>
+        <p class="admin-kicker">Mídia · avançado</p>
+        <h1>Manutenção</h1>
+        <p class="admin-intro">Ferramentas técnicas para revisar, verificar e excluir mídia com segurança.</p>
+      </div>
+
+      <div class="maintenance-groups">
+        {groups.map((group) => (
+          <section class="metrics-section maintenance-group" aria-labelledby={`maintenance-${group.title.toLowerCase()}`}>
+            <div class="maintenance-group__heading">
+              <h2 id={`maintenance-${group.title.toLowerCase()}`}>{group.title}</h2>
+              <p class="metrics-section__note">{group.description}</p>
+            </div>
+            <div class="maintenance-links">
+              {group.links.map((link) => (
+                <a class="maintenance-link" href={link.href}>
+                  <span>
+                    <strong>{link.label}</strong>
+                    <small>{link.note}</small>
+                  </span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <div class="admin-actions">
+        <a class="button" href="/admin/midia/">Biblioteca</a>
+        <a class="button" href="/admin/midia/revisao/">Revisão</a>
+        <button class="button" type="button" data-logout>Sair</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
+
+    const root = document.querySelector<HTMLElement>("[data-api]");
+    const api = root?.dataset.api;
+    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
+    let csrf = "";
+
+    const start = async () => {
+      if (!api) return;
+      const session = await requireAdminSession(api);
+      if (!session) return;
+      csrf = session.csrf;
+    };
+
+    logoutButton?.addEventListener("click", async () => {
+      if (!api) return;
+      await logoutAdmin(api, csrf);
+      location.href = "/admin/";
+    });
+
+    start().catch(() => {
+      location.href = "/admin/";
+    });
+  </script>
+
+  <style>
+    .maintenance-shell {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .maintenance-groups {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .maintenance-group {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .maintenance-group__heading {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .maintenance-group__heading h2 {
+      margin: 0;
+    }
+
+    .maintenance-links {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .maintenance-link {
+      min-height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .maintenance-link:hover,
+    .maintenance-link:focus-visible {
+      border-color: var(--color-border-strong);
+      background: var(--color-surface);
+    }
+
+    .maintenance-link span:first-child {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .maintenance-link small {
+      color: var(--color-text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+  </style>
+</AdminLayout>
