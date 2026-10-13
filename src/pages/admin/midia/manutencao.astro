@@ -7,26 +7,26 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 const groups = [
   {
     title: "Preparar",
-    description: "Revise candidatas e confirme quais podem avançar no fluxo.",
+    description: "Confirme quais candidatas podem avançar.",
     links: [
-      { href: "/admin/midia/cleanup/", label: "Cleanup", note: "Segunda revisão antes de qualquer remoção." },
+      { href: "/admin/midia/cleanup/", label: "Cleanup", note: "Faça a segunda revisão." },
     ],
   },
   {
     title: "Verificar",
-    description: "Valide referências e preserve evidências antes da exclusão.",
+    description: "Revalide a mídia e preserve evidências.",
     links: [
-      { href: "/admin/midia/dry-run/", label: "Dry-run", note: "Confere GitHub, D1 e R2 sem excluir." },
-      { href: "/admin/midia/snapshot/", label: "Snapshot", note: "Registra a evidência final de pré-exclusão." },
-      { href: "/admin/midia/auditoria/", label: "Auditoria", note: "Consulta o histórico da mídia." },
+      { href: "/admin/midia/dry-run/", label: "Dry-run", note: "Confere GitHub, D1 e R2." },
+      { href: "/admin/midia/snapshot/", label: "Snapshot", note: "Registra a evidência final." },
+      { href: "/admin/midia/auditoria/", label: "Auditoria", note: "Mostra o histórico da mídia." },
     ],
   },
   {
     title: "Excluir",
-    description: "Use somente quando a mídia já passou por todas as verificações.",
+    description: "Use somente após concluir todas as verificações.",
     links: [
-      { href: "/admin/midia/pronto-exclusao/", label: "Prontas para excluir", note: "Veja somente itens que concluíram os gates." },
-      { href: "/admin/midia/exclusao/", label: "Exclusão", note: "Etapa final, individual e com confirmação explícita." },
+      { href: "/admin/midia/pronto-exclusao/", label: "Prontas para excluir", note: "Confirme os gates finais." },
+      { href: "/admin/midia/exclusao/", label: "Exclusão", note: "Remoção individual e confirmada." },
     ],
   },
 ];
@@ -38,7 +38,7 @@ const groups = [
       <div>
         <p class="admin-kicker">Mídia · avançado</p>
         <h1>Manutenção</h1>
-        <p class="admin-intro">Ferramentas técnicas para revisar, verificar e excluir mídia com segurança.</p>
+        <p class="admin-intro">Revise, verifique e exclua mídia com segurança.</p>
       </div>
 
       <div class="maintenance-groups">
