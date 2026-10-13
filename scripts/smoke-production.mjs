@@ -11,6 +11,7 @@ const checks = [
   ["site-admin-midia", `${site}/admin/midia/`, 200],
   ["site-admin-midia-upload", `${site}/admin/midia/upload/`, 200],
   ["site-admin-midia-revisao", `${site}/admin/midia/revisao/`, 200],
+  ["site-admin-midia-manutencao", `${site}/admin/midia/manutencao/`, 200],
   ["site-admin-midia-cleanup", `${site}/admin/midia/cleanup/`, 200],
   ["site-admin-midia-dry-run", `${site}/admin/midia/dry-run/`, 200],
   ["site-admin-midia-snapshot", `${site}/admin/midia/snapshot/`, 200],
