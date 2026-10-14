@@ -35,3 +35,12 @@ Não publicar, push ou deploy sem instrução explícita do usuário. Autorizaç
 
 ## Organização documental vigente
 Antes de criar ou mover documentação, consultar docs/README.md e docs/organizacao-documental.md; atualizar fonte existente antes de duplicar, classificar finalidade/status e seguir destino do manual. Validar com python3 scripts/check-documentation.py.
+
+## Encerramento e limpeza de worktrees
+Ao concluir tarefa, preview ou release, aplicar docs/operacao/operations.md, seção "Encerramento e limpeza de pastas temporárias — regra vigente", para /home/dejota/Workspace/fullstack/. Conferir uso por processos e outros chats, Git, ignorados e dados exclusivos; preservar/verificar o que não é regenerável e remover somente cópias encerradas. A regra foi autorizada pelo usuário em 13/10/2026; proceder quando os critérios forem comprovados, sem pedir novamente a mesma autorização. Preservar principal, APIs, integrações, trabalho ativo e backups necessários. Na dúvida, manter e registrar pendência. Não apagar branches/stashes, parar serviços ativos ou publicar por inferência. Registrar resultado e atualizar caminhos de retomada.
+
+## Inicialização e continuidade entre chats
+Antes de executar qualquer @, ler docs/README.md, docs/estado-atual.md e a seção "Continuidade entre chats" de docs/organizacao-documental.md. Confirmar projeto, tarefa e fontes atuais; localizar o registro da tarefa e preservar decisões/aprovações no escopo dado. @control, @radar, @research, @dev, @studio, @metrics e @store são funções de trabalho, não serviços nem agentes persistentes. Control/Studio arquivados são histórico. Consultar configurações conhecidas antes de pedir novo login; distinguir presença, autenticação, licença e funcionamento sem expor secrets. Se os documentos não estiverem acessíveis, declarar a limitação; não afirmar sincronização automática. Ao transferir trabalho entre chat normal e Chat Work, registrar briefing, fontes, versões, aprovações, bloqueios e próximo passo conforme o manual.
+
+## Ambiente independente e Codespaces
+No Codespace, a raiz é /workspaces/dejotacode; não presumir acesso aos caminhos da máquina. Conferir branch, SHA, diff e regras atualizadas. Porta 4321 privada; nunca usar 4322. Não copiar secrets, acervo privado ou alterações locais sem revisão. Ver procedimento em docs/operacao/operations.md.

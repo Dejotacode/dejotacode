@@ -3,6 +3,7 @@
 Status: vigente. Responsável: @control. Revisão: 10/10/2026. Escopo: entradas e fontes canônicas.
 
 ## Para começar
+0. [Contrato de continuidade entre chats e ambientes](organizacao-documental.md#continuidade-entre-chats--regra-vigente-de-13102026).
 1. [Estado e continuidade](estado-atual.md).
 2. [Onde criar e atualizar documentos](organizacao-documental.md).
 3. [Documento Mestre](padroes/frontend-master.md), [sistema visual](padroes/visual-system.md), [ícones](padroes/icon-system.md) e [mídia](padroes/media-registry.md).

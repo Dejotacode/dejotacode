@@ -9,8 +9,8 @@ Projeto principal: /home/dejota/Workspace/fullstack/dejotacode. Preview habitual
 - [Consolidação e cronologia local](operacao/consolidacao-local-2026-10-09.md).
 - [Registro final da newsletter](operacao/newsletter-brevo-integracao-2026-10-09.md).
 - [Controle de parceiros de monetização](operacao/monetizacao-parceiros.md).
-- [Mapa do Workspace no Control](../../../arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_MAP.md).
-- [Recuperação de áreas encerradas](../../../arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_RECOVERY.md).
+- Mapa do Workspace no Control — arquivo local fora do repositório: `Workspace/arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_MAP.md`.
+- Recuperação de áreas encerradas — arquivo local fora do repositório: `Workspace/arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_RECOVERY.md`.
 
 As quatro releases de entrega foram encerradas após preservação; continuar no principal. Admin e API newsletter mantêm frentes distintas. Git tem trabalho preexistente; conferir status antes de editar ou preparar commits.
 Registros datados descrevem o momento da etapa. Para estado de tarefa e próximo passo, consultar a fonte vigente desta área e confirmar arquivos atuais. projects/state do Control arquivado serve como histórico; não é estado operacional ativo. Não deduzir pendência atual a partir de um parágrafo antigo.
@@ -47,3 +47,10 @@ Passos, exemplos, critérios e links contextuais ampliados nos 16 artigos. Corre
 ## Pacote de monetização autorizado — 13/10/2026
 
 Phishing/NordPass, oferta/Elementor, fichas iProVPN/EINSTAR 2 com capas específicas, vínculos dos artigos e link curto Ottocast aprovados para publicação em 13/10/2026, 19:16 BRT. Entrega isolada em validação; trabalho concorrente preservado. Fonte: docs/operacao/monetizacao-parceiros.md.
+
+
+## Continuidade entre ambientes — revisão de 14/10/2026
+
+Monetização contextual publicada pelo PR #329, commit d1cac4b; ElevenLabs publicada pelo PR #318, commit 931a878. As esperas de aprovação/publicação dessas entregas acima são históricas. Antes de retomar, conferir o GitHub e o registro vigente da tarefa.
+
+Codespaces existente validado na base 931a878; conexão no VS Code local confirmada por captura em 13/10/2026, 23:56 BRT. Regras de continuidade e preservação conciliadas nesta proposta documental; disponibilização no Codespace depende de envio e aplicação explícitos. Não afirmar sincronização automática. Procedimento: [operações](operacao/operations.md); contrato: [organização documental](organizacao-documental.md). Integrações e acervo da máquina podem não estar acessíveis no ambiente remoto. Control/Studio aplicativos continuam arquivados; @ são funções de trabalho.
