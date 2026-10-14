@@ -166,7 +166,7 @@ As worktrees dejotacode-blog-release e dejotacode-frontend-release foram encerra
 
 Preservação: /home/dejota/Workspace/fullstack/backups/worktrees-preservacao-20261009. Bundle, TARs, patches e manifesto; hashes e restauração Git temporária verificados. Cópia na mesma máquina, sem preservação externa confirmada. Não recuperar sobre o principal por inferência.
 
-Acervo anteriormente em clientes agora está em /home/dejota/Workspace/arquivo/dejotacode/prototipos-iniciais, incluindo Git e pacotes, com manifesto de integridade. [Mapa operacional do Workspace](../../../../arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_MAP.md). Site permanece nesta pasta canônica e preview 4321. Esta organização não integra código nem publica.
+Acervo anteriormente em clientes agora está em /home/dejota/Workspace/arquivo/dejotacode/prototipos-iniciais, incluindo Git e pacotes, com manifesto de integridade. Mapa operacional do Workspace — arquivo local fora do repositório: `Workspace/arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_MAP.md`. Site permanece nesta pasta canônica e preview 4321. Esta organização não integra código nem publica.
 
 
 ## Ottocast — entrega de produção concluída em 10/10/2026

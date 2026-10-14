@@ -193,3 +193,36 @@ Qualquer etapa que altere migrations, DNS, secrets ou dados de produção deve c
 - CI de `push` em `main` verde;
 - `npm run smoke:production` aprovado quando houver deploy;
 - nenhum deploy, tag ou release executado acidentalmente.
+
+
+## Encerramento e limpeza de pastas temporárias — regra vigente
+
+Status: vigente. Escopo: cópias de trabalho em /home/dejota/Workspace/fullstack/. Responsável: @control/@dev. Revisão: 2026-10-13. Regra estabelecida pelo usuário após a limpeza das oito worktrees encerradas.
+
+Ao concluir uma tarefa, revisão, preview ou release, conferir as pastas temporárias usadas e encerrar as que não têm finalidade atual. O pedido do usuário autoriza essa limpeza dentro deste escopo quando todos os critérios abaixo forem comprovados; não pedir novamente a mesma autorização para cada pasta encerrada.
+
+1. Confirmar a finalidade, a conclusão da entrega e a ausência de uso atual por outro chat, tarefa, PR ou processo. Nome antigo e ausência de processo, isoladamente, não comprovam abandono.
+2. Conferir o estado Git, arquivos não versionados e ignorados, commits exclusivos, credenciais locais, bancos e evidências. Uma pasta limpa no Git pode conter dados importantes ignorados.
+3. Garantir que o trabalho relevante está integrado ou recuperável em commits/branches conservados. Para mudanças locais e dados exclusivos, preservar no destino privado de backups e verificar integridade e recuperação antes de remover a pasta.
+4. Não copiar dependências e artefatos regeneráveis por rotina: node_modules, dist e .astro podem ser reconstruídos. Não classificar bancos locais, secrets, originais de mídia ou resultados exclusivos como cache sem inspeção.
+5. Remover worktrees encerradas pelo Git, usando o caminho absoluto conferido. Forçar remoção somente após preservar e verificar todas as alterações relevantes. Não usar exclusão recursiva ampla em fullstack.
+6. Limpar registros de worktrees inexistentes, atualizar os caminhos de retomada e conferir que o projeto principal e os serviços que devem continuar ativos funcionam.
+7. Registrar pastas removidas, justificativa, referências Git conservadas, localização e verificação da preservação e espaço recuperado. Ao terminar, informar o resultado ao usuário.
+
+Manter projetos principais, APIs, frentes em andamento, integrações ativas e backups necessários. Na dúvida, preservar a pasta e registrar a pendência; não inferir autorização para descartar trabalho único ou interromper outro chat. Remover uma worktree não implica apagar sua branch, stash ou histórico. A exclusão desses registros segue a política de higiene Git e exige sua própria evidência.
+
+A revisão de limpeza faz parte do encerramento de cada tarefa. Esta regra não cria uma tarefa agendada, não autoriza alterações em produção e não estabelece expiração automática de backups.
+
+
+
+## Codespaces e ambiente independente
+
+Status: procedimento de desenvolvimento; sem autorização automática de push, merge ou deploy. Revisão: 14/10/2026. Responsável: @control/@dev.
+
+Pode-se clonar a main em ambiente separado e executar npm ci, check, build:production e QA. Isso não recupera alterações locais não enviadas, integrações da máquina ou acervo privado. Ler as fontes obrigatórias e comparar versões antes de editar. Nunca copiar a árvore local inteira nem resolver diferenças de runtime pela data dos arquivos.
+
+No Codespace, trabalhar em /workspaces/dejotacode e branch própria. Manter porta 4321 privada, conferir processo antes de iniciar e não permitir fallback 4322. O ambiente existente validou instalação/check/build/QA na base 931a878; conexão pelo VS Code local confirmada visualmente em 13/10/2026 às 23:56 BRT. Isso não comprova sincronização de regras posterior.
+
+Conferir plano, consumo e bloqueio de orçamento antes do uso. A conta foi registrada sem pagamento, orçamento zero com bloqueio e timeout de dez minutos; consultar o estado atual em vez de presumir permanência. Parar encerra computação, mas armazenamento continua medido. Não criar outro ambiente por falha de conexão. Não excluir sem preservar e verificar trabalho único; commit apenas dentro do Codespace não é backup externo.
+
+Ao encerrar, parar o servidor e o Codespace e confirmar seu estado. Não confundir fechar a janela com parar o ambiente. Toda mudança de permissão, cobrança, infraestrutura ou publicação mantém autorização própria. Credenciais nunca pertencem ao repositório.
