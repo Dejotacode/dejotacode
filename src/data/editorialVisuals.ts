@@ -8,6 +8,7 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "pippit-talking-photo-teste-avatar": "/assets/posts/pippit-talking-photo-quadros-documentais-v4.svg",
   "passkey-o-que-e-como-funciona": "/assets/posts/passkey-o-que-e-como-funciona-editorial-assinatura-v1.svg",
   "extensoes-do-navegador-permissoes": "/assets/posts/extensoes-do-navegador-permissoes-editorial-assinatura-v1.svg",
   "elevencreative-brand-kit-identidade-visual-com-ia": "/assets/posts/elevencreative-brand-kit-identidade-visual-com-ia-editorial-assinatura-v1.svg",
@@ -99,6 +100,7 @@ export function resolveTrailVisual(slug: string) {
 }
 
 export const draftPostVisualAlts: Record<string, string> = {
+  "pippit-talking-photo-teste-avatar": "Dois quadros reais do avatar no Pippit, aos 0,7 e 6 segundos, com variações do símbolo na camiseta.",
   "passkey-o-que-e-como-funciona": "Celular com símbolo de desbloqueio local ao lado de notebook; ilustração conceitual de autenticação com passkey, sem envio de biometria.",
   "extensoes-do-navegador-permissoes": "Janela conceitual com extensões e controles de permissão; não representa a interface real de um navegador.",
   "elevencreative-brand-kit-identidade-visual-com-ia": "Painel de referências, amostras de cores e peças com identidade consistente; ilustração de brand kit, sem interface real ElevenCreative.",
@@ -123,6 +125,7 @@ export const draftPostVisualAlts: Record<string, string> = {
   "raindrop-io-para-desenvolvedores": "Referências e registros organizados em tela e anotações; ilustração de pesquisa, não interface real Raindrop.io."
 };
 export const draftPostVisualCaptions: Record<string, string> = {
+  "pippit-talking-photo-teste-avatar": "Quadros reais do teste Pippit, aos 0,7 s (esquerda) e 6 s (direita). Avatar, legendas e selo AI preservados; sem reconstrução dos elementos da marca.",
   "passkey-o-que-e-como-funciona": "Ilustração editorial criada com IA; composição conceitual, sem captura real ou teste próprio. Símbolo oficial aplicado separadamente.",
   "extensoes-do-navegador-permissoes": "Ilustração editorial criada com IA; composição conceitual, sem captura real ou teste próprio. Símbolo oficial aplicado separadamente.",
   "elevencreative-brand-kit-identidade-visual-com-ia": "Ilustração editorial criada com IA; composição conceitual, sem captura real ou teste próprio. Símbolo oficial aplicado separadamente.",
