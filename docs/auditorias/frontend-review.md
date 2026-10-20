@@ -658,3 +658,12 @@ Status: publicado e homologado. PR #275, commit 7d531d8e2142f894476ee6db68c91c6e
 ## Fichas iProVPN e EINSTAR 2 — 13/10/2026
 
 Modelo Store existente: /store/iprovpn/ e /store/einstar-2/. Capas específicas e cards relacionados nos artigos iProVPN/escolha de scanner validados em 32 combinações, sem problemas. Usuário aprovou texto, liberação dos drafts e capas, e autorizou publicação. Fonte de mídia e lacuna de direitos do fornecedor em docs/operacao/monetizacao-parceiros.md.
+
+
+## Publicacao de quatro artigos e ficha EarFun — 20/10/2026
+
+Status: autorizada pelo usuario apos aprovacao das capas; pacote isolado em validacao. Publicar passkeys, permissoes de extensoes, ElevenCreative Brand Kit e EarFun Air Pro 4+, com ficha Store EarFun. Honeygain excluido explicitamente; demais rascunhos e trabalhos locais preservados. Datas de publicacao ajustadas a entrega; frase operacional de pre-publicacao removida da ficha EarFun.
+
+Tres capas conceituais imagegen com simbolo dark oficial separado (caixa 5%, margem 3%); acervo de 140 registros consultado antes de gerar, sem opcao especifica adequada. EarFun usa imagem promocional oficial https://api.myearfun.com/image/goods/990x0u9g8csg3ceojlg.jpg, preservada integralmente, sem assinatura DejotaCode, compartilhada por artigo/Store. Origem oficial nao certifica autorizacao de reutilizacao; lacuna documental mantida, sem declarar teste fisico.
+
+Fontes reconsultadas em 20/10: anuncio Brand Kit https://elevenlabs.io/pt/blog/introducing-brand-kit, indice https://fidoalliance.org/passkey-index-2026/ e pagina oficial EarFun Air Pro 4+ branco. Nenhuma alteracao de API, DNS, D1, secrets, infraestrutura ou dependencias. Evidencias e fontes locais: /home/dejota/Workspace/media-dejotacode/capas-rascunhos-20261020/.
