@@ -8,6 +8,10 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "passkey-o-que-e-como-funciona": "/assets/posts/passkey-o-que-e-como-funciona-editorial-assinatura-v1.svg",
+  "extensoes-do-navegador-permissoes": "/assets/posts/extensoes-do-navegador-permissoes-editorial-assinatura-v1.svg",
+  "elevencreative-brand-kit-identidade-visual-com-ia": "/assets/posts/elevencreative-brand-kit-identidade-visual-com-ia-editorial-assinatura-v1.svg",
+  "earfun-air-pro-4-plus-o-que-avaliar-antes-de-comprar": "/assets/posts/earfun-air-pro-4-plus-oficial-v1.svg",
   "senhas-mais-comuns": "/assets/posts/senhas-mais-comuns-editorial-assinatura-v1.svg",
   "gemini-4-argon": "/assets/posts/gemini-4-argon-editorial-assinatura-v1.svg",
   "minha-senha-vazou-o-que-fazer-agora": "/assets/posts/minha-senha-vazou-o-que-fazer-agora-editorial-assinatura-v2.svg",
@@ -95,6 +99,10 @@ export function resolveTrailVisual(slug: string) {
 }
 
 export const draftPostVisualAlts: Record<string, string> = {
+  "passkey-o-que-e-como-funciona": "Celular com símbolo de desbloqueio local ao lado de notebook; ilustração conceitual de autenticação com passkey, sem envio de biometria.",
+  "extensoes-do-navegador-permissoes": "Janela conceitual com extensões e controles de permissão; não representa a interface real de um navegador.",
+  "elevencreative-brand-kit-identidade-visual-com-ia": "Painel de referências, amostras de cores e peças com identidade consistente; ilustração de brand kit, sem interface real ElevenCreative.",
+  "earfun-air-pro-4-plus-o-que-avaliar-antes-de-comprar": "Imagem promocional oficial da EarFun com pessoa usando o Air Pro 4+ branco; não é registro de teste da DejotaCode.",
   "senhas-mais-comuns": "Pessoa avaliando três exemplos idênticos de senha previsível em uma tela conceitual; exemplos fictícios, sem dados pessoais.",
   "gemini-4-argon": "Desenvolvedora revisando código com um assistente de IA e etapas ilustrativas de leitura, edição e testes; não é captura do Gemini.",
   "minha-senha-vazou-o-que-fazer-agora": "Ilustração de uma pessoa revisando contas no computador e no celular após um alerta de senha exposta; interfaces conceituais, sem dados pessoais.",
@@ -115,6 +123,10 @@ export const draftPostVisualAlts: Record<string, string> = {
   "raindrop-io-para-desenvolvedores": "Referências e registros organizados em tela e anotações; ilustração de pesquisa, não interface real Raindrop.io."
 };
 export const draftPostVisualCaptions: Record<string, string> = {
+  "passkey-o-que-e-como-funciona": "Ilustração editorial criada com IA; composição conceitual, sem captura real ou teste próprio. Símbolo oficial aplicado separadamente.",
+  "extensoes-do-navegador-permissoes": "Ilustração editorial criada com IA; composição conceitual, sem captura real ou teste próprio. Símbolo oficial aplicado separadamente.",
+  "elevencreative-brand-kit-identidade-visual-com-ia": "Ilustração editorial criada com IA; composição conceitual, sem captura real ou teste próprio. Símbolo oficial aplicado separadamente.",
+  "earfun-air-pro-4-plus-o-que-avaliar-antes-de-comprar": "Foto promocional do fabricante EarFun, preservada sem redesenho do produto e sem assinatura DejotaCode. Não representa teste próprio.",
   "senhas-mais-comuns": "Ilustração editorial criada com IA; cena e interface conceituais, sem captura real ou teste próprio. Símbolo oficial composto separadamente.",
   "gemini-4-argon": "Ilustração editorial criada com IA; cena e interface conceituais, sem captura real ou teste próprio. Símbolo oficial composto separadamente.",
   "minha-senha-vazou-o-que-fazer-agora": "Ilustração editorial criada com IA. Cena e interfaces conceituais; não é captura real, teste de produto ou registro de uma pessoa do DejotaCode.",
