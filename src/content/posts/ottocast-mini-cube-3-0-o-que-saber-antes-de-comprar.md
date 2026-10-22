@@ -2,6 +2,7 @@
 title: "Ottocast Mini Cube 3.0: o que saber antes de comprar"
 description: "Entenda para que serve o Ottocast Mini Cube 3.0, quais requisitos de compatibilidade conferir e quando um adaptador de CarPlay ou Android Auto sem fio pode fazer sentido."
 publishedAt: 2026-10-10
+updatedAt: 2026-10-22
 category: tecnologia-pratica
 type: artigo
 readingTime: 8
@@ -112,6 +113,50 @@ Ainda não fizemos um teste físico do produto, então não seria correto aprese
 A DejotaCode participa do programa de afiliados da Ottocast pela Awin. O link disponível na Store leva ao site oficial da marca e pode gerar comissão para o projeto quando uma compra elegível é atribuída corretamente ao nosso link, sem custo adicional definido pela DejotaCode para o comprador.
 
 Condições comerciais e regras de atribuição da comissão podem mudar e devem ser conferidas no programa de afiliados.
+
+## Um roteiro para decidir sem depender do anúncio
+
+Use este roteiro como organização da compra, não como certificação de compatibilidade da DejotaCode. Registre marca, modelo e ano do veículo, identificação da central, modelo do telefone e versão do sistema.
+
+### Primeiro: confirme o recurso que já existe
+
+Com o carro estacionado, confira no manual da central e no uso por cabo se o recurso desejado está disponível. Uma porta carregar o telefone ou tocar música por USB não demonstra, por si só, suporte a CarPlay ou Android Auto.
+
+Anote também qual porta você usou. Comprar um conector que encaixa fisicamente não resolve a ausência do recurso na central.
+
+### Depois: classifique sua situação
+
+- **O recurso funciona por cabo e os requisitos do fabricante correspondem ao seu conjunto:** faz sentido avançar para a confirmação do modelo e das condições de compra.
+- **O recurso não funciona por cabo ou você ainda não sabe se existe:** esclareça isso antes de escolher o adaptador. Não use a compra como teste da existência do recurso.
+- **O carro já oferece conexão sem fio satisfatória:** identifique qual problema concreto o novo adaptador resolveria antes de gastar.
+- **A central foi substituída:** use o modelo exato da central, além do nome do veículo, ao pedir confirmação.
+- **Há uma exceção ou informação contraditória:** espere uma resposta específica do suporte antes da compra.
+
+O objetivo é terminar com evidências sobre seu conjunto, não apenas com uma lista genérica de marcas de carros.
+
+### Perguntas para enviar ao suporte
+
+Você pode adaptar estas perguntas ao seu caso:
+
+1. Este Mini Cube 3.0 é indicado para o veículo, ano, central e telefone que informei?
+2. Qual opção de conector devo selecionar para a porta de dados identificada?
+3. Existe alguma restrição conhecida para essa central ou versão do telefone?
+4. Qual procedimento vocês orientam se houver falha de conexão?
+5. Quais condições de devolução se aplicam à minha compra e ao país de entrega?
+
+Guarde a resposta e o anúncio consultado. Não envie documentos pessoais ou identificadores do veículo que não sejam necessários à consulta.
+
+### O que continua dependendo de um teste real
+
+Mesmo com requisitos atendidos, este artigo não verifica latência, estabilidade em viagens, comportamento com dois telefones ou reconexão no seu veículo. Essas perguntas exigem observação do conjunto específico; uma promessa comercial não é uma medição independente.
+
+## Fonte oficial e limites da atualização
+
+A [página oficial do Ottocast Mini Cube 3.0](https://www.ottocast.com/products/ottocast-mini-cube-3-0-wireless-carplay-android-auto-adapter) foi reconferida em 22/10/2026, especialmente a seção de requisitos antes da compra.
+
+Nessa consulta, a fabricante mantinha a exigência de CarPlay ou Android Auto com fio de fábrica, listava restrição a centrais Sony aftermarket e solicitava consulta prévia para veículos Mitsubishi. Isso não confirma compatibilidade de um carro individual.
+
+A verificação atual é documental. Não houve novo teste físico, validação do atendimento do suporte ou confirmação das condições de compra para o Brasil. O link comercial existente continua identificado na Store; a referência acima permite conferir diretamente a fonte dos requisitos.
 
 ## Antes de finalizar a compra
 
