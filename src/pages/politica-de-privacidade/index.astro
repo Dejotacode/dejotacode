@@ -11,6 +11,7 @@ const sections = [
   { id: "uso", title: "Como usamos os dados" },
   { id: "bases", title: "Bases legais e consentimento" },
   { id: "armazenamento", title: "Cookies e armazenamento local" },
+  { id: "google", title: "Google Analytics e publicidade" },
   { id: "formularios", title: "Newsletter e formulários" },
   { id: "afiliados", title: "Afiliados e links externos" },
   { id: "fornecedores", title: "Fornecedores e compartilhamento" },
@@ -34,7 +35,7 @@ const sections = [
         <p class="article-category"><CategoryIcon icon="shield-check" size={17} /><span class="article-category__name">PRIVACIDADE</span></p>
         <h1>Política de Privacidade</h1>
         <p class="article-hero__description">Transparência sobre quais dados podem ser tratados, por que isso acontece e quais escolhas você tem.</p>
-        <div class="article-meta"><span class="article-meta__item"><CategoryIcon icon="calendar" size={15} /><span>Última atualização: <time datetime="2026-10-07">7 de outubro de 2026</time></span></span></div>
+        <div class="article-meta"><span class="article-meta__item"><CategoryIcon icon="calendar" size={15} /><span>Última atualização: <time datetime="2026-10-22">22 de outubro de 2026</time></span></span></div>
       </div>
     </header>
     <div class="article-layout container">
@@ -98,36 +99,46 @@ const sections = [
           <p>Quando cookies ou tecnologias semelhantes forem necessários para outras finalidades, o uso deverá respeitar a finalidade informada e as escolhas disponíveis ao usuário.</p>
         </section>
 
-        <section id="formularios">
+        <section id="google">
           <span class="eyebrow">07</span>
+          <h2>Google Analytics e publicidade</h2>
+          <p>O site utiliza o Google Analytics 4 para medir a navegação e mantém integração com o Google AdSense para avaliação e eventual veiculação de publicidade. A presença dessa integração não significa que o site já tenha sido aprovado ou que anúncios sejam exibidos em todas as visitas.</p>
+          <p>Ao carregar serviços do Google, o navegador pode transmitir informações como endereço da página visitada, endereço IP e dados técnicos do dispositivo. O Google pode utilizar cookies e tecnologias semelhantes para medição, funcionamento dos serviços, prevenção de fraude e, conforme as configurações e escolhas aplicáveis, personalização de anúncios.</p>
+          <p>Fornecedores de publicidade, incluindo o Google e seus parceiros, podem usar cookies para apresentar anúncios com base em visitas anteriores a este site ou a outros sites. Você pode consultar ou desativar a personalização nas <a href="https://adssettings.google.com/">Configurações de anúncios do Google</a>. Desativar a personalização não significa impedir toda medição ou deixar de receber publicidade contextual.</p>
+          <p>Outros fornecedores ou redes participantes podem ter controles próprios. O <a href="https://www.aboutads.info/choices/">serviço de escolhas da Digital Advertising Alliance</a> permite consultar opções de alguns fornecedores; ele não abrange necessariamente todas as tecnologias ou empresas.</p>
+          <p>Confira <a href="https://policies.google.com/technologies/partner-sites">como o Google utiliza informações de sites e aplicativos parceiros</a>. Para o Analytics, o Google disponibiliza um <a href="https://tools.google.com/dlpage/gaoptout">complemento de desativação para navegadores compatíveis</a>. Esses controles são oferecidos por terceiros e não substituem escolhas de consentimento que sejam exigidas para sua região.</p>
+        </section>
+
+        <section id="formularios">
+          <span class="eyebrow">08</span>
           <h2>Newsletter e formulários</h2>
           <p>Ao preencher a newsletter ou o formulário de contato, são tratados apenas os dados necessários para atender a solicitação. O envio exige a manifestação de consentimento apresentada no próprio formulário.</p>
           <p>Você pode solicitar a interrupção de comunicações ou a exclusão de dados relacionados à inscrição, ressalvadas situações em que a conservação seja necessária por obrigação legal ou outra hipótese permitida pela LGPD.</p>
         </section>
 
         <section id="afiliados">
-          <span class="eyebrow">08</span>
+          <span class="eyebrow">09</span>
           <h2>Afiliados e links externos</h2>
           <p>Alguns conteúdos contêm links de afiliado. Quando você acessa uma oferta por esses links, a plataforma de destino pode registrar parâmetros necessários para atribuir a indicação ao DejotaCode.</p>
           <p>A relação comercial é identificada de forma transparente e não altera os critérios editoriais. Sites externos possuem suas próprias políticas de privacidade e regras de tratamento de dados.</p>
         </section>
 
         <section id="fornecedores">
-          <span class="eyebrow">09</span>
+          <span class="eyebrow">10</span>
           <h2>Fornecedores e compartilhamento</h2>
           <p>Serviços de infraestrutura, hospedagem, segurança, banco de dados e outros recursos técnicos podem processar dados estritamente necessários para executar suas funções. O site utiliza infraestrutura da Cloudflare para operação, proteção e armazenamento de componentes do serviço.</p>
           <p>O compartilhamento é limitado ao necessário para a finalidade correspondente ou para cumprir obrigação legal. O DejotaCode não comercializa bases de dados pessoais.</p>
         </section>
 
         <section id="conservacao">
-          <span class="eyebrow">10</span>
+          <span class="eyebrow">11</span>
           <h2>Conservação e segurança</h2>
           <p>Os dados são mantidos pelo período necessário para cumprir a finalidade para a qual foram coletados, atender solicitações, preservar registros necessários à segurança ou cumprir obrigações legais.</p>
           <p>São adotadas medidas técnicas e organizacionais razoáveis para reduzir riscos de acesso não autorizado, alteração, perda ou uso indevido. Nenhum sistema conectado à internet, entretanto, pode oferecer garantia absoluta de segurança.</p>
         </section>
 
         <section id="direitos">
-          <span class="eyebrow">11</span>
+          <span class="eyebrow">12</span>
           <h2>Seus direitos pela LGPD</h2>
           <p>Nos termos da LGPD e conforme aplicável ao caso concreto, você pode solicitar:</p>
           <ul>
@@ -143,14 +154,14 @@ const sections = [
         </section>
 
         <section id="exercer">
-          <span class="eyebrow">12</span>
+          <span class="eyebrow">13</span>
           <h2>Como exercer seus direitos</h2>
           <p>Para fazer uma solicitação relacionada aos seus dados pessoais, utilize a página de contato do DejotaCode e informe que o assunto é privacidade. Poderemos solicitar informações adicionais apenas quando necessárias para confirmar a identidade do solicitante e proteger os dados contra acesso indevido.</p>
           <a class="button button-secondary" href="/contato/?assunto=privacidade">Falar sobre privacidade</a>
         </section>
 
         <section id="alteracoes">
-          <span class="eyebrow">13</span>
+          <span class="eyebrow">14</span>
           <h2>Alterações desta política</h2>
           <p>Esta política pode ser atualizada quando houver mudanças relevantes nos recursos, fornecedores, práticas de tratamento ou requisitos legais. A data da versão mais recente será indicada no início desta página.</p>
         </section>
