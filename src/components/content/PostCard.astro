@@ -25,11 +25,22 @@ const {
 } = Astro.props;
 const category = post.data.category;
 const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
+// Responsive derivatives of the approved cover, with its composition preserved.
+const responsiveFeatured = featured && blogMetaIcons && visual ===
+  "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp";
+const featuredSrcset = responsiveFeatured
+  ? [480, 768, 1024].map((width) =>
+      `/assets/posts/responsive/como-estudar-tecnologia-sem-se-perder-${width}w.webp ${width}w`,
+    ).concat(`${visual} 1440w`).join(", ")
+  : undefined;
 ---
 
 <article class:list={["post-card", { "post-card--featured": featured }]}>
   <div class="post-card__visual">
-    <VisualMedia src={visual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial de ${categories[category]}`} label={post.data.title} loading={featured ? "eager" : "lazy"} />
+    <VisualMedia src={visual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={`Ilustração editorial de ${categories[category]}`} label={post.data.title} loading={featured ? "eager" : "lazy"}
+      srcset={featuredSrcset}
+      sizes={responsiveFeatured ? "(max-width: 600px) calc(100vw - 64px), (max-width: 1244px) 46vw, 540px" : undefined}
+      fetchpriority={featured && blogMetaIcons ? "high" : undefined} />
   </div>
 
   <div class="post-card__body">

@@ -1,4 +1,5 @@
 ---
+import { FIRST_PAGE_COUNT, PAGE_SIZE } from "../../lib/blogPagination";
 import Pagination from "../../components/ui/Pagination.astro";
 import PostCard from "../../components/content/PostCard.astro";
 import CategoryIcon from "../../components/ui/CategoryIcon.astro";
@@ -14,8 +15,6 @@ import {
 import "../../styles/editorial.css";
 import "../../styles/blog.css";
 
-const FIRST_PAGE_COUNT = 7;
-const PAGE_SIZE = 6;
 const posts = await getPublishedPosts();
 const featuredPost = getFeaturedPost(posts);
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);

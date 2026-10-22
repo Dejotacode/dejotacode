@@ -6,20 +6,26 @@ interface Props {
   aspect?: "wide" | "card" | "square";
   loading?: "eager" | "lazy";
   fallbackSrc?: string;
+  srcset?: string;
+  sizes?: string;
+  fetchpriority?: "high" | "low" | "auto";
 }
-const { src, alt = "", label = "DejotaCode", aspect = "wide", loading = "lazy", fallbackSrc } = Astro.props;
+const { src, alt = "", label = "DejotaCode", aspect = "wide", loading = "lazy", fallbackSrc, srcset, sizes, fetchpriority } = Astro.props;
 const dimensions = aspect === "square" ? { width: 900, height: 900 } : aspect === "card" ? { width: 1200, height: 900 } : { width: 1600, height: 900 };
 ---
 <div class:list={["visual-media", `visual-media--${aspect}`, { "visual-media--fallback": !src }]}>
   {src ? (
     <img
       src={src}
+      srcset={srcset}
+      sizes={sizes}
+      fetchpriority={fetchpriority}
       alt={alt}
       width={dimensions.width}
       height={dimensions.height}
       loading={loading}
       decoding="async"
-      onerror={fallbackSrc ? `this.onerror=null;this.src=\'${fallbackSrc}\'` : undefined}
+      onerror={fallbackSrc ? `this.onerror=null;this.removeAttribute('srcset');this.removeAttribute('sizes');this.src=\'${fallbackSrc}\'` : undefined}
     />
   ) : (
     <div class="visual-media__fallback" aria-hidden="true">

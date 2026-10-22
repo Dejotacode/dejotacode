@@ -667,3 +667,12 @@ Status: autorizada pelo usuario apos aprovacao das capas; pacote isolado em vali
 Tres capas conceituais imagegen com simbolo dark oficial separado (caixa 5%, margem 3%); acervo de 140 registros consultado antes de gerar, sem opcao especifica adequada. EarFun usa imagem promocional oficial https://api.myearfun.com/image/goods/990x0u9g8csg3ceojlg.jpg, preservada integralmente, sem assinatura DejotaCode, compartilhada por artigo/Store. Origem oficial nao certifica autorizacao de reutilizacao; lacuna documental mantida, sem declarar teste fisico.
 
 Fontes reconsultadas em 20/10: anuncio Brand Kit https://elevenlabs.io/pt/blog/introducing-brand-kit, indice https://fidoalliance.org/passkey-index-2026/ e pagina oficial EarFun Air Pro 4+ branco. Nenhuma alteracao de API, DNS, D1, secrets, infraestrutura ou dependencias. Evidencias e fontes locais: /home/dejota/Workspace/media-dejotacode/capas-rascunhos-20261020/.
+
+
+## Blog: 12 cards e imagem responsiva — 22/10/2026
+
+Publicação autorizada pelo usuário após preview local. Primeira página: destaque +12 cards; seguintes:12. Regras 301 geradas no build para antigas páginas7–12 acima do total atual; liberam rotas quando o acervo cresce. Constantes em blogPagination.ts.
+
+Destaque do Blog com fetchpriority high, mantendo eager e imagens inferiores lazy. Cópias responsivas da capa aprovada como-estudar-tecnologia-sem-se-perder, sem recorte/redesenho:480/768/1024px,18000/34928/51240 bytes, original161254 bytes preservado. Sharp resize sem ampliação, WebP quality82. VisualMedia recebe srcset/sizes opcionais e limpa esses atributos antes do fallback. Se o destaque mudar, preparar derivadas da nova fonte.
+
+Preview Brave em320/390/768/1440px, temas claro/escuro:12cards, capa carregada, sem overflow. Check/build/QA aprovados no principal; validação isolada e CI são gates da entrega. Sem mudança de textos, categorias, links comerciais, API ou analytics. Nova nota PageSpeed não medida; relatório anterior desktop95/mobile81 e LCP mobile4,5s.
