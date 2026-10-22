@@ -2,10 +2,10 @@
 title: "Como usar o DevTools do navegador: guia para iniciantes"
 description: "Aprenda como usar o DevTools do navegador para inspecionar HTML, testar CSS, identificar erros no Console, analisar requisições e depurar páginas passo a passo."
 publishedAt: 2026-09-16
-updatedAt: 2026-10-13
+updatedAt: 2026-10-22
 category: programacao
 type: tutorial
-readingTime: 9
+readingTime: 8
 difficulty: iniciante
 featured: false
 draft: false
@@ -158,6 +158,93 @@ Quando algo estiver errado em uma página, tente esta ordem:
 8. valide novamente.
 
 Esse processo reduz tentativas aleatórias e ajuda você a aprender com cada problema.
+
+## Exercício: por que o botão não recebeu o estilo?
+
+Este é um exemplo didático com um erro proposital. Ele não veio de um incidente do site. Você vai comparar o HTML com o CSS, identificar a causa e salvar a correção no arquivo.
+
+Crie uma pasta separada e salve o conteúdo abaixo como `index.html`. Abra esse arquivo no navegador. Ele não envia dados nem precisa de instalação.
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercício de diagnóstico CSS</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+
+      .botao-destaque {
+        background-color: #064e3b;
+        color: #ffffff;
+        border: 0;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Diagnóstico de um botão</h1>
+    <p>O botão deveria ter fundo verde e texto branco.</p>
+    <button type="button" class="botao-destque">Exemplo visual</button>
+  </body>
+</html>
+```
+
+O botão só demonstra estilo: não há JavaScript ou ação de envio. Por enquanto, ele deve aparecer com a apresentação padrão do navegador em vez do estilo verde esperado.
+
+### 1. Registre esperado e observado
+
+**Esperado:** fundo verde, texto branco e espaçamento interno definido no CSS.
+
+**Observado:** o estilo definido em `.botao-destaque` não aparece no botão.
+
+Ainda não conclua que o navegador ignorou o arquivo ou que falta `!important`. Primeiro descubra se a regra corresponde ao elemento.
+
+### 2. Inspecione o botão
+
+Clique com o botão direito sobre ele e escolha **Inspecionar**. No painel de elementos, confira o atributo `class`. No exemplo, ele está escrito como `botao-destque`.
+
+Compare com o seletor do CSS: `.botao-destaque`. Falta a letra `a` no nome da classe do HTML. São dois nomes diferentes; a regra não seleciona esse botão.
+
+No painel **Styles**, a regra `.botao-destaque` não deve aparecer como uma regra correspondente ao botão. Isso é diferente de uma propriedade riscada: uma regra riscada pode ter sido superada, enquanto neste exercício o seletor nem corresponde ao elemento.
+
+### 3. Teste a hipótese e salve a correção
+
+Você pode experimentar corrigir a classe no painel de elementos, mas essa edição é temporária no fluxo deste exercício.
+
+Volte ao editor e substitua somente a linha do botão por:
+
+```html
+<button type="button" class="botao-destaque">Exemplo visual</button>
+```
+
+Salve o arquivo e recarregue a página. Agora confira se o fundo ficou verde e se a regra aparece no painel de estilos ao inspecionar o botão.
+
+### 4. Confira se a correção permanece
+
+Recarregue mais uma vez. Se o botão voltar ao estilo padrão, confira se salvou o arquivo certo e se abriu a mesma pasta no navegador. Corrigir apenas a representação temporária nas DevTools não atualiza automaticamente seu projeto.
+
+Para encerrar, explique a causa sem depender da aparência: **o seletor e o atributo de classe tinham nomes diferentes**. Essa explicação continua válida mesmo que você escolha outra cor para o botão.
+
+## Quando o exercício não explica o seu problema
+
+Em uma página real, se a classe já estiver correta, não aplique a mesma solução por hábito. Diferencie as situações:
+
+- **Regra não aparece:** confira o seletor e se a folha de estilos foi carregada.
+- **Propriedade aparece riscada:** investigue a regra que venceu na cascata.
+- **Arquivo CSS falhou em Network:** confira endereço e status da requisição.
+- **Você mudou o arquivo, mas a página parece antiga:** confirme o caminho aberto e se a versão salva está sendo servida antes de atribuir o problema ao cache.
+
+Neste exercício, o CSS está no próprio HTML. Em projetos com arquivo externo, Network ajuda a descobrir se a folha de estilos foi solicitada e carregada; essa etapa não é necessária para explicar o erro de digitação apresentado aqui.
+
+## Referência para continuar a prática
+
+O [guia oficial de inspeção e alteração de CSS no Chrome DevTools](https://developer.chrome.com/docs/devtools/css) apresenta os painéis de estilos e a aplicação de classes. Consultado em 22/10/2026. Os nomes visuais podem variar conforme navegador, idioma e versão.
 
 ## Próximo passo
 
