@@ -8,6 +8,10 @@ export const postCategoryVisuals: Record<string, string> = {
 
 
 const postSpecificVisuals: Record<string, string> = {
+  "filmcraft-artcraft-o-que-conferir-antes-de-migrar": "/assets/posts/filmcraft-interface-oficial-v1.svg",
+  "earfun-wave-pro-x-conexoes-limites-antes-de-comprar": "/assets/posts/earfun-wave-pro-x-oficial-v1.jpg",
+  "earfun-clip-2-o-que-avaliar-antes-de-comprar": "/assets/posts/earfun-clip-2-oficial-v1.svg",
+  "ottocast-u2air-edge-compatibilidade-antes-de-comprar": "/assets/posts/ottocast-u2air-edge-oficial-v1.svg",
   "minimax-m31-flash-gratis-teste-openrouter": "/assets/posts/minimax-m31-flash-gratis-teste-openrouter-editorial-assinatura-v1.svg",
   "newsletter-brevo-double-opt-in-na-pratica": "/assets/posts/newsletter-brevo-double-opt-in-na-pratica-editorial-assinatura-v1.svg",
   "como-escolher-hardware-linux-antes-de-comprar": "/assets/posts/como-testar-linux-sem-instalar-humano-assinatura-v1.webp",
@@ -128,6 +132,10 @@ export function resolveTrailVisual(slug: string) {
 }
 
 export const draftPostVisualAlts: Record<string, string> = {
+  "filmcraft-artcraft-o-que-conferir-antes-de-migrar": "Captura oficial do FilmCraft com monitor de vídeo, scopes e timeline de várias trilhas.",
+  "earfun-wave-pro-x-conexoes-limites-antes-de-comprar": "Mulher usando o headphone EarFun Wave Pro X diante de uma estante de discos; imagem promocional oficial.",
+  "earfun-clip-2-o-que-avaliar-antes-de-comprar": "Par de fones EarFun Clip 2 pretos em imagem oficial da fabricante; formato aberto em clipe.",
+  "ottocast-u2air-edge-compatibilidade-antes-de-comprar": "Imagem promocional oficial do adaptador Ottocast U2Air Edge; não é registro de teste da DejotaCode.",
   "minimax-m31-flash-gratis-teste-openrouter": "Revisão de código e testes representados por uma interface conceitual; não é captura da resposta MiniMax.",
   "newsletter-brevo-double-opt-in-na-pratica": "Formulário, mensagem de confirmação e inscrição representam as etapas de double opt-in; ilustração conceitual, sem dados de contatos.",
   "como-escolher-hardware-linux-antes-de-comprar": "Pessoa conferindo áudio em um computador com ambiente Linux ilustrativo e periféricos conectados.",
@@ -181,6 +189,10 @@ export const draftPostVisualAlts: Record<string, string> = {
   "raindrop-io-para-desenvolvedores": "Referências e registros organizados em tela e anotações; ilustração de pesquisa, não interface real Raindrop.io."
 };
 export const draftPostVisualCaptions: Record<string, string> = {
+  "filmcraft-artcraft-o-que-conferir-antes-de-migrar": "Captura oficial: © 2026 ArtCraft Team e FilmCraft contributors. Licença MIT; crédito, origem e aviso integral ao final do artigo. Não representa teste da DejotaCode.",
+  "earfun-wave-pro-x-conexoes-limites-antes-de-comprar": "Imagem promocional oficial da EarFun, preservada sem redesenho ou assinatura adicional. Não representa teste realizado pela DejotaCode.",
+  "earfun-clip-2-o-que-avaliar-antes-de-comprar": "Referência oficial da EarFun para o Clip 2. Produto preservado sem redesenho; não representa teste próprio.",
+  "ottocast-u2air-edge-compatibilidade-antes-de-comprar": "Referência promocional oficial da Ottocast, preservada sem redesenho do produto. Não representa teste próprio.",
   "minimax-m31-flash-gratis-teste-openrouter": "Ilustração editorial criada com IA sobre revisão de código; não é captura da resposta MiniMax nem evidência do teste. Símbolo oficial aplicado separadamente.",
   "newsletter-brevo-double-opt-in-na-pratica": "Ilustração editorial criada com IA sobre formulário, confirmação e inscrição. Não contém contatos reais nem representa a interface da Brevo. Símbolo oficial aplicado separadamente.",
   "como-escolher-hardware-linux-antes-de-comprar": "Ilustração editorial criada com IA e reutilizada do acervo. Representa uma verificação de hardware; não é teste próprio nem certificação do equipamento.",
