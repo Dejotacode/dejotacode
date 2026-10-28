@@ -29,7 +29,7 @@ Imagens: antes de propor, gerar ou substituir qualquer capa, ler o conteúdo com
 Reutilizar tokens de src/styles/tokens.css, componentes layout/ui/content e variantes documentadas. Não escolher estilo pela tag isolada.
 Registrar cada modelo e rota em docs/auditorias/frontend-review.md; documentar novas variantes antes de usá-las em várias páginas.
 Preservar conteúdo, rotas, SEO, links comerciais, analytics e funcionalidades.
-Trabalho atual: /home/dejota/Workspace/fullstack/dejotacode, preview 4321. Não iniciar 4322.
+Desenvolvimento com outras frentes: /home/dejota/Workspace/dejotacode-fullstack/dejotacode. Operação diária do Studio: /home/dejota/Workspace/dejotacode-fullstack/dejotacode-studio-operacao, worktree editorial limpa, preview principal 4321. Não iniciar 4322. Preservar a árvore de desenvolvimento; não fazer reset/pull em workspace misto. A separação operacional do Studio foi solicitada pelo usuário em 28/10/2026.
 Validar check/build/QA, 320/390/768/1440px, temas claro/escuro, teclado, estados e variações reais dos modelos.
 Não publicar, push ou deploy sem instrução explícita do usuário. Autorizações locais incluem edições reversíveis e commits locais.
 
