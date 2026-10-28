@@ -703,3 +703,10 @@ Na candidata, três links quebrados ao Control histórico foram convertidos em r
 Na worktree de revisão, falhas ao consultar relação com `official/main` ou status Git agora bloqueiam explicitamente a publicação. Parser de relação Git testado com referência ausente, saída malformada e números inválidos; consulta malsucedida não certifica alinhamento. Correção restrita à candidata, preview principal preservado.
 
 Validação final: cinco testes passaram; check 125 arquivos com zero erros, avisos e hints; build 209 páginas; QA público (links, HTML, SEO e AdSense) aprovado, com avisos editoriais de comprimento de metadados já registrados. Documentação da candidata 168 Markdown/402 referências aprovada. Diff sem erros de whitespace. Nenhum artigo ou produto modificado. Preparado commit local de revisão, sem push/merge/deploy. GitHub do Worker permanece sem token; base é referência local, sem fetch do remoto. Preview isolado 4331 continua para revisão visual; sessão Worker validada no principal 4321.
+
+
+### Publicação autorizada e correção do smoke do Admin — 28/10/2026
+
+Usuário autorizou integração do PR #338 e deploy automático. Merge concluído em `c30ecf937cf0f573632e32835f81be2aa0991c59`; execução 40738140911 concluiu check, build, QA e envio ao Cloudflare. A inspeção posterior identificou que `scripts/smoke-production.mjs` ainda exigia HTTP 200 para rotas do Admin removidas do build público nesta entrega.
+
+Correção complementar: smoke passa a exigir 404 para 11 rotas antigas de Admin e também conteúdo, login e JSON editorial; páginas públicas e autenticação anônima da API mantêm expectativas anteriores. Validação contra build estático local e Worker local: 25 verificações aprovadas. Verificação pública inicial de home/blog retornou 200; novas rotas Studio/JSON retornaram 404, mas /admin/ ainda retornou página legada com cabeçalho Age antigo. Não declarar propagação completa nem exposição do novo Studio com base nessa resposta. Conferir produção após execução corrigida. Sem reabrir Admin público e sem alterar dados editoriais.
