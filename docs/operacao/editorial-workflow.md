@@ -23,7 +23,7 @@ Mídia e métricas mantêm as operações existentes dentro da navegação do St
 7. Abrir o diff no GitHub, consultar o CI e revisar o HEAD. Somente PR aberto, mergeável e CI aprovado permite integração.
 8. Confirmar a revisão e digitar PUBLICAR para integrar e iniciar o deploy automático.
 
-A preparação local verifica novamente branch, base, mudanças fora dos artigos, rascunho e dependências. Markdown completo, comentários YAML e campos adicionais são preservados. Se o arquivo mudar após a revisão, preparar novamente. Pacotes com mudanças em capa, código ou produto exigem fluxo isolado próprio. Falha de rede durante criação exige conferir o GitHub antes de repetir.
+A preparação local verifica novamente branch, base, main remota, mudanças fora dos artigos, rascunho e dependências. Após cada publicação, a worktree precisa ser alinhada à nova main antes do próximo pacote; se a rede ou a conferência remota falhar, a preparação fica bloqueada. Markdown completo, comentários YAML e campos adicionais são preservados. Se o arquivo mudar após a revisão, preparar novamente. Pacotes com mudanças em capa, código ou produto exigem fluxo isolado próprio. Falha de rede durante criação exige conferir o GitHub antes de repetir.
 
 O Worker existente continua criando branch content/admin-* e PR para main. Nenhum token fica no frontend. A autorização do usuário em cada publicação é independente da criação/salvamento do artigo.
 

@@ -16,7 +16,7 @@ test('publication preserves exact Markdown and rejects unsafe workspaces and dra
   try {
     await mkdir(join(root,'src/content/posts'),{recursive:true});
     await writeFile(path, raw);
-    git('init','-b','main'); git('add','src/content/posts/artigo.md');
+    git('init','-b','main'); git('remote','add','official','.'); git('add','src/content/posts/artigo.md');
     git('-c','user.name=Studio Test','-c','user.email=studio@example.test','commit','-m','baseline');
     git('update-ref','refs/remotes/official/main','HEAD');
     const posts = localPosts(root);

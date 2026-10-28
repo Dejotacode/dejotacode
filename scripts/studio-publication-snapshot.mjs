@@ -4,7 +4,7 @@ const fail = (status, message) => { throw Object.assign(new Error(message), { st
 /** @param {string} root @param {{slug:string,raw:string,version:string,fields:any}} post */
 export function publicationSnapshot(root, post) {
   const git = (...args) => {
-    try { return execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['ignore','pipe','ignore'] }).trimEnd(); }
+    try { return execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['ignore','pipe','ignore'], timeout: 15000, env: { ...process.env, GIT_TERMINAL_PROMPT: '0' } }).trimEnd(); }
     catch { return null; }
   };
   const branch = git('branch','--show-current');
@@ -12,6 +12,9 @@ export function publicationSnapshot(root, post) {
   const status = git('status','--porcelain=v1','--untracked-files=all');
   if (!branch || (branch !== 'main' && !branch.startsWith('content/admin-')) || !relation.verified || relation.behind || relation.ahead || status === null)
     fail(409, 'Use uma área editorial isolada e alinhada com official/main.');
+  const remote = git('ls-remote','official','refs/heads/main');
+  const remoteSha = remote?.split(/\s+/)[0];
+  if (!remoteSha || remoteSha !== git('rev-parse','official/main')) fail(409, 'A main remota mudou ou não pôde ser conferida. Atualize a área editorial antes de publicar.');
   const paths = status.split('\n').filter(Boolean).map(line => line.slice(3));
   if (paths.some(path => !/^src\/content\/posts\/[a-z0-9]+(?:-[a-z0-9]+)*\.md$/.test(path)))
     fail(409, 'Há mudanças fora dos artigos. Separe o pacote antes de publicar.');
