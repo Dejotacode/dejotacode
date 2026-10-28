@@ -2,7 +2,7 @@
 title: "Gerenciador de senhas para iniciantes: como escolher e começar"
 description: "Entenda como funciona um gerenciador de senhas, o que comparar antes de escolher e como proteger o cofre e a recuperação das suas contas."
 publishedAt: 2026-10-08
-updatedAt: 2026-10-09
+updatedAt: 2026-10-28
 category: linux-seguranca
 type: tutorial
 readingTime: 7
@@ -62,6 +62,8 @@ As ferramentas abaixo são exemplos de abordagens diferentes. Esta seleção nã
 ### NordPass
 
 A NordPass oferece um gerenciador de credenciais com armazenamento de senhas e passkeys, geração de senhas, salvamento automático e preenchimento automático. A documentação oficial lista suporte a Windows, macOS, Linux, Android e iOS, além de extensões para navegadores populares. Confira os recursos disponíveis no seu plano e no dispositivo que você usa.
+
+A documentação consultada em 28/10/2026 informa sincronização entre dispositivos tanto no Free quanto no Premium. A diferença é o uso simultâneo: o Free permite uma sessão ativa por vez, enquanto o Premium permite manter sessões em vários dispositivos. O Premium também inclui o Data Breach Scanner, que procura e-mails e cartões informados em bases de vazamentos conhecidos. Esse monitoramento não substitui senhas exclusivas nem autenticação em dois fatores.
 
 Na recuperação, a documentação distingue a senha da conta Nord, a senha mestra que desbloqueia o cofre e um código de recuperação de 24 caracteres. Se a senha mestra for perdida, esse código pode ser usado para redefini-la. Em alguns dispositivos, quem já configurou biometria pode conseguir redefinir o código de recuperação; sem a senha mestra, sem o código e sem esse acesso biométrico, o procedimento de redefinição completa da conta apaga os itens do cofre. Por isso, prepare a recuperação antes de depender da ferramenta.
 
@@ -152,6 +154,8 @@ Consultadas e revisadas em 09/10/2026. Recursos, planos e procedimentos podem mu
 - [NordPass: gerenciador de senhas](https://nordpass.com/password-manager/)
 - [NordPass: como funciona o preenchimento automático](https://support.nordpass.com/hc/en-us/articles/360003613497-What-is-autofill-and-how-does-it-work)
 - [NordPass: passkeys](https://support.nordpass.com/hc/en-us/articles/12984678202641-Passkeys-FAQs)
+- [NordPass: diferenças entre Free e Premium — consulta complementar em 28/10/2026](https://support.nordpass.com/hc/en-us/articles/360006700458-Premium-vs-Free-version-of-NordPass)
+- [NordPass: Data Breach Scanner — consulta complementar em 28/10/2026](https://support.nordpass.com/hc/en-us/articles/360012509998-How-to-use-the-Data-Breach-Scanner-in-NordPass)
 - [NordPass: perda da senha mestra](https://support.nordpass.com/hc/en-us/articles/360002376657-What-if-I-forgot-my-NordPass-Master-Password)
 - [NordPass: redefinição completa da conta](https://support.nordpass.com/hc/en-us/articles/5388857973905-How-to-reset-NordPass-account)
 - [Bitwarden: perda da senha mestra](https://bitwarden.com/help/forgot-master-password/)
