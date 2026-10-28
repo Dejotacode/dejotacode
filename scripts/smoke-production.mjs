@@ -18,6 +18,7 @@ const checks = [
   ["site-admin-midia-auditoria", `${site}/admin/midia/auditoria/`, 404],
   ["site-admin-midia-pronto-exclusao", `${site}/admin/midia/pronto-exclusao/`, 404],
   ["site-admin-midia-exclusao", `${site}/admin/midia/exclusao/`, 404],
+  ["site-admin-editor-antigo", `${site}/admin/editor/`, 404],
   ["site-admin-conteudo", `${site}/admin/conteudo/`, 404],
   ["site-admin-entrar", `${site}/admin/entrar/`, 404],
   ["site-admin-data", `${site}/admin/data/posts/apps-conectados-conta-google-revisar-acessos.json`, 404],

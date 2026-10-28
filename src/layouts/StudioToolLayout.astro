@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+import StudioLayout from "./StudioLayout.astro";
+import MediaFlowNav from "../components/admin/MediaFlowNav.astro";
+interface Props { title: string; description?: string; }
+const { title, description } = Astro.props;
+const media = Astro.url.pathname.startsWith("/admin/midia/");
+---
+<StudioLayout title={title} description={description}>
+  <section class="studio-page studio-tool-page">
+    {media && <MediaFlowNav />}
+    <slot />
+  </section>
+</StudioLayout>
+<style is:global>
+.studio-tool-page .admin-page{width:100%;max-width:none;margin:0;padding:0}
+.studio-tool-page .admin-panel{min-width:0}
+.studio-tool-page h1{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15}
+.studio-tool-page .media-flow-nav__inner{width:100%;padding:1rem 0}
+.studio-tool-page input,.studio-tool-page select,.studio-tool-page textarea{max-width:100%}
+.studio-tool-page .admin-actions{flex-wrap:wrap}
+</style>

@@ -1,12 +1,12 @@
 ---
-import AdminLayout from "../../../layouts/AdminLayout.astro";
+import StudioToolLayout from "../../../layouts/StudioToolLayout.astro";
 import "../../../styles/admin-metrics.css";
 
 const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 ---
 
-<AdminLayout title="Gate de cleanup" description="Segunda revisão das mídias candidatas do DejotaCode.">
-  <main id="conteudo" class="admin-page" data-api={api}>
+<StudioToolLayout title="Gate de cleanup" description="Segunda revisão das mídias candidatas do DejotaCode.">
+  <section aria-label="Ferramenta do Studio" class="admin-page" data-api={api}>
     <div class="admin-panel">
       <p class="admin-kicker">Segunda revisão</p>
       <h1>Gate de cleanup</h1>
@@ -68,7 +68,7 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
         <button class="button" type="button" data-logout>Sair</button>
       </div>
     </div>
-  </main>
+  </section>
 
   <script>
     import { logoutAdmin, requireAdminSession } from "../../../scripts/admin-session";
@@ -456,4 +456,4 @@ const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
       }
     }
   </style>
-</AdminLayout>
+</StudioToolLayout>

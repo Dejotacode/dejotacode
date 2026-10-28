@@ -6,20 +6,26 @@
 
 O conteúdo público continua canônico em `src/content/posts/*.md`. O Astro gera o site estático a partir desses arquivos. D1 não é fonte editorial pública.
 
-## Admin Editorial
+## DejotaCode Studio — interface principal
 
-A rota `/admin/editor/` oferece criação/edição assistida, frontmatter estruturado, Markdown, preview, cópia/download `.md` e upload de imagens. A sessão Admin e CSRF são obrigatórios nas operações mutáveis da API.
+Revisão: 28/10/2026. O Studio local em /admin/ é a entrada principal. A operação diária usa uma worktree editorial limpa, separada do desenvolvimento com outras frentes; consultar o caminho ativo em docs/estado-atual.md e no registro da tarefa. Conteúdo em /admin/conteudo/ cria e salva Markdown no projeto; salvar não publica. O endereço antigo /admin/editor/ redireciona para Conteúdo somente no desenvolvimento. O build público exclui todas as rotas /admin/.
 
-## Criar ou atualizar conteúdo
+Mídia e métricas mantêm as operações existentes dentro da navegação do Studio. Não existe mais um layout ou menu Admin separado. Upload, revisão, auditoria e operações de mídia continuam autenticados e preservam seus gates próprios.
 
-1. selecionar um conteúdo existente ou iniciar um novo conteúdo;
-2. revisar título, slug, descrição, categoria, tipo, dificuldade, data, leitura, tags e estados;
-3. editar Markdown e revisar o preview;
-4. quando necessário, enviar JPG/PNG/WebP/AVIF ao R2 com `alt` útil;
-5. gerar o Markdown final;
-6. criar Pull Request pelo Admin.
+## Criar, revisar e publicar
 
-O Worker cria branch `content/admin-*`, grava `src/content/posts/<slug>.md`, cria commit e abre PR para `main`.
+1. Criar ou abrir o artigo no Conteúdo do Studio.
+2. Revisar metadados, texto, mídia e preview; salvar o arquivo local.
+3. Isolar o pacote em uma área editorial alinhada com official/main.
+4. Abrir Publicação e revisar o manifesto.
+5. Para um Markdown elegível, preparar a publicação no Studio e revisar o arquivo completo.
+6. Confirmar a criação do PR; a sessão e o CSRF do Worker continuam obrigatórios.
+7. Abrir o diff no GitHub, consultar o CI e revisar o HEAD. Somente PR aberto, mergeável e CI aprovado permite integração.
+8. Confirmar a revisão e digitar PUBLICAR para integrar e iniciar o deploy automático.
+
+A preparação local verifica novamente branch, base, mudanças fora dos artigos, rascunho e dependências. Markdown completo, comentários YAML e campos adicionais são preservados. Se o arquivo mudar após a revisão, preparar novamente. Pacotes com mudanças em capa, código ou produto exigem fluxo isolado próprio. Falha de rede durante criação exige conferir o GitHub antes de repetir.
+
+O Worker existente continua criando branch content/admin-* e PR para main. Nenhum token fica no frontend. A autorização do usuário em cada publicação é independente da criação/salvamento do artigo.
 
 ## Checklist obrigatório de conteúdo e mídia
 
