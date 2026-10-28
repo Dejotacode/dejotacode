@@ -676,3 +676,30 @@ Publicação autorizada pelo usuário após preview local. Primeira página: des
 Destaque do Blog com fetchpriority high, mantendo eager e imagens inferiores lazy. Cópias responsivas da capa aprovada como-estudar-tecnologia-sem-se-perder, sem recorte/redesenho:480/768/1024px,18000/34928/51240 bytes, original161254 bytes preservado. Sharp resize sem ampliação, WebP quality82. VisualMedia recebe srcset/sizes opcionais e limpa esses atributos antes do fallback. Se o destaque mudar, preparar derivadas da nova fonte.
 
 Preview Brave em320/390/768/1440px, temas claro/escuro:12cards, capa carregada, sem overflow. Check/build/QA aprovados no principal; validação isolada e CI são gates da entrega. Sem mudança de textos, categorias, links comerciais, API ou analytics. Nova nota PageSpeed não medida; relatório anterior desktop95/mobile81 e LCP mobile4,5s.
+
+
+### Integração seletiva na worktree de revisão — 28/10/2026
+
+Status: candidata local validada tecnicamente; sem publicação.
+
+Worktree `dejotacode-studio-review-20261028`, branch `review/studio-20261028`. Copiados 36 arquivos do Studio; integração seletiva de YAML, sessão, schema e capas nos arquivos compartilhados. Preservados versão 1.23.0, scripts QA/SEO/AdSense, mapas de imagens e conteúdo de `official/main` local. Módulos `studio-ai-local` de Ollama excluídos desta candidata. Nenhuma credencial ou configuração privada copiada. Dependências reutilizadas por link local; nenhuma instalação. Nenhum servidor novo iniciado.
+
+Validação: quatro testes automatizados passaram; Astro check 123 arquivos sem erros/avisos/hints; build 209 páginas; QA de links, HTML, SEO e AdSense aprovado (avisos de extensão de títulos/descrições existentes). `dist/admin` ausente e Store preservada fora do sitemap. Corrigida durante a integração a perda da exclusão Store que vinha da configuração antiga do Studio. Nenhum arquivo em `src/content/` alterado. Sem nova inspeção visual nesta worktree.
+
+Pendências: integração GitHub do Worker sem token; base remota não atualizada por fetch; três links externos documentais quebrados em arquivos herdados da base (`docs/estado-atual.md` e `docs/operacao/consolidacao-local-2026-10-09.md`, sem mudanças nesses arquivos), apontando ao arquivo histórico indisponível. Não recriado arquivo histórico. Não executar publicação nem confundir branch de revisão com branch editorial. Revisar diff final e validar visualmente antes de promover.
+
+
+### Revisão visual da candidata isolada — 28/10/2026
+
+Preview de revisão em `http://localhost:4331/admin/`, servidor Astro em background na worktree `dejotacode-studio-review-20261028`. Preview principal 4321 preservado. Inspeção visual do dashboard desktop escuro e editor com artigo real em 768×1024 e 1440×1000, temas claro/escuro; menu tablet abriu e fechou. Editor sem rolagem horizontal da página (scrollWidth igual à largura) e imagem carregada. Nenhum conteúdo editado ou salvo nesta inspeção. Zoom 200% mantém aprovação anterior do usuário; não retestado nesta rodada. Viewport temporário restaurado e tema de revisão retornado ao escuro.
+
+Gate da revisão bloqueado, sem candidatos de conteúdo e sem ações de publicação. Worker aparece indisponível no preview 4331 porque CORS permite apenas origem 4321; restrição mantida. Teste autenticado anterior no Worker local continua distinto desta revisão visual. Não declarar integração completa em 4331.
+
+Na candidata, três links quebrados ao Control histórico foram convertidos em referências textuais explicitamente indisponíveis, preservando contexto; nenhum arquivo histórico recriado. Documentação da candidata agora passa: 168 Markdown e 402 referências. Pendências anteriores de links desta candidata resolvidas por esse registro. Sem push, merge ou deploy.
+
+
+### Fechamento técnico da candidata Studio — 28/10/2026
+
+Na worktree de revisão, falhas ao consultar relação com `official/main` ou status Git agora bloqueiam explicitamente a publicação. Parser de relação Git testado com referência ausente, saída malformada e números inválidos; consulta malsucedida não certifica alinhamento. Correção restrita à candidata, preview principal preservado.
+
+Validação final: cinco testes passaram; check 125 arquivos com zero erros, avisos e hints; build 209 páginas; QA público (links, HTML, SEO e AdSense) aprovado, com avisos editoriais de comprimento de metadados já registrados. Documentação da candidata 168 Markdown/402 referências aprovada. Diff sem erros de whitespace. Nenhum artigo ou produto modificado. Preparado commit local de revisão, sem push/merge/deploy. GitHub do Worker permanece sem token; base é referência local, sem fetch do remoto. Preview isolado 4331 continua para revisão visual; sessão Worker validada no principal 4321.

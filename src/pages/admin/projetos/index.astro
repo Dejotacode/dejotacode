@@ -1,0 +1,68 @@
+---
+import fs from "node:fs";
+import path from "node:path";
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+import "../../../styles/studio-projects.css";
+
+const workspace = path.resolve(process.cwd(), "../..");
+const definitions = [
+  { id:"dejotacode-fullstack", title:"Site & APIs", role:"Operacional", group:"core", description:"Site atual DejotaCode, Admin e APIs relacionadas.", route:"/admin/", note:"Fonte principal do Studio e do site público." },
+  { id:"dejotacode-brand", title:"Brand", role:"Fonte canônica", group:"core", description:"Identidade visual, símbolos, fontes, tokens e avatares aprovados.", note:"Somente leitura operacional; não promover candidatos por inferência." },
+  { id:"dejotacode-media", title:"Mídia", role:"Acervo compartilhado", group:"core", description:"Imagens e materiais reutilizáveis entre projetos.", route:"/admin/midia/", note:"Consultar catálogo antes de criar nova mídia." },
+  { id:"dejotacode-tools", title:"Tools", role:"Ferramentas", group:"core", description:"Ferramentas operacionais, analytics, radar e workstation.", note:"Inclui integração local para Search Console/GA4." },
+  { id:"dejotacode-php", title:"Pasta PHP", role:"Projeto separado", group:"isolated", description:"Projeto de aprendizado e migração em PHP, mantido fora da operação do Studio.", note:"Não misturar decisões, arquivos ou fluxo com o DejotaCode principal." },
+  { id:"dejotacode-agents", title:"Agents", role:"Planejado", group:"planned", description:"Agentes e orquestrações próprias isoladas.", note:"Presença verificada no disco ao abrir esta tela." },
+  { id:"dejotacode-projects", title:"Projects", role:"Planejado", group:"planned", description:"Projetos de produção e entregas específicas.", note:"Presença verificada no disco ao abrir esta tela." },
+  { id:"dejotacode-video", title:"Video", role:"Planejado", group:"planned", description:"Aplicação de vídeo e templates próprios.", note:"Presença verificada no disco ao abrir esta tela." },
+  { id:"dejotacode-voice", title:"Voice", role:"Planejado", group:"planned", description:"Aplicação de áudio e contratos de voz.", note:"Presença verificada no disco ao abrir esta tela." },
+];
+
+const rows = definitions.map((item) => {
+  const absolute = path.join(workspace, item.id);
+  const exists = fs.existsSync(absolute);
+  let children = 0;
+  let modified = "";
+  if (exists) {
+    try { children = fs.readdirSync(absolute).length; } catch {}
+    try { modified = fs.statSync(absolute).mtime.toISOString(); } catch {}
+  }
+  return { ...item, exists, path:absolute, children, modified };
+});
+const present = rows.filter((item) => item.exists && item.group !== "isolated");
+const planned = rows.filter((item) => !item.exists);
+---
+
+<StudioLayout title="Projetos" description="Mapa real dos projetos e módulos do workspace DejotaCode.">
+  <section class="studio-page studio-projects" data-projects-page>
+    <header class="studio-page-header">
+      <div><p class="studio-eyebrow">Operar</p><h1>Projetos</h1><p>Visão central do que realmente existe no workspace, do que é separado e do que permanece apenas planejado.</p></div>
+    </header>
+
+    <section class="studio-projects-summary" aria-label="Resumo dos projetos">
+      <article><strong>{present.length}</strong><span>pastas presentes no workspace</span></article>
+      <article><strong>{planned.length}</strong><span>módulos planejados ausentes</span></article>
+      <article><strong>1</strong><span>projeto isolado do Studio</span></article>
+    </section>
+
+    <section class="studio-projects-note"><strong>Regra desta tela</strong><p>Existência no planejamento não equivale a existência no disco. O Studio mostra o estado físico atual e não recria pastas automaticamente.</p></section>
+
+    <div class="studio-projects-toolbar">
+      <input type="search" placeholder="Buscar projeto ou função…" data-project-search aria-label="Buscar projeto ou função" />
+      <select data-project-filter aria-label="Filtrar projetos por situação"><option value="all">Todos</option><option value="present">Presentes</option><option value="planned">Planejados</option><option value="isolated">Separados</option></select>
+    </div>
+
+    <section class="studio-projects-grid" data-project-grid>
+      {rows.map((item) => (
+        <article class:list={["studio-project-card", {"is-missing":!item.exists,"is-isolated":item.group === "isolated"}]} data-project-card data-state={item.group === "isolated" ? "isolated" : item.exists ? "present" : "planned"} data-search={`${item.id} ${item.title} ${item.role} ${item.description}`.toLowerCase()}>
+          <div class="studio-project-card__top"><span class="studio-project-card__state">{item.group === "isolated" ? "Separado" : item.exists ? "Presente" : "Planejado"}</span><small>{item.exists && item.role === "Planejado" ? "Presença local" : item.role}</small></div>
+          <h2>{item.title}</h2><code>{item.id}</code><p>{item.description}</p>
+          {item.exists ? <details class="studio-project-location"><summary>Informações locais</summary><dl><div><dt>Caminho</dt><dd>{item.path}</dd></div><div><dt>Itens na raiz</dt><dd>{item.children}</dd></div></dl></details> : <p class="studio-project-card__missing">Ausente no workspace atual.</p>}
+          <div class="studio-project-card__note">{item.exists && item.group === "planned" ? "Pasta presente. Isso não confirma que o módulo esteja integrado ao Studio." : item.note}</div>
+          {item.route && item.exists && <a class="studio-button" href={item.route}>Abrir no Studio</a>}
+        </article>
+      ))}
+    </section>
+    <p class="studio-projects-empty" data-project-empty hidden>Nenhum projeto corresponde ao filtro.</p>
+  </section>
+  <script src="../../../scripts/studio-projects.ts"></script>
+</StudioLayout>

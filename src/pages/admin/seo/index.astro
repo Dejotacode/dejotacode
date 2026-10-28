@@ -1,0 +1,139 @@
+---
+import { getCollection } from "astro:content";
+import fs from "node:fs";
+import path from "node:path";
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+import { resolvePostVisual } from "../../../data/editorialVisuals";
+import "../../../styles/studio-seo.css";
+
+const posts = await getCollection("posts");
+const root = process.cwd();
+const postRoot = path.join(root, "src/content/posts");
+const analyticsPath = path.resolve(root, "../../dejotacode-tools/dejotacode-analytics/data/media-kit-metrics.json");
+const analytics = (() => {
+  try { return JSON.parse(fs.readFileSync(analyticsPath, "utf8")); }
+  catch { return null; }
+})();
+const gsc = analytics?.searchConsole ?? null;
+const ga4 = analytics?.ga4 ?? null;
+const analyticsGeneratedAt = analytics?.generatedAt ? new Date(analytics.generatedAt) : null;
+const analyticsPeriod = analytics?.period ?? null;
+const formatNumber = (value: number) => new Intl.NumberFormat("pt-BR").format(value || 0);
+const formatPercent = (value: number) => new Intl.NumberFormat("pt-BR", { style: "percent", maximumFractionDigits: 1 }).format(value || 0);
+const formatDuration = (value: number) => {
+  const seconds = Math.max(0, Math.round(value || 0));
+  const minutes = Math.floor(seconds / 60);
+  return `${minutes}m ${seconds % 60}s`;
+};
+
+const getBody = (slug: string) => {
+  try {
+    const raw = fs.readFileSync(path.join(postRoot, `${slug}.md`), "utf8");
+    return raw.replace(/^---[\s\S]*?---\s*/m, "");
+  } catch { return ""; }
+};
+
+const rows = posts.map((post) => {
+  const body = getBody(post.id);
+  const words = body.replace(/[#*_`>\[\]()!-]/g, " ").split(/\s+/).filter(Boolean).length;
+  const h2 = (body.match(/^##\s+/gm) || []).length;
+  const internalLinks = (body.match(/\]\(\/(?!\/)/g) || []).length;
+  const externalLinks = (body.match(/\]\(https?:\/\//g) || []).length;
+  const image = resolvePostVisual(post.data.category, post.id, post.data.coverImage);
+  const issues: string[] = [];
+  if (post.data.title.length < 30) issues.push("Título curto");
+  if (post.data.title.length > 65) issues.push("Título longo");
+  if (post.data.description.length < 120) issues.push("Descrição curta");
+  if (post.data.description.length > 165) issues.push("Descrição longa");
+  if (h2 === 0) issues.push("Sem H2");
+  if (internalLinks === 0) issues.push("Sem links internos");
+  if (!image) issues.push("Sem capa resolvida");
+  if (words < 350) issues.push("Conteúdo curto");
+  return {
+    slug: post.id,
+    title: post.data.title,
+    description: post.data.description,
+    draft: post.data.draft,
+    category: post.data.category,
+    words, h2, internalLinks, externalLinks, image: image || "",
+    issues,
+    health: issues.length === 0 ? "ok" : issues.length <= 2 ? "attention" : "review",
+  };
+}).sort((a,b) => b.issues.length - a.issues.length || a.title.localeCompare(b.title, "pt-BR"));
+
+const published = rows.filter((r) => !r.draft);
+const healthy = published.filter((r) => r.health === "ok").length;
+const attention = published.filter((r) => r.health === "attention").length;
+const review = published.filter((r) => r.health === "review").length;
+const issueCount = published.reduce((sum, r) => sum + r.issues.length, 0);
+---
+
+<StudioLayout title="SEO & Métricas" description="Saúde técnica do conteúdo e desempenho da DejotaCode.">
+  <section class="studio-page studio-seo" data-seo-page>
+    <header class="studio-page__header">
+      <div>
+        <p class="studio-eyebrow">Crescer</p>
+        <h1>SEO & Métricas</h1>
+        <p>Diagnóstico técnico do conteúdo real e espaço para métricas externas quando a fonte estiver disponível.</p>
+      </div>
+    </header>
+
+    <section class="studio-seo-summary" aria-label="Resumo de saúde editorial">
+      <article title="Arquivos locais com draft false; não comprova a versão publicada"><span>Não rascunhos</span><strong>{published.length}</strong></article>
+      <article><span>Saudáveis</span><strong>{healthy}</strong></article>
+      <article><span>Atenção</span><strong>{attention}</strong></article>
+      <article><span>Revisar</span><strong>{review}</strong></article>
+    </section>
+
+    <section class="studio-seo-external studio-v1-source-card" aria-label="Snapshot do Search Console e GA4">
+      <h2>Search Console + GA4</h2>
+      {gsc && ga4 ? (
+        <>
+          <p class="studio-v1-source-description">Snapshot local · período {analyticsPeriod?.startDate} a {analyticsPeriod?.endDate}.{analyticsGeneratedAt ? " Coletado em "+analyticsGeneratedAt.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })+"." : ""} A conexão atual não foi verificada nesta tela.</p>
+          <dl class="studio-v1-source-rows">
+            <div><dt>GSC · Cliques</dt><dd>{formatNumber(gsc.clicks)}</dd></div>
+            <div><dt>GA4 · Sessões</dt><dd>{formatNumber(ga4.historical?.sessions)}</dd></div>
+            <div><dt>GA4 · Visualizações</dt><dd>{formatNumber(ga4.historical?.screenPageViews)}</dd></div>
+          </dl>
+          <details class="studio-v1-source-details"><summary>Detalhes do snapshot</summary>
+        <div class="studio-seo-metrics-grid">
+          <article><span>GSC · Cliques</span><strong>{formatNumber(gsc.clicks)}</strong><small>{formatNumber(gsc.impressions)} impressões</small></article>
+          <article><span>GSC · CTR</span><strong>{formatPercent(gsc.ctr)}</strong><small>posição média {Number(gsc.averagePosition || 0).toFixed(1).replace(".", ",")}</small></article>
+          <article><span>GA4 · Sessões</span><strong>{formatNumber(ga4.historical?.sessions)}</strong><small>{formatNumber(ga4.historical?.activeUsers)} usuários ativos</small></article>
+          <article><span>GA4 · Visualizações</span><strong>{formatNumber(ga4.historical?.screenPageViews)}</strong><small>engajamento {formatPercent(ga4.historical?.engagementRate)}</small></article>
+        </div>
+        <div class="studio-seo-real-data">
+          <section><p class="studio-eyebrow">Search Console</p><h2>Consultas com mais impressões</h2><div class="studio-seo-query-list">{(gsc.topQueries ?? []).slice(0, 6).map((item: any) => <div><strong>{item.keys?.[0] ?? "—"}</strong><span>{formatNumber(item.impressions)} imp. · posição {Number(item.position || 0).toFixed(1).replace(".", ",")}</span></div>)}</div></section>
+          <section><p class="studio-eyebrow">GA4</p><h2>Leitura de audiência</h2><dl class="studio-seo-facts"><div><dt>Novos usuários</dt><dd>{formatNumber(ga4.historical?.newUsers)}</dd></div><div><dt>Eventos</dt><dd>{formatNumber(ga4.historical?.eventCount)}</dd></div><div><dt>Duração média</dt><dd>{formatDuration(ga4.historical?.averageSessionDuration)}</dd></div><div><dt>Realtime no snapshot</dt><dd>{ga4.status === "active" ? "Registrado como ativo" : "Sem page_view no período consultado"}</dd></div></dl></section>
+        </div>
+
+          </details>
+        </>
+      ) : <p class="studio-v1-source-description">Relatório local indisponível. Nenhuma métrica externa foi simulada.</p>}
+    </section>
+
+    <section class="studio-seo-actions">
+      <div><p class="studio-eyebrow">Fila de trabalho</p><h2>O que merece atenção</h2><p class="studio-v1-source-description">{issueCount} pontos detectados nos arquivos não rascunhos. Diagnóstico interno.</p></div>
+      <div class="studio-seo-toolbar">
+        <input type="search" placeholder="Buscar conteúdo..." data-seo-search aria-label="Buscar conteúdo no diagnóstico SEO" />
+        <select data-seo-status aria-label="Filtrar diagnóstico SEO por status">
+          <option value="all">Todos</option>
+          <option value="review">Revisar</option>
+          <option value="attention">Atenção</option>
+          <option value="ok">Saudável</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="studio-seo-table-wrap">
+      <table class="studio-seo-table">
+        <thead><tr><th>Conteúdo</th><th>Saúde</th><th>SEO técnico</th><th>Estrutura</th><th></th></tr></thead>
+        <tbody data-seo-body></tbody>
+      </table>
+      <p class="studio-seo-empty" data-seo-empty hidden>Nenhum conteúdo corresponde aos filtros.</p>
+    </section>
+
+    <script id="studio-seo-data" type="application/json" set:html={JSON.stringify(rows).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")}></script>
+  </section>
+  <script src="../../../scripts/studio-seo.ts"></script>
+</StudioLayout>

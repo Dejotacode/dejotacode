@@ -1,0 +1,14 @@
+---
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+---
+<StudioLayout title="Configurações" description="Preferências locais do DejotaCode Studio.">
+<section class="studio-page studio-settings-page">
+<header class="studio-page-header"><div><p class="studio-eyebrow">Studio</p><h1>Configurações</h1><p>Preferências do Studio e informações do ambiente local.</p></div></header>
+<section class="studio-v1-settings" aria-label="Preferências do Studio">
+<div><span>Tema</span><button class="studio-button" type="button" data-studio-theme-toggle>Alternar claro/escuro</button></div>
+<div><span>Ambiente</span><strong>Projeto local</strong></div>
+<div><span>Command Palette</span><button class="studio-button" type="button" data-command-open>Abrir busca <kbd>Ctrl + K</kbd></button></div>
+<div><span>Autenticação</span><a class="studio-button" href="/admin/entrar/">Entrar no Worker editorial</a></div>
+<p>O tema é salvo neste navegador. Salvar conteúdo altera somente o projeto local; publicar permanece separado.</p>
+</section></section>
+</StudioLayout>

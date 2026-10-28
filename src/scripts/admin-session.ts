@@ -17,12 +17,12 @@ export const fetchAdminSession = async (api: string): Promise<AdminSession | nul
 
 export const requireAdminSession = async (
   api: string,
-  redirectTo = "/admin/",
+  redirectTo = "/admin/entrar/",
 ): Promise<AdminSession | null> => {
   const session = await fetchAdminSession(api);
 
   if (!session) {
-    location.href = redirectTo;
+    location.href = redirectTo + "?next=" + encodeURIComponent(location.pathname + location.search);
     return null;
   }
 
@@ -35,4 +35,14 @@ export const logoutAdmin = async (api: string, csrf = "") => {
     credentials: "include",
     headers: csrf ? { "X-CSRF-Token": csrf } : {},
   });
+};
+
+
+export const safeAdminNext = (value: string | null, origin: string): string => {
+  if (!value || !value.startsWith("/admin/") || value.includes("\\")) return "/admin/publicacao/";
+  try {
+    const target = new URL(value, origin);
+    if (target.origin !== origin || !target.pathname.startsWith("/admin/") || target.pathname.startsWith("/admin/entrar")) return "/admin/publicacao/";
+    return target.pathname + target.search;
+  } catch { return "/admin/publicacao/"; }
 };

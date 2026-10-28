@@ -1,0 +1,134 @@
+---
+import { getCollection } from "astro:content";
+import fs from "node:fs";
+import path from "node:path";
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+import { resolvePostVisual } from "../../../data/editorialVisuals";
+import "../../../styles/studio-ai.css";
+
+const posts = await getCollection("posts");
+const products = await getCollection("storeProducts");
+const root = process.cwd();
+const postRoot = path.join(root, "src/content/posts");
+const productById = new Map(products.map((product) => [product.id, product]));
+
+const bodyFor = (slug: string) => {
+  try {
+    const raw = fs.readFileSync(path.join(postRoot, `${slug}.md`), "utf8");
+    return raw.replace(/^---[\s\S]*?---\s*/m, "");
+  } catch { return ""; }
+};
+
+const records = posts.map((post) => {
+  const body = bodyFor(post.id);
+  const words = body.replace(/[#*_`>\[\]()!-]/g, " ").split(/\s+/).filter(Boolean).length;
+  const h2 = (body.match(/^##\s+/gm) || []).length;
+  const internalLinks = (body.match(/\]\(\/(?!\/)/g) || []).length;
+  const issues: string[] = [];
+  if (post.data.title.length < 30) issues.push("Título curto");
+  if (post.data.title.length > 65) issues.push("Título longo");
+  if (post.data.description.length < 120) issues.push("Descrição curta");
+  if (post.data.description.length > 165) issues.push("Descrição longa");
+  if (h2 === 0) issues.push("Sem H2");
+  if (internalLinks === 0) issues.push("Sem links internos");
+  if (!resolvePostVisual(post.data.category, post.id, post.data.coverImage)) issues.push("Sem capa resolvida");
+  if (words < 350) issues.push("Conteúdo curto");
+
+  const usedProducts = post.data.storeProducts
+    .map((id) => productById.get(id))
+    .filter(Boolean)
+    .map((product) => ({ id: product!.id, title: product!.data.title, editorialStatus: product!.data.editorialStatus }));
+  const opportunities = products
+    .filter((product) => product.data.relatedPosts.includes(post.id) && !post.data.storeProducts.includes(product.id))
+    .map((product) => ({ id: product.id, title: product.data.title, editorialStatus: product.data.editorialStatus }));
+
+  return {
+    slug: post.id,
+    title: post.data.title,
+    description: post.data.description,
+    category: post.data.category,
+    type: post.data.type,
+    difficulty: post.data.difficulty,
+    draft: post.data.draft,
+    tags: post.data.tags,
+    publishedAt: post.data.publishedAt.toISOString().slice(0, 10),
+    seo: { words, h2, internalLinks, issues },
+    monetization: { usedProducts, opportunities },
+  };
+}).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt) || a.title.localeCompare(b.title, "pt-BR"));
+---
+
+<StudioLayout title="IA" description="Assistência de IA com contexto real e permissões explícitas no DejotaCode Studio.">
+  <section class="studio-page studio-ai" data-studio-ai>
+    <header class="studio-page-header studio-ai__header">
+      <div>
+        <p class="studio-eyebrow">Operar</p>
+        <h1>IA</h1>
+        <p>Prepare tarefas com contexto real do DejotaCode. A IA pode ler e sugerir; alterar ou publicar continua sendo uma decisão humana.</p>
+      </div>
+      <span class="studio-ai-provider"><i></i> Codex/ChatGPT · conexão no editor</span>
+    </header>
+
+    <section class="studio-ai-permissions" aria-label="Permissões da IA">
+      <article class="is-allowed"><span>Leitura</span><strong>Permitida</strong><p>Conteúdo e metadados selecionados podem entrar no pacote de contexto.</p></article>
+      <article class="is-allowed"><span>Sugestão</span><strong>Permitida</strong><p>A IA pode propor correções, estrutura, SEO e relações editoriais.</p></article>
+      <article class="is-confirm"><span>Ação</span><strong>Exige confirmação</strong><p>Nenhuma sugestão altera arquivos automaticamente.</p></article>
+      <article class="is-blocked"><span>Publicação</span><strong>Bloqueada aqui</strong><p>Publicar continua exclusivo do módulo Publicação e seus gates.</p></article>
+    </section>
+
+    <section class="studio-ai-workspace">
+      <div class="studio-ai-config">
+        <div class="studio-ai-section-title"><p class="studio-eyebrow">Preparar tarefa</p><h2>O que você quer analisar?</h2></div>
+        <div class="studio-ai-field">
+          <span>Conteúdo</span>
+          <div class="studio-ai-combobox" data-ai-combobox>
+            <input type="search" data-ai-post-search role="combobox" aria-label="Buscar conteúdo para analisar" aria-expanded="false" aria-controls="ai-post-listbox" aria-autocomplete="list" autocomplete="off" placeholder="Buscar por título, slug ou categoria…" />
+            <input type="hidden" data-ai-post aria-label="Conteúdo selecionado para a IA" />
+            <div class="studio-ai-combobox__list" id="ai-post-listbox" role="listbox" data-ai-post-list hidden></div>
+          </div>
+        </div>
+        <fieldset class="studio-ai-task-picker">
+          <legend>Tarefa</legend>
+          <div role="radiogroup" aria-label="Escolha a tarefa da IA" data-ai-task-group>
+            <button type="button" class="is-active" role="radio" aria-checked="true" data-ai-task-option="editorial">Revisar clareza e estrutura</button>
+            <button type="button" role="radio" aria-checked="false" data-ai-task-option="claims">Checar alegações e transparência</button>
+            <button type="button" role="radio" aria-checked="false" data-ai-task-option="seo">SEO editorial</button>
+            <button type="button" role="radio" aria-checked="false" data-ai-task-option="money">Monetização</button>
+            <button type="button" role="radio" aria-checked="false" data-ai-task-option="media">Briefing de mídia</button>
+            <button type="button" role="radio" aria-checked="false" data-ai-task-option="final">Revisão final</button>
+          </div>
+          <input type="hidden" data-ai-task value="editorial" aria-label="Tarefa selecionada para a IA" />
+        </fieldset>
+        <fieldset><legend>Contexto incluído</legend>
+          <label><input type="checkbox" data-ai-context="body" checked aria-label="Incluir corpo do artigo" /> Corpo do artigo</label>
+          <label><input type="checkbox" data-ai-context="seo" checked aria-label="Incluir diagnóstico SEO" /> Diagnóstico SEO</label>
+          <label><input type="checkbox" data-ai-context="money" checked aria-label="Incluir monetização" /> Monetização</label>
+        </fieldset>
+        <label><span>Instrução adicional <small>(opcional)</small></span><textarea rows="5" data-ai-extra placeholder="Ex.: priorize clareza para iniciantes e não altere o tom editorial."></textarea></label>
+        <button class="studio-button studio-button--primary" type="button" data-ai-build>Gerar pacote de contexto</button>
+      </div>
+
+      <div class="studio-ai-context">
+        <div class="studio-ai-section-title"><p class="studio-eyebrow">Contexto real</p><h2 data-ai-context-title>Selecione um conteúdo</h2></div>
+        <div class="studio-ai-context__meta" data-ai-meta></div>
+        <div class="studio-ai-context__signals" data-ai-signals></div>
+        <p class="studio-ai-context__source">Fonte: collections do Astro + Markdown canônico + relações reais da Store.</p>
+      </div>
+    </section>
+
+    <section class="studio-ai-output" data-ai-output hidden>
+      <div class="studio-ai-output__head">
+        <div><p class="studio-eyebrow">Pacote pronto</p><h2>Prompt com contexto</h2></div>
+        <div><button class="studio-button" type="button" data-ai-copy>Copiar pacote</button><button class="studio-button" type="button" data-ai-download>Baixar .md</button></div>
+      </div>
+      <textarea readonly data-ai-prompt aria-label="Pacote de contexto gerado"></textarea>
+      <div class="studio-ai-execution">
+        <div><strong>Codex/ChatGPT no editor</strong><p>A aba IA Assistente do editor usa o Codex instalado com sua conta ChatGPT. Você confirma o envio do texto e recebe sugestões, sem aplicação automática. Este painel continua preparando contexto.</p></div>
+        <a class="studio-button studio-button--primary" href="/admin/conteudo/">Abrir editor com Codex</a>
+      </div>
+    </section>
+
+    <script id="studio-ai-data" type="application/json" set:html={JSON.stringify(records).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")}></script>
+  </section>
+  <script src="../../../scripts/studio-ai.ts"></script>
+</StudioLayout>

@@ -9,8 +9,8 @@ Projeto principal: /home/dejota/Workspace/fullstack/dejotacode. Preview habitual
 - [Consolidação e cronologia local](operacao/consolidacao-local-2026-10-09.md).
 - [Registro final da newsletter](operacao/newsletter-brevo-integracao-2026-10-09.md).
 - [Controle de parceiros de monetização](operacao/monetizacao-parceiros.md).
-- [Mapa do Workspace no Control](../../../arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_MAP.md).
-- [Recuperação de áreas encerradas](../../../arquivo/dejotacode/prototipos-encerrados/dejotacode-control-20261010/docs/WORKSPACE_RECOVERY.md).
+- Mapa do Workspace no Control — referência histórica `WORKSPACE_MAP.md` indisponível, conferida em 28/10/2026.
+- Recuperação de áreas encerradas — referência histórica `WORKSPACE_RECOVERY.md` indisponível, conferida em 28/10/2026.
 
 As quatro releases de entrega foram encerradas após preservação; continuar no principal. Admin e API newsletter mantêm frentes distintas. Git tem trabalho preexistente; conferir status antes de editar ou preparar commits.
 Registros datados descrevem o momento da etapa. Para estado de tarefa e próximo passo, consultar a fonte vigente desta área e confirmar arquivos atuais. projects/state do Control arquivado serve como histórico; não é estado operacional ativo. Não deduzir pendência atual a partir de um parágrafo antigo.

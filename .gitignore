@@ -29,3 +29,7 @@ pnpm-debug.log*
 # Python cache (ebook tooling)
 __pycache__/
 *.pyc
+
+# Studio local: private history and separate caches
+.studio-local-history/
+.studio-vite-*/

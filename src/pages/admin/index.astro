@@ -1,187 +1,44 @@
 ---
 import { getCollection } from "astro:content";
-import AdminLayout from "../../layouts/AdminLayout.astro";
-import "../../styles/admin-metrics.css";
+import { resolvePostVisual } from "../../data/editorialVisuals";
+import StudioIcon from "../../components/studio/StudioIcon.astro";
+import StudioLayout from "../../layouts/StudioLayout.astro";
 
-const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
 const posts = await getCollection("posts");
-const draftPosts = posts.filter((post) => post.data.draft).length;
+
+const drafts = posts.filter((post) => post.data.draft);
+const published = posts.filter((post) => !post.data.draft);
+const missingCover = posts.filter(post=>!resolvePostVisual(post.data.category,post.id, post.data.coverImage));
+const recentPosts = [...posts]
+  .sort((a, b) => {
+    if (a.data.draft !== b.data.draft) return a.data.draft ? -1 : 1;
+    const dateA = (a.data.updatedAt ?? a.data.publishedAt).getTime();
+    const dateB = (b.data.updatedAt ?? b.data.publishedAt).getTime();
+    return dateB - dateA;
+  })
+  .slice(0, 5);
+
 ---
 
-<AdminLayout title="Dashboard" description="Centro operacional privado do DejotaCode.">
-  <main id="conteudo" class="admin-page admin-page--dashboard" data-api={api}>
-    <div class="admin-panel">
-      <p class="admin-kicker">Admin</p>
-      <h1>Dashboard</h1>
-      <p class="admin-intro">Veja o que precisa da sua atenção e siga direto para a próxima ação.</p>
-
-      <section class="admin-login-card" data-login>
-        <form class="admin-login-form" data-login-form>
-          <label>
-            E-mail
-            <input name="email" type="email" required autocomplete="username" />
-          </label>
-          <label>
-            Senha
-            <input name="password" type="password" minlength="12" required autocomplete="current-password" />
-          </label>
-          <button class="button button-primary" type="submit">Entrar</button>
-          <output aria-live="polite"></output>
-        </form>
-      </section>
-
-      <section class="admin-dashboard" data-session-status hidden aria-label="Visão geral administrativa">
-        <div class="admin-dashboard__header">
-          <div>
-            <p class="admin-dashboard__eyebrow">Hoje</p>
-            <h2>O que precisa de atenção</h2>
-          </div>
-          <div class="admin-actions">
-            <a class="button button-primary" href="/admin/editor/">Novo conteúdo</a>
-            <button class="button" type="button" data-logout>Sair</button>
-          </div>
-        </div>
-
-        <div class="admin-dashboard__cards">
-          <a class="admin-dashboard-card" href="/admin/editor/">
-            <span>Rascunhos</span>
-            <strong>{draftPosts}</strong>
-            <small>{draftPosts === 1 ? "conteúdo aguardando continuidade" : "conteúdos aguardando continuidade"}</small>
-          </a>
-          <a class="admin-dashboard-card" href="/admin/midia/revisao/">
-            <span>Mídia para revisar</span>
-            <strong data-media-review-count>—</strong>
-            <small data-media-review-label>Verificando pendências…</small>
-          </a>
-        </div>
-
-        <section class="admin-dashboard__section" aria-labelledby="admin-shortcuts-title">
-          <div class="admin-dashboard__section-heading">
-            <div>
-              <p class="admin-dashboard__eyebrow">Acesso rápido</p>
-              <h2 id="admin-shortcuts-title">Continuar trabalhando</h2>
-            </div>
-          </div>
-          <div class="admin-dashboard__actions">
-            <a class="admin-dashboard-action" href="/admin/editor/">
-              <strong>Conteúdo</strong>
-              <span>Criar, editar, revisar e publicar.</span>
-            </a>
-            <a class="admin-dashboard-action" href="/admin/midia/">
-              <strong>Mídia</strong>
-              <span>Biblioteca, revisão e manutenção.</span>
-            </a>
-            <a class="admin-dashboard-action" href="/admin/metricas/">
-              <strong>Métricas</strong>
-              <span>Acompanhar desempenho do projeto.</span>
-            </a>
-          </div>
-        </section>
-      </section>
-    </div>
-  </main>
-
-  <script>
-    import { fetchAdminSession, logoutAdmin } from "../../scripts/admin-session";
-
-    const root = document.querySelector<HTMLElement>("[data-api]");
-    const api = root?.dataset.api;
-    const login = document.querySelector<HTMLElement>("[data-login]");
-    const sessionStatus = document.querySelector<HTMLElement>("[data-session-status]");
-    const loginForm = document.querySelector<HTMLFormElement>("[data-login-form]");
-    const logoutButton = document.querySelector<HTMLButtonElement>("[data-logout]");
-    const adminNav = document.querySelector<HTMLElement>("[data-admin-nav]");
-    const mediaReviewCount = document.querySelector<HTMLElement>("[data-media-review-count]");
-    const mediaReviewLabel = document.querySelector<HTMLElement>("[data-media-review-label]");
-
-    const parseError = async (response: Response) => {
-      try {
-        const payload = await response.json();
-        return payload.error?.message ?? "Não foi possível concluir.";
-      } catch {
-        return "Não foi possível concluir.";
-      }
-    };
-
-    const loadMediaAttention = async () => {
-      if (!api || !mediaReviewCount || !mediaReviewLabel) return;
-      try {
-        const response = await fetch(`${api}/api/media/cms`, { credentials: "include" });
-        if (!response.ok) throw new Error("media unavailable");
-        const payload = await response.json();
-        const items = Array.isArray(payload.data?.items) ? payload.data.items : [];
-        const pending = items.filter((item: { contentType?: string; reviewStatus?: string }) =>
-          item.contentType?.startsWith("image/") && (!item.reviewStatus || item.reviewStatus === "pending")
-        ).length;
-        mediaReviewCount.textContent = String(pending);
-        mediaReviewLabel.textContent = pending === 1
-          ? "imagem aguardando revisão"
-          : "imagens aguardando revisão";
-      } catch {
-        mediaReviewCount.textContent = "Ver";
-        mediaReviewLabel.textContent = "Abrir revisão de mídia";
-      }
-    };
-
-    const showAuthenticated = () => {
-      if (login) login.hidden = true;
-      if (sessionStatus) sessionStatus.hidden = false;
-      if (adminNav) adminNav.hidden = false;
-      loadMediaAttention().catch(() => {});
-    };
-
-    const checkSession = async () => {
-      if (!api) return;
-      const session = await fetchAdminSession(api);
-      if (session) showAuthenticated();
-    };
-
-    loginForm?.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!api) return;
-
-      const output = loginForm.querySelector<HTMLOutputElement>("output");
-      const formData = new FormData(loginForm);
-      const submitButton = loginForm.querySelector<HTMLButtonElement>('button[type="submit"]');
-      if (output) output.textContent = "Entrando…";
-      if (submitButton) submitButton.disabled = true;
-
-      try {
-        const response = await fetch(`${api}/api/auth/login`, {
-          method: "POST",
-          credentials: "include",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: String(formData.get("email") ?? ""),
-            password: String(formData.get("password") ?? ""),
-          }),
-        });
-
-        if (!response.ok) {
-          if (output) output.textContent = await parseError(response);
-          return;
-        }
-
-        showAuthenticated();
-      } catch {
-        if (output) output.textContent = "Não foi possível conectar ao serviço de autenticação. Tente novamente.";
-      } finally {
-        if (submitButton) submitButton.disabled = false;
-      }
-    });
-
-    logoutButton?.addEventListener("click", async () => {
-      if (!api) return;
-      const session = await fetchAdminSession(api);
-      if (!session) {
-        location.reload();
-        return;
-      }
-
-      await logoutAdmin(api, session.csrf);
-      location.reload();
-    });
-
-    checkSession().catch(() => {});
-  </script>
-</AdminLayout>
+<StudioLayout title="Dashboard" description="Visão operacional da DejotaCode.">
+<div class="studio-content studio-final-dashboard">
+ <header class="studio-final-page-head"><small>Visão geral</small><h1>Olá, Dejota.</h1><p>O que precisa da sua atenção agora, sem transformar o Studio em um painel genérico.</p></header>
+ <section class="studio-final-stats" aria-label="Estado do conteúdo local">
+  <article><span>Conteúdos</span><strong>{posts.length}</strong></article>
+  <article><span>Rascunhos</span><strong>{drafts.length}</strong></article>
+  <article title="Arquivos com draft false; não certifica a versão publicada"><span>Não rascunhos</span><strong>{published.length}</strong></article>
+  <article title="Condição derivada do resolvedor visual"><span>Sem capa resolvida</span><strong>{missingCover.length}</strong></article>
+ </section>
+ <div class="studio-final-dashboard-grid">
+ <section class="studio-final-card" aria-labelledby="recent-title"><h2 id="recent-title">Continuar trabalhando</h2>
+ {recentPosts.map(post=><a class="studio-final-row" href={'/admin/conteudo/?post='+encodeURIComponent(post.id)}><span>{post.data.title}</span><small>{post.data.draft?"Rascunho":"Não rascunho"}</small><StudioIcon name="arrow-right" /></a>)}
+ </section>
+ <section class="studio-final-card"><h2>Fontes e integrações</h2><dl class="studio-final-facts">
+ <div><dt>Fonte editorial</dt><dd>Markdown / Git</dd></div>
+ <div><dt>GSC + GA4</dt><dd>Consultar snapshot no SEO</dd></div>
+ <div><dt>Publicação automática</dt><dd>Desativada</dd></div>
+ <div><dt>IA</dt><dd>Codex / ChatGPT · verificar no editor</dd></div>
+ </dl></section>
+ </div>
+</div>
+</StudioLayout>

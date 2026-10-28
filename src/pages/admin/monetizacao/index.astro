@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+import "../../../styles/studio-monetization.css";
+
+const products = await getCollection("storeProducts");
+const posts = await getCollection("posts");
+const postById = new Map(posts.map((post) => [post.id, post]));
+
+const productRows = products.map((product) => {
+  const activeOffers = product.data.offers.filter((offer) => offer.active);
+  const legacyLinks = Object.entries(product.data.affiliateLinks ?? {}).filter(([, href]) => Boolean(href));
+  const usedBy = posts.filter((post) => post.data.storeProducts.includes(product.id));
+  const declaredRelated = product.data.relatedPosts.map((id) => postById.get(id)).filter(Boolean);
+  const opportunities = declaredRelated.filter((post) => post && !post.data.storeProducts.includes(product.id));
+  const providers = [...new Set([
+    ...activeOffers.map((offer) => offer.provider),
+    ...legacyLinks.map(([provider]) => provider),
+  ])];
+  const dates = activeOffers.map((offer) => offer.lastChecked).filter(Boolean) as Date[];
+  const lastChecked = product.data.verification?.lastChecked ?? (dates.length ? dates.sort((a, b) => b.getTime() - a.getTime())[0] : undefined);
+
+  return {
+    id: product.id,
+    title: product.data.title,
+    brand: product.data.brand ?? "",
+    category: product.data.category,
+    editorialStatus: product.data.editorialStatus,
+    catalogStage: product.data.catalogStage,
+    draft: product.data.draft,
+    activeOffers: activeOffers.length,
+    legacyLinks: legacyLinks.length,
+    providers,
+    lastChecked: lastChecked?.toISOString().slice(0, 10) ?? "",
+    usedBy: usedBy.map((post) => ({ id: post.id, title: post.data.title, draft: post.data.draft })),
+    opportunities: opportunities.map((post) => ({ id: post!.id, title: post!.data.title, draft: post!.data.draft })),
+  };
+}).sort((a, b) => a.title.localeCompare(b.title, "pt-BR"));
+
+const monetizedPosts = posts.filter((post) => post.data.storeProducts.length > 0);
+const activeOfferProducts = productRows.filter((product) => product.activeOffers > 0);
+const legacyOnlyProducts = productRows.filter((product) => product.activeOffers === 0 && product.legacyLinks > 0);
+const noCommercialLink = productRows.filter((product) => product.activeOffers === 0 && product.legacyLinks === 0);
+const opportunities = productRows.flatMap((product) => product.opportunities.map((post) => ({ product: product.title, productId: product.id, ...post })));
+const providers = [...new Set(productRows.flatMap((product) => product.providers))].sort();
+---
+
+<StudioLayout title="Monetização" description="Produtos, parceiros e relações editoriais reais da DejotaCode.">
+  <section class="studio-page studio-monetization" data-studio-monetization>
+    <header class="studio-page-header">
+      <div>
+        <p class="studio-eyebrow">Crescer</p>
+        <h1>Monetização</h1>
+        <p>Produtos afiliados tratados como parte editorial do conteúdo — com contexto, transparência e revisão humana.</p>
+      </div>
+    </header>
+
+    <section class="studio-monetization-summary" aria-label="Resumo da monetização">
+      <article><strong>{products.length}</strong><span>produtos no catálogo</span></article>
+      <article><strong>{activeOfferProducts.length}</strong><span>com oferta ativa</span></article>
+      <article><strong>{monetizedPosts.length}</strong><span>conteúdos monetizados</span></article>
+      <article><strong>{opportunities.length}</strong><span>relações editoriais pendentes</span></article>
+    </section>
+
+    <section class="studio-monetization-note">
+      <div>
+        <strong>Regra do Studio</strong>
+        <p>Uma oportunidade abaixo só existe quando a própria ficha do produto declara o artigo em <code>relatedPosts</code>. O Studio não adiciona afiliados automaticamente.</p>
+      </div>
+    </section>
+
+    <section class="studio-monetization-toolbar">
+      <label><span>Buscar</span><input type="search" placeholder="Produto, marca, parceiro ou conteúdo…" data-money-search /></label>
+      <label><span>Situação</span><select data-money-status><option value="all">Todas</option><option value="active">Oferta ativa</option><option value="legacy">Link legado</option><option value="missing">Sem link comercial</option><option value="opportunity">Com oportunidade</option></select></label>
+      <label><span>Parceiro</span><select data-money-provider><option value="all">Todos</option>{providers.map((provider) => <option value={provider}>{provider}</option>)}</select></label>
+    </section>
+
+    <div class="studio-monetization-result">
+      <span data-money-count>{productRows.length} produtos</span>
+      <small>Fonte: <code>src/content/store/products</code> + <code>storeProducts</code> dos artigos</small>
+    </div>
+
+    <section class="studio-money-grid" data-money-grid></section>
+
+    {(legacyOnlyProducts.length > 0 || noCommercialLink.length > 0) && (
+      <section class="studio-money-attention">
+        <div><p class="studio-eyebrow">Revisão comercial</p><h2>Itens que merecem conferência</h2></div>
+        <div class="studio-money-attention__grid">
+          <article><strong>{legacyOnlyProducts.length}</strong><span>produto(s) com somente <code>affiliateLinks</code> legado</span><p>O link existe, mas ainda não foi normalizado como oferta ativa no modelo atual.</p></article>
+          <article><strong>{noCommercialLink.length}</strong><span>produto(s) sem oferta ou link afiliado registrado</span><p>Não significa erro: pode ser ficha editorial sem parceria ativa. Não inventar link.</p></article>
+        </div>
+      </section>
+    )}
+
+    <script id="studio-money-data" type="application/json" set:html={JSON.stringify(productRows).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")}></script>
+  </section>
+  <script src="../../../scripts/studio-monetization.ts"></script>
+</StudioLayout>

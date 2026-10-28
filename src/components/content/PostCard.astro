@@ -24,7 +24,7 @@ const {
   blogMetaIcons = false,
 } = Astro.props;
 const category = post.data.category;
-const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""));
+const visual = resolvePostVisual(category, post.id.replace(/\.md$/, ""), post.data.coverImage);
 // Responsive derivatives of the approved cover, with its composition preserved.
 const responsiveFeatured = featured && blogMetaIcons && visual ===
   "/assets/posts/como-estudar-tecnologia-sem-se-perder-diversidade-assinatura-v1.webp";

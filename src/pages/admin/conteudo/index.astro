@@ -1,0 +1,147 @@
+---
+import { getCollection } from "astro:content";
+import { resolvePostVisual } from "../../../data/editorialVisuals";
+import StudioIcon from "../../../components/studio/StudioIcon.astro";
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+
+const posts = await getCollection("posts");
+const records = posts.map((post) => ({
+  slug: post.id,
+  title: post.data.title,
+  description: post.data.description,
+  publishedAt: post.data.publishedAt.toISOString().slice(0, 10),
+  category: post.data.category,
+  type: post.data.type,
+  readingTime: post.data.readingTime,
+  difficulty: post.data.difficulty,
+  draft: post.data.draft,
+  hasCover: Boolean(resolvePostVisual(post.data.category, post.id, post.data.coverImage)),
+  cover: resolvePostVisual(post.data.category, post.id, post.data.coverImage),
+  fallbackCover: resolvePostVisual(post.data.category, post.id),
+  coverImage: post.data.coverImage,
+  coverAlt: post.data.coverAlt,
+  coverCaption: post.data.coverCaption,
+  tags: post.data.tags,
+  storeProducts: post.data.storeProducts,
+  relatedPosts: post.data.relatedPosts,
+}));
+
+records.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt) || a.title.localeCompare(b.title));
+---
+
+<StudioLayout title="Conteúdo" description="Central editorial do DejotaCode Studio.">
+  <div class="studio-content" data-content-studio>
+    <header class="studio-content__header studio-final-page-head">
+      <div>
+        <p class="studio-eyebrow">Criar</p>
+        <h1>Conteúdo</h1>
+        <p>Biblioteca editorial com filtros de estado. Estados ainda não formalizados permanecem sem contagens fictícias.</p>
+      </div>
+
+    </header>
+
+    <div class="studio-content__workspace">
+      <aside class="studio-content__library" aria-label="Biblioteca de conteúdos">
+        <div class="studio-final-table-tools"><label class="studio-field studio-field--search"><span class="studio-sr-only">Buscar conteúdo</span><input type="search" placeholder="Buscar conteúdo..." data-post-search /></label><button class="studio-button studio-button--primary" type="button" data-new-post>+ Novo conteúdo</button></div>
+        <div class="studio-content__filters">
+          <button type="button" class="is-active" data-filter="all">Todos</button>
+          <button type="button" data-filter="draft">Rascunhos</button>
+          <button type="button" data-filter="published" title="Arquivos com draft false; não comprova publicação">Não rascunhos</button>
+        </div>
+        <div class="studio-final-table-scroll"><table class="studio-final-table"><thead><tr><th scope="col">Título</th><th scope="col">Categoria</th><th scope="col">Status</th><th scope="col">Ação</th></tr></thead><tbody data-post-list></tbody></table></div>
+        <p class="studio-content__list-status" data-list-status></p>
+      </aside>
+
+      <section class="studio-editor" aria-label="Editor de conteúdo">
+        <div class="studio-editor__empty" data-editor-empty>
+          <span class="studio-editor__empty-icon">✦</span><h2>Escolha um conteúdo</h2>
+          <p>Abra um artigo existente ou crie um novo rascunho. Nada é publicado automaticamente.</p><a class="studio-button" href="/admin/conteudo/">Voltar à biblioteca</a>
+        </div>
+
+        <form class="studio-editor__form" data-editor-form hidden>
+<div class="studio-v1-actions">
+ <div class="studio-v1-crumb"><button type="button" data-back-library aria-label="Voltar ao conteúdo"><StudioIcon name="arrow-left" />Conteúdo</button><span>/</span><strong>Editar artigo</strong></div>
+ <span data-save-state aria-live="polite">Arquivo local</span>
+ <div class="studio-article-actions">
+ <button class="studio-button studio-button--primary" type="button" data-save-post title="Salva somente no projeto local"><StudioIcon name="save" />Salvar</button>
+ <button class="studio-button" type="button" data-show-preview><StudioIcon name="eye" />Visualizar</button>
+ <button class="studio-button" type="button" data-show-ai><StudioIcon name="sparkles" />Revisar com IA</button>
+ <button class="studio-button" type="button" data-export-open><StudioIcon name="download" />Exportar</button>
+ <a class="studio-button" href="/admin/publicacao/"><StudioIcon name="shield" />Revisar publicação</a>
+ </div>
+</div>
+<div class="studio-editor-grid">
+ <aside class="studio-editor-meta" aria-label="Informações do artigo">
+ <div class="studio-v1-panel-head"><span>Informações do artigo</span><button class="studio-panel-toggle" type="button" data-toggle-panel="meta" aria-expanded="true" aria-label="Recolher informações do artigo" aria-controls="article-metadata"><StudioIcon name="arrow-left" /></button></div>
+ <div class="studio-v1-panel-body" id="article-metadata">
+ <label class="studio-field studio-field--wide"><span>Título</span><textarea name="title" required maxlength="180" rows="3"></textarea></label> <label class="studio-field studio-field--wide"><span>Descrição</span><textarea name="description" rows="3" required maxlength="320"></textarea></label> <label class="studio-field"><span>Categoria</span><select name="category"><option value="programacao">Programação</option><option value="linux-seguranca">Linux & Segurança</option><option value="inteligencia-artificial">Inteligência Artificial</option><option value="tecnologia-pratica">Tecnologia prática</option><option value="renda-digital">Renda digital</option></select></label> <label class="studio-field studio-field--wide"><span>Tags</span><input name="tags" placeholder="ia, produtividade, iniciantes" /></label>
+ <div class="studio-field"><span>Capa</span><div class="studio-cover"><img data-current-cover alt="Capa editorial resolvida para este artigo" hidden /><div data-cover-empty><StudioIcon name="image" size={24} /><span>Capa do artigo</span><small>Nenhuma capa vinculada</small></div></div><button class="studio-button" type="button" data-cover-picker>Selecionar da biblioteca</button><button class="studio-button" type="button" data-cover-reset>Usar capa padrão</button><input name="coverImage" type="hidden" /><label class="studio-field"><span>Descrição da capa</span><textarea name="coverAlt" rows="2" maxlength="400"></textarea></label><label class="studio-field"><span>Crédito e natureza da imagem</span><textarea name="coverCaption" rows="3" maxlength="1200"></textarea></label><small class="studio-field-note">A escolha só é gravada ao salvar o artigo. Confira pertinência, origem e direitos.</small></div>
+ <label class="studio-field"><span>Autor</span><input value="Dejota" disabled /></label>
+ <label class="studio-field"><span>Data</span><input name="publishedAt" type="date" required /></label>
+ <details class="studio-editor__advanced"><summary>Mais opções editoriais</summary><div class="studio-editor__meta-grid">
+ <label class="studio-field"><span>Slug</span><input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label> <label class="studio-field"><span>Tipo</span><select name="type"><option value="artigo">Artigo</option><option value="tutorial">Tutorial</option></select></label> <label class="studio-field"><span>Dificuldade</span><select name="difficulty"><option value="iniciante">Iniciante</option><option value="intermediario">Intermediário</option><option value="avancado">Avançado</option></select></label> <label class="studio-field"><span>Leitura (min)</span><input name="readingTime" type="number" min="1" step="1" required /></label> <label class="studio-field"><span>Produtos afiliados</span><input name="storeProducts" placeholder="nordpass, iprovpn" /></label> <label class="studio-field"><span>Relacionados</span><input name="relatedPosts" placeholder="slug-1, slug-2" /></label>
+ <label class="studio-toggle"><input name="draft" type="checkbox" /><span>Manter como rascunho</span></label>
+ </div></details>
+ </div>
+ </aside>
+ <section class="studio-editor-center" aria-label="Artigo">
+ <div class="studio-editor__tabs" role="tablist" aria-label="Modos do editor">
+ <button type="button" class="is-active" data-editor-tab="write" title="Edite os parágrafos diretamente">Editor</button>
+ <button type="button" data-editor-tab="markdown">Markdown</button>
+ <button type="button" data-editor-tab="preview">Preview</button>
+ <button type="button" data-editor-tab="ai">IA Assistente</button>
+ <button type="button" data-focus-editor aria-pressed="false">Modo foco</button>
+ </div>
+ <div class="studio-markdown-toolbar" role="toolbar" aria-label="Ferramentas Markdown">
+ <span class="studio-toolbar-label">Parágrafo</span>
+ <button type="button" data-md-action="bold" title="Negrito (Ctrl+B)" aria-label="Negrito"><strong>B</strong></button><button type="button" data-md-action="italic" title="Itálico (Ctrl+I)" aria-label="Itálico"><em>I</em></button>
+ <button type="button" data-md-action="h2" title="Título nível 2">H2</button><button type="button" data-md-action="h3" title="Título nível 3">H3</button>
+ <button type="button" data-md-action="ul" title="Lista" aria-label="Lista com marcadores"><StudioIcon name="list" /></button><button type="button" data-md-action="ol" title="Lista numerada" aria-label="Lista numerada"><StudioIcon name="list-numbers" /></button>
+ <button type="button" data-md-action="link" title="Inserir link (Ctrl+Shift+K)" aria-label="Inserir link"><StudioIcon name="link" /></button><button type="button" data-md-action="image" title="Inserir imagem" aria-label="Inserir imagem"><StudioIcon name="image" /></button>
+ <button type="button" data-md-action="codeblock" title="Bloco de código" aria-label="Bloco de código"><StudioIcon name="code" /></button>
+ </div>
+ <section class="studio-editor__panel studio-v1-canvas" data-panel="write"><small class="studio-reading-note">Clique em um parágrafo para editar. Estruturas complexas permanecem na aba Markdown.</small><article data-editor-canvas></article></section>
+ <section class="studio-editor__panel studio-v1-markdown" data-panel="markdown" hidden><label class="studio-field"><span>Texto em Markdown</span><textarea class="studio-editor__body" name="body" rows="24" spellcheck="true"></textarea></label></section>
+ <section class="studio-editor__panel studio-editor__preview studio-v1-canvas" data-panel="preview" hidden></section>
+ <section class="studio-editor__panel studio-context-copy studio-v1-ai" data-panel="ai" hidden><h2>IA Assistente</h2><p>Revisão com Codex usando sua conta ChatGPT. Título e texto são enviados ao serviço; a análise consome os limites do seu plano. A resposta é uma sugestão e não altera o artigo.</p><p data-ai-local-status role="status">Verifique a conexão com o Codex para iniciar.</p><button class="studio-button" type="button" data-ai-local-refresh>Verificar conexão</button><label class="studio-field"><span>Conexão</span><select data-ai-local-model></select></label><label class="studio-field"><span>Análise</span><select data-ai-local-task><option value="editorial">Revisão editorial</option><option value="seo">Sugestões de SEO</option><option value="resumo">Resumo</option></select></label><label class="studio-toggle"><input type="checkbox" data-ai-consent /><span>Enviar título e texto ao Codex/ChatGPT para esta análise.</span></label><button class="studio-button studio-button--primary" type="button" data-ai-local-run disabled>Analisar com ChatGPT</button><button class="studio-button" type="button" data-ai-cancel hidden>Cancelar análise</button><label class="studio-field"><span>Sugestões da IA</span><textarea data-ai-local-output rows="16" readonly></textarea></label></section>
+ <footer class="studio-editor__writing-status"><span><span data-editor-words>0 palavras</span> · <span data-editor-chars>0 caracteres</span></span><span>Edição visual e Markdown sincronizados</span></footer>
+ </section>
+ <aside class="studio-editor-context" aria-label="Contexto do artigo">
+ <div class="studio-v1-panel-head"><span>Contexto do artigo</span><button class="studio-panel-toggle" type="button" data-toggle-panel="context" aria-expanded="true" aria-label="Recolher contexto do artigo" aria-controls="article-context"><StudioIcon name="arrow-right" /></button></div>
+ <div id="article-context">
+ <div class="studio-context-tabs" role="tablist" aria-label="Painel contextual">
+ <button type="button" data-context-tab="seo" aria-pressed="true">SEO</button><button type="button" data-context-tab="media" aria-pressed="false">Mídia</button><button type="button" data-context-tab="checklist" aria-pressed="false">Checklist</button><button type="button" data-context-tab="ai" aria-pressed="false">IA</button><button type="button" data-context-tab="status" aria-pressed="false">Status</button>
+ </div>
+ <div class="studio-v1-panel-body">
+ <section class="studio-context-copy" data-context-panel="seo">
+ <div class="studio-seo-diagnostic"><strong><StudioIcon name="search" />Revisão de SEO</strong><p data-context-diagnostic></p><small>Diagnóstico interno; não é uma nota do Google.</small></div>
+ <label class="studio-field"><span>Título SEO</span><input data-seo-title readonly aria-describedby="seo-shared-note" /></label>
+ <label class="studio-field"><span>Meta description</span><textarea data-seo-description readonly rows="3" aria-describedby="seo-shared-note"></textarea></label>
+ <div class="studio-field"><span>Preview SERP</span><div class="studio-serp-card"><small>dejotacode.com.br › blog</small><h3 data-serp-title></h3><p data-serp-description></p></div></div>
+ <p id="seo-shared-note" class="studio-field-note">Vinculados ao título e à descrição do artigo.</p>
+ </section>
+ <section class="studio-context-copy" data-context-panel="media" hidden><h3>Mídia editorial</h3><p>A capa escolhida no artigo tem prioridade sobre o mapa oficial. Selecione a capa nas informações do artigo, preencha descrição e crédito e salve.</p><a class="studio-button" href="/admin/midia/">Abrir biblioteca<StudioIcon name="arrow-right" /></a></section>
+ <section class="studio-context-copy" data-context-panel="checklist" hidden><h3>Revisão editorial</h3><div data-context-checks></div><p>Orientações internas; publicação mantém seus próprios gates.</p></section>
+ <section class="studio-context-copy" data-context-panel="ai" hidden><h3>Assistência por IA</h3><p>Revisão pelo Codex/ChatGPT na aba IA Assistente, mediante envio explícito do texto.</p><a class="studio-button" href="/admin/ia/">Preparar contexto<StudioIcon name="arrow-right" /></a></section>
+ <section class="studio-context-copy" data-context-panel="status" hidden><h3>Estado do arquivo</h3><p data-context-status></p><p>Em revisão, pronto e arquivado: planejados.</p></section>
+ </div></div></aside>
+</div>
+<p data-editor-message class="studio-save-feedback" role="status" aria-live="polite">Projeto local. Salvar não publica.</p>
+<span data-editor-heading hidden>Novo conteúdo</span><span data-editor-state hidden>Rascunho</span>
+<dialog class="studio-export-dialog studio-cover-picker" data-cover-dialog aria-labelledby="cover-picker-title"><header><h2 id="cover-picker-title">Selecionar capa</h2><button class="studio-button" type="button" data-cover-close>Fechar biblioteca</button></header><label class="studio-field"><span>Buscar imagem</span><input type="search" data-cover-search /></label><p data-cover-status role="status"></p><div data-cover-results></div></dialog>
+<dialog class="studio-export-dialog" data-export-dialog aria-labelledby="export-title"><header><h2 id="export-title">Exportar</h2><button class="studio-button" type="button" data-export-close>Fechar</button></header><p>Markdown com frontmatter. Nenhum arquivo é publicado.</p><textarea data-final-markdown rows="12" readonly aria-label="Markdown final"></textarea><footer><button class="studio-button" type="button" data-copy-markdown>Copiar Markdown</button><button class="studio-button studio-button--primary" type="button" data-download-markdown><StudioIcon name="download" />Baixar .md</button></footer></dialog>
+</form>
+      </section>
+    </div>
+  <dialog class="studio-export-dialog studio-discard-dialog" data-discard-dialog aria-labelledby="discard-title" aria-describedby="discard-description">
+    <header><h2 id="discard-title">Alterações não salvas</h2></header>
+    <p id="discard-description">Você tem alterações nesta tela. Descartá-las mantém a última versão salva do arquivo.</p>
+    <footer>
+      <button class="studio-button studio-button--primary" type="button" data-discard-result="keep" autofocus>Continuar editando</button>
+      <button class="studio-button studio-button--danger" type="button" data-discard-result="discard">Descartar alterações</button>
+    </footer>
+  </dialog>
+  </div>
+  <script id="studio-posts-data" type="application/json" set:html={JSON.stringify(records).replace(/</g, "\\u003c")}></script>
+  <script src="/src/scripts/studio-content.ts"></script>
+</StudioLayout>
