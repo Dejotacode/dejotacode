@@ -1,3 +1,4 @@
+import {publicationSnapshot} from './studio-publication-snapshot.mjs';
 import {codexStatus,reviewCodex} from './studio-ai-codex.mjs';
 import {readFile,writeFile,rename,mkdir,realpath,lstat,unlink,readdir} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
@@ -78,6 +79,7 @@ export default function studioLocal(root){
      await walk(assets);res.end(JSON.stringify({items:items.sort()}));return;
     }
     if(url.pathname==='/__studio-local/ai/status'&&req.method==='GET'){res.end(JSON.stringify(await codexStatus()));return;}
+    if(url.pathname==='/__studio-local/publication'&&req.method==='GET'){res.end(JSON.stringify(publicationSnapshot(root,await posts.read(url.searchParams.get('slug')))));return;}
     if(!['/__studio-local/posts','/__studio-local/ai/review'].includes(url.pathname))fail(404,'Não encontrado.');
     let result;
     if(req.method==='GET'&&url.pathname==='/__studio-local/posts'){result=await posts.read(url.searchParams.get('slug'));delete result.raw;}

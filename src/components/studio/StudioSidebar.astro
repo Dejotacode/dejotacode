@@ -56,6 +56,10 @@ const plannedContentFilters = ["Em revisão", "Prontos para publicar", "Arquivad
       <span class="studio-nav__icon"><StudioIcon name="image" /></span><span>Mídia</span>
     </a>
 
+    <a class:list={["studio-nav__item", { "studio-nav__item--active": currentPath.startsWith("/admin/publicacao") }]} href="/admin/publicacao/">
+      <span class="studio-nav__icon"><StudioIcon name="file" /></span><span>Publicação</span>
+    </a>
+
     <a class:list={["studio-nav__item", { "studio-nav__item--active": currentPath.startsWith("/admin/monetizacao") }]} href="/admin/monetizacao/">
       <span class="studio-nav__icon"><StudioIcon name="dollar" /></span><span>Monetização</span>
     </a>

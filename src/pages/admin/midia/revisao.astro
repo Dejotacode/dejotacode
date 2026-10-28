@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import AdminLayout from "../../../layouts/AdminLayout.astro";
+import StudioToolLayout from "../../../layouts/StudioToolLayout.astro";
 import "../../../styles/admin-metrics.css";
 
 const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
@@ -15,8 +15,8 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
 }))];
 ---
 
-<AdminLayout title="Revisão de mídia" description="Revisão humana da biblioteca de mídia do DejotaCode.">
-  <main id="conteudo" class="admin-page" data-api={api}>
+<StudioToolLayout title="Revisão de mídia" description="Revisão humana da biblioteca de mídia do DejotaCode.">
+  <section aria-label="Ferramenta do Studio" class="admin-page" data-api={api}>
     <div class="admin-panel">
       <p class="admin-kicker">Biblioteca operacional</p>
       <h1>Revisão de mídia</h1>
@@ -69,7 +69,7 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
         <button class="button" type="button" data-logout>Sair</button>
       </div>
     </div>
-  </main>
+  </section>
 
   <script is:inline id="canonical-media-keys" type="application/json" set:html={JSON.stringify(canonicalMediaKeys).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")} />
 
@@ -472,4 +472,4 @@ const canonicalMediaKeys = [...new Set(posts.flatMap((post) => {
       }
     }
   </style>
-</AdminLayout>
+</StudioToolLayout>

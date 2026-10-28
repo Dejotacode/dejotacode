@@ -12,7 +12,7 @@ const posts = await getCollection("posts");
 const postMap = new Map(posts.map((post) => [post.id, post]));
 
 const git = (...args: string[]) => {
-  try { return execFileSync("git", args, { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim(); }
+  try { return execFileSync("git", args, { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trimEnd(); }
   catch { return null; }
 };
 
@@ -79,7 +79,7 @@ const candidateRows = posts.map((post) => {
 
 const unrelatedChanges = statusLines.filter((line) => {
   const file = line.slice(3).split(" -> ").at(-1) || "";
-  return !file.startsWith("src/content/posts/") && !file.startsWith("public/assets/posts/") && !file.startsWith("src/content/store/products/");
+  return !/^src\/content\/posts\/[a-z0-9]+(?:-[a-z0-9]+)*\.md$/.test(file);
 }).length;
 
 const workspaceBlockers: string[] = [];

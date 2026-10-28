@@ -1,3 +1,4 @@
+import { attachStudioPublishFlow } from "./studio-publish-flow";
 export {};
 
 type Dependency = { path: string; reason: string; status: string };
@@ -85,7 +86,7 @@ const openDetail = (row: Candidate) => {
     <div class="studio-publish-detail__actions">
       <a class="studio-button" href="/admin/conteudo/?post=${encodeURIComponent(row.slug)}">Abrir no Conteúdo</a>
       <button class="studio-button" type="button" data-copy-manifest>Copiar manifesto</button>
-      <a class="studio-button${!workspaceSafe || state !== "ready" ? " is-disabled" : ""}" href="/admin/editor/" ${!workspaceSafe || state !== "ready" ? 'aria-disabled="true" tabindex="-1"' : ""}>Abrir publicação assistida</a>
+      <button class="studio-button" type="button" data-assisted-review ${!workspaceSafe || state !== "ready" ? "disabled" : ""}>Preparar publicação no Studio</button>
     </div>
     <p class="studio-publish-note">O Studio não faz merge ou deploy por conta própria. O fluxo oficial continua exigindo PR, CI aprovado, SHA revisado e confirmação explícita.</p>`;
   detail.querySelector<HTMLButtonElement>("[data-copy-manifest]")?.addEventListener("click", async () => {
@@ -93,6 +94,7 @@ const openDetail = (row: Candidate) => {
     try { await navigator.clipboard.writeText(manifest(row)); button.textContent = "Manifesto copiado"; }
     catch { button.textContent = "Cópia bloqueada pelo navegador"; }
   });
+  attachStudioPublishFlow(detail, row.slug, api);
   dialog.showModal();
 };
 
@@ -122,7 +124,7 @@ const checkApi = async () => {
     const response = await fetch(`${api}/api/editor/status`, { credentials: "include" });
     if (response.status === 401 || response.status === 403) {
       apiState.textContent = "Autenticação necessária";
-      apiMessage.textContent = "Worker respondeu. Entre no Admin para verificar a integração GitHub; nenhuma publicação foi liberada.";
+      apiMessage.textContent = "Worker respondeu. Entre na conta editorial do Studio para verificar a integração GitHub; nenhuma publicação foi liberada.";
       return;
     }
     if (!response.ok) throw new Error(`HTTP ${response.status}`);

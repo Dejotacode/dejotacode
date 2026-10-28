@@ -1,5 +1,7 @@
 # Comece pelo estado atual
 
+Operação do Studio (28/10/2026): entrada principal em http://localhost:4321/admin/, executada na worktree editorial /home/dejota/Workspace/dejotacode-fullstack/dejotacode-studio-operacao. Desenvolvimento com outras frentes preservado em /home/dejota/Workspace/dejotacode-fullstack/dejotacode. Não confundir os caminhos ao salvar ou publicar. O Admin antigo foi substituído pelo Studio; backend em dejotacode-api/ e segredo local permanecem separados.
+
 Status: vigente como ponto de entrada. Escopo: localização das fontes, não espelho automático da produção. Responsável: @control. Revisão: 10/10/2026.
 
 Projeto principal: /home/dejota/Workspace/fullstack/dejotacode. Preview habitual: 4321; conferir processos antes de iniciar.
