@@ -1,0 +1,199 @@
+---
+import { getCollection } from "astro:content";
+import { resolvePostVisual } from "../data/editorialVisuals";
+import "../styles/fonts.css";
+import "../styles/tokens.css";
+import "../styles/studio.css";
+import "../styles/studio-v1.css";
+import StudioSidebar from "../components/studio/StudioSidebar.astro";
+import StudioIcon from "../components/studio/StudioIcon.astro";
+
+interface Props { title?: string; description?: string; }
+const { title = "DejotaCode Studio", description = "Central de criação, gestão e operação da DejotaCode." } = Astro.props;
+const pageTitle = title === "DejotaCode Studio" ? title : `${title} · DejotaCode Studio`;
+const studioAvailable = import.meta.env.DEV || process.env.STUDIO_ENABLED === "true";
+
+const posts = studioAvailable ? await getCollection("posts") : [];
+const drafts = posts.filter((post) => post.data.draft);
+const missingCover = posts.filter((post) => !resolvePostVisual(post.data.category, post.id, post.data.coverImage));
+const alerts = [
+  ...(drafts.length ? [{ label: `${drafts.length} rascunho${drafts.length === 1 ? "" : "s"} pendente${drafts.length === 1 ? "" : "s"}`, detail: "Conteúdo ainda marcado como draft", href: "/admin/conteudo/?filter=draft", tone: "warning" }] : []),
+  ...(missingCover.length ? [{ label: `${missingCover.length} conteúdo${missingCover.length === 1 ? "" : "s"} sem capa resolvida`, detail: "Revisar mídia editorial antes da publicação", href: "/admin/conteudo/?filter=missing-cover", tone: "danger" }] : []),
+];
+const commandItems = studioAvailable ? [
+  { title: "Dashboard", subtitle: "Visão geral do Studio", href: "/admin/", kind: "Navegação" },
+  { title: "Conteúdo", subtitle: "Criar e revisar artigos", href: "/admin/conteudo/", kind: "Navegação" },
+  { title: "Novo conteúdo", subtitle: "Abrir editor para novo rascunho", href: "/admin/conteudo/?new=1", kind: "Ação" },
+  { title: "SEO & Métricas", subtitle: "Diagnóstico editorial e dados oficiais", href: "/admin/seo/", kind: "Navegação" },
+  { title: "Mídia", subtitle: "Biblioteca de imagens", href: "/admin/midia/", kind: "Navegação" },
+  { title: "Monetização", subtitle: "Produtos e oportunidades editoriais", href: "/admin/monetizacao/", kind: "Navegação" },
+  { title: "Publicação", subtitle: "Gate, manifesto e revisão", href: "/admin/publicacao/", kind: "Operar" },
+  { title: "IA", subtitle: "Preparar análise com contexto real", href: "/admin/ia/", kind: "Operar" },
+  { title: "Projetos", subtitle: "Mapa real do workspace", href: "/admin/projetos/", kind: "Navegação" },
+  { title: "Configurações", subtitle: "Preferências locais do Studio", href: "/admin/configuracoes/", kind: "Sistema" },
+  ...posts.map((post) => ({ title: post.data.title, subtitle: `${post.data.draft ? "Rascunho" : "Publicado"} · ${post.data.category.replaceAll("-", " ")}`, href: `/admin/conteudo/?post=${encodeURIComponent(post.id)}`, kind: "Conteúdo" })),
+] : [];
+---
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0d12" />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem("dejotacode-studio-theme");
+        document.documentElement.dataset.theme = stored === "light" || stored === "dark" ? stored : "dark";
+      })();
+    </script>
+  </head>
+  <body class="studio-body">
+    {studioAvailable ? (
+      <div class="studio-shell" data-studio-shell>
+        <a class="studio-skip-link" href="#conteudo">Pular para o conteúdo</a>
+        <StudioSidebar />
+        <button class="studio-backdrop" type="button" data-studio-menu-close aria-label="Fechar navegação"></button>
+
+        <div class="studio-main">
+          <header class="studio-topbar">
+            <div class="studio-topbar__left">
+              <button class="studio-icon-button studio-menu-button" type="button" data-studio-menu-toggle aria-expanded="false" aria-label="Abrir menu">☰</button>
+              <div class="studio-topbar__context"><span>DejotaCode Studio</span><strong>{title}</strong></div>
+            </div>
+
+            <button class="studio-command-trigger" type="button" data-command-open aria-label="Buscar ou executar comando">
+              <StudioIcon name="search" size={20} /><span>Buscar ou executar um comando...</span><kbd>Ctrl + K</kbd>
+            </button>
+
+            <div class="studio-topbar__actions"><button class="studio-icon-button" type="button" data-studio-theme-toggle aria-label="Alternar tema" title="Alternar tema"><StudioIcon name="theme" size={20} /></button>
+              <details class="studio-topbar-menu studio-notifications">
+                <summary class="studio-icon-button" aria-label={`Pendências do Studio: ${alerts.length}`}>
+                  <StudioIcon name="bell" size={20} />{alerts.length > 0 && <span class="studio-notification-dot"></span>}
+                </summary>
+                <div class="studio-topbar-popover studio-notifications__panel">
+                  <div class="studio-popover-heading"><strong>Pendências</strong><span>{alerts.length}</span></div>
+                  {alerts.length ? alerts.map((alert) => (
+                    <a href={alert.href} class:list={["studio-notification-item", `is-${alert.tone}`]}><i></i><span><strong>{alert.label}</strong><small>{alert.detail}</small></span></a>
+                  )) : <p class="studio-popover-empty">Nenhuma pendência calculável agora.</p>}
+                  <small class="studio-popover-foot">Somente estados derivados de dados reais aparecem aqui.</small>
+                </div>
+              </details>
+
+              <details class="studio-topbar-menu studio-profile">
+                <summary class="studio-profile-pill" aria-label="Perfil de Dejota" title="Perfil de Dejota"><span class="studio-avatar">D</span><strong>Dejota</strong><span aria-hidden="true">⌄</span></summary>
+                <div class="studio-topbar-popover studio-profile__panel">
+                  <div class="studio-profile-card"><span class="studio-avatar studio-avatar--large">D</span><div><strong>Dejota</strong><small>Ambiente local</small></div></div>
+                  <button type="button" data-studio-theme-toggle><span>Alternar tema</span><kbd>◐</kbd></button>
+                  <a href="/admin/configuracoes/"><span>Configurações</span><StudioIcon name="settings" size={15} /></a>
+                  <div class="studio-profile-note">DejotaCode Studio · operação local</div>
+                </div>
+              </details>
+            </div>
+          </header>
+
+          <div class="studio-v1-isolation">Projeto local · dados reais · salvar não publica</div>
+          <main class="studio-workspace" id="conteudo" tabindex="-1"><slot /></main>
+        </div>
+
+        <dialog class="studio-command-palette" data-command-dialog aria-labelledby="studio-command-title">
+          <div class="studio-command-palette__search"><StudioIcon name="search" /><input type="search" data-command-search aria-label="Buscar comando ou conteúdo" placeholder="Digite para buscar…" autocomplete="off" /><kbd>Esc</kbd></div>
+          <div class="studio-command-palette__body">
+            <p id="studio-command-title" class="studio-command-label">Comandos e conteúdo</p>
+            <div data-command-results></div>
+            <p class="studio-command-empty" data-command-empty hidden>Nenhum resultado encontrado.</p>
+          </div>
+          <footer><span>↑ ↓ navegar</span><span>Enter abrir</span><span>Esc fechar</span></footer>
+        </dialog>
+        <script id="studio-command-data" type="application/json" set:html={JSON.stringify(commandItems).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")}></script>
+      </div>
+    ) : (
+      <main class="studio-lock" id="conteudo"><div class="studio-lock__card"><p class="studio-eyebrow">Área privada</p><h1>DejotaCode Studio indisponível neste build</h1><p>Os módulos operacionais e seus dados locais não são incluídos no build de produção. Use o ambiente local ou uma implantação protegida explicitamente.</p><a class="studio-button" href="/">Voltar ao site</a></div></main>
+    )}
+
+    {studioAvailable && (
+      <script is:inline>
+        const shell = document.querySelector("[data-studio-shell]");
+        const closeMenu = () => {
+          const wasOpen=shell?.classList.contains("studio-shell--menu-open");
+          shell?.classList.remove("studio-shell--menu-open");
+          if(wasOpen)document.querySelector("[data-studio-menu-toggle]")?.focus();
+        };
+        document.querySelectorAll("[data-studio-menu-toggle]").forEach((button) => button.addEventListener("click", () => shell?.classList.toggle("studio-shell--menu-open")));
+        document.querySelectorAll("[data-studio-menu-close]").forEach((button) => button.addEventListener("click", closeMenu));
+        document.querySelectorAll("[data-studio-theme-toggle]").forEach((button) => button.addEventListener("click", () => {
+          const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem("dejotacode-studio-theme", next);
+        }));
+
+        const dialog = document.querySelector("[data-command-dialog]");
+        const input = document.querySelector("[data-command-search]");
+        const results = document.querySelector("[data-command-results]");
+        const empty = document.querySelector("[data-command-empty]");
+        const dataNode = document.querySelector("#studio-command-data");
+        const commands = JSON.parse(dataNode?.textContent || "[]");
+        let activeIndex = 0;
+        const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const renderCommands = () => {
+          const term = normalize(input?.value || "");
+          const visible = commands.filter((item) => !term || normalize(`${item.title} ${item.subtitle} ${item.kind}`).includes(term)).slice(0, 10);
+          if (!results || !empty) return;
+          results.replaceChildren(); activeIndex = 0; empty.hidden = visible.length > 0;
+          visible.forEach((item, index) => {
+            const anchor = document.createElement("a"); anchor.href = item.href; anchor.className = `studio-command-result${index === 0 ? " is-active" : ""}`;
+            anchor.innerHTML = `<span><strong></strong><small></small></span><em></em>`;
+            anchor.querySelector("strong").textContent = item.title; anchor.querySelector("small").textContent = item.subtitle; anchor.querySelector("em").textContent = item.kind;
+            results.append(anchor);
+          });
+        };
+        const openPalette = () => { if (!(dialog instanceof HTMLDialogElement) || dialog.open || document.querySelector("dialog[open]")) return; closeMenu(); renderCommands(); dialog.showModal(); requestAnimationFrame(() => input?.focus()); };
+        document.querySelectorAll("[data-command-open]").forEach((button) => button.addEventListener("click", openPalette));
+        input?.addEventListener("input", renderCommands);
+        document.addEventListener("keydown", (event) => {
+          if ((event.ctrlKey || event.metaKey) && !event.shiftKey && !event.altKey && event.key.toLowerCase() === "k") { event.preventDefault(); openPalette(); return; }
+          if (!(dialog instanceof HTMLDialogElement) || !dialog.open) { if (event.key === "Escape") closeMenu(); return; }
+          const items = [...dialog.querySelectorAll(".studio-command-result")];
+          if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+            event.preventDefault(); activeIndex = Math.max(0, Math.min(items.length - 1, activeIndex + (event.key === "ArrowDown" ? 1 : -1)));
+            items.forEach((item, index) => item.classList.toggle("is-active", index === activeIndex)); items[activeIndex]?.scrollIntoView({ block: "nearest" });
+          }
+          if (event.key === "Enter" && document.activeElement === input && items[activeIndex]) { event.preventDefault(); items[activeIndex].click(); }
+        });
+        dialog?.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+        document.querySelector("[data-content-disclosure]")?.addEventListener("click", (event) => { const button=event.currentTarget; const submenu=document.querySelector("[data-content-submenu]"); const expanded=button.getAttribute("aria-expanded")==="true"; button.setAttribute("aria-expanded",String(!expanded)); submenu.hidden=expanded; });
+        document.addEventListener("keydown", event => { if(event.key==="Escape")document.querySelectorAll(".studio-topbar-menu[open]").forEach(menu=>{menu.open=false;menu.querySelector("summary")?.focus();}); });
+        const sidebar = document.querySelector(".studio-sidebar");
+        const mobile = matchMedia("(max-width:1100px)");
+        const syncSidebar = () => {
+          const open=mobile.matches&&shell?.classList.contains("studio-shell--menu-open");
+          if(sidebar)sidebar.inert=mobile.matches&&!open;
+          document.querySelector("[data-studio-menu-toggle]")?.setAttribute("aria-expanded",String(Boolean(open)));
+        };
+        new MutationObserver(syncSidebar).observe(shell,{attributes:true,attributeFilter:["class"]});
+        mobile.addEventListener("change",syncSidebar);syncSidebar();
+        document.addEventListener("keydown",event=>{
+          if(!mobile.matches||!shell?.classList.contains("studio-shell--menu-open")||document.querySelector("dialog[open]"))return;
+          const controls=[...sidebar.querySelectorAll("a,button")].filter(el=>el.getClientRects().length);
+          if(event.key==="Escape"){closeMenu();document.querySelector("[data-studio-menu-toggle]")?.focus();}
+          if(event.key==="Tab"){
+            const first=controls[0],last=controls.at(-1);
+            if(!sidebar.contains(document.activeElement)){event.preventDefault();first?.focus();}
+            else if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
+            else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+          }
+        });
+        document.querySelectorAll(".studio-topbar-menu").forEach(menu=>{
+          menu.addEventListener("toggle",()=>{if(menu.open)document.querySelectorAll(".studio-topbar-menu").forEach(other=>{if(other!==menu)other.open=false;});});
+        });
+        document.addEventListener("click",event=>{
+          if(!(event.target instanceof Element))return;
+          document.querySelectorAll(".studio-topbar-menu[open]").forEach(menu=>{if(!menu.contains(event.target))menu.open=false;});
+        });
+        renderCommands();
+      </script>
+    )}
+  </body>
+</html>

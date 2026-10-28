@@ -122,7 +122,8 @@ export const trailVisuals: Record<string, string> = {
   "primeira-renda-online": "/assets/trails/primeira-renda-online-diversidade-assinatura-v1.webp",
 };
 
-export function resolvePostVisual(category: string, slug?: string) {
+export function resolvePostVisual(category: string, slug?: string, coverImage?: string) {
+  if (coverImage) return coverImage;
   if (slug && postSpecificVisuals[slug]) return postSpecificVisuals[slug];
   return postCategoryVisuals[category] ?? "/assets/resources/category-aprendizado.svg";
 }

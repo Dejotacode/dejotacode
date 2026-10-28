@@ -1,0 +1,77 @@
+---
+import { getCollection } from "astro:content";
+import { resolvePostVisual } from "../../data/editorialVisuals";
+import StudioIcon from "./StudioIcon.astro";
+
+const currentPath = Astro.url.pathname;
+const posts = await getCollection("posts");
+const total = posts.length;
+const drafts = posts.filter((post) => post.data.draft).length;
+const published = total - drafts;
+const missingCover = posts.filter((post) => !resolvePostVisual(post.data.category, post.id, post.data.coverImage)).length;
+const contentActive = currentPath.startsWith("/admin/conteudo");
+const projectsActive = currentPath.startsWith("/admin/projetos");
+
+const realContentFilters = [
+  { label: "Todos os conteúdos", href: "/admin/conteudo/", count: total },
+  { label: "Rascunhos", href: "/admin/conteudo/?filter=draft", count: drafts },
+  { label: "Faltando capa", href: "/admin/conteudo/?filter=missing-cover", count: missingCover },
+  { label: "Não rascunhos", href: "/admin/conteudo/?filter=published", count: published },
+];
+const plannedContentFilters = ["Em revisão", "Prontos para publicar", "Arquivados"];
+---
+
+<aside class="studio-sidebar" aria-label="Navegação do DejotaCode Studio">
+  <div class="studio-sidebar__brand">
+    <span class="studio-brandmark" aria-hidden="true">
+      <img class="studio-brandmark__dark" src="/assets/brand/dejotacode-symbol-dark.svg" alt="" />
+      <img class="studio-brandmark__light" src="/assets/brand/dejotacode-symbol-light.svg" alt="" />
+    </span>
+    <div><strong>Dejota<em>Code</em></strong><span>Studio</span></div>
+    <button class="studio-icon-button studio-sidebar__close" type="button" data-studio-menu-close aria-label="Fechar menu">×</button>
+  </div>
+
+  <nav class="studio-nav studio-nav--product">
+    <a class:list={["studio-nav__item", { "studio-nav__item--active": currentPath === "/admin/" }]} href="/admin/" aria-current={currentPath === "/admin/" ? "page" : undefined}>
+      <span class="studio-nav__icon"><StudioIcon name="dashboard" /></span><span>Dashboard</span>
+    </a>
+
+    <section class:list={["studio-nav__tree", { "is-active": contentActive }]}>
+      <button class:list={["studio-nav__item", { "studio-nav__item--active": contentActive }]} type="button" data-content-disclosure aria-expanded="false" aria-controls="studio-content-submenu"><span class="studio-nav__icon"><StudioIcon name="file" /></span><span>Conteúdo</span><span class="studio-nav__chevron"><StudioIcon name="chevron" /></span></button>
+      <div class="studio-nav__submenu" id="studio-content-submenu" data-content-submenu hidden aria-label="Filtros de conteúdo">
+        {realContentFilters.map((item) => (
+          <a href={item.href}><span>{item.label}</span><strong>{item.count}</strong></a>
+        ))}
+        {plannedContentFilters.map((label) => (
+          <span class="is-planned" title="Estado ainda não formalizado no modelo editorial"><span>{label}</span><small>planejado</small></span>
+        ))}
+      </div>
+    </section>
+
+    <a class:list={["studio-nav__item", { "studio-nav__item--active": currentPath.startsWith("/admin/seo") }]} href="/admin/seo/">
+      <span class="studio-nav__icon"><StudioIcon name="search" /></span><span>SEO</span>
+    </a>
+
+    <a class:list={["studio-nav__item", { "studio-nav__item--active": currentPath.startsWith("/admin/midia") }]} href="/admin/midia/">
+      <span class="studio-nav__icon"><StudioIcon name="image" /></span><span>Mídia</span>
+    </a>
+
+    <a class:list={["studio-nav__item", { "studio-nav__item--active": currentPath.startsWith("/admin/monetizacao") }]} href="/admin/monetizacao/">
+      <span class="studio-nav__icon"><StudioIcon name="dollar" /></span><span>Monetização</span>
+    </a>
+
+    <div class="studio-nav__divider"></div>
+
+    <p class="studio-nav__label">Ecossistema</p>
+    <a class:list={["studio-nav__item", { "studio-nav__item--active": projectsActive }]} href="/admin/projetos/"><StudioIcon name="folder" size={20} /><span>Projetos</span></a>
+    <span class="studio-nav__item studio-nav__item--future"><StudioIcon name="sparkles" size={20} /><span>Agentes</span><small>planejado</small></span>
+    <a class="studio-nav__item" href="/admin/projetos/?q=dejotacode-tools"><StudioIcon name="wrench" size={20} /><span>Ferramentas</span></a>
+    <span class="studio-nav__item studio-nav__item--future"><StudioIcon name="video" size={20} /><span>Video Factory</span><small>planejado</small></span>
+    <span class="studio-nav__item studio-nav__item--future"><StudioIcon name="microphone" size={20} /><span>Voice Studio</span><small>planejado</small></span>
+    <a class="studio-nav__item" href="/admin/projetos/?q=dejotacode-brand"><StudioIcon name="brand" size={20} /><span>Brand</span></a>
+  </nav>
+
+  <div class="studio-sidebar__footer">
+    <a class="studio-sidebar__settings" href="/admin/configuracoes/"><StudioIcon name="settings" /><span>Configurações</span></a>
+  </div>
+</aside>

@@ -1,0 +1,141 @@
+---
+import { getCollection } from "astro:content";
+import { execFileSync } from "node:child_process";
+import { parseGitRelation } from "../../../../scripts/studio-git-state.mjs";
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+import { resolvePostVisual } from "../../../data/editorialVisuals";
+import "../../../styles/studio-publication.css";
+
+const root = process.cwd();
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+const posts = await getCollection("posts");
+const postMap = new Map(posts.map((post) => [post.id, post]));
+
+const git = (...args: string[]) => {
+  try { return execFileSync("git", args, { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim(); }
+  catch { return null; }
+};
+
+const branch = git("branch", "--show-current") || "desconhecida";
+const branchLabel = branch.length > 28 ? `${branch.slice(0, 25)}…` : branch;
+const relationRaw = git("rev-list", "--left-right", "--count", "official/main...HEAD");
+const { verified: relationVerified, behind, ahead } = parseGitRelation(relationRaw);
+const statusRaw = git("status", "--porcelain=v1", "--untracked-files=all");
+const statusLines = (statusRaw ?? "").split("\n").filter(Boolean);
+const changed = new Map<string, string>();
+for (const line of statusLines) {
+  const status = line.slice(0, 2).trim() || "M";
+  const file = line.slice(3).split(" -> ").at(-1) || "";
+  if (file) changed.set(file, status);
+}
+
+const existsOnMain = (file: string) => Boolean(git("cat-file", "-e", `official/main:${file}`) || (() => {
+  try { execFileSync("git", ["cat-file", "-e", `official/main:${file}`], { cwd: root, stdio: "ignore" }); return true; }
+  catch { return false; }
+})());
+
+const candidateRows = posts.map((post) => {
+  const postPath = `src/content/posts/${post.id}.md`;
+  const postStatus = changed.get(postPath) || "";
+  const image = resolvePostVisual(post.data.category, post.id, post.data.coverImage) || "";
+  const coverPath = image.startsWith("/assets/") ? `public${image}` : "";
+  const dependencies: Array<{ path: string; reason: string; status: string }> = [];
+  if (coverPath && (changed.has(coverPath) || !existsOnMain(coverPath))) {
+    dependencies.push({ path: coverPath, reason: "capa local precisa acompanhar o artigo", status: changed.get(coverPath) || "novo" });
+  }
+  for (const productId of post.data.storeProducts) {
+    const productPath = `src/content/store/products/${productId}.md`;
+    if (changed.has(productPath) || !existsOnMain(productPath)) dependencies.push({ path: productPath, reason: `produto relacionado ${productId}`, status: changed.get(productPath) || "novo" });
+  }
+  const issues: string[] = [];
+  const warnings: string[] = [];
+  if (post.data.draft) issues.push("Ainda está marcado como rascunho");
+  if (!post.data.title.trim()) issues.push("Título ausente");
+  if (!post.data.description.trim()) issues.push("Descrição ausente");
+  if (!image) warnings.push("Sem capa resolvida");
+  for (const slug of post.data.relatedPosts) {
+    const related = postMap.get(slug);
+    if (!related) warnings.push(`Relacionado ausente: ${slug}`);
+    else if (related.data.draft) warnings.push(`Relacionado ainda é rascunho: ${slug}`);
+  }
+  const packageType = dependencies.length ? "package" : "markdown";
+  return {
+    slug: post.id,
+    title: post.data.title,
+    draft: post.data.draft,
+    postPath,
+    postStatus,
+    changed: Boolean(postStatus),
+    image,
+    dependencies,
+    issues,
+    warnings,
+    packageType,
+    storeProducts: post.data.storeProducts,
+    relatedPosts: post.data.relatedPosts,
+  };
+}).filter((item) => item.changed)
+  .sort((a, b) => Number(a.draft) - Number(b.draft) || a.title.localeCompare(b.title, "pt-BR"));
+
+const unrelatedChanges = statusLines.filter((line) => {
+  const file = line.slice(3).split(" -> ").at(-1) || "";
+  return !file.startsWith("src/content/posts/") && !file.startsWith("public/assets/posts/") && !file.startsWith("src/content/store/products/");
+}).length;
+
+const workspaceBlockers: string[] = [];
+if (!relationVerified) workspaceBlockers.push("Não foi possível verificar a relação com official/main");
+if (statusRaw === null) workspaceBlockers.push("Não foi possível verificar os arquivos alterados do workspace");
+if (behind > 0) workspaceBlockers.push(`HEAD está ${behind} commit(s) atrás de official/main`);
+if (ahead > 0) workspaceBlockers.push(`HEAD está ${ahead} commit(s) à frente de official/main`);
+if (unrelatedChanges > 0) workspaceBlockers.push(`${unrelatedChanges} alteração(ões) de outras áreas estão misturadas neste workspace`);
+if (!branch.startsWith("content/admin-") && branch !== "main") workspaceBlockers.push(`branch atual (${branch}) não é uma branch editorial isolada`);
+const workspaceSafe = workspaceBlockers.length === 0;
+---
+
+<StudioLayout title="Publicação" description="Gate seguro de revisão, Pull Request, CI e publicação da DejotaCode.">
+  <section class="studio-page studio-publication" data-publication-page data-api={api} data-workspace-safe={String(workspaceSafe)}>
+    <header class="studio-page__header">
+      <div><p class="studio-eyebrow">Operar</p><h1>Publicação</h1><p>Revisar o pacote exato antes de qualquer Pull Request, merge ou deploy.</p></div>
+    </header>
+
+    <section class:list={["studio-publish-gate", workspaceSafe ? "is-safe" : "is-blocked"]}>
+      <div><span class="studio-publish-gate__dot"></span><div><strong>{workspaceSafe ? "Workspace isolado" : "Publicação bloqueada neste workspace"}</strong><p>{workspaceSafe ? "A base local está alinhada e sem alterações estranhas ao fluxo editorial." : "O Studio detectou mistura de frentes ou base desatualizada. Nenhuma ação de publicação será liberada daqui."}</p></div></div>
+      <span class="studio-chip">{workspaceSafe ? "Gate local aprovado" : "Gate local bloqueado"}</span>
+    </section>
+
+    <section class="studio-publish-summary" aria-label="Estado da publicação">
+      <article><span>Branch</span><strong title={branch}>{branchLabel}</strong></article>
+      <article><span>Atrás da main</span><strong>{behind}</strong></article>
+      <article><span>À frente da main</span><strong>{ahead}</strong></article>
+      <article><span>Arquivos alterados</span><strong>{changed.size}</strong></article>
+      <article><span>Candidatos de conteúdo</span><strong>{candidateRows.length}</strong></article>
+    </section>
+
+    <section class="studio-publish-grid">
+      <div class="studio-publish-panel">
+        <div class="studio-publish-panel__head"><div><p class="studio-eyebrow">Gate local</p><h2>Bloqueios encontrados</h2></div></div>
+        {workspaceBlockers.length ? <ul class="studio-publish-blockers">{workspaceBlockers.map((item) => <li>{item}</li>)}</ul> : <p class="studio-publish-ok">Nenhum bloqueio estrutural detectado.</p>}
+        <p class="studio-publish-note"><strong>Regra:</strong> não usamos <code>git add .</code>. Publicação deve conter somente o manifesto revisado.</p>
+      </div>
+      <div class="studio-publish-panel">
+        <div class="studio-publish-panel__head"><div><p class="studio-eyebrow">Backend</p><h2>Worker editorial</h2></div><span class="studio-chip" data-api-state>Verificando…</span></div>
+        <p data-api-message>Consultando a integração existente sem criar PR nem alterar conteúdo.</p><a class="studio-button" href="/admin/entrar/?next=%2Fadmin%2Fpublicacao%2F">Acessar conta editorial</a>
+        <p class="studio-publish-note">A API existente cria PR de <strong>um Markdown</strong>. Pacotes com capa/código/produto precisam de worktree/branch isolada.</p>
+      </div>
+    </section>
+
+    <section class="studio-publish-candidates">
+      <div class="studio-publish-candidates__head"><div><p class="studio-eyebrow">Manifesto</p><h2>Conteúdos alterados neste workspace</h2></div><div class="studio-publish-toolbar"><input type="search" placeholder="Buscar conteúdo…" data-publish-search aria-label="Buscar conteúdo para publicação" /><select data-publish-filter aria-label="Filtrar conteúdos por situação de publicação"><option value="all">Todos</option><option value="ready">Sem pendência editorial</option><option value="draft">Rascunhos</option><option value="package">Pacote com dependências</option></select></div></div>
+      <div class="studio-publish-list" data-publish-list></div>
+      <p class="studio-publish-empty" data-publish-empty hidden>Nenhum candidato corresponde aos filtros.</p>
+    </section>
+
+    <dialog class="studio-publish-dialog" data-publish-dialog>
+      <button class="studio-icon-button studio-publish-dialog__close" type="button" data-publish-close aria-label="Fechar">×</button>
+      <div data-publish-detail></div>
+    </dialog>
+
+    <script id="studio-publication-data" type="application/json" set:html={JSON.stringify(candidateRows).replaceAll("<", "\\u003c").replaceAll(">", "\\u003e")}></script>
+  </section>
+  <script src="../../../scripts/studio-publication.ts"></script>
+</StudioLayout>

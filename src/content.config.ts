@@ -6,6 +6,9 @@ const posts = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
   schema: z.object({
     title: z.string(),
+    coverImage: z.string().regex(/^\/assets\/[a-zA-Z0-9_./-]+$/).optional(),
+    coverAlt: z.string().max(400).optional(),
+    coverCaption: z.string().max(1200).optional(),
     description: z.string(),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
@@ -23,6 +26,7 @@ const posts = defineCollection({
     draft: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     storeProducts: z.array(z.string()).default([]),
+    relatedPosts: z.array(z.string()).default([]),
   }),
 });
 

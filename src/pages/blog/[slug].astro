@@ -57,7 +57,7 @@ const currentTrail = availableTrails.find((trail) =>
 const canonicalUrl = new URL(postHref(post), Astro.site ?? Astro.url);
 const categoryLabel = categories[post.data.category];
 const categoryIcon = getOfficialCategoryIcon(post.data.category);
-const articleVisual = resolvePostVisual(post.data.category, currentSlug);
+const articleVisual = resolvePostVisual(post.data.category, currentSlug, post.data.coverImage);
 const categoryUrl = new URL(
   categoryHref(post.data.category),
   Astro.site ?? Astro.url,
@@ -191,10 +191,10 @@ const articleSchema = {
         </div>
 
         <div class="article-cover">
-          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={draftPostVisualAlts[currentSlug] ?? `Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} aspect="card" loading="eager" />
+          <VisualMedia src={articleVisual} fallbackSrc="/assets/resources/category-aprendizado.svg" alt={post.data.coverAlt ?? draftPostVisualAlts[currentSlug] ?? `Imagem editorial relacionada à categoria ${categoryLabel}`} label={post.data.title} aspect="card" loading="eager" />
         </div>
       </header>
-      {draftPostVisualCaptions[currentSlug] && <p class="container">{draftPostVisualCaptions[currentSlug]}</p>}
+      {(post.data.coverCaption ?? draftPostVisualCaptions[currentSlug]) && <p class="container">{post.data.coverCaption ?? draftPostVisualCaptions[currentSlug]}</p>}
 
       <div class:list={["article-layout", "container", { "article-layout--no-toc": tocHeadings.length === 0 }]}>
         {tocHeadings.length > 0 && (

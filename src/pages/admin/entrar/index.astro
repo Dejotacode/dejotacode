@@ -1,0 +1,62 @@
+---
+import StudioLayout from "../../../layouts/StudioLayout.astro";
+const api = import.meta.env.PUBLIC_API_URL?.trim() || "http://localhost:8787";
+---
+<StudioLayout title="Entrar" description="Acesso ao Worker editorial da DejotaCode.">
+ <section class="studio-page studio-settings-page" data-admin-login data-api={api}>
+  <header class="studio-page-header"><div><p class="studio-eyebrow">Acesso editorial</p><h1>Entrar no Worker</h1><p>Use sua conta administrativa existente. Entrar não publica nem libera os bloqueios do workspace.</p></div></header>
+  <section class="studio-v1-settings studio-login-card">
+   <p data-login-message role="status" aria-live="polite">Verificando sessão…</p>
+   <form data-login-form>
+    <label class="studio-field"><span>E-mail</span><input type="email" name="email" autocomplete="username" required maxlength="254" /></label>
+    <label class="studio-field"><span>Senha</span><input type="password" name="password" autocomplete="current-password" required minlength="12" maxlength="128" /></label>
+    <button class="studio-button studio-button--primary" type="submit">Entrar</button>
+   </form>
+   <a class="studio-button" data-login-continue href="/admin/publicacao/" hidden>Continuar</a>
+   <p class="studio-field-note">A senha é enviada somente ao Worker configurado para autenticar. Não é gravada pelo Studio. Não envie suas credenciais pelo chat.</p>
+   <a class="studio-button" href="/admin/">Voltar ao Studio</a>
+  </section>
+ </section>
+ <script>
+  import { safeAdminNext } from "../../../scripts/admin-session";
+  const root=document.querySelector<HTMLElement>("[data-admin-login]")!;
+  const api=root.dataset.api!;
+  const form=root.querySelector<HTMLFormElement>("[data-login-form]")!;
+  const message=root.querySelector<HTMLElement>("[data-login-message]")!;
+  const next=root.querySelector<HTMLAnchorElement>("[data-login-continue]")!;
+  const destination=safeAdminNext(new URLSearchParams(location.search).get("next"),location.origin);
+  next.href=destination;
+  const button=form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+  let submitting=false;
+  function signedIn(){message.textContent="Sessão ativa no Worker. Os bloqueios de publicação continuam valendo.";form.hidden=true;next.hidden=false;}
+  async function checkSession(){
+   try{
+    const response=await fetch(api+"/api/editor/status",{credentials:"include",cache:"no-store"});
+    if(response.ok)signedIn();
+    else if(response.status===401||response.status===403)message.textContent="Entre com sua conta administrativa existente.";
+    else message.textContent="O Worker respondeu com erro. Tente novamente mais tarde.";
+   }catch{message.textContent="Não foi possível conectar ao Worker. Confira se o serviço está ativo e use o endereço localhost do preview.";}
+  }
+  form.addEventListener("submit",async event=>{
+   event.preventDefault();if(submitting||!form.reportValidity())return;
+   submitting=true;button.disabled=true;message.textContent="Autenticando…";
+   const email=form.elements.namedItem("email") as HTMLInputElement;
+   const password=form.elements.namedItem("password") as HTMLInputElement;
+   try{
+    const response=await fetch(api+"/api/auth/login",{method:"POST",credentials:"include",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email.value.trim(),password:password.value})});
+    if(!response.ok){
+     message.textContent=response.status===429?"Muitas tentativas. Aguarde antes de tentar novamente.":response.status>=500?"O Worker não conseguiu concluir o acesso.":"E-mail ou senha inválidos.";
+     return;
+    }
+    signedIn();
+   }catch{message.textContent="Não foi possível conectar ao Worker. Nenhuma sessão foi confirmada.";}
+   finally{password.value="";submitting=false;button.disabled=false;}
+  });
+  void checkSession();
+ </script>
+ <style>
+  .studio-login-card{max-width:540px}
+  .studio-login-card form{display:grid;gap:16px}
+  .studio-login-card>p,.studio-login-card>a{margin-top:16px}
+ </style>
+</StudioLayout>
